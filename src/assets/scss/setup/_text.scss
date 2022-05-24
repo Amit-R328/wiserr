@@ -1,0 +1,168 @@
+.text-display-0,
+.text-display-1,
+.text-display-2,
+.text-display-3,
+.text-display-4,
+.text-display-5,
+.text-display-6,
+.text-display-7 {
+    color: #404145;
+    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700
+}
+
+.text-display-0 {
+    font-size: 72px;
+    line-height: 84px
+}
+
+.text-display-1 {
+    font-size: 32px;
+    line-height: 120%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-1 {
+        font-size: 40px
+    }
+}
+
+.text-display-2 {
+    font-size: 28px;
+    line-height: 130%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-2 {
+        font-size: 32px;
+        line-height: 120%
+    }
+}
+
+.text-display-3 {
+    font-size: 24px;
+    line-height: 130%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-3 {
+        font-size: 28px
+    }
+}
+
+.text-display-4 {
+    font-size: 20px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-4 {
+        font-size: 24px;
+        line-height: 130%
+    }
+}
+
+.text-display-5 {
+    font-size: 18px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-5 {
+        font-size: 20px
+    }
+}
+
+.text-display-6 {
+    font-size: 16px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-6 {
+        font-size: 18px
+    }
+}
+
+.text-display-7 {
+    font-size: 16px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    .text-display-7 {
+        font-size: 16px
+    }
+}
+
+.text-body-default {
+    font-size: 16px;
+    line-height: 24px
+}
+
+.text-body-2 {
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.text-body-3 {
+    font-size: 12px;
+    line-height: 20px
+}
+
+.text-bold {
+    font-weight: 700
+}
+
+.text-semi-bold {
+    font-weight: 600
+}
+
+.text-normal {
+    font-weight: 400
+}
+
+.text-quote {
+    font: 400 18px/160% Georgia, Times New Roman, serif
+}
+
+@media only screen and (min-width:600px) {
+    .text-quote {
+        font-size: 20px
+    }
+}
+
+.text-upper {
+    text-transform: uppercase
+}
+
+.text-lower {
+    text-transform: lowercase
+}
+
+.text-capitalize {
+    text-transform: capitalize
+}
+
+.text-none {
+    text-transform: none
+}
+
+.text-trunc {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.t-a-center {
+    text-align: center !important
+}
+
+.t-a-left {
+    text-align: left !important
+}
+
+.t-a-right {
+    text-align: right !important
+}

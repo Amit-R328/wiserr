@@ -1,0 +1,107 @@
+html,
+body,
+p,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+object,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+main {
+    display: block;
+}
+
+ul,
+ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote,
+q {
+    quotes: none;
+
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: 0;
+}
+
+th {
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+td {
+    font-weight: normal;
+    vertical-align: top;
+}
+
+td img {
+    vertical-align: top;
+}
+
+strong {
+    font-weight: bold;
+}
+
+// code,
+// kbd {
+//     font-family: $font_primary;
+// }
+
+iframe {
+
+    &[width='0'][height='0'],
+    &[width='1'][height='1'] {
+        position: fixed;
+        top: -100%;
+        left: -100%;
+    }
+}
+
+:focus {
+    outline: 0;
+}

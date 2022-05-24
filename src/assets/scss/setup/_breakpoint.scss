@@ -1,0 +1,19 @@
+
+
+
+
+//Airb&b LAYOUT BREAKPOINTS
+$break-narrow-min-width: 375px;
+$break-medium-min-width: 550px;
+$break-normal-min-width: 744px;
+$break-wide-min-width: 950px;
+$break-wider-min-width: 1128px;
+$break-widest-min-width: 1440px;
+
+$break-narrow-min-max-width: (min-width: 375px) and (max-width: 743px);
+$break-medium-min-max-width: (min-width: 744px) and (max-width: 1127px);
+$break-wide-min-max-width: (min-width: 1128px) and (max-width: 1439px);
+
+$magic_fade: (--magic_fade-out, 0);
+$magic_transition_opacity: opacity (--magic_transition_opacity-duration, var(--magic_duration, 0.2s)) var(--magic_transition_opacity-easing, (--magic_easing, ease-in));
+$magic_transition: (--magic_transition_opacity);

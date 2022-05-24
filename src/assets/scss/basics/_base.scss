@@ -1,0 +1,125 @@
+
+*,
+:after,
+:before {
+    -webkit-animation-delay: -1ms !important;
+    animation-delay: -1ms !important;
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-delay: 0s !important;
+    -o-transition-delay: 0s !important;
+    transition-delay: 0s !important;
+    -webkit-transition-duration: 0s !important;
+    -o-transition-duration: 0s !important;
+    transition-duration: 0s !important
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404145;
+    font-family: Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: 700
+}
+
+h1 {
+    font-size: 32px;
+    line-height: 120%
+}
+
+@media only screen and (min-width:600px) {
+    h1 {
+        font-size: 40px
+    }
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 130%
+}
+
+@media only screen and (min-width:600px) {
+    h2 {
+        font-size: 32px;
+        line-height: 120%
+    }
+}
+
+h3 {
+    font-size: 24px;
+    line-height: 130%
+}
+
+@media only screen and (min-width:600px) {
+    h3 {
+        font-size: 28px
+    }
+}
+
+h4 {
+    font-size: 20px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    h4 {
+        font-size: 24px;
+        line-height: 130%
+    }
+}
+
+h5 {
+    font-size: 18px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    h5 {
+        font-size: 20px
+    }
+}
+
+h6 {
+    font-size: 16px;
+    line-height: 140%
+}
+
+@media only screen and (min-width:600px) {
+    h6 {
+        font-size: 18px
+    }
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100%
+}
+
+body {
+    background-color: #fff;
+    color: #62646a;
+    font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
+    position: relative;
+    width: 100%
+}
+
+body.no-scroll {
+    overflow: hidden;
+    position: fixed
+}
+
+body.menu-shown {
+    overflow-y: hidden
+}
+
+@media only screen and (min-width:1160px) {
+    body.menu-shown {
+        overflow: visible
+    }
+}

@@ -1,0 +1,33 @@
+.main-header.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    display: block;
+    
+}
+
+.main-header {
+    background-color: #fff;
+    -webkit-transition: background-color .5s ease;
+    -o-transition: background-color .5s ease;
+    transition: background-color .5s ease;
+    width: 100%;
+}
+
+.logo,
+.logo2 {
+    width: 10em;
+}
+
+.header-row-wrapper {
+    border-bottom: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    color: rgb(98, 100, 106);
+    font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 24px;
+    transition: border 0.5s ease 0s;
+    width: 100%;
+}
+
