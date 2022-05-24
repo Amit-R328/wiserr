@@ -1,0 +1,60 @@
+
+.box-shadow-aa {
+    -webkit-box-shadow: 0 0 .88052px rgba(0, 0, 0, .029), 0 0 2.29197px rgba(0, 0, 0, .03), 0 0 5.52px rgba(0, 0, 0, .054), 0 0 11px rgba(0, 0, 0, .09);
+    box-shadow: 0 0 .88052px rgba(0, 0, 0, .029), 0 0 2.29197px rgba(0, 0, 0, .03), 0 0 5.52px rgba(0, 0, 0, .054), 0 0 11px rgba(0, 0, 0, .09)
+}
+
+.box-shadow-z1 {
+    -webkit-box-shadow: 0 1.2px 1.92251px rgba(0, 0, 0, .02), 0 2px 3.68135px rgba(0, 0, 0, .04), 0 1px 5px rgba(0, 0, 0, .05);
+    box-shadow: 0 1.2px 1.92251px rgba(0, 0, 0, .02), 0 2px 3.68135px rgba(0, 0, 0, .04), 0 1px 5px rgba(0, 0, 0, .05)
+}
+
+.box-shadow-z2 {
+    -webkit-box-shadow: 0 .14px 2.29266px rgba(0, 0, 0, .032), 0 .37px 4.42626px rgba(0, 0, 0, .048), 0 3px 7px rgba(0, 0, 0, .09);
+    box-shadow: 0 .14px 2.29266px rgba(0, 0, 0, .032), 0 .37px 4.42626px rgba(0, 0, 0, .048), 0 3px 7px rgba(0, 0, 0, .09)
+}
+
+.box-shadow-z3 {
+    -webkit-box-shadow: 0 .08px 2.55728px rgba(0, 0, 0, .053), 0 1.28px 5.57858px rgba(0, 0, 0, .077), 0 3px 10px rgba(0, 0, 0, .13);
+    box-shadow: 0 .08px 2.55728px rgba(0, 0, 0, .053), 0 1.28px 5.57858px rgba(0, 0, 0, .077), 0 3px 10px rgba(0, 0, 0, .13)
+}
+
+.box-shadow-z4 {
+    -webkit-box-shadow: 0 .266px 1.13052px rgba(0, 0, 0, .069), 0 .89345px 3.79717px rgba(0, 0, 0, .101), 0 5px 17px rgba(0, 0, 0, .17);
+    box-shadow: 0 .266px 1.13052px rgba(0, 0, 0, .069), 0 .89345px 3.79717px rgba(0, 0, 0, .101), 0 5px 17px rgba(0, 0, 0, .17)
+}
+
+.box-shadow-z5 {
+    -webkit-box-shadow: 0 0 2.17382px rgba(0, 0, 0, .049), 0 1.75px 6.01034px rgba(0, 0, 0, .07), 0 3.63px 14.4706px rgba(0, 0, 0, .091), 0 22px 48px rgba(0, 0, 0, .14);
+    box-shadow: 0 0 2.17382px rgba(0, 0, 0, .049), 0 1.75px 6.01034px rgba(0, 0, 0, .07), 0 3.63px 14.4706px rgba(0, 0, 0, .091), 0 22px 48px rgba(0, 0, 0, .14)
+}
+
+.drop-shadow-aa {
+    -webkit-filter: drop-shadow(0 0 .88052px rgba(0, 0, 0, .029)) drop-shadow(0 0 2.29197px rgba(0, 0, 0, .03)) drop-shadow(0 0 5.52px rgba(0, 0, 0, .054)) drop-shadow(0 0 11px rgba(0, 0, 0, .09));
+    filter: drop-shadow(0 0 .88052px rgba(0, 0, 0, .0288)) drop-shadow(0 0 2.29197px rgba(0, 0, 0, .03)) drop-shadow(0 0 5.52px rgba(0, 0, 0, .0543)) drop-shadow(0 0 11px rgba(0, 0, 0, .09))
+}
+
+.drop-shadow-z1 {
+    -webkit-filter: drop-shadow(0 1.2px 1.92251px rgba(0, 0, 0, .02)) drop-shadow(0 2px 3.68135px rgba(0, 0, 0, .04)) drop-shadow(0 1px 5px rgba(0, 0, 0, .05));
+    filter: drop-shadow(0 1.2px 1.92251px rgba(0, 0, 0, .02)) drop-shadow(0 2px 3.68135px rgba(0, 0, 0, .04)) drop-shadow(0 1px 5px rgba(0, 0, 0, .05))
+}
+
+.drop-shadow-z2 {
+    -webkit-filter: drop-shadow(0 .14px 2.29266px rgba(0, 0, 0, .032)) drop-shadow(0 .37px 4.42626px rgba(0, 0, 0, .048)) drop-shadow(0 3px 7px rgba(0, 0, 0, .09));
+    filter: drop-shadow(0 .14px 2.29266px rgba(0, 0, 0, .0323114)) drop-shadow(0 .37px 4.42626px rgba(0, 0, 0, .0476886)) drop-shadow(0 3px 7px rgba(0, 0, 0, .09))
+}
+
+.drop-shadow-z3 {
+    -webkit-filter: drop-shadow(0 .08px 2.55728px rgba(0, 0, 0, .053)) drop-shadow(0 1.28px 5.57858px rgba(0, 0, 0, .077)) drop-shadow(0 3px 10px rgba(0, 0, 0, .13));
+    filter: drop-shadow(0 .08px 2.55728px rgba(0, 0, 0, .0525061)) drop-shadow(0 1.28px 5.57858px rgba(0, 0, 0, .0774939)) drop-shadow(0 3px 10px rgba(0, 0, 0, .13))
+}
+
+.drop-shadow-z4 {
+    -webkit-filter: drop-shadow(0 .266px 1.13052px rgba(0, 0, 0, .069)) drop-shadow(0 .89345px 3.79717px rgba(0, 0, 0, .101)) drop-shadow(0 5px 17px rgba(0, 0, 0, .17));
+    filter: drop-shadow(0 .266px 1.13052px rgba(0, 0, 0, .0686618)) drop-shadow(0 .89345px 3.79717px rgba(0, 0, 0, .101338)) drop-shadow(0 5px 17px rgba(0, 0, 0, .17))
+}
+
+.drop-shadow-z5 {
+    -webkit-filter: drop-shadow(0 0 2.17382px rgba(0, 0, 0, .049)) drop-shadow(0 1.75px 6.01034px rgba(0, 0, 0, .07)) drop-shadow(0 3.63px 14.4706px rgba(0, 0, 0, .091)) drop-shadow(0 22px 48px rgba(0, 0, 0, .14));
+    filter: drop-shadow(0 0 2.17382px rgba(0, 0, 0, .0487776)) drop-shadow(0 1.75px 6.01034px rgba(0, 0, 0, .07)) drop-shadow(0 3.63px 14.4706px rgba(0, 0, 0, .0912224)) drop-shadow(0 22px 48px rgba(0, 0, 0, .14))
+}
