@@ -1,33 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import { connect } from 'react-redux'
-
-import logo from '../assets/img/logo.png'
-
-class _HomePage extends React.Component {
-    state = {}
-
-    changeCount = (diff) => {
-        console.log('Changing count by:', diff);
-        const action = { type: 'CHANGE_COUNT', diff }
-        this.props.dispatch(action)
-    }
-
-    render() {
-        const { count } = this.props
-        return (
-            <section>
-                <img src={logo} alt="Logo" style={{maxWidth: '300px'}} />
-                <h2>
-                    Count {count}
-                    <button onClick={() => {
-                        this.changeCount(1)
-                    }}>+</button>
-                    <button onClick={() => {
-                        this.changeCount(10)
-                    }}>+10</button>
-                </h2 >
-=======
 import React from "react"
 import { connect } from 'react-redux'
 import { IconContext } from 'react-icons'
@@ -277,21 +247,11 @@ class _HomePage extends React.Component {
                         </div>
                     </div>
                 </div>
->>>>>>> be465fd549c1e917a4781ef717610d152028235e
             </section >
         )
     }
 }
 
-<<<<<<< HEAD
-function mapStateToProps(state) {
-    return {
-        count: state.userModule.count
-    }
-}
-
-export const HomePage = connect(mapStateToProps)(_HomePage)
-=======
 
 const mapStateToProps = (storeState) => {
     return {
@@ -301,4 +261,3 @@ const mapStateToProps = (storeState) => {
 export const HomePage = connect(
     mapStateToProps,
 )(_HomePage)
->>>>>>> be465fd549c1e917a4781ef717610d152028235e
