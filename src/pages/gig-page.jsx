@@ -3,7 +3,7 @@ import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../servic
 import { NavLink } from 'react-router-dom'
 import {GigList} from '../cmps/gig-list.jsx'
 
-export class gigPage extends React.Component{
+export class GigPage extends React.Component{
     state = {
         filter: {
             categories: []
