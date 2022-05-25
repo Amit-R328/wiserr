@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom'
 import routes from '../routes'
 
 
-import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'
+// import { onLogin, onLogout, onSignup, loadUsers, removeUser } from '../store/user.actions.js'
 import { LoginSignup } from './login-signup.jsx'
 
 function _AppHeader({ onLogin, onSignup, onLogout, user }) {
@@ -47,14 +47,14 @@ function mapStateToProps(state) {
         isLoading: state.systemModule.isLoading
     }
 }
-const mapDispatchToProps = {
-    onLogin,
-    onSignup,
-    onLogout,
-    loadUsers,
-    removeUser
-}
+// const mapDispatchToProps = {
+//     onLogin,
+//     onSignup,
+//     onLogout,
+//     loadUsers,
+//     removeUser
+// }
 
 
 
-export const AppHeader = connect(mapStateToProps, mapDispatchToProps)(_AppHeader)
+// export const AppHeader = connect(mapStateToProps, mapDispatchToProps)(_AppHeader)

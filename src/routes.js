@@ -12,16 +12,16 @@ const routes = [
         component: <HomePage />,
         label: 'Home 🏠',
     },
-    {
-        path: 'car',
-        component: <CarApp />,
-        label: 'Cars'
-    },
-    {
-        path: 'review',
-        component: <ReviewApp />,
-        label: 'Reviews'
-    },
+    // {
+    //     path: 'car',
+    //     component: <CarApp />,
+    //     label: 'Cars'
+    // },
+    // {
+    //     path: 'review',
+    //     component: <ReviewApp />,
+    //     label: 'Reviews'
+    // },
     {
         path: 'chat',
         component: <ChatApp />,
@@ -31,12 +31,12 @@ const routes = [
         path: 'about',
         component: <AboutUs />,
         label: 'About us'
-    },
-    {
-        path: 'admin',
-        component: <AdminApp />,
-        label: 'Admin Only'
     }
+    // {
+    //     path: 'admin',
+    //     component: <AdminApp />,
+    //     label: 'Admin Only'
+    // }
 ]
 
 export default routes

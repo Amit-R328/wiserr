@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
 
-import { removeFromCart, checkout } from '../store/car.actions'
+// import { removeFromCart, checkout } from '../store/car.actions'
 import { UserMsg } from './user-msg.jsx'
 
 function _AppFooter({ count, cart, removeFromCart, checkout }) {
@@ -58,9 +58,9 @@ function mapStateToProps(state) {
     }
 }
 
-const mapDispatchToProps = {
-    checkout,
-    removeFromCart
-}
+// const mapDispatchToProps = {
+//     checkout,
+//     removeFromCart
+// }
 
-export const AppFooter = connect(mapStateToProps, mapDispatchToProps)(_AppFooter)
+// export const AppFooter = connect(mapStateToProps, mapDispatchToProps)(_AppFooter)

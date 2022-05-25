@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 import { IconContext } from 'react-icons'
 import { LogoFull, LogoFull2, Copyright, HamburgerMenue, Language, RightArrowShowMore } from '../services/svg.service.js'
-
+import {HomeCarousel} from '../cmps/home-carousel.jsx'
 
 class _HomePage extends React.Component {
 
@@ -12,6 +12,7 @@ class _HomePage extends React.Component {
     render() {
         return (
             <section>
+                <HomeCarousel/>
                 <div className="main-wrapper">
                     <div className="main-header sticky">
                         <div className="header">
@@ -21,6 +22,7 @@ class _HomePage extends React.Component {
                                         <button className="btn-navicon js-side-nav-trigger">
                                             <HamburgerMenue />
                                         </button>
+                                        
                                         <a href="/" className="site-logo">
                                             <LogoFull />
                                         </a>

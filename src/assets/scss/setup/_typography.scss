@@ -34,3 +34,8 @@
 //     src: url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.fb8b68d.eot);
 //     src: local("Macan-Bold"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.fb8b68d.eot) format("embedded-opentype"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.cf2da9c.woff2) format("woff2"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.b88b261.woff) format("woff")
 // }
+
+@font-face {
+    font-family: roboto;
+    src: url(../../fonts/roboto/ROBOTO-REGULAR.TTF);
+}

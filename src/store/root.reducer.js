@@ -4,17 +4,18 @@
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
 import thunk from 'redux-thunk'
 
-
-import { carReducer } from './car.reducer.js'
-import { userReducer } from './user.reducer.js'
-import { reviewReducer } from './review.reducer'
-import { systemReducer } from './system.reducer'
+import { jobsReducer } from './reducers/jobs.reducer.js'
+// import { carReducer } from './car.reducer.js'
+// import { userReducer } from './user.reducer.js'
+// import { reviewReducer } from './reducers/review.reducer'
+import { systemReducer } from './reducers/system.reducer'
 
 const rootReducer = combineReducers({
-    carModule: carReducer,
-    userModule: userReducer,
+    // carModule: carReducer,
+    // userModule: userReducer,
     systemModule: systemReducer,
-    reviewModule: reviewReducer,
+    // reviewModule: reviewReducer,
+    jobsModule: jobsReducer
 })
 
 

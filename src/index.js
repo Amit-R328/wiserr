@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
-import {store} from './store/store'
+import {store} from './store/root.reducer.js'
 import {RootCmp} from './root-cmp'
 import './assets/styles/main.scss'
 
