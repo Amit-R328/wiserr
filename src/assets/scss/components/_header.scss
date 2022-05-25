@@ -1,6 +1,4 @@
-.app-header {
-    background-color: purple;
-    
+.app-header {   
     
     .main-header {
         background-color: green;
@@ -106,8 +104,7 @@
                         font-size: 15px;
                         padding-top: 8px;
                     }
-                }
-                
+                } 
                 
             }
         }
@@ -160,24 +157,42 @@
                     justify-content: flex-end;
                 }
             }
-            
-            .lean-locale-settings {
-                display: flex;
-                flex-direction: row;
-            }
         }
     }
 
     .categories-menu-scroll{
         width: 100%;
-        max-height: 41px;
+        min-height: 41px;
         background-color: pink;
         margin: 0;
 
         .categories {
             display: flex;
             flex-direction: row;
+            justify-content: space-around;
+            // align-items: center;
+
+            & li a {
+                list-style: none;
+                text-decoration: none;
+                font-weight: inherit;
+                color: inherit;
+                font-family: inherit;
+                cursor: pointer;
+
+                &:hover {
+                    cursor: pointer;
+                    color: green;
+                }
+            }
         }
+
+    }
+    .hero-wrapper {
+        width: 100%;
+        // width: 680px;
+        margin: 0;
+        background-color: purple;
     }
     
 }

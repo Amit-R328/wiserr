@@ -48,15 +48,6 @@ export const AppHeaderHomePage = (props) => {
                                             </div>
                                         </li>
 
-                                        <li className="display-from-lg">
-                                            <div className="lean-locale-settings">
-                                                <span className="title-icon" aria-hidden="true"><Language /></span>
-                                                <span className="title-label">English</span>
-
-                                                <div className="currency-selection-title locale-settings-link-title">$USD</div>
-                                            </div>
-                                        </li>
-
                                         <li className="display-from-sm">
                                             <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Sign In</NavLink>
                                         </li>
@@ -72,9 +63,9 @@ export const AppHeaderHomePage = (props) => {
                 </div>
 
                 {/* ////scroll visible catagories menu\\\\ */}
-                <div id="categories-menu" className="categories-menu-scroll">
-                    <div className="categories-menu-wrapper categories_menu-package">
-                        <div className="categories-menu-package default has-overflow">
+                <div id="categories-menu" className="categories-menu-scroll ">
+                    <div className="categories-menu-wrapper ">
+                        <div className="categories-menu-package default has-overflow max-width-container equal-padding">
                             <ul className="categories">
                                 <li className="sub-menu-item target top-level buckets_without_title buckets-without-title">
                                     <NavLink to="/categories" className="graphic-design">Graphics &amp; Design</NavLink>
