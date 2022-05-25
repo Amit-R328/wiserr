@@ -7,8 +7,8 @@ import { BusinessHomepage } from './cmps/business-homepage.jsx'
 import { BusinessTools } from './cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-solutions.jsx'
 import { Login } from './cmps/login.jsx'
+import {GigPage} from './pages/gig-page.jsx'
 import { Join } from './cmps/join.jsx'
-import { GigPage } from './pages/gig-page.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [

@@ -1,3 +1,6 @@
+const fs = require('fs')
+const gGigs = require('../data/gig.json')
+
 export const jobService = {
     getJobByName,
     query,
@@ -20,5 +23,5 @@ function getJobByName(){
 }
 
 function query(filterBy = {}){
-    let gigs = 
+    return gGigs
 }
