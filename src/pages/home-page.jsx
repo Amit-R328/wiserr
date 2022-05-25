@@ -2,7 +2,7 @@ import React from "react"
 import { connect } from 'react-redux'
 import { IconContext } from 'react-icons'
 import { LogoFull, LogoFull2, Copyright, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
-import {HomeCarousel} from '../cmps/home-carousel.jsx'
+// import {HeroCarousel} from '../cmps/hero-carousel.jsx'
 
 class _HomePage extends React.Component {
 
@@ -12,7 +12,8 @@ class _HomePage extends React.Component {
     render() {
         return (
             <section>
-                <HomeCarousel/>
+
+                {/* <HeroCarousel/> */}
                 
             </section>
         )
