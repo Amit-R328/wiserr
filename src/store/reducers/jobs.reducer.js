@@ -33,7 +33,7 @@ const initialState = {
 }
 
 export function jobsReducer(state = initialState, action) {
-    let gigs = []
+    let gigs
 
     switch (action.type) {
         case 'SET_JOB_NAME':

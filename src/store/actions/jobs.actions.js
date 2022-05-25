@@ -22,10 +22,8 @@ export function loadGigs(){
             // const filterBy = getState().jobModule.filterBy
             const gigs = await jobService.query()
             console.log('GIGS FROM JOBS.ACTION.JS:',gigs)
-            dispatch({
-                type: 'SET_GIGS',
-                gigs
-            })                
+            const action = {type: 'SET_GIGS', gigs}
+            dispatch(action)                
         } catch(err) {
             console.error('Error:', err)
         }
