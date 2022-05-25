@@ -8,7 +8,7 @@ import { BusinessTools } from './cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-solutions.jsx'
 import { Login } from './cmps/login.jsx'
 import { Join } from './cmps/join.jsx'
-import { Categories } from './cmps/categories.jsx'
+import { GigPage } from './pages/gig-page.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -31,7 +31,7 @@ const routes = [
         component: <Join />,
     },
     {  path: '/categories',
-        component: <Categories />,
+        component: <GigPage />,
     },
     {  path: '/',
         component: <HomePage />,

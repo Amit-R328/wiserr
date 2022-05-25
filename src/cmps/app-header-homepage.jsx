@@ -29,7 +29,7 @@ export const AppHeaderHomePage = (props) => {
                                                     </path>
                                                 </svg>
                                             </span>
-                                            <input type="search" autocomplete="off" placeholder="Find services" value="" />
+                                            <input type="search" autoComplete="off" placeholder="Find services" value="" />
                                             <button className="co-white submit-button bg-co-green-700">Search</button>
                                         </form>
                                     </div>
@@ -153,7 +153,7 @@ export const AppHeaderHomePage = (props) => {
                                         </path>
                                     </svg>
                                 </span>
-                                {/* <input type="search" autocomplete="off" placeholder="Try &quot;building mobile app&quot;" value="" className=""><button className="ORLWF8p _0MkXbqi co-white submit-button bg-co-green-700">Search</button></input> */}
+                                {/* <input type="search" autoComplete="off" placeholder="Try &quot;building mobile app&quot;" value="" className=""><button className="ORLWF8p _0MkXbqi co-white submit-button bg-co-green-700">Search</button></input> */}
                             </form>
                         </div>
                         <div className="popular">Popular:

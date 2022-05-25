@@ -22,7 +22,7 @@ export class RootCmp extends React.Component {
                     </Routes>
                 </main>
                 <div className="footer-container">
-                    {/* <AppFooter /> */}
+                    <AppFooter />
                 </div>
             </div>
         )

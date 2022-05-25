@@ -123,7 +123,7 @@ export const BusinessHomepage = (props) => {
                                         </path>
                                     </svg>
                                 </span>
-                                <input type="search" autocomplete="off" placeholder="Try &quot;building mobile app&quot;" value="" className=""><button className="co-white submit-button bg-co-green-700">Search</button></input>
+                                <input type="search" autoComplete="off" placeholder="Try &quot;building mobile app&quot;" value="" className=""><button className="co-white submit-button bg-co-green-700">Search</button></input>
                             </form>
                         </div>
                     </div>

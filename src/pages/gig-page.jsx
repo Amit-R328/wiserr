@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
-import { NavLink } from 'react-router-dom'
+import React from 'react'
+// import React, { useState } from 'react'
+// import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
+// import { NavLink } from 'react-router-dom'
 import {GigList} from '../cmps/gig-list.jsx'
 
-export class gigPage extends React.Component{
+export class GigPage extends React.Component{
     state = {
         filter: {
             categories: []
