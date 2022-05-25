@@ -1,9 +1,14 @@
-const fs = require('fs')
-const gGigs = require('../data/gig.json')
+import { storageService } from './async-storage.service.js'
+
+const STORAGE_KEY = 'gig'
+
+const gigChannel = new BroadcastChannel('gigChannel')
 
 export const jobService = {
     getJobByName,
     query,
+    subscribe,
+    unsubscribe
 
 }
 
@@ -23,5 +28,13 @@ function getJobByName(){
 }
 
 function query(filterBy = {}){
-    return gGigs
+    return storageService.query(STORAGE_KEY)
+}
+
+function subscribe(listener) {
+    gigChannel.addEventListener('message', listener)
+}
+
+function unsubscribe(listener) {
+    gigChannel.removeEventListener('message', listener)
 }

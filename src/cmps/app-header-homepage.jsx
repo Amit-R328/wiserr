@@ -44,7 +44,7 @@ export const AppHeaderHomePage = (props) => {
 
                                         <li className="display-from-md">
                                             <div className="resources-tab-package">
-                                                <NavLink to="/explore" className="explore-nav-link nav-link">Explore</NavLink>
+                                                <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                                             </div>
                                         </li>
 

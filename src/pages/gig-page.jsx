@@ -1,10 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 // import React, { useState } from 'react'
 // import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
 // import { NavLink } from 'react-router-dom'
+import { loadGigs } from '../store/actions/jobs.actions.js'
 import {GigList} from '../cmps/gig-list.jsx'
 
-export class GigPage extends React.Component{
+export class _GigPage extends React.Component{
     state = {
         filter: {
             categories: []
@@ -13,6 +15,7 @@ export class GigPage extends React.Component{
 
     componentDidMount(){
         this.props.loadGigs()
+        console.log('THIS PROPS:', this.props)
     }
 
     render(){
@@ -24,3 +27,18 @@ export class GigPage extends React.Component{
         )
     }
 }  
+
+const mapStateToProps = (storeState) => {
+    return {
+        gigs: storeState.jobsModule.gigs,
+    }
+}
+
+const mapDispatchToProps = {
+    loadGigs,
+}
+
+export const GigPage = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(_GigPage)

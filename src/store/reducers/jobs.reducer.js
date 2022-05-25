@@ -28,11 +28,12 @@ const initialState = {
         priceMax: Infinity,
         deliveryDate: 3,
         category: ''
-    }
+    },
+    gigs: []
 }
 
 export function jobsReducer(state = initialState, action) {
-    let gigs
+    let gigs = []
 
     switch (action.type) {
         case 'SET_JOB_NAME':
