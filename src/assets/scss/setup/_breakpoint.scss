@@ -1,5 +1,34 @@
 
 
+$max_width: 1400px;
+
+$breakpoint_reverse_sizes: (
+    xs: 319px,
+    sm: 599px,
+    md: 899px,
+    lg: 1159px,
+    xl: 1759px
+);
+$breakpoint_reverse_xl: 1759px;
+$breakpoint_reverse_lg: 1159px;
+$breakpoint_reverse_md: 899px;
+$breakpoint_reverse_sm: 599px;
+$breakpoint_reverse_xs: 319px;
+
+$breakpoint_sizes: (
+    xs: 320px,
+    sm: 600px,
+    md: 900px,
+    lg: 1160px,
+    xl: 1760px
+);
+$breakpoint_xl: 1760px;
+$breakpoint_lg: 1160px;
+$breakpoint_md: 900px;
+$breakpoint_sm: 600px;
+$breakpoint_xs: 320px;
+
+
 
 
 //Airb&b LAYOUT BREAKPOINTS

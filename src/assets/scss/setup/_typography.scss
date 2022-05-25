@@ -1,36 +1,19 @@
+@font-face {
+    font-family: circular;
+    src: url(../../fonts/circular/Circular-Std-Medium-500.ttf); 
+}
 
-// @font-face {
-//     font-display: swap;
-//     font-family: Macan;
-//     font-style: normal;
-//     font-weight: 300;
-//     src: url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-light.68b8754.eot);
-//     src: local("Macan-Light"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-light.68b8754.eot) format("embedded-opentype"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-light.9aab970.woff2) format("woff2"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-light.9297bae.woff) format("woff")
-// }
+@font-face {
+    font-family: roboto;
+    src: url(../../fonts/roboto/ROBOTO-REGULAR.TTF); 
+}
 
-// @font-face {
-//     font-display: swap;
-//     font-family: Macan;
-//     font-style: normal;
-//     font-weight: 400;
-//     src: url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-regular.fc90742.eot);
-//     src: local("Macan-Regular"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-regular.fc90742.eot) format("embedded-opentype"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-regular.60c84fb.woff2) format("woff2"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-regular.b398ecf.woff) format("woff")
-// }
+@font-face {
+    font-family: tahoma;
+    src: url(../../fonts/tahoma/TAHOMA.TTF); 
+}
 
-// @font-face {
-//     font-display: swap;
-//     font-family: Macan;
-//     font-style: normal;
-//     font-weight: 600;
-//     src: url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-semibold.24f87d8.eot);
-//     src: local("Macan-Semibold"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-semibold.24f87d8.eot) format("embedded-opentype"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-semibold.3246ea4.woff2) format("woff2"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-semibold.93d9484.woff) format("woff")
-// }
-
-// @font-face {
-//     font-display: swap;
-//     font-family: Macan;
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.fb8b68d.eot);
-//     src: local("Macan-Bold"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.fb8b68d.eot) format("embedded-opentype"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.cf2da9c.woff2) format("woff2"), url(https://npm-assets.fiverrcdn.com/assets/layout-server/macan-bold.b88b261.woff) format("woff")
-// }
+@font-face {
+    font-family: alegreya;
+    src: url(../../fonts/alegreya/AlegreyaSansSC-Medium.ttf); 
+}

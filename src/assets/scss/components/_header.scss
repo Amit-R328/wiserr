@@ -1,33 +1,69 @@
-.main-header.sticky {
-    position: fixed;
-    width: 100%;
-    z-index: 9999;
-    display: block;
-    
+.app-header {
+    background-color: purple;
+
+
+    .main-header {
+        background-color: green;
+        -webkit-transition: background-color .5s ease;
+        -o-transition: background-color .5s ease;
+        transition: background-color .5s ease;
+        width: 100%;
+
+        &.sticky {
+            background-color: yellow;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            display: block;
+
+            &.logo {
+                background-color: blue;
+                width: 2em;
+            }
+        }
+    }
+
+    &.header-row-wrapper {
+        border-bottom: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        color: rgb(98, 100, 106);
+        font-family: inherit;
+        line-height: 24px;
+        transition: border 0.5s ease 0s;
+        width: 100%;
+        height: 3em;
+    }
+
+    .header-row {
+        display: flex;
+        flex-direction: row;
+
+        .site-logo {
+            max-width: 100%;
+        }
+        
+        .btn-navicon {
+            display: none;
+        }
+        @media screen and (max-width: 600px) {
+            .btn-navicon {
+                display: block;
+                background-color: transparent;
+                outline: none;
+                border: none;
+            }
+        }
+
+    }
 }
 
-.main-header {
-    background-color: #fff;
-    -webkit-transition: background-color .5s ease;
-    -o-transition: background-color .5s ease;
-    transition: background-color .5s ease;
-    width: 100%;
-}
 
-.logo,
-.logo2 {
-    width: 10em;
-}
 
-.header-row-wrapper {
-    border-bottom: 1px solid transparent;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-left-color: transparent;
-    color: rgb(98, 100, 106);
-    font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    line-height: 24px;
-    transition: border 0.5s ease 0s;
-    width: 100%;
-}
 
+
+ul.nav-list,
+ul.nav-link {
+    list-style-type: none;
+}

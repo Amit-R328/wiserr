@@ -1,66 +1,37 @@
+import { connect } from 'react-redux'
+import { IconContext } from 'react-icons'
+import { LogoFull, LogoFull2, Copyright, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
 
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
 
 import { removeFromCart, checkout } from '../store/car.actions'
 import { UserMsg } from './user-msg.jsx'
 
 function _AppFooter({ count, cart, removeFromCart, checkout }) {
-    const [isCartShown, setIsCartShown] = useState(false)
-
-
-    function getCartTotal() {
-        return cart.reduce((acc, car) => acc + car.price, 0)
-    }
 
     return (
-        <footer className="app-footer">
-            <p>
-                coffeerights - count: {count}
+        <div className="footer-left">
+            <span className="footer-logo">
+                <LogoFull />
+            </span>
+            <p className="text-body-2 legal">
+                <span className="copyright text-trunc">
+                    <Copyright />
+                    Wiserr International Ltd. 2022
+                </span>
             </p>
-            {cart.length > 0 &&
-                <h5>
-                    <span>{cart.length}</span> Products in your Cart
-                    <button className="btn-link" onClick={(ev) => {
-                        ev.preventDefault();
-                        setIsCartShown(!isCartShown)
-                    }}>
-                        ({(isCartShown) ? 'hide' : 'show'})
-                    </button>
-                </h5>
-            }
 
-            {isCartShown && cart.length > 0 && <section className="cart" >
-                <h5>Your Cart</h5>
-                <ul>
-                    {
-                        cart.map((car, idx) => <li key={idx}>
-                            <button onClick={() => {
-                                removeFromCart(car._id)
-                            }}>x</button>
-                            {car.vendor}
-                        </li>)
-                    }
-                </ul>
-                <p>Total: ${getCartTotal().toLocaleString()} </p>
-                <button onClick={checkout}>Checkout</button>
-            </section>}
-            <UserMsg />
-        </footer>
+        </div>
     )
 }
 
 
 function mapStateToProps(state) {
     return {
-        count: state.userModule.count,
-        cart: state.carModule.cart
     }
 }
 
 const mapDispatchToProps = {
-    checkout,
-    removeFromCart
 }
 
 export const AppFooter = connect(mapStateToProps, mapDispatchToProps)(_AppFooter)

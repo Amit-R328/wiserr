@@ -1,0 +1,32 @@
+$animation_timing_functions: (
+    standard: cubic-bezier(.75, 0, .25, 1),
+    entrance: cubic-bezier(0, .7, 0, 1),
+    exit: cubic-bezier(0, 0, 1, .3)
+);
+$animation_timing_function_exit: cubic-bezier(0, 0, 1, .3);
+$animation_timing_function_entrance: cubic-bezier(0, .7, 0, 1);
+$animation_timing_function_standard: cubic-bezier(.75, 0, .25, 1);
+$animation_duration_slows: (
+    01: 370ms,
+    02: 400ms,
+    03: 500ms
+);
+$animation_duration_slow_03: 500ms;
+$animation_duration_slow_02: 400ms;
+$animation_duration_slow_01: 370ms;
+$animation_duration_moderates: (
+    01: 200ms,
+    02: 250ms,
+    03: 300ms
+);
+$animation_duration_moderate_03: 300ms;
+$animation_duration_moderate_02: 250ms;
+$animation_duration_moderate_01: 200ms;
+$animation_duration_fasts: (
+    01: 70ms,
+    02: 100ms,
+    03: 120ms
+);
+$animation_duration_fast_03: 120ms;
+$animation_duration_fast_02: 100ms;
+$animation_duration_fast_01: 70ms;
