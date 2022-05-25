@@ -5,7 +5,7 @@ import { Provider } from 'react-redux'
 
 import {store} from './store/root.reducer.js'
 import {RootCmp} from './root-cmp'
-import './assets/styles/main.scss'
+import './assets/scss/main.scss'
 
 
 

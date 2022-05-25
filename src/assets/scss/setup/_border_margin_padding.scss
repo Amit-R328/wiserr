@@ -1,3 +1,67 @@
+$spacings: (
+    1: 4px,
+    2: 8px,
+    3: 12px,
+    4: 16px,
+    5: 20px,
+    6: 24px,
+    7: 28px,
+    8: 32px,
+    9: 36px,
+    10: 40px,
+    12: 48px,
+    14: 56px,
+    16: 64px,
+    20: 80px,
+    24: 96px,
+    28: 112px,
+    32: 128px,
+    36: 144px,
+    40: 160px,
+    px: 1px,
+    _5: 2px,
+    1_5: 6px,
+    2_5: 10px
+);
+$spacing_2_5: 10px;
+$spacing_1_5: 6px;
+$spacing__5: 2px;
+$spacing_px: 1px;
+$spacing_40: 160px;
+$spacing_36: 144px;
+$spacing_32: 128px;
+$spacing_28: 112px;
+$spacing_24: 96px;
+$spacing_20: 80px;
+$spacing_16: 64px;
+$spacing_14: 56px;
+$spacing_12: 48px;
+$spacing_10: 40px;
+$spacing_9: 36px;
+$spacing_8: 32px;
+$spacing_7: 28px;
+$spacing_6: 24px;
+$spacing_5: 20px;
+$spacing_4: 16px;
+$spacing_3: 12px;
+$spacing_2: 8px;
+$spacing_1: 4px;
+
+$border_radiuses: (
+    none: 0,
+    sm: 4px,
+    md: 6px,
+    lg: 8px,
+    xl: 12px,
+    circle: 9999px
+);
+$border_radius_circle: 9999px;
+$border_radius_xl: 12px;
+$border_radius_lg: 8px;
+$border_radius_md: 6px;
+$border_radius_sm: 4px;
+$border_radius_none: 0;
+
 .m-0 {
     margin: 0 !important
 }

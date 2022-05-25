@@ -1,0 +1,582 @@
+[
+    {
+        "_id": "u101",
+        "fullName": "gul071",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
+        "userName": "gul071",
+        "password": "gul071",
+        "level": "Level 2 Seller",
+        "email": "gul071@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": true,//explain to Yaron
+        "reviews": [
+            {
+                "id": "r100",
+                "txt": "Gul gets 5 stars for versatility, communication, and stick-to-itiveness. After the initial delivery, I asked for about 20 minor edits, one after the other, and he got them done as requested. He also worked with my chosen art style, found a selection of voice artists, and handled communication with the one I chose. I recommend Gul for his ability to take on the total project of this kind of explainer video from start to finish: making a storyboard, drawing the images, preparing the script (after you write it) for a voice artist, finding a voice artist that meets your specifications, interfacing with the artist, and bringing it all together as a finished product.",
+                "rate": 5,
+                "by": {
+                    "_id": "u102",
+                    "fullName": "richarddavis438",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/60317801/original/13051499_10153433741651123_6578396117746809005_n.jpg"
+                }
+            },
+            {
+                "id": "r101",
+                "txt": "I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
+                "rate": 5,
+                "by": {
+                    "_id": "u103",
+                    "fullName": "courtneylasch",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u102",
+        "fullName": "richarddavis438",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/60317801/original/13051499_10153433741651123_6578396117746809005_n.jpg",
+        "userName": "richarddavis438",
+        "password": "richarddavis438",
+        "level": "",
+        "email": "richarddavis438@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u103",
+        "fullName": "courtney lasch",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/60317801/original/13051499_10153433741651123_6578396117746809005_n.jpg",
+        "userName": "courtney lasch",
+        "password": "courtneylasch",
+        "level": "",
+        "email": "courtneylasch@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u104",
+        "fullName": "yogi_isnanda",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/2aaa44044e3584127b6b3e7034ee61a1-439775891516423682866/53cc7063-4bd1-4e31-8c08-f8d01b3acaec.jpg",
+        "userName": "yogi_isnanda",
+        "password": "yogi_isnanda",
+        "level": "Level 2 Seller",
+        "email": "yogi_isnanda@gmail.com",
+        "avgRate": 5,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r102",
+                "txt": "Great work and got to me as quickly as possible with concepts and sketches. Some of the communication was off but with a lot of references, we were able to get the job done together.",
+                "rate": 4.7,
+                "by": {
+                    "_id": "u105",
+                    "fullName": "buddhanthebeard",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3724f3ac1592a5aaed95573604688a6d-1647642710426/828de129-0515-4fe4-9019-2081863e5471.JPG"
+                }
+            },
+            {
+                "id": "r103",
+                "txt": "Always a pleasure to work with. Outcome is always topnotch. Communication is great and I will continue to use again and again.",
+                "rate": 5,
+                "by": {
+                    "_id": "u106",
+                    "fullName": "ivanrivera",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/7807154/original/391706_2352809414474_250266607_n.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u105",
+        "fullName": "buddhanthebeard",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/3724f3ac1592a5aaed95573604688a6d-1647642710426/828de129-0515-4fe4-9019-2081863e5471.JPG",
+        "userName": "buddhanthebeard",
+        "password": "buddhanthebeard",
+        "level": "",
+        "email": "buddhanthebeard@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u106",
+        "fullName": "ivanrivera",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/7807154/original/391706_2352809414474_250266607_n.jpg",
+        "userName": "ivanrivera",
+        "password": "ivanrivera",
+        "level": "",
+        "email": "ivanrivera@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u107",
+        "fullName": "graphexgalaxy",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
+        "userName": "graphexgalaxy",
+        "password": "graphexgalaxy",
+        "level": "Level 2 Seller",
+        "email": "graphexgalaxy@gmail.com",
+        "avgRate": 4.8,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r107",
+                "txt": "Travail remarquable et très rapide, convient parfaitement à mes attentes, trois très beaux designs pour mon groupe :)",
+                "rate": 5,
+                "by": {
+                    "_id": "u108",
+                    "fullName": "hp_spikefli",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/8b1b16dcc738965d716b2c27345fcfe7-1642471394066/66171d9a-52b4-456b-a26f-c142ba33913a.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u108",
+        "fullName": "hp_spikefli",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/8b1b16dcc738965d716b2c27345fcfe7-1642471394066/66171d9a-52b4-456b-a26f-c142ba33913a.jpg",
+        "userName": "hp_spikefli",
+        "password": "hp_spikefli",
+        "level": "",
+        "email": "hp_spikefli@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u109",
+        "fullName": "dohyotriyono",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
+        "userName": "dohyotriyono",
+        "password": "dohyotriyono",
+        "level": "Level 2 Seller",
+        "email": "dohyotriyono@gmail.com",
+        "avgRate": 5,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r108",
+                "txt": "It was an absolute pleasure working with him. He was responsive, took feedback, worked quickly and provided a product that we are very excited about. 10/10 experience. Thank you!!!",
+                "rate": 5,
+                "by": {
+                    "_id": "u110",
+                    "fullName": "djs352",
+                    "imgUrl": ""
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u110",
+        "fullName": "hp_spikefli",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/8b1b16dcc738965d716b2c27345fcfe7-1642471394066/66171d9a-52b4-456b-a26f-c142ba33913a.jpg",
+        "userName": "hp_spikefli",
+        "password": "hp_spikefli",
+        "level": "",
+        "email": "hp_spikefli@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u111",
+        "fullName": "gad_by_miraz_pro",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/7a85510d72ccc2941cbe87ac3dd3a9e4-1634745207853/f9896223-7a6d-42b6-8711-d60922c3b6ab.jpg",
+        "userName": "gad_by_miraz_pro",
+        "password": "gad_by_miraz_pro",
+        "level": "Level 2 Seller",
+        "email": "gad_by_miraz_pro@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r109",
+                "txt": "your help was awesome and very patient with me since i'm not that techie. friendly and professional. of course i will work with him again",
+                "rate": 5,
+                "by": {
+                    "_id": "u112",
+                    "fullName": "febzpena",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u112",
+        "fullName": "febzpena",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
+        "userName": "febzpena",
+        "password": "febzpena",
+        "level": "",
+        "email": "febzpena@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u113",
+        "fullName": "shirley_esid",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b4231d6752099ce2619003ed164b72e2-1646950968199/c6714639-3d34-4a5a-9739-3a72597ae4ec.JPG",
+        "userName": "shirley_esid",
+        "password": "shirley_esid",
+        "level": "Level 2 Seller",
+        "email": "shirley_esid@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r110",
+                "txt": "Shirley is a lifesaver, can't stress it enough. I went eyes closed with her in this project and let me tell you, I got shocked. 1000/10! HIGHLY RECOMMENDED.",
+                "rate": 5,
+                "by": {
+                    "_id": "u114",
+                    "fullName": "strongathome",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/9df26f4a8f567cd3661cb0999b5ed874-1647184084798/de4ec514-64fb-48c3-85a5-e02a5a5238da.png"
+                }
+            },
+            {
+                "id": "r111",
+                "txt": "Ok ..First delivery was not what I expected based on her/their previous work . 2nd revision result has much improvement .",
+                "rate": 3,
+                "by": {
+                    "_id": "u115",
+                    "fullName": "burnanaconcept",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/2924473/original/200.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u114",
+        "fullName": "strongathome",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/9df26f4a8f567cd3661cb0999b5ed874-1647184084798/de4ec514-64fb-48c3-85a5-e02a5a5238da.png",
+        "userName": "strongathome",
+        "password": "strongathome",
+        "level": "",
+        "email": "strongathome@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u115",
+        "fullName": "burnanaconcept",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/2924473/original/200.jpg",
+        "userName": "burnanaconcept",
+        "password": "burnanaconcept",
+        "level": "",
+        "email": "burnanaconcept@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u116",
+        "fullName": "roslyn_johnson",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b6f6830b0394f46092fc7ace020c511d-985758451632988163077/JPEG_20210930_134922_-1807988561.jpg",
+        "userName": "roslyn_johnson",
+        "password": "roslyn_johnson",
+        "level": "Level 2 Seller",
+        "email": "roslyn_johnson@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r112",
+                "txt": "Communicates well and gets lots of numbers but the listener to stream ratio was very low on what happened, so I'm unsure how streams were achieved.",
+                "rate": 3.3,
+                "by": {
+                    "_id": "u117",
+                    "fullName": "erichflaboss",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/a72835f8b520694643de15352f1d627f-1574606114998/d1a785aa-a99d-4fc4-a34b-d29435064144.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u117",
+        "fullName": "erichflaboss",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/a72835f8b520694643de15352f1d627f-1574606114998/d1a785aa-a99d-4fc4-a34b-d29435064144.jpg",
+        "userName": "erichflaboss",
+        "password": "erichflaboss",
+        "level": "",
+        "email": "erichflaboss@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },  
+    {
+        "_id": "u118",
+        "fullName": "mahbuburrahm204",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8038e14b365769c5de4ab798e6346b7b-1629650732214/f75468a6-3514-47c0-b493-e021fe608344.png",
+        "userName": "mahbuburrahm204",
+        "password": "mahbuburrahm204",
+        "level": "Level 2 Seller",
+        "email": "mahbuburrahm204@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r112",
+                "txt": "Amazing work. Great communication. Above and beyond with all the questions I had. Stop reading reviews and just hire him.",
+                "rate": 5,
+                "by": {
+                    "_id": "u119",
+                    "fullName": "anxietybathbomb",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/4be538b53e19e57970f54e7350bdcfd7-1646673177494/bf0643c2-0534-4b21-bfde-a0bedf85a66f.png"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u119",
+        "fullName": "anxietybathbomb",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/4be538b53e19e57970f54e7350bdcfd7-1646673177494/bf0643c2-0534-4b21-bfde-a0bedf85a66f.png",
+        "userName": "anxietybathbomb",
+        "password": "anxietybathbomb",
+        "level": "",
+        "email": "anxietybathbomb@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    }, 
+    {
+        "_id": "u120",
+        "fullName": "jaylucy",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/48b6c449a1b46cb2c9db97fc7cd612cc-1644490352565/3299dcc8-8cb3-45d5-9e46-72c4d50b6830.jpg",
+        "userName": "jaylucy",
+        "password": "jaylucy",
+        "level": "Top Rated Seller",
+        "email": "jaylucy@gmail.com",
+        "avgRate": 5,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r113",
+                "txt": "I am really thankful to Jay and Lucy who has aided the company in achieving top search results, increasing organic traffic sales, and gaining a competitive advantage over competitors in a short span of time. They  manages the engagement well by providing specific reports and is responsive, supportive, and prompt.",
+                "rate": 5,
+                "by": {
+                    "_id": "u121",
+                    "fullName": "pinkblack785",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/bbf3bf121f1eac947ee71a3d1ea11954-1020470111639329903672/JPEG_20211212_222502_3148070451161052897.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u121",
+        "fullName": "pinkblack785",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/bbf3bf121f1eac947ee71a3d1ea11954-1020470111639329903672/JPEG_20211212_222502_3148070451161052897.jpg",
+        "userName": "pinkblack785",
+        "password": "pinkblack785",
+        "level": "",
+        "email": "pinkblack785@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    }, 
+    {
+        "_id": "u122",
+        "fullName": "hayleyhutson",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6f43fcdade5ca0cf5dc2a19bd2c75122-1595186054929/372e22af-6325-4f4e-b947-7c7767e6cf0a.jpeg",
+        "userName": "hayleyhutson",
+        "password": "hayleyhutson",
+        "level": "Level 2 Seller",
+        "email": "hayleyhutson@gmail.com",
+        "avgRate": 5,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r114",
+                "txt": "Hayley is a marketer's dream. She produced a fantastic blog that is both SEO and user friendly. Well worth the money, will use her services again 100%, thank you, Hayley!",
+                "rate": 5,
+                "by": {
+                    "_id": "u123",
+                    "fullName": "pjd2019",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/ff59317470d8607a9c6e03cb5bcc87aa-784636891612079416.443886/A93FDA03-F831-489B-8A05-98623ADB39D2"
+                }
+            },
+            {
+                "id": "r115",
+                "txt": "Hayley was professional from beginning to end. She asked for anything I wanted to incorporate, wrote an excellent blog post, and delivered on time. I can recommend her 100%!",
+                "rate": 5,
+                "by": {
+                    "_id": "u124",
+                    "fullName": "professorrose",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c6de97063c2fa24741745b9049d51924-1651783073166/24c906d4-7ad8-4870-ae39-960a6c64b97e.png"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u123",
+        "fullName": "pjd2019",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/ff59317470d8607a9c6e03cb5bcc87aa-784636891612079416.443886/A93FDA03-F831-489B-8A05-98623ADB39D2",
+        "userName": "pjd2019",
+        "password": "pjd2019",
+        "level": "",
+        "email": "pjd2019@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    }, 
+    {
+        "_id": "u124",
+        "fullName": "professorrose",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/c6de97063c2fa24741745b9049d51924-1651783073166/24c906d4-7ad8-4870-ae39-960a6c64b97e.png",
+        "userName": "professorrose",
+        "password": "professorrose",
+        "level": "",
+        "email": "professorrose@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+
+    },
+    {
+        "_id": "u125",
+        "fullName": "luizakipper",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/d0f1aa93510d94ecbbb75f189c5bc298-1553798809035/8558f3ac-ee2a-4e0f-b51e-e14984bc52f1.png",
+        "userName": "luizakipper",
+        "password": "luizakipper",
+        "level": "Level 2 Seller",
+        "email": "luizakipper@gmail.com",
+        "avgRate": 5,
+        "isSeller": true,
+        "reviews": [
+            {
+                "id": "r116",
+                "txt": "Excellent work, ALWAYS!",
+                "rate": 5,
+                "by": {
+                    "_id": "u126",
+                    "fullName": "anamaldonado007",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/224195ab8b322ca807e44e5c7a7a3d3d-1611265990754/55d79661-3260-43d6-8c35-559502e8147a.jpg"
+                }
+            },
+            {
+                "id": "r116",
+                "txt": "Detailed, accurate, fast and communicative. Her work quality is always above and beyond!",
+                "rate": 5,
+                "by": {
+                    "_id": "u127",
+                    "fullName": "truckparkermusi",
+                    "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/a72835f8b520694643de15352f1d627f-1574606114998/d1a785aa-a99d-4fc4-a34b-d29435064144.jpg"
+                }
+            }
+        ],
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u126",
+        "fullName": "anamaldonado007",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/224195ab8b322ca807e44e5c7a7a3d3d-1611265990754/55d79661-3260-43d6-8c35-559502e8147a.jpg",
+        "userName": "anamaldonado007",
+        "password": "anamaldonado007",
+        "level": "",
+        "email": "anamaldonado007@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+
+    },
+    {
+        "_id": "u127",
+        "fullName": "truckparkermusi",
+        "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/a72835f8b520694643de15352f1d627f-1574606114998/d1a785aa-a99d-4fc4-a34b-d29435064144.jpg",
+        "userName": "truckparkermusi",
+        "password": "truckparkermusi",
+        "level": "",
+        "email": "truckparkermusi@gmail.com",
+        "avgRate": 0,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+
+    }
+    
+]

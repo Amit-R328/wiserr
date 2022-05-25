@@ -1,7 +1,6 @@
 html,
 body,
 p,
-li,
 dl,
 dt,
 dd,
@@ -46,11 +45,17 @@ main {
 }
 
 ul,
-ol {
+ol,
+li {
     list-style: none;
     list-style-image: none;
     margin: 0;
     padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    display: list;
 }
 
 blockquote,

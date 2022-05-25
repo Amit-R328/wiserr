@@ -1,56 +1,65 @@
-a {
-    color: color($green);
+
+.clean-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     text-decoration: none;
     transition: color .2s;
-
-    &:hover {
-        color: color($green);
-        text-decoration: underline;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-        outline: none;
-    }
-
-    &.link-blue,
-    &.link-blue:hover {
-        color: color($blue);
-    }
-
-    &[disabled] {
-        text-decoration: none;
-        color: color($grey, 800);
-        cursor: default;
-        pointer-events: none;
-    }
 }
 
+// a {
+//     color: color($green);
+//     text-decoration: none;
+//     transition: color .2s;
 
-a,
-a:hover {
-    color: #1dbf73
-}
+//     &:hover {
+//         color: color($green);
+//         text-decoration: underline;
+//     }
 
-a:hover {
-    text-decoration: underline
-}
+//     &:hover,
+//     &:active,
+//     &:focus {
+//         outline: none;
+//     }
 
-a:active,
-a:focus,
-a:hover {
-    outline: none
-}
+//     &.link-blue,
+//     &.link-blue:hover {
+//         color: color($blue);
+//     }
 
-a.link-blue,
-a.link-blue:hover {
-    color: #446ee7
-}
+//     &[disabled] {
+//         text-decoration: none;
+//         color: color($grey, 800);
+//         cursor: default;
+//         pointer-events: none;
+//     }
+// }
 
-a[disabled] {
-    color: #95979d;
-    cursor: default;
-    pointer-events: none;
-    text-decoration: none
-}
+
+// a,
+// a:hover {
+//     color: #1dbf73
+// }
+
+// a:hover {
+//     text-decoration: underline
+// }
+
+// a:active,
+// a:focus,
+// a:hover {
+//     outline: none
+// }
+
+// a.link-blue,
+// a.link-blue:hover {
+//     color: #446ee7
+// }
+
+// a[disabled] {
+//     color: #95979d;
+//     cursor: default;
+//     pointer-events: none;
+//     text-decoration: none
+// }
