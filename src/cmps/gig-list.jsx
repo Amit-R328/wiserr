@@ -7,7 +7,7 @@ export function GigList({gigs}){
     return (
         <ul className="gig-list clean-list">
             {gigs.map(gig =>
-                <gigPreview 
+                <GigPreview 
                     key={gig._id}
                     gig={gig}
                 />
