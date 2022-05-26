@@ -17,7 +17,7 @@ export class ImgUploader extends Component {
   get uploadMsg() {
     const { imgUrl, isUploading } = this.state
     if (imgUrl) return 'Upload Another?'
-    return isUploading ? 'Uploading....' : 'Upload Image'
+    else return isUploading ? 'Uploading....' : 'Upload Image'
   }
   render() {
     const { imgUrl} = this.state

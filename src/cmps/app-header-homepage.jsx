@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { LogoFull, HamburgerMenu, SearchBar } from '../services/svg.service.js'
+import { LogoFull, LogoFullWhite, HamburgerMenu, SearchBar } from '../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import {HeroCarousel} from './hero-carousel.jsx'
 
@@ -18,7 +18,8 @@ export const AppHeaderHomePage = (props) => {
                                 </button>
                                 <div className="logo-main-header">
                                     <NavLink to="/" className="site-logo">
-                                        <LogoFull />
+                                        <LogoFullWhite />
+                                        {/* <LogoFull /> */}
                                     </NavLink>
                                 </div>
                                 <div className="wiserr-header-search-animated">
@@ -107,7 +108,7 @@ export const AppHeaderHomePage = (props) => {
 
             </div>
 
-            <div className="hero-wrapper">
+            <div className="hero-wrapper hero-andrea">
                 <div className="hero-backgrounds"><HeroCarousel/>
                     <div className="hero-andrea">
                         <div className="seller-name max-width-container"><p>Andrea, <b>Fashion Designer</b>
