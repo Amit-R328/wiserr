@@ -58,43 +58,85 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ArrowLeft, ArrowRight, ArrowInButton } from "../services/svg.service.js";
+import { ArrowLeft, ArrowInButtonLeftGrey, ArrowInButtonRightGrey } from "../services/svg.service.js";
 
 export const HomepageCategoriesCarousel = (props) => {
-  return (
-      <div className="carousel-container">
-          <div className="track">
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-          </div>
-          <div className="nav">
-              <button className="prev"><ArrowInButton/></button>
-              <button className="next"><ArrowRight/></button>
-          </div>
-      </div>
-  )
+    return (
+        <div className="carousel-container">
+            <div className="carousel-inner">
+                <div className="track">
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 1
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 2
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 3
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 4
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 5
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 6
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 7
+                            </div>
+                        </div>
+                    </div>
+                    <div className="card-container">
+                        <div className="card">
+                            <div className="img-category-carousel">1</div>
+                            <div className="info">
+                                Title 8
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="nav">
+                <button className="prev"><ArrowInButtonLeftGrey /></button>
+                <button className="next"><ArrowInButtonRightGrey /></button>
+            </div>
+        </div>
+    )
 
-    
+
 }

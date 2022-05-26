@@ -20,7 +20,6 @@ export const GigPage = () => {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-<<<<<<< HEAD
         const onScroll = () => setOffset(window.pageYOffset);
         // clean up code
         window.removeEventListener('scroll', onScroll);
@@ -28,11 +27,6 @@ export const GigPage = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    console.log(offset);
-=======
-        dispatch(loadGigs())
-    },[])
->>>>>>> 46b59a5e5fd47d474bdb0e792b677ccdff8215bf
 
     useEffect(() => {
         dispatch(loadGigs(filterBy))
