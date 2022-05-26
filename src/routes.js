@@ -1,8 +1,4 @@
-import { HomePage } from './pages/home-page.jsx'
-import { AboutUs } from './pages/about-us.jsx'
-
-import { ReviewApp } from './pages/review-app.jsx'
-
+import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-homepage.jsx'
 import { BusinessTools } from './cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-solutions.jsx'
