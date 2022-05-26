@@ -102,7 +102,7 @@ function _createGigs(){
                 "whatDoYouGet": "CUSTOM DRAWINGS \nWill cost extra depending on drawing, so please make sure the price by coming in inbox to get quote.\n• ​COLORING \n Will cost extra depending on the project type and type of coloring. \n• ​Editing script  after placing the order will cost extra.\n IF YOU HAVE ANY QUESTION, FEEL FREE TO CONTACT ME.\n For Whiteboard Explainer Samples please follow the link:\nhttps://www.youtube.com/channel/UCm-0NlyD3Lb9IIj_UPIvCtQ/videos"
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/videos/so_44.79414,t_main1,q_auto,f_auto/mwkigsyj9hzzmphy3ijx/exclusive-whiteboard-animation-in-24-hours.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/102260755/original/064e14c412a2081407c2cc44459621357a3223e4/exclusive-whiteboard-animation-in-24-hours.png"],
-            "categorey": "Graphics & Design",
+            "category": "Graphics & Design",
             "likedByUsers": {
                 "_id": "u102",
                 "fullName": "richarddavis438",
@@ -127,7 +127,7 @@ function _createGigs(){
                 "whatDoYouGet": "Highly Professional, UNIQUE & High Quality designs\nUNLIMITED Revisions until you are 100% satisfied\n100% original & unique vector design from Adobe Illustrator\nVector Source Files (scalable without any quality loss) (AI, EPS,PSD, PDF) for the final design\nPROFESSIONAL Communication & Outstanding Customer Support\nGuaranteed High Quality work\nI am not Doing Cartoon, Caricature & Custom Character Logos.\nIf you have any question,\nFeel free to Contact Me I'll be happy to help.Place Your Order Without Any Hesitation. I am here to put your vision into life."
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/179341816/original/cf07484c9c4e49c027263b3bac8ed0e60c092b05/do-unique-and-beautiful-retro-vintage-design.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2cb51b6d6893894e3f61356cf4eb957e-1632477605/01/do-unique-and-beautiful-retro-vintage-design.jpg"],
-            "categorey": "Graphics & Design",
+            "category": "Graphics & Design",
             "likedByUsers": {
                 "_id": "u102",
                 "fullName": "richarddavis438",
@@ -152,7 +152,7 @@ function _createGigs(){
                 "whatDoYouGet": "unique and awesome illustration, high quality, JPG, PNG, AI, EPS, or SVG format files."
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/230928287/original/64b7c1a70bffac0b67a812826d718ac1b34f4456/draw-cute-and-unique-nft-mascot-character.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/821ce8ff174652ff4a6c4c10c18d9a7d-1647483667/swim/draw-cute-and-unique-nft-mascot-character.jpg"],
-            "categorey": "Graphics & Design",
+            "category": "Graphics & Design",
             "likedByUsers": {
                 "_id": "u110",
                 "fullName": "flzzeth",
@@ -176,7 +176,7 @@ function _createGigs(){
                 "whyUs": "",
                 "whatDoYouGet": "Create Fb ads campaign & Instagram Ads\nResearch, Plan & Strategy\nCreate & Setup FB Business page\nSetup FB Pixel and Event\nDomain Verify and Setup ISO14 Event\nAudience Research with Demographic, Interest & Behaviors\nCreate custom and Lookalike Audience\nResponsive Ad text with a description\nAds management based on Package\nIf you have any questions, you can message me when you will be free."      },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/219531995/original/50ec1615424683f6d83c3d59de06332f1b0cbdfa/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/04fcc41f750b98d1e9097d6bec818197-1646886003/Screenshot_24/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg"],        
-            "categorey": "Graphics & Design",
+            "category": "Graphics & Design",
             "likedByUsers": {
                 "_id": "u112",
                 "fullName": "jazzimanij",
@@ -196,13 +196,13 @@ function _createGigs(){
             "level": "Level 2 Seller",
             "daysToMake": 10,
             "description": {
-                "categorey": "Digital Marketing",
+                "category": "Digital Marketing",
                 "aboutThisGig":"About This Gig\nWelcome to the good side of Social Media Marketing where we prioritise performance, know our target audience like our best friend and go above and beyond to create scroll-stopping designs that tell fantastic stories! ",
                 "whyUs": "I'm Shirley, a Marketing Director, Content Strategist & Creative Designer. I've been in this industry for over 5 years and have assisted over 150 brands with their social needs just this year! (Feel free to ask me for my portfolio!)",
                 "whatDoYouGet": "Branded content (All industries: NFT's, Beauty, Tech, Ecommerce, Agencies... )\nStories\nlinkedIn & twitter posts\nCarousels\nInspirational & Educational posts\nMemes\nMuch more\nWether you need posts designed in a specific style or are in need of a complete overhaul, I've got you! Besides creating rocking content, I will also include a list of hashtags that I would benefit your brand with every order placed."
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/208249355/original/046f201b32253b46140785a31d34ed5474f25e4a/your-pro-social-media-content-creator.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/208249355/original/2b985f0b41e4d6d8cb6366d9e5f62234d28a9247/your-pro-social-media-content-creator.png"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u101",
                 "fullName": "gul071",
@@ -222,13 +222,13 @@ function _createGigs(){
             "level": "Level 2 Seller",
             "daysToMake": 10,
             "description": {
-                "categorey": "Digital Marketing",
+                "category": "Digital Marketing",
                 "aboutThisGig":"Hello There,\nPRO SPOTIFY MUSIC PROMO Service is here in very cheapest price!\nI will utilize my MANUAL ranking strategy and white-hat SEO tactics to boost your music daily rankings, ensuring your music ranks high for YOUR targeted keywords.",
                 "whyUs": "24/7 Premium Support\nOrganic Results",
                 "whatDoYouGet": "I will manually create high quality profile backlinks that will increase your website ranking. I always do backlinks to high DA, PA sites. I follow the SEO white hat rules when creating backlinks. So your site just starts to rank. I hope you are well. Thank you so much for your precious time."
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/224200641/original/0c155cff6030c145737d7d0026df65322a23d116/do-organic-spotify-promotion-by-social-media-marketing.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/a322d572e55e19d755fb6971fbaebbb1-1650875569/1650875460752_delivery%20report/do-organic-spotify-promotion-by-social-media-marketing.jpg"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u110",
                 "fullName": "hp_spikefli",
@@ -248,13 +248,13 @@ function _createGigs(){
             "level": "Level 2 Seller",
             "daysToMake": 3,
             "description": {
-                "categorey": "Digital Marketing",
+                "category": "Digital Marketing",
                 "aboutThisGig":"Promote Your Dropshipping E-commerce Store At Your Fingertips.",
                 "whyUs": "24/7 Premium Support",
                 "whatDoYouGet": "Setup Tik Tok Pixel\nMake an Eye-catching Video with Trending Music for Each Campaign (Free)\nSetup Awareness, Consideration, and Conversions Tik Tok Ads Campaigns\nResearch Targeted Audience for your Business that will Generate Sales\nTargeted Multiple Ad set\nLow CPM, CPA, and High Conversion Rate\nOptimize Daily Ads Budget\nSend Daily Campaign Analytics Report"
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/228317272/original/2dd437957f3f29fbe89b9dd79705517cc801a4f7/setup-and-optimize-tiktok-ads-campaign-tik-tok-ads-tiktok-advertising.png","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/e84544f8b59defd0bb389efba28b397e-1650947237/Tiktok%20ads%20(1)/setup-and-optimize-tiktok-ads-campaign-tik-tok-ads-tiktok-advertising.png"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u103",
                 "fullName": "courtney lasch",
@@ -274,13 +274,13 @@ function _createGigs(){
             "level": "Top Rated Seller",
             "daysToMake": 7,
             "description": {
-                "categorey": "Digital Marketing",
+                "category": "Digital Marketing",
                 "aboutThisGig":"We are JAY & LUCY, serving successfully as Google Certified SEO Consultants & Algorithm Experts since more than 10 years & we genuinely believe in Transparency, Quality & PRODUCING RESULTS!",
                 "whyUs": "Because, we don’t settle for anything less than the First Place! ",
                 "whatDoYouGet": "Diversified Backlinks from High DA Sites with Niche relevant content\nMixed in Natural Way: Dofollow & Nofollow\nEfficient Link building Strategy: Built in Multi-Tiered Structure-Tier 1 & Tier 2\nMaintained Anchor Diversity – Branded, Naked, Generic, LSI, Partial Match & Exact Match Anchors\nINDEXING: Indexed in Drip Feed for average of 10-30 Days through Multiple Indexers\nWE WILL TRACK THE RANKING KEEP YOU UPDATED CONSTANTLY"
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/171968234/original/3f1898cf2fe7015e66776b23f5a1cca405342dcc/do-alpha-gods-seo-package-to-explode-your-ranking.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/171968234/original/0a30487e402f737b92e2b917bedc6e2e11d65f40/do-alpha-gods-seo-package-to-explode-your-ranking.jpg"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u112",
                 "fullName": "febzpena",
@@ -300,13 +300,13 @@ function _createGigs(){
             "level": "Level 2 Seller",
             "daysToMake": 5,
             "description": {
-                "categorey": "Digital Marketing",
+                "category": "Digital Marketing",
                 "aboutThisGig":"Blogging is the key to optimizing your sales, identifying with your audience, and expanding your customer base. If it isn't already part of your brand's marketing strategy, the time to get on board is now",
                 "whyUs": " ",
                 "whatDoYouGet": "Your brand voice brought to life\nCopyscape passable language that targets your specific audience\nCatchy, algorithm-friendly titles\nExpertly crafted travel content that captivates your readers\nOptimized formatting\nOriginal work, no outsourcing ever"
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/166258129/original/bbe360071ee14bead92cccaca54858412fd689ef/write-a-post-for-your-travel-blog.jpg","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/166258129/original/55c722144fd89d7dfc7bd6c2513e421aa0a26fe7/write-a-post-for-your-travel-blog.png"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u123",
                 "fullName": "pjd2019",
@@ -326,19 +326,20 @@ function _createGigs(){
             "level": "Level 2 Seller",
             "daysToMake": 2,
             "description": {
-                "categorey": "Writing & Translation",
+                "category": "Writing & Translation",
                 "aboutThisGig":"I will swiftly and flawlessly translate your text from English into Brazilian Portuguese. Just hand me what you need translated, and let the magic happen!",
                 "whyUs": "I am fully bilingual and have been a full-time, professional translator and linguist since 2010. My expertise has enabled me to work in many exciting, highly technical projects across a wide range of subjects over the years, including, for example, translating the Cancer Atlas for the American Cancer Society. Likewise, I also have extensive experience translating luxury marketing content, a task commanding a highly sophisticated, meticulous use of the language.",
                 "whatDoYouGet": ""
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/128166768/original/c4550494df54b72229a2e36ac268af544c7762ea/professionally-translate-into-brazilian-portuguese.png","https://fiverr-res.cloudinary.com/images/t_smartwm/t_gig_pdf_gallery_view_ver4,q_auto,f_auto/attachments/delivery/asset/87af27dafbe1caa894eed0574846841b-1615844760/img20210315_17510594/professionally-translate-into-brazilian-portuguese.pdf"],
-            "categorey": "Digital Marketing",
+            "category": "Digital Marketing",
             "likedByUsers": {
                 "_id": "u126",
                 "fullName": "jnismith2000",
                 "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/1b09c5e9e6a2068b2e52982392410de9-1505051459868/a8ccb197-f0ee-4315-9f9b-c8ff5277b754.JPG"
                 }
         }
-    ]  
+    ]
+       
     return gigs  
 }

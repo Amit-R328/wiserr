@@ -20,6 +20,7 @@ export const GigPage = () => {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
+<<<<<<< HEAD
         const onScroll = () => setOffset(window.pageYOffset);
         // clean up code
         window.removeEventListener('scroll', onScroll);
@@ -28,15 +29,22 @@ export const GigPage = () => {
     }, []);
 
     console.log(offset);
+=======
+        dispatch(loadGigs())
+    },[])
+>>>>>>> 46b59a5e5fd47d474bdb0e792b677ccdff8215bf
 
     useEffect(() => {
         dispatch(loadGigs(filterBy))
     }, [])
 
     const onChangeCategory = (category) => {
+        console.log('CATEGORY',category )
         filterBy = { ...filterBy, category: category }
         dispatch(setFilter(filterBy))
+        console.log('FILTERBY FROM ONCHANGECATEGORY:', filterBy)
         navigate('/categories')
+        dispatch(loadGigs())
     }
 
     return (

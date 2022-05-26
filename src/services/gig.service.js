@@ -33,16 +33,18 @@ function getById(toyId) {
 }
 
 async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = ''}){
+    console.log('QUERY FROM SERVICE FILTER:', category)
     let gigs = await storageService.query(STORAGE_KEY)
-    console.log('GIGS FROM SERVICE:', gigs)
-    if (txt) {
+    
+    if (txt !== '') {
         const regex = new RegExp(txt, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description) || regex.test(gig.owner.fullName))
     }
-    if(priceMin) gigs = gigs.filter(gig => gig.price >= priceMin)
-    if(priceMax < Infinity) gigs.filter(gig => gig.price <= priceMax)
-    if(deliveryDate) gigs.filter(gig => gig.daysToMake === deliveryDate)
-    if(category) gigs.filter(gig => gig.category === category)
+    if(priceMin > 0) gigs = gigs.filter(gig => gig.price >= priceMin)
+    if(priceMax < Infinity)gigs = gigs.filter(gig => gig.price <= priceMax)
+    if(deliveryDate > 0)gigs = gigs.filter(gig => gig.daysToMake === deliveryDate)
+    if(category !== '') gigs = gigs.filter(gig => gig.category === category)
+    console.log('Gigs from Service:', gigs)
     return Promise.resolve(gigs)
 }
 
