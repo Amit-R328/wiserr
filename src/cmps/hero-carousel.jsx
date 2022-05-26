@@ -12,6 +12,7 @@ import { EffectFade } from 'swiper'
 
 export class HeroCarousel extends React.Component {
   state = {
+    user: this.props.user,
     jobs: [
       {
         title: 'Fashion Designer',
@@ -40,7 +41,7 @@ export class HeroCarousel extends React.Component {
     return this.state.jobs.map(job => {
       return (
         <SwiperSlide>
-          <img className='img-slide' src={job.img} alt="" key={job.title} />
+            <img className='img-slide ratio-16-9' src={job.img} alt="" key={job.title}/>
         </SwiperSlide>
       )
     })
@@ -51,9 +52,8 @@ export class HeroCarousel extends React.Component {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
-        // autoplay={{ delay: 5000 }}
-        // autoplayTimeout={2}
-        autoplay
+        autoplay={{ delay: 5000 }}
+        autoplayTimeout={2}
       >
         {this.createSlide()}
       </Swiper>
