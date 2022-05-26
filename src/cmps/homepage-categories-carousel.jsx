@@ -57,44 +57,46 @@ import Slider from "react-slick";
 import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ArrowLeft, ArrowOnButtonLeftGrey, ArrowOnButtonRightGrey } from "../services/svg.service.js";
+import { RightArrowOnCircle, LeftArrowOnCircle  } from "../services/svg.service.js";
 
 export const HomepageCategoriesCarousel = (props) => {
-  return (
-      <div className="carousel-container">
-          <div className="track">
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-              <div className="card-container">
-                  <div className="card"></div>
-              </div>
-          </div>
-          <div className="nav">
-              <button className="prev"><ArrowOnButtonLeftGrey/></button>
-              <button className="next"><ArrowOnButtonRightGrey/></button>
-          </div>
-      </div>
-  )
+    return (
+        <div className="carousel-container">
+            <div className="track">
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+                <div className="card-container">
+                    <div className="card"></div>
+                </div>
+            </div>
+            <div className="nav">
+                <button className="prev">
+                    <LeftArrowOnCircle/>
+                </button>
+                    
+                <button className="next"><RightArrowOnCircle/></button>
+            </div>
+        </div>
+    )
 
-    
+
 }
