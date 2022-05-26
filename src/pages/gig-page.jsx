@@ -27,6 +27,7 @@ export const GigPage = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    console.log(offset);
 
     useEffect(() => {
         dispatch(loadGigs(filterBy))

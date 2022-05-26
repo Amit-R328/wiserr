@@ -341,35 +341,57 @@ export function VideoIcon() {
     )
 }
 
-export function ArrowInButtonLeftGrey() {
+export function ArrowOnButtonLeftGrey() {
+    return (
+        <svg class="arrow-on-button-left-grey" width="40" height="40">
+            <path fill="#555" d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z" />
+        </svg>
+    )
+}
+
+export function ArrowOnButtonRightGrey() {
+    return (
+        <svg width="40" height="40">
+            <path fill="#555"
+                d="M23.2 388.2L35 400l50-50-50-50-11.8 11.8L61.4 350l-38.2 38.2zm53.6-176.4L65 200l-50" />
+        </svg>
+    )
+}
+
+export function ArrowOnButtonLeftBlack() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="400">
-        <path fill="#555" d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z"/>
+            <path d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z" />
         </svg>
     )
 }
 
-export function ArrowInButtonRightGrey() {
+export function ArrowOnButtonRightBlack() {
     return (
         <svg width="100" height="400">
-        <path fill="#555" 
-        d="M23.2 388.2L35 400l50-50-50-50-11.8 11.8L61.4 350l-38.2 38.2zm53.6-176.4L65 200l-50"/>
+            <path d="M23.2 188.2L35 200l50-50-50-50-11.8 11.8L61.4 150l-38.2 38.2z" />
         </svg>
     )
 }
 
-export function ArrowInButtonLeftBlack() {
+export function RightArrowOnCircle() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="400">
-        <path d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z"/>
+        <svg fill="#ffffff" stroke-width="0" viewBox="0 0 24 24" height="4em" width="4em">
+            <path d="M11.999,1.993c-5.514,0.001-10,4.487-10,10.001s4.486,10,10.001,10c5.513,0,9.999-4.486,10-10 C22,6.48,17.514,1.994,11.999,1.993z">
+            </path>
+            <path fill="#62646a" d="M12 10.994L8 10.994 8 12.994 12 12.994 12 16 16.005 11.995 12 7.991z">
+            </path>
         </svg>
     )
 }
 
-export function ArrowInButtonRightBlack() {
+export function LeftArrowOnCircle() {
     return (
-        <svg width="100" height="400">
-        <path d="M23.2 188.2L35 200l50-50-50-50-11.8 11.8L61.4 150l-38.2 38.2z"/>
+        <svg fill="#ffffff" stroke-width="0" viewBox="0 0 24 24" height="4em" width="4em">
+            <path d="M11.999,1.993C6.486,1.994,2,6.48,1.999,11.994c0,5.514,4.486,10,10.001,10c5.514-0.001,10-4.487,10-10 C22,6.48,17.514,1.994,11.999,1.993z">
+            </path>
+            <path fill="#62646a" d="M12.012 7.989L8.007 11.994 12.012 15.998 12.012 12.994 16.006 12.994 16.006 10.994 12.012 10.994z">
+            </path>
         </svg>
     )
 }

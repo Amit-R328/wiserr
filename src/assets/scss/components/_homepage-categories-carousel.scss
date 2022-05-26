@@ -11,7 +11,7 @@
         }
 
     }
-    
+
     .card-container {
         width: 256px;
         flex-shrink: 0;
@@ -34,7 +34,7 @@
         }
 
     }
-        
+
     .nav {
         button {
             width: 60px;
@@ -50,7 +50,16 @@
             }
             &.next {
                 right: -30px;
+            background: none;
+
+            &.prev {
+                filter: drop-shadow(-1px 0px 2px rgb(193, 191, 191));
+            }
+
+            &.next {
+                filter: drop-shadow(1px 0px 2px rgb(193, 191, 191));
             }
         }
+    }
     }
 }
