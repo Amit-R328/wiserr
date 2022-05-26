@@ -22,7 +22,7 @@ export class _GigPage extends React.Component{
         const {gigs} = this.props
         return(
             <section className="gigs-app-container">
-                {!gigs} ? <h1>Loading</h1> : <GigList gigs={gigs}/>
+                <GigList gigs={gigs}/>
             </section>
         )
     }

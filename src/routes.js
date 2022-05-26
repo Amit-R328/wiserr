@@ -1,8 +1,8 @@
 import { HomePage } from './pages/home-page.jsx'
 import { AboutUs } from './pages/about-us.jsx'
-import { CarApp } from './pages/car-app.jsx'
+
 import { ReviewApp } from './pages/review-app.jsx'
-import { ChatApp } from './pages/chat-app.jsx'
+
 import { BusinessHomepage } from './cmps/business-homepage.jsx'
 import { BusinessTools } from './cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-solutions.jsx'
