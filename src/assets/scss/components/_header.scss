@@ -27,6 +27,20 @@
                 // justify-content: space-between;
                 // align-content: space-between;
                 align-items: center;
+
+                @media screen and (max-width: 600px) {
+                    .btn-navicon {
+                        display: block;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                    }
+                }
+            }
+            .btn-navicon {
+                display: none;
+                
+                
             }
 
             .logo {
@@ -212,9 +226,34 @@
             height: 680px;
             z-index: 1;
 
-            & .ratio-16-9 { 
-                @include aspect-ratio(100, 56); 
+            @mixin aspect-ratio($width: 1, $height: 1) {
+                position: relative;
+                overflow: hidden;
+
+                &:before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    padding-top: ($height / $width) * 100%;
+                }
+
+                >* {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+
+                >img {
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
+
+            // & .ratio-16-9 { 
+            //     @include aspect-ratio(100, 56); 
+            // }
         }
 
         p {
@@ -228,20 +267,6 @@
     }
 }
 
-
-
-.btn-navicon {
-    display: none;
-}
-
-@media screen and (max-width: 600px) {
-    .btn-navicon {
-        display: block;
-        background-color: transparent;
-        outline: none;
-        border: none;
-    }
-}
 
 
 

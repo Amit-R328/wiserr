@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, SearchBar } from '../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
-import {HeroCarousel} from './hero-carousel.jsx'
+import { HeroCarousel } from './hero-carousel.jsx'
 
 export const AppHeaderHomePage = (props) => {
 
@@ -26,7 +26,7 @@ export const AppHeaderHomePage = (props) => {
                                     <div className="search-bar-package-container">
                                         <form className="search-bar-package search_bar-package">
                                             <span className="search-bar-icon" aria-hidden="true">
-                                                <SearchBar/>
+                                                <SearchBar />
                                             </span>
                                             <input type="search" autoComplete="off" placeholder="Find services" value="" />
                                             <button className="co-white submit-button bg-co-green-700">Search</button>
@@ -109,8 +109,7 @@ export const AppHeaderHomePage = (props) => {
             </div>
 
             <div className="hero-wrapper hero-andrea">
-                <div className="hero-backgrounds"><HeroCarousel/>
-                    
+                <div className="hero-backgrounds"><HeroCarousel />
                 </div>
                 <div className="hero max-width-container">
                     <div className="header">
