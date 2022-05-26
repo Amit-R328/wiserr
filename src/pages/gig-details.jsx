@@ -19,7 +19,7 @@ export const GigDetails = (props) =>{
 
     useEffect(() => {
         dispatch(getById(params.gigId))
-    })
+    },[params])
 
     const onGoBack = () => {
         props.history.push('/categories')

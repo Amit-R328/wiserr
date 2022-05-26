@@ -19,8 +19,8 @@ export function searchJobByName(){
 export function loadGigs(){
     return async (dispatch, getState) => {
         try {
-            
-            const gigs = await gigService.query()
+            const filterBy = getState().gigModule.filterBy
+            const gigs = await gigService.query(filterBy)
             console.log('GIGS FROM JOBS.ACTION.JS:',gigs)
             const action = {type: 'SET_GIGS', gigs}
             dispatch(action)                
@@ -47,5 +47,14 @@ export function getById(gigId) {
         } catch(err) {
         console.error('Error:', err)
         }
+    }
+}
+
+export function setFilter(filterBy) {
+    return (dispatch) => {
+        return dispatch({
+            type: 'SET_FILTERBY',
+            filterBy,
+        })
     }
 }

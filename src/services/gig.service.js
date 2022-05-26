@@ -32,8 +32,18 @@ function getById(toyId) {
     return storageService.get(STORAGE_KEY, toyId)
 }
 
-function query(filterBy = {}){
-    return storageService.query(STORAGE_KEY)
+async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = ''}){
+    let gigs = await storageService.query(STORAGE_KEY)
+    console.log('GIGS FROM SERVICE:', gigs)
+    if (txt) {
+        const regex = new RegExp(txt, 'i')
+        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description) || regex.test(gig.owner.fullName))
+    }
+    if(priceMin) gigs = gigs.filter(gig => gig.price >= priceMin)
+    if(priceMax < Infinity) gigs.filter(gig => gig.price <= priceMax)
+    if(deliveryDate) gigs.filter(gig => gig.daysToMake === deliveryDate)
+    if(category) gigs.filter(gig => gig.category === category)
+    return Promise.resolve(gigs)
 }
 
 function subscribe(listener) {

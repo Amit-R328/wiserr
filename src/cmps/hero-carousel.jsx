@@ -42,6 +42,7 @@ export class HeroCarousel extends React.Component {
       return (
         <SwiperSlide>
           <img className='img-slide ratio-16-9' src={job.img} alt="" key={job.title} />
+          
         </SwiperSlide>
       )
     })
