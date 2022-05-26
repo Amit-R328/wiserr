@@ -13,18 +13,14 @@ export class RootCmp extends React.Component {
 
     render() {
         return (
-            <div className="main-wrapper">
-                <HomePage />
+            
                 <main className="main-content">
                     <Routes>
                         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
                         <Route path="user/:id" element={<UserDetails />} />
                     </Routes>
                 </main>
-                <div className="footer-container">
-                    <AppFooter />
-                </div>
-            </div>
+               
         )
     }
 }
