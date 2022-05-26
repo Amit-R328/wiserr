@@ -19,7 +19,7 @@ export function searchJobByName(){
 export function loadGigs(){
     return async (dispatch, getState) => {
         try {
-            // const filterBy = getState().jobModule.filterBy
+            
             const gigs = await gigService.query()
             console.log('GIGS FROM JOBS.ACTION.JS:',gigs)
             const action = {type: 'SET_GIGS', gigs}
@@ -33,5 +33,19 @@ export function loadGigs(){
             dispatch(ev.data)
         }
         gigService.subscribe(subscriber)
+    }
+}
+
+export function getById(gigId) {
+    return async dispatch => {
+        try {
+        const gig = await gigService.getById(gigId)
+        dispatch({
+                    type: 'GET_BY_ID',
+                    gig
+                })        
+        } catch(err) {
+        console.error('Error:', err)
+        }
     }
 }

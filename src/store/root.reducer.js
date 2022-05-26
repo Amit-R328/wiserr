@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
     // userModule: userReducer,
     systemModule: systemReducer,
     // reviewModule: reviewReducer,
-    jobsModule: gigsReducer
+    gigModule: gigsReducer
 })
 
 
