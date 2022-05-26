@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { LogoFull, LogoFullWhite, HamburgerMenu, SearchBar } from '../services/svg.service.js'
+import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
 
@@ -14,7 +14,8 @@ export const AppHeaderHomePage = (props) => {
                         <div className="header-row-wrapper">
                             <div className="header-row max-width-container equal-padding row-main">
                                 <button className="btn-navicon">
-                                    <HamburgerMenu />
+                                    <HamburgerMenuWhite />
+                                    {/* <HamburgerMenu /> */}
                                 </button>
                                 <div className="logo-main-header">
                                     <NavLink to="/" className="site-logo">
