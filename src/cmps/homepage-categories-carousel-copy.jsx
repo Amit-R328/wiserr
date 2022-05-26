@@ -3,8 +3,26 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 export const HomepageCategoriesCarouselTest = (props, deviceType) => {
+    const CustomLeftArrow = ({ onClick }) => (
+        <i onClick={() => onClick()} className="custom-left-arrow" />
+      );
+      const CustomRightArrow = ({ onClick }) => {
+        return <i className="custom-right-arrow" onClick={() => onClick()} />;
+      };
+      
+      const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }) => {
+        const { totalItems, currentSlide } = carouselState;
+        return (
+          <div className="custom-button-group">
+            <div>Current slide is {currentSlide}</div>
+            <button onClick={() => previous()}>Previous slide</button>
+            <button onClick={() => next()}>Next slide</button>
+          </div>
+        );
+      };
 
-    const responsive = {
+
+            const responsive = {
         superLargeDesktop: {
             // the naming can be any, depends on you.
             breakpoint: { max: 4000, min: 3000 },
@@ -50,7 +68,8 @@ export const HomepageCategoriesCarouselTest = (props, deviceType) => {
                     beforeChange={() => this.setState({ isMoving: true })}
                     afterChange={() => this.setState({ isMoving: false })}
                 >
-                    <div class="carousel-item-padding-40-px">
+                    
+                    <div class="slick-slide">
                         <div class="subcategory-wrapper touch">
                             <a href="/categories/graphics-design" className="subcategory">
                                 <h4>
