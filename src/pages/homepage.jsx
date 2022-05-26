@@ -24,14 +24,9 @@ export const HomePage = (props, onChangeCategory) => {
                 </div>
             </div>
             {/* <HeroCarousel/> */}
+            {/* <HomepageCategoriesCarouselTest/> */}
             <HomepageCategoriesCarousel/>
 
         </section>
     )
 }
-
-
-{/* <ArrowInButtonLeftGrey/> */ }
-{/* <ArrowInButtonRightGrey/> */ }
-{/* <ArrowInButtonLeftBlack/> */ }
-{/* <ArrowInButtonRightBlack/> */ }
