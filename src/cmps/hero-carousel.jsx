@@ -51,9 +51,8 @@ export class HeroCarousel extends React.Component {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
-        // autoplay={{ delay: 5000 }}
+        autoplay={{ delay: 3000 }}
         // autoplayTimeout={2}
-        autoplay
       >
         {this.createSlide()}
       </Swiper>

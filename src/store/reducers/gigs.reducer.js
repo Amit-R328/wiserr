@@ -32,7 +32,7 @@ const initialState = {
     gigs: []
 }
 
-export function jobsReducer(state = initialState, action) {
+export function gigsReducer(state = initialState, action) {
     let gigs
 
     switch (action.type) {

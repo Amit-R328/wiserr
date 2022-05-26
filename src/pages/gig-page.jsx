@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 // import React, { useState } from 'react'
 // import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
 // import { NavLink } from 'react-router-dom'
-import { loadGigs } from '../store/actions/jobs.actions.js'
+import { loadGigs } from '../store/actions/gigs.actions.js'
 import {GigList} from '../cmps/gig-list.jsx'
 
 export class _GigPage extends React.Component{
