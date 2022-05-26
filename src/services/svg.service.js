@@ -341,25 +341,24 @@ export function VideoIcon() {
     )
 }
 
-<<<<<<< HEAD
-export function ArrowInButtonLeftGrey() {
+export function ArrowOnButtonLeftGrey() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="400">
+        <svg class="arrow-on-button-left-grey" width="40" height="40">
         <path fill="#555" d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z"/>
         </svg>
     )
 }
 
-export function ArrowInButtonRightGrey() {
+export function ArrowOnButtonRightGrey() {
     return (
-        <svg width="100" height="400">
+        <svg width="40" height="40">
         <path fill="#555" 
         d="M23.2 388.2L35 400l50-50-50-50-11.8 11.8L61.4 350l-38.2 38.2zm53.6-176.4L65 200l-50"/>
         </svg>
     )
 }
 
-export function ArrowInButtonLeftBlack() {
+export function ArrowOnButtonLeftBlack() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="100" height="400">
         <path d="M23.2 388.2L35 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z"/>
@@ -367,21 +366,10 @@ export function ArrowInButtonLeftBlack() {
     )
 }
 
-export function ArrowInButtonRightBlack() {
+export function ArrowOnButtonRightBlack() {
     return (
         <svg width="100" height="400">
-=======
-export function ArrowInButton() {
-    return (
-        <svg width="100" height="400">
-            <path d="M76.8 11.8L65 0 15 50l50 50 11.8-11.8L38.6 50l38.2-38.2z"/>
-        <path fill="#555" d="M23.2 388.2L35 400l50-50-50-50-11.8 11.8L61.4 350l-38.2 38.2zm53.6-176.4L65 200l-50 50 50 50 11.8-11.8L38.6 250l38.2-38.2z"/>
->>>>>>> 46b59a5e5fd47d474bdb0e792b677ccdff8215bf
         <path d="M23.2 188.2L35 200l50-50-50-50-11.8 11.8L61.4 150l-38.2 38.2z"/>
         </svg>
     )
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 46b59a5e5fd47d474bdb0e792b677ccdff8215bf
