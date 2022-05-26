@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SearchBar } from '../services/svg.service.js'
+import { SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
 
