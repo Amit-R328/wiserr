@@ -1,9 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { loadGigs, setFilter  } from '../../store/actions/gigs.actions.js'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useSelector, useDispatch} from 'react-redux'
+
 // import { NavLink } from 'react-router-dom'
 // import { useSelector} from 'react-redux'
 
-export const CategoriesNavHeader = ({onChangeCategory}) => {
+export const CategoriesNavHeader = () => {
     // const {filterBy} = useSelector((storeState) => storeState.gigModule)
+    let { filterBy } = useSelector((storeState) => storeState.gigModule)
+    const { gigs } = useSelector((storeState) => storeState.gigModule)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const params = useParams()
+
+    const onChangeCategory = (category) => {
+        console.log('CATEGORY',category )
+        filterBy = { ...filterBy, category: category }
+        dispatch(setFilter(filterBy))
+        console.log('FILTERBY FROM ONCHANGECATEGORY:', filterBy)
+        navigate('/categories')
+        dispatch(loadGigs())
+    }
 
     return (
         <div id="categories-menu" className="categories-menu-scroll ">
