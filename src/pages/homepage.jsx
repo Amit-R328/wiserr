@@ -6,20 +6,16 @@ import { AppFooter } from '../cmps/app-footer.jsx'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
 import { setFilter } from "../store/actions/gigs.actions.js"
-
 export const HomePage = (props) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const params = useParams()
 
-    
-
     const onChangeCategory = (category) => {
         filterBy = {...filterBy, category: category}
         dispatch(setFilter(filterBy))
-        navigate('/categories')
-        
+        navigate('/categories')  
     }
 
     return (
@@ -28,7 +24,8 @@ export const HomePage = (props) => {
                 <div className="app-header">
                     <div className="main-header sticky">
                         <AppHeaderHomePage />
-                        <CategoriesNavHeader history={props.history} onChangeCategory={onChangeCategory} />
+                        <CategoriesNavHeader onChangeCategory={onChangeCategory}/>
+                        {/* <CategoriesNavHeader onChangeCategory={onChangeCategory} test={'hi'}/> */}
                     </div>
                     <HeroHeaderHomePage />
                 </div>

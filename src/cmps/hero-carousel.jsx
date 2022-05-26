@@ -15,6 +15,7 @@ export class HeroCarousel extends React.Component {
     user: this.props.user,
     gigs: [
       {
+        name: 'Andrea',
         title: 'Fashion Designer',
         img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png'
       },
@@ -41,7 +42,10 @@ export class HeroCarousel extends React.Component {
     return this.state.gigs.map(gig => {
       return (
         <SwiperSlide>
+          <p>{gig.name}</p>
+          <b>{gig.title}</b>
           <img className='img-slide ratio-16-9' src={gig.img} alt="" key={gig.title} />
+
         </SwiperSlide>
       )
     })
@@ -55,33 +59,8 @@ export class HeroCarousel extends React.Component {
         autoplay={{ delay: 5000 }}
         autoplayTimeout={2}
       >
-      <div className="hero-andrea">
-        {this.createSlide()}
-          <div className="seller-name max-width-container"><p>Andrea, <b>Fashion Designer</b>
-          </p>
-          </div>
-        </div>
-        <div className="hero-moon">
-          <div className="seller-name max-width-container show-stars"><p>Moon, <b>Marketing Expert</b>
-          </p>
-          </div>
-        </div>
-        <div className="hero-ritika">
-          <div className="seller-name max-width-container"><p>Ritika, <b>Shoemaker and Designer</b>
-          </p>
-          </div>
-        </div>
-        <div className="hero-zach" >
-          <div className="seller-name max-width-container">
-            <p>Zach, <b>Bar Owner</b>
-            </p>
-          </div>
-        </div>
-        <div className="hero-gabrielle">
-          <div className="seller-name max-width-container show-stars">
-            <p>Gabrielle, <b>Video Editor</b>
-            </p>
-          </div>
+        <div className="hero-andrea">
+          {this.createSlide()}
         </div>
       </Swiper>
 

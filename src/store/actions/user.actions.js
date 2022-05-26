@@ -27,7 +27,7 @@ export function removeUser(userId) {
     }
 }
 
-export function onLogin(credentials) {
+export function login(credentials) {
     return async (dispatch) => {
         try {
             const user = await userService.login(credentials)
@@ -36,14 +36,13 @@ export function onLogin(credentials) {
                 user
             })
         } catch (err) {
-            showErrorMsg('Cannot login')
             console.log('Cannot login', err)
         }
     }
 }
 
 
-export function onSignup(credentials) {
+export function signup(credentials) {
     return async (dispatch) => {
         try {
             const user = await userService.signup(credentials)
@@ -52,7 +51,6 @@ export function onSignup(credentials) {
                 user
             })
         } catch (err) {
-            showErrorMsg('Cannot signup')
             console.log('Cannot signup', err)
         }
 
