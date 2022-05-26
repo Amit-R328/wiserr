@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import React, { useState } from 'react'
 
 // import { removeFromCart, checkout } from '../store/car.actions'
-import { UserMsg } from './user-msg.jsx'
 
 export const AppFooter = (props) => {
 

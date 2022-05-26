@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import './style.css';
+import '../assets/scss/main.scss';
 import { useSelector } from 'react-redux';
 import 'swiper/css/autoplay';
 import React from 'react';
@@ -13,7 +13,7 @@ import { EffectFade } from 'swiper'
 export class HeroCarousel extends React.Component {
   state = {
     user: this.props.user,
-    jobs: [
+    gigs: [
       {
         title: 'Fashion Designer',
         img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png'
@@ -37,12 +37,11 @@ export class HeroCarousel extends React.Component {
     ]
   }
   createSlide = () => {
-    console.log('JOBS', this.state.jobs)
-    return this.state.jobs.map(job => {
+    console.log('GIGS', this.state.gigs)
+    return this.state.gigs.map(gig => {
       return (
         <SwiperSlide>
-          <img className='img-slide ratio-16-9' src={job.img} alt="" key={job.title} />
-          
+          <img className='img-slide ratio-16-9' src={gig.img} alt="" key={gig.title} />
         </SwiperSlide>
       )
     })
@@ -56,8 +55,8 @@ export class HeroCarousel extends React.Component {
         autoplay={{ delay: 5000 }}
         autoplayTimeout={2}
       >
+      <div className="hero-andrea">
         {this.createSlide()}
-        <div className="hero-andrea">
           <div className="seller-name max-width-container"><p>Andrea, <b>Fashion Designer</b>
           </p>
           </div>

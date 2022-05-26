@@ -1,5 +1,5 @@
 const initialState = {
-    searchJob: [
+    searchGig: [
         {
             title: 'Fashion Designer',
             img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png'
@@ -36,8 +36,8 @@ export function gigsReducer(state = initialState, action) {
     let gigs
 
     switch (action.type) {
-        case 'SET_JOB_NAME':
-            return { ...state, searchJob: action.jobs }
+        case 'SET_GIG_NAME':
+            return { ...state, searchGig: action.gigs }
         case 'SET_GIGS':
             return { ...state, gigs: action.gigs }
         case 'ADD_GIG':

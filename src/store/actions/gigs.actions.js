@@ -2,13 +2,13 @@ import {gigService} from "../../services/gig.service.js"
 
 var subscriber
 
-export function searchJobByName(){
+export function searchGigByName(){
     return async dispatch => {
         try {
-            const jobs = await gigService.getJobByName()
+            const gigs = await gigService.getGigByName()
             dispatch({
-                type: 'SET_JOB_NAME',
-                jobs
+                type: 'SET_GIG_NAME',
+                gigs
             }) 
         } catch(err) {
             console.error('Error:', err)
@@ -21,7 +21,6 @@ export function loadGigs(){
         try {
             const filterBy = getState().gigModule.filterBy
             const gigs = await gigService.query(filterBy)
-            console.log('GIGS FROM JOBS.ACTION.JS:',gigs)
             const action = {type: 'SET_GIGS', gigs}
             dispatch(action)                
         } catch(err) {
