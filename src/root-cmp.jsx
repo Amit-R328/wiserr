@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router'
 
 import routes from './routes'
 
-import { AppHeaderHomePage } from './cmps/app-header-homepage.jsx'
+import { HomePage } from './pages/homepage.jsx'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { UserDetails } from './pages/user-details'
 
@@ -14,7 +14,7 @@ export class RootCmp extends React.Component {
     render() {
         return (
             <div className="main-wrapper">
-                <AppHeaderHomePage />
+                <HomePage />
                 <main className="main-content">
                     <Routes>
                         {routes.map(route => <Route key={route.path} exact={true} element={route.component} path={route.path} />)}
