@@ -25,7 +25,7 @@ export const GigPage = () => {
     //use effect listen to change in params key and value dispatch [param.category]
 
     useEffect(() => {
-        dispatch(loadGigs(filterBy))
+        dispatch(loadGigs())
     },[])
 
     // componentDidMount() {
@@ -34,9 +34,12 @@ export const GigPage = () => {
     // }
 
     const onChangeCategory = (category) => {
+        console.log('CATEGORY',category )
         filterBy = { ...filterBy, category: category }
         dispatch(setFilter(filterBy))
+        console.log('FILTERBY FROM ONCHANGECATEGORY:', filterBy)
         navigate('/categories')
+        dispatch(loadGigs())
     }
 
     return (
