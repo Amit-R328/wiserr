@@ -37,10 +37,11 @@
                     }
                 }
             }
+
             .btn-navicon {
                 display: none;
-                
-                
+
+
             }
 
             .logo {
@@ -181,7 +182,7 @@
     }
 
     .categories-menu-scroll {
-        visibility: hidden;
+        visibility: visible;
         width: 100%;
         min-height: 41px;
         background-color: pink;
@@ -193,24 +194,29 @@
             justify-content: space-around;
             // align-items: center;
 
-            & li a {
+            & li {
                 list-style: none;
                 text-decoration: none;
                 font-weight: inherit;
                 color: inherit;
                 font-family: inherit;
-                cursor: pointer;
 
-                &:hover {
-                    cursor: pointer;
-                    color: green;
+                & button {
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+
+                    &:hover {
+                        cursor: pointer;
+                        // color: green;
+                    }
                 }
             }
         }
 
     }
-
 }
+
 
 
 

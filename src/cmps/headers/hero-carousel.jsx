@@ -4,7 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import '../assets/scss/main.scss';
+import '../../assets/scss/main.scss';
 import { useSelector } from 'react-redux';
 import 'swiper/css/autoplay';
 import React from 'react';

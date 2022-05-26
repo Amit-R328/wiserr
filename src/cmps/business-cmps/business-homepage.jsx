@@ -1,5 +1,5 @@
 import React from 'react'
-import { LogoBusinessFull } from '../services/svg.service.js'
+import { LogoBusinessFull } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { BusinessTools } from './business-tools.jsx'
 import { BusinessSolutions } from './business-solutions.jsx'

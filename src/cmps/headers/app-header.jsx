@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../services/svg.service.js'
-
+import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 
-export const AppHeaderHomePage = (props) => {
+export const AppHeader = (props) => {
 
     return (
         <div className="header">
