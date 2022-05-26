@@ -1,5 +1,5 @@
 .app-header {
-    height: 680px;
+    // height: 680px;
 
     .main-header {
         // background-color: green;
@@ -188,27 +188,42 @@
         background-color: pink;
         margin: 0;
 
-        .categories {
+        ul.categories {
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: space-between;
+            // justify-content: flex-start;
             // align-items: center;
+            margin: 0 auto;
+            padding: 0;
 
-            & li {
+            >li {
+                display: inline-block;
+                flex-shrink: 0;
                 list-style: none;
                 text-decoration: none;
                 font-weight: inherit;
                 color: inherit;
                 font-family: inherit;
+                padding: 0 10px;
+                position: relative;
 
                 & button {
                     background-color: transparent;
                     outline: none;
                     border: none;
+                    font-size: 1em;
+                    display: block;
+                    line-height: 24px;
+                    padding: 8px 0;
+                    position: relative;
+                    transition: color 0.2s ease;
 
                     &:hover {
                         cursor: pointer;
                         // color: green;
+                        text-decoration: none;
+                        color: color($grey, 1000);
                     }
                 }
             }

@@ -15,7 +15,9 @@
 @import './basics/layout-max-container';
 
 // COMPONENTS
-@import './components/header';
+@import './components/app-header';
+@import './components/categories-nav-header';
+@import './components/homepage-header';
 @import './components/hero-header';
 @import './components/footer';
 // @import './components/nav-header';
