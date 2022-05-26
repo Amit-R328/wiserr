@@ -5,7 +5,7 @@ const STORAGE_KEY = 'gig'
 const gigChannel = new BroadcastChannel('gigChannel')
 
 export const gigService = {
-    getJobByName,
+    getGigByName,
     query,
     subscribe,
     unsubscribe,
@@ -13,7 +13,7 @@ export const gigService = {
 
 }
 
-function getJobByName(){
+function getGigByName(){
     return [
         {title: 'Fashion Designer', 
         img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png'}, 

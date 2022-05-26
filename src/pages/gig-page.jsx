@@ -30,7 +30,7 @@ export class _GigPage extends React.Component{
 
 const mapStateToProps = (storeState) => {
     return {
-        gigs: storeState.jobsModule.gigs,
+        gigs: storeState.gigModule.gigs,
     }
 }
 
