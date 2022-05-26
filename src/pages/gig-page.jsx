@@ -1,37 +1,37 @@
-import React, { useState, useEffect } from 'react'
-import { connect } from 'react-redux'
-// import React, { useState } from 'react'
-// import { LogoFull, HamburgerMenu, Language, RightArrowShowMore } from '../services/svg.service.js'
-// import { NavLink } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
 import { loadGigs } from '../store/actions/gigs.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
-// import { useParams } from 'react-router-dom'
+import { FilterGigs } from '../cmps/filter-gigs.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
-import { AppFooter } from '../cmps/app-footer.jsx'
-import { Link, useNavigate, useParams } from 'react-router-dom'
-import { useSelector, useDispatch} from 'react-redux'
+
+import { useNavigate, useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { setFilter } from "../store/actions/gigs.actions.js"
+import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 
 
 export const GigPage = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
-    const [filter, SetFilter] = useState('')
-    const [categories, SetCategories] = useState([])
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const params = useParams()
-    //use effect listen to change in params key and value dispatch [param.category]
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        const onScroll = () => setOffset(window.pageYOffset);
+        // clean up code
+        window.removeEventListener('scroll', onScroll);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    console.log(offset);
 
     useEffect(() => {
         dispatch(loadGigs(filterBy))
-    },[])
-
-    // componentDidMount() {
-    //     this.props.loadGigs()
-    //     console.log('THIS PROPS:', this.props)
-    // }
+    }, [])
 
     const onChangeCategory = (category) => {
         filterBy = { ...filterBy, category: category }
@@ -40,23 +40,28 @@ export const GigPage = () => {
     }
 
     return (
-        <section className="gigs-app-container">
-            <div className="main-wrapper">
-                <div className="app-header">
-                    <div className="main-header sticky">
-                        <AppHeader />
-                        <CategoriesNavHeader onChangeCategory={onChangeCategory} />
-                        {/* <CategoriesNavHeader history={props.history} onChangeCategory={onChangeCategory} /> */}
-                    </div>
-                </div>
-                <main className="main-content-container">
-                    <GigList gigs={gigs} />
-
-                </main>
-                <div className="footer-container">
-                    <AppFooter />
+        // <section className="gigs-app-container">
+        <div className="main-wrapper">
+            <div className="app-header">
+                <div className="main-header sticky">
+                    {params !== '/' ? <AppHeader /> : <AppHeaderHomePage />}
+                    {offset ?
+                        <CategoriesNavHeader style={{ visibility: 'visible' }}
+                            onChangeCategory={onChangeCategory} />
+                        : <CategoriesNavHeader style={{ visibility: 'hidden' }}
+                            onChangeCategory={onChangeCategory} />}
                 </div>
             </div>
-        </section>
+
+            <main className="main-content-container">
+                <div className="gigs-list-containers">
+                    <FilterGigs />
+                    <GigList gigs={gigs} />
+                </div>
+            </main>
+
+
+        </div>
+        // </section>
     )
 }

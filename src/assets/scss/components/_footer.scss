@@ -6,6 +6,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     min-width: 0;
+    background-color: yellow;
+    height: 55px;
+    width: 100%;
 }
 
 .footer-left {
@@ -17,7 +20,7 @@
     color: #b5b6ba;
     flex-direction: column;
     min-width: 0;
-
+    
     @media only screen and (min-width: 600px) {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;

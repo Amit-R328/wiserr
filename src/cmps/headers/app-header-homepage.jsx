@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState} from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 
 export const AppHeaderHomePage = (props) => {
+    const [searchBar, setSearchBar] = useState('hidden')
+    const [navHeader, setNavHeader] = useState('hidden')
+    const [logo, setLogo] = useState('logo-white')
+    const [headerTextColor, setHeaderTextColor] = useState('white')
 
     return (
         <div className="header">

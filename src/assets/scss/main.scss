@@ -7,7 +7,7 @@
 @import './setup/visibility';
 @import './setup/links';
 
-// BASICS
+// // BASICS
 @import './basics/helpers';
 @import './basics/base';
 @import './basics/layout-flex';
@@ -18,22 +18,20 @@
 @import './components/app-header';
 @import './components/categories-nav-header';
 @import './components/homepage-header';
+@import './components/homepage';
 @import './components/hero-header';
 @import './components/footer';
-// @import './components/nav-header';
 // @import './components/gigs-cards-list';
-// @import './components/footer';
 @import './components/gigs-filter';
 @import './components/gig-list';
 // @import './components/gig-edit';
 // @import './components/gig-details';
-// @import './components/login_signout';
 // @import './components/gig-review';
 @import './components/video';
 
 // PAGES
-// @import './pages/home-page';
-// @import './pages/app-main';
+@import './pages/home-page';
+@import './pages/app-main';
 // @import './pages/business';
 // @import './pages/explore';
 // @import './pages/signin';

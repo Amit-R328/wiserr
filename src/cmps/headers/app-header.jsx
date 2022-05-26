@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
-import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
+import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 
 export const AppHeader = (props) => {
 
     return (
         <div className="header">
-            <header className="logged-out-homepage-header">
                 <div className="header-row-wrapper">
                     <div className="header-row max-width-container equal-padding row-main">
                         <button className="btn-navicon">
-                            <HamburgerMenuWhite />
-                            {/* <HamburgerMenu /> */}
+                            <HamburgerMenu />
                         </button>
                         <div className="logo-main-header">
                             <NavLink to="/" className="site-logo">
-                                <LogoFullWhite />
-                                {/* <LogoFull /> */}
+                                <LogoFull />
                             </NavLink>
                         </div>
                         <div className="wiserr-header-search-animated">
@@ -55,7 +52,6 @@ export const AppHeader = (props) => {
                         </div>
                     </div>
                 </div>
-            </header>
         </div>
     )
 }
