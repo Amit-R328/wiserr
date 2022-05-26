@@ -2,6 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { HeroHeaderHomePage } from '../cmps/headers/hero-header-homepage.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
+import {HomepageCategoriesCarouselTest} from '../cmps/homepage-categories-carousel-copy.jsx'
 import {HomepageCategoriesCarousel} from '../cmps/homepage-categories-carousel.jsx'
 // import { Link, useNavigate, useParams } from 'react-router-dom'
 // import { useSelector, useDispatch} from 'react-redux'
@@ -16,16 +17,16 @@ export const HomePage = (props, onChangeCategory) => {
                 <div className="app-header">
 
                     <div className="main-header sticky">
-                        <AppHeaderHomePage />
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        <AppHeaderHomePage />
                     </div>
 
                     <HeroHeaderHomePage />
                 </div>
             </div>
             {/* <HeroCarousel/> */}
-            {/* <HomepageCategoriesCarouselTest/> */}
-            <HomepageCategoriesCarousel/>
+            <HomepageCategoriesCarouselTest/>
+            {/* <HomepageCategoriesCarousel/> */}
 
         </section>
     )

@@ -2,10 +2,14 @@
     width: 1024px;
     margin: 50px auto;
     min-height: 200px;
-    overflow: hidden;
+    position: relative;
+    
+    .carousel-inner{
+        overflow: hidden;
+        .track {
+            display: flex;
+        }
 
-    .track {
-        display: flex;
     }
 
     .card-container {
@@ -20,13 +24,32 @@
             height: 100%;
             border: 1px solid #ccc;
             box-sizing: border-box;
-            top: 50%;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            >*.img-category-carousel {
+                flex: 1;
+            }
         }
+
     }
 
     .nav {
         button {
-            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 1px solid #aaa;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            &.prev {
+                left: -44px;
+            }
+            &.next {
+                right: -30px;
             background: none;
 
             &.prev {
@@ -37,5 +60,6 @@
                 filter: drop-shadow(1px 0px 2px rgb(193, 191, 191));
             }
         }
+    }
     }
 }
