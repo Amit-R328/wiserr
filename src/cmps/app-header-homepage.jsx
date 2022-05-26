@@ -110,33 +110,7 @@ export const AppHeaderHomePage = (props) => {
 
             <div className="hero-wrapper hero-andrea">
                 <div className="hero-backgrounds"><HeroCarousel/>
-                    <div className="hero-andrea">
-                        <div className="seller-name max-width-container"><p>Andrea, <b>Fashion Designer</b>
-                        </p>
-                        </div>
-                    </div>
-                    <div className="hero-moon">
-                        <div className="seller-name max-width-container show-stars"><p>Moon, <b>Marketing Expert</b>
-                        </p>
-                        </div>
-                    </div>
-                    <div className="hero-ritika">
-                        <div className="seller-name max-width-container"><p>Ritika, <b>Shoemaker and Designer</b>
-                        </p>
-                        </div>
-                    </div>
-                    <div className="hero-zach" >
-                        <div className="seller-name max-width-container">
-                            <p>Zach, <b>Bar Owner</b>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="hero-gabrielle">
-                        <div className="seller-name max-width-container show-stars">
-                            <p>Gabrielle, <b>Video Editor</b>
-                            </p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div className="hero max-width-container">
                     <div className="header">
