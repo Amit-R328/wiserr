@@ -7,6 +7,7 @@ import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel
 import { SellingPropHomepage } from '../cmps/selling-prop-homepage.jsx'
 import { Proposition } from '../cmps/proposition.jsx';
 import { IconCategoriesHomepage } from '../cmps/icon-categories-homepage.jsx';
+import { BusinessSectionHomepage } from '../cmps/business-section-homepage.jsx';
 // import { Link, useNavigate, useParams } from 'react-router-dom'
 // import { useSelector, useDispatch} from 'react-redux'
 // import { setFilter } from "../store/actions/gigs.actions.js"
@@ -46,14 +47,14 @@ export const HomePage = (props, onChangeCategory) => {
                     </div>
                 </div>
             </div>
-            {/* <HeroCarousel/> */}
-            {/* <HomepageCategoriesCarouselTest /> */}
-            {/* <HomepageCategoriesCarousel/> */}
             <div>
                 <SellingPropHomepage />
             </div>
             <div>
                 <IconCategoriesHomepage/>
+            </div>
+            <div>
+                <BusinessSectionHomepage/>
             </div>
         </section>
     )
