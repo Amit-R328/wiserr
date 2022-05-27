@@ -111,6 +111,7 @@ function _createGigs(){
             "reviews":[
             {
             "id":"r101",
+            "userName":"courtneylasch",
             "content":"I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg",
             "stars":5,
@@ -118,6 +119,7 @@ function _createGigs(){
             },
             {
             "id":"r102",
+            "userName":"lordenzoj",
              "content":"Communication was poor. Project was super late with no communication from seller until I reached out. The work overall was pretty good after a few edits",
              "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/d48669eac8ec3b563a685e8bd949a701-1650869312636/0465790c-8906-40e7-9b61-d1ecc95b55d7.jpg",
              "stars":4,
@@ -125,6 +127,7 @@ function _createGigs(){
             },
             {
             "id":"r103",
+            "userName":"joshuamcclur187",
             "content":"Gul071 is amazing. He is very talented and follows up amazingly. I will certainly refer and use his services again. Thank you for doing such an incredible job. I am beyond pleased and excited.",
             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/29461d7f25eb73f0594a8bfb5c8a9d51-947790731647479073.389776/E41D379E-ABFD-4597-A516-4AF55CD1DD7E",
             "stars":5,
@@ -410,6 +413,7 @@ function _createGigs(){
                 }
         }
     ]
+     
      
        
     return gigs  

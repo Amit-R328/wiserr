@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
+import {Search} from '../search.jsx'
+
 export const AppHeaderHomePage = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
@@ -29,8 +31,9 @@ export const AppHeaderHomePage = (props) => {
                                     <span className="search-bar-icon" aria-hidden="true">
                                         <SearchBar />
                                     </span>
-                                    <input type="search" autoComplete="off" placeholder="Find services" value="" />
-                                    <button className="co-white submit-button bg-co-green-700">Search</button>
+                                    {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
+                                    <button className="co-white submit-button bg-co-green-700">Search</button> */}
+                                    <Search/>
                                 </form>
                             </div>
                         </div>
