@@ -19,8 +19,8 @@ export const AppHeaderHomePage = (props) => {
                         </button>
                         <div className="logo-main-header">
                             <NavLink to="/" className="site-logo">
-                                <LogoFullWhite />
-                                {/* <LogoFull /> */}
+                                {/* <LogoFullWhite /> */}
+                                <LogoFull />
                             </NavLink>
                         </div>
                         <div className="wiserr-header-search-animated">

@@ -5,6 +5,7 @@ import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { HomepageCategoriesCarouselTest } from '../cmps/homepage-categories-carousel-copy.jsx'
 import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel.jsx'
 import { SellingPropHomepage } from '../cmps/selling-prop-homepage.jsx'
+import { TestemonialsHomepage } from '../cmps/testemonials-homepage.jsx'
 
 
 import { IconCategoriesHomepage } from '../cmps/icon-categories-homepage.jsx';
@@ -57,9 +58,11 @@ export const HomePage = (props, onChangeCategory) => {
             <div>
                 <BusinessSectionHomepage/>
             </div>
+            <div>
+                <TestemonialsHomepage/>
+            </div>
         </section>
     )
 }
-{/* <HomepageCategoriesCarousel/> */ }
 
 
