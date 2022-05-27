@@ -4,6 +4,7 @@ import { HeroHeaderHomePage } from '../cmps/headers/hero-header-homepage.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { HomepageCategoriesCarouselTest } from '../cmps/homepage-categories-carousel-copy.jsx'
 import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel.jsx'
+import { Proposition } from '../cmps/proposition.jsx';
 // import { Link, useNavigate, useParams } from 'react-router-dom'
 // import { useSelector, useDispatch} from 'react-redux'
 // import { setFilter } from "../store/actions/gigs.actions.js"
@@ -25,6 +26,7 @@ export const HomePage = (props, onChangeCategory) => {
                     <HeroHeaderHomePage />
                 </div>
             </div>
+            <Proposition />
             {/* <div class="trusted-by-wrapper lohp-row">
                 <div class="trusted-by max-width-container">
                     <span class="trusted-by-text">Trusted by:</span>
@@ -55,11 +57,11 @@ export const HomePage = (props, onChangeCategory) => {
                                         </div>
                                         </div> */}
 
-                                        {/* <HeroCarousel/> */}
-                                        <HomepageCategoriesCarouselTest />
-                                        {/* <HomepageCategoriesCarousel/> */}
-                                    </section>
-                                        )
+            {/* <HeroCarousel/> */}
+            <HomepageCategoriesCarouselTest />
+            {/* <HomepageCategoriesCarousel/> */}
+        </section>
+    )
 }
 
 

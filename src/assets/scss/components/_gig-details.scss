@@ -1,0 +1,150 @@
+.gig-details {
+    padding: 32px 32px 0 32px;
+    max-width: 1304px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0 76px 0 76px;
+    flex-direction: row;
+    align-items: flex-start;
+    .left-container {
+        width: 711px;
+        margin-right: 113px;
+        .text-display {
+            padding-bottom: 16px;
+            font-size: 28px;
+            text-align: start;
+            line-height: 36.4px;
+            color: #404145;
+        }
+        .sml-round-img {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+
+        .img-container {
+            border-top: 1px solid #efeff0;
+            padding-top: 20px;
+        }
+
+        .about-title {
+            font-size: 20px;
+            line-height: 28px;
+            padding-bottom: 25px;
+            margin-top: 64px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            color: rgb(64, 65, 69);
+        }
+    
+        .about-seller {
+            border-top: 1px solid #efeff0;
+            margin-top: 20px;
+
+            .owner-card flex{
+                display: flex;
+                padding-bottom: 24px;
+                line-height: 130%;
+            }
+            .md-round-img{
+                border-radius: 50%;
+                width: 110px;
+                height: 110px;
+                margin-bottom: 51px;
+            }
+            .owner-info {
+                border: 1px solid #dadbdd;
+                border-radius: 3px;
+                padding: 24px;
+                .info-left {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    display: flex;
+                    flex-flow: row wrap;
+                    li {
+                        width: 50%;
+                        color: #74767e;
+                        box-sizing: border-box;
+                        padding-bottom: 16px;
+                        strong {
+                            display: block;
+                            padding-top: 4px;
+                            color: #62646a;
+                        }
+                    }
+                }
+                .seller-description{
+                    line-height: 150%;
+                    text-align: left;
+                    border-top: 1px solid #dadbdd;
+                    padding-top: 15px;
+                    margin: 0;
+                    .owner-summary{
+                        max-height: none;
+                        white-space: pre-line;
+                    }
+                }
+            }
+    
+        }
+    } 
+
+    .call-to-action{
+        flex-direction: column;
+        gap: 10px;
+        box-sizing: border-box;
+        border: 1px solid #dadbdd;
+        margin: 0;
+        width: 400.547px;
+        height: 420px;
+        // position: fixed;
+        // top: 0px;
+        // transform: translate3d(0px, 86px, 0px);
+        padding-bottom: 32px;
+        z-index: 5;
+        margin-bottom: 16px;
+
+        .price-package {
+            height: 60px;
+            box-shadow: 0 3px 0 #1dbf73;
+            color: #1dbf73;
+            text-align: center;
+            font-size: 1.5em;
+            padding: 26px 16px 10px 16px;
+            font-size: roboto;
+            font-weight: 700;
+        }
+
+        .order-title-wrapper {
+            margin-top: 20px;
+            flex-direction: column;
+            gap: 20px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 12px;
+            .order-price{
+                font-size: 24px;
+                font-weight: 700;
+                white-space: nowrap;
+                line-height: 24px;
+            }
+        }
+    }
+    
+    .buy-btn{
+        margin-top: 80px;
+        background-color: #1dbf73;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 100%;
+        padding: 12px 24px;
+        text-align: center;
+    }
+
+}

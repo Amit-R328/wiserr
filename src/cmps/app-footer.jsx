@@ -9,18 +9,23 @@ import React, { useState } from 'react'
 export const AppFooter = (props) => {
 
     return (
-        <div className="footer-left">
-            <span className="footer-logo">
-                <LogoFullFooter />
-            </span>
-            <p className="text-body-2 legal">
-                <span className="copyright text-trunc">
-                    <Copyright />
-                    Wiserr International Ltd. 2022
-                </span>
-            </p>
+        <footer className="footer-bottom">
+            <div className="footer-left">
+                <h1 className="footer-logo">
+                    <LogoFullFooter />
+                </h1>
+                <p className="text-body-2 legal">
+                    All rights reserved to Wiserr ltd.    
+                </p>
 
-        </div>
+            </div>
+            <div className="social-container flex">
+                <i className='fab fa-facebook-f'></i>
+                <i className='fab fa-instagram'></i>
+                <i className='fab fa-github	'></i>
+                <i className='	fab fa-twitter'></i>
+            </div>
+        </footer>
     )
 }
 
