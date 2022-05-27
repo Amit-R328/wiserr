@@ -41,37 +41,33 @@ export const GigPage = () => {
         navigate('/categories')
         dispatch(loadGigs())
     }
-    // const renderAppHeader = () => {
-    //     const arr = window.location.href.split('/')
-    //     if ( arr[0] === 'localhost:3000')  {
-    //         return (<AppHeaderHomePage />)
-    //     } else {
-    //         return (<AppHeader />)
-    //     }
-    // } 
+
     return (
-        // <section className="gigs-app-container">
+        <section className="gigs-app-container">
         <div className="main-wrapper">
             <div className="app-header">
                 <div className="main-header sticky">
                     {/* {renderAppHeader()} */}
-                    {offset ?
+                    {/* {offset ?
                         <CategoriesNavHeader style={{ visibility: 'visible' }}
                             onChangeCategory={onChangeCategory} />
                         : <CategoriesNavHeader style={{ visibility: 'hidden' }}
-                            onChangeCategory={onChangeCategory} />}
+                            onChangeCategory={onChangeCategory} />} */}
+                            <AppHeader/>
                 </div>
             </div>
 
-            <main className="main-content-container">
+            <div className="main-content-container">
+                
                 <div className="gigs-list-containers">
                     <FilterBreadCrumbs />
                     <GigList gigs={gigs} />
                 </div>
-            </main>
+            </div>
 
 
         </div>
-        // </section>
+        
+        </section>
     )
 }

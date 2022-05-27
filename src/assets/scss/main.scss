@@ -1,18 +1,19 @@
 // SETUP
 @import './setup/typography';
 @import './setup/variables';
-@import './setup/mixins';
-@import './setup/functions';
+// @import './setup/mixins';
+// @import './setup/functions';
 @import './setup/reset';
-@import './setup/visibility';
+// @import './setup/visibility';
 @import './setup/links';
 
 // // BASICS
 @import './basics/helpers';
 @import './basics/base';
-@import './basics/layout-flex';
-@import './basics/layout-grid';
-@import './basics/layout-max-container';
+@import './basics/layout';
+// @import './basics/layout-flex';
+// @import './basics/layout-grid';
+// @import './basics/layout-max-container';
 
 // COMPONENTS
 @import './components/app-header';
@@ -22,6 +23,8 @@
 @import './components/hero-header';
 @import './components/proposition';
 @import './components/footer';
+@import './components/selling-props-homepage';
+// @import './components/categories-list-icons';
 // @import './components/gigs-cards-list';
 @import './components/gigs-filter';
 @import './components/gig-list';

@@ -25,8 +25,8 @@ export const CategoriesNavHeader = () => {
 
     return (
         <div id="categories-menu" className="categories-menu-scroll ">
-            <div className="categories-menu-wrapper ">
-                <div className="categories-menu-package default has-overflow max-width-container equal-padding">
+            {/* <div className="categories-menu-wrapper ">
+                <div className="categories-menu-package default has-overflow max-width-container equal-padding"> */}
                     <ul className="categories">
                         <li className="sub-menu-item target top-level buckets_without_title buckets-without-title">
                             <button onClick={() => onChangeCategory('Graphics & Design')} className="graphic-design">Graphics &amp; Design</button>
@@ -65,8 +65,8 @@ export const CategoriesNavHeader = () => {
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
+        //     </div>
+        // </div>
 
     )
 }

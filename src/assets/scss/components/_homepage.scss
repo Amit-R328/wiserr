@@ -1,6 +1,88 @@
 .main-content-container {
-    background-color: blue;
-    // height: auto !important;
-    flex: 1;
+  box-sizing: border-box;
+  color: #222;
+  column-gap: 24px;
+  cursor: default;
+  display: grid;
+  grid-auto-rows: minmax(min-content, max-content);
+  line-height: 20px;
+  margin-block-end: 32px;
+  margin-block-start: 8px;
+  row-gap: 40px;
+
+  @media (min-width: 1128px) {
+    .main-content-container {
+      margin-block-end: 32px;
+      margin-block-start: 8px;
+    }
+  }
+
+  @media (min-width: 744px) {
+    .main-content-container {
+      grid-auto-rows: minmax(0, 1fr);
+    }
+  }
+}
+
+.trusted-by-brands {
+  width: 100%;
+  height: 95px;
+  background-color: #fafafa;
+  color: #b5b6ba;
+
+  & ul {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0 24px;
+
+    .brands-container {
+      height: 60px;
+      margin-left: 120px;
+      margin-right: 120px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      // justify-content: center;
+      background-color: green;
+
+      & li {
+        text-align: left;
+        height: 60px;
+        list-style: none;
+        margin: 0;
+        padding: 0 60px 0 0;
+        outline: 0;
+        background-color: purple;
+
+        &:last-of-type {
+          padding-right: 0;
+        }
+
+      }
+    }
+
+    & button {
+      background-color: none;
+      background: none;
+      outline: none;
+      border: none;
+
+
+      &.brand-box {
+        height: 60px;
+        width: 130px !important
+      }
+    }
+
+    & p {
+      font-size: inherit;
+      padding-right: 20px;
+      margin: 0;
+    }
+  }
 }
 
