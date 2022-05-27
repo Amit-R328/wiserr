@@ -5,7 +5,8 @@ import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { HomepageCategoriesCarouselTest } from '../cmps/homepage-categories-carousel-copy.jsx'
 import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel.jsx'
 import { SellingPropHomepage } from '../cmps/selling-prop-homepage.jsx'
-import { Proposition } from '../cmps/proposition.jsx';
+
+
 import { IconCategoriesHomepage } from '../cmps/icon-categories-homepage.jsx';
 import { BusinessSectionHomepage } from '../cmps/business-section-homepage.jsx';
 // import { Link, useNavigate, useParams } from 'react-router-dom'

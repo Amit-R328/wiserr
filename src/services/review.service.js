@@ -7,6 +7,7 @@ import { store } from '../store/store'
 import { showSuccessMsg } from '../services/event-bus.service'
 
 const reviewChannel = new BroadcastChannel('reviewChannel')
+const STORAGE_KEY = 'gig'
 
 ;(() => {
   reviewChannel.addEventListener('message', (ev) => {
@@ -33,7 +34,11 @@ export const reviewService = {
 function query(filterBy) {
   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
   // return httpService.get(`review${queryStr}`)
-  return storageService.query('review')
+  let gigs =  storageService.query(STORAGE_KEY)
+  gigs = gigs.filter(gig => gig._id === filterBy)
+  let reviews = gigs.map(gig => gig.reviews.map(review => review))
+  console.log('REVIEWS FROM SERVICE:',reviews)
+  return Promise.resolve(reviews)
 }
 
 async function remove(reviewId) {

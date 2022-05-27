@@ -92,17 +92,45 @@ function _createGigs(){
                 "_id": "u101",
                 "fullName": "gul071",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
-                "rate": 4.9
+                "rate": 4.9,
+                "from": "Pakistan",
+                "memberSince": "Sept 2017",
+                "avgResponseTime":"1 hour",
+                "lastDelivery": "about 1 hour"
             },
             "level": "Level 2 Seller",
             "daysToMake": 3,
             "description": {
                 "aboutThisGig":"Hello If you want to create a professional WHITEBOARD EXPLAINER VIDEO AD and engage your audience, then you are at the right place. It is recommended to contact through inbox first then place order.",
                     "whyUs": "",
-                "whatDoYouGet": "CUSTOM DRAWINGS \nWill cost extra depending on drawing, so please make sure the price by coming in inbox to get quote.\n• ​COLORING \n Will cost extra depending on the project type and type of coloring. \n• ​Editing script  after placing the order will cost extra.\n IF YOU HAVE ANY QUESTION, FEEL FREE TO CONTACT ME.\n For Whiteboard Explainer Samples please follow the link:\nhttps://www.youtube.com/channel/UCm-0NlyD3Lb9IIj_UPIvCtQ/videos"
+                "whatDoYouGet": "CUSTOM DRAWINGS \nWill cost extra depending on drawing, so please make sure the price by coming in inbox to get quote.\n• ​COLORING \n Will cost extra depending on the project type and type of coloring. \n• ​Editing script  after placing the order will cost extra.\n IF YOU HAVE ANY QUESTION, FEEL FREE TO CONTACT ME.\n For Whiteboard Explainer Samples please follow the link:\nhttps://www.youtube.com/channel/UCm-0NlyD3Lb9IIj_UPIvCtQ/videos",
+                "littleDetails": ["Up to 30 Seconds Running Time", "Full Color", "Voice Over Recording", "Scriptwriting", "Music/Sound Design included"]
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/videos/so_44.79414,t_main1,q_auto,f_auto/mwkigsyj9hzzmphy3ijx/exclusive-whiteboard-animation-in-24-hours.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/102260755/original/064e14c412a2081407c2cc44459621357a3223e4/exclusive-whiteboard-animation-in-24-hours.png"],
             "category": "Graphics & Design",
+            "reviews":[
+            {
+            "id":"r101",
+            "content":"I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
+            "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg",
+            "stars":5,
+            "userCountry":"United States"
+            },
+            {
+            "id":"r102",
+             "content":"Communication was poor. Project was super late with no communication from seller until I reached out. The work overall was pretty good after a few edits",
+             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/d48669eac8ec3b563a685e8bd949a701-1650869312636/0465790c-8906-40e7-9b61-d1ecc95b55d7.jpg",
+             "stars":4,
+             "userCountry":"United States"
+            },
+            {
+            "id":"r103",
+            "content":"Gul071 is amazing. He is very talented and follows up amazingly. I will certainly refer and use his services again. Thank you for doing such an incredible job. I am beyond pleased and excited.",
+            "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/29461d7f25eb73f0594a8bfb5c8a9d51-947790731647479073.389776/E41D379E-ABFD-4597-A516-4AF55CD1DD7E",
+            "stars":5,
+            "userCountry":"United States"
+            }
+            ],
             "likedByUsers": {
                 "_id": "u102",
                 "fullName": "richarddavis438",
@@ -117,14 +145,19 @@ function _createGigs(){
                 "_id": "u107",
                 "fullName": "graphexgalaxy",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": 4.8
+                "rate": 4.8,
+                "from": "United Kingdom",
+                "avgResponseTime":"1 hour",
+                "lastDelivery":"about 19 hours",
+                "memberSince":"Oct 2020"
             },
             "level": "Level 2 Seller",
             "daysToMake": 1,
             "description": {
                 "aboutThisGig":"Hi there ! \nI am a Professional Graphic Designer with 6+ years of experience in Graphic Industry,\nexpertise as Logo Maker, You'll get creative & unique logo design for your business.",
                 "whyUs": "",
-                "whatDoYouGet": "Highly Professional, UNIQUE & High Quality designs\nUNLIMITED Revisions until you are 100% satisfied\n100% original & unique vector design from Adobe Illustrator\nVector Source Files (scalable without any quality loss) (AI, EPS,PSD, PDF) for the final design\nPROFESSIONAL Communication & Outstanding Customer Support\nGuaranteed High Quality work\nI am not Doing Cartoon, Caricature & Custom Character Logos.\nIf you have any question,\nFeel free to Contact Me I'll be happy to help.Place Your Order Without Any Hesitation. I am here to put your vision into life."
+                "whatDoYouGet": "Highly Professional, UNIQUE & High Quality designs\nUNLIMITED Revisions until you are 100% satisfied\n100% original & unique vector design from Adobe Illustrator\nVector Source Files (scalable without any quality loss) (AI, EPS,PSD, PDF) for the final design\nPROFESSIONAL Communication & Outstanding Customer Support\nGuaranteed High Quality work\nI am not Doing Cartoon, Caricature & Custom Character Logos.\nIf you have any question,\nFeel free to Contact Me I'll be happy to help.Place Your Order Without Any Hesitation. I am here to put your vision into life.",
+                "littleDetails":["1 concept included", "Logo transparency", "Vector file", "Printable file", "3D mockup", "Source file"]
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/179341816/original/cf07484c9c4e49c027263b3bac8ed0e60c092b05/do-unique-and-beautiful-retro-vintage-design.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/2cb51b6d6893894e3f61356cf4eb957e-1632477605/01/do-unique-and-beautiful-retro-vintage-design.jpg"],
             "category": "Graphics & Design",
@@ -142,14 +175,19 @@ function _createGigs(){
                 "_id": "u109",
                 "fullName": "dohyotriyono",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": 5
+                "rate": 5,
+                "from":"Indonesia",
+                "memberSince":"Jun 2020",
+                "avgResponseTime": "1 hour",
+                "lastDelivery":"about 10 hours"
             },
             "level": "Level 2 Seller",
             "daysToMake": 2,
             "description": {
                 "aboutThisGig":"PLEASE MESSAGE ME BEFORE ORDERING\nI want understand exactly what you want to be designed before I receive your order. THANK YOU!",
                 "whyUs": "",
-                "whatDoYouGet": "unique and awesome illustration, high quality, JPG, PNG, AI, EPS, or SVG format files."
+                "whatDoYouGet": "unique and awesome illustration, high quality, JPG, PNG, AI, EPS, or SVG format files.",
+                "littleDetails":["Source File"]
             },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/230928287/original/64b7c1a70bffac0b67a812826d718ac1b34f4456/draw-cute-and-unique-nft-mascot-character.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/821ce8ff174652ff4a6c4c10c18d9a7d-1647483667/swim/draw-cute-and-unique-nft-mascot-character.jpg"],
             "category": "Graphics & Design",
@@ -167,16 +205,48 @@ function _createGigs(){
                 "_id": "u111",
                 "fullName": "gad_by_miraz_pro",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/7a85510d72ccc2941cbe87ac3dd3a9e4-1634745207853/f9896223-7a6d-42b6-8711-d60922c3b6ab.jpg",
-                "rate": 4.9
+                "rate": 4.9,
+                "from":"Israel",
+                "memberSince":"2 month ago",
+                "avgResponseTime":"3 hours",
+                "lastDelivery":"about 2 hours"
             },
             "level": "Level 1 Seller",
             "daysToMake": 2,
             "description": {
                 "aboutThisGig":"Welcome to my gigs\nHave you been wondering how you could set up a successful Facebook ad campaign?\nWell, you have come to the right place!\nAre You Running Facebook Ads For Your Shopify Dropshipping Business? Struggling To Get Link Clicks, Potential Leads Or Purchases? Then, You Came To The Right Person!\nWhich You Are Finding If That You Are Unable To Get It Then Get In Touch With Me.i Will Solve Your Issues Friendly. If You Have An Important Job I Will Deliver You Rapid Support.\nTrusted Seller - Satisfaction Guaranteed",
                 "whyUs": "",
-                "whatDoYouGet": "Create Fb ads campaign & Instagram Ads\nResearch, Plan & Strategy\nCreate & Setup FB Business page\nSetup FB Pixel and Event\nDomain Verify and Setup ISO14 Event\nAudience Research with Demographic, Interest & Behaviors\nCreate custom and Lookalike Audience\nResponsive Ad text with a description\nAds management based on Package\nIf you have any questions, you can message me when you will be free."      },
+                "whatDoYouGet": "Create Fb ads campaign & Instagram Ads\nResearch, Plan & Strategy\nCreate & Setup FB Business page\nSetup FB Pixel and Event\nDomain Verify and Setup ISO14 Event\nAudience Research with Demographic, Interest & Behaviors\nCreate custom and Lookalike Audience\nResponsive Ad text with a description\nAds management based on Package\nIf you have any questions, you can message me when you will be free.",
+                "littleDetails":[]
+            },
             "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/219531995/original/50ec1615424683f6d83c3d59de06332f1b0cbdfa/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/04fcc41f750b98d1e9097d6bec818197-1646886003/Screenshot_24/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg"],        
             "category": "Graphics & Design",
+            "reviews":[
+                {
+                    "id":"r104",
+                 "content":"By far the best services I have received on fiverr yet! I am really happy with the outcomes and they are extremely professional as well as requiring very little input in order to create amazing posts for my channels.",
+                 "userName":"camerongiliomee",
+                 "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/505659e775c93c597906183904af624a-1636100364921/5d9c8a64-93d1-4b67-8a7f-915f96ef2aab.png",
+                 "stars": 5,
+                 "userCountry":"Canada"
+                },
+                {
+                    "id":"r105",
+                "content": "Some blogs are being revoked by Google Ads due to violations. We have to be careful now because they are going to begin charging and suspending people for continuous violations.",
+                "userName":"willdavis527",
+                "userImage":"",
+                "stars": 4.7,
+                "userCountry":"United States"
+                },
+                {
+                    "id":"r106",
+                 "content":"I have worked with them many times before. This last time there was a few communication gaps, but overall I will hire them again",
+                 "userName":"davis18232",
+                 "userImage":"",
+                 "stars":4,
+                 "userCountry":"United States"
+                }
+            ],
             "likedByUsers": {
                 "_id": "u112",
                 "fullName": "jazzimanij",
@@ -340,6 +410,7 @@ function _createGigs(){
                 }
         }
     ]
+     
        
     return gigs  
 }
