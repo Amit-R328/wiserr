@@ -5,7 +5,7 @@ import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { HomepageCategoriesCarouselTest } from '../cmps/homepage-categories-carousel-copy.jsx'
 import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel.jsx'
 import { SellingPropHomepage } from '../cmps/selling-prop-homepage.jsx'
-import { Proposition } from '../cmps/proposition.jsx';
+
 // import { Link, useNavigate, useParams } from 'react-router-dom'
 // import { useSelector, useDispatch} from 'react-redux'
 // import { setFilter } from "../store/actions/gigs.actions.js"
@@ -52,7 +52,6 @@ export const HomePage = (props, onChangeCategory) => {
                 <SellingPropHomepage />
             </div>
             <div>
-            <Proposition />
             </div>
         </section>
     )

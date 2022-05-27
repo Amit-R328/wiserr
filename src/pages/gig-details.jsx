@@ -6,6 +6,7 @@ import React, { useEffect, useState, Component } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { getById } from '../store/actions/gigs.actions.js';
+import { GigReview } from '../cmps/gig-review.jsx';
 
 
 export const GigDetails = (props) => {
@@ -85,6 +86,14 @@ export const GigDetails = (props) => {
                             </article>
                         </div>
                     </article>
+                </section>
+                <section className="reviews">
+                    
+                    {gig.reviews.map(review => {
+                        return <article key={review.id}>
+                            <GigReview review={review}/>
+                        </article>
+                    })}
                 </section>
             </div>
             <div className="call-to-action flex">

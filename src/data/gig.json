@@ -23,6 +23,29 @@
         },
         "imgUrl": ["https://fiverr-res.cloudinary.com/videos/so_44.79414,t_main1,q_auto,f_auto/mwkigsyj9hzzmphy3ijx/exclusive-whiteboard-animation-in-24-hours.png","https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/102260755/original/064e14c412a2081407c2cc44459621357a3223e4/exclusive-whiteboard-animation-in-24-hours.png"],
         "category": "Graphics & Design",
+        "reviews":[
+        {
+        "id":"r101",
+        "content":"I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
+        "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg",
+        "stars":5,
+        "userCountry":"United States"
+        },
+        {
+        "id":"r102",
+         "content":"Communication was poor. Project was super late with no communication from seller until I reached out. The work overall was pretty good after a few edits",
+         "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/d48669eac8ec3b563a685e8bd949a701-1650869312636/0465790c-8906-40e7-9b61-d1ecc95b55d7.jpg",
+         "stars":4,
+         "userCountry":"United States"
+        },
+        {
+        "id":"r103",
+        "content":"Gul071 is amazing. He is very talented and follows up amazingly. I will certainly refer and use his services again. Thank you for doing such an incredible job. I am beyond pleased and excited.",
+        "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/29461d7f25eb73f0594a8bfb5c8a9d51-947790731647479073.389776/E41D379E-ABFD-4597-A516-4AF55CD1DD7E",
+        "stars":5,
+        "userCountry":"United States"
+        }
+        ],
         "likedByUsers": {
             "_id": "u102",
             "fullName": "richarddavis438",
@@ -97,16 +120,48 @@
             "_id": "u111",
             "fullName": "gad_by_miraz_pro",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/7a85510d72ccc2941cbe87ac3dd3a9e4-1634745207853/f9896223-7a6d-42b6-8711-d60922c3b6ab.jpg",
-            "rate": 4.9
+            "rate": 4.9,
+            "from":"Israel",
+            "memberSince":"2 month ago",
+            "avgResponseTime":"3 hours",
+            "lastDelivery":"about 2 hours"
         },
         "level": "Level 1 Seller",
         "daysToMake": 2,
         "description": {
             "aboutThisGig":"Welcome to my gigs\nHave you been wondering how you could set up a successful Facebook ad campaign?\nWell, you have come to the right place!\nAre You Running Facebook Ads For Your Shopify Dropshipping Business? Struggling To Get Link Clicks, Potential Leads Or Purchases? Then, You Came To The Right Person!\nWhich You Are Finding If That You Are Unable To Get It Then Get In Touch With Me.i Will Solve Your Issues Friendly. If You Have An Important Job I Will Deliver You Rapid Support.\nTrusted Seller - Satisfaction Guaranteed",
             "whyUs": "",
-            "whatDoYouGet": "Create Fb ads campaign & Instagram Ads\nResearch, Plan & Strategy\nCreate & Setup FB Business page\nSetup FB Pixel and Event\nDomain Verify and Setup ISO14 Event\nAudience Research with Demographic, Interest & Behaviors\nCreate custom and Lookalike Audience\nResponsive Ad text with a description\nAds management based on Package\nIf you have any questions, you can message me when you will be free."      },
+            "whatDoYouGet": "Create Fb ads campaign & Instagram Ads\nResearch, Plan & Strategy\nCreate & Setup FB Business page\nSetup FB Pixel and Event\nDomain Verify and Setup ISO14 Event\nAudience Research with Demographic, Interest & Behaviors\nCreate custom and Lookalike Audience\nResponsive Ad text with a description\nAds management based on Package\nIf you have any questions, you can message me when you will be free.",
+            "littleDetails":[]
+        },
         "imgUrl": ["https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/219531995/original/50ec1615424683f6d83c3d59de06332f1b0cbdfa/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg","https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/04fcc41f750b98d1e9097d6bec818197-1646886003/Screenshot_24/do-facebook-advertising-marketing-fb-ads-instagram-ads-campaign-fb-advertising.jpg"],        
         "category": "Graphics & Design",
+        "reviews":[
+            {
+                "id":"r104",
+             "content":"By far the best services I have received on fiverr yet! I am really happy with the outcomes and they are extremely professional as well as requiring very little input in order to create amazing posts for my channels.",
+             "userName":"camerongiliomee",
+             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/505659e775c93c597906183904af624a-1636100364921/5d9c8a64-93d1-4b67-8a7f-915f96ef2aab.png",
+             "stars": 5,
+             "userCountry":"Canada"
+            },
+            {
+                "id":"r105",
+            "content": "Some blogs are being revoked by Google Ads due to violations. We have to be careful now because they are going to begin charging and suspending people for continuous violations.",
+            "userName":"willdavis527",
+            "userImage":"",
+            "stars": 4.7,
+            "userCountry":"United States"
+            },
+            {
+                "id":"r106",
+             "content":"I have worked with them many times before. This last time there was a few communication gaps, but overall I will hire them again",
+             "userName":"davis18232",
+             "userImage":"",
+             "stars":4,
+             "userCountry":"United States"
+            }
+        ],
         "likedByUsers": {
             "_id": "u112",
             "fullName": "jazzimanij",

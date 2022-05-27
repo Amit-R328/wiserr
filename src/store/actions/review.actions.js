@@ -1,40 +1,34 @@
-import { showSuccessMsg } from '../services/event-bus.service'
-import { reviewService } from '../services/review.service'
-import { userService } from '../services/user.service'
+import { reviewService } from "../../services/review.service.js"
 
-const SCORE_FOR_REVIEW = 500
 
-// Action Creators
 export function getActionRemoveReview(reviewId) {
-  return { type: 'REMOVE_REVIEW', reviewId }
-}
-export function getActionAddReview(review) {
-  return { type: 'ADD_REVIEW', review }
-}
+    return { type: 'REMOVE_REVIEW', reviewId }
+  }
+  export function getActionAddReview(review) {
+    return { type: 'ADD_REVIEW', review }
+  }
 
-export function loadReviews() {
+export function loadReviews(filterBy){
+  console.log('FILTER BY LINE 12 ACTIONS', filterBy)
   return async dispatch => {
     try {
-      const reviews = await reviewService.query()
-      dispatch({ type: 'SET_REVIEWS', reviews })
-
-    } catch (err) {
-      console.log('ReviewActions: err in loadReviews', err)
+      const reviews = await reviewService.query(filterBy)
+      console.log("load Reviews: filterby:", filterBy)
+            dispatch({type: 'SET_REVIEWS', reviews})
+        }catch (err){
+            console.log('err in loadReviews in reviewActions:', err)
+        }
     }
-  }
 }
 
 export function addReview(review) {
+    console.log('GOT REVIEW',review);
   return async dispatch => {
     try {
+        console.log('review got',review);
+
       const addedReview = await reviewService.add(review)
       dispatch(getActionAddReview(addedReview))
-
-      // Change the score in user kept in sessionStorage
-      userService.saveLocalUser(addedReview.byUser)
-      const {score} = addedReview.byUser
-      // const score = await userService.changeScore(SCORE_FOR_REVIEW)
-      dispatch({ type: 'SET_SCORE', score })
       
     } catch (err) {
       console.log('ReviewActions: err in addReview', err)
@@ -43,14 +37,13 @@ export function addReview(review) {
   }
 }
 
-export function removeReview(reviewId) {
-  return async dispatch => {
-    try {
-      await reviewService.remove(reviewId)
-      dispatch(getActionRemoveReview(reviewId))
-    } catch (err) {
-      console.log('ReviewActions: err in removeReview', err)
-      throw err
+export function removeReview(reviewId){
+    return async dispatch => {
+        try {
+            await reviewService.remove(reviewId)
+            dispatch ({type: 'REMOVE_REVIEW', reviewId})
+        }catch (err){
+            console.log('err in removeReview in reviewAction:',err)
+        }
     }
-  }
 }
