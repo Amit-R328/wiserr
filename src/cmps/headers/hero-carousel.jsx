@@ -42,11 +42,9 @@ export class HeroCarousel extends React.Component {
     return this.state.gigs.map(gig => {
       return (
         <SwiperSlide>
-          <div className="hero-img-title">
-          <p>{gig.name}</p>
-          <p>{gig.title}</p>
-          <img className='img-slide ratio-16-9' src={gig.img} alt="" key={gig.title} />
-          </div>
+              <img className='img-slide ratio-16-9' src={gig.img} alt="" key={gig.title} />
+                    {/* {gig.name} */}
+                    {/* {gig.title} */}
         </SwiperSlide>
       )
     })
@@ -58,12 +56,12 @@ export class HeroCarousel extends React.Component {
         modules={[Navigation, Pagination, Autoplay]}
         slidesPerView={1}
         autoplay={{ delay: 5000 }}
-        autoplayTimeout={2}
+        autoplaytimeout={2}
       >
         <div className="hero-andrea">
           {this.createSlide()}
         </div>
-      </Swiper>
+      </Swiper >
 
     )
   }

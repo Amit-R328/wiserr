@@ -1,93 +1,51 @@
-.categories-menu-wrapper {
-    // display: none;
-    background: $white;
+.categories-menu-scroll {
+    visibility: visible;
     width: 100%;
+    max-height: 40px;
+    // margin: 0;
+    background-color: #ffffff;
+    position: relative;
+    margin-top: 0;
+    
+    ul.categories {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        // justify-content: flex-start;
+        align-items: center;
+        margin: 0 auto;
+        padding: 0;
 
-    @media screen {
-        min-width: 600px
-    }
+        >li {
+            display: inline-block;
+            flex-shrink: 0;
+            list-style: none;
+            text-decoration: none;
+            font-weight: inherit;
+            color: inherit;
+            font-family: inherit;
+            padding: 0 10px;
+            position: relative;
 
-    .categories-menu-wrapper {
-        display: block;
-        opacity: 0;
-        transform: rotateX(90deg);
-    }
-
-    &.shown {
-        border-bottom: 1px color($grey, 400) solid;
-        transition: transform .2s;
-        opacity: 1;
-        transform: rotateX(0deg);
-    }
-
-    .categories-menu-package {
-        .nav-tool-categories {
-            @media screen {
-                min-width: 600px
-            }
-
-            padding: 0 30px;
-            box-sizing: border-box;
-        }
-    }
-
-
-    .categories-menu-scroll {
-        visibility: visible;
-        width: 100%;
-        min-height: 41px;
-        margin: 0;
-
-        ul.categories {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            // justify-content: flex-start;
-            // align-items: center;
-            margin: 0 auto;
-            padding: 0;
-
-            >li {
-                display: inline-block;
-                flex-shrink: 0;
-                list-style: none;
-                text-decoration: none;
-                font-weight: inherit;
-                color: inherit;
-                font-family: inherit;
-                padding: 0 10px;
+            & button {
+                color: #62646a;
+                background-color: #ffffff;
+                outline: none;
+                border: none;
+                font-size: 1em;
+                display: block;
+                line-height: 24px;
+                padding: 8px 0;
                 position: relative;
+                transition: color 0.2s ease;
 
-                & button {
-                    background-color: transparent;
-                    outline: none;
-                    border: none;
-                    font-size: 1em;
-                    display: block;
-                    line-height: 24px;
-                    padding: 8px 0;
-                    position: relative;
-                    transition: color 0.2s ease;
-
-                    &:hover {
-                        cursor: pointer;
-                        text-decoration: none;
-                        color: color($grey, 1000);
-                    }
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: none;
+                    color: color($grey, 1000);
                 }
             }
         }
-
     }
-}
 
-
-
-
-
-
-
-ul.nav-list,
-ul.nav-link {
-    list-style-type: none;
 }

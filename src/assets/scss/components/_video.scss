@@ -6294,9 +6294,9 @@
     }
 }
 
-body[class*=modal-open] {
-    overflow: hidden
-}
+// body[class*=modal-open] {
+//     overflow: hidden
+// }
 
 .MODAL__modal-content-ue63b0663 {
     display: -webkit-box;
@@ -14684,14 +14684,14 @@ input.LmEoiLR:hover {
     flex-shrink: 0
 }
 
-body.ismobile {
-    overflow: unset;
-    overflow-x: unset
-}
+// body.ismobile {
+//     overflow: unset;
+//     overflow-x: unset
+// }
 
-body.ismobile #main-wrapper {
-    overflow-x: unset
-}
+// body.ismobile #main-wrapper {
+//     overflow-x: unset
+// }
 
 .listings-perseus .content {
     -webkit-box-orient: horizontal;
@@ -14841,10 +14841,10 @@ body.ismobile #main-wrapper {
     padding: 0
 }
 
-body[class*=modal-open-].ismobile .listings-perseus {
-    overflow-y: hidden;
-    max-height: 100vh
-}
+// body[class*=modal-open-].ismobile .listings-perseus {
+//     overflow-y: hidden;
+//     max-height: 100vh
+// }
 
 .experts-walkthrough-modal .modal-content {
     border-radius: 0;
