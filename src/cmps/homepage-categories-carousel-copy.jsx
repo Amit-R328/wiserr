@@ -1,71 +1,75 @@
-// import React, { useRef, useState } from "react";
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import SwiperCore, {Navigation, Pagination} from 'swiper'
-
-// // Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/pagination";
-// import "swiper/css/navigation";
-
-// // import { Pagination, Navigation } from "swiper";
-// SwiperCore.use([Navigation, Pagination])
-
-// export const HomepageCategoriesCarousel = () => {
-//     return (
-//         <section className="homepage-categories-carousel">
-//             <Swiper
-//                 slidesPerView={4}
-//                 spaceBetween={5}
-//                 slidesPerGroup={8}
-//                 loop={true}
-//                 loopFillGroupWithBlank={true}
-//                 pagination={{
-//                     clickable: true
-//                 }}
-//                 navigation={true}
-//                 modules={[Pagination, Navigation]}
-//                 className="mySwiper"
-//             >
-//                 <SwiperSlide>
-//                     <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="" />
-//                     <p>Build your brand</p>
-//                     <h1>Graphics &amp; Design</h1>
-//                 </SwiperSlide>
-//                 <SwiperSlide>
-//                     <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="" />
-//                     <p>Build your brand</p>
-//                     <h1>Graphics &amp; Design</h1>
-//                 </SwiperSlide>
-//                 <SwiperSlide>
-//                     <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/logo-design-2x.png" alt="" />
-//                     <p>Build your brand</p>
-//                     <h1>Graphics &amp; Design</h1>
-//                 </SwiperSlide>
-//                 <SwiperSlide>Slide 4</SwiperSlide>
-//                 <SwiperSlide>Slide 5</SwiperSlide>
-//                 <SwiperSlide>Slide 6</SwiperSlide>
-//                 <SwiperSlide>Slide 7</SwiperSlide>
-//                 <SwiperSlide>Slide 8</SwiperSlide>
-//             </Swiper>
-//         </section>
-//     );
-// }
-
 import React, { Component } from "react";
-import Slider from "react-slick";
-import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ArrowLeft, ArrowOnButtonLeftGrey, ArrowOnButtonRightGrey } from "../services/svg.service.js";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
-export const HomepageCategoriesCarousel = (props) => {
+export const HomepageCategoriesCarouselTest = (props, deviceType) => {
+    const CustomLeftArrow = ({ onClick }) => (
+        <i onClick={() => onClick()} className="custom-left-arrow" />
+      );
+      const CustomRightArrow = ({ onClick }) => {
+        return <i className="custom-right-arrow" onClick={() => onClick()} />;
+      };
+      
+      const CustomButtonGroup = ({ next, previous, goToSlide, carouselState }) => {
+        const { totalItems, currentSlide } = carouselState;
+        return (
+          <div className="custom-button-group">
+            <div>Current slide is {currentSlide}</div>
+            <button onClick={() => previous()}>Previous slide</button>
+            <button onClick={() => next()}>Next slide</button>
+          </div>
+        );
+      };
+
+
+            const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5,
+            slidesToSlide: 5 // optional, default to 1.
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            slidesToSlide: 3 // optional, default to 1.
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            slidesToSlide: 2 // optional, default to 1.
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            slidesToSlide: 1 // optional, default to 1.
+        }
+    };
     return (
         <div class="slider-package">
             <div class="simple-slider">
-        <div className="carousel-container">
-            <div class="carousel-item-padding-40-px">
+                <Carousel
+                    swipeable={true}
+                    arrows
+                    draggable={false}
+                    showDots={false}
+                    responsive={responsive}
+                    ssr={true} // means to render carousel on server-side.
+                    infinite={true}
+                    // autoPlay={this.props.deviceType !== "mobile" ? true : false}
+                    // autoPlaySpeed={1000}
+                    keyBoardControl={true}
+                    customTransition="all .5"
+                    transitionDuration={500}
+                    containerClass="carousel-container"
+                    removeArrowOnDeviceType={["tablet", "mobile"]}
+                    deviceType={deviceType}
+                    itemClass="carousel-item-padding-40-px"
+                    beforeChange={() => this.setState({ isMoving: true })}
+                    afterChange={() => this.setState({ isMoving: false })}
+                >
+                    
+                    <div class="slick-slide">
                         <div class="subcategory-wrapper touch">
                             <a href="/categories/graphics-design" className="subcategory">
                                 <h4>
@@ -155,14 +159,10 @@ export const HomepageCategoriesCarousel = (props) => {
                             </a>
                         </div>
                     </div>
+                </Carousel >
             </div>
-            <div className="nav">
-                <button className="prev"><ArrowOnButtonLeftGrey /></button>
-                <button className="next"><ArrowOnButtonRightGrey /></button>
-            </div>
-            </div>
-            </div>
+        </div>
     )
-
-
 }
+
+
