@@ -132,8 +132,8 @@ export const HomepageCategoriesCarousel = (props) => {
                 </div>
             </div>
             <div className="nav">
-                <button className="prev"><ArrowInButtonLeftGrey /></button>
-                <button className="next"><ArrowInButtonRightGrey /></button>
+                <button className="prev"></button>
+                <button className="next"></button>
             </div>
         </div>
     )

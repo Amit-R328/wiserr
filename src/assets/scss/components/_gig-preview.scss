@@ -1,0 +1,105 @@
+.gig-card {
+    list-style: none;
+    flex-direction: column;
+    border: 1px solid black;
+    color: gray;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+    h3,
+    h4 {
+      margin: 0 0 0em;
+    }
+    &:hover {
+      opacity: 0.8;
+      transition: 0.4s;
+      .gig-title {
+        color: black;
+      }
+    }
+  
+    li {
+      color: black;
+      padding: 5px;
+      margin: 5px;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    h3 {
+      padding: 10px 5px;
+      margin: 5px;
+    }
+  
+    .gig-img {
+      margin-bottom: 0;
+      height: 200px;
+      max-width: 250px;
+      object-fit: cover;
+    }
+    .owner-details {
+      flex-direction: column;
+      
+    }
+  
+    .owner-name {
+      font-size: 0.8rem;
+      color: black;
+      font-weight: 800;
+      margin-bottom: 0px;
+    }
+    .owner-avatar {
+      justify-content: start;
+    }
+    .gig-title {
+      color: #222325;
+      padding: 0 5px;
+      margin: 3px 3px 0 3px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  
+    .sml-round-img {
+      border-radius: 50px;
+      width: 20px;
+      height: 20px;
+      margin-top: 15px;
+    }
+    .review-line {
+      margin: 1px;
+      font-size: 0.9rem;
+    }
+    
+    .card-fav-price {
+      border-top: 0.5px solid black;
+      justify-content: space-between;
+      font-size: 1rem;
+      align-items: center;
+  
+      .h4 {
+        margin: 0 10px;
+        margin-bottom: 0;
+      }
+      span {
+        font-size: 0.8rem;
+      }
+  
+      .fav-btn,
+      .gig-price {
+        padding: 0;
+        background-color: white;
+        color: #62646a;
+      }
+  
+      .fav-btn {
+        color: gray;
+        font-size: 1.2rem;
+      }
+      .fav-btn:hover {
+        color: gray;
+      }
+      .fav-btn .active {
+        color: red;
+      }
+    }
+  }

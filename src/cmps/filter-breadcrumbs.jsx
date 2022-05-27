@@ -1,6 +1,6 @@
 import { ArrowDown, PathArrow, VideoIcon } from '../services/svg.service.js'
 
-export const FilterGigs = () => {
+export const FilterBreadCrumbs = () => {
 
     return (
         <div className="layout-row">

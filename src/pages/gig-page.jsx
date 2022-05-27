@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadGigs } from '../store/actions/gigs.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
-import { FilterGigs } from '../cmps/filter-gigs.jsx'
+import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 
@@ -58,7 +58,7 @@ export const GigPage = () => {
 
             <main className="main-content-container">
                 <div className="gigs-list-containers">
-                    <FilterGigs />
+                    <FilterBreadCrumbs />
                     <GigList gigs={gigs} />
                 </div>
             </main>
