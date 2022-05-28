@@ -75,6 +75,7 @@ export const AppHeaderHomePage = (props) => {
                     </div>
                 </div>
             </header>
+            <span className="line-sep"></span>
             
         </div>
     )

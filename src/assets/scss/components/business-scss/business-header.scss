@@ -1,25 +1,25 @@
-  .app-header {
+.business-app-header {
     // height: 680px;
     width: 100%;
     // background-color: purple;
     
-    .main-header {
+    .business-main-header {
       -webkit-transition: background-color .5s ease;
       -o-transition: background-color .5s ease;
       transition: background-color .5s ease;
       width: 100%;
       
-      &.sticky {
+      &.business-sticky {
         position: sticky;
         width: 100%;
         z-index: 9999;
         display: block;
         
-        .header-row-wrapper {
+        .business-header-row-wrapper {
           height: 81px;
         }
         
-        .header-row {
+        .business-header-row {
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
@@ -44,7 +44,7 @@
           display: none;
         }
 
-        .logo {
+        .business-logo-main-header {
           // height: auto;
           margin: 4px 0 0;
           min-width: 121px;
@@ -75,14 +75,13 @@
             justify-content: center;
             color: #62646a;
             padding: 18px;
-            gap: 10px;
           }
         }
       }
     }
   }
 
-  .wiserr-header-search-animated {
+  .business-wiserr-header-search-animated {
     display: block;
     visibility: visible;
     // visibility: hidden;
@@ -97,7 +96,7 @@
       // visibility: hidden;
       transition: opacity 250ms ease;
 
-      &.wiserr-header-search-animated {
+      &.business-wiserr-header-search-animated {
         visibility: visible;
         opacity: 1;
       }
@@ -107,18 +106,18 @@
       width: 28%;
     }
 
-    .main-header--scrolled.wiserr-header-search-animated,
-    .main-header--scrolledLayout.wiserr-header-search-animated {
+    .business-main-header--scrolled.business-wiserr-header-search-animated,
+    .business-main-header--scrolledLayout.business-wiserr-header-search-animated {
       visibility: visible;
     }
   }
 
-  .search-bar-package {
+  .business-search-bar-package {
     display: flex;
     position: relative;
     height: 34px;
 
-    .search-bar-package form .search-bar-icon {
+    .business-search-bar-package form .business-search-bar-icon {
       position: absolute;
       z-index: 5;
       top: 8px;
@@ -127,7 +126,7 @@
       height: 1em;
     }
 
-    .search-bar-package form input {
+    .business-search-bar-package form input {
       -webkit-box-flex: 1;
       flex: 1 1 auto;
       padding: 7px 7px 7px 28px;
@@ -137,12 +136,12 @@
     }
 
     @media screen and (min-width: 1160px) {
-      .search-bar-package form input {
+      .business-search-bar-package form input {
         border-right: 0;
         border-radius: 3px 0 0 3px;
       }
 
-      .search-bar-package .submit-button:not(.minimal) {
+      .business-search-bar-package .business-submit-button:not(.minimal) {
         padding: 8px 16px;
         display: block;
         font-size: 14px;
@@ -152,7 +151,7 @@
     }
 
     @media screen and (min-width: 900px) {
-      .search-bar-package form input {
+      .business-search-bar-package form input {
         font-size: 15px;
         padding-top: 8px;
       }
