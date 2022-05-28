@@ -1,7 +1,18 @@
-import React from 'react'
+
+import { useSelector, useDispatch } from 'react-redux'
+import React, { useState, useEffect } from 'react';
+import { loadOrders } from '../../store/actions/order.actions';
+
 
 export const BusinessDashboard = (props) => {
-
+    const { orders } = useSelector((storeState) => storeState.orderModule)
+    const { loggedInUser } = userSelector((storeState) => storeState.)
+    const dispatch = useDispatch()
+    
+    useEffect(() => {
+        let user = {type: 'seller', fullName: loggedInUser.[type].fullName}
+        dispatch(loadOrders(filterBy))
+    }, [])
 
 
 

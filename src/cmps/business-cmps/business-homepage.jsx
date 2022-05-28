@@ -1,7 +1,7 @@
 import React from 'react'
 import { LogoBusinessFull } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
-import { BusinessDashboard } from './business-dashboard.jsx'
+import { BusinessDashboard } from '../dashborad/business-dashboard.jsx'
 import { BusinessSolutions } from './business-solutions.jsx'
 
 export const BusinessHomepage = (props) => {

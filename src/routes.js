@@ -1,6 +1,6 @@
 import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
-import { BusinessDashboard } from './cmps/business-cmps/business-dashboard.jsx'
+import { BusinessDashboard } from './cmps/dashborad/business-dashboard.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
 import {GigPage} from './pages/gig-page.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
