@@ -1,12 +1,14 @@
 import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
-import { BusinessTools } from './cmps/business-cmps/business-tools.jsx'
+import { BusinessDashboard } from './cmps/business-cmps/business-dashboard.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
 import { Login } from './pages/login.jsx'
 import { GigPage } from './pages/gig-page.jsx'
 import { Join } from './pages/join.jsx'
 import { GigDetails } from './pages/gig-details.jsx'
 import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
+import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-header.jsx'
+import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
@@ -14,17 +16,17 @@ const routes = [
     {
         path: '/business/business-solutions',
         component: <BusinessSolutions />,
-        element: <AppHeader />
+        element: <BusinessAppHeader />
     },
     {
-        path: '/business/business-tools',
-        component: <BusinessTools />,
-        element: <AppHeader />
+        path: '/business/business-dashboard',
+        component: <BusinessDashboard />,
+        element: <BusinessAppHeader />,
     },
     {
         path: '/business',
         component: <BusinessHomepage />,
-        element: <AppHeader />
+        element: <BusinessHeaderHomePage />
     },
     {
         path: '/login',

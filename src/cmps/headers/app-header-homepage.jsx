@@ -3,6 +3,7 @@ import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar }
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
 import {Search} from '../search.jsx'
+import { BusinessHomepage } from '../business-cmps/business-homepage.jsx'
 
 export const AppHeaderHomePage = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -42,7 +43,7 @@ export const AppHeaderHomePage = (props) => {
                             <ul className="nav-list" >
 
                                 <li className="display-from-md">
-                                    <NavLink to="/business" className="business-nav-link nav-link">Wiserr Business</NavLink>
+                                    <NavLink to="/business" className="business-nav-link nav-link"><BusinessHomepage/>BusinessHomepage>Wiserr Business</NavLink>
                                 </li>
 
                                 <li className="display-from-md">
@@ -64,6 +65,7 @@ export const AppHeaderHomePage = (props) => {
                     </div>
                 </div>
             </header>
+            <span className="line-sep"></span>
             
         </div>
     )

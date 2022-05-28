@@ -1,9 +1,9 @@
-.homepage-app-header {
+.business-homepage-app-header {
     height: 680px;
     width: 100%;
     margin-top: 0 !important;
-
-    .main-header {
+    
+    .business-main-header {
         padding-left: 13.25%;
         padding-right: 13.25%;
         margin-bottom: 0 !important;
@@ -12,17 +12,17 @@
         transition: background-color .5s ease;
         width: 100%;
         margin-top: 0 !important;
-
-
-        &.sticky {
+        
+        
+        &.business-sticky {
             background-color: #ffffff;
             position: fixed;
             width: 100%;
             z-index: 9999;
             display: block;
             margin-top: 0 !important;
-
-            .header-row {
+            
+            .business-header-row {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -31,7 +31,8 @@
                 // align-content: space-between;
                 align-items: center;
                 height: 80px;
-
+                background-color: blue;
+                
                 @media screen and (max-width: 600px) {
                     .btn-navicon {
                         display: block;
@@ -41,12 +42,12 @@
                     }
                 }
             }
-
+            
             .btn-navicon {
                 display: none;
             }
-
-            .logo {
+            
+            .business-logo-main-header {
                 // height: auto;
                 margin: 4px 0 0;
                 min-width: 121px;
@@ -55,7 +56,7 @@
                 cursor: pointer;
             }
 
-            .wiserr-header-search-animated {
+            .business-wiserr-header-search-animated {
 
                 // display: none;
                 @media screen and (min-width: 600px) {
@@ -67,7 +68,7 @@
                     // visibility: hidden;
                     transition: opacity 250ms ease;
 
-                    &.wiserr-header-search-animated {
+                    &.business-wiserr-header-search-animated {
                         visibility: visible;
                         opacity: 1;
                     }
@@ -78,12 +79,12 @@
                 }
             }
 
-            .search-bar-package {
+            .business-search-bar-package {
                 display: flex;
                 position: relative;
                 height: 34px;
 
-                .search-bar-package form .search-bar-icon {
+                .business-search-bar-package form .business-search-bar-icon {
                     position: absolute;
                     z-index: 5;
                     top: 8px;
@@ -92,7 +93,7 @@
                     height: 1em;
                 }
 
-                .search-bar-package form input {
+                .business-search-bar-package form input {
                     -webkit-box-flex: 1;
                     flex: 1 1 auto;
                     padding: 7px 7px 7px 28px;
@@ -102,12 +103,12 @@
                 }
 
                 @media screen and (min-width: 1160px) {
-                    .search-bar-package form input {
+                    .business-search-bar-package form input {
                         border-right: 0;
                         border-radius: 3px 0 0 3px;
                     }
 
-                    .search-bar-package .submit-button:not(.minimal) {
+                    .business-search-bar-package .business-submit-button:not(.minimal) {
                         padding: 8px 16px;
                         display: block;
                         font-size: 14px;
@@ -117,7 +118,7 @@
                 }
 
                 @media screen and (min-width: 900px) {
-                    .search-bar-package form input {
+                    .business-search-bar-package form input {
                         font-size: 15px;
                         padding-top: 8px;
                     }
@@ -137,7 +138,7 @@
             }
         }
 
-        .wiserr-nav {
+        .business-wiserr-nav {
             & ul li {
                 padding: 0 24px 0 0;
                 text-align: left;
@@ -165,7 +166,7 @@
                 //     margin-left: 1em;
                 // }
 
-                .wiserr.nav.wiser-nav-right {
+                .business-wiserr.nav.business-wiser-nav-right {
                     -webkit-box-flex: 1;
                     -webkit-box-pack: end;
                     flex-grow: 1;
@@ -180,7 +181,7 @@
         color: #62646a;
     }
 
-    .text-body-2 {
+    .business-text-body-2 {
         display: flex;
         flex-direction: row;
         // color: #ffffff;
