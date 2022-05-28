@@ -45,11 +45,7 @@ export const AppHeader = (props) => {
                                 </li>
 
                                 <li className="display-from-sm">
-                                    <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Sign In</NavLink>
-                                </li>
-
-                                <li className="signup-btn">
-                                    <NavLink to="/join" className="js-open-popup-join wiserr-header-join" rel="nofollow">Join</NavLink>
+                                    <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>
                                 </li>
                             </ul>
                         </div>

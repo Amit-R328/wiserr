@@ -5,6 +5,7 @@ import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from
 import { showSuccessMsg } from './event-bus.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
+const STORAGE_KEY_LOGGEDIN = 'loggedinUser'
 // var gWatchedUser = null;
 
 export const userService = {
@@ -58,20 +59,24 @@ async function update(user) {
 }
 
 async function login(userCred) {
+
     const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username)
+    const user = users.find(user => user.username === userCred.username && user.password === userCred.password)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
-        socketService.login(user._id)
-        return saveLocalUser(user)
+        console.log('USER FROM USER.service:', user)
+        // socketService.login(user._id)
+        _handleLogin(user)
+        return user
     }
 }
 async function signup(userCred) {
-    userCred.score = 10000;
+   
     const user = await storageService.post('user', userCred)
     // const user = await httpService.post('auth/signup', userCred)
-    socketService.login(user._id)
-    return saveLocalUser(user)
+    // socketService.login(user._id)
+    _handleLogin(user)
+    return user
 }
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
@@ -87,6 +92,10 @@ async function changeScore(by) {
     return user.score
 }
 
+function _handleLogin(user){
+    const miniUser = {userName: user.username, _id:user._id}
+    sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(miniUser))
+}
 
 function saveLocalUser(user) {
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
@@ -98,10 +107,10 @@ function getLoggedinUser() {
 }
 
 
-// ;(async ()=>{
-//     await userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 10000, isAdmin: false})
-//     await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true})
-//     await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000})
+// (async ()=>{
+//     await userService.signup({fullname: 'gul071', username: 'gul071', password:'gul071'})
+//     await userService.signup({fullname: 'richarddavis438', username: 'richarddavis438', password:'richarddavis438'})
+//     await userService.signup({fullname: 'courtney lasch', username: 'courtney lasch', password:'courtney lasch'})
 // })()
 
 

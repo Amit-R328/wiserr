@@ -10,6 +10,7 @@ import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
 import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-header.jsx'
 import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
+import { LoginSignup } from './pages/login-signup.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -19,24 +20,22 @@ const routes = [
         element: <BusinessAppHeader />
     },
     {
-        path: '/business/business-dashboard',
+        path: '/business/dashboard',
         component: <BusinessDashboard />,
-        element: <BusinessAppHeader />,
+        element: <BusinessAppHeader />
     },
     {
         path: '/business',
         component: <BusinessHomepage />,
         element: <BusinessHeaderHomePage />
     },
-    {
-        path: '/login',
-        component: <Login />,
+    {  path: '/login',
+        component: <LoginSignup />,
         element: <AppHeader />
     },
-    {
-        path: '/join',
-        component: <Join />,
-        element: <AppHeader />
+    {  path: '/join',
+    component: <LoginSignup />,
+    element: <AppHeader />
     },
     {
         path: '/categories',

@@ -1,7 +1,7 @@
 [
     {
         "_id": "u101",
-        "fullName": "gul071",
+        "fullName": "Ahmed Aka",
         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
         "userName": "gul071",
         "password": "gul071",
@@ -348,7 +348,6 @@
         "google-account": "",
         "facebook_account": "",
         "twitter_account": ""
-
     },
     {
         "_id": "u125",
@@ -378,7 +377,6 @@
         "google-account": "",
         "facebook_account": "",
         "twitter_account": ""
-
     },
     {
         "_id": "u127",
@@ -425,6 +423,38 @@
         "facebook_account": "",
         "twitter_account": ""
     
-    }
+    },
+    {
+        "_id": "u130",
+        "fullName": "lordenzoj",
+        "imgUrl": "https://this-person-does-not-exist.com/img/avatar-2a36023bc9228ca8560780f17c91e37d.jpg",
+        "userName": "lordenzoj",
+        "password": "lordenzoj",
+        "level": "",
+        "email": "lordenzoj@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    
+    },
+    {
+        "_id": "u131",
+        "fullName": "joshuamcclur187",
+        "imgUrl": "https://this-person-does-not-exist.com/img/avatar-d54c3fe5330ff4a422c91fa5f2839066.jpg",
+        "userName": "joshuamcclur187",
+        "password": "joshuamcclur187",
+        "level": "",
+        "email": "joshuamcclur187@gmail.com",
+        "avgRate": 5,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    
+    },
     
 ]

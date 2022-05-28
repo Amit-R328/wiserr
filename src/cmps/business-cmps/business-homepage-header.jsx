@@ -44,7 +44,7 @@ export const BusinessHeaderHomePage = (props) => {
                     <ul className="business-nav-list" >
 
                         <li className="business-display-from-md business-display-from-md">
-                            <NavLink to="/business-dashboard" className="business-dashboard-nav-link business-nav-link" target="_blank" ><BusinessDashboard /> Dashboard</NavLink>
+                            <NavLink to="/business/dashboard" className="business-dashboard-nav-link business-nav-link" target="_blank" ><BusinessDashboard /> Dashboard</NavLink>
                         </li>
 
                         {/* <li className="business-display-from-md business-display-from-md">

@@ -12,7 +12,6 @@ export const Search = () => {
 
     const onSearch = (ev) => {
         ev.preventDefault()
-        console.log('SEARCH ONSEARCH:',ev)
         filterBy = { ...filterBy, txt: searchTerm }
         dispatch(setFilter(filterBy))
         navigate('/categories')
