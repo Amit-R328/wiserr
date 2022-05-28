@@ -7,6 +7,14 @@
     margin: 0 76px 0 76px;
     flex-direction: row;
     align-items: flex-start;
+    .about-details{
+        dd{
+
+            display: list-item;
+            list-style-type: disc
+        }
+    
+    }
     .left-container {
         width: 711px;
         margin-right: 113px;

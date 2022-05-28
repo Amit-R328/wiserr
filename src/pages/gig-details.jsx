@@ -28,6 +28,10 @@ export const GigDetails = (props) => {
 
     if (!gig) return <h1>Loading</h1>
 
+    console.log('GIG FROM GIG DETAILS:', gig.description.whatDoYouGet)
+    let whatYouGet = gig.description.whatDoYouGet.split('\n')
+    console.log('WHATYOUGET:', whatYouGet)
+
     return (
         <section className="gig-details flex">
             <div className="left-container">
@@ -45,7 +49,12 @@ export const GigDetails = (props) => {
                     <h2 className="about-title">About this Gig</h2>
                     <p className="about-this-gig">{gig.description.aboutThisGig}</p>
                     <br />
-                    {gig.description.whatDoYouGet} && <p className="what-do-you-get">{gig.description.whatDoYouGet}</p>
+                    {gig.description.whatDoYouGet} && <p className="what-do-you-get">
+                        <dl>
+                            {console.log(gig.description.whatDoYouGet)}
+                            {whatYouGet.map(line => <dd>{line}</dd>)}
+                        </dl>
+                    </p>
                     <article className="about-seller">
                         <p className="about-title">About The Seller</p>
                         <div className="owner-card flex">
@@ -88,10 +97,10 @@ export const GigDetails = (props) => {
                     </article>
                 </section>
                 <section className="reviews">
-                    
+
                     {gig.reviews.map(review => {
                         return <article key={review.id}>
-                            <GigReview review={review}/>
+                            <GigReview review={review} />
                         </article>
                     })}
                 </section>
@@ -102,7 +111,7 @@ export const GigDetails = (props) => {
                     <span className="order-price">${gig.price}</span>
                     <p className="order-subtitle">{gig.title}</p>
                 </div>
-                    <button className="buy-btn">Continue</button>
+                <button className="buy-btn">Continue</button>
             </div>
         </section>
     )

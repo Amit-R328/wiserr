@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
+import { Search } from '../search.jsx'
 
 export const AppHeader = (props) => {
 
@@ -23,8 +24,9 @@ export const AppHeader = (props) => {
                                     <span className="search-bar-icon" aria-hidden="true">
                                         <SearchBar />
                                     </span>
-                                    <input type="search" autoComplete="off" placeholder="Find services" value="" />
-                                    <button className="co-white submit-button bg-co-green-700">Search</button>
+                                    <Search/>
+                                    {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
+                                    <button className="co-white submit-button bg-co-green-700">Search</button> */}
                                 </form>
                             </div>
                         </div>
