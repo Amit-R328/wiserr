@@ -167,3 +167,14 @@
     text-align: left;
     width: 1px;
 }
+
+.avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  // position: absolute;
+  // margin-right: 5em;
+  // margin-left: 2.5em;
+}

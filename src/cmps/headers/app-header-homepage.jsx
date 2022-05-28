@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
-import {Search} from '../search.jsx'
+import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
-import { useSelector,useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { userService } from '../../services/user.service.js'
 
 
@@ -13,19 +13,21 @@ export const AppHeaderHomePage = (props) => {
     const [navHeader, setNavHeader] = useState('hidden')
     const [logo, setLogo] = useState('logo-white')
     const [headerTextColor, setHeaderTextColor] = useState('white')
-    const [isSignIn, setIsSignIn] = useState(false)
+    // const [isSignIn, setIsSignIn] = useState(false)
     const dispatch = useDispatch()
-    // const {loggedInUser} = useSelector((storeState) => storeState.userModule)
-    const [loggedInUser, setLoggedInUser] = useState(  userService.getLoggedinUser())
- 
-   
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    // const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    // const {user} = useSelector((storeState) => storeState.userModule)
+    // const [user, setUser] = useState(userService.getById(loggedInUser._id))
+
+    console.log('loggedInUser', loggedInUser)
+    // console.log('user', user)
+
     const onLogout = () => {
         dispatch(logout())
-        setIsSignIn(false)
-        setLoggedInUser(null)
+        // setIsSignIn(false)
+        // setLoggedInUser(null)
     }
-
-
 
     return (
         <div className="header">
@@ -50,7 +52,7 @@ export const AppHeaderHomePage = (props) => {
                                     </span>
                                     {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
                                     <button className="co-white submit-button bg-co-green-700">Search</button> */}
-                                    <Search/>
+                                    <Search />
                                 </form>
                             </div>
                         </div>
@@ -70,7 +72,10 @@ export const AppHeaderHomePage = (props) => {
 
                                 <li className="display-from-sm">
                                     {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
-                                   {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
+                                    {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
+                                    <div className="avatar-container">
+                                        {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
+                                    </div>
                                     {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
                                 </li>
                             </ul>
@@ -80,7 +85,7 @@ export const AppHeaderHomePage = (props) => {
                 </div>
             </header>
             <span className="line-sep"></span>
-            
+
         </div>
     )
 }

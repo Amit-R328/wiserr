@@ -31,7 +31,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -46,7 +46,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -61,7 +61,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -97,7 +97,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -112,7 +112,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -127,7 +127,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -153,7 +153,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -168,7 +168,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -194,7 +194,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -209,7 +209,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -235,7 +235,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -250,7 +250,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -286,7 +286,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -301,7 +301,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -316,7 +316,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -342,7 +342,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -357,7 +357,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },  
@@ -383,7 +383,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -398,7 +398,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -424,7 +424,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -439,7 +439,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -475,7 +475,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -490,7 +490,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -505,7 +505,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -542,7 +542,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -557,7 +557,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -573,7 +573,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -589,7 +589,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -616,7 +616,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -631,7 +631,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -647,7 +647,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -684,7 +684,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -699,7 +699,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -715,7 +715,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
@@ -742,7 +742,7 @@
                 }
             }
         ],
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
 
