@@ -2,7 +2,8 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
-    delay
+    delay,
+    setDateTime,
 }
 
 function makeId(length = 6) {
@@ -37,4 +38,14 @@ function delay(ms = 1500) {
         setTimeout(resolve, ms)
     })
 }
+
+function setDateTime(userDate){
+
+    var date = new Date(userDate).toISOString()    
+    date = date.replace('T', ' ')
+    date = date.replace('Z', ' ')
+    var res = date.substr(0,19)
+    return res
+}
+
 

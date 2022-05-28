@@ -15,9 +15,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { setFilter, loadGigs } from '../store/actions/gigs.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
+import { loadOrders } from '../store/actions/order.actions.js';
 
 import { connect } from "react-redux";
-import { login, signup } from '../store/actions/user.actions.js'
+import { login, signup,getLoggedinUser } from '../store/actions/user.actions.js'
 
 const theme = createTheme();
 
@@ -30,19 +31,21 @@ export const LoginSignup = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-
+        
         const loginInfo = {
             userName: data.get('userName'),
             password: data.get('password'),
-            isRemember: (data.get('remember-me') !== null),
+            // isRemember: (data.get('remember-me') !== null),
         }
 
         if (isLogin) {
-            console.log('isLogin', isLogin)
             dispatch(login(loginInfo))
+            dispatch(getLoggedinUser())
         } else {
             loginInfo.fullname = data.get('fullname')           
             dispatch(signup(loginInfo))
+            dispatch(getLoggedinUser())
+            
         }
         navigate('/')
     };

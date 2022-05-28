@@ -10,6 +10,7 @@ export const GigReview = ({ review }) => {
         reviewService.addStarRate(reviewId)
     }
 
+    if (!review.userImage) review.userImage = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
     return (
         <React.Fragment>
             <article className="review-card flex">

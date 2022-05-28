@@ -85,3 +85,13 @@ export function loadUser(userId) {
     }
 }
 
+export function getLoggedinUser(){
+    return async (dispatch) => {
+        try {
+            const user = await userService.getLoggedinUser()
+            dispatch({type:'SET_LOGGED_USER', user})
+        } catch(err) {
+            console.log('Cannot load user', err)
+        }
+    }
+}

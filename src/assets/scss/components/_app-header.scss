@@ -1,6 +1,7 @@
   .app-header {
     width: 100%;
     margin-top: 0 !important;
+    margin-bottom: 135px;
 
     .main-header {
       padding-left: 13.25%;
@@ -178,3 +179,100 @@
       }
     }
   }
+
+  .wiserr-header-search-animated {
+    display: block;
+    visibility: visible;
+    // visibility: hidden;
+    opacity: 1;
+
+    @media screen and (min-width: 600px) {
+      // display: block;
+      margin-top: 0;
+      order: 0;
+      width: 230px;
+      opacity: 0;
+      // visibility: hidden;
+      transition: opacity 250ms ease;
+
+      &.wiserr-header-search-animated {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+
+    @media screen and (min-width: 1160px) {
+      width: 28%;
+    }
+
+    .main-header--scrolled.wiserr-header-search-animated,
+    .main-header--scrolledLayout.wiserr-header-search-animated {
+      visibility: visible;
+    }
+  }
+
+  .search-bar-package {
+    display: flex;
+    position: relative;
+    height: 34px;
+
+    .search-bar-package form .search-bar-icon {
+      position: absolute;
+      z-index: 5;
+      top: 8px;
+      left: 8px;
+      width: 1em;
+      height: 1em;
+    }
+
+    .search-bar-package form input {
+      -webkit-box-flex: 1;
+      flex: 1 1 auto;
+      padding: 7px 7px 7px 28px;
+      border-color: #dadbdd;
+      box-shadow: none;
+      z-index: 3;
+    }
+
+    @media screen and (min-width: 1160px) {
+      .search-bar-package form input {
+        border-right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .search-bar-package .submit-button:not(.minimal) {
+        padding: 8px 16px;
+        display: block;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 0 3px 3px 0;
+      }
+    }
+
+    @media screen and (min-width: 900px) {
+      .search-bar-package form input {
+        font-size: 15px;
+        padding-top: 8px;
+      }
+    }
+  }
+
+  span.line-sep {
+    background-color: #ddd;
+    box-sizing: border-box;
+    flex: 0 0 1px;
+    height: 24px;
+    text-align: left;
+    width: 1px;
+}
+
+.avatar-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+  // position: absolute;
+  // margin-right: 5em;
+  // margin-left: 2.5em;
+}

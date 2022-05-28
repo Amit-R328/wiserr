@@ -36,15 +36,17 @@ function onUserUpdate(user) {
 
 async function getById(userId) {
     const user = await storageService.get('user', userId)
+    console.log('user', user)
     // const user = await httpService.get(`user/${userId}`)
     // gWatchedUser = user;
 
-    socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
-    socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
+    // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
+    // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
 
     return user
 }
+
 function remove(userId) {
     return storageService.remove('user', userId)
     // return httpService.delete(`user/${userId}`)
@@ -72,23 +74,33 @@ async function login(userCred) {
     }
 }
 async function signup(userCred) {
-   try {
+    try {
         const users = await storageService.query('user')
         // const user = await httpService.post('auth/login', userCred)
-        const user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
-        if(user) {
+        const isUserExist = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
+        if (isUserExist) {
             const err = new Error('User already exist')
-            throw err 
+            throw err
         }
-        user = await storageService.post('user', userCred)
+        console.log('userCred', userCred)
+        userCred.avgRate = 0
+        userCred.email = userCred.userName + '@gmail.com'
+        userCred.facebook_account = ''
+        userCred.google_account = ''
+        userCred.twitter_account = ''
+        userCred.imgUrl = ''
+        userCred.isSeller = false
+        userCred.level = ''
+        const user = await storageService.post('user', userCred)
         // const user = await httpService.post('auth/signup', userCred)
         // socketService.login(user._id)
         _handleLogin(user)
+        console.log('user', user)
         return user
-   } catch (err) {
+    } catch (err) {
         console.dir(err)
         throw err
-   }
+    }
 }
 
 async function logout() {
@@ -105,12 +117,13 @@ async function changeScore(by) {
     return user.score
 }
 
-function _handleLogin(user){
-    const miniUser = {userName: user.userName, _id:user._id}
+function _handleLogin(user) {
+    const miniUser = { _id: user._id, userName: user.userName, imgUrl: user.imgUrl, isSeller: user.isSeller }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(miniUser))
 }
 
 function saveLocalUser(user) {
+    console.log('user', user)
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
