@@ -1,35 +1,40 @@
   .app-header {
-    // height: 680px;
     width: 100%;
-    // background-color: purple;
-    
+    margin-top: 0 !important;
+
     .main-header {
+      padding-left: 13.25%;
+      padding-right: 13.25%;
+      margin-bottom: 0 !important;
       -webkit-transition: background-color .5s ease;
       -o-transition: background-color .5s ease;
       transition: background-color .5s ease;
       width: 100%;
-      
+      margin-top: 0 !important;
+
       &.sticky {
-        position: sticky;
+        background-color: #ffffff;
+        position: fixed;
         width: 100%;
         z-index: 9999;
         display: block;
-        
+        margin-top: 0 !important;
+
         .header-row-wrapper {
           height: 81px;
         }
-        
+
         .header-row {
           display: flex;
           flex-direction: row;
           flex-wrap: nowrap;
           margin: 0 auto;
-          justify-content: space-around;
+          justify-content: space-between;
+          // align-content: space-between;
           align-items: center;
-          flex-wrap: nowrap;
-          color: #62646a;
-          
-          
+          height: 80px;
+
+
           @media screen and (max-width: 600px) {
             .btn-navicon {
               display: block;
@@ -53,29 +58,121 @@
           cursor: pointer;
         }
 
-        ul {
-          display: block;
-          list-style-type: disc;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-          padding-inline-start: 40px;
+        .wiserr-header-search-animated {
+
+          // display: none;
+          @media screen and (min-width: 600px) {
+            // display: block;
+            margin-top: 0;
+            order: 0;
+            width: 230px;
+            opacity: 0;
+            // visibility: hidden;
+            transition: opacity 250ms ease;
+
+            &.wiserr-header-search-animated {
+              visibility: visible;
+              opacity: 1;
+            }
+          }
+
+          @media screen and (min-width: 1160px) {
+            width: 28%;
+          }
+        }
+
+        .search-bar-package {
+          display: flex;
+          position: relative;
+          height: 34px;
+
+          .search-bar-package form .search-bar-icon {
+            position: absolute;
+            z-index: 5;
+            top: 8px;
+            left: 8px;
+            width: 16px;
+            height: 16px;
+          }
+
+          .search-bar-package form input {
+            -webkit-box-flex: 1;
+            flex: 1 1 auto;
+            padding: 7px 7px 7px 28px;
+            border-color: #dadbdd;
+            box-shadow: none;
+            z-index: 3;
+          }
+
+          @media screen and (min-width: 1160px) {
+            .search-bar-package form input {
+              border-right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+
+            .search-bar-package .submit-button:not(.minimal) {
+              padding: 8px 16px;
+              display: block;
+              font-size: 14px;
+              font-weight: 700;
+              border-radius: 0 3px 3px 0;
+            }
+          }
+
+          @media screen and (min-width: 900px) {
+            .search-bar-package form input {
+              font-size: 15px;
+              padding-top: 8px;
+            }
+          }
+        }
+      }
+
+      ul {
+        margin: 0;
+
+        &.nav-list {
           margin: 0;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+
+      .wiserr-nav {
+        & ul li {
+          padding: 0 24px 0 0;
+          text-align: left;
+          line-height: 24px;
+          font-size: 1.2em;
           color: #62646a;
-          list-style: none;
-          text-decoration: none;
-          font-size: 16px;
-          
-          &.nav-list {
-            margin: 0;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            color: #62646a;
-            padding: 18px;
-            gap: 10px;
+          // color: #ffffff;
+
+          & a {
+            list-style-type: none;
+            text-decoration: none;
+            color: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            cursor: pointer;
+          }
+
+          & span:not(:first-child) {
+            padding: 0 10px;
+          }
+        }
+
+        @media screen and (min-width: 600px) {
+          // .wiserr-nav {
+          //     margin-left: 16px;
+          // }
+
+          .wiserr.nav.wiser-nav-right {
+            -webkit-box-flex: 1;
+            -webkit-box-pack: end;
+            flex-grow: 1;
+            justify-content: flex-end;
           }
         }
       }

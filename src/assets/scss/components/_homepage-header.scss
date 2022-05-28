@@ -56,7 +56,6 @@
             }
 
             .wiserr-header-search-animated {
-
                 // display: none;
                 @media screen and (min-width: 600px) {
                     // display: block;
@@ -88,8 +87,8 @@
                     z-index: 5;
                     top: 8px;
                     left: 8px;
-                    width: 1em;
-                    height: 1em;
+                    width: 16px;
+                    height: 16px;
                 }
 
                 .search-bar-package form input {
@@ -162,7 +161,7 @@
 
             @media screen and (min-width: 600px) {
                 // .wiserr-nav {
-                //     margin-left: 1em;
+                //     margin-left: 16px;
                 // }
 
                 .wiserr.nav.wiser-nav-right {

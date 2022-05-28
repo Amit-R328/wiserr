@@ -54,18 +54,18 @@
         }
 
         ul {
-          display: block;
-          list-style-type: disc;
-          margin-block-start: 1em;
-          margin-block-end: 1em;
-          margin-inline-start: 0px;
-          margin-inline-end: 0px;
-          padding-inline-start: 40px;
-          margin: 0;
-          color: #62646a;
-          list-style: none;
-          text-decoration: none;
-          font-size: 16px;
+          // display: block;
+          // list-style-type: disc;
+          // margin-block-start: 16px;
+          // margin-block-end: 16px;
+          // margin-inline-start: 0px;
+          // margin-inline-end: 0px;
+          // padding-inline-start: 40px;
+          // margin: 0;
+          // color: #62646a;
+          // list-style: none;
+          // text-decoration: none;
+          // font-size: 16px;
           
           &.nav-list {
             margin: 0;
@@ -122,8 +122,8 @@
       z-index: 5;
       top: 8px;
       left: 8px;
-      width: 1em;
-      height: 1em;
+      width: 16px;
+      height: 16px;
     }
 
     .business-search-bar-package form input {

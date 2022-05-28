@@ -7,13 +7,16 @@ export function GigList({ gigs }) {
     // }
     return (
 
-                   <ul className="gig-list clean-list">
-                    {gigs.map(gig =>
-                        <GigPreview
-                            key={gig._id}
-                            gig={gig}
-                        />
-                    )}
-                </ul>
+        <div className="list-of-gigs-container">
+            <ul className="gig-list clean-list">
+                {gigs.map(gig =>
+                    <GigPreview
+                        key={gig._id}
+                        gig={gig}
+                    />
+                )}
+            </ul>
+        </div>
+
     )
 }
