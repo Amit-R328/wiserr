@@ -5,6 +5,8 @@ import { HeroCarousel } from './hero-carousel.jsx'
 import {Search} from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector,useDispatch } from 'react-redux'
+import { userService } from '../../services/user.service.js'
+
 
 export const AppHeaderHomePage = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -14,11 +16,13 @@ export const AppHeaderHomePage = (props) => {
     const [isSignIn, setIsSignIn] = useState(false)
     const dispatch = useDispatch()
     // const {loggedInUser} = useSelector((storeState) => storeState.userModule)
-
-// console.log('loggedInUser',loggedInUser )
+    const [loggedInUser, setLoggedInUser] = useState(  userService.getLoggedinUser())
+ 
+   
     const onLogout = () => {
         dispatch(logout())
         setIsSignIn(false)
+        setLoggedInUser(null)
     }
 
 
@@ -65,9 +69,9 @@ export const AppHeaderHomePage = (props) => {
                                 </li>
 
                                 <li className="display-from-sm">
-                                    <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>
-                                   {/* {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>} */}
-                                    {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>} */}
+                                    {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
+                                   {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
+                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
                                 </li>
                             </ul>
                         </div>
