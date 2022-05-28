@@ -3,12 +3,25 @@ import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar }
 import { NavLink } from 'react-router-dom'
 import { HeroCarousel } from './hero-carousel.jsx'
 import {Search} from '../search.jsx'
+import { logout } from '../../store/actions/user.actions.js'
+import { useSelector,useDispatch } from 'react-redux'
 
 export const AppHeaderHomePage = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
     const [logo, setLogo] = useState('logo-white')
     const [headerTextColor, setHeaderTextColor] = useState('white')
+    const [isSignIn, setIsSignIn] = useState(false)
+    const dispatch = useDispatch()
+    // const {loggedInUser} = useSelector((storeState) => storeState.userModule)
+
+// console.log('loggedInUser',loggedInUser )
+    const onLogout = () => {
+        dispatch(logout())
+        setIsSignIn(false)
+    }
+
+
 
     return (
         <div className="header">
@@ -53,6 +66,8 @@ export const AppHeaderHomePage = (props) => {
 
                                 <li className="display-from-sm">
                                     <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>
+                                   {/* {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>} */}
+                                    {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>} */}
                                 </li>
                             </ul>
                         </div>
