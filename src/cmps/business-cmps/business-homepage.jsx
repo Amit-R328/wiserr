@@ -13,7 +13,7 @@ export const BusinessHomepage = (props, onChangeCategory) => {
                     <div className="business-main-wrapper-homepage">
                         <div className="business-homepage-app-header">
 
-                            <div className="business-main-header sticky">
+                            <div className="business-main-header business-sticky">
                                 <div>
                                     <BusinessHeaderHomePage />
                                     <span className="line-sep"></span>
@@ -25,13 +25,13 @@ export const BusinessHomepage = (props, onChangeCategory) => {
 
                         </div>
 
-                        <section className="business-trusted-by-brands max-width-container">
+                        <section className="business-trusted-by-brands business-max-width-container">
                             <ul className="business-brands-container">
                                 <p>Trusted By:</p>
-                                <li><button className="brand-6 brand-box"><p>L'<span>O</span>REAL</p></button></li>
-                                <li><button className="brand-7 brand-box">Unilever</button></li>
-                                <li><button className="brand-8 brand-box"><p>888.COM</p></button></li>
-                                <li><button className="brand-9 brand-box">MyHeritage</button></li>
+                                <li><button className="brand-6 business-brand-box"><p>L'<span>O</span>REAL</p></button></li>
+                                <li><button className="brand-7 business-brand-box">Unilever</button></li>
+                                <li><button className="brand-8 business-brand-box"><p>888.COM</p></button></li>
+                                <li><button className="brand-9 business-brand-box">MyHeritage</button></li>
                             </ul>
                         </section>
                     </div>

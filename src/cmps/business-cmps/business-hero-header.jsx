@@ -5,10 +5,10 @@ export const BusinessHeroHeaderHomePage = (props) => {
     return (
         <div className="business-hero-wrapper-carousel">
             <div className="business-hero-backgrounds">
-                <div className="business-hero-wrapper business-hero-wrapper m-b-0 business-hero-andrea">
+                <div className="business-hero-wrapper business-hero-wrapper business-hero-andrea">
                     <div className="business-hero-backgrounds business-hero-backgrounds">
                         <div className="business-hero-gabriela">
-                            <div className="business-seller-name business-seller-name max-width-container">
+                            <div className="business-seller-name business-seller-name business-max-width-container">
                                 <div className="business-seller-details-preview">
                                     <div className="business-seller-details-header">
                                         {/* <AccountCircleIcon /> */}
@@ -31,7 +31,7 @@ export const BusinessHeroHeaderHomePage = (props) => {
                                 <div className="expertise">Expertise<span>,</span><p>When you need it</p></div>
                             </h1>
 
-                            <div className="business-search-bar-package search_bar-package">
+                            <div className="business-search-bar-package business-search_bar-package">
                                 <form className="">
                                     <span className="business-search-bar-icon" aria-hidden="true" >
                                         <svg width="16" height="16" viewBox="0 0 16 16">
@@ -44,7 +44,7 @@ export const BusinessHeroHeaderHomePage = (props) => {
                                     placeholder="Try &quot;building mobile app&quot;" 
                                     value="" 
                                     className="business-input-search"/>
-                                    <button className="co-white submit-button bg-co-green-700">Search</button>
+                                    <button className="business-submit-button">Search</button>
                                 </form>
                             </div>
                         </div>
