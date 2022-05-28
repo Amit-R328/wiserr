@@ -1,4 +1,25 @@
 import {gigService} from "../../services/gig.service.js"
+import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
+
+export function getActionRemoveGig(gigId) {
+    return {
+        type: 'REMOVE_GIG',
+        gigId
+    }
+}
+export function getActionAddGig(gig) {
+    return {
+        type: 'ADD_GIG',
+        gig
+    }
+}
+
+export function getActionUpdateGig(gig) {
+    return {
+        type: 'UPDATE_GIG',
+        gig
+    }
+}
 
 var subscriber
 
@@ -44,7 +65,7 @@ export function getById(gigId) {
                     gig
                 })        
         } catch(err) {
-        console.error('Error:', err)
+        // console.error('Error:', err)
         }
     }
 }
@@ -55,5 +76,66 @@ export function setFilter(filterBy) {
             type: 'SET_FILTERBY',
             filterBy,
         })
+    }
+}
+
+export function removeGig(gigId) {
+    return async dispatch => {
+    try{
+        await gigService.remove(gigId)
+        console.log('Deleted Successfully!')
+        dispatch(getActionRemoveGig(gigId))
+        showSuccessMsg('Gig removed Succesfully!')
+        } catch(err) {
+            console.error('Error:', err)            
+            showErrorMsg(err.response.data)
+            // showErrorMsg('Gig was not removed')
+        }
+        if (subscriber) gigService.unsubscribe(subscriber)
+            subscriber = (ev) => {
+            console.log('Got notified', ev.data)
+            dispatch(ev.data)
+        }
+        gigService.subscribe(subscriber)
+    }
+}
+
+export function saveGig(gig) {
+    return async dispatch => {        
+        try {
+        const savedGig = await gigService.save(gig)
+        dispatch(getActionUpdateGig(gig))
+        showSuccessMsg('Gig saved Successfully!')
+        } catch(err) {
+            console.error('Error:', err)
+            // showErrorMsg('Gig was not saved')
+            showErrorMsg(err.response.data)
+        }
+        if (subscriber) gigService.unsubscribe(subscriber)
+            subscriber = (ev) => {
+            console.log('Got notified', ev.data)
+            dispatch(ev.data)
+        }
+        gigService.subscribe(subscriber)
+    }
+}
+
+export function addGig(gig) {
+    return async dispatch => {
+        try {
+            const savedGig = await gigService.save(gig)
+            dispatch(getActionAddGig(gig))
+            showSuccessMsg('Gig added Successfully!')
+        } catch(err) {
+            console.error('Error:', err)
+            // showErrorMsg('Gig was not added')
+            showErrorMsg(err.response.data)
+        }
+        if (subscriber) gigService.unsubscribe(subscriber)
+        subscriber = (ev) => {
+            console.log('Got notified', ev.data)
+            dispatch(ev.data)
+        }
+        gigService.subscribe(subscriber)
     }
 }

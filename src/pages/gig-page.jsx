@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 
+
 export const GigPage = (onChangeCategory) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
@@ -27,6 +28,8 @@ export const GigPage = (onChangeCategory) => {
         dispatch(loadGigs(filterBy))
     }, [])
 
+
+    
     return (
         <section className="gigs-app-container">
             <div className="main-wrapper">

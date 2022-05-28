@@ -40,6 +40,7 @@ export const FilterBreadCrumbs = () => {
                     </header>
 
                 </header >
+                
                 <div className="filter-topbar">
                     <div className="filter-shadow-effect">
                         <div className="filter-floating-top-bar">

@@ -263,7 +263,7 @@ function _createGigs(){
                 "_id": "u101",
                 "fullName": "gul071",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
-                "rate": 4.9,
+                "rate": [4.9],
                 "from": "Pakistan",
                 "memberSince": "Sept 2017",
                 "avgResponseTime":"1 hour",
@@ -285,7 +285,7 @@ function _createGigs(){
             "userName":"courtneylasch",
             "content":"I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg",
-            "stars":5,
+            "stars":[5],
             "userCountry":"United States"
             },
             {
@@ -293,7 +293,7 @@ function _createGigs(){
             "userName":"lordenzoj",
              "content":"Communication was poor. Project was super late with no communication from seller until I reached out. The work overall was pretty good after a few edits",
              "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/d48669eac8ec3b563a685e8bd949a701-1650869312636/0465790c-8906-40e7-9b61-d1ecc95b55d7.jpg",
-             "stars":4,
+             "stars":[4],
              "userCountry":"United States"
             },
             {
@@ -301,7 +301,7 @@ function _createGigs(){
             "userName":"joshuamcclur187",
             "content":"Gul071 is amazing. He is very talented and follows up amazingly. I will certainly refer and use his services again. Thank you for doing such an incredible job. I am beyond pleased and excited.",
             "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/29461d7f25eb73f0594a8bfb5c8a9d51-947790731647479073.389776/E41D379E-ABFD-4597-A516-4AF55CD1DD7E",
-            "stars":5,
+            "stars":[5],
             "userCountry":"United States"
             }
             ],
@@ -319,7 +319,7 @@ function _createGigs(){
                 "_id": "u107",
                 "fullName": "graphexgalaxy",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": 4.8,
+                "rate": [4.8],
                 "from": "United Kingdom",
                 "avgResponseTime":"1 hour",
                 "lastDelivery":"about 19 hours",
@@ -349,7 +349,7 @@ function _createGigs(){
                 "_id": "u109",
                 "fullName": "dohyotriyono",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": 5,
+                "rate": [5],
                 "from":"Indonesia",
                 "memberSince":"Jun 2020",
                 "avgResponseTime": "1 hour",
@@ -379,7 +379,7 @@ function _createGigs(){
                 "_id": "u111",
                 "fullName": "gad_by_miraz_pro",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/7a85510d72ccc2941cbe87ac3dd3a9e4-1634745207853/f9896223-7a6d-42b6-8711-d60922c3b6ab.jpg",
-                "rate": 4.9,
+                "rate": [4.9],
                 "from":"Israel",
                 "memberSince":"2 month ago",
                 "avgResponseTime":"3 hours",
@@ -401,7 +401,7 @@ function _createGigs(){
                  "content":"By far the best services I have received on fiverr yet! I am really happy with the outcomes and they are extremely professional as well as requiring very little input in order to create amazing posts for my channels.",
                  "userName":"camerongiliomee",
                  "userImage":"https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/505659e775c93c597906183904af624a-1636100364921/5d9c8a64-93d1-4b67-8a7f-915f96ef2aab.png",
-                 "stars": 5,
+                 "stars": [5],
                  "userCountry":"Canada"
                 },
                 {
@@ -409,7 +409,7 @@ function _createGigs(){
                 "content": "Some blogs are being revoked by Google Ads due to violations. We have to be careful now because they are going to begin charging and suspending people for continuous violations.",
                 "userName":"willdavis527",
                 "userImage":"",
-                "stars": 4.7,
+                "stars": [4.7],
                 "userCountry":"United States"
                 },
                 {
@@ -417,7 +417,7 @@ function _createGigs(){
                  "content":"I have worked with them many times before. This last time there was a few communication gaps, but overall I will hire them again",
                  "userName":"davis18232",
                  "userImage":"",
-                 "stars":4,
+                 "stars":[4],
                  "userCountry":"United States"
                 }
             ],
@@ -435,7 +435,7 @@ function _createGigs(){
                 "_id": "u113",
                 "fullName": "shirley_esid",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b4231d6752099ce2619003ed164b72e2-1646950968199/c6714639-3d34-4a5a-9739-3a72597ae4ec.JPG",
-                "rate": 4.9
+                "rate": [4.9]
             },
             "level": "Level 2 Seller",
             "daysToMake": 10,
@@ -461,7 +461,7 @@ function _createGigs(){
                 "_id": "u116",
                 "fullName": "roslyn_johnson",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b6f6830b0394f46092fc7ace020c511d-985758451632988163077/JPEG_20210930_134922_-1807988561.jpg",
-                "rate": 4.9
+                "rate": [4.9]
             },
             "level": "Level 2 Seller",
             "daysToMake": 10,
@@ -487,7 +487,7 @@ function _createGigs(){
                 "_id": "u118",
                 "fullName": "mahbuburrahm204",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8038e14b365769c5de4ab798e6346b7b-1629650732214/f75468a6-3514-47c0-b493-e021fe608344.png",
-                "rate": 4.9
+                "rate": [4.9]
             },
             "level": "Level 2 Seller",
             "daysToMake": 3,
@@ -513,7 +513,7 @@ function _createGigs(){
                 "_id": "u120",
                 "fullName": "jaylucy",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/48b6c449a1b46cb2c9db97fc7cd612cc-1644490352565/3299dcc8-8cb3-45d5-9e46-72c4d50b6830.jpg",
-                "rate": 5
+                "rate": [5]
             },
             "level": "Top Rated Seller",
             "daysToMake": 7,
@@ -539,7 +539,7 @@ function _createGigs(){
                 "_id": "u122",
                 "fullName": "hayleyhutson",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6f43fcdade5ca0cf5dc2a19bd2c75122-1595186054929/372e22af-6325-4f4e-b947-7c7767e6cf0a.jpeg",
-                "rate": 5
+                "rate": [5]
             },
             "level": "Level 2 Seller",
             "daysToMake": 5,
@@ -565,7 +565,7 @@ function _createGigs(){
                 "_id": "u125",
                 "fullName": "luizakipper",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/d0f1aa93510d94ecbbb75f189c5bc298-1553798809035/8558f3ac-ee2a-4e0f-b51e-e14984bc52f1.png",
-                "rate": 5
+                "rate": [5]
             },
             "level": "Level 2 Seller",
             "daysToMake": 2,
@@ -583,9 +583,6 @@ function _createGigs(){
                 "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/1b09c5e9e6a2068b2e52982392410de9-1505051459868/a8ccb197-f0ee-4315-9f9b-c8ff5277b754.JPG"
                 }
         }
-    ]
-     
-     
-       
+    ] 
     return gigs  
 }

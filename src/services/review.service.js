@@ -2,8 +2,8 @@
 import { storageService } from './async-storage.service'
 import { userService } from './user.service'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from './socket.service'
-import { getActionRemoveReview, getActionAddReview } from '../store/review.actions'
-import { store } from '../store/store'
+import { getActionRemoveReview, getActionAddReview } from '../store/actions/review.actions.js'
+import { store } from  '../store/root.reducer.js'
 import { showSuccessMsg } from '../services/event-bus.service'
 
 const reviewChannel = new BroadcastChannel('reviewChannel')
@@ -27,7 +27,8 @@ const STORAGE_KEY = 'gig'
 export const reviewService = {
   add,
   query,
-  remove
+  remove,
+  addStarRate
 }
 
 
@@ -44,14 +45,25 @@ async function remove(reviewId) {
   // await httpService.delete(`review/${reviewId}`)
   await storageService.remove('review', reviewId)
   reviewChannel.postMessage(getActionRemoveReview(reviewId))
-
-
 }
+
 async function add(review) {
   // const addedReview = await httpService.post(`review`, review)
 
   review.byUser = userService.getLoggedinUser()
   review.aboutUser = await userService.getById(review.aboutUserId)
+  const addedReview = await storageService.post('review', review)
+
+  reviewChannel.postMessage(getActionAddReview(addedReview))
+
+  return addedReview
+}
+
+async function addStarRate(review, stars) {
+  // const addStarRate = await httpService.post(`review`, review)
+
+  review.byUser = userService.getLoggedinUser()
+  review.aboutGig = await userService.getById(review.aboutGigId)
   const addedReview = await storageService.post('review', review)
 
   reviewChannel.postMessage(getActionAddReview(addedReview))

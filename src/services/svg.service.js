@@ -335,7 +335,7 @@ export function PathArrow() {
 export function PathArrow2() {
     return (
         <svg width="5" height="10" viewBox="0 0 10 10">
-        <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z" color='rgb(98, 100, 106)' float='left' height='100%' lineHeight='18px' listStyle='none' textAlign='left' width='100%'/>
+            <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z" color='rgb(98, 100, 106)' float='left' height='100%' lineHeight='18px' listStyle='none' textAlign='left' width='100%' />
         </svg>
     )
 }
@@ -523,10 +523,10 @@ export function LifeStyleIcon() {
                     <path d="M12 20.2h34.7V53a4 4 0 01-4 4H16a4 4 0 01-4-4V20.2z" fill="#fff" />
                     <path d="M12 20.2v4.2h30.5v31.5c0 .4-.1.7-.1 1 1.8-.4 4.3-2.1 4.3-4.1V20.2z" fill="#dee0e2" />
                     <path fill='none' stroke='#4d535b' stroke-miterlimit='10' strokeWidth='2.1px' d="M13 20.2h32.7a1 1 0 011 1V52a5 5 0 01-5 5H17a5 5 0 01-5-5V21.2a1 1 0 011-1zm8.5 0v8.4" />
-                    <rect x="16.7" y="29.1" width="9.5" height="11.56" rx="1" stroke-width="2.23" fill="none" stroke="#4d535b" stroke-miterlimit="10" />
+                    <rect x="16.7" y="29.1" width="9.5" height="11.56" rx="1" strokeWidth="2.23" fill="none" stroke="#4d535b" stroke-miterlimit="10" />
                     <rect x="16.7" y="29.1" width="9.5" height="11.56" rx="1" style={{ mixblendmode: 'darken' }} fill="#a1f4c0" />
                     <path fill='none' stroke='#4d535b' stroke-miterlimit='10' strokeWidth='2.1px' d="M46.7 28.6a9.5 9.5 0 010 18.9m-16.8-42V16" />
-                    <path d="M36.2 7.6V16M23.6 7.6V16" stroke-width="1.88" fill="none" stroke="#4d535b" stroke-miterlimit="10" />
+                    <path d="M36.2 7.6V16M23.6 7.6V16" strokeWidth="1.88" fill="none" stroke="#4d535b" stroke-miterlimit="10" />
                 </g>
             </g>
         </svg>
@@ -556,19 +556,28 @@ export function DataIcon() {
     return (
         <svg width="59" height="41" viewBox="0 0 59 41" fill="none">
             <path d="M11.571 9.457V7.343H49.63v2.114H11.57zm39.115-5.286V2.057h3.171A3.171 3.171 0 0157.03 5.23v26.957h-2.643v-25.9a2.114 2.114 0 00-2.114-2.115h-1.586z" fill="#DEE0E2" />
-            <path d="M57.543 35.543A4.456 4.456 0 0153.086 40H11.57V6.571h8.986" stroke="#4D535B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
-            <path d="M50.857 32.2c.468-.791 1.415-1.114 2.229-1.114a4.456 4.456 0 014.457 4.457V5.457A4.456 4.456 0 0053.086 1c-.814 0-1.85.19-2.229 1.114V32.2z" stroke="#4D535B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
-            <path d="M3.786 6.171C2.248 6.171 1 7.174 1 8.4v25.5l2.786 5.572L6.57 33.9V8.4c0-1.226-1.248-2.229-2.785-2.229z" fill="#A1F4C0" stroke="#4D535B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
-            <path d="M1 12.857h5.571m13.086-6.286h31.2m-24.485 4.886h-8.458v9.514h8.457v-9.514zm5.285 0H45.93m-14.273 4.457H45.93m-14.273 4.458h10.929" stroke="#4D535B" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" />
-            <path d="M39.057 35.772h7.4v-7.4h-7.4v7.4zm-6.343-8.458h-7.4v8.458h7.4v-8.458zm6.343-2.114h-6.343v10.572h6.343V25.2zM17.914 35.772h7.4v-4.23h-7.4v4.23z" stroke="#4D535B" stroke-width="2" stroke-miterlimit="10" />
+            <path d="M57.543 35.543A4.456 4.456 0 0153.086 40H11.57V6.571h8.986" stroke="#4D535B" strokeWidth="2" stroke-miterlimit="10" stroke-linejoin="round" />
+            <path d="M50.857 32.2c.468-.791 1.415-1.114 2.229-1.114a4.456 4.456 0 014.457 4.457V5.457A4.456 4.456 0 0053.086 1c-.814 0-1.85.19-2.229 1.114V32.2z" stroke="#4D535B" strokeWidth="2" stroke-miterlimit="10" stroke-linejoin="round" />
+            <path d="M3.786 6.171C2.248 6.171 1 7.174 1 8.4v25.5l2.786 5.572L6.57 33.9V8.4c0-1.226-1.248-2.229-2.785-2.229z" fill="#A1F4C0" stroke="#4D535B" strokeWidth="2" stroke-miterlimit="10" stroke-linejoin="round" />
+            <path d="M1 12.857h5.571m13.086-6.286h31.2m-24.485 4.886h-8.458v9.514h8.457v-9.514zm5.285 0H45.93m-14.273 4.457H45.93m-14.273 4.458h10.929" stroke="#4D535B" strokeWidth="2" stroke-miterlimit="10" stroke-linejoin="round" />
+            <path d="M39.057 35.772h7.4v-7.4h-7.4v7.4zm-6.343-8.458h-7.4v8.458h7.4v-8.458zm6.343-2.114h-6.343v10.572h6.343V25.2zM17.914 35.772h7.4v-4.23h-7.4v4.23z" stroke="#4D535B" strokeWidth="2" stroke-miterlimit="10" />
         </svg>
     )
 }
 
 export function UserIconBlank() {
     return (
-        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="16px" width="16px">
+        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 496 512" height="16px" width="16px">
             <path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z">
+            </path>
+        </svg>
+    )
+}
+
+export function StartRate() {
+    return (
+        <svg viewBox="0 0 1792 1792" width="15" height="15" >
+            <path fill="currentColor" d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
             </path>
         </svg>
     )
