@@ -1,6 +1,6 @@
 import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
-import { BusinessTools } from './cmps/business-cmps/business-tools.jsx'
+import { BusinessDashboard } from './cmps/business-cmps/business-dashboard.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
 import { Login } from './pages/login.jsx'
 import { GigPage } from './pages/gig-page.jsx'
@@ -17,8 +17,8 @@ const routes = [
         element: <AppHeader />
     },
     {
-        path: '/business/business-tools',
-        component: <BusinessTools />,
+        path: '/business/dashboard',
+        component: <BusinessDashboard />,
         element: <AppHeader />
     },
     {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { LogoBusinessFull } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
-import { BusinessTools } from './business-tools.jsx'
+import { BusinessDashboard } from './business-dashboard.jsx'
 import { BusinessSolutions } from './business-solutions.jsx'
 
 export const BusinessHomepage = (props) => {
@@ -24,7 +24,7 @@ export const BusinessHomepage = (props) => {
                             <ul className="nav-list clean-list" >
 
                                 <li className="business-display-from-md display-from-md clean-list">
-                                    <NavLink to="/business-tools" className="business-tools-nav-link nav-link" target="_blank" ><BusinessTools /> Business Tools</NavLink>
+                                    <NavLink to="/business-tools" className="business-tools-nav-link nav-link" target="_blank" ><BusinessDashboard /> Business Tools</NavLink>
                                 </li>
 
                                 <li className="business-display-from-md display-from-md clean-list">
