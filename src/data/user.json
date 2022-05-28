@@ -8,7 +8,7 @@
         "level": "Level 2 Seller",
         "email": "gul071@gmail.com",
         "avgRate": 4.9,
-        "isSeller": true,//explain to Yaron
+        "isSeller": true,
         "reviews": [
             {
                 "id": "r100",
