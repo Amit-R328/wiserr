@@ -392,6 +392,37 @@
         "google-account": "",
         "facebook_account": "",
         "twitter_account": ""
+    },
+    {
+        "_id": "u128",
+        "fullName": "laraib_zafar",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/307f4b58efd7ba93de772c80f47cc029-1641283020750/178eedb2-e5ea-452b-8c3e-e65f011650d8.jpeg",
+        "userName": "laraib_zafar",
+        "password": "laraib_zafar",
+        "level": "",
+        "email": "laraib_zafar@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    },
+    {
+        "_id": "u129",
+        "fullName": "markdarwin18",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/ca79ba59ec325ff629d7e27136b39aef-1620263082130/dfd2c226-8e5f-42f9-bbe9-01e211846a8e.jpg",
+        "userName": "markdarwin18",
+        "password": "markdarwin18",
+        "level": "",
+        "email": "markdarwin18@gmail.com",
+        "avgRate": 4.9,
+        "isSeller": false,
+        "reviews": [{}],         
+        "google-account": "",
+        "facebook_account": "",
+        "twitter_account": ""
+    
     }
     
 ]

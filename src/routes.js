@@ -33,20 +33,22 @@ const routes = [
     component: <LoginSignup />,
     element: <AppHeader />
     },
-    {  path: '/categories',
+    {
+        path: '/categories',
         component: <GigPage />,
         element: <AppHeader />
     },
     {
         path: '/categories/:gigId',
-        component: <GigDetails/>,
+        component: <GigDetails />,
         element: <AppHeader />
     },
-    {  path: '/',
+    {
+        path: '/',
         component: <HomePage />,
         element: <AppHeaderHomePage />
     },
-    
+
     // {
     //     path: 'review',
     //     component: <ReviewApp />,

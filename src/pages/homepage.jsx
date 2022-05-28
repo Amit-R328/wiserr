@@ -27,7 +27,9 @@ export const HomePage = (props, onChangeCategory) => {
 
                     <div className="main-header sticky">
                         <AppHeaderHomePage />
+                        <div>
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        </div>
                     </div>
                     <HeroHeaderHomePage />
 

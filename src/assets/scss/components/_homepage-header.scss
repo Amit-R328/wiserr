@@ -1,15 +1,19 @@
 .homepage-app-header {
     height: 680px;
+    width: 100%;
     margin-top: 0 !important;
-    
+
     .main-header {
-        // background-color: green;
+        padding-left: 13.25%;
+        padding-right: 13.25%;
+        margin-bottom: 0 !important;
         -webkit-transition: background-color .5s ease;
         -o-transition: background-color .5s ease;
         transition: background-color .5s ease;
         width: 100%;
         margin-top: 0 !important;
         
+
         &.sticky {
             background-color: #ffffff;
             position: fixed;
@@ -17,22 +21,16 @@
             z-index: 9999;
             display: block;
             margin-top: 0 !important;
-            
-            
-            .header-row-wrapper {
-                height: 80px;
-                margin-top: 0 !important;
-            }
-            
+
             .header-row {
-                margin-top: 0 !important;
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
                 margin: 0 auto;
-                // justify-content: space-between;
+                justify-content: space-between;
                 // align-content: space-between;
                 align-items: center;
+                height: 80px;
 
                 @media screen and (max-width: 600px) {
                     .btn-navicon {
@@ -127,13 +125,6 @@
         }
 
         ul {
-            display: block;
-            list-style-type: disc;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
             margin: 0;
 
             &.nav-list {
@@ -150,10 +141,10 @@
                 padding: 0 24px 0 0;
                 text-align: left;
                 line-height: 24px;
-                font-size: 1em;
-                color: #62646a;;
+                font-size: 1.2em;
+                color: #62646a;
                 // color: #ffffff;
-
+                
                 & a {
                     list-style-type: none;
                     text-decoration: none;
@@ -162,46 +153,46 @@
                     font-size: inherit;
                     cursor: pointer;
                 }
-
+                
                 & span:not(:first-child) {
                     padding: 0 10px;
                 }
             }
-
+            
             @media screen and (min-width: 600px) {
-                // .logged-out-homepage-header .wiserr-nav {
-                //     margin-left: 1em;
-                // }
-
-                .wiserr.nav.wiser-nav-right {
-                    -webkit-box-flex: 1;
-                    -webkit-box-pack: end;
-                    flex-grow: 1;
-                    justify-content: flex-end;
+                // .wiserr-nav {
+                    //     margin-left: 1em;
+                    // }
+                    
+                    .wiserr.nav.wiser-nav-right {
+                        -webkit-box-flex: 1;
+                        -webkit-box-pack: end;
+                        flex-grow: 1;
+                        justify-content: flex-end;
+                    }
                 }
             }
         }
-    }
 
-    .font-domaine {
-        // color: #ffffff;
-        color: #62646a;
-    }
-
-
-
-    .text-body-2 {
-        display: flex;
-        flex-direction: row;
-        // color: #ffffff;
-        color: #62646a;
-
-        & li a {
+        .font-domaine {
             // color: #ffffff;
             color: #62646a;
-            list-style-type: none;
-            text-decoration: none;
-            cursor: pointer;
         }
+        
+        .text-body-2 {
+            display: flex;
+            flex-direction: row;
+            // color: #ffffff;
+            color: #62646a;
+            
+            & li a {
+                // color: #ffffff;
+                color: #62646a;
+                list-style-type: none;
+                text-decoration: none;
+                cursor: pointer;
+                font-size: 1.2em;
+            }
+        }
+        
     }
-}
