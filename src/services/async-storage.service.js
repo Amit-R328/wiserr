@@ -12,7 +12,8 @@ export const storageService = {
 
 function query(entityType, delay = 600) {
     var entities = JSON.parse(localStorage.getItem(entityType))
-    if(!entities){
+    if(entityType === 'user' && !entities) entities = _createUsers()
+    else if(!entities){
         entities = _createGigs()
         _save(entityType, entities)
     }
@@ -80,6 +81,176 @@ function postMany(entityType, newEntities) {
             _save(entityType, entities)
             return entities
         })
+}
+
+function _createUsers(){
+    let users = [
+        {
+            "_id": "u101",
+            "fullName": "gul071",
+            "userName": "gul071",
+            "password": "gul071"
+        },
+        {
+            "_id": "u102",
+            "fullName": "richarddavis438",
+            "userName": "richarddavis438",
+            "password": "richarddavis438"
+        },
+        {
+            "_id": "u103",
+            "fullName": "courtney lasch",
+            "userName": "courtney lasch",
+            "password": "courtneylasch"
+        },
+        {
+            "_id": "u104",
+            "fullName": "yogi_isnanda",
+            "userName": "yogi_isnanda",
+            "password": "yogi_isnanda"
+        },
+        {
+            "_id": "u105",
+            "fullName": "buddhanthebeard",
+            "userName": "buddhanthebeard",
+            "password": "buddhanthebeard",
+        },
+        {
+            "_id": "u106",
+            "fullName": "ivanrivera",
+            "userName": "ivanrivera",
+            "password": "ivanrivera",
+        },
+        {
+            "_id": "u107",
+            "fullName": "graphexgalaxy",
+            "userName": "graphexgalaxy",
+            "password": "graphexgalaxy"
+        },
+        {
+            "_id": "u108",
+            "fullName": "hp_spikefli",
+            "userName": "hp_spikefli",
+            "password": "hp_spikefli",
+        },
+        {
+            "_id": "u109",
+            "fullName": "dohyotriyono",
+            "userName": "dohyotriyono",
+            "password": "dohyotriyono",
+        },
+        {
+            "_id": "u110",
+            "fullName": "hp_spikefli",
+            "userName": "hp_spikefli",
+            "password": "hp_spikefli",
+        },
+        {
+            "_id": "u111",
+            "fullName": "gad_by_miraz_pro",
+            "userName": "gad_by_miraz_pro",
+            "password": "gad_by_miraz_pro",
+        },
+        {
+            "_id": "u112",
+            "fullName": "febzpena",
+            "userName": "febzpena",
+            "password": "febzpena",
+        },
+        {
+            "_id": "u113",
+            "fullName": "shirley_esid",
+            "userName": "shirley_esid",
+            "password": "shirley_esid",
+        },
+        {
+            "_id": "u114",
+            "fullName": "strongathome",
+            "userName": "strongathome",
+            "password": "strongathome",
+        },
+        {
+            "_id": "u115",
+            "fullName": "burnanaconcept",
+            "userName": "burnanaconcept",
+            "password": "burnanaconcept",
+        },
+        {
+            "_id": "u116",
+            "fullName": "roslyn_johnson",
+            "userName": "roslyn_johnson",
+            "password": "roslyn_johnson",
+        },
+        {
+            "_id": "u117",
+            "fullName": "erichflaboss",
+            "userName": "erichflaboss",
+            "password": "erichflaboss",
+        },
+        {
+            "_id": "u118",
+            "fullName": "mahbuburrahm204",
+            "userName": "mahbuburrahm204",
+            "password": "mahbuburrahm204",
+        },
+        {
+            "_id": "u119",
+            "fullName": "anxietybathbomb",
+            "userName": "anxietybathbomb",
+            "password": "anxietybathbomb",
+        }, 
+        {
+            "_id": "u120",
+            "fullName": "jaylucy",
+            "userName": "jaylucy",
+            "password": "jaylucy",
+        },
+        {
+            "_id": "u121",
+            "fullName": "pinkblack785",
+            "userName": "pinkblack785",
+            "password": "pinkblack785",
+        }, 
+        {
+            "_id": "u122",
+            "fullName": "hayleyhutson",
+            "userName": "hayleyhutson",
+            "password": "hayleyhutson",
+        },
+        {
+            "_id": "u123",
+            "fullName": "pjd2019",
+            "userName": "pjd2019",
+            "password": "pjd2019",
+        }, 
+        {
+            "_id": "u124",
+            "fullName": "professorrose",
+            "userName": "professorrose",
+            "password": "professorrose",
+        },
+        {
+            "_id": "u125",
+            "fullName": "luizakipper",
+            "userName": "luizakipper",
+            "password": "luizakipper",
+        },
+        {
+            "_id": "u126",
+            "fullName": "anamaldonado007",
+            "userName": "anamaldonado007",
+            "password": "anamaldonado007",
+        },
+        {
+            "_id": "u127",
+            "fullName": "truckparkermusi",
+            "userName": "truckparkermusi",
+            "password": "truckparkermusi",
+        }
+        
+    ]
+
+    return users
 }
 
 function _createGigs(){

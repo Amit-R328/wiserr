@@ -10,7 +10,7 @@ html {
    line-height: 1.8;
    line-height: lh(26px);
    height: 100vh;
-   width: 100%;
+   width: 100vw;
 }
 
 body {
@@ -54,9 +54,9 @@ body {
 //     font-size: em(29px);
 // }
 
-// img {
-//     width: 100%;
-// }
+img {
+    width: 100%;
+}
 
 // p {
 //     color: $clr7;

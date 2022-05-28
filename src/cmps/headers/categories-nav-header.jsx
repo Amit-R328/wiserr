@@ -15,10 +15,8 @@ export const CategoriesNavHeader = () => {
     const params = useParams()
 
     const onChangeCategory = (category) => {
-        console.log('CATEGORY',category )
         filterBy = { txt: '',priceMin: 0,priceMax: Infinity,deliveryDate: 0, category: category }
         dispatch(setFilter(filterBy))
-        console.log('FILTERBY FROM ONCHANGECATEGORY:', filterBy)
         navigate('/categories')
         dispatch(loadGigs())
     }

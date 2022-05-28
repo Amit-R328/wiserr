@@ -28,9 +28,9 @@ export const GigDetails = (props) => {
 
     if (!gig) return <h1>Loading</h1>
 
-    console.log('GIG FROM GIG DETAILS:', gig.description.whatDoYouGet)
+    
     let whatYouGet = gig.description.whatDoYouGet.split('\n')
-    console.log('WHATYOUGET:', whatYouGet)
+    
 
     return (
         <section className="gig-details flex">
@@ -51,7 +51,6 @@ export const GigDetails = (props) => {
                     <br />
                     {gig.description.whatDoYouGet} && <p className="what-do-you-get">
                         <dl>
-                            {console.log(gig.description.whatDoYouGet)}
                             {whatYouGet.map(line => <dd>{line}</dd>)}
                         </dl>
                     </p>

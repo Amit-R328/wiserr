@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState, useEffect } from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,19 +12,22 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { setFilter, loadGigs } from '../store/actions/gigs.actions.js'
+import { useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch} from 'react-redux'
 
 import { connect } from "react-redux";
 import { login, signup } from '../store/actions/user.actions.js'
 
 const theme = createTheme();
 
-export class _Join extends React.Component {
+export const LoginSignup = () => {
 
-    state = {
-        isLogin: true
-    }
+    const [isLogin, setIsLogin] = useState(true)
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
-    handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
 
@@ -33,24 +37,20 @@ export class _Join extends React.Component {
             isRemember: (data.get('remember-me') !== null),
         }
 
-        if (this.state.isLogin) {
-            await this.props.login(loginInfo)
+        if (isLogin) {
+            dispatch(login(loginInfo))
         } else {
             loginInfo.fullname = data.get('fullname')
-            await this.props.signup(loginInfo)
+            dispatch(signup(loginInfo))
         }
-
-        this.props.history.push('/categories')
+        navigate('/')
     };
 
-    onChangePage = (ev) => {
+    const onChangePage = (ev) => {
         ev.preventDefault()
-        this.setState({ isLogin: !this.state.isLogin })
+        setIsLogin(!isLogin )
     }
 
-    render() {
-
-        const { isLogin } = this.state
 
         return (
             <ThemeProvider theme={theme} >
@@ -68,7 +68,7 @@ export class _Join extends React.Component {
                         <Typography component="h1" variant="h5">
                             {isLogin ? 'Login' : 'Sign in'}
                         </Typography>
-                        <Box component="form" onSubmit={this.handleSubmit} sx={{ mt: 1 }}>
+                        <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
                             <TextField
                                 margin="normal"
                                 required
@@ -118,8 +118,8 @@ export class _Join extends React.Component {
                                     </Link>}
                                 </Grid>
                                 <Grid item>
-                                    <Link href="#" variant="body2" onClick={this.onChangePage}>
-                                        {isLogin ? 'Already have an account? Login' : 'Don\'t have an account? Sign Up'}
+                                    <Link href="#" variant="body2" onClick={onChangePage}>
+                                        {isLogin ? 'Don\'t have an account? Sign Up' : 'Already have an account? Login' }
                                     </Link>
                                 </Grid>
                             </Grid>
@@ -128,17 +128,5 @@ export class _Join extends React.Component {
                 </Container>
             </ThemeProvider>
         )
-    }
 }
 
-function mapStateToProps(storeState) {
-    return {
-        user: storeState.userModule.user,
-    }
-}
-const mapDispatchToProps = {
-    login,
-    signup
-}
-
-export const Join = connect(mapStateToProps, mapDispatchToProps)(_Join)

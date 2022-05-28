@@ -38,7 +38,6 @@ export class HeroCarousel extends React.Component {
     ]
   }
   createSlide = () => {
-    console.log('GIGS', this.state.gigs)
     return this.state.gigs.map(gig => {
       return (
         <SwiperSlide>
