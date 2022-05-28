@@ -32,12 +32,9 @@ export const BusinessHomepage = (props) => {
                                 </li>
 
                                 <li className="business-display-from-sm display-from-sm clean-list">
-                                    <a href="/login" rel="nofollow" className="js-open-popup-login nav-link">Sign in</a>
+                                    <a href="/login" rel="nofollow" className="js-open-popup-login nav-link">Join/login</a>
                                 </li>
 
-                                <li className="business-signup-btn signup-btn clean-list">
-                                    <a className="js-open-popup-join wiserr-header-join" rel="nofollow" href="/join">Join</a>
-                                </li>
                             </ul>
                         </nav>
                     </header>

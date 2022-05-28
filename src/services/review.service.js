@@ -37,7 +37,6 @@ function query(filterBy) {
   let gigs =  storageService.query(STORAGE_KEY)
   gigs = gigs.filter(gig => gig._id === filterBy)
   let reviews = gigs.map(gig => gig.reviews.map(review => review))
-  console.log('REVIEWS FROM SERVICE:',reviews)
   return Promise.resolve(reviews)
 }
 

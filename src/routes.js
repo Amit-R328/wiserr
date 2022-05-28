@@ -2,9 +2,8 @@ import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
 import { BusinessTools } from './cmps/business-cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
-import { Login } from './pages/login.jsx'
 import {GigPage} from './pages/gig-page.jsx'
-import { Join } from './pages/join.jsx'
+import { LoginSignup } from './pages/login-signup.jsx'
 import {GigDetails} from './pages/gig-details.jsx'
 import {AppHeaderHomePage} from './cmps/headers/app-header-homepage.jsx'
 import {AppHeader} from './cmps/headers/app-header.jsx'
@@ -27,11 +26,11 @@ const routes = [
         element: <AppHeader />
     },
     {  path: '/login',
-        component: <Login />,
+        component: <LoginSignup />,
         element: <AppHeader />
     },
     {  path: '/join',
-    component: <Join />,
+    component: <LoginSignup />,
     element: <AppHeader />
     },
     {  path: '/categories',
