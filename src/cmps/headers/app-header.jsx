@@ -14,6 +14,7 @@ export const AppHeader = (props) => {
                         <div className="logo-main-header">
                             <NavLink to="/" className="site-logo">
                                 <LogoFull />
+                                {/* <LogoFullWhite /> */}
                             </NavLink>
                         </div>
                         <div className="wiserr-header-search-animated">

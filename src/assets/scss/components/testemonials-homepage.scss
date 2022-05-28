@@ -1,0 +1,182 @@
+.testimonials {
+    color: #62646a;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: flex !important;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    height: 291px;
+    margin: 96px;
+    gap: 3em;
+
+    .video-modal .testimonial-modal {
+        color: #62646a;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+        min-height: 291px;
+        width: 40%;
+        margin: 96px;
+    }
+
+    .testimonials {
+        margin: 0;
+        padding: 0;
+        top: 25%;
+        margin-left: 96px;
+        margin-right: 96px;
+
+        @media only screen and (min-width:900px) {
+            .testimonials {
+                top: 50%;
+            }
+        }
+
+        @media only screen and (min-width:900px) {
+            .testimonials {
+                right: -23px;
+            }
+        }
+
+        @media only screen and (min-width:900px) {
+            .testimonials {
+                left: -23px;
+            }
+        }
+
+        .testimonial {
+            display: -webkit-box !important;
+            display: -ms-flexbox !important;
+            display: flex !important;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+
+            @media only screen and (min-width:900px) {
+                .testimonial {
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+
+    .testimonial-modal {
+        min-height: 250px;
+        width: 100%;
+
+        @media only screen and (min-width:900px) {
+            .testimonial-modal {
+                width: 50%
+            }
+        }
+
+        @media only screen and (min-width:1160px) {
+            .testimonial-modal {
+                width: 40%;
+            }
+
+            & img {
+                border-radius: 4px;
+            }
+        }
+
+        .text-content {
+            padding: 24px 24px 0;
+            width: 100%;
+
+            @media only screen and (min-width:900px) {
+                .text-content {
+                    padding: 0 36px 0 16px;
+                    width: 50%;
+                }
+            }
+
+            @media only screen and (min-width:1160px) {
+                .text-content {
+                    padding: 0 48px 0 64px;
+                    max-width: 707px;
+                    width: 60%;
+                }
+            }
+
+            h5 {
+                font-weight: 400;
+                color: #74767e;
+                padding-bottom: 16px;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 140%;
+                margin: 0;
+                outline: 0;
+                padding: 0 0 36px;
+            }
+
+        }
+
+        @media only screen and (min-width:900px) {
+            blockquote {
+                padding-bottom: 0
+            }
+        }
+
+        @media only screen and (min-width:1160px) {
+            blockquote {
+                font-size: 30px;
+                line-height: 44px
+            }
+        }
+    }
+}
+
+blockquote {
+    font-size: 24px;
+    line-height: 36px;
+    color: #003912;
+    padding-bottom: 24px;
+
+    &i {
+        color: #003912;
+        font-family: DomaineDisplay;
+        font-size: 30px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 44px;
+        quotes: none;
+    }
+}
+
+@media only screen and (min-width:1160px) {
+    .text-content .testimonial-logo {
+        border-left: 1px solid #c5c6c9;
+        height: 36px;
+        margin-left: 16px
+    }
+
+    .text-content img {
+        display: block;
+        height: 36px;
+        margin-left: -6px
+    }
+
+    @media only screen and (min-width:1160px) {
+        .text-content img {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 12px
+        }
+    }
+}
