@@ -3,11 +3,11 @@ import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
 import { BusinessTools } from './cmps/business-cmps/business-tools.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
 import { Login } from './pages/login.jsx'
-import {GigPage} from './pages/gig-page.jsx'
+import { GigPage } from './pages/gig-page.jsx'
 import { Join } from './pages/join.jsx'
-import {GigDetails} from './pages/gig-details.jsx'
-import {AppHeaderHomePage} from './cmps/headers/app-header-homepage.jsx'
-import {AppHeader} from './cmps/headers/app-header.jsx'
+import { GigDetails } from './pages/gig-details.jsx'
+import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
+import { AppHeader } from './cmps/headers/app-header.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -26,28 +26,32 @@ const routes = [
         component: <BusinessHomepage />,
         element: <AppHeader />
     },
-    {  path: '/login',
+    {
+        path: '/login',
         component: <Login />,
         element: <AppHeader />
     },
-    {  path: '/join',
-    component: <Join />,
-    element: <AppHeader />
+    {
+        path: '/join',
+        component: <Join />,
+        element: <AppHeader />
     },
-    {  path: '/categories',
+    {
+        path: '/categories',
         component: <GigPage />,
         element: <AppHeader />
     },
     {
         path: '/categories/:gigId',
-        component: <GigDetails/>,
+        component: <GigDetails />,
         element: <AppHeader />
     },
-    {  path: '/',
+    {
+        path: '/',
         component: <HomePage />,
         element: <AppHeaderHomePage />
     },
-    
+
     // {
     //     path: 'review',
     //     component: <ReviewApp />,
