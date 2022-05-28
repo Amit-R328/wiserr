@@ -5,7 +5,7 @@ import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 
 export const GigPage = (onChangeCategory) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
@@ -45,11 +45,18 @@ export const GigPage = (onChangeCategory) => {
                 </div>
                 <div>
                     <div className="main-content-container">
-                        <GigList gigs={gigs} />
+                        <div className="gigs-preview-main-wrapper">
+                            <div className="gigs-list-container">
+                                <div className="filter-gigs-container">
+                                <FilterBreadCrumbs />
+                                </div>
+                                <GigList gigs={gigs} />
 
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-    )
+                    </div>
+                    </div>
+                </section>
+                )
 }
