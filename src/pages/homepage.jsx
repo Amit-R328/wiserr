@@ -26,14 +26,17 @@ export const HomePage = (props, onChangeCategory) => {
                 <div className="homepage-app-header">
 
                     <div className="main-header sticky">
-                        <AppHeaderHomePage />
                         <div>
+                        <AppHeaderHomePage />
+                        <span className="line-sep"></span>
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        <span className="line-sep"></span>
                         </div>
                     </div>
                     <HeroHeaderHomePage />
 
                 </div>
+
                 <section className="trusted-by-brands max-width-container">
                     <ul className="brands-container">
                         <p>Trusted By:</p>

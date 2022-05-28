@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { loadGigs } from '../store/actions/gigs.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
-import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
+import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 
-export const GigPage = () => {
+export const GigPage = (onChangeCategory) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
@@ -38,13 +38,15 @@ export const GigPage = () => {
                         : <CategoriesNavHeader style={{ visibility: 'hidden' }}
                             onChangeCategory={onChangeCategory} />} */}
                         <AppHeader />
+                        <span className="line-sep"></span>
+                        <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        <span className="line-sep"></span>
                     </div>
                 </div>
-
-                <div className="main-content-container">
-                    <div className="gigs-list-containers">
-                        <FilterBreadCrumbs />
+                <div>
+                    <div className="main-content-container">
                         <GigList gigs={gigs} />
+
                     </div>
                 </div>
             </div>

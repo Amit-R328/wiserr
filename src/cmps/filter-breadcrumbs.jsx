@@ -6,7 +6,7 @@ export const FilterBreadCrumbs = () => {
     return (
         <div className="layout-row">
             <header>
-                <div className="breadcrumbs container">
+                <div className="breadcrumbs-container">
                     <ul className="breadcrumbs">
                         <li><a href="/"> Wiserr </a>
                             <span className="chevron-icon-right" aria-hidden="true">

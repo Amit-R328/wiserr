@@ -5,11 +5,15 @@ const initialState = {
     count: 10,
     user: userService.getLoggedinUser() || null,
     users: [],
-    watchedUser : null
+    watchedUser : null,
+    loggedInUser:null
 }
 export function userReducer(state = initialState, action) {
     var newState = state;
     switch (action.type) {
+        case 'SET_LOGGED_USER':
+            newState = {...state, loggedInUser: action.user}
+            break;
         case 'SET_USER':
             newState = { ...state, user: action.user }
             break;

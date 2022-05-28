@@ -8,9 +8,9 @@ export function orderReducer(state = initialState, action) {
     switch (action.type) {
         
         case 'SET_ORDERS':
-            return { ...state, gigs: action.gigs }
+            return { ...state, orders: action.orders }
         case 'GET_BY_ID':
-            return { ...state, gig: action.gig }
+            return { ...state, order: action.order }
         case 'GET_SELECTED':
             return { ...state, selectedOption: action.selectedOption }
         default:

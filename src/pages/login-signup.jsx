@@ -15,9 +15,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { setFilter, loadGigs } from '../store/actions/gigs.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
+import { loadOrders } from '../store/actions/order.actions.js';
 
 import { connect } from "react-redux";
-import { login, signup } from '../store/actions/user.actions.js'
+import { login, signup,getLoggedinUser } from '../store/actions/user.actions.js'
 
 const theme = createTheme();
 
@@ -32,16 +33,20 @@ export const LoginSignup = () => {
         const data = new FormData(event.currentTarget);
 
         const loginInfo = {
-            username: data.get('username'),
+            userName: data.get('userName'),
             password: data.get('password'),
             isRemember: (data.get('remember-me') !== null),
         }
 
         if (isLogin) {
+            console.log('isLogin', isLogin)
             dispatch(login(loginInfo))
+            dispatch(getLoggedinUser())
         } else {
-            loginInfo.fullname = data.get('fullname')
+            loginInfo.fullname = data.get('fullname')           
             dispatch(signup(loginInfo))
+            dispatch(getLoggedinUser())
+            
         }
         navigate('/')
     };
@@ -73,10 +78,10 @@ export const LoginSignup = () => {
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="username"
-                                label="Username"
-                                name="username"
-                                autoComplete="username"
+                                id="userName"
+                                label="UserName"
+                                name="userName"
+                                autoComplete="userName"
                                 autoFocus
                             />
                             {!isLogin &&
@@ -99,10 +104,10 @@ export const LoginSignup = () => {
                                 id="password"
                                 autoComplete="current-password"
                             />
-                            <FormControlLabel
+                            {/* <FormControlLabel
                                 control={<Checkbox value="remember" color="primary" name="remember-me" />}
                                 label="Remember me"
-                            />
+                            /> */}
                             <Button
                                 type="submit"
                                 fullWidth

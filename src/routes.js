@@ -2,28 +2,30 @@ import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
 import { BusinessDashboard } from './cmps/dashborad/business-dashboard.jsx'
 import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
-import {GigPage} from './pages/gig-page.jsx'
+import { GigPage } from './pages/gig-page.jsx'
+import { GigDetails } from './pages/gig-details.jsx'
+import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
+import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-header.jsx'
+import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
+import { AppHeader } from './cmps/headers/app-header.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import {GigDetails} from './pages/gig-details.jsx'
-import {AppHeaderHomePage} from './cmps/headers/app-header-homepage.jsx'
-import {AppHeader} from './cmps/headers/app-header.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
     {
         path: '/business/business-solutions',
         component: <BusinessSolutions />,
-        element: <AppHeader />
+        element: <BusinessAppHeader />
     },
     {
         path: '/business/dashboard',
         component: <BusinessDashboard />,
-        element: <AppHeader />
+        element: <BusinessAppHeader />
     },
     {
         path: '/business',
         component: <BusinessHomepage />,
-        element: <AppHeader />
+        element: <BusinessHeaderHomePage />
     },
     {  path: '/login',
         component: <LoginSignup />,
