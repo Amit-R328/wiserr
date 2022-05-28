@@ -10,14 +10,15 @@ export const storageService = {
 
 
 
-function query(entityType, delay = 600) {
+function query(entityType,  entityId ,delay = 600) {
     var entities = JSON.parse(localStorage.getItem(entityType))
-    console.log('entity type:',entityType )
-    if(entityType === 'user' && !entities) entities = _createUsers()
-    else if(entityType === 'orders' && !entities) {
-        entities = _createOrders()
-        _save(entityType, entities)
-    }
+    console.log('entities',entities )
+    if(entityType === 'user' && entityId){
+        const entity =  entities.find(entity => entity._id === entityId)
+        console.log('entity', entity)
+        console.log('need to go out in query')
+        return entity
+    } else if(entityType === 'user' && !entities) entities = _createUsers()
     else if(!entities){
         entities = _createGigs()
         _save(entityType, entities)
@@ -26,6 +27,8 @@ console.log('entities', entities)
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             // reject('OOOOPs')
+            console.log('entities', entities)
+            console.log('in query promise' )
             resolve(entities)
         }, delay)   
     })
@@ -33,9 +36,14 @@ console.log('entities', entities)
 }
 
 function get(entityType, entityId) {
-    return query(entityType)
-        .then(entities => entities.find(entity => entity._id === entityId))
+    // console.log('entityType',entityType )
+    // console.log('entityId',entityId )
+    const user = query(entityType, entityId)
+    // console.log('user in get',user )
+    return user
+        // .then(entities => entities.find(entity => entity._id === entityId))
 }
+
 function post(entityType, newEntity) {
     newEntity._id = _makeId()
     return query(entityType)
@@ -54,7 +62,7 @@ function put(entityType, updatedEntity) {
             _save(entityType, entities)
             return updatedEntity
         })
-}
+} 
 
 function remove(entityType, entityId) {
     return query(entityType)
@@ -66,6 +74,7 @@ function remove(entityType, entityId) {
 }
 
 function _save(entityType, entities) {
+    console.log('entities',entities )
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
 

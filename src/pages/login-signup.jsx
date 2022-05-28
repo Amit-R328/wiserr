@@ -31,15 +31,14 @@ export const LoginSignup = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-
+        
         const loginInfo = {
             userName: data.get('userName'),
             password: data.get('password'),
-            isRemember: (data.get('remember-me') !== null),
+            // isRemember: (data.get('remember-me') !== null),
         }
 
         if (isLogin) {
-            console.log('isLogin', isLogin)
             dispatch(login(loginInfo))
             dispatch(getLoggedinUser())
         } else {

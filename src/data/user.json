@@ -9,7 +9,7 @@
         "email": "gul071@gmail.com",
         "avgRate": 4.9,
         "isSeller": true,        
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -24,7 +24,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -39,7 +39,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -52,8 +52,8 @@
         "level": "Level 2 Seller",
         "email": "yogi_isnanda@gmail.com",
         "avgRate": 5,
-        "isSeller": true,
-        "google-account": "",
+        "isSeller": false,
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -68,7 +68,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -83,7 +83,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -97,7 +97,7 @@
         "email": "graphexgalaxy@gmail.com",
         "avgRate": 4.8,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -112,7 +112,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -126,7 +126,7 @@
         "email": "dohyotriyono@gmail.com",
         "avgRate": 5,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -141,7 +141,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -155,7 +155,7 @@
         "email": "gad_by_miraz_pro@gmail.com",
         "avgRate": 4.9,
         "isSeller": true,        
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -170,7 +170,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -184,7 +184,7 @@
         "email": "shirley_esid@gmail.com",
         "avgRate": 4.9,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -199,7 +199,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -214,7 +214,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -227,8 +227,8 @@
         "level": "Level 2 Seller",
         "email": "roslyn_johnson@gmail.com",
         "avgRate": 4.9,
-        "isSeller": true,
-        "google-account": "",
+        "isSeller": false,
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -243,7 +243,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },  
@@ -257,7 +257,7 @@
         "email": "mahbuburrahm204@gmail.com",
         "avgRate": 4.9,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -272,7 +272,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -285,8 +285,8 @@
         "level": "Top Rated Seller",
         "email": "jaylucy@gmail.com",
         "avgRate": 5,
-        "isSeller": true,
-        "google-account": "",
+        "isSeller": false,
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -301,7 +301,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -315,7 +315,7 @@
         "email": "hayleyhutson@gmail.com",
         "avgRate": 5,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -330,7 +330,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     }, 
@@ -345,7 +345,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -359,7 +359,7 @@
         "email": "luizakipper@gmail.com",
         "avgRate": 5,
         "isSeller": true,
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -374,7 +374,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -389,7 +389,7 @@
         "avgRate": 0,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -402,9 +402,9 @@
         "level": "",
         "email": "laraib_zafar@gmail.com",
         "avgRate": 4.9,
-        "isSeller": false,
+        "isSeller": true,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     },
@@ -417,9 +417,9 @@
         "level": "",
         "email": "markdarwin18@gmail.com",
         "avgRate": 4.9,
-        "isSeller": false,
+        "isSeller": true,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
     
@@ -435,10 +435,9 @@
         "avgRate": 4.9,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
-    
     },
     {
         "_id": "u131",
@@ -451,10 +450,8 @@
         "avgRate": 5,
         "isSeller": false,
         "reviews": [{}],         
-        "google-account": "",
+        "google_account": "",
         "facebook_account": "",
         "twitter_account": ""
-    
     }
-    
 ]
