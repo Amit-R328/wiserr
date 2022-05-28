@@ -61,8 +61,9 @@ async function update(user) {
 async function login(userCred) {
 
     const users = await storageService.query('user')
-    const user = users.find(user => user.username === userCred.username && user.password === userCred.password)
     // const user = await httpService.post('auth/login', userCred)
+    const user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
+
     if (user) {
         console.log('USER FROM USER.service:', user)
         // socketService.login(user._id)
@@ -71,13 +72,25 @@ async function login(userCred) {
     }
 }
 async function signup(userCred) {
-   
-    const user = await storageService.post('user', userCred)
-    // const user = await httpService.post('auth/signup', userCred)
-    // socketService.login(user._id)
-    _handleLogin(user)
-    return user
+   try {
+        const users = await storageService.query('user')
+        // const user = await httpService.post('auth/login', userCred)
+        const user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
+        if(user) {
+            const err = new Error('User already exist')
+            throw err 
+        }
+        user = await storageService.post('user', userCred)
+        // const user = await httpService.post('auth/signup', userCred)
+        // socketService.login(user._id)
+        _handleLogin(user)
+        return user
+   } catch (err) {
+        console.dir(err)
+        throw err
+   }
 }
+
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
     socketService.logout()
@@ -93,7 +106,7 @@ async function changeScore(by) {
 }
 
 function _handleLogin(user){
-    const miniUser = {userName: user.username, _id:user._id}
+    const miniUser = {userName: user.userName, _id:user._id}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(miniUser))
 }
 
@@ -103,14 +116,15 @@ function saveLocalUser(user) {
 }
 
 function getLoggedinUser() {
+    console.log('sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER)', sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
 
 // (async ()=>{
-//     await userService.signup({fullname: 'gul071', username: 'gul071', password:'gul071'})
-//     await userService.signup({fullname: 'richarddavis438', username: 'richarddavis438', password:'richarddavis438'})
-//     await userService.signup({fullname: 'courtney lasch', username: 'courtney lasch', password:'courtney lasch'})
+//     await userService.signup({fullname: 'gul071', userName: 'gul071', password:'gul071'})
+//     await userService.signup({fullname: 'richarddavis438', userMame: 'richarddavis438', password:'richarddavis438'})
+//     await userService.signup({fullname: 'courtney lasch', userName: 'courtney lasch', password:'courtney lasch'})
 // })()
 
 

@@ -32,15 +32,16 @@ export const LoginSignup = () => {
         const data = new FormData(event.currentTarget);
 
         const loginInfo = {
-            username: data.get('username'),
+            userName: data.get('userName'),
             password: data.get('password'),
             isRemember: (data.get('remember-me') !== null),
         }
 
         if (isLogin) {
+            console.log('isLogin', isLogin)
             dispatch(login(loginInfo))
         } else {
-            loginInfo.fullname = data.get('fullname')
+            loginInfo.fullname = data.get('fullname')           
             dispatch(signup(loginInfo))
         }
         navigate('/')
@@ -73,10 +74,10 @@ export const LoginSignup = () => {
                                 margin="normal"
                                 required
                                 fullWidth
-                                id="username"
-                                label="Username"
-                                name="username"
-                                autoComplete="username"
+                                id="userName"
+                                label="UserName"
+                                name="userName"
+                                autoComplete="userName"
                                 autoFocus
                             />
                             {!isLogin &&
@@ -99,10 +100,10 @@ export const LoginSignup = () => {
                                 id="password"
                                 autoComplete="current-password"
                             />
-                            <FormControlLabel
+                            {/* <FormControlLabel
                                 control={<Checkbox value="remember" color="primary" name="remember-me" />}
                                 label="Remember me"
-                            />
+                            /> */}
                             <Button
                                 type="submit"
                                 fullWidth
