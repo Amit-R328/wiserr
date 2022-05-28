@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 
 export const GigPreview = ({ gig }) => {
     return (
 
         <li className="gig-preview">
+            
+            <FilterBreadCrumbs />
+
             <article className="gig-card flex">
                 <Link to={`/categories/${gig._id}`}>
                     <img className="gig-img" src={`${gig.imgUrl[0]}`} alt='gig' />

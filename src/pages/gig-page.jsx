@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { loadGigs } from '../store/actions/gigs.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
-import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
+
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -43,7 +43,7 @@ export const GigPage = () => {
 
                 <div className="main-content-container">
                     <div className="gigs-list-containers">
-                        <FilterBreadCrumbs />
+                        
                         <GigList gigs={gigs} />
                     </div>
                 </div>
