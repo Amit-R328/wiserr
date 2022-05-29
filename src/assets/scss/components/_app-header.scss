@@ -16,6 +16,7 @@
       transition: background-color .5s ease;
       width: 100%;
       margin-top: 0 !important;
+      border-bottom: 1px solid #e4e5e7;
 
       &.sticky {
         background-color: #ffffff;
@@ -24,21 +25,31 @@
         z-index: 9999;
         display: block;
         margin-top: 0 !important;
-
+        transition: 'border .5s ease';
+        border-bottom: 1px solid #e4e5e7;
+        
         .header-row-wrapper {
           height: 81px;
-        }
+          width: 100%;
 
+        }
+        
         .header-row {
+          height: 81px;
           display: flex;
-          flex-direction: row;
+          justify-content: flex-start;
+          align-content: center;
+          align-items: center;
+          width: 100%;
           flex-wrap: nowrap;
           margin: 0 auto;
           // justify-content: space-between;
           // align-content: space-between;
           align-items: center;
+          margin-top: 0 auto;
+          padding: 0;
+          justify-content: space-between;
           height: 80px;
-
 
           @media screen and (max-width: 600px) {
             .btn-navicon {
@@ -55,7 +66,6 @@
         }
 
         .logo {
-          // height: auto;
           margin: 4px 0 0;
           min-width: 121px;
           align-self: auto;
@@ -64,11 +74,15 @@
         }
 
         .wiserr-header-search-animated {
-
           // display: none;
           @media screen and (min-width: 600px) {
-            // display: block;
+            -webkit-box-ordinal-group: 1;
+            -ms-flex-order: 0;
             margin-top: 0;
+            -webkit-order: 0;
+            order: 0;
+            width: 30%;
+            // display: block;
             order: 0;
             width: 230px;
             opacity: 0;
@@ -76,7 +90,7 @@
             top: 262px;
             right: 122px;
             // visibility: hidden;
-            transition: opacity 250ms ease;
+            // transition: opacity 250ms ease;
 
             &.wiserr-header-search-animated {
               visibility: visible;
@@ -92,7 +106,11 @@
         .search-bar-package {
           display: flex;
           position: relative;
-          height: 34px;
+
+          form {
+            height: 34px;
+
+          }
 
           .search-bar-package form .search-bar-icon {
             position: absolute;

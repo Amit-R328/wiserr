@@ -39,9 +39,7 @@ export const GigPage = (onChangeCategory) => {
                         : <CategoriesNavHeader style={{ visibility: 'hidden' }}
                             onChangeCategory={onChangeCategory} />} */}
                         <AppHeader />
-                        <span className="line-sep"></span>
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
-                        <span className="line-sep"></span>
                     </div>
                 </div>
                 <div>
