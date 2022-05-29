@@ -54,7 +54,7 @@ export const GigDetails = (props) => {
                     <span className="line-sep"></span>
                 </div>
             </div>
-            <section className="gig-details flex">
+            <section className="gig-details flex"> 
                 <div className="left-container">
                     <section className="gig-info">
                         <h3 className="text-display">{gig.title}</h3>
