@@ -1,6 +1,7 @@
 import { height } from '@mui/material/node_modules/@mui/system'
 import { ArrowDown, PathArrow, PathArrow2, VideoIcon } from '../services/svg.service.js'
 import { VideoModal } from './video-modal.jsx'
+import { SortGigsList } from './sort-gigs-list.jsx'
 
 export const FilterBreadCrumbs = () => {
 
@@ -61,25 +62,26 @@ export const FilterBreadCrumbs = () => {
 
                     <div class="sort-by-wrapper">
                         <span class="pre-title">Sort by</span>
-                        <div className="floating-menu open">
-                            <div className="menu-title sort-filter">Best Selling<span className="chevron-icon-down" aria-hidden="true"><ArrowDown /></span>
-                            </div>
+                        {/* <div className="floating-menu open"> */}
+                            {/* <div className="menu-title sort-filter">Best Selling<span className="chevron-icon-down" aria-hidden="true"><ArrowDown /></span>
+                            </div> */}
 
-                            <div className="menu-content">
-                                <div className="content-scroll">
-                                    <div className="labels-list">
+                            {/* <div className="menu-content">
+                                <div className="content-scroll"> */}
+                                <SortGigsList/>
+                                    {/* <div className="labels-list">
                                         <label className="sort-label">Price</label>
                                         <label className="sort-label">Name</label>
                                         <label className="sort-label">Newest Arrivals</label>
-                                    </div>
-                                </div>
+                                    </div> */}
+                                {/* </div> */}
                                 <div className="button-row">
                                 </div>
-                                <div>
-                                </div>
+                                {/* <div> */}
+                                {/* </div> */}
 
-                            </div>
-                        </div>
+                            {/* </div> */}
+                        {/* </div> */}
                     </div>
                 </div>
             </div>
