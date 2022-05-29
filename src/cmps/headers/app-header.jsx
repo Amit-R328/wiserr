@@ -24,7 +24,7 @@ export const AppHeader = (props) => {
                             {/* <LogoFullWhite /> */}
                         </NavLink>
                     </div>
-                    <div className="wiserr-header-search-animated">
+                    <div className="nav-wiserr-header-search-animated">
                         <div className="search-bar-package-container">
                             <form className="search-bar-package search_bar-package">
                                 <span className="search-bar-icon searching-icon" aria-hidden="true">

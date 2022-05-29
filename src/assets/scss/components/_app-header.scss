@@ -1,3 +1,7 @@
+  .wiserr-nav wiserr-nav-right {
+    margin-left: 35%;
+  }
+
   .app-header {
     width: 100%;
     margin-top: 0 !important;
@@ -30,7 +34,7 @@
           flex-direction: row;
           flex-wrap: nowrap;
           margin: 0 auto;
-          justify-content: space-between;
+          // justify-content: space-between;
           // align-content: space-between;
           align-items: center;
           height: 80px;
@@ -68,6 +72,9 @@
             order: 0;
             width: 230px;
             opacity: 0;
+            position: relative;
+            top: 262px;
+            right: 122px;
             // visibility: hidden;
             transition: opacity 250ms ease;
 
@@ -264,24 +271,34 @@
     height: 24px;
     text-align: left;
     width: 1px;
-}
+  }
 
-.avatar-img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-top: 10px;
-  // position: absolute;
-  // margin-right: 5em;
-  // margin-left: 2.5em;
-}
+  .avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 10px;
+    // position: absolute;
+    // margin-right: 5em;
+    // margin-left: 2.5em;
+  }
 
 
-.search-btn {
-  line-height: 27px;
-}
+  .search-btn {
+    height: 34px;
+    border-radius: 7px;
+    border: none;
+    margin-left: -50px;
+    margin-top: 1px;
+    // line-height: 27px;
+  }
 
-.search-input{
-  line-height: 27px;
-}
+  .search-input {
+    border: 1px solid #c5c6c9;
+    color: #404145;
+    line-height: 27px;
+    padding: 4px 50px 2px 36px;
+    border-radius: 3px 0 0 3px;
+    border-right: 0;
+  }

@@ -8,8 +8,8 @@ export const HeroHeaderHomePage = (props) => {
     return (
         <div className="hero-wrapper-carousel">
             <HeroCarousel />
-            <div className="hero-backgrounds">
-                {/* <div className="hero max-width-container">
+            {/* <div className="hero-backgrounds">
+                <div className="hero max-width-container">
                     <h1 className="font-domaine">
                         <span className="">Find the perfect <i>freelance</i><br></br> services for your business</span>
                     </h1>
@@ -49,8 +49,8 @@ export const HeroHeaderHomePage = (props) => {
                             </ul>
                         </div>
                     </div>
-                </div> */}
-            </div>
+                </div>
+            </div> */}
         </div>
     )
 }
