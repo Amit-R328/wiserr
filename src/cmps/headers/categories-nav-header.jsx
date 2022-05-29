@@ -46,7 +46,7 @@ export const CategoriesNavHeader = () => {
                             <button onClick={() => onChangeCategory('Music & Audio')} className="music-audio">Music &amp; Audio</button>
                         </li>
 
-                        <li className="sub-menu-item target top-level default list">
+                        {/* <li className="sub-menu-item target top-level default list">
                             <button onClick={() => onChangeCategory('Programming & Tech')} className="programming-tech">Programming &amp; Tech</button>
                         </li>
 
@@ -56,7 +56,7 @@ export const CategoriesNavHeader = () => {
 
                         <li className="sub-menu-item target top-level default list">
                             <button onClick={() => onChangeCategory('Lifestyle')} className="lifestyle">Lifestyle</button>
-                        </li>
+                        </li> */}
 
                         <li className="sub-menu-item target top-level default static list">
                             <button onClick={() => onChangeCategory('')} className="trending">All</button>

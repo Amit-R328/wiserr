@@ -1,5 +1,5 @@
 import React from "react";
-import { RatingValue } from './gig-rating.jsx'
+// import { RatingValue } from './gig-rating.jsx'
 // import { saveGigRating } from '../services/gig.service.js'
 import { reviewService } from '../services/review.service'
 
@@ -18,9 +18,9 @@ export const GigReview = ({ review }) => {
                     <img className="sml-review-img" src={review.userImage} alt="" />
                     <p className="reviewer-name">{review.userName}</p>
                     <div className="rating">
-                        <span>
+                        {/* <span>
                             <RatingValue handleRatingChange={handleRatingChange} reviewId={review._Id} />
-                        </span>
+                        </span> */}
                     </div>
 
                     {/* <p> */}

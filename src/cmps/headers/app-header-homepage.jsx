@@ -47,7 +47,7 @@ export const AppHeaderHomePage = (props) => {
                         <div className="wiserr-header-search-animated">
                             <div className="search-bar-package-container">
                                 <form className="search-bar-package search_bar-package">
-                                    <span className="search-bar-icon" aria-hidden="true">
+                                    <span className="search-bar-icon searching-icon" aria-hidden="true">
                                         <SearchBar />
                                     </span>
                                     {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />

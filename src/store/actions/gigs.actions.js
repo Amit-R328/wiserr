@@ -60,7 +60,9 @@ export function loadGigs(){
 export function getById(gigId) {
     return async dispatch => {
         try {
+            console.log('gigId', gigId)
         const gig = await gigService.getById(gigId)
+        console.log('gig',gig )
         dispatch({
                     type: 'GET_BY_ID',
                     gig

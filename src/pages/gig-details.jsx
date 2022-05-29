@@ -7,6 +7,8 @@ import { connect, useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { getById } from '../store/actions/gigs.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
+import { AppHeader} from '../cmps/headers/app-header.jsx'
+import { CategoriesNavHeader} from '../cmps/headers/categories-nav-header.jsx'
 
 
 export const GigDetails = (props) => {
@@ -19,6 +21,7 @@ export const GigDetails = (props) => {
     const params = useParams()
 
     useEffect(() => {
+        console.log('params.gigId',params.gigId )
         dispatch(getById(params.gigId))
     }, [params])
 
@@ -27,11 +30,11 @@ export const GigDetails = (props) => {
     }
 
     if (!gig) return <h1>Loading</h1>
-<<<<<<< HEAD
+
     console.log('Gig:', gig._id)
     let whatYouGet
+    console.log('gig', gig)
     if (gig.description.whatDoYouGet) {
-
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
@@ -79,43 +82,7 @@ export const GigDetails = (props) => {
                                 <div className="owner-card-right flex">
                                     <p>{gig.owner.fullName}</p>
                                     <p><i className="fa fa-star filled">
-=======
-
-    
-    let whatYouGet = gig.description.whatDoYouGet.split('\n')
-    
-
-    return (
-        <section className="gig-details flex">
-            <div className="left-container">
-                <section className="gig-info">
-                    <h3 className="text-display">{gig.title}</h3>
-                    <div className="owner-details flex">
-                        <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
-                        <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
-                    </div>
-                    <div className="img-container">
-                        <img className="gig-details-img img" src={`${gig.imgUrl[0]}`} alt="" />
-                    </div>
-                </section>
-                <section className="about-details">
-                    <h2 className="about-title">About this Gig</h2>
-                    <p className="about-this-gig">{gig.description.aboutThisGig}</p>
-                    <br />
-                    {gig.description.whatDoYouGet} && <p className="what-do-you-get">
-                        <dl>
-                            {whatYouGet.map(line => <dd>{line}</dd>)}
-                        </dl>
-                    </p>
-                    <article className="about-seller">
-                        <p className="about-title">About The Seller</p>
-                        <div className="owner-card flex">
-                            <img className="md-round-img" src={`${gig.owner.imgUrl}`} alt="" />
-                            <div className="owner-card-right flex">
-                                <p>{gig.owner.fullName}</p>
-                                <p><i className="fa fa-star filled">
                                     <i className="fa fa-star filled">
->>>>>>> 2b1ea0bb0bc3a4a113b6777b6643a6b7d1c887e8
                                         <i className="fa fa-star filled">
                                             <i className="fa fa-star filled">
                                                 <i className="fa fa-star filled">
@@ -167,6 +134,7 @@ export const GigDetails = (props) => {
                 <button className="buy-btn">Continue</button>
             </div>
         </section>
+        </React.Fragment>
     )
 
 }
