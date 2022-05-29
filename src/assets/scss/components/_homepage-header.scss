@@ -12,8 +12,8 @@
         transition: background-color .5s ease;
         width: 100%;
         margin-top: 0 !important;
-
-
+        
+        
         &.sticky {
             background-color: #ffffff;
             position: fixed;
@@ -21,7 +21,7 @@
             z-index: 9999;
             display: block;
             margin-top: 0 !important;
-
+            
             .header-row {
                 display: flex;
                 flex-direction: row;
@@ -31,7 +31,8 @@
                 // align-content: space-between;
                 align-items: center;
                 height: 80px;
-
+                border-top: 1px solid #e4e5e7;
+                
                 @media screen and (max-width: 600px) {
                     .btn-navicon {
                         display: block;
