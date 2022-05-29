@@ -18,7 +18,6 @@ export const TestemonialsHomepage = () => {
 
             <div className="text-content">
                 <h5 className="">Kay Kim, Co-Founder<span className="testimonial-logo">
-                    <img src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/rooted-logo-x2.321d79d.png" loading="lazy" className="" alt="Company logo" />
                 </span>
                 </h5>
 

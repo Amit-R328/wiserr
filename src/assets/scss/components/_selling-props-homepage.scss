@@ -7,12 +7,14 @@
     
     
     .selling-proposition {
-        margin-left: 60px;
-        margin-right: 60px;
+        // margin-left: 60px;
+        // margin-right: 60px;
         display: grid;
-        grid-template-columns: 648px 648px;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 513px;
         grid-template-areas: "selling-text picture-wrapper";
+        margin-left: 13.25%;
+        margin-right: 13.25%;
 
         .selling-text {
             grid-column: 1 / 1;

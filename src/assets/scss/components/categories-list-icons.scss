@@ -5,7 +5,10 @@
     margin: 96px;
     max-width: 1400px;
     padding: 0;
-    width: 100%;
+    // width: 100%;
+    margin-left: 13.25%;
+    margin-right: 13.25%;
+    
 
     @media only screen and (min-width: 1760px) {
         .max-width-container {
@@ -19,7 +22,7 @@
         font-size: 32px;
         font-weight: 700;
         line-height: 120%;
-        margin: 96px 32px 40px;
+        margin: 0 0 40px;
         outline: 0;
         padding: 0 0 24px;
         height: 6 2px;

@@ -12,17 +12,21 @@
     
     .fib-containers-grid {
         display: grid;
-        grid-template-columns: 638px 714px;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 498px;
         grid-template-areas: "business-text business-image";
         color: #62646a;
         margin: 0 auto;
-        padding: 96px 32px;
-        width: 100%;
-        margin: 0 auto 96px;
-        margin-left: 96px;
-        margin-right: 96px;
-
+        // padding: 96px 32px;
+        // width: 100%;
+        // margin: 0 auto 96px;
+        // margin-left: 96px;
+        // margin-right: 96px;
+        margin-left: 13.25%;
+        margin-right: 13.25%;
+        padding-top: 96px;
+        
+        
         .business-image img {
             grid-area: business-image;
             grid-column: 2 / -1;

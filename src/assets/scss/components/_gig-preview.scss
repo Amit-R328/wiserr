@@ -1,105 +1,234 @@
+.gig-preview {
+  width: 100%;
+  min-width: 245px;
+  cursor: default !important;
+  display: flex;
+  flex-direction: column;
+}
+
 .gig-card {
-    list-style: none;
-    flex-direction: column;
-    border: 1px solid black;
-    color: gray;
-    z-index: 1;
-    margin-bottom: 1.5rem;
-    h3,
-    h4 {
-      margin: 0 0 0em;
-    }
-    &:hover {
-      opacity: 0.8;
-      transition: 0.4s;
-      .gig-title {
-        color: black;
-      }
-    }
-  
-    li {
-      color: black;
-      padding: 5px;
-      margin: 5px;
-    }
-    a {
-      color: black;
-      text-decoration: none;
-    }
-    h3 {
-      padding: 10px 5px;
-      margin: 5px;
-    }
-  
-    .gig-img {
-      margin-bottom: 0;
-      height: 200px;
-      max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  position: relative;
+  border: 1px solid #e4e5e7;
+  width: 100%;
+  aspect-ratio: 1 / 1.2 !important;
+  min-width: 245px;
+  border: 1px solid #e4e5e7;
+  color: #62646a;
+
+  .gig-img-container {
+    overflow: hidden;
+    aspect-ratio: 1 / 0.6 !important;
+
+    img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
-    .owner-details {
-      flex-direction: column;
-      
-    }
-  
-    .owner-name {
-      font-size: 0.8rem;
-      color: black;
-      font-weight: 800;
-      margin-bottom: 0px;
-    }
-    .owner-avatar {
-      justify-content: start;
-    }
-    .gig-title {
-      color: #222325;
-      padding: 0 5px;
-      margin: 3px 3px 0 3px;
-      font-size: 1rem;
-      font-weight: 400;
-    }
-  
-    .sml-round-img {
-      border-radius: 50px;
-      width: 20px;
-      height: 20px;
-      margin-top: 15px;
-    }
-    .review-line {
-      margin: 1px;
-      font-size: 0.9rem;
-    }
-    
-    .card-fav-price {
-      border-top: 0.5px solid black;
-      justify-content: space-between;
-      font-size: 1rem;
+  }
+
+  .seller-info {
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(98, 100, 106);
+    cursor: default;
+    display: flex;
+    font-size: 14px;
+    // line-height: 120%;
+    // width: 100%;
+    flex-direction: column;
+
+    .inner-wrapper {
+      display: flex;
+      flex-direction: row;
       align-items: center;
+      line-height: 120%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 12px 12px 8px;
+      height: 54px;
+      width: 100%;
+      justify-content: space-between;
+
+      .owner-name {
+        width: 250px;
+        margin-left: 10px;
+        padding: 17px 12px;
+        font-size: 16px;
+      }
+
+
+      .owner-avatar {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        overflow: hidden;
+
+        .img-border {
+          .sml-round-img {
+            background-color: #b5b6ba;
+            border-radius: 50px;
+            width: 24px;
+            height: 24px;
+            margin-top: 15px;
+          }
+
+          .owner-avatar img {
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            position: relative;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .owner-details {
+        color: #222325;
+        height: 18px;
+        line-height: 16.8px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .gig-title {
+    height: 43px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    cursor: pointer;
+    line-height: 22px;
+    margin-top: 5px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding: 0 12px 5px;
+    text-decoration: none;
+    transition: all .15s ease-in-out;
+    word-break: break-word;
+    word-wrap: break-word;
+    font-size: 16px;
+    color: #222325;
+    margin: 3px 3px 0 3px;
+
+    &:hover {
+      outline: none;
+    }
+
+    &:active {
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .gig-rate {
+    -webkit-box-pack: justify;
+    box-sizing: border-box;
+    color: #62646a;
+    cursor: default;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    padding: 10px 12px;
+    color: #ffbe5b;
+    
+    .avg-rate {
+      padding-left: 10px;
+      font-size: 14px;
+      line-height: 21px;
+      color: #ffbe5b;
+      font-weight: 700;
+    }
+    .num-of-rate {
+      color: #62646a !important;
+      height: 14px;
+      padding-left: 50px;
+      line-height: 24px;
+      position: fixed;
+    }
+  }
+}
+
+.sml-round-img {
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
   
-      .h4 {
-        margin: 0 10px;
-        margin-bottom: 0;
-      }
-      span {
-        font-size: 0.8rem;
-      }
-  
-      .fav-btn,
-      .gig-price {
-        padding: 0;
-        background-color: white;
-        color: #62646a;
-      }
-  
-      .fav-btn {
-        color: gray;
-        font-size: 1.2rem;
-      }
-      .fav-btn:hover {
-        color: gray;
-      }
-      .fav-btn .active {
-        color: red;
-      }
+}
+
+.review-line {
+  margin: 1px;
+  font-size: 0.9rem;
+}
+
+.card-fav-price {
+    border-top: 0.5px solid black;
+    justify-content: space-between;
+    font-size: 1rem;
+    align-items: center;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px;
+
+    .gig-price{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: right;
+      text-align: right;
+    }
+
+    .price-text {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .h4 {
+      margin: 0 10px;
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
+
+    .fav-btn,
+    .gig-price {
+      padding: 0;
+      // background-color: white;
+      color: #62646a;
+    }
+
+    .fav-btn {
+      color: gray;
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 24px;
+    }
+
+    .fav-btn:hover {
+      color: gray;
+    }
+
+    .fav-btn .active {
+      color: red;
     }
   }
