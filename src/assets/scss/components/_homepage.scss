@@ -1,29 +1,3 @@
-// .main-content-container {
-//   box-sizing: border-box;
-//   color: #222;
-//   column-gap: 24px;
-//   cursor: default;
-//   display: grid;
-//   grid-auto-rows: minmax(min-content, max-content);
-//   line-height: 20px;
-//   margin-block-end: 32px;
-//   margin-block-start: 8px;
-//   row-gap: 40px;
-
-//   @media (min-width: 1128px) {
-//     .main-content-container {
-//       margin-block-end: 32px;
-//       margin-block-start: 8px;
-//     }
-//   }
-
-//   @media (min-width: 744px) {
-//     .main-content-container {
-//       grid-auto-rows: minmax(0, 1fr);
-//     }
-//   }
-// }
-
 .trusted-by-brands {
   width: 100%;
   height: 95px;
@@ -48,6 +22,8 @@
       align-items: center;
       // justify-content: center;
       background-color: green;
+      margin-left: 13.25%;
+      margin-right: 13.25%;
 
       & li {
         text-align: left;
@@ -85,4 +61,3 @@
     }
   }
 }
-
