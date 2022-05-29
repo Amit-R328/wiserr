@@ -28,9 +28,10 @@ export const GigDetails = (props) => {
     }
 
     if (!gig) return <h1>Loading</h1>
-
+    console.log('Gig:', gig._id)
     let whatYouGet
     if (gig.description.whatDoYouGet) {
+
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
@@ -45,7 +46,7 @@ export const GigDetails = (props) => {
                             onChangeCategory={onChangeCategory} />} */}
                     <AppHeader />
                     <span className="line-sep"></span>
-                    <CategoriesNavHeader/>
+                    <CategoriesNavHeader />
                     <span className="line-sep"></span>
                 </div>
             </div>
