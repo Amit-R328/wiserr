@@ -11,7 +11,8 @@
         dd{
 
             display: list-item;
-            list-style-type: disc
+            list-style-type: disc;
+            margin-left: 24px;
         }
     
     }
@@ -68,6 +69,12 @@
                 align-items: center;
                 margin-bottom: 15px;
             }
+            .owner-card-right {
+                margin-left: 15px;
+                font-size: 10px;
+                font-weight: bold;
+                gap: 5px;
+            }
             .md-round-img{
                 border-radius: 50%;
                 width: 80px;
@@ -78,6 +85,7 @@
                 border: 1px solid #dadbdd;
                 border-radius: 3px;
                 padding: 24px;
+                font-size: 12px;
                 .info-left {
                     -webkit-box-orient: horizontal;
                     -webkit-box-direction: normal;
@@ -111,6 +119,9 @@
         }
     } 
 
+    .reviews {
+        font-size: 12px;
+    }
     .call-to-action{
         flex-direction: column;
         gap: 10px;
@@ -118,7 +129,7 @@
         border: 1px solid #dadbdd;
         margin: 20px 0 0 0;
         width: 400.547px;
-        height: 420px;
+        // height: 470px;
         // position: fixed;
         // top: 0px;
         // transform: translate3d(0px, 86px, 0px);
@@ -131,7 +142,7 @@
             box-shadow: 0 3px 0 #1dbf73;
             color: #1dbf73;
             text-align: center;
-            font-size: 1.5em;
+            font-size: 16px;
             padding: 26px 16px 10px 16px;
             font-size: roboto;
             font-weight: 700;
@@ -145,16 +156,22 @@
             padding-right: 24px;
             padding-top: 12px;
             .order-price{
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 700;
                 white-space: nowrap;
                 line-height: 24px;
+            }
+            .order-subtitle {
+                font-size: 18px;
+            }
+            .littleDetails {
+                svg{margin-right: 5px;}
             }
         }
     }
     
     .buy-btn{
-        margin-top: 80px;
+        margin-top: 10px;
         background-color: #1dbf73;
         border: 1px solid transparent;
         border-radius: 4px;

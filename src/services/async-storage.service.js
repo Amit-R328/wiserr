@@ -893,7 +893,7 @@ function _createGigs() {
                     "id": "r105",
                     "content": "Some blogs are being revoked by Google Ads due to violations. We have to be careful now because they are going to begin charging and suspending people for continuous violations.",
                     "userName": "willdavis527",
-                    "userImage": "",
+                    "userImage": "https://this-person-does-not-exist.com/img/avatar-e1673e19fe49349307f13a3f9c01cb7b.jpg",
                     "stars": [4.7],
                     "userCountry": "United States"
                 },
@@ -901,7 +901,7 @@ function _createGigs() {
                     "id": "r106",
                     "content": "I have worked with them many times before. This last time there was a few communication gaps, but overall I will hire them again",
                     "userName": "davis18232",
-                    "userImage": "",
+                    "userImage": "https://this-person-does-not-exist.com/img/avatar-5ed6588acbdde9fc6e9d0bb668f11485.jpg",
                     "stars": [4],
                 },
                 {
@@ -916,7 +916,7 @@ function _createGigs() {
                     "id": "r110",
                     "content": "Very helpful and great job helping me solving my issues in a timely manner, fast delivery and very knowledgeable, highly recommended.",
                     "userName": "babakka",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-d235c2cb8e626fa4a30d37d4d485d802.jpg",
+                    "userImage": "https://this-person-does-not-exist.com/img/avatar-fd9f87ac08cbc1c4023be1586908a29d.jpg",
                     "stars": [5],
                     "userCountry": "United States"
                 },
@@ -924,7 +924,7 @@ function _createGigs() {
                     "id": "r111",
                     "content": "He was quick with the order.",
                     "userName": "jazzimanij",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-17f04ed050339a939749d96a614f8073.jpg",
+                    "userImage": "https://this-person-does-not-exist.com/img/avatar-0be864db8415c3afc707686522f23f1b.jpg",
                     "stars": [5],
                     "userCountry": "United States"
                 }

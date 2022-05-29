@@ -9,6 +9,7 @@ import { getById } from '../store/actions/gigs.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
 import { AppHeader} from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader} from '../cmps/headers/categories-nav-header.jsx'
+import { GreenVMark } from '../services/svg.service.js';
 
 
 export const GigDetails = (props) => {
@@ -120,6 +121,7 @@ export const GigDetails = (props) => {
 
                     {gig.reviews.map(review => {
                         return <article key={review.id}>
+                            console.log('review', review)
                             <GigReview review={review} />
                         </article>
                     })}
@@ -130,8 +132,9 @@ export const GigDetails = (props) => {
                 <div className="order-title-wrapper flex">
                     <span className="order-price">${gig.price}</span>
                     <p className="order-subtitle">{gig.title}</p>
+                    {gig.description.littleDetails && <dl> {gig.description.littleDetails.map(detail => <dt className='littleDetails'><GreenVMark/>{detail}</dt>)}</dl>}
+                    <button className="buy-btn">Continue</button>
                 </div>
-                <button className="buy-btn">Continue</button>
             </div>
         </section>
         </React.Fragment>
