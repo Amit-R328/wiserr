@@ -14,3 +14,21 @@ export function loadOrders(user){
         }
     }
 }
+
+
+export function onSaveOrder(gigId, loggedinUser) {
+    return async (dispatch) => {
+        try {               
+            console.log('gigId',gigId )
+            console.log('loggedinUser', loggedinUser)
+
+            const order = await orderService.saveOrder(gigId, loggedinUser)
+            console.log('order', order)
+            const action = {type: 'SET_ORDER', order}
+            console.log('action', action)
+            dispatch(action)                           
+        } catch (err) {
+            console.log('Cannot login', err)
+        }
+    }
+}

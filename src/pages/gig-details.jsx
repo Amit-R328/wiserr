@@ -5,18 +5,20 @@ import { NavLink, useParams } from 'react-router-dom';
 import React, { useEffect, useState, Component } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gigs.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { GreenVMark } from '../services/svg.service.js';
-
+import { onSaveOrder } from '../store/actions/order.actions.js'
 
 export const GigDetails = (props) => {
 
     // const { user } = useSelector((storeState) => storeState.userModule)
     // const {toys} = useSelector((storeState) =>  storeState.toyModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     // const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const dispatch = useDispatch()
     const params = useParams()
@@ -37,6 +39,17 @@ export const GigDetails = (props) => {
     console.log('gig', gig)
     if (gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
+    }
+
+    const closeOrder = (ev, gigId) => {
+        console.log('gigId',gigId )
+        console.log('loggedInUser', loggedInUser)
+        if(!loggedInUser){
+            console.log('in')
+            showSuccessMsg('Need go login')
+        } else {
+            dispatch(onSaveOrder(gigId, loggedInUser))
+        }
     }
 
     return (
@@ -147,7 +160,7 @@ export const GigDetails = (props) => {
                                         {gig.description.littleDetails && <dl> {gig.description.littleDetails.map(detail => <dt className='littleDetails'><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer>
-                                            <button className="buy-btn">Continue ( {gig.price} )</button>
+                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Continue ( {gig.price} )</button>
                                         </footer>
                                     </div>
 

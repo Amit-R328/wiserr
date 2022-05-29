@@ -6,6 +6,7 @@ import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { userService } from '../../services/user.service.js'
+import { UserMsg } from '../user-msg.jsx'
 
 
 export const AppHeaderHomePage = (props) => {
@@ -80,13 +81,14 @@ export const AppHeaderHomePage = (props) => {
                                     <div className="avatar-container">
                                         {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
                                     </div>
-                                    {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>} */}
+                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
                                 </li>
                             </ul>
                         </div>
 
                     </div>
                 </div>
+                <UserMsg />
             </header>
             <span className="line-sep"></span>
 
