@@ -61,7 +61,7 @@ export const FilterBreadCrumbs = () => {
                     </div>
 
                     <div class="sort-by-wrapper">
-                        <span class="pre-title">Sort by</span>
+                        <span class="pre-title sorting">Sort by</span>
                         {/* <div className="floating-menu open"> */}
                             {/* <div className="menu-title sort-filter">Best Selling<span className="chevron-icon-down" aria-hidden="true"><ArrowDown /></span>
                             </div> */}

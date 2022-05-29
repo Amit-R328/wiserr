@@ -172,6 +172,7 @@
         }
 
         .sort-by-wrapper {
+            
             color: #62646a;
             display: inline-block;
             font-size: 16px;
@@ -184,6 +185,7 @@
             
         }
         .filter-floating-menu {
+            gap: 10px;
             display: flex;
             flex-direction: row;
             -webkit-box-align: center;

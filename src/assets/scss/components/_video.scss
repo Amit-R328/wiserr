@@ -5735,20 +5735,21 @@
     display: inline-block;
     font-size: 16px;
     line-height: 120%;
-    font-weight: 700
+    font-weight: 700;
 }
 
 .listings-perseus .sort-by-wrapper .pre-title {
-    font-weight: 400
+    font-weight: 400;
+    margin-right: 10px;
 }
 
 .listings-perseus .sort-by-wrapper .sort-filter {
     color: #222325;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .listings-perseus .sort-by-wrapper .sort-filter>span:first-child {
-    margin-right: 10px
+    margin-right: 10px;
 }
 
 .listings-perseus .sort-by-wrapper .floating-menu {

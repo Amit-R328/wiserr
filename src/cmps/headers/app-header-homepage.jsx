@@ -29,6 +29,10 @@ export const AppHeaderHomePage = (props) => {
         // setLoggedInUser(null)
     }
 
+    if(loggedInUser && !loggedInUser.imgUrl){
+        loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
+    }
+
     return (
         <div className="header">
             <header className="logged-out-homepage-header">
@@ -76,7 +80,7 @@ export const AppHeaderHomePage = (props) => {
                                     <div className="avatar-container">
                                         {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
                                     </div>
-                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
+                                    {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>} */}
                                 </li>
                             </ul>
                         </div>

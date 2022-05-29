@@ -13,25 +13,25 @@ export const AppHeader = (props) => {
     return (
         <div className="header">
             <header className="logged-out-header">
-                <div className="header-row-wrapper">
-                    <div className="header-row max-width-container equal-padding row-main">
-                        <button className="btn-navicon">
-                            <HamburgerMenu />
-                        </button>
-                        <div className="logo-main-header">
-                            <NavLink to="/" className="site-logo">
-                                <LogoFull />
-                                {/* <LogoFullWhite /> */}
-                            </NavLink>
-                        </div>
-                        <div className="wiserr-header-search-animated">
-                            <div className="search-bar-package-container">
-                                <form className="search-bar-package search_bar-package">
-                                    <span className="search-bar-icon searching-icon" aria-hidden="true">
-                                        <SearchBar />
-                                    </span>
-                                    <Search />
-                                    {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
+            <div className="header-row-wrapper">
+                <div className="header-row max-width-container equal-padding row-main">
+                    <button className="btn-navicon">
+                        <HamburgerMenu />
+                    </button>
+                    <div className="logo-main-header">
+                        <NavLink to="/" className="site-logo">
+                            <LogoFull />
+                            {/* <LogoFullWhite /> */}
+                        </NavLink>
+                    </div>
+                    <div className="nav-wiserr-header-search-animated">
+                        <div className="search-bar-package-container">
+                            <form className="search-bar-package search_bar-package">
+                                <span className="search-bar-icon searching-icon" aria-hidden="true">
+                                    <SearchBar />
+                                </span>
+                                <Search />
+                                {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
                                     <button className="co-white submit-button bg-co-green-700">Search</button> */}
                                 </form>
                             </div>
