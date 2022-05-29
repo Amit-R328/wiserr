@@ -9,6 +9,7 @@ import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 
 export const GigPage = (onChangeCategory) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
+    const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const [offset, setOffset] = useState(0);
@@ -50,7 +51,7 @@ export const GigPage = (onChangeCategory) => {
                                 <div className="filter-gigs-container">
                                 <FilterBreadCrumbs />
                                 </div>
-                                <GigList gigs={gigs} />
+                                <GigList gigs={gigs} reviews={reviews} />
 
                             </div>
                         </div>

@@ -11,6 +11,9 @@
     height: 291px;
     margin: 96px;
     gap: 3em;
+    margin-left: 13.25%;
+    margin-right: 13.25%;
+    
 
     .video-modal .testimonial-modal {
         color: #62646a;
@@ -30,8 +33,8 @@
         margin: 0;
         padding: 0;
         top: 25%;
-        margin-left: 96px;
-        margin-right: 96px;
+        margin-left: 13.25%;
+    margin-right: 13.25%;
 
         @media only screen and (min-width:900px) {
             .testimonials {
