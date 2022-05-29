@@ -700,11 +700,11 @@ function _createGigs() {
             "_id": "i101",
             "title": "I will create animated whiteboard explainer video ad",
             "price": 52.94,
+            "rate": [4.9],
             "owner": {
                 "_id": "u101",
                 "fullName": "Ahmed Aka",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/892904e84bbdb477bd10dc8aefb8c40b-1639538948592/326b15fc-dcf7-4fc7-99a5-14f158251575.jpg",
-                "rate": [4.9],
                 "from": "Pakistan",
                 "memberSince": "Sept 2017",
                 "avgResponseTime": "1 hour",
@@ -756,11 +756,11 @@ function _createGigs() {
             "_id": "i102",
             "title": "I will do unique and beautiful retro vintage logo",
             "price": 35.29,
+            "rate": [4.8],
             "owner": {
                 "_id": "u107",
                 "fullName": "graphexgalaxy",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": [4.8],
                 "from": "United Kingdom",
                 "memberSince": "Oct 2020",
                 "avgResponseTime": "1 hour",
@@ -804,11 +804,11 @@ function _createGigs() {
             "_id": "i103",
             "title": "I will draw cute and unique nft mascot character",
             "price": 52.94,
+            "rate": [5],
             "owner": {
                 "_id": "u109",
                 "fullName": "dohyotriyono",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0c89fc1c96e5888bc8260636b7de4b11-1602777446248/4bc07449-9725-41de-aefb-fb96f6f60a35.png",
-                "rate": [5],
                 "from": "Indonesia",
                 "memberSince": "Jun 2020",
                 "avgResponseTime": "1 hour",
@@ -860,11 +860,11 @@ function _createGigs() {
             "_id": "i104",
             "title": "I will do facebook advertising, marketing, fb ads,instagram ads campaign,fb advertising",
             "price": 70.59,
+            "rate": [4.9],
             "owner": {
                 "_id": "u111",
                 "fullName": "gad_by_miraz_pro",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/7a85510d72ccc2941cbe87ac3dd3a9e4-1634745207853/f9896223-7a6d-42b6-8711-d60922c3b6ab.jpg",
-                "rate": [4.9],
                 "from": "Israel",
                 "memberSince": "2 month ago",
                 "avgResponseTime": "3 hours",
@@ -901,7 +901,7 @@ function _createGigs() {
                     "id": "r106",
                     "content": "I have worked with them many times before. This last time there was a few communication gaps, but overall I will hire them again",
                     "userName": "davis18232",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-5ed6588acbdde9fc6e9d0bb668f11485.jpg",
+                    "userImage": "",
                     "stars": [4],
                 },
                 {
@@ -924,7 +924,7 @@ function _createGigs() {
                     "id": "r111",
                     "content": "He was quick with the order.",
                     "userName": "jazzimanij",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-0be864db8415c3afc707686522f23f1b.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 }
@@ -939,11 +939,11 @@ function _createGigs() {
             "_id": "i105",
             "title": "I will be your pro social media content creator",
             "price": 352.94,
+            "rate": [4.9],
             "owner": {
                 "_id": "u113",
                 "fullName": "shirley_esid",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b4231d6752099ce2619003ed164b72e2-1646950968199/c6714639-3d34-4a5a-9739-3a72597ae4ec.JPG",
-                "rate": [4.9],
                 "from": "Belgium",
                 "memberSince": "Mar 2020",
                 "avgResponseTime": "1 hour",
@@ -972,7 +972,7 @@ function _createGigs() {
                     "id": "r113",
                     "userName": "dcutsforth",
                     "content": "The seller provided us with good looking social media content on a tight time frame for substantially less than almost anyone else pro certified that offers this service. Not only that, they provided us with more pests and hashtags than we paid for. They really went above and beyond for a freelancer",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-0061670daafb6858336465a5a67edb78.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 },
@@ -995,11 +995,11 @@ function _createGigs() {
             "_id": "i106",
             "title": "I will do organic spotify promotion by social media marketing",
             "price": 88.24,
+            "rate": [4.9],
             "owner": {
                 "_id": "u116",
                 "fullName": "roslyn_johnson",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/b6f6830b0394f46092fc7ace020c511d-985758451632988163077/JPEG_20210930_134922_-1807988561.jpg",
-                "rate": [4.9],
                 "from": "Bangladesh",
                 "memberSince": "Dec 2020",
                 "avgResponseTime": "2 hour",
@@ -1029,15 +1029,15 @@ function _createGigs() {
                     "id": "r116",
                     "userName": "erichflaboss",
                     "content": "Communicates well and gets lots of numbers but the listener to stream ratio was very low on what happened, so I'm unsure how streams were achieved.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-c95de19afb1d6653f0b9cd2e8a95062a.jpg",
+                    "userImage": "",
                     "stars": [3.3],
                     "userCountry": "United States"
                 },
                 {
                     "id": "r117",
-                    "userName": "erichflaboss",
+                    "userName": "erictom",
                     "content": "Fast and efficent but unsure if bots were involved in getting the numbers because the listener to stream ratio was really low with this service compared to others.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-db7c7545bae1743b13dcb0e09c9f503f.jpg",
+                    "userImage": "",
                     "stars": [3.7],
                     "userCountry": "United States"
                 }
@@ -1052,11 +1052,11 @@ function _createGigs() {
             "_id": "i107",
             "title": "I will setup and optimize tiktok ads campaign, tik tok ads, tiktok advertising",
             "price": 141.18,
+            "rate": [4.9],
             "owner": {
                 "_id": "u118",
                 "fullName": "mahbuburrahm204",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/8038e14b365769c5de4ab798e6346b7b-1629650732214/f75468a6-3514-47c0-b493-e021fe608344.png",
-                "rate": [4.9],
                 "from": "Bangladesh",
                 "memberSince": "Mar 2021",
                 "avgResponseTime": "1 hour",
@@ -1077,7 +1077,7 @@ function _createGigs() {
                     "id": "r118",
                     "userName": "jralston1911",
                     "content": "Wow, what can I say?? This seller has fantastic work! I’m very impressed with everything he’s done to assist my business! He knows exactly what he’s doing! He manages ads so well and I will definitely use him again in the future! 5 Stars for sure!",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-edea6dd737f20e73e346437462f6a260.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 },
@@ -1085,7 +1085,7 @@ function _createGigs() {
                     "id": "r119",
                     "userName": "febzpena",
                     "content": "It was a pleasure to work with him. He works very well and very efficient. He has a lot of patience with teaching me and showing ms things and he is also communicates very well. 10/10 recommend.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-f9a5eea70df41152e7b9af16ed714114.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 },
@@ -1116,11 +1116,11 @@ function _createGigs() {
             "_id": "i108",
             "title": "I will provide monthly SEO service, on and off page optimization for google ranking",
             "price": 122.88,
+            "rate": [5],
             "owner": {
                 "_id": "u120",
                 "fullName": "jaylucy",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/48b6c449a1b46cb2c9db97fc7cd612cc-1644490352565/3299dcc8-8cb3-45d5-9e46-72c4d50b6830.jpg",
-                "rate": [5]
             },
             "level": "Level 2 Seller",
             "daysToMake": 30,
@@ -1142,11 +1142,11 @@ function _createGigs() {
             "_id": "i109",
             "title": "I will write an SEO optimized travel blog post",
             "price": 352.94,
+            "rate": [5],
             "owner": {
                 "_id": "u122",
                 "fullName": "hayleyhutson",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/6f43fcdade5ca0cf5dc2a19bd2c75122-1595186054929/372e22af-6325-4f4e-b947-7c7767e6cf0a.jpeg",
-                "rate": [5],
                 "from": "United States",
                 "memberSince": "Jul 2020",
                 "avgResponseTime": "3 hour",
@@ -1198,11 +1198,11 @@ function _createGigs() {
             "_id": "i110",
             "title": "I will professionally translate into brazilian portuguese",
             "price": 352.94,
+            "rate": [5],
             "owner": {
                 "_id": "u125",
                 "fullName": "luizakipper",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/d0f1aa93510d94ecbbb75f189c5bc298-1553798809035/8558f3ac-ee2a-4e0f-b51e-e14984bc52f1.png",
-                "rate": [5],
                 "from": "Brazil",
                 "memberSince": "Mar 2019",
                 "avgResponseTime": "4 hour",
@@ -1223,7 +1223,7 @@ function _createGigs() {
                     "id": "r124",
                     "userName": "andykattle",
                     "content": "Luiza is the best translator you can find at an affordable price. He work was flawless and we are happy we picked her from the sea of translators on Wiser. Her reviews clearly speak for her - she has no 1 star, 2 star or 3 star reviews at all.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-6840e17ad57f8b2e4e5d7e4f25a84079.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "Australia"
                 },
@@ -1239,7 +1239,7 @@ function _createGigs() {
                     "id": "r126",
                     "userName": "anamaldonado007",
                     "content": "Excellent work, ALWAYS!",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-443f019a03f2b42997c3fa6ab7d2da83.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 }
@@ -1255,11 +1255,11 @@ function _createGigs() {
             "_id": "i111",
             "title": "I will manually translate english into russian or ukrainian",
             "price": 351.09,
+            "rate": [5],
             "owner": {
                 "_id": "u129",
                 "fullName": "petrolviv17",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/8e13af06edee199ac904fecdd9006295-1625901852731/4f96c2be-b384-416b-aeec-baea8820c59b.jpg",
-                "rate": [5],
                 "from": "Ukraine",
                 "memberSince": "May 2016",
                 "avgResponseTime": "1 hour",
@@ -1288,7 +1288,7 @@ function _createGigs() {
                     "id": "r128",
                     "userName": "wenswj",
                     "content": "Great service! We haven't got the time to verify the details of the translation but the speed and quality so far are extraordinary. I guess we'll just have to trust the talent of this amazing translator :) Thank you so much, Petro! Take care!!",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-8f37c61232c8970226175e13cba2b032.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United States"
                 },
@@ -1296,7 +1296,7 @@ function _createGigs() {
                     "id": "r129",
                     "userName": "bonolingo",
                     "content": "Petrolviv17 did an amazing job with translating into Ukrainian and proofreading Russian! He is obviously skilled, and also have a great attention to detail. Will happily work with Petrolviv17 again! Recommended! AAA+",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-8e814144f054f42c58f42cd482c6fb27.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "Norway"
                 }
@@ -1312,11 +1312,11 @@ function _createGigs() {
             "_id": "i112",
             "title": "I will animate your logo beautifully",
             "price": 1264,
+            "rate": [5],
             "owner": {
                 "_id": "u132",
                 "fullName": "cabalastudio711",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/cb40bd3fe35db5275ab38dddb4c004ef-1637462553618/b8c4a04a-29f9-4090-bdf9-565987edc235.jpg",
-                "rate": [5],
                 "from": "United States",
                 "memberSince": "Mar 2015",
                 "avgResponseTime": "1 hour",
@@ -1337,7 +1337,7 @@ function _createGigs() {
                     "id": "r130",
                     "userName": "zacaz123",
                     "content": "Awesome guy.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-5e470ba64000a524a548279b14165a61.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "Australia"
                 },
@@ -1345,7 +1345,7 @@ function _createGigs() {
                     "id": "r131",
                     "userName": "resolutemedia",
                     "content": "Instructions taken, good turnaround, and very good responsiveness to feedback. Exemplary!",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-92c0d92c153a3f442daf0f72f637d18b.jpg",
+                    "userImage": "",
                     "stars": 5,
                     "userCountry": "United States"
                 },
@@ -1353,7 +1353,7 @@ function _createGigs() {
                     "id": "r132",
                     "userName": "jlnyc2121",
                     "content": "Fast communication, received feedback well and delivered a beautiful product. Highly recommended.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-ab0c217f9722ea719dce202d18d1ceee.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "Norway"
                 }
@@ -1369,11 +1369,11 @@ function _createGigs() {
             "_id": "i113",
             "title": "I will produce a professional edm ghost track for a dj",
             "price": 684,
+            "rate": [5],
             "owner": {
                 "_id": "u133",
                 "fullName": "charlieatom",
                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/0d274dc3deccc996379dc8f5db465b7a-1596651738065/08b56b6c-a858-4439-baa6-fec24751f086.jpg",
-                "rate": [5],
                 "from": "Mexico",
                 "memberSince": "Aug 2020",
                 "avgResponseTime": "1 hour",
@@ -1402,7 +1402,7 @@ function _createGigs() {
                     "id": "r135",
                     "userName": "davidcunning926",
                     "content": "Charlie is outstanding! Such a professional. Works quickly and take ideas very well. This is my 2nd project with Charlie and I can't wait to work with him again.",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-32c1cd714e0aa7b709b5c3b7364e3217.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "United Kingdom"
                 },
@@ -1410,7 +1410,7 @@ function _createGigs() {
                     "id": "r136",
                     "userName": "psybird",
                     "content": "Awesome delivery and production. No matter the style you 'challenge' Charlie with, he will always deliver great results. Very happy!",
-                    "userImage": "https://this-person-does-not-exist.com/img/avatar-ab0c217f9722ea719dce202d18d1ceee.jpg",
+                    "userImage": "",
                     "stars": [5],
                     "userCountry": "Germany"
                 }
