@@ -63,8 +63,9 @@ function getGigByName() {
     ]
 }
 
-function getById(toyId) {
-    return storageService.get(STORAGE_KEY, toyId)
+function getById(gigId) {
+    console.log('gigId',gigId )
+    return storageService.get(STORAGE_KEY, gigId)
 }
 
 async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '' }) {

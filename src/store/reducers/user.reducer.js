@@ -6,7 +6,7 @@ const initialState = {
     loggedInUser: userService.getLoggedinUser() || null,
     users: [],
     watchedUser : null,
-    loggedInUser:null
+    // loggedInUser:null
 }
 export function userReducer(state = initialState, action) {
     var newState = state;

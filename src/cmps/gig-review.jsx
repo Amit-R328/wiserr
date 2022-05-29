@@ -17,11 +17,11 @@ export const GigReview = ({ review }) => {
                 <div className="flex">
                     <img className="sml-review-img" src={review.userImage} alt="" />
                     <p className="reviewer-name">{review.userName}</p>
-                    {/* <div className="rating">
-                        <span>
+                    <div className="rating">
+                        {/* <span>
                             <RatingValue handleRatingChange={handleRatingChange} reviewId={review._Id} />
-                        </span>
-                    </div> */}
+                        </span> */}
+                    </div>
 
                     {/* <p> */}
                     {/* <i className="fa fa-star filled"></i>
