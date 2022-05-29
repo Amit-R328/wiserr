@@ -156,6 +156,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: center;
         }
 
         div.top-filters.st-hover {
@@ -179,7 +180,7 @@
             position: flex-end;
             display: flex;
             flex-direction: row;
-            gap: 1em;
+            align-items: center;
             
         }
         .filter-floating-menu {
