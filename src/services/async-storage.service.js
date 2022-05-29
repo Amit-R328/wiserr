@@ -22,6 +22,7 @@ function query(entityType, delay = 600) {
 }
 
 // function query(entityType, entityId, delay = 600) {
+//     console.log('entityType',entityType)
 //     var entities = JSON.parse(localStorage.getItem(entityType))
 //     console.log('entities', entities)
 //     if (entityType === 'user' && entityId) {
@@ -29,6 +30,10 @@ function query(entityType, delay = 600) {
 //         console.log('entity', entity)
 //         console.log('need to go out in query')
 //         return entity
+//     } else  if (entityType === 'order' && !entities) {
+//         entities = _createOrders()
+//         _save(entityType, entities)
+//        console.log('entities',entities )
 //     } else if (entityType === 'user' && !entities) entities = _createUsers()
 //     else if (!entities) {
 //         entities = _createGigs()

@@ -7,6 +7,8 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { userService } from '../../services/user.service.js'
 import {ProfileMenu} from './profile-menu.jsx'
+import { UserMsg } from '../user-msg.jsx'
+
 
 export const AppHeaderHomePage = (props) => {
     const [profileMenu, setMenu] = useState(false)
@@ -96,6 +98,7 @@ export const AppHeaderHomePage = (props) => {
 
                     </div>
                 </div>
+                <UserMsg />
             </header>
             <span className="line-sep"></span>
 
