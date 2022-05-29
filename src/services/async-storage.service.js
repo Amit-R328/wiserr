@@ -130,7 +130,7 @@ function _createUsers(){
         },
         {
             "_id": "u103",
-            "fullName": "courtney lasch",
+            "fullName": "courtneylasch",
             "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/60317801/original/13051499_10153433741651123_6578396117746809005_n.jpg",
             "userName": "courtney lasch",
             "password": "courtneylasch",
