@@ -54,7 +54,7 @@ export const GigDetails = (props) => {
                     <span className="line-sep"></span>
                 </div>
             </div>
-            <section className="gig-details flex">
+            <section className="gig-details flex"> 
                 <div className="left-container">
                     <section className="gig-info">
                         <h3 className="text-display">{gig.title}</h3>
@@ -70,12 +70,13 @@ export const GigDetails = (props) => {
                         <h2 className="about-title">About this Gig</h2>
                         <p className="about-this-gig">{gig.description.aboutThisGig}</p>
                         <br />
-                        {gig.description.whatDoYouGet} && <p className="what-do-you-get">
-                            <dl>
+                        {whatYouGet &&<h3 className='about-get'>What Do You Get</h3>}
+                        {/* {gig.description.whatDoYouGet} && <p className="what-do-you-get"> */}
+                            <dl className="what-do-you-get">
 
                                 {whatYouGet && whatYouGet.map(line => <dd>{line}</dd>)}
                             </dl>
-                        </p>
+                        {/* </p> */}
                         <article className="about-seller">
                             <p className="about-title">About The Seller</p>
                             <div className="owner-card flex">
@@ -121,7 +122,6 @@ export const GigDetails = (props) => {
 
                     {gig.reviews.map(review => {
                         return <article key={review.id}>
-                            console.log('review', review)
                             <GigReview review={review} />
                         </article>
                     })}

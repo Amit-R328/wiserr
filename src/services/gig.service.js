@@ -32,7 +32,7 @@ export const gigService = {
     getAllGigs
 
 }
-
+ 
 function getAllGigs() {
     query()
         .then(gigs => gigs)
