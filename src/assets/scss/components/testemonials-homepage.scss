@@ -146,7 +146,7 @@
 }
 
 blockquote {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 36px;
     color: #003912;
     padding-bottom: 24px;
@@ -182,4 +182,11 @@ blockquote {
             margin-left: 12px
         }
     }
+}
+
+.testimonial-name {
+    color: #74767e;
+    padding-bottom: 16px;
+    font-size: 12px;
+    line-height: 140%;
 }
