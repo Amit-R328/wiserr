@@ -708,7 +708,7 @@ function _createGigs() {
                 {
                     "_id": "r101",
                     "userName": "courtneylasch",
-                    "content": "I would highly recommend this Fiverr artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
+                    "content": "I would highly recommend this Wiser artist. He is very kind, quick to respond, and really wants your project to succeed! I would highly recommend getting a gig from him!",
                     "userImage": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/profile/photos/10451008/original/cheadshot_03_cropped.jpg",
                     "stars": [5],
                     "userCountry": "United States"
@@ -1206,7 +1206,7 @@ function _createGigs() {
                 {
                     "id": "r124",
                     "userName": "andykattle",
-                    "content": "Luiza is the best translator you can find at an affordable price. He work was flawless and we are happy we picked her from the sea of translators on Fiverr. Her reviews clearly speak for her - she has no 1 star, 2 star or 3 star reviews at all.",
+                    "content": "Luiza is the best translator you can find at an affordable price. He work was flawless and we are happy we picked her from the sea of translators on Wiser. Her reviews clearly speak for her - she has no 1 star, 2 star or 3 star reviews at all.",
                     "userImage": "https://this-person-does-not-exist.com/img/avatar-6840e17ad57f8b2e4e5d7e4f25a84079.jpg",
                     "stars": [5],
                     "userCountry": "Australia"

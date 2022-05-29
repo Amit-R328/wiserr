@@ -7,6 +7,7 @@ export function getActionRemoveGig(gigId) {
         gigId
     }
 }
+
 export function getActionAddGig(gig) {
     return {
         type: 'ADD_GIG',

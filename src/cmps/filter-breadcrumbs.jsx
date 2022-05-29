@@ -10,55 +10,79 @@ export const FilterBreadCrumbs = () => {
         // {<VideoModal/>}
     }
     return (
-            <div className="layout-row">
-                <header>
-                    <div className="breadcrumbs-container">
-                        <ul className="breadcrumbs">
-                            <li><a href="/"> Wiserr </a>
-                                <span className="chevron-icon-right" aria-hidden="true">
-                                    <PathArrow2 />
-                                    {/* <PathArrow /> */}
-                                </span>
-                            </li>
-                            <li><a href="/categories/graphics-design"> Graphics &amp; Design </a>
-                                <span className="chevron-icon-right" aria-hidden="true">
-                                    <PathArrow2 />
-                                    {/* <PathArrow /> */}
-                                </span>
-                            </li>
-                        </ul>
+        <div className="layout-row">
+            <header>
+                <div className="breadcrumbs-container">
+                    <ul className="breadcrumbs">
+                        <li><a href="/"> Wiserr </a>
+                            <span className="chevron-icon-right" aria-hidden="true">
+                                <PathArrow2 />
+                                {/* <PathArrow /> */}
+                            </span>
+                        </li>
+                        <li><a href="/categories/graphics-design"> Graphics &amp; Design </a>
+                            <span className="chevron-icon-right" aria-hidden="true">
+                                <PathArrow2 />
+                                {/* <PathArrow /> */}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <header className="results-category-header">
+                    <div className="title-wrapper">
+                        {/* <div className="flex flex-col"> */}
+                        <h1>Graphics &amp; Design</h1>
+                        <p>Get a beautiful website design that people love to engage with.</p>
+                        <button onClick={() => onHandleVideo()}><VideoIcon /><p>How Wiserr Works</p></button>
+
+                    </div>
+                </header>
+
+            </header >
+
+            <div className="filter-topbar">
+                <div className="filter-shadow-effect">
+                    <div className="filter-floating-top-bar">
+                        <div className="top-filters">
+                        </div>
                     </div>
 
-                    <header className="results-category-header">
-                        <div className="title-wrapper">
-                            {/* <div className="flex flex-col"> */}
-                            <h1>Graphics &amp; Design</h1>
-                            <p>Get a beautiful website design that people love to engage with.</p>
-                            <button onClick={() => onHandleVideo()}><VideoIcon /><p>How Wiserr Works</p></button>
-
-                        </div>
-                    </header>
-
-                </header >
-                
-                <div className="filter-topbar">
-                    <div className="filter-shadow-effect">
-                        <div className="filter-floating-top-bar">
-                            <div className="top-filters">
-                            </div>
+                    <div className="filter-floating-menu">
+                        <div className="filter-menu-title filter-menu">Budget<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                        </span>
                         </div>
                         <div className="filter-floating-menu">
-                            <div className="filter-menu-title filter-menu">Budget<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                            <div className="filter-menu-title filter-menu">Delivery Time<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
                             </span>
                             </div>
-                            <div className="filter-floating-menu">
-                                <div className="filter-menu-title filter-menu">Delivery Time<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
-                                </span>
+                        </div>
+                    </div>
+
+                    <div class="sort-by-wrapper">
+                        <span class="pre-title">Sort by</span>
+                        <div className="floating-menu open">
+                            <div className="menu-title sort-filter">Best Selling<span className="chevron-icon-down" aria-hidden="true"><ArrowDown /></span>
+                            </div>
+
+                            <div className="menu-content">
+                                <div className="content-scroll">
+                                    <div className="labels-list">
+                                        <label className="sort-label">Price</label>
+                                        <label className="sort-label">Name</label>
+                                        <label className="sort-label">Newest Arrivals</label>
+                                    </div>
                                 </div>
+                                <div className="button-row">
+                                </div>
+                                <div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     )
 }

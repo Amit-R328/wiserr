@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import StarIcon from '@mui/icons-material/Star';
+import Rating from '@mui/material/Rating';
 
-
-
-export const GigPreview = ({ gig }) => {
+export const GigPreview = ({ gig, reviews }) => {
     return (
 
         <li className="gig-preview">
@@ -14,24 +14,30 @@ export const GigPreview = ({ gig }) => {
                     </div>
 
                     <section>
-                        <div class="seller-info seller-text-body-2">
+                        <div class="seller-info">
                             <div class="inner-wrapper">
                                 <div className="owner-avatar">
                                     <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="owner" />
+                                    <div className="owner-name">{gig.owner.fullName}</div>
                                 </div>
-                                <section className="owner-details">
-                                    <p className="owner-name">{gig.owner.fullName}</p>
-                                </section>
-                                <p>{gig.title.substr(0, 75)}...</p>
-                                
                             </div>
                         </div>
                     </section>
 
+                    <div className="gig-title">
+                        <p>{gig.title.substr(0, 75)}...</p>
+                    </div>
+                    <div className="gig-rate">
+                        <StarIcon />
+                        <div className="avg-rate">4.9</div>
+                        {/* <span className="num-of-rate">(113)</span> */}
+                    </div>
                 </Link>
                 <section className="card-fav-price">
-                    <button className="fav-btn">❤</button>
-                    <h4 className="gig-price"><span>STARTING AT </span>${gig.price}</h4>
+                    <div className="heart-btn"><button className="fav-btn">❤</button></div>
+                    <div className="gig-price">
+                        <h4 className="gig-price"><div className="price-text">STARTING AT</div>${gig.price}</h4>
+                        </div>
                 </section >
             </article>
         </li >

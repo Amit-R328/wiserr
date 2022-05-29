@@ -1,7 +1,7 @@
 import { GigPreview } from './gig-preview.jsx'
 
 
-export function GigList({ gigs, handleRatingChange }) {
+export function GigList({ gigs, reviews }) {
     // if (!gigs) {
     //     return (<h1>Loading</h1>)
     // }
@@ -13,7 +13,7 @@ export function GigList({ gigs, handleRatingChange }) {
                     <GigPreview
                         key={gig._id}
                         gig={gig}
-                        handleRatingChange={handleRatingChange}
+                        reviews={reviews}
                     />
                 )}
             </ul>
