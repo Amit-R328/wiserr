@@ -15,8 +15,8 @@ export const GigPreview = ({ gig, reviews }) => {
                     </div>
 
                     <section>
-                        <div class="seller-info">
-                            <div class="inner-wrapper">
+                        <div className="seller-info">
+                            <div className="inner-wrapper">
                                 <div className="owner-avatar">
                                     <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="owner" />
                                     <div className="owner-name">{gig.owner.fullName}</div>

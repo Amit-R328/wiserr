@@ -21,7 +21,6 @@ export const AppHeaderHomePage = (props) => {
     // const {user} = useSelector((storeState) => storeState.userModule)
     // const [user, setUser] = useState(userService.getById(loggedInUser._id))
 
-    console.log('loggedInUser', loggedInUser)
     // console.log('user', user)
 
     const onLogout = () => {

@@ -40,8 +40,8 @@ export class HeroCarousel extends React.Component {
   createSlide = () => {
     return this.state.gigs.map(gig => {
       return (
-        <SwiperSlide>
-              <img className='img-slide ratio-16-9' src={gig.img} alt="" key={gig.title} />
+        <SwiperSlide key={gig.title}>
+              <img className='img-slide ratio-16-9' src={gig.img} alt=""  />
                     {/* {gig.name} */}
                     {/* {gig.title} */}
         </SwiperSlide>

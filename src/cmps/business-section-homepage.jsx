@@ -13,8 +13,8 @@ export const BusinessSectionHomepage = () => {
                             <span className="text-upper">New</span>
                         </small>
                         <h2 className="font-domaine">
-                            <span><p>A business solution<br></br>designed for<p><i>sellers</i></p>
-                            </p></span>
+                            <span><span>A business solution<br></br>designed for<span><i>sellers</i></span>
+                            </span></span>
                         </h2>
                         <p>Upgrade to a curated experience packed with tools and benefits, dedicated to businesses</p>
                         <ul>

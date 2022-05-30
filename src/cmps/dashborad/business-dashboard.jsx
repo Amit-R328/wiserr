@@ -19,7 +19,7 @@ export const BusinessDashboard = (props) => {
         dispatch(loadOrders(user))
     }, [])
     
-
+console.log('orders before map',orders )
     
     return (
         <div className="b-solutions">
@@ -34,7 +34,7 @@ export const BusinessDashboard = (props) => {
                     <th className='orders-th'>Status</th>
                 </thead>
                 <tbody>
-                    {orders.map((order) => <tr>
+                    {orders.map((order) => <tr>                        
                             <td>{utilService.setDateTime(order.createdAt)}</td>
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
