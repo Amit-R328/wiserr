@@ -20,7 +20,7 @@ export const BusinessDashboard = (props) => {
     }, [])
     
 
-
+    
     return (
         <div className="b-solutions">
             Hello from business dashboard
@@ -39,7 +39,8 @@ export const BusinessDashboard = (props) => {
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
                             <td>{utilService.setDateTime(order.deliveryDate)}</td>
-                            <td>{order.gig.price}</td>
+                            {/* <td>{order.gig.price}</td> */}
+                            <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
                             <td>{order.status}</td>
                         </tr>)}
                 </tbody>

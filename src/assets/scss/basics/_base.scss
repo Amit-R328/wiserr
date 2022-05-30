@@ -22,6 +22,7 @@ body {
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeSpeed;
     font-family: roboto;
+    overflow-y: scroll;
     
     // @include for-normal-layout {
         //     &.sidebar-open {

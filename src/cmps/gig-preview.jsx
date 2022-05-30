@@ -4,6 +4,7 @@ import StarIcon from '@mui/icons-material/Star';
 import Rating from '@mui/material/Rating';
 
 export const GigPreview = ({ gig, reviews }) => {
+    const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
     return (
 
         <li className="gig-preview">
@@ -36,7 +37,7 @@ export const GigPreview = ({ gig, reviews }) => {
                 <section className="card-fav-price">
                     <div className="heart-btn"><button className="fav-btn">❤</button></div>
                     <div className="gig-price">
-                        <h4 className="gig-price"><div className="price-text">STARTING AT</div>${gig.price}</h4>
+                        <h4 className="gig-price"><div className="price-text">STARTING AT</div>{price}</h4>
                         </div>
                 </section >
             </article>

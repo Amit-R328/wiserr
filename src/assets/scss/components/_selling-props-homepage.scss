@@ -56,7 +56,7 @@
         }
 
         h2 {
-            font-size: 32px;
+            font-size: 22px;
             line-height: 120%;
             display: block;
             // margin-block-start: 0.83em;
@@ -64,6 +64,7 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             font-weight: bold;
+            color: #404145;
         }
 
         li {
@@ -81,7 +82,7 @@
                 -webkit-box-align: start;
                 -ms-flex-align: start;
                 align-items: flex-start;
-                font-size: 18px;
+                font-size: 12px;
                 line-height: 26px;
                 color: #62646a;
                 
@@ -93,7 +94,7 @@
                 }
             }
             p {
-                font-size: 18px;
+                font-size: 12px;
                 line-height: 26px;
                 color: #62646a;
 

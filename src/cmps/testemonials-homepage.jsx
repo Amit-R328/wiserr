@@ -17,7 +17,7 @@ export const TestemonialsHomepage = () => {
             </div>
 
             <div className="text-content">
-                <h5 className="">Kay Kim, Co-Founder<span className="testimonial-logo">
+                <h5 className="testimonial-name">Kay Kim, Co-Founder<span className="testimonial-logo">
                 </span>
                 </h5>
 

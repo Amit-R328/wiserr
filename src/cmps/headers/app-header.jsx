@@ -2,13 +2,28 @@ import React, { useState } from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { Search } from '../search.jsx'
+import { logout } from '../../store/actions/user.actions.js'
+import { useSelector, useDispatch } from 'react-redux'
+
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
     const [logo, setLogo] = useState('logo-white')
     const [headerTextColor, setHeaderTextColor] = useState('white')
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    const dispatch = useDispatch()
 
+    
+    const onLogout = () => {
+        dispatch(logout())
+        // setIsSignIn(false)
+        // setLoggedInUser(null)
+    }
+
+    if(loggedInUser && !loggedInUser.imgUrl){
+        loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
+    }
 
     return (
         <div className="header">
@@ -51,7 +66,12 @@ export const AppHeader = (props) => {
                                     </li>
 
                                     <li className="display-from-sm">
-                                        <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>
+                                        {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
+                                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
+                                    <div className="avatar-container">
+                                        {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
+                                    </div>
+                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
                                     </li>
                                 </ul>
                             </div>

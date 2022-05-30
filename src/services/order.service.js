@@ -36,7 +36,7 @@ async function saveOrder(gigId, loggedinUser){
     {
         // "_id": utilService.makeId(),
         "createdAt": Date.now(),
-        "deliveryDate": Date.now() + gig.daysToMake,
+        "deliveryDate": Date.now() + (gig.daysToMake * 86400000),
         "buyer": {
             "_id": loggedinUser._id,
             "fullName": loggedinUser.userName,
