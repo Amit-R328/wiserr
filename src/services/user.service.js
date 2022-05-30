@@ -83,7 +83,7 @@ async function signup(userCred) {
             throw err
         }
         console.log('userCred', userCred)
-        userCred.avgRate = 0
+        userCred.avgOrdersRate = 0
         userCred.email = userCred.userName + '@gmail.com'
         userCred.facebook_account = ''
         userCred.google_account = ''

@@ -21,6 +21,12 @@ function query(entityType, delay = 600) {
     return Promise.resolve(entities)
 }
 
+
+function get(entityType, entityId) {
+    return query(entityType)
+        .then(entities => entities.find(entity => entity._id === entityId))
+}
+
 // function query(entityType, entityId, delay = 600) {
 //     console.log('entityType',entityType)
 //     var entities = JSON.parse(localStorage.getItem(entityType))
@@ -34,7 +40,10 @@ function query(entityType, delay = 600) {
 //         entities = _createOrders()
 //         _save(entityType, entities)
 //        console.log('entities',entities )
-//     } else if (entityType === 'user' && !entities) entities = _createUsers()
+//     } else if (entityType === 'user' && !entities) {
+//         entities = _createUsers()
+//         _save(entityType, entities)
+//     }
 //     else if (!entities) {
 //         entities = _createGigs()
 //         _save(entityType, entities)
@@ -51,10 +60,6 @@ function query(entityType, delay = 600) {
 //     // return Promise.resolve(entities)
 // }
 
-function get(entityType, entityId) {
-    return query(entityType)
-        .then(entities => entities.find(entity => entity._id === entityId))
-}
 
 // function get(entityType, entityId) {
 //     console.log('entityType',entityType )
@@ -123,8 +128,8 @@ function _createOrders() {
     let orders = [
         {
             "_id": "o101",
-            "createdAt": 1642241294,
-            "deliveryDate": 1642500494,
+            "createdAt": 1636410641000,
+            "deliveryDate": 1636669841000,
             "buyer": {
                 "_id": "u103",
                 "fullName": "courtney lasch",
@@ -145,8 +150,8 @@ function _createOrders() {
         },
         {
             "_id": "o102",
-            "createdAt": 1620382094,
-            "deliveryDate": 1620641294,
+            "createdAt": 1638187841000,
+            "deliveryDate": 1638360641000,
             "buyer": {
                 "_id": "u130",
                 "fullName": "lordenzoj",
@@ -167,8 +172,8 @@ function _createOrders() {
         },
         {
             "_id": "o103",
-            "createdAt": 1640911814,
-            "deliveryDate": 1641171014,
+            "createdAt": 1641643841000,
+            "deliveryDate": 1641903041000,
             "buyer": {
                 "_id": "u131",
                 "fullName": "joshuamcclur187",
@@ -189,7 +194,7 @@ function _createOrders() {
         },
         {
             "_id": "o104",
-            "createdAt": 1641343814,
+            "createdAt": 1643544641000,
             "deliveryDate": null,
             "buyer": {
                 "_id": "u126",
@@ -211,7 +216,7 @@ function _createOrders() {
         },
         {
             "_id": "o105",
-            "createdAt": 1654044614,
+            "createdAt": 1653912641000,
             "deliveryDate": null,
             "buyer": {
                 "_id": "u118",
@@ -247,7 +252,7 @@ function _createUsers() {
             "password": "gul071",
             "level": "Level 2 Seller",
             "email": "gul071@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -261,7 +266,7 @@ function _createUsers() {
             "password": "richarddavis438",
             "level": "",
             "email": "richarddavis438@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -276,7 +281,7 @@ function _createUsers() {
             "password": "courtneylasch",
             "level": "",
             "email": "courtneylasch@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -291,7 +296,7 @@ function _createUsers() {
             "password": "yogi_isnanda",
             "level": "Level 2 Seller",
             "email": "yogi_isnanda@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": false,
             "google_account": "",
             "facebook_account": "",
@@ -305,7 +310,7 @@ function _createUsers() {
             "password": "buddhanthebeard",
             "level": "",
             "email": "buddhanthebeard@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -320,7 +325,7 @@ function _createUsers() {
             "password": "ivanrivera",
             "level": "",
             "email": "ivanrivera@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -335,7 +340,7 @@ function _createUsers() {
             "password": "graphexgalaxy",
             "level": "Level 2 Seller",
             "email": "graphexgalaxy@gmail.com",
-            "avgRate": 4.8,
+            "avgOrdersRate": 4.8,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -349,7 +354,7 @@ function _createUsers() {
             "password": "hp_spikefli",
             "level": "",
             "email": "hp_spikefli@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -364,7 +369,7 @@ function _createUsers() {
             "password": "dohyotriyono",
             "level": "Level 2 Seller",
             "email": "dohyotriyono@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -378,7 +383,7 @@ function _createUsers() {
             "password": "hp_spikefli",
             "level": "",
             "email": "hp_spikefli@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -393,7 +398,7 @@ function _createUsers() {
             "password": "gad_by_miraz_pro",
             "level": "Level 2 Seller",
             "email": "gad_by_miraz_pro@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -407,7 +412,7 @@ function _createUsers() {
             "password": "febzpena",
             "level": "",
             "email": "febzpena@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -422,7 +427,7 @@ function _createUsers() {
             "password": "shirley_esid",
             "level": "Level 2 Seller",
             "email": "shirley_esid@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -436,7 +441,7 @@ function _createUsers() {
             "password": "strongathome",
             "level": "",
             "email": "strongathome@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -451,7 +456,7 @@ function _createUsers() {
             "password": "burnanaconcept",
             "level": "",
             "email": "burnanaconcept@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -466,7 +471,7 @@ function _createUsers() {
             "password": "roslyn_johnson",
             "level": "Level 2 Seller",
             "email": "roslyn_johnson@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": false,
             "google_account": "",
             "facebook_account": "",
@@ -480,7 +485,7 @@ function _createUsers() {
             "password": "erichflaboss",
             "level": "",
             "email": "erichflaboss@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -495,7 +500,7 @@ function _createUsers() {
             "password": "mahbuburrahm204",
             "level": "Level 2 Seller",
             "email": "mahbuburrahm204@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -509,7 +514,7 @@ function _createUsers() {
             "password": "anxietybathbomb",
             "level": "",
             "email": "anxietybathbomb@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -524,7 +529,7 @@ function _createUsers() {
             "password": "jaylucy",
             "level": "Top Rated Seller",
             "email": "jaylucy@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": false,
             "google_account": "",
             "facebook_account": "",
@@ -538,7 +543,7 @@ function _createUsers() {
             "password": "pinkblack785",
             "level": "",
             "email": "pinkblack785@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -553,7 +558,7 @@ function _createUsers() {
             "password": "hayleyhutson",
             "level": "Level 2 Seller",
             "email": "hayleyhutson@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -567,7 +572,7 @@ function _createUsers() {
             "password": "pjd2019",
             "level": "",
             "email": "pjd2019@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -582,7 +587,7 @@ function _createUsers() {
             "password": "professorrose",
             "level": "",
             "email": "professorrose@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -597,7 +602,7 @@ function _createUsers() {
             "password": "luizakipper",
             "level": "Level 2 Seller",
             "email": "luizakipper@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": true,
             "google_account": "",
             "facebook_account": "",
@@ -611,7 +616,7 @@ function _createUsers() {
             "password": "anamaldonado007",
             "level": "",
             "email": "anamaldonado007@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -626,7 +631,7 @@ function _createUsers() {
             "password": "truckparkermusi",
             "level": "",
             "email": "truckparkermusi@gmail.com",
-            "avgRate": 0,
+            "avgOrdersRate": 0,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -641,7 +646,7 @@ function _createUsers() {
             "password": "laraib_zafar",
             "level": "",
             "email": "laraib_zafar@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "reviews": [{}],
             "google_account": "",
@@ -656,7 +661,7 @@ function _createUsers() {
             "password": "markdarwin18",
             "level": "",
             "email": "markdarwin18@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": true,
             "reviews": [{}],
             "google_account": "",
@@ -672,7 +677,7 @@ function _createUsers() {
             "password": "lordenzoj",
             "level": "",
             "email": "lordenzoj@gmail.com",
-            "avgRate": 4.9,
+            "avgOrdersRate": 4.9,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -687,7 +692,7 @@ function _createUsers() {
             "password": "joshuamcclur187",
             "level": "",
             "email": "joshuamcclur187@gmail.com",
-            "avgRate": 5,
+            "avgOrdersRate": 5,
             "isSeller": false,
             "reviews": [{}],
             "google_account": "",
@@ -705,7 +710,7 @@ function _createGigs() {
             "_id": "i101",
             "title": "I will create animated whiteboard explainer video ad",
             "price": 52.94,
-            "rate": [4.9],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u101",
                 "fullName": "Ahmed Aka",
@@ -761,7 +766,7 @@ function _createGigs() {
             "_id": "i102",
             "title": "I will do unique and beautiful retro vintage logo",
             "price": 35.29,
-            "rate": [4.8],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u107",
                 "fullName": "graphexgalaxy",
@@ -809,7 +814,7 @@ function _createGigs() {
             "_id": "i103",
             "title": "I will draw cute and unique nft mascot character",
             "price": 52.94,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u109",
                 "fullName": "dohyotriyono",
@@ -865,7 +870,7 @@ function _createGigs() {
             "_id": "i104",
             "title": "I will do facebook advertising, marketing, fb ads,instagram ads campaign,fb advertising",
             "price": 70.59,
-            "rate": [4.9],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u111",
                 "fullName": "gad_by_miraz_pro",
@@ -944,7 +949,7 @@ function _createGigs() {
             "_id": "i105",
             "title": "I will be your pro social media content creator",
             "price": 352.94,
-            "rate": [4.9],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u113",
                 "fullName": "shirley_esid",
@@ -1000,7 +1005,7 @@ function _createGigs() {
             "_id": "i106",
             "title": "I will do organic spotify promotion by social media marketing",
             "price": 88.24,
-            "rate": [4.9],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u116",
                 "fullName": "roslyn_johnson",
@@ -1057,7 +1062,7 @@ function _createGigs() {
             "_id": "i107",
             "title": "I will setup and optimize tiktok ads campaign, tik tok ads, tiktok advertising",
             "price": 141.18,
-            "rate": [4.9],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u118",
                 "fullName": "mahbuburrahm204",
@@ -1121,7 +1126,7 @@ function _createGigs() {
             "_id": "i108",
             "title": "I will provide monthly SEO service, on and off page optimization for google ranking",
             "price": 122.88,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u120",
                 "fullName": "jaylucy",
@@ -1147,7 +1152,7 @@ function _createGigs() {
             "_id": "i109",
             "title": "I will write an SEO optimized travel blog post",
             "price": 352.94,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u122",
                 "fullName": "hayleyhutson",
@@ -1203,7 +1208,7 @@ function _createGigs() {
             "_id": "i110",
             "title": "I will professionally translate into brazilian portuguese",
             "price": 352.94,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u125",
                 "fullName": "luizakipper",
@@ -1260,7 +1265,7 @@ function _createGigs() {
             "_id": "i111",
             "title": "I will manually translate english into russian or ukrainian",
             "price": 351.09,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u129",
                 "fullName": "petrolviv17",
@@ -1317,7 +1322,7 @@ function _createGigs() {
             "_id": "i112",
             "title": "I will animate your logo beautifully",
             "price": 1264,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u132",
                 "fullName": "cabalastudio711",
@@ -1374,7 +1379,7 @@ function _createGigs() {
             "_id": "i113",
             "title": "I will produce a professional edm ghost track for a dj",
             "price": 684,
-            "rate": [5],
+            "avgGigRating": [],
             "owner": {
                 "_id": "u133",
                 "fullName": "charlieatom",

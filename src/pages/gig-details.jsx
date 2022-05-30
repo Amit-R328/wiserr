@@ -52,6 +52,7 @@ export const GigDetails = (props) => {
         }
     }
 
+    const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
     return (
         <React.Fragment>
             <div className="app-header">
@@ -155,12 +156,12 @@ export const GigDetails = (props) => {
                                 <div className="call-to-action">
                                     <div className="price-package">Special Offer</div>
                                     <div className="order-title-wrapper">
-                                        <span className="order-price">${gig.price}</span>
+                                        <span className="order-price">{price}</span>
                                         <p className="order-subtitle">{gig.title}</p>
                                         {gig.description.littleDetails && <dl> {gig.description.littleDetails.map(detail => <dt className='littleDetails'><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer>
-                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Continue ( {gig.price} )</button>
+                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Continue ( {price} )</button>
                                         </footer>
                                     </div>
 
