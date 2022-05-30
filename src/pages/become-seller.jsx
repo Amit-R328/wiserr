@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { saveGig } from '../store/actions/gigs.actions'
 
-export class BecomeSeller extends React.Component {
+class _BecomeSeller extends React.Component {
     state = {
         sellerInfo: {
             imgUrl: '',
@@ -12,6 +13,7 @@ export class BecomeSeller extends React.Component {
             price: 0,
             whyUs: '',
             whatDoYouGet:'',
+            daysToMake:0,
             owner: this.props.loggedInUser
         }
     }
@@ -42,6 +44,7 @@ export class BecomeSeller extends React.Component {
         gigTitle: '',
         category:'',
         price: 0,
+        daysToMake:0,
         whyUs: '',
         whatDoYouGet:'',
         owner: this.props.loggedInUser}})
@@ -68,6 +71,8 @@ export class BecomeSeller extends React.Component {
                     <textarea name='whatDoYouGet' value={sellerInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
                     <label htmlFor='price'>Price</label>
                     <input type="number" id='price' name='price' required/>
+                    <label htmlFor='daysToMake'>Delivery Date</label>
+                    <input type="number" id="daysToMake" name="daysToMake" required/>
                     <p>Category</p>
                     <select className='select-field' value={sellerInfo.category} name="category" onChange={this.handleChange}>
                         <option value=""></option>
@@ -99,3 +104,12 @@ const MapStateToProps = (storeState) => {
         loggedInUser: storeState.loggedInUser
     }
 }
+
+const mapDispatchToProps = {
+    saveGig
+}
+
+export const BecomeSeller = connect(
+    MapStateToProps,
+    mapDispatchToProps
+)(_BecomeSeller)
