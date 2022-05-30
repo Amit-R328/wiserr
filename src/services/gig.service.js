@@ -111,7 +111,7 @@ async function save(gig) {
         "price": gig.price,
         "owner": {
             "_id":gig.owner._id,
-            "fullName":gig.owner.fullname,
+            "fullName":gig.owner.userName,
             "imgUrl": gig.owner.imgUrl || "",
             "from": gig.origin,
             "memberSince":utilService.setDateTime(Date.now()),

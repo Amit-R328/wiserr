@@ -9,7 +9,7 @@ import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-h
 import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import {BecomeSeller} from './pages/become-seller.jsx'
+import {BecomeSellerWrapper} from './pages/become-seller.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -25,7 +25,7 @@ const routes = [
     },
     {
         path: '/business/become-seller',
-        component: <BecomeSeller/>
+        component: <BecomeSellerWrapper/>
     },
     {
         path: '/business',

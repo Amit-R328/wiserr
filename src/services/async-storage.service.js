@@ -34,7 +34,10 @@ function query(entityType, delay = 600) {
 //         entities = _createOrders()
 //         _save(entityType, entities)
 //        console.log('entities',entities )
-//     } else if (entityType === 'user' && !entities) entities = _createUsers()
+//     } else if (entityType === 'user' && !entities) {
+//         entities = _createUsers()
+//         _save(entityType, entities)
+//     }
 //     else if (!entities) {
 //         entities = _createGigs()
 //         _save(entityType, entities)

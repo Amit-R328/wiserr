@@ -7,7 +7,6 @@ import { AppFooter } from './cmps/app-footer.jsx'
 import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 
-
 export class RootCmp extends React.Component {
 
     render() {
