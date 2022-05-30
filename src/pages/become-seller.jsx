@@ -22,7 +22,7 @@ class _BecomeSeller extends React.Component {
     }
 
     handleChange = (ev) => {
-        console.log('', this.props.loggedInUser)
+        
         const { target } = ev
         const field = target.name
         const value = target.value

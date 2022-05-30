@@ -39,6 +39,7 @@ export const LoginSignup = () => {
         }
 
         if (isLogin) {
+            console.log('loginInfo', loginInfo)
             dispatch(login(loginInfo))
             dispatch(getLoggedinUser())
         } else {

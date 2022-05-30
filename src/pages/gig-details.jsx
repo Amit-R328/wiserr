@@ -136,7 +136,7 @@ export const GigDetails = (props) => {
                         {(gig.reviews) ? <section className="reviews">
 
                             {gig.reviews.map(review => {
-                                return <article key={review.id}>
+                                return <article key={review._id}>
                                     <GigReview review={review} />
                                 </article>
                             })}
@@ -160,7 +160,7 @@ export const GigDetails = (props) => {
                                     <div className="order-title-wrapper">
                                         <span className="order-price">{price}</span>
                                         <p className="order-subtitle">{gig.title}</p>
-                                        {gig.description.littleDetails && <dl> {gig.description.littleDetails.map(detail => <dt className='littleDetails'><GreenVMark />{detail}</dt>)}</dl>}
+                                        {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail,idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer>
                                             <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Continue ( {price} )</button>

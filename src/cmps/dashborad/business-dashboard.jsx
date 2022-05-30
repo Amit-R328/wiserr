@@ -16,7 +16,7 @@ export const BusinessDashboard = (props) => {
         dispatch(getLoggedinUser())
         console.log('logged in user@@@@@', loggedInUser)
         let user = {type: 'seller', fullName: loggedInUser.userName}
-        dispatch(loadOrders(user))
+        dispatch(loadOrders(loggedInUser))
     }, [])
     
 console.log('orders before map',orders )

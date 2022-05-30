@@ -61,9 +61,10 @@ async function update(user) {
 }
 
 async function login(userCred) {
-
+    console.log('userCred', userCred)
     // const users = await storageService.query('user')
     let user = await httpService.post('auth/login', userCred)
+    console.log('user', user)
     // let user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
 
     if (user) {
@@ -117,6 +118,7 @@ async function changeScore(by) {
 }
 
 function _handleLogin(user) {
+    console.log('user', user)
     const miniUser = { _id: user._id, userName: user.userName, imgUrl: user.imgUrl, isSeller: user.isSeller }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(miniUser))
 }

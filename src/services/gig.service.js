@@ -97,21 +97,9 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    // let savedGig
-    // if (gig._id) {
-    //     // console.log('BASE_URL + gig._id',BASE_URL + gig._id )
-    //     // savedGig = await httpService.put(`gig/${gig._id}`,gig)
-    //     // savedGig = await axios.put(BASE_URL + gig._id, gig)
-    //     savedGig = savedGig.data
-    //     gigChannel.postMessage(getActionUpdateGig(savedGig))
-    // } else {
-    //     // savedGig = await axios.post(BASE_URL, gig)
-    //     savedGig = savedGig.data
-    //     gigChannel.postMessage(getActionAddGig(savedGig))
-    // }
-    // return savedGig
+    
 
-    const newGig = {
+    let newGig = {
         // "_id": utilService.makeId(),
         "title": gig.gigTitle,
         "price": gig.price,
@@ -133,8 +121,22 @@ async function save(gig) {
         "imgUrl": gig.imgUrl || "",
         "category": gig.category
     } 
-    await storageService.post('gig', newGig)
+    
+    if (gig._id) {
+        // console.log('BASE_URL + gig._id',BASE_URL + gig._id )
+        newGig = await httpService.put('gig',gig)
+        // savedGig = await axios.put(BASE_URL + gig._id, gig)
+        console.log('newGig',newGig)
+        gigChannel.postMessage(getActionUpdateGig(newGig))
+    } else {
+        // savedGig = await axios.post(BASE_URL, gig)
+        // savedGig = savedGig.data
+        newGig = await httpService.post('gig',newGig)
+        gigChannel.postMessage(getActionAddGig(newGig))
+    }
     return newGig
+    // await storageService.post('gig', newGig)
+    
 }
 
 
