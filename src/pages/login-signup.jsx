@@ -47,7 +47,7 @@ export const LoginSignup = () => {
             dispatch(getLoggedinUser())
             
         }
-        navigate('/')
+        navigate(-1)
     };
 
     const onChangePage = (ev) => {
