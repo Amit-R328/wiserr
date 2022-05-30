@@ -1,5 +1,5 @@
 import { storageService } from './async-storage.service'
-// import { httpService } from './http.service'
+import { httpService } from './http.service'
 import { store } from '../store/root.reducer'
 import { socketService, SOCKET_EVENT_USER_UPDATED, SOCKET_EMIT_USER_WATCH } from './socket.service'
 import { showSuccessMsg } from './event-bus.service'
@@ -62,12 +62,11 @@ async function update(user) {
 
 async function login(userCred) {
 
-    const users = await storageService.query('user')
-    // const user = await httpService.post('auth/login', userCred)
-    const user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
+    // const users = await storageService.query('user')
+    let user = await httpService.post('auth/login', userCred)
+    // let user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
 
     if (user) {
-        console.log('USER FROM USER.service:', user)
         // socketService.login(user._id)
         _handleLogin(user)
         return user
@@ -75,14 +74,14 @@ async function login(userCred) {
 }
 async function signup(userCred) {
     try {
-        const users = await storageService.query('user')
-        // const user = await httpService.post('auth/login', userCred)
+        // const users = await storageService.query('user')
+        let users = await httpService.post('auth/login', userCred)
         const isUserExist = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
         if (isUserExist) {
             const err = new Error('User already exist')
             throw err
         }
-        console.log('userCred', userCred)
+        
         userCred.avgOrdersRate = 0
         userCred.email = userCred.userName + '@gmail.com'
         userCred.facebook_account = ''
@@ -95,7 +94,7 @@ async function signup(userCred) {
         // const user = await httpService.post('auth/signup', userCred)
         // socketService.login(user._id)
         _handleLogin(user)
-        console.log('user', user)
+        
         return user
     } catch (err) {
         console.dir(err)
@@ -105,8 +104,8 @@ async function signup(userCred) {
 
 async function logout() {
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
-    socketService.logout()
-    // return await httpService.post('auth/logout')
+    // socketService.logout()
+    return await httpService.post('auth/logout')
 }
 
 async function changeScore(by) {
@@ -123,13 +122,12 @@ function _handleLogin(user) {
 }
 
 function saveLocalUser(user) {
-    console.log('user', user)
+    
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
 
 function getLoggedinUser() {
-    console.log('sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER)', sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 

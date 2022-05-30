@@ -2,5 +2,25 @@
     "cSpell.words": [
         "signup",
         "Wiserr"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#a4faf5",
+        "activityBar.activeBorder": "#ee68f7",
+        "activityBar.background": "#a4faf5",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#ee68f7",
+        "activityBarBadge.foreground": "#15202b",
+        "sash.hoverBorder": "#a4faf5",
+        "statusBar.background": "#74f7ef",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#44f4e9",
+        "statusBarItem.remoteBackground": "#74f7ef",
+        "statusBarItem.remoteForeground": "#15202b",
+        "titleBar.activeBackground": "#74f7ef",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.inactiveBackground": "#74f7ef99",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#74f7ef"
 }

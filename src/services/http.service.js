@@ -25,6 +25,7 @@ export const httpService = {
 }
 
 async function ajax(endpoint, method = 'GET', data = null) {
+    
     try {
         const res = await axios({
             url: `${BASE_URL}${endpoint}`,
@@ -32,6 +33,7 @@ async function ajax(endpoint, method = 'GET', data = null) {
             data,
             params: (method === 'GET') ? data : null
         })
+        
         return res.data
     } catch (err) {
         console.log(`Had Issues ${method}ing to the backend, endpoint: ${endpoint}, with data: `, data)

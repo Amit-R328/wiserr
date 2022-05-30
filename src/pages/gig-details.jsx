@@ -24,7 +24,6 @@ export const GigDetails = (props) => {
     const params = useParams()
 
     useEffect(() => {
-        console.log('params.gigId', params.gigId)
         dispatch(getById(params.gigId))
     }, [params])
 
@@ -34,9 +33,7 @@ export const GigDetails = (props) => {
 
     if (!gig) return <h1>Loading</h1>
 
-    console.log('Gig:', gig._id)
     let whatYouGet
-    console.log('gig', gig)
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
@@ -53,7 +50,10 @@ export const GigDetails = (props) => {
         }
     }
 
-    const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
+    let price = 0
+    if( gig.price) {
+        price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
+    }
     return (
         <React.Fragment>
             <div className="app-header">
@@ -88,7 +88,7 @@ export const GigDetails = (props) => {
                             {/* {gig.description.whatDoYouGet} && <p className="what-do-you-get"> */}
                             <dl className="what-do-you-get">
 
-                                {whatYouGet && whatYouGet.map(line => <dd>{line}</dd>)}
+                                {whatYouGet && whatYouGet.map(line => <dd key={line}>{line}</dd>)}
                             </dl>
                             {/* </p> */}
                             <article className="about-seller">
@@ -145,15 +145,15 @@ export const GigDetails = (props) => {
 
                     <div className="sticky-outer-wrapper-gig-buy">
                         <div className="sticky-inner-wrapper-gig-buy">
-                            <aside class="sidebar-content">
-                                {/* <div class="packages-tabs triple"> */}
+                            <aside className="sidebar-content">
+                                {/* <div className="packages-tabs triple"> */}
                                 {/* <input id="package-tab-1" name="package-tab-group" type="radio" checked=""> */}
                                 {/* <input id="package-tab-2" name="package-tab-group" type="radio"> */}
                                 {/* <input id="package-tab-3" name="package-tab-group" type="radio"> */}
-                                {/* <div class="nav-container">
+                                {/* <div className="nav-container">
             <label for="package-tab-1">Basic</label>
-        <label for="package-tab-2" class="">Standard</label>
-        <label for="package-tab-3" class="">Premium</label> */}
+        <label for="package-tab-2" className="">Standard</label>
+        <label for="package-tab-3" className="">Premium</label> */}
                                 {/* </div> */}
                                 <div className="call-to-action">
                                     <div className="price-package">Special Offer</div>

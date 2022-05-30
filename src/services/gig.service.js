@@ -1,20 +1,20 @@
-// import Axios from 'axios'
-// import { httpService } from './http.service.js'
-
-// const BASE_URL = '/api/gig/'
-
-// const BASE_URL =
-//     process.env.NODE_ENV === 'production'
-//         ? '/api/gig/'
-//         : 'http://localhost:3030/api/gig/'
-
-// let axios = Axios.create({
-//     withCredentials: true,
-// })
-
+import Axios from 'axios'
+import { httpService } from './http.service.js'
 import { getActionRemoveGig, getActionAddGig, getActionUpdateGig } from '../store/actions/gigs.actions.js'
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
+// const BASE_URL = '/api/gig/'
+
+const BASE_URL =
+    process.env.NODE_ENV === 'production'
+        ? '/api/gig/'
+        : 'http://localhost:3030/api/gig/'
+
+let axios = Axios.create({
+    withCredentials: true,
+})
+
+
 
 const STORAGE_KEY = 'gig'
 const PAGE_SIZE = 32
@@ -65,22 +65,28 @@ function getGigByName() {
 }
 
 function getById(gigId) {
-    console.log('gigId',gigId )
-    return storageService.get(STORAGE_KEY, gigId)
+    // return storageService.get(STORAGE_KEY, gigId)
+    let gig = httpService.get(`gig/${gigId}`)
+    return gig
 }
 
-async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '' }) {
-    let gigs = await storageService.query(STORAGE_KEY)
-
-    if (txt !== '') {
-        const regex = new RegExp(txt, 'i')
-        gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description) || regex.test(gig.owner.fullName))
-    }
-    if (priceMin > 0) gigs = gigs.filter(gig => gig.price >= priceMin)
-    if (priceMax < Infinity) gigs = gigs.filter(gig => gig.price <= priceMax)
-    if (deliveryDate > 0) gigs = gigs.filter(gig => gig.daysToMake === deliveryDate)
-    if (category !== '') gigs = gigs.filter(gig => gig.category === category)
-    return Promise.resolve(gigs)
+async function query(filterBy = {}) {
+    // async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '' }) {
+    const {txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = ''} = filterBy
+    const url = `?txt=${txt}&priceMin=${priceMin}&priceMax=${priceMax}&deliveryDate=${deliveryDate}&category=${category}`
+    const urlToRequest = 'gig/'+url
+    // let gigs = await storageService.query(STORAGE_KEY)
+    let gigs =  httpService.get(urlToRequest)
+    
+    // if (txt !== '') {
+    //     const regex = new RegExp(txt, 'i')
+    //     gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description) || regex.test(gig.owner.fullName))
+    // }
+    // if (priceMin > 0) gigs = gigs.filter(gig => gig.price >= priceMin)
+    // if (priceMax < Infinity) gigs = gigs.filter(gig => gig.price <= priceMax)
+    // if (deliveryDate > 0) gigs = gigs.filter(gig => gig.daysToMake === deliveryDate)
+    // if (category !== '') gigs = gigs.filter(gig => gig.category === category)
+    return gigs
 }
 
 async function remove(gigId) {
@@ -149,5 +155,4 @@ function unsubscribe(listener) {
 
 async function saveGigRating(gig) {
     // const savedGig = await axios.put(BASE_URL + gig._id, gig)
-    // console.log(savedGig)
 }

@@ -62,11 +62,11 @@ import { ArrowLeft, ArrowOnButtonLeftGrey, ArrowOnButtonRightGrey } from "../ser
 
 export const HomepageCategoriesCarousel = (props) => {
     return (
-        <div class="slider-package">
-            <div class="simple-slider">
+        <div className="slider-package">
+            <div className="simple-slider">
         <div className="carousel-container">
-            <div class="carousel-item-padding-40-px">
-                        <div class="subcategory-wrapper touch">
+            <div className="carousel-item-padding-40-px">
+                        <div className="subcategory-wrapper touch">
                             <a href="/categories/graphics-design" className="subcategory">
                                 <h4>
                                     <small>Build your brand</small>Logo Design</h4>
@@ -84,7 +84,7 @@ export const HomepageCategoriesCarousel = (props) => {
                         </div>
                     </div>
                     <div className="slick-slide">
-                        <div class="subcategory-wrapper touch">
+                        <div className="subcategory-wrapper touch">
                             <a href="/categories/music-audio" className="subcategory">
                                 <h4>
                                     <small>Share your message</small>Voice Over</h4>
@@ -106,12 +106,12 @@ export const HomepageCategoriesCarousel = (props) => {
                             <a href="/categories/online-marketing" className="subcategory">
                                 <h4>
                                     <small>Reach more customers</small>Social Media</h4>
-                                <img alt="Social Media" data-src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png" data-srcset="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 2x" class=" ls-is-cached lazyloaded" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 2x" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png" />
+                                <img alt="Social Media" data-src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png" data-srcset="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 2x" className="ls-is-cached lazyloaded" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png 2x" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741667/social-2x.png" />
                             </a>
                         </div>
                     </div>
                     <div className="slick-slide">
-                        <div class="subcategory-wrapper touch">
+                        <div className="subcategory-wrapper touch">
                             <a href="/categories/online-marketing" className="subcategory">
                                 <h4>
                                     <small>Unlock growth online</small>SEO</h4>
@@ -151,7 +151,7 @@ export const HomepageCategoriesCarousel = (props) => {
                             <a href="/categories/graphics-design" className="subcategory">
                                 <h4>
                                     <small>Showcase your story</small>Book Covers</h4>
-                                <img alt="Book Covers" data-src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png" data-srcset="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 2x" class=" ls-is-cached lazyloaded" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 2x" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png" />
+                                <img alt="Book Covers" data-src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png" data-srcset="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 2x" className="ls-is-cached lazyloaded" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png 2x" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png" />
                             </a>
                         </div>
                     </div>

@@ -29,7 +29,7 @@ async function query(user){
 async function saveOrder(gigId, loggedinUser){
     console.log('loggedinUser', loggedinUser)
     let gig = await storageService.get('gig',gigId)
-    // console.log('gig', gig)
+    console.log('gig', gig)
     const seller = await storageService.get('user',gig.owner._id)
     // console.log('seller', seller)
     const order =        
