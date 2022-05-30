@@ -6,10 +6,12 @@ import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { userService } from '../../services/user.service.js'
+import {ProfileMenu} from './profile-menu.jsx'
 import { UserMsg } from '../user-msg.jsx'
 
 
 export const AppHeaderHomePage = (props) => {
+    const [profileMenu, setMenu] = useState(false)
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
     const [logo, setLogo] = useState('logo-white')
@@ -27,6 +29,11 @@ export const AppHeaderHomePage = (props) => {
         dispatch(logout())
         // setIsSignIn(false)
         // setLoggedInUser(null)
+    }
+
+    const onToggleMenu = () => {
+        var flag = !profileMenu;
+        setMenu(flag);
     }
 
     if(loggedInUser && !loggedInUser.imgUrl){
@@ -78,9 +85,12 @@ export const AppHeaderHomePage = (props) => {
                                     {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
                                     {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
                                     <div className="avatar-container">
-                                        {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
+                                        {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                                     </div>
-                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
+                                    <div className="profile-container">
+                                    {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onToggleMenu()}></button>} */}
+                                    {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu}/>}
+                                    </div>
                                 </li>
                             </ul>
                         </div>

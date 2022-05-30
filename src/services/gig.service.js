@@ -2,7 +2,7 @@ import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { getActionRemoveGig, getActionAddGig, getActionUpdateGig } from '../store/actions/gigs.actions.js'
 import { storageService } from './async-storage.service.js'
-
+import { utilService } from './util.service.js'
 // const BASE_URL = '/api/gig/'
 
 const BASE_URL =
@@ -13,6 +13,7 @@ const BASE_URL =
 let axios = Axios.create({
     withCredentials: true,
 })
+
 
 
 const STORAGE_KEY = 'gig'
@@ -96,18 +97,44 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    let savedGig
-    if (gig._id) {
-        // savedGig = await httpService.put(`gig/${gig._id}`,gig)
-        // savedGig = await axios.put(BASE_URL + gig._id, gig)
-        savedGig = savedGig.data
-        gigChannel.postMessage(getActionUpdateGig(savedGig))
-    } else {
-        // savedGig = await axios.post(BASE_URL, gig)
-        savedGig = savedGig.data
-        gigChannel.postMessage(getActionAddGig(savedGig))
-    }
-    return savedGig
+    // let savedGig
+    // if (gig._id) {
+    //     // console.log('BASE_URL + gig._id',BASE_URL + gig._id )
+    //     // savedGig = await httpService.put(`gig/${gig._id}`,gig)
+    //     // savedGig = await axios.put(BASE_URL + gig._id, gig)
+    //     savedGig = savedGig.data
+    //     gigChannel.postMessage(getActionUpdateGig(savedGig))
+    // } else {
+    //     // savedGig = await axios.post(BASE_URL, gig)
+    //     savedGig = savedGig.data
+    //     gigChannel.postMessage(getActionAddGig(savedGig))
+    // }
+    // return savedGig
+
+    const newGig = {
+        // "_id": utilService.makeId(),
+        "title": gig.gigTitle,
+        "price": gig.price,
+        "owner": {
+            "_id":gig.owner._id,
+            "fullName":gig.owner.userName,
+            "imgUrl": gig.owner.imgUrl || "",
+            "from": gig.origin,
+            "memberSince":utilService.setDateTime(Date.now()),
+            "avgResponseTime": "now",
+            "lastDelivery":"None yet"
+        },
+        "daysToMake":gig.daysToMake,
+        "description": {
+            "aboutThisGig": gig.sellerDescription,
+            "whyUs": gig.whyUs || "",
+            "whatDoYouGet": gig.whatDoYouGet || ""
+        },
+        "imgUrl": gig.imgUrl || "",
+        "category": gig.category
+    } 
+    await storageService.post('gig', newGig)
+    return newGig
 }
 
 

@@ -34,10 +34,10 @@ export const GigDetails = (props) => {
     if (!gig) return <h1>Loading</h1>
 
     let whatYouGet
-
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
+
 
     const closeOrder = (ev, gigId) => {
         console.log('gigId',gigId )
@@ -61,8 +61,8 @@ export const GigDetails = (props) => {
                     {/* {offset ?
                         <CategoriesNavHeader style={{ visibility: 'visible' }}
                             onChangeCategory={onChangeCategory} />
-                        : <CategoriesNavHeader style={{ visibility: 'hidden' }}
-                            onChangeCategory={onChangeCategory} />} */}
+                            : <CategoriesNavHeader style={{ visibility: 'hidden' }}
+                        onChangeCategory={onChangeCategory} />} */}
                     <AppHeader />
                     <CategoriesNavHeader />
                 </div>
@@ -128,18 +128,19 @@ export const GigDetails = (props) => {
                                     </ul>
                                     <article className="seller-description">
                                         <div className="owner-summary">Hello I am Freelance Graphic Design and Illustrator based in Israel, I have working in graphic design industry for almost 6 years.</div>
+                    
                                     </article>
                                 </div>
                             </article>
                         </section>
-                        <section className="reviews">
+                        {(gig.reviews) ? <section className="reviews">
 
                             {gig.reviews.map(review => {
                                 return <article key={review.id}>
                                     <GigReview review={review} />
                                 </article>
                             })}
-                        </section>
+                        </section> : <p>Be the first to review</p>}
                     </div>
 
                     <div className="sticky-outer-wrapper-gig-buy">
