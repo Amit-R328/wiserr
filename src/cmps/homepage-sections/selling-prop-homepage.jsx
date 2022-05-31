@@ -1,5 +1,5 @@
 import React from "react";
-import { VCircle } from '../services/svg.service.js'
+import { VCircle } from '../../services/svg.service.js'
 
 export const SellingPropHomepage = () => {
     return (
