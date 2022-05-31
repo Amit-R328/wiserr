@@ -36,8 +36,8 @@ async function query(loggedInUser){
     //     // console.log('order seller', orders[i].seller.fullName)
     // }
     
-    if(!loggedInUser.isSeller) orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
-    
+    if(!loggedInUser.isSeller) {
+        orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)}
     else orders = orders.filter(order => {
         console.log('order.seller.fullname', order.seller.fullName, 'loggedInUser.username', loggedInUser.userName )
        return order.seller.fullName === loggedInUser.userName})

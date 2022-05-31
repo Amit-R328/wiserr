@@ -2,18 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { saveGig } from '../store/actions/gig.actions'
-import { AppHeader } from '../cmps/headers/app-header.jsx'
-import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { cloudinaryService } from '../services/cloudinary.service.js'
 import { LogoFull } from '../services/svg.service.js'
 
-
-class _BecomeSeller extends React.Component {
-    
+class _AddGigDetails extends React.Component {
     state = {
-        sellerInfo: {
+        gigInfo: {
             imgUrl: [],
-            sellerDescription: '',
+            gigDescription: '',
             origin: '',
             gigTitle: '',
             category: '',
@@ -36,11 +32,11 @@ class _BecomeSeller extends React.Component {
             this.setState(prevState => ({ ...prevState, isImg: true }))
             return
         }
-        this.setState(prevState => ({ sellerInfo: { ...prevState.sellerInfo, [field]: value } }))
+        this.setState(prevState => ({ gigInfo: { ...prevState.gigInfo, [field]: value } }))
     }
 
     handleSelectChange = (skills) => {
-        this.setState((prevState) => ({ sellerInfo: { ...prevState.sellerInfo, skills } }))
+        this.setState((prevState) => ({ gigInfo: { ...prevState.gigInfo, skills } }))
     };
 
     uploadImg = (ev) => {
@@ -56,17 +52,17 @@ class _BecomeSeller extends React.Component {
             body: formData
         }).then(res => res.json()).then(res => {
             console.log('inguRL', res)
-            this.setState(prevState => ({ sellerInfo: { ...prevState.sellerInfo, imgUrl: [res.url] } }))
+            this.setState(prevState => ({ gigInfo: { ...prevState.gigInfo, imgUrl: [res.url] } }))
         }).catch(err => console.error(err))
     }
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-        this.props.saveGig(this.state.sellerInfo)
+        this.props.saveGig(this.state.gigInfo)
         this.setState({
-            sellerInfo: {
+            gigInfo: {
                 imgUrl: '',
-                sellerDescription: '',
+                gigDescription: '',
                 origin: '',
                 gigTitle: '',
                 category: '',
@@ -82,64 +78,66 @@ class _BecomeSeller extends React.Component {
     }
 
     render() {
-        const { sellerInfo, isImg } = this.state
+        const { gigInfo, isImg } = this.state
         return (
             <React.Fragment>
-                <div className="app-header">
-                    <div className="main-header sticky">
+                <div className="header-container">
+                    <div className="header-row">
                         <LogoFull />
-
-                        {/* <AppHeader /> */}
-                        {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
                     </div>
-                    <div className="progress-bar-container">
-                        <div className="inner-progress-wrapper">
-                            <nav>
-                                <button className="personal_info active">
-                                    <span className="">1</span>Personal Info</button>
-                                <button className="professional_info disabled">
-                                    <span className="">2</span>Professional Info</button>
-                                <button className="Gig Details disabled">
-                                    <span className="">3</span>Gig Details</button>
-                            </nav><div className="completion-score incomplete">
-                                <div className="text">Completion Rate: 15%</div>
-                                <div className="full-width-progressbar">
-                                    <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
-                                    </span>
-                                    </div>
+                </div>
+                <div className="progress-bar-container">
+                    <div className="inner-progress-wrapper">
+                        <nav>
+                            <button className="personal_info active">
+                                <span className="">1</span>Personal Info</button>
+                            <button className="professional_info disabled">
+                                <span className="">2</span>Professional Info</button>
+                            <button className="Gig Details disabled">
+                                <span className="">3</span>Gig Details</button>
+                        </nav><div className="completion-score incomplete">
+                            <div className="text">Completion Rate: 15%</div>
+                            <div className="full-width-progressbar">
+                                <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
+                                </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <div className="main-content-container">
-                    <section className="become-seller-container">
-                        <div className="seller-details">
-                            <section className="become-seller">
-                                <form className="seller-form" onSubmit={this.handleSubmit}>
-                                    <h2>Personal Info</h2>
-                                    <p>Picture (optional)</p>
-                                    <p>Upload an image of you'r work</p>
-                                    <label className='file-img'>
-                                        {!isImg ? '+' : <img src={`${sellerInfo.imgUrl}`} alt="" />}
-                                        <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
-                                        <label htmlFor='title'>Title of your Gig</label>
-                                    </label>
-                                    <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={sellerInfo.gigTitle} onChange={this.handleChange} />
+                    <section className="add-gig-container">
+                        <div className="gig-details">
+                            <section className="add-gig">
+                                <form className="gig-form" onSubmit={this.handleSubmit}>
+                                    <div className="gig-details-header"><h2>Gig Info</h2>
+                                        <p>Tell us a bit about yourself. This information will appear on your public profile,<br></br>so that potential buyers can get to know you better.</p>
+                                    </div>
+                                    <div className="gig-image-upload">
+                                        <p>Picture (optional)</p>
+                                        <p>Upload an image of you'r work</p>
+                                        <label className='file-img'>
+                                            {!isImg ? '+' : <img src={`${gigInfo.imgUrl}`} alt="" />}
+                                            <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
+                                            <label htmlFor='title'>Title of your Gig</label>
+                                        </label>
+                                    </div>
+                                    <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={gigInfo.gigTitle} onChange={this.handleChange} />
                                     <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
                                     <label className="description">
-                                        <textarea className='desc' required type={'txt'} name='sellerDescription' value={sellerInfo.sellerDescription} onChange={this.handleChange}></textarea>
+                                        <textarea className='desc' required type={'txt'} name='gigDescription' value={gigInfo.gigDescription} onChange={this.handleChange}></textarea>
                                     </label>
                                     <p className='why-you'>tell your potential buyers why they should choose you</p>
-                                    <textarea name='whyUs' value={sellerInfo.whyUs} onChange={this.handleChange}></textarea>
+                                    <textarea name='whyUs' value={gigInfo.whyUs} onChange={this.handleChange}></textarea>
                                     <p className='what-do-you-get'>tell your potential buyers what will they get</p>
-                                    <textarea name='whatDoYouGet' value={sellerInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
+                                    <textarea name='whatDoYouGet' value={gigInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
                                     <label htmlFor='price'>Price</label>
                                     <input type="number" id='price' name='price' required onChange={this.handleChange} />
                                     <label htmlFor='daysToMake'>Delivery Date</label>
                                     <input type="number" id="daysToMake" name="daysToMake" required onChange={this.handleChange} />
                                     <p>Category</p>
-                                    <select className='select-field' value={sellerInfo.category} name="category" onChange={this.handleChange}>
+                                    <select className='select-field' value={gigInfo.category} name="category" onChange={this.handleChange}>
                                         <option value=""></option>
                                         <option value="Graphics & Design">Graphics &amp; Design</option>
                                         <option value="Digital & Marketing">Digital Marketing</option>
@@ -149,7 +147,7 @@ class _BecomeSeller extends React.Component {
                                         <option value="Programming & Tech">Programming &amp; Tech</option>
                                     </select>
                                     <p>Origin</p>
-                                    <select className="select-field" vlaue={sellerInfo.origin} name="origin" onChange={this.handleChange}>
+                                    <select className="select-field" vlaue={gigInfo.origin} name="origin" onChange={this.handleChange}>
                                         <option value=""></option>
                                         <option value="israel">Israel</option>
                                         <option value="USA">USA</option>
@@ -168,9 +166,9 @@ class _BecomeSeller extends React.Component {
     }
 }
 
-export const BecomeSellerWrapper = (props) => {
+export const AddGigDetailsWrapper = (props) => {
     const navigation = useNavigate()
-    return <BecomeSeller navigation={navigation} />
+    return <AddGigDetails navigation={navigation} />
 }
 
 const MapStateToProps = (storeState) => {
@@ -185,7 +183,7 @@ const mapDispatchToProps = {
 
 }
 
-export const BecomeSeller = connect(
+export const AddGigDetails = connect(
     MapStateToProps,
     mapDispatchToProps
-)(_BecomeSeller)
+)(_AddGigDetails)
