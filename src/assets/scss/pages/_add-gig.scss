@@ -4,10 +4,11 @@
     color: #b5b6ba;
     border-bottom: none;
     overflow: hidden;
-    padding-left: 32px;
+    // padding-left: 32px;
+    padding: 32px 32px 64px;
     height: 80px;
-    padding-top: 15px;
-    padding-bottom: 0;
+    // padding-top: 15px;
+    // padding-bottom: 0;
 
     .header-row {
         display: flex;
@@ -17,6 +18,7 @@
         padding-bottom: 0;
         position: relative;
         margin: 0;
+        padding: 0 30px;
 
         .clean-logo-container {
             width: 20px;
@@ -32,6 +34,7 @@
     border-bottom: none;
     overflow: hidden;
     border-bottom: 1px solid #dadbdd;
+    padding: 0 30px;
     border-top: 1px solid #dadbdd;
 
     .inner-progress-wrapper {
@@ -141,11 +144,13 @@
 }
 
 .add-gig-container {
-    max-width: 1024px;
-    // width: 100%;
-    // padding-left: 13.25%;
+    // max-width: 1024px;
+    width: 100%;
     // padding-right: 13.25%;
+    // padding-left: 13.25%;
     margin: 0 auto;
+    margin-left: 92px;
+    margin-right: 92px;
     padding-bottom: 100px;
     background-color: pink;
     
@@ -161,6 +166,8 @@
         // background-color: blue;
         // display: flex;
         // flex-direction: row;
+        flex-direction: row;
+        padding: 35px 0 96px;
 
         .gig-details-header {
             border-bottom: 1px solid #e4e5e7;
