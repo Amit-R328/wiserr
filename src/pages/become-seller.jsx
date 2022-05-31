@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { saveGig } from '../store/actions/gigs.actions'
 import {AppHeader} from '../cmps/headers/app-header.jsx'
 import {CategoriesNavHeader} from '../cmps/headers/categories-nav-header.jsx'
-
+import {cloudinaryService} from '../services/cloudinary.service.js'
 class _BecomeSeller extends React.Component {
     state = {
         sellerInfo: {
-            imgUrl: '',
+            imgUrl: [],
             sellerDescription: '',
             origin: '',
             gigTitle: '',
@@ -18,25 +18,43 @@ class _BecomeSeller extends React.Component {
             whatDoYouGet: '',
             daysToMake: 0,
             owner: this.props.loggedInUser
-        }
+        },
+        isImg: false 
     }
 
     handleChange = (ev) => {
-        
         const { target } = ev
         const field = target.name
-        const value = target.value
-        // if (field === 'imgUrl' && value) {
-        //     this.uploadImg(ev)
-        //     this.setState(prevState => ({ ...prevState, isImgInside: true }))
-        //     return
-        // }
+        let value = (field === 'price' || field === 'dayToMake') ? +target.value : target.value
+        if (field === 'imgUrl' && value) {
+            console.log('img')
+            this.uploadImg(ev)
+            this.setState(prevState => ({ ...prevState, isImg: true }))
+            return
+        }
         this.setState(prevState => ({ sellerInfo: { ...prevState.sellerInfo, [field]: value } }))
     }
 
     handleSelectChange = (skills) => {
         this.setState((prevState) => ({ sellerInfo: { ...prevState.sellerInfo, skills } }))
     };
+
+    uploadImg = (ev) => {
+        const CLOUD_NAME = cloudinaryService.getCloudName()
+        const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+
+        const formData = new FormData();
+        formData.append('file', ev.target.files[0])
+        formData.append('upload_preset', cloudinaryService.getPreset());
+
+        return fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        }).then(res => res.json()).then(res => {
+        console.log('inguRL', res)
+                this.setState(prevState => ({ sellerInfo: { ...prevState.sellerInfo, imgUrl: [res.url] } }))
+            }).catch(err => console.error(err))
+    }
 
     handleSubmit = (ev) => {
         ev.preventDefault()
@@ -62,7 +80,7 @@ class _BecomeSeller extends React.Component {
 
     render() {
 
-        const { sellerInfo } = this.state
+        const { sellerInfo, isImg } = this.state
         return (
             <React.Fragment>
 
@@ -72,6 +90,12 @@ class _BecomeSeller extends React.Component {
                     <form className="seller-form" onSubmit={this.handleSubmit}>
                         <h2>Personal Info</h2>
                         <label htmlFor='title'>Title of your Gig</label>
+                        <p>Picture (optional)</p>
+                        <p>Upload an image of you'r work</p>
+                        <label className='file-img'>
+                            {!isImg ? '+' : <img src={`${sellerInfo.imgUrl}`} alt=""/>}
+                            <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange}/>
+                        </label>
                         <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={sellerInfo.gigTitle} onChange={this.handleChange} />
                         <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
                         <label className="description">
