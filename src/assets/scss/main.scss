@@ -1,4 +1,6 @@
 // SETUP
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 @import './setup/typography';
 @import './setup/variables';
 // @import './setup/mixins';
@@ -39,7 +41,6 @@
 // @import './components/gig-edit';
 // @import './components/gig-details';
 // @import './components/gig-review';
-@import './components/video';
 @import './components/business-scss/business-homepage';
 @import './components/business-scss/business-header';
 @import './components/business-scss/business-hero';

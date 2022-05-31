@@ -1,6 +1,6 @@
 import React from "react";
 
-export const TestemonialsHomepage = () => {
+export const TestimonialsHomepage = () => {
     return (
         <div className="testimonials">
             <div className="video-modal testimonial-modal">

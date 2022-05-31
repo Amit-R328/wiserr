@@ -2,17 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import StarIcon from '@mui/icons-material/Star';
 import Rating from '@mui/material/Rating';
-
+import ImageGallery from 'react-image-gallery';
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
-    console.log('price',price )
+    // console.log('price',price )
     return (
 
         <li className="gig-preview">
             <article className="gig-card">
                 <Link to={`/categories/${gig._id}`}>
                     <div className="gig-img-container">
-                        <img className="gig-img" src={`${gig.imgUrl[0]}`} alt='gig' />
+                        {/* <img className="gig-img" src={`${gig.imgUrl[0]}`} alt='gig' /> */}
+                        <ImageGallery showThumbnails={false} showPlayButton={false} items={[{original:'https://picsum.photos/id/1019/1000/600/', thumbnail:'https://picsum.photos/id/1019/250/150/'},{original:'https://picsum.photos/id/1015/1000/600/', thumbnail:'https://picsum.photos/id/1015/250/150/'}]} />    
                     </div>
 
                     <section>

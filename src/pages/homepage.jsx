@@ -2,14 +2,14 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { HeroHeaderHomePage } from '../cmps/headers/hero-header-homepage.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
-import { HomepageCategoriesCarouselTest } from '../cmps/homepage-categories-carousel-copy.jsx'
-import { HomepageCategoriesCarousel } from '../cmps/homepage-categories-carousel.jsx'
-import { SellingPropHomepage } from '../cmps/selling-prop-homepage.jsx'
-import { TestemonialsHomepage } from '../cmps/testemonials-homepage.jsx'
+import { HomepageCategoriesCarouselTest } from '../cmps/homepage-sections/homepage-categories-carousel-copy.jsx'
+// import { HomepageCategoriesCarousel } from '../cmps/homepage-sections/homepage-categories-carousel.jsx'
+import { SellingPropHomepage } from '../cmps/homepage-sections/selling-prop-homepage.jsx'
+import { TestimonialsHomepage } from '../cmps/homepage-sections/testimonials-homepage.jsx'
 
 
-import { IconCategoriesHomepage } from '../cmps/icon-categories-homepage.jsx';
-import { BusinessSectionHomepage } from '../cmps/business-section-homepage.jsx';
+import { IconCategoriesHomepage } from '../cmps/homepage-sections/icon-categories-homepage.jsx';
+import { BusinessSectionHomepage } from '../cmps/homepage-sections/business-section-homepage.jsx';
 // import { Link, useNavigate, useParams } from 'react-router-dom'
 // import { useSelector, useDispatch} from 'react-redux'
 // import { setFilter } from "../store/actions/gigs.actions.js"
@@ -70,7 +70,7 @@ export const HomePage = (props, onChangeCategory) => {
                 <BusinessSectionHomepage/>
             </div>
             <div>
-                <TestemonialsHomepage/>
+                <TestimonialsHomepage/>
             </div>
         </section>
     )

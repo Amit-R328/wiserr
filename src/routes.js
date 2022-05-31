@@ -36,7 +36,7 @@ const routes = [
         component: <LoginSignup />,
         element: <AppHeader />
     },
-    {  path: '/join',
+    {  path: '/signup',
     component: <LoginSignup />,
     element: <AppHeader />
     },

@@ -76,13 +76,15 @@ async function login(userCred) {
 async function signup(userCred) {
     try {
         // const users = await storageService.query('user')
-        let users = await httpService.post('auth/login', userCred)
+        let users = await httpService.get('user')
+        console.log('users',users )
         const isUserExist = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
         if (isUserExist) {
             const err = new Error('User already exist')
             throw err
         }
         
+<<<<<<< HEAD
         userCred.avgOrdersRate = 0
         userCred.email = userCred.userName + '@gmail.com'
         userCred.facebook_account = ''
@@ -92,9 +94,22 @@ async function signup(userCred) {
         userCred.level = ''
         const user = await storageService.post('user', userCred)
         // const user = await httpService.post('auth/signup', userCred)
+=======
+        // userCred.avgOrdersRate = 0
+        // userCred.email = userCred.userName + '@gmail.com'
+        // userCred.facebook_account = ''
+        // userCred.google_account = ''
+        // userCred.twitter_account = ''
+        // userCred.imgUrl = userCred.imgUrl
+        // userCred.isSeller = false
+        // userCred.level = ''
+        console.log('userCred', userCred)
+        // const user = await storageService.post('user', userCred)
+        const user = await httpService.post('auth/signup', userCred)
+>>>>>>> b925ea13d5e4a77fcea67d57b4d5dd8f81de6fac
         // socketService.login(user._id)
         _handleLogin(user)
-        
+        console.log('user', user)
         return user
     } catch (err) {
         console.dir(err)
