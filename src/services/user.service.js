@@ -84,17 +84,6 @@ async function signup(userCred) {
             throw err
         }
         
-<<<<<<< HEAD
-        userCred.avgOrdersRate = 0
-        userCred.email = userCred.userName + '@gmail.com'
-        userCred.facebook_account = ''
-        userCred.google_account = ''
-        userCred.twitter_account = ''
-        userCred.isSeller = false
-        userCred.level = ''
-        const user = await storageService.post('user', userCred)
-        // const user = await httpService.post('auth/signup', userCred)
-=======
         // userCred.avgOrdersRate = 0
         // userCred.email = userCred.userName + '@gmail.com'
         // userCred.facebook_account = ''
@@ -106,7 +95,6 @@ async function signup(userCred) {
         console.log('userCred', userCred)
         // const user = await storageService.post('user', userCred)
         const user = await httpService.post('auth/signup', userCred)
->>>>>>> b925ea13d5e4a77fcea67d57b4d5dd8f81de6fac
         // socketService.login(user._id)
         _handleLogin(user)
         console.log('user', user)

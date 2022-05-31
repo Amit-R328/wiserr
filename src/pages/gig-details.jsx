@@ -51,7 +51,7 @@ export const GigDetails = (props) => {
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
-            navigate('/categories')
+            navigate('/profile/:userId')
         }
     }
 
@@ -176,7 +176,7 @@ const images = gig.imgUrl.map((img) => {
                                         {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail,idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer>
-                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Continue ( {price} )</button>
+                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Buy( {price} )</button>
                                         </footer>
                                     </div>
 
