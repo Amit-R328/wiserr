@@ -9,7 +9,7 @@ export const GigPreview = ({ gig, reviews }) => {
 
 
     let images
-    console.log('gig',gig )
+    // console.log('gig',gig )
     if(gig){
         images = gig.imgUrl.map((img) => {
             return {original: img,thumbnail:img}

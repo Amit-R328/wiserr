@@ -27,7 +27,8 @@ const initialState = {
         priceMin: 0,
         priceMax: Infinity,
         deliveryDate: 0,
-        category: ''
+        category: '',
+        sortBy: 'title'
     },
     gigs: []
 }

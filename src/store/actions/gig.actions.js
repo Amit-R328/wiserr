@@ -71,6 +71,7 @@ export function getById(gigId) {
 }
 
 export function setFilter(filterBy) {
+    console.log('filterBy', filterBy)
     return (dispatch) => {
         return dispatch({
             type: 'SET_FILTERBY',
