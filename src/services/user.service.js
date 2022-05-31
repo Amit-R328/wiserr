@@ -88,7 +88,7 @@ async function signup(userCred) {
         userCred.facebook_account = ''
         userCred.google_account = ''
         userCred.twitter_account = ''
-        userCred.imgUrl = ''
+        userCred.imgUrl = userCred.imgUrl
         userCred.isSeller = false
         userCred.level = ''
         const user = await storageService.post('user', userCred)
