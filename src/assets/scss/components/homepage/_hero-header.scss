@@ -5,7 +5,7 @@
 
     &.hero {
         & h1 {
-            padding-bottom: 32px;
+            padding-bottom: rem(32px);
             color: #fff;
         }
     }

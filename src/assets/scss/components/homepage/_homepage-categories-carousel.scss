@@ -1,7 +1,7 @@
 .carousel-container {
-    width: 1024px;
-    margin: 50px auto;
-    min-height: 200px;
+    width: rem(1024px);
+    margin: rem(50px) auto;
+    min-height: rem(200px);
     position: relative;
 
     .carousel-inner {
@@ -14,10 +14,10 @@
     }
 
     .card-container {
-        width: 256px;
+        width: rem(256px);
         flex-shrink: 0;
-        height: 250px;
-        padding-right: 20px;
+        height: rem(250px);
+        padding-right: rem(20px);
         box-sizing: border-box;
 
         .card {
@@ -25,7 +25,7 @@
             height: 100%;
             border: 1px solid #ccc;
             box-sizing: border-box;
-            border-radius: 5px;
+            border-radius: rem(5px);
             display: flex;
             flex-direction: column;
             cursor: pointer;
@@ -39,29 +39,29 @@
 
     .nav {
         button {
-            width: 60px;
-            height: 60px;
+            width: rem(60px);
+            height: rem(60px);
             border-radius: 50%;
-            border: 1px solid #aaa;
+            border: rem(1px) solid #aaa;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             cursor: pointer;
 
             &.prev {
-                left: -44px;
+                left: rem(-44px);
             }
 
             &.next {
-                right: -30px;
+                right: rem(-30px);
                 background: none;
 
                 &.prev {
-                    filter: drop-shadow(-1px 0px 2px rgb(193, 191, 191));
+                    filter: drop-shadow(rem(-1px) 0px rem(2px) rgb(193, 191, 191));
                 }
 
                 &.next {
-                    filter: drop-shadow(1px 0px 2px rgb(193, 191, 191));
+                    filter: drop-shadow(rem(1px) 0px rem(2px) rgb(193, 191, 191));
                 }
             }
         }
@@ -73,21 +73,21 @@
     cursor: default !important;
     box-sizing: border-box;
     width: 100%;
-    height: 407px;
-    padding: 32px 32px 64px;
+    height: rem(407px);
+    padding: rem(32px) rem(32px) rem(64px);
     margin: 0 auto;
     padding-top: 0;
     padding-bottom: 0;
     background-color: #ffffff;
 
     .subcategory-carousel {
-        margin-bottom: 96px;
+        margin-bottom: rem(96px);
         margin-left: 13.25%;
         margin-right: 13.25%;
 
         & h2 {
-            padding-bottom: 24px;
-            font-size: 24px;
+            padding-bottom: rem(24px);
+            font-size: rem(24px);
             line-height: 120%;
             font-weight: 700;
             // margin-left: 13.25%;
@@ -99,7 +99,7 @@
             grid-template-rows: 1fr;
             grid-template-areas:
                 "slick-slide1 slick-slide2 slick-slide3 slick-slide4 slick-slide5";
-            column-gap: 16px;
+            column-gap: rem(16px);
 
         }
 
@@ -128,7 +128,7 @@
                 color: #fff;
                 padding: 16px;
                 line-height: unset;
-                font-size: 16px;
+                font-size: rem(16px);
                 line-height: 130%;
 
                 &small {
@@ -140,8 +140,8 @@
             }
 
             .subcategory-legends-small {
-                font-size: 10px;
-                line-height: 20px;
+                font-size: rem(10px);
+                line-height: rem(20px);
             }
 
             .subcategory-img {

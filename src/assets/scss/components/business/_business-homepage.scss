@@ -1,23 +1,23 @@
   .business-trusted-by-brands {
     width: 100%;
-    height: 95px;
+    height: rem(95px);
     background-color: #fafafa;
     color: #b5b6ba;
 
     & ul {
-      height: 95px;
+      height: rem(95px);
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: center;
       list-style: none;
       margin: 0;
-      padding: 0 24px;
+      padding: 0 rem(24px);
 
       .business-brands-container {
-        height: 60px;
-        margin-left: 120px;
-        margin-right: 120px;
+        height: rem(60px);
+        margin-left: rem(120px);
+        margin-right: rem(120px);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -26,10 +26,10 @@
 
         & li {
           text-align: left;
-          height: 60px;
+          height: rem(60px);
           list-style: none;
           margin: 0;
-          padding: 0 60px 0 0;
+          padding: 0 rem(60px) 0 0;
           outline: 0;
           background-color: purple;
 
@@ -47,14 +47,14 @@
 
 
         &.brand-box {
-          height: 60px;
-          width: 130px !important
+          height: rem(60px);
+          width: rem(130px) !important
         }
       }
 
       & p {
         font-size: inherit;
-        padding-right: 20px;
+        padding-right: rem(20px);
         margin: 0;
       }
     }
