@@ -46,54 +46,49 @@ export const FilterBreadCrumbs = () => {
     }
 
     return (
-        <div className="layout-row">
-            <header>
-                <div className="breadcrumbs-container">
-                    <ul className="breadcrumbs">
-                        <li><a href="/"> Wiserr </a>
-                            <span className="chevron-icon-right" aria-hidden="true">
-                                <PathArrow2 />
-                                {/* <PathArrow /> */}
-                            </span>
-                        </li>
-                        <li><a href="/categories/graphics-design"> Graphics &amp; Design </a>
-                            <span className="chevron-icon-right" aria-hidden="true">
-                                <PathArrow2 />
-                                {/* <PathArrow /> */}
-                            </span>
-                        </li>
-                    </ul>
+    <div className="layout-row">
+    <header>
+        <div className="breadcrumbs-container">
+            <ul className="breadcrumbs">
+                {(filterBy.category) ? <li><a href="/">Wiserr </a><span className="chevron-icon-right" aria-hidden="true"><PathArrow2 /></span></li> : <span></span>}
+
+                {(filterBy.category) ? <li><a href="/categories">{filterBy.category}</a>
+                    <span className="chevron-icon-right">
+                        <PathArrow2 />
+                    </span></li> : <li><span></span></li>}
+            </ul>
+        </div>
+
+        <header className="results-category-header">
+            <div className="title-wrapper">
+                {(filterBy.txt) ? <h1>Results for "<span>{filterBy.txt}</span>"</h1> : <span></span>}
+                {(filterBy.category && !filterBy.txt) ? <h1><span>{filterBy.category}</span></h1> : <span></span>}
+                {(filterBy.category === "" && !filterBy.txt) ? <h1><span>Explore All</span></h1> : <span></span>}
+                <p>Connect with the best professionals for your project</p>
+                <button onClick={() => showSweetAlert()} className="play-video"><VideoIcon /><p>How Wiserr Works</p></button>
+            </div>
+        </header>
+
+    </header >
+
+    <div className="filter-topbar">
+        <div className="filter-shadow-effect">
+            <div className="filter-floating-top-bar">
+                <div className="top-filters">
                 </div>
+            </div>
 
-                <header className="results-category-header">
-                    <div className="title-wrapper">
-                        {/* <div className="flex flex-col"> */}
-                        <h1>Graphics &amp; Design</h1>
-                        <p>Get a beautiful website design that people love to engage with.</p>
-                        <button onClick={() => onHandleVideo()}><VideoIcon /><p>How Wiserr Works</p></button>
-
+            <div className="filter-floating-menu">
+                <div className="filter-menu-title filter-menu">Budget<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                </span>
+                </div>
+                <div className="filter-floating-menu">
+                    <div className="filter-menu-title filter-menu">Delivery Time<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                    </span>
                     </div>
-                </header>
+                </div>
+            </div>
 
-            </header >
-
-            <div className="filter-topbar">
-                <div className="filter-shadow-effect">
-                    <div className="filter-floating-top-bar">
-                        <div className="top-filters">
-                        </div>
-                    </div>
-
-                    <div className="filter-floating-menu">
-                        <div className="filter-menu-title filter-menu">Budget<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
-                        </span>
-                        </div>
-                        <div className="filter-floating-menu">
-                            <div className="filter-menu-title filter-menu">Delivery Time<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
-                            </span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div className="sort-by-wrapper">
                         <span className="pre-title sorting">Sort by</span>
