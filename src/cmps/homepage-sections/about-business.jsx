@@ -1,6 +1,5 @@
 import React from "react";
 import { VCircle } from '../../services/svg.service.js'
-import { LogoFullFooter } from '../../services/svg.service.js'
 
 export const SellingPropHomepage = () => {
     return (
@@ -14,11 +13,11 @@ export const SellingPropHomepage = () => {
                         </li>
 
                         <li><h6><VCircle /><strong>Quality work done quickly</strong></h6>
-                        <p>Find the right freelancer to begin working on your project within minutes.</p>
+                            <p>Find the right freelancer to begin working on your project within minutes.</p>
                         </li>
 
                         <li><h6><VCircle /><strong>Protected payments, every time</strong></h6>
-                        <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+                            <p>Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
                         </li>
                         <li><h6><VCircle /><strong>24/7 support</strong></h6>
                             <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>

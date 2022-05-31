@@ -1,0 +1,209 @@
+.business-homepage-app-header {
+    height: rem(680px);
+    width: 100%;
+    margin-top: 0 !important;
+
+    .business-main-header {
+        padding-left: 13.25%;
+        padding-right: 13.25%;
+        margin-bottom: 0 !important;
+        -webkit-transition: background-color .5s ease;
+        -o-transition: background-color .5s ease;
+        transition: background-color .5s ease;
+        width: 100%;
+        margin-top: 0 !important;
+
+
+        &.business-sticky {
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            z-index: 9999;
+            display: block;
+            margin-top: 0 !important;
+
+            .business-header-row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                margin: 0 auto;
+                justify-content: space-between;
+                // align-content: space-between;
+                align-items: center;
+                height: rem(80px);
+                background-color: blue;
+
+                @media screen and (max-width: 600px) {
+                    .btn-navicon {
+                        display: block;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                    }
+                }
+            }
+
+            .btn-navicon {
+                display: none;
+            }
+
+            .business-logo-main-header {
+                // height: auto;
+                margin:rem(4px) 0 0;
+                min-width: rem(121px);
+                align-self: auto;
+                display: block;
+                cursor: pointer;
+            }
+
+            .business-wiserr-header-search-animated {
+
+                // display: none;
+                @media screen and (min-width: 600px) {
+                    // display: block;
+                    margin-top: 0;
+                    order: 0;
+                    width: rem(230px);
+                    opacity: 0;
+                    // visibility: hidden;
+                    transition: opacity 250ms ease;
+
+                    &.business-wiserr-header-search-animated {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                @media screen and (min-width: 1160px) {
+                    width: 28%;
+                }
+            }
+
+            .business-search-bar-package {
+                display: flex;
+                position: relative;
+                height: rem(34px);
+
+                .business-search-bar-package form .business-search-bar-icon {
+                    position: absolute;
+                    z-index: 5;
+                    top: rem(8px);
+                    left: rem(8px);
+                    width: rem(16px);
+                    height: rem(16px);
+                }
+
+                .business-search-bar-package form input {
+                    -webkit-box-flex: 1;
+                    flex: 1 1 auto;
+                    padding: rem(7px) rem(7px) rem(7px) rem(28px);
+                    border-color: #dadbdd;
+                    box-shadow: none;
+                    z-index: 3;
+                }
+
+                @media screen and (min-width: 1160px) {
+                    .business-search-bar-package form input {
+                        border-right: 0;
+                        border-radius: rem(3px) 0 0 rem(3px);
+                    }
+
+                    .business-search-bar-package .business-submit-button:not(.minimal) {
+                        padding: rem(8px) rem(16px);
+                        display: block;
+                        font-size: rem(14px);
+                        font-weight: 700;
+                        border-radius: 0 rem(3px) rem(3px) 0;
+                    }
+                }
+
+                @media screen and (min-width: 900px) {
+                    .business-search-bar-package form input {
+                        font-size: rem(15px);
+                        padding-top: rem(8px);
+                    }
+                }
+            }
+        }
+
+        ul {
+            margin: 0;
+
+            &.nav-list {
+                margin: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .business-wiserr-nav {
+            & ul li {
+                padding: 0 rem(24px) 0 0;
+                text-align: left;
+                line-height: rem(24px);
+                font-size: 1.2em;
+                color: #62646a;
+                // color: #ffffff;
+
+                & a {
+                    list-style-type: none;
+                    text-decoration: none;
+                    color: inherit;
+                    font-weight: inherit;
+                    font-size: inherit;
+                    cursor: pointer;
+                }
+
+                & span:not(:first-child) {
+                    padding: 0 rem(10px);
+                }
+            }
+
+            @media screen and (min-width: 600px) {
+                // .wiserr-nav {
+                //     margin-left: 16px;
+                // }
+
+                .business-wiserr.nav.business-wiserr-nav-right {
+                    -webkit-box-flex: 1;
+                    -webkit-box-pack: end;
+                    flex-grow: 1;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+
+    .font-domaine {
+        // color: #ffffff;
+        color: #62646a;
+    }
+
+    .business-text-body-2 {
+        display: flex;
+        flex-direction: row;
+        // color: #ffffff;
+        color: #62646a;
+
+        & li a {
+            // color: #ffffff;
+            color: #62646a;
+            list-style-type: none;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+    }
+
+}
+
+span.line-sep {
+    background-color: #ddd;
+    box-sizing: border-box;
+    flex: 0 0 rem(1px);
+    height: rem(24px);
+    text-align: left;
+    width: rem(1px);
+}

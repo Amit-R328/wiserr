@@ -335,6 +335,15 @@ export function PathArrow() {
 export function PathArrow2() {
     return (
         <svg width="5" height="10" viewBox="0 0 10 10">
+            <glyph glyph-name="chevron_right" unicode="&#xf054;" horiz-adv-x="1280"
+                d="M1107 659l-742 -742q-19 -19 -45 -19t-45 19l-166 166q-19 19 -19 45t19 45l531 531l-531 531q-19 19 -19 45t19 45l166 166q19 19 45 19t45 -19l742 -742q19 -19 19 -45t-19 -45z" color='rgb(98, 100, 106)' float='left' height='100%' lineheight='18px' listStyle='none' textAlign='left' width='100%' />
+        </svg>
+    )
+}
+
+export function PathArrow3() {
+    return (
+        <svg width="5" height="10" viewBox="0 0 10 10">
             <path d="M0.772126 1.19065L0.153407 1.80934C0.00696973 1.95578 0.00696973 2.19322 0.153407 2.33969L5.80025 8L0.153407 13.6603C0.00696973 13.8067 0.00696973 14.0442 0.153407 14.1907L0.772126 14.8094C0.918563 14.9558 1.156 14.9558 1.30247 14.8094L7.84666 8.26519C7.99309 8.11875 7.99309 7.88131 7.84666 7.73484L1.30247 1.19065C1.156 1.04419 0.918563 1.04419 0.772126 1.19065Z" color='rgb(98, 100, 106)' float='left' height='100%' lineheight='18px' listStyle='none' textAlign='left' width='100%' />
         </svg>
     )
@@ -586,7 +595,7 @@ export function StartRate() {
 
 export function GreenVMark() {
     return (
-        <svg  width="11" height="9" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg">
+        <svg width="11" height="9" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg">
             <path fill="#02c2a9" d="M3.64489 8.10164L0.158292 4.61504C-0.0511769 4.40557 -0.0511769 4.06594 0.158292 3.85645L0.916858 3.09786C1.12633 2.88837 1.46598 2.88837 1.67545 3.09786L4.02419 5.44658L9.05493 0.41586C9.2644 0.206391 9.60405 0.206391 9.81352 0.41586L10.5721 1.17445C10.7816 1.38392 10.7816 1.72355 10.5721 1.93303L4.40348 8.10166C4.19399 8.31113 3.85436 8.31113 3.64489 8.10164V8.10164Z">
             </path>
         </svg>

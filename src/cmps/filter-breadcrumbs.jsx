@@ -114,7 +114,7 @@ export const FilterBreadCrumbs = () => {
 
                             {/* <div className="menu-content">
                                 <div className="content-scroll"> */}
-                                <SortGigsList onClick={onHandleChange}/>
+                                <SortGigsList/>
                                     {/* <div className="labels-list">
                                         <label className="sort-label">Price</label>
                                         <label className="sort-label">Name</label>

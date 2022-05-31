@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { setFilter, loadGigs } from '../store/actions/gigs.actions.js'
+import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
 

@@ -6,18 +6,18 @@ import React, { useEffect, useState, Component } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { getById } from '../store/actions/gigs.actions.js';
+import { getById } from '../store/actions/gig.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import  Sliders  from '../cmps/carousel/sliders.js';
+import  Sliders  from '../cmps/carousel-list-details/sliders.js';
 import ImageGallery from 'react-image-gallery';
 // import { useNavigate } from 'react-router-dom'
 
 export const GigDetails = (props) => {
-    
+
     // const { user } = useSelector((storeState) => storeState.userModule)
     // const {toys} = useSelector((storeState) =>  storeState.toyModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
@@ -43,11 +43,11 @@ export const GigDetails = (props) => {
     }
 
 
-    const closeOrder = (ev, gigId) => {
-        console.log('gigId',gigId )
-        console.log('loggedInUser', loggedInUser)
-        if(!loggedInUser){
-            console.log('in')
+    const onConfirmOrder = (ev, gigId) => {
+        // console.log('gigId', gigId)
+        // console.log('loggedInUser', loggedInUser)
+        if (!loggedInUser) {
+            // console.log('in')
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
@@ -56,8 +56,8 @@ export const GigDetails = (props) => {
     }
 
     let price = 0
-    if( gig.price) {
-        price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
+    if (gig.price) {
+        price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
 console.log('img', gig.imgUrl)
 const images = gig.imgUrl.map((img) => {
@@ -141,7 +141,7 @@ const images = gig.imgUrl.map((img) => {
                                     </ul>
                                     <article className="seller-description">
                                         <div className="owner-summary">Hello I am Freelance Graphic Design and Illustrator based in Israel, I have working in graphic design industry for almost 6 years.</div>
-                    
+
                                     </article>
                                 </div>
                             </article>
@@ -164,19 +164,19 @@ const images = gig.imgUrl.map((img) => {
                                 {/* <input id="package-tab-2" name="package-tab-group" type="radio"> */}
                                 {/* <input id="package-tab-3" name="package-tab-group" type="radio"> */}
                                 {/* <div className="nav-container">
-            <label for="package-tab-1">Basic</label>
-        <label for="package-tab-2" className="">Standard</label>
-        <label for="package-tab-3" className="">Premium</label> */}
+                                 <label for="package-tab-1">Basic</label>
+                                 <label for="package-tab-2" className="">Standard</label>
+                                 <label for="package-tab-3" className="">Premium</label> */}
                                 {/* </div> */}
                                 <div className="call-to-action">
                                     <div className="price-package">Special Offer</div>
                                     <div className="order-title-wrapper">
                                         <span className="order-price">{price}</span>
                                         <p className="order-subtitle">{gig.title}</p>
-                                        {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail,idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
+                                        {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail, idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer>
-                                            <button className="buy-btn" onClick={(ev) => closeOrder(ev,gig._id)}>Buy( {price} )</button>
+                                            <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue ( {price} )</button>
                                         </footer>
                                     </div>
 

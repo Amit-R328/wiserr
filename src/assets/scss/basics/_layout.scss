@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     font-family: Circular, Roboto, sans-serif;
     justify-content: flex-start;
-    line-height: 20px;
+    line-height: rem(20px);
     margin-left: 0;
     margin-right: 0;
     max-width: none;
@@ -21,11 +21,11 @@
         // color: $txt-clr7;        
         // cursor: default;
         height: 10%;
-        line-height: 20px;
+        line-height: rem(20px);
         margin-left: auto;
         margin-right: auto;
         width: 100%;
 
-     
+
     }
 }

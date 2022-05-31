@@ -12,7 +12,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { setFilter, loadGigs } from '../store/actions/gigs.actions.js'
+import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadOrders } from '../store/actions/order.actions.js';
@@ -76,7 +76,7 @@ export const LoginSignup = () => {
             dispatch(getLoggedinUser())
 
         }
-        // navigate(-1)
+        navigate('/')
     };
 
     const onChangePage = (ev) => {

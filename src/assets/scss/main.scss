@@ -1,35 +1,21 @@
 // SETUP
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
-
+@import './setup/functions';
 @import './setup/typography';
 @import './setup/variables';
-// @import './setup/mixins';
-// @import './setup/functions';
-@import './setup/reset';
-// @import './setup/visibility';
 @import './setup/links';
+@import './setup/reset';
 
-// // BASICS
+// BASICS
 @import './basics/helpers';
 @import './basics/base';
 @import './basics/layout';
-// @import './basics/layout-flex';
-// @import './basics/layout-grid';
-// @import './basics/layout-max-container';
 
 // COMPONENTS
 @import './components/app-header';
-@import './components/hero-carousel';
 @import './components/categories-nav-header';
-@import './components/homepage-header';
 @import './components/profile-menu';
-@import './components/homepage';
-@import './components/hero-header';
-@import './components/proposition';
 @import './components/footer';
-@import './components/selling-props-homepage';
-@import './components/categories-list-icons';
-// @import './components/gigs-cards-list';
 @import './components/filter-breadcrumbs';
 @import './components/gig-list';
 @import './components/gig-preview';
@@ -49,17 +35,31 @@
 @import './components/dashboard/business-dashboard';
 @import './components/_slider';
 
+// HOMEPAGE
+@import './components/homepage/homepage';
+
+// HOMEPAGE-HEADERS
+@import './components/homepage/hero-carousel';
+@import './components/homepage/homepage-header';
+@import './components/homepage/hero-header';
+
+// HOMEPAGE-SECTIONS
+// @import './components/homepage/proposition';
+@import './components/homepage/selling-props-homepage';
+@import './components/homepage/categories-list-icons';
+@import './components/homepage/homepage-categories-carousel';
+@import './components/homepage/homepage-business-info';
+@import './components/homepage/testimonials-homepage';
+
+// BUSINESS
+// @import './components/gigs-cards-list';
+@import './components/business/business-homepage';
+@import './components/business/business-header';
+@import './components/business/business-hero';
+@import './components/business/business-homepage-header';
+@import './components/business/business-dashboard';
+
 // PAGES
-@import './pages/home-page';
 @import './pages/app-main';
-// @import './pages/explore';
-// @import './pages/signin';
-// @import './pages/join';
+@import './pages/add-gig';
 
-a {
-    text-decoration: none;
-}
-
-.sorting {
-    margin-right: 10px;
-}

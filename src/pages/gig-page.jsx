@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { loadGigs } from '../store/actions/gigs.actions.js'
+import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'

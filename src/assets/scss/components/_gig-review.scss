@@ -9,30 +9,36 @@
     .flex {
         align-items: center;
     }
+
     .sml-review-img {
         margin-right: 1rem;
         width: 32px;
         height: 32px;
         border-radius: 50%;
     }
+
     .review-txt {
         font-family: roboto, Arial, Helvetica, sans-serif;
         margin-bottom: 3rem;
         margin-left: 2.9rem;
     }
+
     .reviewer-name {
         // font-size: 1.5rem;
-        margin-right:0.6rem;
+        margin-right: 0.6rem;
         font-weight: bold;
     }
+
     span {
         color: #ffbe5b;
         margin-block-end: 0px;
     }
+
     p {
         margin-bottom: 0.5rem;
         margin-block-end: 0px;
     }
+
     .fa-star {
         margin-left: 0.2rem;
         color: #ffbe5b;

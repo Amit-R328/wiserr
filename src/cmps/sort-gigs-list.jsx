@@ -1,34 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
+import { useSelector,useDispatch } from 'react-redux';
+import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
+
 
 const options = [
   { value: 'price', label: 'Price' },
-  { value: 'name', label: 'Name' },
-  { value: 'newest', label: 'Newest Arrivals' },
+  { value: 'title', label: 'Title' },
+  // { value: 'newest', label: 'Newest Arrivals' },
 ];
 
-export const SortGigsList = ({onHandleChange}) => {
-  const [selectedOption, setSelectedOption] = useState(null);
+export const SortGigsList = () => {
+  const [selectedOption, setSelectedOption] = useState('title');
+  const dispatch = useDispatch()
+  let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
+  const onHandleChange = (ev) => {
+    console.log('ev',ev )
+    setSelectedOption(ev.value)
+    console.log('selectedOption', selectedOption)
+    }
 
-  
-//   handleChange = (selectedOption) => {
-//     this.setState((prevState) => ({
-//         toy: {
-//             ...prevState.toy,
-//             labels: selectedOption.map(option => option.value)
-//         }
-//     }))
-// }
+    useEffect(() => {
+      filterBy = { ...filterBy, sortBy: selectedOption }
+      dispatch(setFilter(filterBy))
+      // dispatch(setFilter(selectedOption))  
+      dispatch(loadGigs())
+      console.log('selectedOption', selectedOption )  
+    },[selectedOption])
 
   return (
     <div className="select-sort-gigs-list">
       <Select
         defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        onClick={(ev) => onHandleChange(ev,'sortBy',setSelectedOption)}
+        onChange={onHandleChange}
+        // onClick={() => onHandleChange}
         options={options}
-        placeholder="Newest Arrivals"        
+        // placeholder="Newest Arrivals"        
       />
     </div>
   );

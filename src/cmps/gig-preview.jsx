@@ -6,6 +6,16 @@ import ImageGallery from 'react-image-gallery';
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
     // console.log('price',price )
+
+
+    let images
+    // console.log('gig',gig )
+    if(gig){
+        images = gig.imgUrl.map((img) => {
+            return {original: img,thumbnail:img}
+        })
+    }
+
     return (
 
         <li className="gig-preview">
@@ -13,7 +23,7 @@ export const GigPreview = ({ gig, reviews }) => {
                 <Link to={`/categories/${gig._id}`}>
                     <div className="gig-img-container">
                         {/* <img className="gig-img" src={`${gig.imgUrl[0]}`} alt='gig' /> */}
-                        <ImageGallery showThumbnails={false} showPlayButton={false} items={[{original:'https://picsum.photos/id/1019/1000/600/', thumbnail:'https://picsum.photos/id/1019/250/150/'},{original:'https://picsum.photos/id/1015/1000/600/', thumbnail:'https://picsum.photos/id/1015/250/150/'}]} />    
+                        <ImageGallery onClick={(ev) => ev.preventDefault} stopPropagation={true} showThumbnails={false} showPlayButton={false} items={images} />  
                     </div>
 
                     <section>
