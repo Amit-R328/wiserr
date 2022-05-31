@@ -1,0 +1,123 @@
+.header-container {
+    width: 100%;
+    align-items: center;
+    color: #b5b6ba;
+    border-bottom: none;
+    overflow: hidden;
+    padding-left: 32px;
+    height: 80px;
+    padding-top: 15px;
+    padding-bottom: 0;
+    background-color: yellow;
+
+    .header-row {
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 1 auto;
+        align-items: center;
+        padding-bottom: 0;
+        position: relative;
+        margin: 0;
+
+        .clean-logo-container {
+            width: 20px;
+            height: 24px;
+        }
+    }
+}
+
+.progress-bar-container {
+    width: 100%;
+    align-items: center;
+    color: #b5b6ba;
+    border-bottom: none;
+    overflow: hidden;
+    // background-color: purple;
+    // margin-top: 80px;
+
+    .inner-progress-wrapper {
+        background-color: blue;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        max-width: 1400px;
+        padding: 0 30px;
+        font-size: 15px;
+        line-height: 100%;
+        height: 48px;
+
+        & button {
+            background: transparent;
+            border: 0;
+            color: #95979d;
+            font-weight: 500;
+            line-height: 100%;
+            width: auto;
+            overflow: visible;
+            margin: 0;
+            padding: 0;
+
+            &:not(:last-of-type) {
+                padding-right: 30px;
+            }
+
+            &.active {
+                color: #1dbf73;
+
+                & span {
+                    background: #1dbf73;
+                }
+            }
+
+            & span {
+                align-items: center;
+                justify-content: center;
+                background: #c5c6c9;
+                display: inline-flex;
+                color: #fff;
+                font-size: 14px;
+                font-weight: 700;
+                text-align: center;
+                line-height: 100%;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                margin-right: 9px;
+                cursor: pointer;
+            }
+
+            &:not(:last-child):after {
+                content: "\f054";
+                font-family: awesome;
+                font-size: 10px;
+                color: #95979d;
+                position: relative;
+                left: 15px;
+                vertical-align: baseline;
+            }
+        }
+    }
+}
+
+.become-seller-container {
+    width: 100%;
+    padding-left: 13.25%;
+    padding-right: 13.25%;
+
+    .seller-details {
+        padding: 32px 32px 0 32px;
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        // margin: 0 76px 0 76px;
+        flex-direction: row;
+        align-items: flex-start;
+        // background-color: blue;
+        display: flex;
+        flex-direction: row;
+    }
+
+}

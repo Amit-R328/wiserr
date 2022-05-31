@@ -82,33 +82,34 @@ class _BecomeSeller extends React.Component {
         const { sellerInfo, isImg } = this.state
         return (
             <React.Fragment>
-                <div className="app-header">
-                    <div className="main-header sticky">
-                        <LogoFull />
 
-                        {/* <AppHeader /> */}
-                        {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
-                    </div>
-                    <div className="progress-bar-container">
-                        <div className="inner-progress-wrapper">
-                            <nav>
-                                <button className="personal_info active">
-                                    <span className="">1</span>Personal Info</button>
-                                <button className="professional_info disabled">
-                                    <span className="">2</span>Professional Info</button>
-                                <button className="Gig Details disabled">
-                                    <span className="">3</span>Gig Details</button>
-                            </nav><div className="completion-score incomplete">
-                                <div className="text">Completion Rate: 15%</div>
-                                <div className="full-width-progressbar">
-                                    <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
-                                    </span>
-                                    </div>
+                <div className="header-container">
+                <div className="header-row">
+                    <LogoFull />
+
+                </div>
+                </div>
+                <div className="progress-bar-container">
+                    <div className="inner-progress-wrapper">
+                        <nav>
+                            <button className="personal_info active">
+                                <span className="">1</span>Personal Info</button>
+                                
+                            <button className="professional_info disabled">
+                                <span className="">2</span>Professional Info</button>
+                            <button className="Gig Details disabled">
+                                <span className="">3</span>Gig Details</button>
+                        </nav><div className="completion-score incomplete">
+                            <div className="text">Completion Rate: 15%</div>
+                            <div className="full-width-progressbar">
+                                <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
+                                </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                {/* </div> */}
                 <div className="main-content-container">
                     <section className="become-seller-container">
                         <div className="seller-details">
