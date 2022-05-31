@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { saveGig } from '../store/actions/gigs.actions'
+import { saveGig } from '../store/actions/gig.actions'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { cloudinaryService } from '../services/cloudinary.service.js'
@@ -82,14 +82,36 @@ class _BecomeSeller extends React.Component {
         const { sellerInfo, isImg } = this.state
         return (
             <React.Fragment>
-                    <div className="app-header">
-                        <div className="main-header sticky">
-                            <LogoFull />
-                            
-                            {/* <AppHeader /> */}
-                            {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
-                        </div>
+                <div className="app-header">
+                    <div className="main-header sticky">
+                        <LogoFull />
+
+                        {/* <AppHeader /> */}
+                        {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
                     </div>
+                    <div class="wizard-breadcrumbs">
+                        <div class="wrapper">
+                            <nav>
+                                <button name="personal_info" class="active">
+                                    <span class="">1</span>Personal Info</button>
+                                <button name="professional_info" class="disabled">
+                                    <span class="">2</span>Professional Info</button>
+                                <button name="linked_accounts" class="disabled">
+                                    <span class="">3</span>Linked Accounts</button>
+                                <button name="account_security" class="disabled">
+                                    <span class="">4</span>Account Security</button>
+                            </nav><div class="completion-score incomplete">
+                                <div class="text">Completion Rate: 15%</div>
+                                <div class="SG7hoY_ full-width-progressbar">
+                                    <div class="_61WMbd4"><span class="_1KWrciZ" style="width: 15%;">
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile">Step 1 of 4</div>
+                    </div>
+                </div>
                 <div className="main-content-container">
                     <section className="become-seller-container">
                         <div className="seller-details">

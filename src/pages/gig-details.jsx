@@ -6,7 +6,7 @@ import React, { useEffect, useState, Component } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
-import { getById } from '../store/actions/gigs.actions.js';
+import { getById } from '../store/actions/gig.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
