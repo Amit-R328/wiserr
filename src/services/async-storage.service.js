@@ -8,7 +8,6 @@ export const storageService = {
     postMany
 }
 
-
 function query(entityType, delay = 600) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
 
@@ -20,7 +19,6 @@ function query(entityType, delay = 600) {
     })
     return Promise.resolve(entities)
 }
-
 
 function get(entityType, entityId) {
     return query(entityType)

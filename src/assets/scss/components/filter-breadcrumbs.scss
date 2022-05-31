@@ -172,7 +172,7 @@
         }
 
         .sort-by-wrapper {
-            
+
             color: #62646a;
             display: inline-block;
             font-size: 16px;
@@ -182,8 +182,9 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            
+
         }
+
         .filter-floating-menu {
             gap: 10px;
             display: flex;
@@ -260,7 +261,7 @@
                         margin-top: 8px;
                         right: 0;
                         transform-origin: right top;
-                        
+
 
                         .content-scroll {
                             font-weight: 700;
@@ -275,7 +276,7 @@
                             opacity: 1;
                             top: 0;
                             max-height: 487.812px;
-                            
+
 
                             .lables-list {
                                 pointer-events: all;

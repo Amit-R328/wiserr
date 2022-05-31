@@ -1,12 +1,12 @@
 import React from 'react'
-import { BusinessTools } from '../dashborad/business-dashboard.jsx'
+// import { BusinessTools } from '../dashboard/dashboard.jsx'
 import { CategoriesNavHeader } from '../../cmps/headers/categories-nav-header.jsx'
 import { BusinessHeaderHomePage } from './business-homepage-header.jsx'
 import { BusinessHeroHeaderHomePage } from './business-hero-header.jsx'
-import { LogoBusinessFull } from '../../services/svg.service.js'
-import { NavLink } from 'react-router-dom'
-import { BusinessDashboard } from '../dashborad/business-dashboard.jsx'
-import { BusinessSolutions } from './business-solutions.jsx'
+// import { LogoBusinessFull } from '../../services/svg.service.js'
+// import { NavLink } from 'react-router-dom'
+// import { BusinessDashboard } from '../business/dashboard.jsx'
+// import { BusinessSolutions } from './business-solutions.jsx'
 
 export const BusinessHomepage = (props, onChangeCategory) => {
 
@@ -26,7 +26,6 @@ export const BusinessHomepage = (props, onChangeCategory) => {
                                 </div>
                             </div>
                             <BusinessHeroHeaderHomePage />
-
                         </div>
 
                         <section className="business-trusted-by-brands business-max-width-container">
@@ -38,8 +37,6 @@ export const BusinessHomepage = (props, onChangeCategory) => {
                                 <li><button className="brand-9 business-brand-box">MyHeritage</button></li>
                             </ul>
                         </section>
-
-
                     </div>
                 </div>
             </div>

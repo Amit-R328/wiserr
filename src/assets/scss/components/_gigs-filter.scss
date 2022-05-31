@@ -1,22 +1,22 @@
 .menu-title {
     -webkit-font-smoothing: antialiased;
-    font: 400 16px/24px Macan,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font: 400 16px/24px Macan, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 16px;
-    outline: 1px solid #036cdb!important;
+    outline: 1px solid #036cdb !important;
     font-weight: 600;
     color: #222325;
     min-width: 50px;
     padding: 6px 12px;
     border-radius: 4px;
     border: 1px solid #dadbdd;
-    transition: border-color .12s cubic-bezier(.215,.61,.355,1);
+    transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
     user-select: none;
     cursor: pointer;
-    width: 10px; 
+    width: 10px;
     height: 10px
 }
 
 .chevron-icon-right {
-    width: 10px; 
+    width: 10px;
     height: 10px;
 }
