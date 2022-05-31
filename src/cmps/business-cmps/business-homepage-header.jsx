@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { LogoBusinessFull, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { Search } from '../search.jsx'
-import { BusinessDashboard } from '../dashborad/business-dashboard.jsx'
+import { BusinessDashboard } from '../business-cmps/dashboard.jsx'
 
 export const BusinessHeaderHomePage = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')

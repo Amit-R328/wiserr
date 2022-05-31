@@ -39,11 +39,11 @@ export const BusinessHeroHeaderHomePage = (props) => {
                                             </path>
                                         </svg>
                                     </span>
-                                    <input type="search" 
-                                    autoComplete="off" 
-                                    placeholder="Try &quot;building mobile app&quot;" 
-                                    value="" 
-                                    className="business-input-search"/>
+                                    <input type="search"
+                                        autoComplete="off"
+                                        placeholder="Try &quot;building mobile app&quot;"
+                                        value=""
+                                        className="business-input-search" />
                                     <button className="business-submit-button">Search</button>
                                 </form>
                             </div>

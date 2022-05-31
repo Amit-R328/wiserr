@@ -1,7 +1,6 @@
 import { HomePage } from './pages/homepage.jsx'
 import { BusinessHomepage } from './cmps/business-cmps/business-homepage.jsx'
-import { BusinessDashboard } from './cmps/dashborad/business-dashboard.jsx'
-import { BusinessSolutions } from './cmps/business-cmps/business-solutions.jsx'
+import { BusinessDashboard } from './cmps/business-cmps/dashboard.jsx'
 import { GigPage } from './pages/gig-page.jsx'
 import { GigDetails } from './pages/gig-details.jsx'
 import { AppHeaderHomePage } from './cmps/headers/app-header-homepage.jsx'
@@ -9,15 +8,10 @@ import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-h
 import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import {BecomeSellerWrapper} from './pages/become-seller.jsx'
+import { BecomeSellerWrapper } from './pages/become-seller.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
-    {
-        path: '/business/business-solutions',
-        component: <BusinessSolutions />,
-        element: <BusinessAppHeader />
-    },
     {
         path: '/business/dashboard',
         component: <BusinessDashboard />,
@@ -25,20 +19,22 @@ const routes = [
     },
     {
         path: '/business/become-seller',
-        component: <BecomeSellerWrapper/>
+        component: <BecomeSellerWrapper />
     },
     {
         path: '/business',
         component: <BusinessHomepage />,
         element: <BusinessHeaderHomePage />
     },
-    {  path: '/login',
+    {
+        path: '/login',
         component: <LoginSignup />,
         element: <AppHeader />
     },
-    {  path: '/join',
-    component: <LoginSignup />,
-    element: <AppHeader />
+    {
+        path: '/join',
+        component: <LoginSignup />,
+        element: <AppHeader />
     },
     {
         path: '/categories',
@@ -55,11 +51,6 @@ const routes = [
         component: <HomePage />,
         element: <AppHeaderHomePage />
     },
-
-    // {
-    //     path: 'review',
-    //     component: <ReviewApp />,
-
 ]
 
 export default routes

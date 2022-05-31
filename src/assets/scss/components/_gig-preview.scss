@@ -123,14 +123,17 @@
 
     &:hover {
       outline: none;
+      text-decoration: none;
     }
 
     &:active {
       outline: none;
+      text-decoration: none;
     }
 
     &:focus {
       outline: none;
+      text-decoration: none;
     }
   }
 
@@ -144,7 +147,7 @@
     height: 40px;
     padding: 10px 12px;
     color: #ffbe5b;
-    
+
     .avg-rate {
       padding-left: 10px;
       font-size: 14px;
@@ -152,6 +155,7 @@
       color: #ffbe5b;
       font-weight: 700;
     }
+
     .num-of-rate {
       color: #62646a !important;
       height: 14px;
@@ -167,7 +171,7 @@
   width: 20px;
   height: 20px;
   margin-top: 15px;
-  
+
 }
 
 .review-line {
@@ -176,59 +180,59 @@
 }
 
 .card-fav-price {
-    border-top: 0.5px solid black;
-    justify-content: space-between;
-    font-size: 1rem;
-    align-items: center;
-    height: 100%;
+  border-top: 0.5px solid black;
+  justify-content: space-between;
+  font-size: 1rem;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px;
+
+  .gig-price {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 12px;
-
-    .gig-price{
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: right;
-      text-align: right;
-    }
-
-    .price-text {
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .h4 {
-      margin: 0 10px;
-      margin-bottom: 0;
-    }
-
-    span {
-      font-size: 0.8rem;
-    }
-
-    .fav-btn,
-    .gig-price {
-      padding: 0;
-      // background-color: white;
-      color: #62646a;
-    }
-
-    .fav-btn {
-      color: gray;
-      font-size: 1.2rem;
-      background: none;
-      border: none;
-      outline: none;
-      font-size: 24px;
-    }
-
-    .fav-btn:hover {
-      color: gray;
-    }
-
-    .fav-btn .active {
-      color: red;
-    }
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: right;
+    text-align: right;
   }
+
+  .price-text {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .h4 {
+    margin: 0 10px;
+    margin-bottom: 0;
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+
+  .fav-btn,
+  .gig-price {
+    padding: 0;
+    // background-color: white;
+    color: #62646a;
+  }
+
+  .fav-btn {
+    color: gray;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 24px;
+  }
+
+  .fav-btn:hover {
+    color: gray;
+  }
+
+  .fav-btn .active {
+    color: red;
+  }
+}

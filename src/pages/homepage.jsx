@@ -1,13 +1,11 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
-import { HeroHeaderHomePage } from '../cmps/headers/hero-header-homepage.jsx'
+import { HeroCarousel } from '../cmps/headers/hero-carousel.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { HomepageCategoriesCarouselTest } from '../cmps/homepage-sections/homepage-categories-carousel-copy.jsx'
 // import { HomepageCategoriesCarousel } from '../cmps/homepage-sections/homepage-categories-carousel.jsx'
 import { SellingPropHomepage } from '../cmps/homepage-sections/selling-prop-homepage.jsx'
 import { TestimonialsHomepage } from '../cmps/homepage-sections/testimonials-homepage.jsx'
-
-
 import { IconCategoriesHomepage } from '../cmps/homepage-sections/icon-categories-homepage.jsx';
 import { BusinessSectionHomepage } from '../cmps/homepage-sections/business-section-homepage.jsx';
 // import { Link, useNavigate, useParams } from 'react-router-dom'
@@ -18,7 +16,6 @@ import { BusinessSectionHomepage } from '../cmps/homepage-sections/business-sect
 // import { trustedFB }
 
 export const HomePage = (props, onChangeCategory) => {
-
     return (
         <section>
             <div className="main-wrapper-homepage">
@@ -33,7 +30,7 @@ export const HomePage = (props, onChangeCategory) => {
                         <span className="line-sep"></span>
                         </div>
                     </div>
-                    <HeroHeaderHomePage />
+                    <HeroCarousel />
 
                 </div>
 
