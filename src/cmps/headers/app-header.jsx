@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
-
+import {ProfileMenu} from './profile-menu.jsx'
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -14,11 +14,17 @@ export const AppHeader = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
 
-    
+    const [profileMenu, setMenu] = useState(false)
     const onLogout = () => {
         dispatch(logout())
         // setIsSignIn(false)
         // setLoggedInUser(null)
+    }
+
+    
+    const onToggleMenu = () => {
+        var flag = !profileMenu;
+        setMenu(flag);
     }
 
     if(loggedInUser && !loggedInUser.imgUrl){
@@ -64,15 +70,24 @@ export const AppHeader = (props) => {
                                             <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                                         </div>
                                     </li>
-
                                     <li className="display-from-sm">
                                         {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
+                                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
+                                        <div className="avatar-container">
+                                            {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
+                                        </div>
+                                        <div className="profile-container">
+                                        {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onToggleMenu()}></button>} */}
+                                        {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu}/>}
+                                    </div>
+                                    </li>
+                                    {/* <li className="display-from-sm">                                        
                                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
                                     <div className="avatar-container">
                                         {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
                                     </div>
                                     {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>

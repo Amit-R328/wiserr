@@ -12,13 +12,16 @@ import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
+import  Sliders  from '../cmps/carousel/sliders.js';
+// import { useNavigate } from 'react-router-dom'
 
 export const GigDetails = (props) => {
-
+    
     // const { user } = useSelector((storeState) => storeState.userModule)
     // const {toys} = useSelector((storeState) =>  storeState.toyModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    const navigate = useNavigate()
     // const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const dispatch = useDispatch()
     const params = useParams()
@@ -47,6 +50,7 @@ export const GigDetails = (props) => {
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
+            navigate('/categories')
         }
     }
 
@@ -76,9 +80,10 @@ export const GigDetails = (props) => {
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
                             </div>
-                            <div className="img-container">
+                            <Sliders/>
+                            {/* <div className="img-container">
                                 <img className="gig-details-img img" src={`${gig.imgUrl[0]}`} alt="" />
-                            </div>
+                            </div> */}
                         </section>
                         <section className="about-details">
                             <h2 className="about-title">About this Gig</h2>
