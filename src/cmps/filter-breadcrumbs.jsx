@@ -6,10 +6,16 @@ import { SortGigsList } from './sort-gigs-list.jsx'
 export const FilterBreadCrumbs = () => {
 
 
-    const onHandleVideo = () => {
-        console.log('onClick')
-        // {<VideoModal/>}
+    const onHandleChange = (ev,name, value) => {
+console.log('ev',ev )
+        const field = name
+        let { filterBy } = this.props
+        if (field === 'labels') value = [value]
+        filterBy = { ...filterBy, [field]: value }
+        console.log('filterBy',filterBy )
+        // this.props.setFilter(filterBy)
     }
+
     return (
         <div className="layout-row">
             <header>
@@ -35,7 +41,7 @@ export const FilterBreadCrumbs = () => {
                         {/* <div className="flex flex-col"> */}
                         <h1>Graphics &amp; Design</h1>
                         <p>Get a beautiful website design that people love to engage with.</p>
-                        <button onClick={() => onHandleVideo()}><VideoIcon /><p>How Wiserr Works</p></button>
+                        {/* <button onClick={() => onHandleVideo()}><VideoIcon /><p>How Wiserr Works</p></button> */}
 
                     </div>
                 </header>
@@ -68,7 +74,7 @@ export const FilterBreadCrumbs = () => {
 
                             {/* <div className="menu-content">
                                 <div className="content-scroll"> */}
-                                <SortGigsList/>
+                                <SortGigsList onClick={onHandleChange}/>
                                     {/* <div className="labels-list">
                                         <label className="sort-label">Price</label>
                                         <label className="sort-label">Name</label>
