@@ -45,15 +45,14 @@ export const GigPage = (onChangeCategory) => {
                         <div className="gigs-preview-main-wrapper">
                             <div className="gigs-list-container">
                                 <div className="filter-gigs-container">
-                                <FilterBreadCrumbs />
+                                    <FilterBreadCrumbs />
                                 </div>
                                 <GigList gigs={gigs} reviews={reviews} />
-
                             </div>
                         </div>
                     </div>
-                    </div>
-                    </div>
-                </section>
-                )
+                </div>
+            </div>
+        </section>
+    )
 }
