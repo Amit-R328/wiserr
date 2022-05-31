@@ -41,10 +41,11 @@ function delay(ms = 1500) {
 
 function setDateTime(userDate){
 
-    var date = new Date(userDate).toISOString()    
+    var date = new Date(userDate).toISOString() 
     date = date.replace('T', ' ')
     date = date.replace('Z', ' ')
-    var res = date.substr(0,19)
+    var res = date.substr(0,11)
+    // var res = date.substr(0,19)
     return res
 }
 

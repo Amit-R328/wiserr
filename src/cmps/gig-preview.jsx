@@ -5,6 +5,7 @@ import Rating from '@mui/material/Rating';
 
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
+    console.log('price',price )
     return (
 
         <li className="gig-preview">
