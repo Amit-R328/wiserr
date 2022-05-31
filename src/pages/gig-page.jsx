@@ -17,7 +17,7 @@ export const GigPage = (onChangeCategory) => {
     useEffect(() => {
         const onScroll = () => setOffset(window.pageYOffset);
         // clean up code
-        window.removeEventListener('scroll', onScroll);
+        // window.removeEventListener('scroll', onScroll);
         window.addEventListener('scroll', onScroll, { passive: true });
         return () => window.removeEventListener('scroll', onScroll);
     }, []);

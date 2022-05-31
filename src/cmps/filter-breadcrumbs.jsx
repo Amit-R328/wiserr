@@ -12,6 +12,15 @@ export const FilterBreadCrumbs = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
 
+    const onHandleChange = (ev,name, value) => {
+console.log('ev',ev )
+        const field = name
+        let { filterBy } = this.props
+        if (field === 'labels') value = [value]
+        filterBy = { ...filterBy, [field]: value }
+        console.log('filterBy',filterBy )        
+        // this.props.setFilter(filterBy)
+    }
     // const getCategoryTagLine = () => {
     //     // let filterBy.category
     //     switch (filterBy.category) {
@@ -19,7 +28,7 @@ export const FilterBreadCrumbs = () => {
     //             return 'Get a beautiful website design that people love to engage with.'
     //         case filterBy.category === 'Digital Marketing':
     //             return 'Connect with specialists for marketing guidance and professional relationships.'
-    //     }
+    //     }eo
     // }
 
     const showSweetAlert = (ev) => {
@@ -98,7 +107,7 @@ export const FilterBreadCrumbs = () => {
 
                             {/* <div className="menu-content">
                                 <div className="content-scroll"> */}
-                                <SortGigsList/>
+                                <SortGigsList onClick={onHandleChange}/>
                                     {/* <div className="labels-list">
                                         <label className="sort-label">Price</label>
                                         <label className="sort-label">Name</label>

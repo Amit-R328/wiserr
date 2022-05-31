@@ -5,7 +5,7 @@ import { BusinessHeaderHomePage } from './business-homepage-header.jsx'
 import { BusinessHeroHeaderHomePage } from './business-hero-header.jsx'
 // import { LogoBusinessFull } from '../../services/svg.service.js'
 // import { NavLink } from 'react-router-dom'
-// import { BusinessDashboard } from '../business-cmps/dashboard.jsx'
+// import { BusinessDashboard } from '../business/dashboard.jsx'
 // import { BusinessSolutions } from './business-solutions.jsx'
 
 export const BusinessHomepage = (props, onChangeCategory) => {

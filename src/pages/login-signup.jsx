@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadOrders } from '../store/actions/order.actions.js';
 import { cloudinaryService } from '../services/cloudinary.service.js';
-
+import { NavLink } from 'react-router-dom';
 import { connect } from "react-redux";
 import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
 
@@ -63,23 +63,24 @@ export const LoginSignup = () => {
             
             // isRemember: (data.get('remember-me') !== null),
         }
+        console.log('loginInfo', loginInfo)
 
         if (isLogin) {
-            console.log('loginInfo', loginInfo)
             dispatch(login(loginInfo))
             dispatch(getLoggedinUser())
         } else {
             loginInfo.fullname = data.get('fullname')
-            loginInfo.urlImg = imgUrl
+            loginInfo.imgUrl = imgUrl
+            console.log(' loginInfo.urlImg',  loginInfo.imgUrl)
             dispatch(signup(loginInfo))
             dispatch(getLoggedinUser())
 
         }
-        navigate(-1)
+        // navigate(-1)
     };
 
     const onChangePage = (ev) => {
-        ev.preventDefault()
+        // ev.preventDefault()
         setIsLogin(!isLogin)
     }
 
@@ -156,9 +157,9 @@ export const LoginSignup = () => {
                                 </Link>}
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2" onClick={onChangePage}>
+                                <NavLink to="/signup"  variant="body2" onClick={onChangePage}>
                                     {isLogin ? 'Don\'t have an account? Sign Up' : 'Already have an account? Login'}
-                                </Link>
+                                </NavLink>
                             </Grid>
                         </Grid>
                     </Box>

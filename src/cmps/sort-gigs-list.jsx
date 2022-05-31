@@ -7,16 +7,28 @@ const options = [
   { value: 'newest', label: 'Newest Arrivals' },
 ];
 
-export const SortGigsList = () => {
+export const SortGigsList = ({onHandleChange}) => {
   const [selectedOption, setSelectedOption] = useState(null);
+
+
+  
+//   handleChange = (selectedOption) => {
+//     this.setState((prevState) => ({
+//         toy: {
+//             ...prevState.toy,
+//             labels: selectedOption.map(option => option.value)
+//         }
+//     }))
+// }
 
   return (
     <div className="select-sort-gigs-list">
       <Select
         defaultValue={selectedOption}
         onChange={setSelectedOption}
+        onClick={(ev) => onHandleChange(ev,'sortBy',setSelectedOption)}
         options={options}
-        placeholder="Newest Arrivals"
+        placeholder="Newest Arrivals"        
       />
     </div>
   );
