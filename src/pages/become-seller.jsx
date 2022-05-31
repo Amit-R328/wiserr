@@ -5,6 +5,7 @@ import { saveGig } from '../store/actions/gigs.actions'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { cloudinaryService } from '../services/cloudinary.service.js'
+import { LogoFull } from '../services/svg.service.js'
 
 class _BecomeSeller extends React.Component {
     state = {
@@ -83,8 +84,10 @@ class _BecomeSeller extends React.Component {
             <React.Fragment>
                     <div className="app-header">
                         <div className="main-header sticky">
-                            <AppHeader />
-                            <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} />
+                            <LogoFull />
+                            
+                            {/* <AppHeader /> */}
+                            {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
                         </div>
                     </div>
                 <div className="main-content-container">
