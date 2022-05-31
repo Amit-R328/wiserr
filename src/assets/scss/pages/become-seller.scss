@@ -1,0 +1,19 @@
+.become-seller-container {
+    width: 100%;
+    // background-color: yellow;
+    padding-left: 13.25%;
+    padding-right: 13.25%;
+
+    .seller-details {
+        padding: 32px 32px 0 32px;
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+        // margin: 0 76px 0 76px;
+        flex-direction: row;
+        align-items: flex-start;
+        // background-color: blue;
+        display: flex;
+        flex-direction: row;
+    }
+}
