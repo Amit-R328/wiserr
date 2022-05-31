@@ -73,6 +73,7 @@ class _AddGigDetails extends React.Component {
                 owner: this.props.loggedInUser
             }
         })
+        // this.props.onUpdateUser({isSeller:true})
         this.props.navigation('/')
     }
 
@@ -172,12 +173,14 @@ export const AddGigDetailsWrapper = (props) => {
 
 const MapStateToProps = (storeState) => {
     return {
-        loggedInUser: storeState.userModule.loggedInUser
+        loggedInUser: storeState.userModule.loggedInUser        
     }
 }
 
 const mapDispatchToProps = {
-    saveGig
+    saveGig,
+    // onUpdateUser
+
 }
 
 export const AddGigDetails = connect(

@@ -97,7 +97,7 @@
         line-height: 16.8px;
         overflow: hidden;
         text-overflow: ellipsis;
-        white-space: nowrap;
+        white-space: nowrap;      
         flex-direction: column;
       }
     }
@@ -166,6 +166,10 @@
   }
 }
 
+.owner-container {
+  display: flex;
+  flex-direction: row;
+}
 .sml-round-img {
   border-radius: 50px;
   width: 20px;

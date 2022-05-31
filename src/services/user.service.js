@@ -53,8 +53,9 @@ function remove(userId) {
 }
 
 async function update(user) {
-    await storageService.put('user', user)
-    // user = await httpService.put(`user/${user._id}`, user)
+    // await storageService.put('user', user)
+    const isSeller = user.isSeller
+    user = await httpService.put(`user/${user._id}`, isSeller)
     // Handle case in which admin updates other user's details
     if (getLoggedinUser()._id === user._id) saveLocalUser(user)
     return user;
@@ -134,7 +135,6 @@ function saveLocalUser(user) {
 function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
-
 
 // (async ()=>{
 //     await userService.signup({fullname: 'gul071', userName: 'gul071', password:'gul071'})

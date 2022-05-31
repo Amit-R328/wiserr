@@ -99,3 +99,14 @@ export function getLoggedinUser(){
         }
     }
 }
+
+export function onUpdateUser (userId) {
+    return async (dispatch) => {
+        try {
+            const user = await userService.updateUser({isSeller: true},userId)
+
+        }catch(err) {
+            console.log('Cannot update user', err)
+        }
+    }
+}
