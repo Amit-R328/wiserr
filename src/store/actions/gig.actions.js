@@ -101,12 +101,9 @@ export function removeGig(gigId) {
 }
 
 export function saveGig(gig) {
-    console.log('Gig', gig)
     return async dispatch => {        
         try {
         const savedGig = await gigService.save(gig)
-        console.log('savedGIG', savedGig);
-        console.log('savedGig',savedGig )
         dispatch(getActionAddGig(savedGig))
         // showSuccessMsg('Gig saved Successfully!')
         } catch(err) {

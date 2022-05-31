@@ -5,7 +5,7 @@
 
     &.business-hero {
         & h1 {
-            padding-bottom: 32px;
+            padding-bottom: rem(32px);
             color: #fff;
         }
     }
@@ -54,40 +54,40 @@
 }
 
 .business-hero .header-business {
-    padding: 48px 0;
+    padding: rem(48px) 0;
 
     @media only screen and (min-width:600px) {
         .business-hero .header-business {
-            padding: 96px 64px;
+            padding: rem(96px) rem(64px);
         }
     }
 
     @media only screen and (min-width:900px) {
         .business-hero .header-business {
-            max-width: 560px;
+            max-width: rem(560px);
             padding: 0;
         }
     }
 
     @media only screen and (min-width:1160px) {
         .business-hero .header-business {
-            max-width: 650px;
+            max-width: rem(650px);
         }
     }
 
     & h1 {
-        padding-bottom: 32px;
+        padding-bottom: rem(32px);
         color: #fff;
 
         @media only screen and (min-width:600px) {
             .business-hero .header-business h1 {
-                padding-bottom: 16px;
+                padding-bottom: rem(16px);
             }
         }
 
         @media only screen and (min-width:900px) {
             .business-hero .header-business h1 {
-                padding-bottom: 24px;
+                padding-bottom: rem(24px);
             }
         }
     }
@@ -111,22 +111,22 @@
         flex-direction: column;
 
         & .search-bar-icon {
-            top: 16px;
-            left: 16px;
+            top: rem(16px);
+            left: rem(16px);
         }
 
         & input {
-            font-size: 16px;
-            height: 48px;
-            padding-left: 44px;
+            font-size: rem(16px);
+            height: rem(48px);
+            padding-left: rem(44px);
             margin-bottom: 0;
-            border-radius: 4px;
+            border-radius: rem(4px);
         }
 
         & button {
-            height: 48px;
-            border-radius: 0 4px 4px 0;
-            padding: 12px 24px;
+            height: rem(48px);
+            border-radius: 0 rem(4px) rem(4px) 0;
+            padding: rem(12px) rem(24px);
         }
 
         @media only screen and (min-width:600px) {
@@ -168,11 +168,11 @@
 
 .searching-icon {
     position: relative;
-    left: 37px;
-    top: 2px;
+    left: rem(37px);
+    top: rem(2px);
     display: inline-block;
-    margin-right: 8px;
-    margin-top: 4px;
+    margin-right: rem(8px);
+    margin-top: rem(4px);
 }
 
 .business-hero-wrapper {
@@ -205,7 +205,7 @@
 
     @media only screen and (min-width:900px) {
         .business-hero-wrapper {
-            height: 680px;
+            height: rem(680px);
         }
     }
 }
@@ -230,7 +230,7 @@
     &.seller-name p {
         color: #fff;
         display: inline-block;
-        padding-bottom: 32px;
+        padding-bottom: rem(32px);
     }
 
     @media only screen and (min-width:900px) {
@@ -310,26 +310,26 @@
             &.show-stars p:before {
                 background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/five_stars.e5c37f5.svg) no-repeat;
                 ;
-                background-size: 70px;
+                background-size: rem(70px);
                 content: "";
                 display: block;
-                height: 17px;
+                height: rem(17px);
 
                 @media only screen and (min-width:600px) {
                     .business-hero-wrapper .business-hero-backgrounds>div .seller-name.show-stars p:before {
-                        background-size: 75px;
+                        background-size: rem(75px);
                     }
                 }
 
                 @media only screen and (min-width:900px) {
                     .business-hero-wrapper .business-hero-backgrounds>div .seller-name.show-stars p:before {
-                        background-size: 77px;
+                        background-size: rem(77px);
                     }
                 }
 
                 @media (min-width:1440px) {
                     .business-hero-wrapper .business-hero-backgrounds>div .seller-name.with-brand-campaign {
-                        padding-right: 480px;
+                        padding-right: rem(480px);
                     }
                 }
             }

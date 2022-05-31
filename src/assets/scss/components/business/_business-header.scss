@@ -47,7 +47,7 @@
       .business-logo-main-header {
         // height: auto;
         margin: 4px 0 0;
-        min-width: 121px;
+        min-width: rem(121px);
         align-self: auto;
         display: block;
         cursor: pointer;
@@ -74,7 +74,7 @@
           align-items: center;
           justify-content: center;
           color: #62646a;
-          padding: 18px;
+          padding: rem(18px);
         }
       }
     }
@@ -91,7 +91,7 @@
     // display: block;
     margin-top: 0;
     order: 0;
-    width: 230px;
+    width: rem(230px);
     opacity: 0;
     // visibility: hidden;
     transition: opacity 250ms ease;
@@ -120,16 +120,16 @@
   .business-search-bar-package form .business-search-bar-icon {
     position: absolute;
     z-index: 5;
-    top: 8px;
-    left: 8px;
-    width: 16px;
-    height: 16px;
+    top: rem(8px);
+    left: rem(8px);
+    width: rem(16px);
+    height: rem(16px);
   }
 
   .business-search-bar-package form input {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    padding: 7px 7px 7px 28px;
+    padding: rem(7px) rem(7px) rem(7px) rem(28px);
     border-color: #dadbdd;
     box-shadow: none;
     z-index: 3;
@@ -138,22 +138,22 @@
   @media screen and (min-width: 1160px) {
     .business-search-bar-package form input {
       border-right: 0;
-      border-radius: 3px 0 0 3px;
+      border-radius: rem(3px) 0 0 rem(3px);
     }
 
     .business-search-bar-package .business-submit-button:not(.minimal) {
-      padding: 8px 16px;
+      padding: rem(8px) rem(16px);
       display: block;
-      font-size: 14px;
+      font-size: rem(14px);
       font-weight: 700;
-      border-radius: 0 3px 3px 0;
+      border-radius: 0 rem(3px) rem(3px) 0;
     }
   }
 
   @media screen and (min-width: 900px) {
     .business-search-bar-package form input {
-      font-size: 15px;
-      padding-top: 8px;
+      font-size: rem(15px);
+      padding-top: rem(8px);
     }
   }
 }
@@ -161,8 +161,8 @@
 span.line-sep {
   background-color: #ddd;
   box-sizing: border-box;
-  flex: 0 0 1px;
-  height: 24px;
+  flex: 0 0 rem(1px);
+  height: rem(24px);
   text-align: left;
-  width: 1px;
+  width: rem(1px);
 }

@@ -71,9 +71,11 @@ function getById(gigId) {
 }
 
 async function query(filterBy = {}) {
+
     // async function query({ txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '' }) {
-    const {txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = ''} = filterBy
-    const url = `?txt=${txt}&priceMin=${priceMin}&priceMax=${priceMax}&deliveryDate=${deliveryDate}&category=${category}`
+    const {txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '', sortBy = 'title'} = filterBy
+    // const {txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '', sortBy = 'title'} = filterBy
+    const url = `?txt=${txt}&priceMin=${priceMin}&priceMax=${priceMax}&deliveryDate=${deliveryDate}&category=${category}&sortBy=${sortBy}`
     const urlToRequest = 'gig/'+url
     // let gigs = await storageService.query(STORAGE_KEY)
     let gigs =  httpService.get(urlToRequest)

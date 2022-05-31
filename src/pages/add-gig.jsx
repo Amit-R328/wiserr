@@ -82,19 +82,16 @@ class _BecomeSeller extends React.Component {
         const { sellerInfo, isImg } = this.state
         return (
             <React.Fragment>
-
                 <div className="header-container">
-                <div className="header-row">
-                    <LogoFull />
-
-                </div>
+                    <div className="header-row">
+                        <LogoFull />
+                    </div>
                 </div>
                 <div className="progress-bar-container">
                     <div className="inner-progress-wrapper">
                         <nav>
                             <button className="personal_info active">
                                 <span className="">1</span>Personal Info</button>
-                                
                             <button className="professional_info disabled">
                                 <span className="">2</span>Professional Info</button>
                             <button className="Gig Details disabled">
@@ -109,20 +106,23 @@ class _BecomeSeller extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* </div> */}
                 <div className="main-content-container">
                     <section className="become-seller-container">
                         <div className="seller-details">
                             <section className="become-seller">
                                 <form className="seller-form" onSubmit={this.handleSubmit}>
-                                    <h2>Personal Info</h2>
-                                    <p>Picture (optional)</p>
-                                    <p>Upload an image of you'r work</p>
-                                    <label className='file-img'>
-                                        {!isImg ? '+' : <img src={`${sellerInfo.imgUrl}`} alt="" />}
-                                        <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
-                                        <label htmlFor='title'>Title of your Gig</label>
-                                    </label>
+                                    <div className="seller-details-header"><h2>Gig Info</h2>
+                                        <p>Tell us a bit about yourself. This information will appear on your public profile,<br></br>so that potential buyers can get to know you better.</p>
+                                    </div>
+                                    <div className="seller-image-upload">
+                                        <p>Picture (optional)</p>
+                                        <p>Upload an image of you'r work</p>
+                                        <label className='file-img'>
+                                            {!isImg ? '+' : <img src={`${sellerInfo.imgUrl}`} alt="" />}
+                                            <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
+                                            <label htmlFor='title'>Title of your Gig</label>
+                                        </label>
+                                    </div>
                                     <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={sellerInfo.gigTitle} onChange={this.handleChange} />
                                     <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
                                     <label className="description">
