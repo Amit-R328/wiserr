@@ -12,7 +12,7 @@ import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import  Sliders  from '../cmps/carousel/sliders.js';
+import  Sliders  from '../cmps/carousel-list-details/sliders.js';
 import ImageGallery from 'react-image-gallery';
 // import { useNavigate } from 'react-router-dom'
 

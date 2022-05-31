@@ -89,27 +89,24 @@ class _BecomeSeller extends React.Component {
                         {/* <AppHeader /> */}
                         {/* <CategoriesNavHeader onChangeCategory={this.props.onChangeCategory} /> */}
                     </div>
-                    <div class="wizard-breadcrumbs">
-                        <div class="wrapper">
+                    <div className="progress-bar-container">
+                        <div className="inner-progress-wrapper">
                             <nav>
-                                <button name="personal_info" class="active">
-                                    <span class="">1</span>Personal Info</button>
-                                <button name="professional_info" class="disabled">
-                                    <span class="">2</span>Professional Info</button>
-                                <button name="linked_accounts" class="disabled">
-                                    <span class="">3</span>Linked Accounts</button>
-                                <button name="account_security" class="disabled">
-                                    <span class="">4</span>Account Security</button>
-                            </nav><div class="completion-score incomplete">
-                                <div class="text">Completion Rate: 15%</div>
-                                <div class="SG7hoY_ full-width-progressbar">
-                                    <div class="_61WMbd4"><span class="_1KWrciZ" style="width: 15%;">
+                                <button className="personal_info active">
+                                    <span className="">1</span>Personal Info</button>
+                                <button className="professional_info disabled">
+                                    <span className="">2</span>Professional Info</button>
+                                <button className="Gig Details disabled">
+                                    <span className="">3</span>Gig Details</button>
+                            </nav><div className="completion-score incomplete">
+                                <div className="text">Completion Rate: 15%</div>
+                                <div className="full-width-progressbar">
+                                    <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
                                     </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="mobile">Step 1 of 4</div>
                     </div>
                 </div>
                 <div className="main-content-container">
