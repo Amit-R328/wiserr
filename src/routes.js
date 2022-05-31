@@ -9,6 +9,9 @@ import { BusinessAppHeader } from './cmps/business/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
 import { AddGigDetailsWrapper } from './pages/add-gig.jsx'
+// import {BecomeSellerWrapper} from './pages/become-seller.jsx'
+import { UserProfile } from './pages/user-profile.jsx'
+
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
@@ -27,6 +30,10 @@ const routes = [
         element: <BusinessHeaderHomePage />
     },
     {
+        path: '/profile/:userId',
+        component: <UserProfile/>
+    },
+    { 
         path: '/login',
         component: <LoginSignup />,
         element: <AppHeader />

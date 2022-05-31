@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
-import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
 
@@ -15,14 +14,6 @@ export const GigPage = (onChangeCategory) => {
     const [offset, setOffset] = useState(0);
 
     useEffect(() => {
-        const onScroll = () => setOffset(window.pageYOffset);
-        // clean up code
-        // window.removeEventListener('scroll', onScroll);
-        window.addEventListener('scroll', onScroll, { passive: true });
-        return () => window.removeEventListener('scroll', onScroll);
-    }, []);
-
-    useEffect(() => {
         dispatch(loadGigs(filterBy))
     }, [])
 
@@ -31,11 +22,6 @@ export const GigPage = (onChangeCategory) => {
             <div className="main-wrapper">
                 <div className="app-header">
                     <div className="main-header sticky">
-                        {/* {offset ?
-                        <CategoriesNavHeader style={{ visibility: 'visible' }}
-                            onChangeCategory={onChangeCategory} />
-                        : <CategoriesNavHeader style={{ visibility: 'hidden' }}
-                            onChangeCategory={onChangeCategory} />} */}
                         <AppHeader />
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
                     </div>
