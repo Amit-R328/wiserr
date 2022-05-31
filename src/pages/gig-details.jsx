@@ -13,6 +13,7 @@ import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import  Sliders  from '../cmps/carousel/sliders.js';
+import ImageGallery from 'react-image-gallery';
 // import { useNavigate } from 'react-router-dom'
 
 export const GigDetails = (props) => {
@@ -58,6 +59,10 @@ export const GigDetails = (props) => {
     if( gig.price) {
         price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
     }
+console.log('img', gig.imgUrl)
+const images = gig.imgUrl.map((img) => {
+    return {original: img,thumbnail:img}
+})
     return (
         <React.Fragment>
             <div className="app-header">
@@ -80,7 +85,10 @@ export const GigDetails = (props) => {
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
                             </div>
-                            <Sliders/>
+                            {/* <Sliders/> */}
+                            <div>
+                                <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />    
+                            </div>
                             {/* <div className="img-container">
                                 <img className="gig-details-img img" src={`${gig.imgUrl[0]}`} alt="" />
                             </div> */}

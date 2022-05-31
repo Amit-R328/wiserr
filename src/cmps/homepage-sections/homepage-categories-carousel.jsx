@@ -58,7 +58,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 // import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ArrowLeft, ArrowOnButtonLeftGrey, ArrowOnButtonRightGrey } from "../services/svg.service.js";
+import { ArrowLeft, ArrowOnButtonLeftGrey, ArrowOnButtonRightGrey } from "../../services/svg.service.js";
 
 export const HomepageCategoriesCarousel = (props) => {
     return (

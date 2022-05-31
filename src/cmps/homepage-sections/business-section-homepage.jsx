@@ -1,5 +1,5 @@
 import React from "react";
-import { LogoBusinessFull, VCircle } from '../services/svg.service.js'
+import { LogoBusinessFull, VCircle } from '../../services/svg.service.js'
 
 export const BusinessSectionHomepage = () => {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { GraphicsDesignIcon, BusinessIcon, WritingTranslationIcon, VideoAnimationIcon, ProgrammingIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, DataIcon } from '../services/svg.service.js'
+import { GraphicsDesignIcon, BusinessIcon, WritingTranslationIcon, VideoAnimationIcon, ProgrammingIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, DataIcon } from '../../services/svg.service.js'
 
 export const IconCategoriesHomepage = () => {
 
