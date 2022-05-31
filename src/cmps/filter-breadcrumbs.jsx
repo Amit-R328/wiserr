@@ -5,15 +5,16 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
-
+import { BudgetFilter } from './budget-filter.jsx';
 
 export const FilterBreadCrumbs = () => {
+    
     let [searchTerm] = useState('')
+    let [budgetMenu, setBudgetMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
 
     const onHandleChange = (ev,name, value) => {
-console.log('ev',ev )
         const field = name
         let { filterBy } = this.props
         if (field === 'labels') value = [value]
@@ -30,6 +31,11 @@ console.log('ev',ev )
     //             return 'Connect with specialists for marketing guidance and professional relationships.'
     //     }eo
     // }
+
+    const onToggleBudget = () => {
+        var flag = !budgetMenu;
+        setBudgetMenu(flag);
+    }
 
     const showSweetAlert = (ev) => {
         // ev.preventDefault()
@@ -88,7 +94,8 @@ console.log('ev',ev )
             </div>
 
             <div className="filter-floating-menu">
-                <div className="filter-menu-title filter-menu">Budget<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                <div className="filter-menu-title filter-menu">Budget<span onClick={onToggleBudget} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                {budgetMenu && <BudgetFilter/>}
                 </span>
                 </div>
                 <div className="filter-floating-menu">
