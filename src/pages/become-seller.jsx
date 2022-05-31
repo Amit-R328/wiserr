@@ -89,12 +89,12 @@ class _BecomeSeller extends React.Component {
                 <section className="become-seller">
                     <form className="seller-form" onSubmit={this.handleSubmit}>
                         <h2>Personal Info</h2>
-                        <label htmlFor='title'>Title of your Gig</label>
                         <p>Picture (optional)</p>
                         <p>Upload an image of you'r work</p>
                         <label className='file-img'>
                             {!isImg ? '+' : <img src={`${sellerInfo.imgUrl}`} alt=""/>}
                             <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange}/>
+                        <label htmlFor='title'>Title of your Gig</label>
                         </label>
                         <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={sellerInfo.gigTitle} onChange={this.handleChange} />
                         <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
