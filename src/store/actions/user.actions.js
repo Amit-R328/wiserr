@@ -60,6 +60,7 @@ export function signup(credentials) {
 }
 
 export function logout() {
+    console.log('in logout')
     return async (dispatch) => {
         try {
             await userService.logout()

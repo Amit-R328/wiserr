@@ -14,6 +14,7 @@ export const AppHeader = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
 
+    
     const [profileMenu, setMenu] = useState(false)
     const onLogout = () => {
         dispatch(logout())
