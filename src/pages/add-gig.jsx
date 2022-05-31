@@ -7,7 +7,9 @@ import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { cloudinaryService } from '../services/cloudinary.service.js'
 import { LogoFull } from '../services/svg.service.js'
 
+
 class _BecomeSeller extends React.Component {
+    
     state = {
         sellerInfo: {
             imgUrl: [],
@@ -75,6 +77,7 @@ class _BecomeSeller extends React.Component {
                 owner: this.props.loggedInUser
             }
         })
+        // this.props.onUpdateUser({isSeller:true})
         this.props.navigation('/')
     }
 
@@ -172,12 +175,14 @@ export const BecomeSellerWrapper = (props) => {
 
 const MapStateToProps = (storeState) => {
     return {
-        loggedInUser: storeState.userModule.loggedInUser
+        loggedInUser: storeState.userModule.loggedInUser        
     }
 }
 
 const mapDispatchToProps = {
-    saveGig
+    saveGig,
+    // onUpdateUser
+
 }
 
 export const BecomeSeller = connect(

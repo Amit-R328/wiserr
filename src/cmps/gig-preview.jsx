@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import StarIcon from '@mui/icons-material/Star';
 import Rating from '@mui/material/Rating';
 import ImageGallery from 'react-image-gallery';
+import { useNavigate } from "react-router-dom";
+
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
+    const navigate = useNavigate()
     // console.log('price',price )
 
 
@@ -16,14 +19,18 @@ export const GigPreview = ({ gig, reviews }) => {
         })
     }
 
+    const onGoToDetails = () => {
+        navigate(`/categories/${gig._id}`)
+    }
+
     return (
 
-        <li className="gig-preview">
+        <li className="gig-preview" onClick={onGoToDetails}>
             <article className="gig-card">
-                <Link to={`/categories/${gig._id}`}>
+                {/* <Link to={`/categories/${gig._id}`}> */}
                     <div className="gig-img-container">
                         {/* <img className="gig-img" src={`${gig.imgUrl[0]}`} alt='gig' /> */}
-                        <ImageGallery onClick={(ev) => ev.preventDefault} stopPropagation={true} showThumbnails={false} showPlayButton={false} items={images} />  
+                        <ImageGallery  stopPropagation={true} showThumbnails={false} showPlayButton={false} items={images} />  
                     </div>
 
                     <section>
@@ -45,7 +52,7 @@ export const GigPreview = ({ gig, reviews }) => {
                         <div className="avg-rate">4.9</div>
                         {/* <span className="num-of-rate">(113)</span> */}
                     </div>
-                </Link>
+                {/* </Link> */}
                 <section className="card-fav-price">
                     <div className="heart-btn"><button className="fav-btn">❤</button></div>
                     <div className="gig-price">
