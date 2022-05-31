@@ -133,7 +133,7 @@ export const GigDetails = (props) => {
                                 </div>
                             </article>
                         </section>
-                        {(gig.reviews) ? <section className="reviews">
+                        {(gig.reviews.length) ? <section className="reviews">
 
                             {gig.reviews.map(review => {
                                 return <article key={review._id}>

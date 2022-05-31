@@ -103,6 +103,9 @@ async function save(gig) {
         // "_id": utilService.makeId(),
         "title": gig.gigTitle,
         "price": gig.price,
+        "avgGigRating": [],
+        "level": 'Level 1 Seller',
+        "reviews": [],
         "owner": {
             "_id":gig.owner._id,
             "fullName":gig.owner.userName,
@@ -118,7 +121,7 @@ async function save(gig) {
             "whyUs": gig.whyUs || "",
             "whatDoYouGet": gig.whatDoYouGet || ""
         },
-        "imgUrl": gig.imgUrl || "",
+        "imgUrl": gig.imgUrl || [],
         "category": gig.category
     } 
     

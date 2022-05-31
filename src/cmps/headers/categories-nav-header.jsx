@@ -20,13 +20,23 @@ export const CategoriesNavHeader = () => {
         navigate('/categories')
         dispatch(loadGigs())
     }
-
+    const categories = [{name: 'All Categories', parameter: ''},
+    {name: 'Graphics & Design', parameter: 'Graphics & Design'},
+    {name: 'Digital Marketing', parameter: 'Digital Marketing'},
+    {name: 'Writing & Translation', parameter: 'Writing & Translation'},
+    {name: 'Video & Animation', parameter: 'Video & Animation'},
+    {name: 'Music & Audio', parameter: 'Music & Audio'},
+    {name: 'Programming & Tech', parameter: 'Programming & Tech'}
+]
     return (
         <div id="categories-menu" className="categories-menu-scroll ">
             {/* <div className="categories-menu-wrapper ">
                 <div className="categories-menu-package default has-overflow max-width-container equal-padding"> */}
             <ul className="categories">
-                <li className="sub-menu-item target top-level default static list">
+                {categories.map((category, index) => <li key={index} className='sub-menu-item target top-level default list'>
+                    <button onClick={() => onChangeCategory(category.parameter)} className="trending">{category.name}</button>
+                </li>)}
+                {/* <li className="sub-menu-item target top-level default static list">
                     <button onClick={() => onChangeCategory('')} className="trending">All Categories</button>
                 </li>
                 <li className="sub-menu-item target top-level buckets_without_title buckets-without-title">
@@ -51,7 +61,7 @@ export const CategoriesNavHeader = () => {
 
                 <li className="sub-menu-item target top-level default list">
                             <button onClick={() => onChangeCategory('Programming & Tech')} className="programming-tech">Programming &amp; Tech</button>
-                        </li>
+                        </li> */}
 
                         {/* <li className="sub-menu-item target top-level default list"> */}
                             {/* <button onClick={() => onChangeCategory('Business')} className="business">Business</button>
