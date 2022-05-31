@@ -8,7 +8,7 @@ import { BusinessHeaderHomePage } from './cmps/business-cmps/business-homepage-h
 import { BusinessAppHeader } from './cmps/business-cmps/business-app-header.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
-import { BecomeSellerWrapper } from './pages/become-seller.jsx'
+import { BecomeSellerWrapper } from './pages/add-gig.jsx'
 
 // Routes accesible from the main navigation (in AppHeader)
 const routes = [
