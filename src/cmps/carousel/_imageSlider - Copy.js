@@ -1,8 +1,7 @@
 // import 1 from '../assets/1.png'
 // import 2 from '../assets/2.png'
 // import 3 from '../assets/3.png'
-// import { getById } from '../store/actions/gigs.actions.js';
-
+import { getById } from '../store/actions/gigs.actions.js';
 
 export default [
     {
