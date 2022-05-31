@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-import { useDispatch } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 
 
@@ -13,6 +13,7 @@ const options = [
 export const SortGigsList = () => {
   const [selectedOption, setSelectedOption] = useState('title');
   const dispatch = useDispatch()
+  let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
   const onHandleChange = (ev) => {
     console.log('ev',ev )
@@ -21,8 +22,10 @@ export const SortGigsList = () => {
     }
 
     useEffect(() => {
-      dispatch(setFilter(selectedOption))  
-      dispatch(loadGigs)
+      filterBy = { ...filterBy, sortBy: selectedOption }
+      dispatch(setFilter(filterBy))
+      // dispatch(setFilter(selectedOption))  
+      dispatch(loadGigs())
       console.log('selectedOption', selectedOption )  
     },[selectedOption])
 
