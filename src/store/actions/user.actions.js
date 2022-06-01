@@ -30,9 +30,9 @@ export function removeUser(userId) {
 export function login(credentials) {
     return async (dispatch) => {
         try {
-            console.log('credentials', credentials)
+            // console.log('credentials', credentials)
             const user = await userService.login(credentials)
-            console.log('user', user)
+            // console.log('user', user)
             dispatch({
                 type: 'SET_USER',
                 user

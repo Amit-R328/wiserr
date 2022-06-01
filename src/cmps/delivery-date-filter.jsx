@@ -21,7 +21,7 @@ class _DeliveryDateFilter extends React.Component{
     
     onApplyDeliveyFilter = () => {
         const {filterBy} = this.props
-
+        
         this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays})
         this.props.loadGigs()
     }

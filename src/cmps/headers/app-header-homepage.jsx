@@ -22,12 +22,12 @@ export const AppHeaderHomePage = (props) => {
     // const {user} = useSelector((storeState) => storeState.userModule)
     // const [user, setUser] = useState(userService.getById(loggedInUser._id))
 
-    const onLogout = (ev) => {
-        console.log('ev',ev )
-        dispatch(logout())
-        // setIsSignIn(false)
-        // setLoggedInUser(null)
-    }
+    // const onLogout = (ev) => {
+    //     console.log('ev',ev )
+    //     dispatch(logout())
+    //     // setIsSignIn(false)
+    //     // setLoggedInUser(null)
+    // }
 
     const onToggleMenu = () => {
         var flag = !profileMenu;

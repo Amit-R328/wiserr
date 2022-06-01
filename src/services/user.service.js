@@ -36,7 +36,7 @@ function onUserUpdate(user) {
 
 async function getById(userId) {
     const user = await storageService.get('user', userId)
-    console.log('user', user)
+    
     // const user = await httpService.get(`user/${userId}`)
     // gWatchedUser = user;
 
@@ -62,10 +62,9 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    console.log('userCred', userCred)
+    
     // const users = await storageService.query('user')
-    let user = await httpService.post('auth/login', userCred)
-    console.log('user', user)
+    let user = await httpService.post('auth/login', userCred)    
     // let user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
 
     if (user) {
@@ -78,7 +77,7 @@ async function signup(userCred) {
     try {
         // const users = await storageService.query('user')
         let users = await httpService.get('user')
-        console.log('users',users )
+        
         const isUserExist = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
         if (isUserExist) {
             const err = new Error('User already exist')
@@ -93,12 +92,11 @@ async function signup(userCred) {
         // userCred.imgUrl = userCred.imgUrl
         // userCred.isSeller = false
         // userCred.level = ''
-        console.log('userCred', userCred)
+        
         // const user = await storageService.post('user', userCred)
         const user = await httpService.post('auth/signup', userCred)
         // socketService.login(user._id)
         _handleLogin(user)
-        console.log('user', user)
         return user
     } catch (err) {
         console.dir(err)
@@ -121,7 +119,7 @@ async function changeScore(by) {
 }
 
 function _handleLogin(user) {
-    console.log('user', user)
+    // console.log('user', user)
     const miniUser = { _id: user._id, userName: user.userName, imgUrl: user.imgUrl, isSeller: user.isSeller }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(miniUser))
 }
