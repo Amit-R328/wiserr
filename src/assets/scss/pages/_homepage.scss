@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     list-style: none;
-    height: rem(95px);
+    height: em(95px);
 
     .brands-container {
       display: flex;
@@ -31,7 +31,7 @@
 
 .trusted-by {
   color: #62646a;
-  padding-right: rem(60px);
-  padding-left: rem(60px);
+  padding-right: em(60px);
+  padding-left: em(60px);
 
 }

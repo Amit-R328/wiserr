@@ -26,7 +26,9 @@ export const HomePage = () => {
                     <CategoriesCarousel />
             </div>
                 <SellingPropHomepage />
+                <div className="container">
                 <IconCategoriesHomepage />
+                </div>
                 <SellerSectionHomepage />
                 <TestimonialsHomepage />
         </section>

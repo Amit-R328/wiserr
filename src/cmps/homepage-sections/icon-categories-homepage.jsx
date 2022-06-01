@@ -4,7 +4,7 @@ import { GraphicsDesignIcon, BusinessIcon, WritingTranslationIcon, VideoAnimatio
 export const IconCategoriesHomepage = () => {
 
     return (
-        <div className="main-categories max-width-container">
+        <div className="main-categories">
             <h2>Explore the marketplace</h2>
             <ul className="categories-list">
                 <li>

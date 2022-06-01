@@ -1,11 +1,11 @@
 .gig-slider-container {
     color: #62646a;
-    margin-top: rem(96px);
-    margin-bottom: rem(96px);
+    margin-top: em(96px);
+    margin-bottom: em(96px);
 
     & h2 {
-        padding-bottom: rem(24px);
-        font-size: rem(24px);
+        padding-bottom: em(24px);
+        font-size: em(24px);
         line-height: 120%;
         font-weight: 700;
     }
@@ -16,7 +16,7 @@
         grid-template-rows: 1fr;
         grid-template-areas:
             "slide1 slide2 slide3 slide4 slide5";
-        column-gap: rem(16px);
+        column-gap: em(16px);
     }
 
     .category-legends {
@@ -25,12 +25,12 @@
         color: #fff;
         padding: 16px;
         line-height: unset;
-        font-size: rem(16px);
+        font-size: em(16px);
         line-height: 130%;
     }
 
     .legends-small {
-        font-size: rem(10px);
-        line-height: rem(20px);
+        font-size: em(10px);
+        line-height: em(20px);
     }
 }

@@ -1,5 +1,5 @@
 .homepage-app-header {
-    // height: rem(680px);
+    // height: em(680px);
     width: 100%;
     margin-top: 0 !important;
 
@@ -30,8 +30,8 @@
                 justify-content: space-between;
                 // align-content: space-between;
                 align-items: center;
-                height: rem(80px);
-                border-top: rem(1px) solid #e4e5e7;
+                height: em(80px);
+                border-top: em(1px) solid #e4e5e7;
 
                 @media screen and (max-width: 600px) {
                     .btn-navicon {
@@ -49,8 +49,8 @@
 
             .logo {
                 // height: auto;
-                margin: rem(4px) 0 0;
-                min-width: rem(121px);
+                margin: em(4px) 0 0;
+                min-width: em(121px);
                 align-self: auto;
                 display: block;
                 cursor: pointer;
@@ -63,7 +63,7 @@
                     // display: block;
                     margin-top: 0;
                     order: 0;
-                    width: rem(230px);
+                    width: em(230px);
                     opacity: 0;
                     // visibility: hidden;
                     transition: opacity 250ms ease;
@@ -82,21 +82,21 @@
             .search-bar-package {
                 display: flex;
                 position: relative;
-                height: rem(34px);
+                height: em(34px);
 
                 .search-bar-package form .search-bar-icon {
                     position: absolute;
                     z-index: 5;
-                    top: rem(8px);
-                    left: rem(8px);
-                    width: rem(16px);
-                    height: rem(16px);
+                    top: em(8px);
+                    left: em(8px);
+                    width: em(16px);
+                    height: em(16px);
                 }
 
                 .search-bar-package form input {
                     -webkit-box-flex: 1;
                     flex: 1 1 auto;
-                    padding: rem(7px) rem(7px) rem(7px) rem(28px);
+                    padding: em(7px) em(7px) em(7px) em(28px);
                     border-color: #dadbdd;
                     box-shadow: none;
                     z-index: 3;
@@ -105,22 +105,22 @@
                 @media screen and (min-width: 1160px) {
                     .search-bar-package form input {
                         border-right: 0;
-                        border-radius: rem(3px) 0 0 rem(3px);
+                        border-radius: em(3px) 0 0 em(3px);
                     }
 
                     .search-bar-package .submit-button:not(.minimal) {
-                        padding: rem(8px) rem(16px);
+                        padding: em(8px) em(16px);
                         display: block;
-                        font-size: rem(14px);
+                        font-size: em(14px);
                         font-weight: 700;
-                        border-radius: 0 rem(3px) rem(3px) 0;
+                        border-radius: 0 em(3px) em(3px) 0;
                     }
                 }
 
                 @media screen and (min-width: 900px) {
                     .search-bar-package form input {
-                        font-size: rem(15px);
-                        padding-top: rem(8px);
+                        font-size: em(15px);
+                        padding-top: em(8px);
                     }
                 }
             }
@@ -140,9 +140,9 @@
 
         .wiserr-nav {
             & ul li {
-                padding: 0 rem(24px) 0 0;
+                padding: 0 em(24px) 0 0;
                 text-align: left;
-                line-height: rem(24px);
+                line-height: em(24px);
                 font-size: 1.2em;
                 color: #62646a;
                 // color: #ffffff;
@@ -202,8 +202,8 @@
 span.line-sep {
     background-color: #ddd;
     box-sizing: border-box;
-    flex: 0 0 rem(1px);
-    height: rem(24px);
+    flex: 0 0 em(1px);
+    height: em(24px);
     text-align: left;
-    width: rem(1px);
+    width: em(1px);
 }

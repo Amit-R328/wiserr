@@ -8,8 +8,8 @@
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-direction: row;
-    height: rem(291px);
-    margin: rem(96px);
+    height: em(291px);
+    margin: em(96px);
     gap: 3em;
     margin-left: 13.25%;
     margin-right: 13.25%;
@@ -24,9 +24,9 @@
         -webkit-box-align: center;
         align-items: center;
         position: relative;
-        min-height: rem(291px);
+        min-height: em(291px);
         width: 40%;
-        margin: rem(96px);
+        margin: em(96px);
     }
 
     .testimonials {
@@ -44,13 +44,13 @@
 
         @media only screen and (min-width:900px) {
             .testimonials {
-                right: rem(-23px);
+                right: em(-23px);
             }
         }
 
         @media only screen and (min-width:900px) {
             .testimonials {
-                left: rem(-23px);
+                left: em(-23px);
             }
         }
 
@@ -78,7 +78,7 @@
     }
 
     .testimonial-modal {
-        min-height: rem(250px);
+        min-height: em(250px);
         width: 100%;
 
         @media only screen and (min-width:900px) {
@@ -93,25 +93,25 @@
             }
 
             & img {
-                border-radius: rem(4px);
+                border-radius: em(4px);
             }
         }
 
         .text-content {
-            padding: rem(24px) rem(24px) 0;
+            padding: em(24px) em(24px) 0;
             width: 100%;
 
             @media only screen and (min-width:900px) {
                 .text-content {
-                    padding: 0 rem(36px) 0 rem(16px);
+                    padding: 0 em(36px) 0 em(16px);
                     width: 50%;
                 }
             }
 
             @media only screen and (min-width:1160px) {
                 .text-content {
-                    padding: 0 rem(48px) 0 rem(64px);
-                    max-width: rem(707px);
+                    padding: 0 em(48px) 0 em(64px);
+                    max-width: em(707px);
                     width: 60%;
                 }
             }
@@ -120,12 +120,12 @@
                 font-weight: 400;
                 color: #74767e;
                 padding-bottom: 16px;
-                font-size: rem(20px);
+                font-size: em(20px);
                 font-weight: 400;
                 line-height: 140%;
                 margin: 0;
                 outline: 0;
-                padding: 0 0 rem(36px);
+                padding: 0 0 em(36px);
             }
 
         }
@@ -138,40 +138,40 @@
 
         @media only screen and (min-width:1160px) {
             blockquote {
-                font-size: rem(30px);
-                line-height: rem(44px);
+                font-size: em(30px);
+                line-height: em(44px);
             }
         }
     }
 }
 
 blockquote {
-    font-size: rem(22px);
-    line-height: rem(36px);
+    font-size: em(22px);
+    line-height: em(36px);
     color: #003912;
-    padding-bottom: rem(24px);
+    padding-bottom: em(24px);
 
     &i {
         color: #003912;
         font-family: DomaineDisplay;
-        font-size: rem(30px);
+        font-size: em(30px);
         font-style: italic;
         font-weight: 500;
-        line-height: rem(44px);
+        line-height: em(44px);
         quotes: none;
     }
 }
 
 @media only screen and (min-width:1160px) {
     .text-content .testimonial-logo {
-        border-left: rem(1px) solid #c5c6c9;
-        height: rem(36px);
-        margin-left: rem(16px);
+        border-left: em(1px) solid #c5c6c9;
+        height: em(36px);
+        margin-left: em(16px);
     }
 
     .text-content img {
         display: block;
-        height: rem(36px);
+        height: em(36px);
         margin-left: -6px
     }
 
@@ -179,14 +179,14 @@ blockquote {
         .text-content img {
             display: inline-block;
             vertical-align: middle;
-            margin-left: rem(12px);
+            margin-left: em(12px);
         }
     }
 }
 
 .testimonial-name {
     color: #74767e;
-    padding-bottom: rem(16px);
-    font-size: rem(12px);
+    padding-bottom: em(16px);
+    font-size: em(12px);
     line-height: 140%;
 }
