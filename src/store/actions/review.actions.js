@@ -13,7 +13,7 @@ export function loadReviews(filterBy){
   return async dispatch => {
     try {
       const reviews = await reviewService.query(filterBy)
-      console.log("load Reviews: filterby:", filterBy)
+      console.log("load Reviews: filterBy:", filterBy)
             dispatch({type: 'SET_REVIEWS', reviews})
         }catch (err){
             console.log('err in loadReviews in reviewActions:', err)
