@@ -14,6 +14,7 @@ export const AppHeader = (props) => {
     const [headerTextColor, setHeaderTextColor] = useState('white')
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
+    const [profileMenu, setMenu]  = useState(false)
 
     const [scrolled, setScrolled] = useState(false)
 
@@ -29,10 +30,11 @@ export const AppHeader = (props) => {
         }
     }, [])
 
-
-    const [profileMenu, setMenu] = useState(false)
+    
     const onLogout = () => {
         dispatch(logout())
+        var flag = !profileMenu;
+        setMenu(flag);
         // setIsSignIn(false)
         // setLoggedInUser(null)
     }
@@ -89,7 +91,7 @@ export const AppHeader = (props) => {
                 <ul className="nav-list" >
 
                     <li className="display-from-md">
-                        <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink>
+                       {loggedInUser && <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
                     </li>
 
                     <li className="display-from-md">

@@ -10,7 +10,7 @@ import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section-
 export const HomePage = (onChangeCategory) => {
     return (
         <section>
-            <NavCategories onChangeCategory={onChangeCategory} />
+            {/* <NavCategories onChangeCategory={onChangeCategory} /> */}
             <HeroCarousel />
 
             <section className="trusted-by-brands container">
