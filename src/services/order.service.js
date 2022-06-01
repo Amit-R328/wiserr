@@ -24,12 +24,12 @@ export const orderService = {
 }
 
 async function query(loggedInUser){
-    console.log('loggedInUser', loggedInUser)
+    // console.log('loggedInUser', loggedInUser)
     // let orders = await storageService.query('order')
     // const urlToRequest =  '/order'
     // console.log('urlToRequest', urlToRequest)
     let orders =  await httpService.get('order')
-    console.log('orders', orders)
+    
     // for(var i=0;i< orders.length;i++){
 
     //     console.log('order buyer', orders[i].buyer)
@@ -41,18 +41,18 @@ async function query(loggedInUser){
     else orders = orders.filter(order => {
         console.log('order.seller.fullname', order.seller.fullName, 'loggedInUser.username', loggedInUser.userName )
        return order.seller.fullName === loggedInUser.userName})
-    console.log('order', orders)
+    // console.log('order', orders)
     return orders
 }
 
 async function saveOrder(gigId, loggedinUser){
-    console.log('loggedinUser', loggedinUser)
+    
     // let gig = await storageService.get('gig',gigId)
     // let urlToRequest = BASE_URL
     //   console.log('urlToRequest', urlToRequest)
     // let gig =  await httpService.get('gig',gigId)
     let gig = await httpService.get(`gig/${gigId}`)
-      console.log('gig', gig)
+     
 
     // const seller = await storageService.get('user',gig.owner._id)
     // urlToRequest = BASE_URL + 'user'

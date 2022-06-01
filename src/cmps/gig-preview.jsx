@@ -5,11 +5,11 @@ import Rating from '@mui/material/Rating';
 import ImageGallery from 'react-image-gallery';
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})
-    // console.log('price',price )
+    
 
 
     let images
-    // console.log('gig',gig )
+
     if(gig){
         images = gig.imgUrl.map((img) => {
             return {original: img,thumbnail:img}

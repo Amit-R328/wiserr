@@ -14,12 +14,11 @@ export const BusinessDashboard = (props) => {
     
     useEffect(() => {
         dispatch(getLoggedinUser())
-        console.log('logged in user@@@@@', loggedInUser)
         let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))
     }, [])
     
-console.log('orders before map',orders )
+
     
     return (
         <div className="b-solutions">

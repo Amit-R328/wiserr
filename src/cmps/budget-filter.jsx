@@ -15,10 +15,19 @@ class _BudgetFilter extends React.Component{
     }
 
     handleChange = (ev) => {
-        const {filterBy} = this.props
         const field = ev.target.name
         const value = +ev.target.value
-        this.setState(({[field]: value}), () => this.props.setFilter({ ...filterBy, priceMin: this.state.min, priceMax: this.state.max}))
+        this.setState({[field]: value})
+    }
+    
+    onApplyBudget = () => {
+        const {filterBy} = this.props
+        let {min, max} = this.state
+        if(!min) min = 0
+        if(!max) max = 1000000
+        this.props.setFilter({ ...filterBy, priceMin: min, priceMax: max})
+        console.log('ON APPLY BUDGET', this.props.filterBy)
+        this.props.loadGigs()
     }
 
     onClearBudget = () => {
@@ -37,6 +46,7 @@ class _BudgetFilter extends React.Component{
                     <input type="text" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max}/>
                 </div>
                 <button className="close-btn" onClick={this.onClearBudget}>clear</button>
+                <button className="apply-filters-btn" onClick={this.onApplyBudget}>Apply</button>
             </section>
         )
     }
