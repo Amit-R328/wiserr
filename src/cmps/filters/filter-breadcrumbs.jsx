@@ -1,6 +1,6 @@
 import { height } from '@mui/material/node_modules/@mui/system'
 import { ArrowDown, PathArrow, PathArrow2, VideoIcon } from '../../services/svg.service.js'
-import { SortGigsList } from '../sort-gigs-list.jsx'
+import { SortGigsList } from '../filters/sort-gigs-list.jsx'
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'

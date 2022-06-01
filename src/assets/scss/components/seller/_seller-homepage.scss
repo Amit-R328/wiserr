@@ -1,11 +1,11 @@
   .seller-trusted-by-brands {
     width: 100%;
-    height: em(95px);
+    // height: em(95px);
     background-color: #fafafa;
     color: #b5b6ba;
 
     & ul {
-      height: em(95px);
+      // height: em(95px);
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -15,7 +15,7 @@
       padding: 0 em(24px);
 
       .seller-brands-container {
-        height: em(60px);
+        // height: em(60px);
         margin-left: em(120px);
         margin-right: em(120px);
         display: flex;
@@ -26,7 +26,7 @@
 
         & li {
           text-align: left;
-          height: em(60px);
+          // height: em(60px);
           list-style: none;
           margin: 0;
           padding: 0 em(60px) 0 0;
@@ -47,7 +47,7 @@
 
 
         &.brand-box {
-          height: em(60px);
+          // height: em(60px);
           width: em(130px) !important
         }
       }

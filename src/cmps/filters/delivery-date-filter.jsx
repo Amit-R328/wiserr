@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setFilter, loadGigs } from "../store/actions/gig.actions.js";
+import { setFilter, loadGigs } from "../../store/actions/gig.actions.js";
 
 class _DeliveryDateFilter extends React.Component{
     state = {
