@@ -1,102 +1,72 @@
-.fib-banner-wrapper {
+.seller-info-container {
     background-color: #0d084d;
     color: #62646a;
-    width: 100%;
-    height: em(705px);
+    padding-bottom: em(96px);
 
     .wiserr-seller-logo {
-        width: em(554px);
-        height: em(62px);
-        margin-bottom: em(35px);
+        margin-bottom: em(25px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: em(96px);
+        
+        .logo {
+            margin-right: em(40px);
+        }
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: em(3px) em(7px) em(3px);
+            border-width: em(1px);
+            border-style: solid;
+            text-align: center;
+            color: #fff;
+            font-size: em(12px);
+            font-weight: 700;
+            line-height: 100%;
+            border-radius: em(999px);
+            border-color: #584aff;
+            text-transform: uppercase;
+            background: #584aff;
+        }
     }
 
-    .fib-containers-grid {
+    .seller-container-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: em(498px);
+        grid-template-columns: 50%  50%;
+        grid-template-rows: 1fr;
         grid-template-areas: "seller-text seller-image";
         color: #62646a;
-        margin: 0 auto;
-        // padding: 96px 32px;
-        // width: 100%;
-        // margin: 0 auto 96px;
-        // margin-left: 96px;
-        // margin-right: 96px;
-        margin-left: 13.25%;
-        margin-right: 13.25%;
-        padding-top: em(96px);
+        padding: 0;
 
-
-        .seller-image img {
-            grid-area: seller-image;
-            grid-column: 2 / -1;
-            -webkit-box-flex: 0;
-            padding: 0 em(16px);
+        .seller-image {
+            padding-top: em(96px);
             margin-top: 0;
-            width: em(714px);
-            height: em(455px);
+            padding-bottom: em(48px);
         }
 
         .seller-text {
-            grid-column: 1 / 1;
+            grid-column: 1;
             padding-bottom: em(48px);
             padding: 0 em(16px);
             color: #fff;
-
-            &small {
-                color: #fff;
-                display: block;
-                padding-bottom: em(32px);
-
-                // &.wiserr-seller-logo {
-                //     color: #fff;
-                //     display: inline-block;
-                //     vertical-align: top;
-                //     margin-right: 10px;
-
-                & span {
-                    display: inline-flex;
-                    -webkit-box-align: center;
-                    align-items: center;
-                    -webkit-box-pack: center;
-                    justify-content: center;
-                    padding: em(3px) em(7px) em(2px);
-                    border-width: em(1px);
-                    border-style: solid;
-                    text-decoration: none;
-                    text-align: center;
-                    color: #fff;
-                    font-size: em(10px);
-                    font-weight: 700;
-                    line-height: 100%;
-                    border-radius: em(999px);
-                    border-color: #584aff;
-                    text-transform: uppercase;
-                    background: #584aff;
-                }
-            }
-
-
-
+            
             & p {
-                margin: 0;
-                padding: 0;
                 font-size: em(22px);
                 line-height: em(26px);
                 color: #fff;
-                padding-bottom: em(32px);
-                max-width: em(450px);
-                height: em(84px);
             }
-
+            
             & ul {
                 color: #fff;
                 list-style: none;
                 list-style-image: none;
                 margin: 0;
                 padding: 0;
-                margin-bottom: em(48px);
-
+                padding-bottom: em(52px);
+                
                 & li {
                     color: #fff;
                     list-style: none;
@@ -104,28 +74,13 @@
                     margin: 0;
                     padding: 0;
                     display: flex;
-                    padding-bottom: em(12px);
                     font-size: em(16px);
-                    height: em(60px);
-
-                    &:first-of-type {
-                        height: em(36px);
-                    }
-
-                    &:last-child {
-                        padding-bottom: 0;
-                    }
 
                     h6 {
-                        padding-bottom: em(8px);
-                        display: -webkit-box;
-                        display: -ms-flexbox;
                         display: flex;
-                        -webkit-box-align: start;
-                        -ms-flex-align: start;
                         align-items: flex-start;
                         font-size: em(18px);
-                        line-height: em(26px);
+                        line-height: em(16px);
                         color: #62646a;
 
                         .check-icon {
@@ -140,36 +95,14 @@
                 }
             }
 
-            & a {
-                color: #fff;
-                background-color: #1dbf73;
-                border: em(1px) solid transparent;
-                border-radius: em(4px);
-                cursor: pointer;
-                display: inline-block;
-                font-size: em(16px);
-                font-weight: 600;
-                line-height: 100%;
-                padding: em(12px) em(24px);
-                position: relative;
-                text-align: center;
-                transition: 70ms cubic-bezier(.75, 0, .25, 1);
-                text-decoration: none;
-                width: em(231px);
-                height: em(42px);
-                margin-top: 0;
-            }
         }
     }
 
     .font-domaine {
         margin: 0;
-        padding-bottom: em(24px) !important;
         max-width: em(450px);
-        height: em(103px);
-        line-height: em(38.4px);
+        line-height: em(24px);
         text-align: start;
-        display: block;
         margin-block-start: 0.83em;
         margin-block-end: 0.83em;
         margin-inline-start: 0px;
@@ -180,16 +113,45 @@
             font-weight: bold;
             font-weight: 700;
             line-height: 120%;
-            color: #fff;
 
             & .seller-text {
                 font-family: DomaineDisplay;
                 font-size: 32px;
                 font-style: italic;
-                line-height: em(38.4px);
-                line-height: 120%;
-                color: #fff;
+                line-height: em(24px);
                 font-weight: 500;
+            }
+        }
+    }
+
+    button {
+        outline: none;
+        border: none;
+    
+        .explore-seller {
+            background-color: #1dbf73;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 24px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: all 70ms cubic-bezier(.75, 0, .25, 1);
+    
+            &:focus {
+                outline: none;
+            }
+    
+            &:hover {
+                background-color: #19a463;
+                outline: none;
+            }
+    
+            &:active {
+                background-color: #188652;
+                outline: none;
             }
         }
     }

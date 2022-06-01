@@ -29,7 +29,9 @@ export const HomePage = () => {
                 <div className="container">
                 <IconCategoriesHomepage />
                 </div>
+                
                 <SellerSectionHomepage />
+                
                 <TestimonialsHomepage />
         </section>
     )

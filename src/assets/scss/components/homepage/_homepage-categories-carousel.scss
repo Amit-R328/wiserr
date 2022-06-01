@@ -1,11 +1,10 @@
 .gig-slider-container {
     color: #62646a;
-    margin-top: em(96px);
-    margin-bottom: em(96px);
-    padding: 0;
+    margin-top: rem(60px);
+    margin-bottom: rem(60px);
 
     & h2 {
-        padding-bottom: em(24px);
+        padding-bottom: em(18px);
         font-size: em(24px);
         line-height: 120%;
         font-weight: 700;
@@ -31,7 +30,7 @@
     }
 
     .legends-small {
-        font-size: em(10px);
-        line-height: em(20px);
+        font-size: rem(10px);
+        line-height: rem(20px);
     }
 }
