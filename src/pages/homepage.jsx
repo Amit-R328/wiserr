@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
+import { NavCategories } from '../cmps/headers/nav--categories.jsx'
 import { HeroCarousel } from '../cmps/headers/hero-carousel.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
 import { CategoriesCarousel } from '../cmps/homepage-sections/categories-carousel.jsx'
@@ -27,7 +27,7 @@ export const HomePage = (props, onChangeCategory) => {
                             
                         {/* <AppHeaderHomePage /> */}
                         <span className="line-sep"></span>
-                        <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        <NavCategories onChangeCategory={onChangeCategory} />
                         <span className="line-sep"></span>
                         </div>
                     </div>

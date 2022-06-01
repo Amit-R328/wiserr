@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
-import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
+import { NavCategories } from '../cmps/headers/nav--categories.jsx'
 import { AppHeader } from '../cmps/headers/app-header.jsx'
 import { useSelector, useDispatch } from 'react-redux'
 import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
@@ -23,7 +23,7 @@ export const GigPage = (onChangeCategory) => {
                 <div className="app-header">
                     <div className="main-header sticky">
                         {/* <AppHeader /> */}
-                        <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                        <NavCategories onChangeCategory={onChangeCategory} />
                     </div>
                 </div>
                 <div>

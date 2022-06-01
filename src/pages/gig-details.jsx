@@ -8,7 +8,7 @@ import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
 import { AppHeader } from '../cmps/headers/app-header.jsx'
-import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
+import { NavCategories } from '../cmps/headers/nav--categories.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import  Sliders  from '../cmps/carousel-list-details/sliders.js';
@@ -67,12 +67,12 @@ const images = gig.imgUrl.map((img) => {
             <div className="app-header">
                 <div className="main-header sticky">
                     {/* {offset ?
-                        <CategoriesNavHeader style={{ visibility: 'visible' }}
+                        <NavCategories style={{ visibility: 'visible' }}
                             onChangeCategory={onChangeCategory} />
-                            : <CategoriesNavHeader style={{ visibility: 'hidden' }}
+                            : <NavCategories style={{ visibility: 'hidden' }}
                         onChangeCategory={onChangeCategory} />} */}
                     <AppHeader />
-                    <CategoriesNavHeader />
+                    <NavCategories />
                 </div>
             </div>
             <section className="gig-details-container">

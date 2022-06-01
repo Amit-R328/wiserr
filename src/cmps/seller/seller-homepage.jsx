@@ -1,6 +1,6 @@
 import React from 'react'
 // import { BusinessTools } from '../dashboard/dashboard.jsx'
-// import { CategoriesNavHeader } from '../headers/categories-nav-header.jsx'
+// import { NavCategories } from '../headers/categories-nav-header.jsx'
 // import { BusinessHeaderHomePage } from './_business-homepage-header.jsx'
 // import { BusinessHeroHeaderHomePage } from './_business-hero-header.jsx'
 // import { LogoBusinessFull } from '../../services/svg.service.js'
@@ -14,7 +14,7 @@ export const SellerHomepage = (props, onChangeCategory) => {
         <section>
             <div className="app-header-business">
                 {/* <BusinessHeaderHomePage />
-                <CategoriesNavHeader onChangeCategory={onChangeCategory} />
+                <NavCategories onChangeCategory={onChangeCategory} />
                 <BusinessHeroHeaderHomePage /> */}
             </div>
 
