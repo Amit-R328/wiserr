@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
-import { HeroCarousel } from './hero-carousel.jsx'
+// import { HeroCarousel } from './hero-carousel.jsx'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
-import { userService } from '../../services/user.service.js'
+// import { userService } from '../../services/user.service.js'
 import {ProfileMenu} from './profile-menu.jsx'
 import { UserMsg } from '../user-msg.jsx'
-
 
 export const AppHeaderHomePage = (props) => {
     const [profileMenu, setMenu] = useState(false)
@@ -23,11 +22,8 @@ export const AppHeaderHomePage = (props) => {
     // const {user} = useSelector((storeState) => storeState.userModule)
     // const [user, setUser] = useState(userService.getById(loggedInUser._id))
 
-
-
     const onLogout = (ev) => {
         console.log('ev',ev )
-        // ev.stopPropagation()
         dispatch(logout())
         // setIsSignIn(false)
         // setLoggedInUser(null)

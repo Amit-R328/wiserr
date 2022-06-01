@@ -13,7 +13,7 @@
 
 // COMPONENTS
 @import './components/app-header';
-@import './components/categories-nav-header';
+@import './components/nav-categories';
 @import './components/profile-menu';
 @import './components/footer';
 @import './components/filter-breadcrumbs';
@@ -22,10 +22,12 @@
 @import './components/gig-review';
 // @import './components/slider';
 @import './components/user-profile';
+<<<<<<< HEAD
 @import './components/budget-filter';
+=======
+>>>>>>> ad9dcaf6177649936936e6c5ea322ec9a9b8bcff
 
 // HOMEPAGE
-
 // HOMEPAGE-HEADERS
 @import './components/homepage/hero-carousel';
 @import './components/homepage/homepage-header';

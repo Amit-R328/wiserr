@@ -1,62 +1,29 @@
 .trusted-by-brands {
   width: 100%;
-  height: rem(95px);
   background-color: #fafafa;
   color: #b5b6ba;
 
   & ul {
-    height: rem(95px);
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
-    margin: 0;
-    padding: 0 rem(24px);
+    height: rem(95px);
 
     .brands-container {
-      height: rem(60px);
-      margin-left: rem(120px);
-      margin-right: rem(120px);
       display: flex;
       flex-direction: row;
       align-items: center;
-      // justify-content: center;
-      background-color: green;
-      margin-left: 13.25%;
-      margin-right: 13.25%;
 
       & li {
         text-align: left;
-        height: rem(60px);
         list-style: none;
-        margin: 0;
-        padding: 0 rem(60px) 0 0;
         outline: 0;
-        background-color: purple;
-
-        &:last-of-type {
-          padding-right: 0;
-        }
-
-      }
-    }
-
-    & button {
-      background-color: none;
-      background: none;
-      outline: none;
-      border: none;
-
-
-      &.brand-box {
-        height: rem(60px);
-        width: rem(130px) !important
       }
     }
 
     & p {
       font-size: inherit;
-      padding-right: rem(20px);
       margin: 0;
     }
   }
@@ -65,4 +32,6 @@
 .trusted-by {
   color: #62646a;
   padding-right: rem(60px);
+  padding-left: rem(60px);
+
 }

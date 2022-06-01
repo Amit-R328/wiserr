@@ -2,37 +2,37 @@
 // import { LogoBusinessFull, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
 // import { NavLink } from 'react-router-dom'
 // import { Search } from '../search.jsx'
-// import { BusinessDashboard } from './dashboard.jsx'
+// import { SellerDashboard } from './dashboard.jsx'
 
-// export const BusinessHeaderHomePage = (props) => {
+// export const SellerHeaderHomePage = (props) => {
 //     const [searchBar, setSearchBar] = useState('hidden')
 //     const [navHeader, setNavHeader] = useState('hidden')
 //     const [logo, setLogo] = useState('logo-white')
 //     const [headerTextColor, setHeaderTextColor] = useState('white')
 
 //     return (
-//         <div className="header-business">
-//             <header className="business business-logged-out-homepage-header business-header-transparent">
-//                 <div className="business business-header-row-wrapper">
-//                     <div className="business business-header-row">
+//         <div className="header-seller">
+//             <header className="seller seller-logged-out-homepage-header seller-header-transparent">
+//                 <div className="seller seller-header-row-wrapper">
+//                     <div className="seller seller-header-row">
 //                         <button className="btn-navicon">
 //                             <HamburgerMenuWhite />
 //                             {/* <HamburgerMenu /> */}
 //                         </button>
-//                         <div className="business-logo-main-header">
+//                         <div className="seller-logo-main-header">
 //                             <NavLink to="/" className="site-logo">
 //                                 <LogoBusinessFull />
 //                             </NavLink>
 //                         </div>
 
-//                         <div className="business business-wiserr-header-search-animated">
-//                             <div className="business business-search-bar-package-container">
-//                                 <form className="business business-search-bar-package business-search_bar-package">
-//                                     <span className="business business-search-bar-icon" aria-hidden="true">
+//                         <div className="seller seller-wiserr-header-search-animated">
+//                             <div className="seller seller-search-bar-package-container">
+//                                 <form className="seller seller-search-bar-package seller-search_bar-package">
+//                                     <span className="seller seller-search-bar-icon" aria-hidden="true">
 //                                         <SearchBar />
 //                                     </span>
 //                                     {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
-//                                     <button className="co-white business-submit-button bg-co-green-700">Search</button> */}
+//                                     <button className="co-white seller-submit-button bg-co-green-700">Search</button> */}
 //                                     <Search />
 //                                 </form>
 //                             </div>
@@ -40,23 +40,23 @@
 //                     </div>
 //                 </div>
 
-//                 <nav className="business business-wiserr-nav business-wiserr-nav-right">
-//                     <ul className="business-nav-list" >
+//                 <nav className="seller seller-wiserr-nav seller-wiserr-nav-right">
+//                     <ul className="seller-nav-list" >
 
-//                         <li className="business-display-from-md business-display-from-md">
-//                             <NavLink to="/business/dashboard" className="business-dashboard-nav-link business-nav-link" target="_blank" ><BusinessDashboard /> Dashboard</NavLink>
+//                         <li className="seller-display-from-md seller-display-from-md">
+//                             <NavLink to="/seller/dashboard" className="seller-dashboard-nav-link seller-nav-link" target="_blank" ><SellerDashboard /> Dashboard</NavLink>
 //                         </li>
 
-//                         {/* <li className="business-display-from-md business-display-from-md">
-//                             <NavLink to="/business-solutions" className="business-dashboard-nav-link business-nav-link" target="_blank" ><BusinessSolutions /> Business Solutions</NavLink>
+//                         {/* <li className="seller-display-from-md seller-display-from-md">
+//                             <NavLink to="/seller-solutions" className="seller-dashboard-nav-link seller-nav-link" target="_blank" ><SellerSolutions /> Seller Solutions</NavLink>
 //                         </li> */}
 
-//                         <li className="business-display-from-sm business-display-from-sm">
-//                             <a href="/login" rel="nofollow" className="business-js-open-popup-login business-nav-link">Sign in</a>
+//                         <li className="seller-display-from-sm seller-display-from-sm">
+//                             <a href="/login" rel="nofollow" className="seller-js-open-popup-login seller-nav-link">Sign in</a>
 //                         </li>
 
-//                         <li className="business-signup-btn business-signup-btn">
-//                             <a className="business-js-open-popup-join business-wiserr-header-join" rel="nofollow" href="/join">Join</a>
+//                         <li className="seller-signup-btn seller-signup-btn">
+//                             <a className="seller-js-open-popup-join seller-wiserr-header-join" rel="nofollow" href="/join">Join</a>
 //                         </li>
 //                     </ul>
 //                 </nav>
