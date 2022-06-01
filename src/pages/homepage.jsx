@@ -1,10 +1,10 @@
 import React from 'react'
 import { HeroCarousel } from '../cmps/headers/hero-carousel.jsx'
 import { CategoriesCarousel } from '../cmps/homepage-sections/categories-carousel.jsx'
-import { SellingPropHomepage } from '../cmps/homepage-sections/selling-prop-homepage.jsx'
-import { TestimonialsHomepage } from '../cmps/homepage-sections/testimonials-homepage.jsx'
+import { SellingProp } from '../cmps/homepage-sections/selling-prop.jsx'
+import { Testimonials } from '../cmps/homepage-sections/testimonials.jsx'
 import { IconCategories } from '../cmps/homepage-sections/icon-categories.jsx'
-import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section-homepage.jsx'
+import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section.jsx'
 
 export const HomePage = () => {
     return (
@@ -25,14 +25,14 @@ export const HomePage = () => {
                     <h2>Popular professional services</h2>
                     <CategoriesCarousel />
             </div>
-                <SellingPropHomepage />
+                <SellingProp />
                 <div className="container">
                 <IconCategories />
                 </div>
                 
                 <SellerSectionHomepage />
                 
-                <TestimonialsHomepage />
+                <Testimonials />
         </section>
     )
 }

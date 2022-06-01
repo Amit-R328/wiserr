@@ -1,7 +1,7 @@
 import React from "react";
 import { VCircle } from '../../services/svg.service.js'
 
-export const SellingPropHomepage = () => {
+export const SellingProp = () => {
     return (
         <div className="selling-proposition-wrapper container ">
             <div className="selling-proposition">
