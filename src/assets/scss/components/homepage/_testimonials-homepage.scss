@@ -165,14 +165,14 @@ blockquote {
 @media only screen and (min-width:1160px) {
     .text-content .testimonial-logo {
         border-left: em(1px) solid #c5c6c9;
-        height: em(36px);
-        margin-left: em(16px);
+        // height: em(36px);
+        // margin-left: em(16px);
     }
 
     .text-content img {
         display: block;
-        height: em(36px);
-        margin-left: -6px
+        // height: em(36px);
+        // margin-left: -6px
     }
 
     @media only screen and (min-width:1160px) {
@@ -187,6 +187,6 @@ blockquote {
 .testimonial-name {
     color: #74767e;
     padding-bottom: em(16px);
-    font-size: em(12px);
+    font-size: em(18px);
     line-height: 140%;
 }
