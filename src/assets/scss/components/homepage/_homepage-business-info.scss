@@ -4,7 +4,7 @@
     width: 100%;
     height: rem(705px);
 
-    .wiserr-business-logo {
+    .wiserr-seller-logo {
         width: rem(554px);
         height: rem(62px);
         margin-bottom: rem(35px);
@@ -14,7 +14,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: rem(498px);
-        grid-template-areas: "business-text business-image";
+        grid-template-areas: "seller-text seller-image";
         color: #62646a;
         margin: 0 auto;
         // padding: 96px 32px;
@@ -27,8 +27,8 @@
         padding-top: rem(96px);
 
 
-        .business-image img {
-            grid-area: business-image;
+        .seller-image img {
+            grid-area: seller-image;
             grid-column: 2 / -1;
             -webkit-box-flex: 0;
             padding: 0 rem(16px);
@@ -37,7 +37,7 @@
             height: rem(455px);
         }
 
-        .business-text {
+        .seller-text {
             grid-column: 1 / 1;
             padding-bottom: rem(48px);
             padding: 0 rem(16px);
@@ -48,7 +48,7 @@
                 display: block;
                 padding-bottom: rem(32px);
 
-                // &.wiserr-business-logo {
+                // &.wiserr-seller-logo {
                 //     color: #fff;
                 //     display: inline-block;
                 //     vertical-align: top;

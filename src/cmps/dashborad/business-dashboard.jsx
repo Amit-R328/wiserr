@@ -6,7 +6,7 @@ import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
 
-export const BusinessDashboard = (props) => {
+export const SellerDashboard = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
@@ -21,7 +21,7 @@ export const BusinessDashboard = (props) => {
     
     return (
         <div className="b-solutions">
-            Hello from business dashboard
+            Hello from seller dashboard
             <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>

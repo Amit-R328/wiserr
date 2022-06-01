@@ -74,7 +74,7 @@ export const AppHeaderHomePage = (props) => {
                             <ul className="nav-list" >
 
                                 <li className="display-from-md">
-                                    <NavLink to="/business" className="business-nav-link nav-link">Wiserr Business</NavLink>
+                                    <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink>
                                 </li>
 
                                 <li className="display-from-md">
