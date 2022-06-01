@@ -26,7 +26,7 @@ export const CategoriesNavHeader = () => {
     { name: 'Programming & Tech', parameter: 'Programming & Tech' }
     ]
     return (
-        <div id="categories-menu" className="categories-menu-scroll ">
+        <div id="categories-menu container" className="categories-menu-scroll ">
             <ul className="categories">
                 {categories.map((category, index) => <li key={index} className='sub-menu-item target top-level default list'>
                     <button onClick={() => onChangeCategory(category.parameter)} className="trending">{category.name}</button>

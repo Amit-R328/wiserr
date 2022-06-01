@@ -24,7 +24,8 @@ export const HomePage = (props, onChangeCategory) => {
 
                     <div className="main-header sticky">
                         <div>
-                        <AppHeaderHomePage />
+                            
+                        {/* <AppHeaderHomePage /> */}
                         <span className="line-sep"></span>
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
                         <span className="line-sep"></span>

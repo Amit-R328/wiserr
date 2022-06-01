@@ -8,7 +8,7 @@ export const ProfileMenu = ({onLogout, user, closeMenu}) => {
             <li className="menu-item" onClick={() => closeMenu()}><NavLink  to={`/business/add-gig`}>Add gig</NavLink></li>
             <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/profile/${user._id}`}>User Profile</NavLink></li>
             {/* <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/business/dashboard/${user._id}`}>Dashboard</NavLink></li> */}
-            <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
+            <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Puki</NavLink></li>
             </ul>
         </div>
     )

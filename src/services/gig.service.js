@@ -99,47 +99,46 @@ async function remove(gigId) {
 }
 
 async function save(gig) {
-    
-
-    let newGig = {
-        // "_id": utilService.makeId(),
-        "title": gig.gigTitle,
-        "price": gig.price,
-        "avgGigRating": [],
-        "level": 'Level 1 Seller',
-        "reviews": [],
-        "owner": {
-            "_id":gig.owner._id,
-            "fullName":gig.owner.userName,
-            "imgUrl": gig.owner.imgUrl || "",
-            "from": gig.origin,
-            "memberSince":utilService.setDateTime(Date.now()),
-            "avgResponseTime": "now",
-            "lastDelivery":"None yet"
-        },
-        "daysToMake":gig.daysToMake,
-        "description": {
-            "aboutThisGig": gig.sellerDescription,
-            "whyUs": gig.whyUs || "",
-            "whatDoYouGet": gig.whatDoYouGet || ""
-        },
-        "imgUrl": gig.imgUrl || [],
-        "category": gig.category
-    } 
-    
     if (gig._id) {
-        // console.log('BASE_URL + gig._id',BASE_URL + gig._id )
-        newGig = await httpService.put('gig',gig)
+        console.log('BASE_URL + gig._id',BASE_URL + gig._id )
+        console.log('gig in gig service row 131',gig )
+        await httpService.put('gig',gig)
         // savedGig = await axios.put(BASE_URL + gig._id, gig)
-        console.log('newGig',newGig)
-        gigChannel.postMessage(getActionUpdateGig(newGig))
+        console.log('gig',gig)
+        return gig
+        // gigChannel.postMessage(getActionUpdateGig(newGig))
     } else {
-        // savedGig = await axios.post(BASE_URL, gig)
-        // savedGig = savedGig.data
+        let newGig = {
+            // "_id": utilService.makeId(),
+            "title": gig.gigTitle,
+            "price": gig.price,
+            "avgGigRating": [],
+            "level": 'Level 1 Seller',
+            "reviews": [],
+            "owner": {
+                "_id":gig.owner._id,
+                "fullName":gig.owner.userName,
+                "imgUrl": gig.owner.imgUrl || "",
+                "from": gig.origin,
+                "memberSince":utilService.setDateTime(Date.now()),
+                "avgResponseTime": "now",
+                "lastDelivery":"None yet"
+            },
+            "daysToMake":gig.daysToMake,
+            "description": {
+                "aboutThisGig": gig.sellerDescription,
+                "whyUs": gig.whyUs || "",
+                "whatDoYouGet": gig.whatDoYouGet || ""
+            },
+            "imgUrl": gig.imgUrl || [],
+            "category": gig.category,
+            "likedByUser": []
+        } 
+
         newGig = await httpService.post('gig',newGig)
         gigChannel.postMessage(getActionAddGig(newGig))
+        return newGig
     }
-    return newGig
     // await storageService.post('gig', newGig)
     
 }

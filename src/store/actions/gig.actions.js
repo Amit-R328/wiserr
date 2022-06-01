@@ -1,6 +1,7 @@
 import {gigService} from "../../services/gig.service.js"
 import { showSuccessMsg, showErrorMsg } from '../../services/event-bus.service.js'
 
+
 export function getActionRemoveGig(gigId) {
     return {
         type: 'REMOVE_GIG',
@@ -90,6 +91,27 @@ export function removeGig(gigId) {
             console.error('Error:', err)            
             showErrorMsg(err.response.data)
             // showErrorMsg('Gig was not removed')
+        }
+        if (subscriber) gigService.unsubscribe(subscriber)
+            subscriber = (ev) => {
+            console.log('Got notified', ev.data)
+            dispatch(ev.data)
+        }
+        gigService.subscribe(subscriber)
+    }
+}
+
+
+export function updateGig(gig) {
+    return async dispatch => {        
+        try {
+        // const savedGig = await gigService.save(gig)
+        dispatch(getActionUpdateGig(gig))
+        // showSuccessMsg('Gig saved Successfully!')
+        } catch(err) {
+            console.error('Error:', err)
+            // showErrorMsg('Gig was not saved')
+            // showErrorMsg(err.response.data)
         }
         if (subscriber) gigService.unsubscribe(subscriber)
             subscriber = (ev) => {

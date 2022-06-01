@@ -25,7 +25,9 @@ export const AppHeaderHomePage = (props) => {
 
     // console.log('user', user)
 
-    const onLogout = () => {
+    const onLogout = (ev) => {
+        console.log('ev',ev )
+        // ev.stopPropagation()
         dispatch(logout())
         // setIsSignIn(false)
         // setLoggedInUser(null)
