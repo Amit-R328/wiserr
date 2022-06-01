@@ -3,7 +3,6 @@
 @import './setup/functions';
 @import './setup/typography';
 @import './setup/variables';
-@import './setup/links';
 @import './setup/reset';
 @import './setup/mixins';
 
@@ -21,15 +20,7 @@
 @import './components/gig-list';
 @import './components/gig-preview';
 @import './components/gig-review';
-// @import './components//homepage-categories-carousel';
-// @import './components//homepage-seller-info';
-// @import './components/testemonials-homepage';
 @import './components/user-profile';
-// @import './components/seller-scss/seller-homepage';
-// @import './components/seller-scss/seller-header';
-// @import './components/seller-scss/seller-hero';
-// @import './components/seller-scss/seller-homepage-header';
-// @import './components/dashboard/seller-dashboard';
 @import './components/_slider';
 
 // HOMEPAGE
@@ -40,15 +31,12 @@
 @import './components/homepage/hero-header';
 
 // HOMEPAGE-SECTIONS
-// @import './components/homepage/proposition';
 @import './components/homepage/selling-props-homepage';
 @import './components/homepage/categories-list-icons';
 @import './components/homepage/homepage-categories-carousel';
-// @import './components/homepage/homepage-seller-info';
 @import './components/homepage/testimonials-homepage';
 
 // seller
-// @import './components/gigs-cards-list';
 @import './components/seller/seller-homepage';
 @import './components/seller/seller-header';
 @import './components/seller/seller-hero';
