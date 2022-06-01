@@ -86,7 +86,7 @@ export const AppHeader = (props) => {
                 {/* </div> */}
                 {/* <div className="wiserr-nav-right-container-helper"> */}
                 {/* <div className="wiserr-nav wiserr-nav-right"> */}
-                <ul className="nav-list" >
+                <ul className="nav-list clean-list" >
 
                     <li className="display-from-md">
                         <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink>
