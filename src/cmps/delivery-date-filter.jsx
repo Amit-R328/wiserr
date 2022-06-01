@@ -21,7 +21,7 @@ class _DeliveryDateFilter extends React.Component{
     
     onApplyDeliveyFilter = () => {
         const {filterBy} = this.props
-        
+
         this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays})
         this.props.loadGigs()
     }
@@ -33,9 +33,9 @@ class _DeliveryDateFilter extends React.Component{
     render(){
         return(
             <section className="deliveryTime-filter flex">
-                <div className="input-wrapper flex">
+                <div className="input-wrapper flex" >
                     <label htmlFor="deliveryDays">Deliverd by:</label>
-                    <input type="number" name="deliveryDays" onChange={this.handleChange} value={this.state.deliveryDays}/>
+                    <input type="number" name="deliveryDays" onChange={this.handleChange} placeholder="Any" value={this.state.deliveryDays}/>
                 </div>
                 <button className="close-btn" onClick={this.onClearDeliveryDate}>clear</button>
                 <button className="apply-filters-btn" onClick={this.onApplyDeliveyFilter}>Apply</button>

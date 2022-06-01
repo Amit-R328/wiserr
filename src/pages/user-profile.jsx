@@ -9,14 +9,18 @@ import { utilService } from '../services/util.service.js';
 export const UserProfile = () => {
 
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    console.log('loggedInUser', loggedInUser)
     const user = useSelector((storeState) => storeState.userModule.loggedInUser)
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
 
     useEffect(() => {
         let user = { type: 'buyer', fullName: loggedInUser.userName }
-        dispatch(loadOrders(loggedInUser))
-    }, [orders])
+        dispatch(loadOrders(loggedInUser,'getBuys'))
+        // console.log(orders)
+        orders = orders.filter(order => order.seller !== loggedInUser.userName)
+        
+    }, [])
 
 
     return (
@@ -29,7 +33,7 @@ export const UserProfile = () => {
                     </div>
                 </div>
                 <div className='profile-right-container'>
-                    {(orders) ?
+                    {(orders.length) ?
                         <div>
                             <h1>Your orders:</h1>
                             {orders.map(order => <div key={order._id}><h4>{order.gig.description}</h4>
@@ -38,7 +42,7 @@ export const UserProfile = () => {
                                 <h5>{utilService.setDateTime(order.createdAt)}</h5>
                                 <h5>{utilService.setDateTime(order.deliveryDate)}</h5></div>)}
                         </div> :
-                        (<span></span>)}
+                        (<h1>You don't have any orders yet!</h1>)}
                 </div>
             </section>
         </section>
