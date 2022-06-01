@@ -12,27 +12,31 @@
     position: fixed;
     z-index: 10;
 
-    &.scrolled{
-    background-color: #fff;
 
-    .top{
+    &.scrolled {
+      background-color: #fff;
 
-      .logo-search-container{
-        .logo{
-          svg{
-            path:nth-child(1){
-              fill: unset;
+      .top {
+        margin: 0;
+
+        .logo-search-container {
+          .logo {
+            svg {
+              path:nth-child(1) {
+                fill: unset;
+              }
             }
           }
         }
       }
-    }
     }
 
     .top {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      // padding: 0;
+      // margin: 0;
 
       .logo-search-container {
         display: flex;
@@ -49,8 +53,8 @@
         .logo {
           display: none;
 
-          svg{
-            path:first-child{
+          svg {
+            path:first-child {
               fill: #fff;
             }
           }
@@ -58,7 +62,6 @@
           @include from-mobile-layout {
             display: block;
           }
-
         }
       }
     }
@@ -278,7 +281,6 @@
     // margin-right: 5em;
     // margin-left: 2.5em;
   }
-
 
   .search-btn {
     height: 34px;

@@ -16,7 +16,7 @@ export const UserProfile = () => {
 
     useEffect(() => {
         let user = { type: 'buyer', fullName: loggedInUser.userName }
-        dispatch(loadOrders(loggedInUser))
+        dispatch(loadOrders(loggedInUser,'getBuys'))
         // console.log(orders)
         orders = orders.filter(order => order.seller !== loggedInUser.userName)
         

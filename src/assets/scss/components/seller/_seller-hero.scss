@@ -5,7 +5,7 @@
 
     &.seller-hero {
         & h1 {
-            padding-bottom: rem(32px);
+            padding-bottom: em(32px);
             color: #fff;
         }
     }
@@ -54,40 +54,40 @@
 }
 
 .seller-hero .header-seller {
-    padding: rem(48px) 0;
+    padding: em(48px) 0;
 
     @media only screen and (min-width:600px) {
         .seller-hero .header-seller {
-            padding: rem(96px) rem(64px);
+            padding: em(96px) em(64px);
         }
     }
 
     @media only screen and (min-width:900px) {
         .seller-hero .header-seller {
-            max-width: rem(560px);
+            max-width: em(560px);
             padding: 0;
         }
     }
 
     @media only screen and (min-width:1160px) {
         .seller-hero .header-seller {
-            max-width: rem(650px);
+            max-width: em(650px);
         }
     }
 
     & h1 {
-        padding-bottom: rem(32px);
+        padding-bottom: em(32px);
         color: #fff;
 
         @media only screen and (min-width:600px) {
             .seller-hero .header-seller h1 {
-                padding-bottom: rem(16px);
+                padding-bottom: em(16px);
             }
         }
 
         @media only screen and (min-width:900px) {
             .seller-hero .header-seller h1 {
-                padding-bottom: rem(24px);
+                padding-bottom: em(24px);
             }
         }
     }
@@ -111,22 +111,22 @@
         flex-direction: column;
 
         & .search-bar-icon {
-            top: rem(16px);
-            left: rem(16px);
+            top: em(16px);
+            left: em(16px);
         }
 
         & input {
-            font-size: rem(16px);
-            height: rem(48px);
-            padding-left: rem(44px);
+            font-size: em(16px);
+            height: em(48px);
+            padding-left: em(44px);
             margin-bottom: 0;
-            border-radius: rem(4px);
+            border-radius: em(4px);
         }
 
         & button {
-            height: rem(48px);
-            border-radius: 0 rem(4px) rem(4px) 0;
-            padding: rem(12px) rem(24px);
+            height: em(48px);
+            border-radius: 0 em(4px) em(4px) 0;
+            padding: em(12px) em(24px);
         }
 
         @media only screen and (min-width:600px) {
@@ -168,11 +168,11 @@
 
 .searching-icon {
     position: relative;
-    left: rem(37px);
-    top: rem(2px);
+    left: em(37px);
+    top: em(2px);
     display: inline-block;
-    margin-right: rem(8px);
-    margin-top: rem(4px);
+    margin-right: em(8px);
+    margin-top: em(4px);
 }
 
 .seller-hero-wrapper {
@@ -205,7 +205,7 @@
 
     @media only screen and (min-width:900px) {
         .seller-hero-wrapper {
-            height: rem(680px);
+            // height: em(680px);
         }
     }
 }
@@ -230,7 +230,7 @@
     &.seller-name p {
         color: #fff;
         display: inline-block;
-        padding-bottom: rem(32px);
+        padding-bottom: em(32px);
     }
 
     @media only screen and (min-width:900px) {
@@ -310,26 +310,26 @@
             &.show-stars p:before {
                 background: url(https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/five_stars.e5c37f5.svg) no-repeat;
                 ;
-                background-size: rem(70px);
+                background-size: em(70px);
                 content: "";
                 display: block;
-                height: rem(17px);
+                height: em(17px);
 
                 @media only screen and (min-width:600px) {
                     .seller-hero-wrapper .seller-hero-backgrounds>div .seller-name.show-stars p:before {
-                        background-size: rem(75px);
+                        background-size: em(75px);
                     }
                 }
 
                 @media only screen and (min-width:900px) {
                     .seller-hero-wrapper .seller-hero-backgrounds>div .seller-name.show-stars p:before {
-                        background-size: rem(77px);
+                        background-size: em(77px);
                     }
                 }
 
                 @media (min-width:1440px) {
                     .seller-hero-wrapper .seller-hero-backgrounds>div .seller-name.with-brand-campaign {
-                        padding-right: rem(480px);
+                        padding-right: em(480px);
                     }
                 }
             }

@@ -10,8 +10,8 @@ export const HomePage = () => {
     return (
         <section>
             <HeroCarousel />
-            <section className="trusted-by-brands container">
-                <ul className="brands-container">
+            <section className="trusted-by-brands">
+                <ul className="brands-container container">
                     <p>Trusted By:</p>
                     <li className="trusted-by">FACEBOOK</li>
                     <li className="trusted-by">Google</li>
@@ -26,7 +26,9 @@ export const HomePage = () => {
                     <CategoriesCarousel />
             </div>
                 <SellingPropHomepage />
+                <div className="container">
                 <IconCategoriesHomepage />
+                </div>
                 <SellerSectionHomepage />
                 <TestimonialsHomepage />
         </section>

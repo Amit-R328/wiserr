@@ -23,34 +23,29 @@ export const orderService = {
     saveOrder
 }
 
-async function query(loggedInUser){
+async function query(loggedInUser, typeOf){
     // console.log('loggedInUser', loggedInUser)
     // let orders = await storageService.query('order')
     // const urlToRequest =  '/order'
     // console.log('urlToRequest', urlToRequest)
     let orders =  await httpService.get('order')
-    
-    // for(var i=0;i< orders.length;i++){
-
-    //     console.log('order buyer', orders[i].buyer)
-    //     // console.log('order seller', orders[i].seller.fullName)
-    // }
-    
-    if(!loggedInUser.isSeller) {
-        orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
+    if (typeOf === 'getBuys') {
+        if(loggedInUser.isSeller){
+            orders = orders.filter(order => {
+                console.log('orders', order.seller, loggedInUser.userName)
+                return order.seller.fullName !== loggedInUser.userName})
+        }else {
+            orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
+        }
+    }else {
+        if(loggedInUser.isSeller){
+            orders = orders.filter(order => order.seller.fullName === loggedInUser.userName)
+        }else {
+            orders = []
+        }
     }
-    
-    else {
-        orders = orders.filter(order => order.seller.fullName === loggedInUser.userName)
-        orders = orders.filter(order => {
-            console.log('orders', order.seller, loggedInUser.userName)
-            return order.seller.fullName !== loggedInUser.userName})
-        
-        return orders
-    
-    }
-    // console.log('order', orders)
     return orders
+    // console.log('order', orders)
 }
 
 async function saveOrder(gigId, loggedinUser){
@@ -67,9 +62,9 @@ async function saveOrder(gigId, loggedinUser){
     //   console.log('urlToRequest', urlToRequest)
     
     // let seller =  httpService.get('user',gig.owner._id)
-    console.log('gig.owner._id',gig.owner._id )
+    // console.log('gig.owner._id',gig.owner._id )
     let seller = await httpService.get(`user/${gig.owner._id}`)
-    console.log('seller', seller)
+    // console.log('seller', seller)
     const order =        
     {
         // "_id": utilService.makeId(),
@@ -93,11 +88,11 @@ async function saveOrder(gigId, loggedinUser){
         },
         "status": "pending"
     }
-    console.log('order', order)
+    // console.log('order', order)
     // const addedOrder = await storageService.post('order', order)
     const urlToRequest =  'order'
-    console.log('urlToRequest', urlToRequest)
+    // console.log('urlToRequest', urlToRequest)
     let addedOrder =  httpService.post(urlToRequest,order)
-    console.log('addedOrder', addedOrder)
+    // console.log('addedOrder', addedOrder)
     return addedOrder
 }
