@@ -3,7 +3,7 @@
     // height: em(705px);
     background-color: #f1fdf7;
     padding-top: em(96px);
-    // padding-bottom: em(96px);
+    padding-bottom: em(96px);
 
 
     .selling-proposition {
@@ -20,6 +20,9 @@
         grid-column: 1 / 1;
         padding-bottom: em(48px);
         // padding-left: em(68px);
+        padding-right: em(68px);
+        font-size: em(16px);
+
 
         h2 {
             font-size: em(32px);
@@ -30,34 +33,32 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             font-weight: bold;
-            color: #404145;
+            color: #62646a;
         }
 
         li {
-            padding-bottom: em(20px);
+            padding-bottom: em(24px);
 
             &:last-child {
                 padding-bottom: 0;
             }
 
             h6 {
-                padding-bottom: em(8px);
+                // padding-bottom: em(8px);
                 display: flex;
                 align-items: flex-start;
                 font-size: em(18px);
-                line-height: em(26px);
                 color: #62646a;
 
                 .check-icon {
                     margin-right: em(10px);
-                    font-size: em(18px);
                     color: #62646a;
                 }
             }
 
             p {
                 font-size: em(18px);
-                line-height: em(26px);
+                // line-height: em(26px);
                 color: #62646a;
             }
         }

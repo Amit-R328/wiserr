@@ -12,10 +12,12 @@
     position: fixed;
     z-index: 10;
 
+
     &.scrolled {
       background-color: #fff;
 
       .top {
+        margin: 0;
 
         .logo-search-container {
           .logo {
@@ -33,7 +35,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0;
+      // padding: 0;
+      // margin: 0;
 
       .logo-search-container {
         display: flex;
@@ -59,16 +62,8 @@
           @include from-mobile-layout {
             display: block;
           }
-
         }
       }
-    }
-
-    .bottom {
-      display: flex;
-      align-items: center;
-      border-top: 1px solid $grey_400;
-      border-bottom: 1px solid $grey_400;
     }
   }
 
@@ -82,7 +77,6 @@
     // margin-right: 5em;
     // margin-left: 2.5em;
   }
-
 
   .search-btn {
     height: 34px;
