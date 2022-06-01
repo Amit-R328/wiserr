@@ -4,8 +4,8 @@ import { setFilter, loadGigs } from "../store/actions/gig.actions.js";
 
 class _BudgetFilter extends React.Component{
     state = {
-        min: "",
-        max: ""
+        min: 0,
+        max: Infinity
     }
 
     componentDidUpdate(prevProps) {
@@ -31,7 +31,7 @@ class _BudgetFilter extends React.Component{
     }
 
     onClearBudget = () => {
-        this.setState((prevState) => ({...prevState, min: "", max: ""}))
+        this.setState((prevState) => ({...prevState, min: 0, max: Infinity}))
     }
 
     render(){
@@ -39,11 +39,11 @@ class _BudgetFilter extends React.Component{
             <section className="budget-filter flex">
                 <div className="input-wrapper flex">
                     <label htmlFor="min">Min:</label>
-                    <input type="text" name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min}/>
+                    <input type="number" name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min}/>
                 </div>
                 <div className="input-wrapper flex">
                     <label htmlFor="max">Max:</label>
-                    <input type="text" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max}/>
+                    <input type="number" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max}/>
                 </div>
                 <button className="close-btn" onClick={this.onClearBudget}>clear</button>
                 <button className="apply-filters-btn" onClick={this.onApplyBudget}>Apply</button>

@@ -4,7 +4,7 @@ import { setFilter, loadGigs } from "../store/actions/gig.actions.js";
 
 class _DeliveryDateFilter extends React.Component{
     state = {
-        deliveryDays: 100,
+        deliveryDays: 0,
     }
 
     componentDidUpdate(prevProps) {
@@ -21,29 +21,24 @@ class _DeliveryDateFilter extends React.Component{
     
     onApplyDeliveyFilter = () => {
         const {filterBy} = this.props
-        let {deliveryDays} = this.state
-        this.props.setFilter({ ...filterBy, priceMin: min, priceMax: max})
-        console.log('ON APPLY BUDGET', this.props.filterBy)
+
+        this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays})
         this.props.loadGigs()
     }
 
-    onClearBudget = () => {
-        this.setState((prevState) => ({...prevState, min: "", max: ""}))
+    onClearDeliveryDate = () => {
+        this.setState((prevState) => ({...prevState, deliveryDate: 0}))
     }
 
     render(){
         return(
-            <section className="budget-filter flex">
+            <section className="deliveryTime-filter flex">
                 <div className="input-wrapper flex">
-                    <label htmlFor="min">Min:</label>
-                    <input type="text" name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min}/>
+                    <label htmlFor="deliveryDays">Deliverd by:</label>
+                    <input type="number" name="deliveryDays" onChange={this.handleChange} value={this.state.deliveryDays}/>
                 </div>
-                <div className="input-wrapper flex">
-                    <label htmlFor="max">Max:</label>
-                    <input type="text" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max}/>
-                </div>
-                <button className="close-btn" onClick={this.onClearBudget}>clear</button>
-                <button className="apply-filters-btn" onClick={this.onApplyBudget}>Apply</button>
+                <button className="close-btn" onClick={this.onClearDeliveryDate}>clear</button>
+                <button className="apply-filters-btn" onClick={this.onApplyDeliveyFilter}>Apply</button>
             </section>
         )
     }
