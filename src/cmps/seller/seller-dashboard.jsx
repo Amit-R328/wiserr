@@ -21,7 +21,7 @@ export const SellerDashboard = (props) => {
     
     return (
         <div className="b-solutions">
-            Hello from business dashboard
+            Hello from Seller dashboard
             <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>

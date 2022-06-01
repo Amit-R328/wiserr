@@ -1,9 +1,9 @@
-.business-homepage-app-header {
+.seller-homepage-app-header {
     height: rem(680px);
     width: 100%;
     margin-top: 0 !important;
 
-    .business-main-header {
+    .seller-main-header {
         padding-left: 13.25%;
         padding-right: 13.25%;
         margin-bottom: 0 !important;
@@ -14,7 +14,7 @@
         margin-top: 0 !important;
 
 
-        &.business-sticky {
+        &.seller-sticky {
             background-color: #ffffff;
             position: fixed;
             width: 100%;
@@ -22,7 +22,7 @@
             display: block;
             margin-top: 0 !important;
 
-            .business-header-row {
+            .seller-header-row {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -47,7 +47,7 @@
                 display: none;
             }
 
-            .business-logo-main-header {
+            .seller-logo-main-header {
                 // height: auto;
                 margin:rem(4px) 0 0;
                 min-width: rem(121px);
@@ -56,7 +56,7 @@
                 cursor: pointer;
             }
 
-            .business-wiserr-header-search-animated {
+            .seller-wiserr-header-search-animated {
 
                 // display: none;
                 @media screen and (min-width: 600px) {
@@ -68,7 +68,7 @@
                     // visibility: hidden;
                     transition: opacity 250ms ease;
 
-                    &.business-wiserr-header-search-animated {
+                    &.seller-wiserr-header-search-animated {
                         visibility: visible;
                         opacity: 1;
                     }
@@ -79,12 +79,12 @@
                 }
             }
 
-            .business-search-bar-package {
+            .seller-search-bar-package {
                 display: flex;
                 position: relative;
                 height: rem(34px);
 
-                .business-search-bar-package form .business-search-bar-icon {
+                .seller-search-bar-package form .seller-search-bar-icon {
                     position: absolute;
                     z-index: 5;
                     top: rem(8px);
@@ -93,7 +93,7 @@
                     height: rem(16px);
                 }
 
-                .business-search-bar-package form input {
+                .seller-search-bar-package form input {
                     -webkit-box-flex: 1;
                     flex: 1 1 auto;
                     padding: rem(7px) rem(7px) rem(7px) rem(28px);
@@ -103,12 +103,12 @@
                 }
 
                 @media screen and (min-width: 1160px) {
-                    .business-search-bar-package form input {
+                    .seller-search-bar-package form input {
                         border-right: 0;
                         border-radius: rem(3px) 0 0 rem(3px);
                     }
 
-                    .business-search-bar-package .business-submit-button:not(.minimal) {
+                    .seller-search-bar-package .seller-submit-button:not(.minimal) {
                         padding: rem(8px) rem(16px);
                         display: block;
                         font-size: rem(14px);
@@ -118,7 +118,7 @@
                 }
 
                 @media screen and (min-width: 900px) {
-                    .business-search-bar-package form input {
+                    .seller-search-bar-package form input {
                         font-size: rem(15px);
                         padding-top: rem(8px);
                     }
@@ -138,7 +138,7 @@
             }
         }
 
-        .business-wiserr-nav {
+        .seller-wiserr-nav {
             & ul li {
                 padding: 0 rem(24px) 0 0;
                 text-align: left;
@@ -166,7 +166,7 @@
                 //     margin-left: 16px;
                 // }
 
-                .business-wiserr.nav.business-wiserr-nav-right {
+                .seller-wiserr.nav.seller-wiserr-nav-right {
                     -webkit-box-flex: 1;
                     -webkit-box-pack: end;
                     flex-grow: 1;
@@ -181,7 +181,7 @@
         color: #62646a;
     }
 
-    .business-text-body-2 {
+    .seller-text-body-2 {
         display: flex;
         flex-direction: row;
         // color: #ffffff;

@@ -5,7 +5,7 @@ import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
-import { CategoriesNavHeader } from './categories-nav-header.jsx'
+import { NavCategories } from './nav--categories.jsx'
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -89,7 +89,7 @@ export const AppHeader = (props) => {
                 <ul className="nav-list" >
 
                     <li className="display-from-md">
-                        <NavLink to="/business" className="business-nav-link nav-link">Wiserr Business</NavLink>
+                        <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink>
                     </li>
 
                     <li className="display-from-md">
@@ -124,7 +124,7 @@ export const AppHeader = (props) => {
             </div>
 
             {scrolled && <div className="bottom container">
-                <CategoriesNavHeader />
+                <NavCategories />
             </div>}
         </header>
     )

@@ -3,7 +3,7 @@ import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
-export const CategoriesNavHeader = () => {
+export const NavCategories = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
@@ -24,7 +24,6 @@ export const CategoriesNavHeader = () => {
     { name: 'Video & Animation', parameter: 'Video & Animation' },
     { name: 'Music & Audio', parameter: 'Music & Audio' },
     { name: 'Lifestyle', parameter: 'Lifestyle' }
-    // { name: 'Programming & Tech', parameter: 'Programming & Tech' }
     ]
     return (
         <div id="categories-menu container" className="categories-menu-scroll ">

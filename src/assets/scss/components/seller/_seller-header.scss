@@ -1,25 +1,25 @@
-.business-app-header {
+.seller-app-header {
   // height: 680px;
   width: 100%;
   // background-color: purple;
 
-  .business-main-header {
+  .seller-main-header {
     -webkit-transition: background-color .5s ease;
     -o-transition: background-color .5s ease;
     transition: background-color .5s ease;
     width: 100%;
 
-    &.business-sticky {
+    &.seller-sticky {
       position: sticky;
       width: 100%;
       z-index: 9999;
       display: block;
 
-      .business-header-row-wrapper {
+      .seller-header-row-wrapper {
         height: 81px;
       }
 
-      .business-header-row {
+      .seller-header-row {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -44,7 +44,7 @@
         display: none;
       }
 
-      .business-logo-main-header {
+      .seller-logo-main-header {
         // height: auto;
         margin: 4px 0 0;
         min-width: rem(121px);
@@ -81,7 +81,7 @@
   }
 }
 
-.business-wiserr-header-search-animated {
+.seller-wiserr-header-search-animated {
   display: block;
   visibility: visible;
   // visibility: hidden;
@@ -96,7 +96,7 @@
     // visibility: hidden;
     transition: opacity 250ms ease;
 
-    &.business-wiserr-header-search-animated {
+    &.seller-wiserr-header-search-animated {
       visibility: visible;
       opacity: 1;
     }
@@ -106,18 +106,18 @@
     width: 28%;
   }
 
-  .business-main-header--scrolled.business-wiserr-header-search-animated,
-  .business-main-header--scrolledLayout.business-wiserr-header-search-animated {
+  .seller-main-header--scrolled.seller-wiserr-header-search-animated,
+  .seller-main-header--scrolledLayout.seller-wiserr-header-search-animated {
     visibility: visible;
   }
 }
 
-.business-search-bar-package {
+.seller-search-bar-package {
   display: flex;
   position: relative;
   height: 34px;
 
-  .business-search-bar-package form .business-search-bar-icon {
+  .seller-search-bar-package form .seller-search-bar-icon {
     position: absolute;
     z-index: 5;
     top: rem(8px);
@@ -126,7 +126,7 @@
     height: rem(16px);
   }
 
-  .business-search-bar-package form input {
+  .seller-search-bar-package form input {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
     padding: rem(7px) rem(7px) rem(7px) rem(28px);
@@ -136,12 +136,12 @@
   }
 
   @media screen and (min-width: 1160px) {
-    .business-search-bar-package form input {
+    .seller-search-bar-package form input {
       border-right: 0;
       border-radius: rem(3px) 0 0 rem(3px);
     }
 
-    .business-search-bar-package .business-submit-button:not(.minimal) {
+    .seller-search-bar-package .seller-submit-button:not(.minimal) {
       padding: rem(8px) rem(16px);
       display: block;
       font-size: rem(14px);
@@ -151,7 +151,7 @@
   }
 
   @media screen and (min-width: 900px) {
-    .business-search-bar-package form input {
+    .seller-search-bar-package form input {
       font-size: rem(15px);
       padding-top: rem(8px);
     }

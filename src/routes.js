@@ -1,5 +1,5 @@
 import { HomePage } from './pages/homepage.jsx'
-// import { BusinessHomepage } from './cmps/business/_business-homepage.jsx'
+import { SellerHomepage } from './cmps/seller/seller-homepage.jsx'
 import { SellerDashboard } from './cmps/seller/seller-dashboard.jsx'
 import { GigPage } from './pages/gig-page.jsx'
 import { GigDetails } from './pages/gig-details.jsx'
@@ -16,11 +16,10 @@ const routes = [
         path: '/seller/add-gig',
         component: <AddGigDetailsWrapper />
     },
-    // {
-    //     path: '/business',
-    //     component: <BusinessHomepage />,
-    //     element: <BusinessHeaderHomePage />
-    // },
+    {
+        path: '/seller',
+        component: <SellerHomepage />,
+    },
     {
         path: '/profile/:userId',
         component: <UserProfile/>

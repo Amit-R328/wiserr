@@ -3,7 +3,6 @@
 @import './setup/functions';
 @import './setup/typography';
 @import './setup/variables';
-@import './setup/links';
 @import './setup/reset';
 @import './setup/mixins';
 
@@ -14,50 +13,36 @@
 
 // COMPONENTS
 @import './components/app-header';
-@import './components/categories-nav-header';
+@import './components/nav-categories';
 @import './components/profile-menu';
 @import './components/footer';
 @import './components/filter-breadcrumbs';
 @import './components/gig-list';
 @import './components/gig-preview';
-@import './components/gig-details';
 @import './components/gig-review';
-// @import './components//homepage-categories-carousel';
-// @import './components//homepage-business-info';
-// @import './components/testemonials-homepage';
 @import './components/user-profile';
-// @import './components/business-scss/business-homepage';
-// @import './components/business-scss/business-header';
-// @import './components/business-scss/business-hero';
-// @import './components/business-scss/business-homepage-header';
-// @import './components/dashboard/business-dashboard';
-@import './components/_slider';
 
 // HOMEPAGE
-@import './components/homepage/homepage';
-
 // HOMEPAGE-HEADERS
 @import './components/homepage/hero-carousel';
 @import './components/homepage/homepage-header';
 @import './components/homepage/hero-header';
 
 // HOMEPAGE-SECTIONS
-// @import './components/homepage/proposition';
 @import './components/homepage/selling-props-homepage';
 @import './components/homepage/categories-list-icons';
 @import './components/homepage/homepage-categories-carousel';
-@import './components/homepage/homepage-business-info';
 @import './components/homepage/testimonials-homepage';
 
-// BUSINESS
-// @import './components/gigs-cards-list';
-@import './components/business/business-homepage';
-@import './components/business/business-header';
-@import './components/business/business-hero';
-@import './components/business/business-homepage-header';
-@import './components/business/business-dashboard';
+// seller
+@import './components/seller/seller-homepage';
+@import './components/seller/seller-header';
+@import './components/seller/seller-hero';
+@import './components/seller/seller-homepage-header';
+@import './components/seller/seller-dashboard';
 
 // PAGES
-@import './pages/app-main';
 @import './pages/add-gig';
+@import './pages/homepage';
+@import './pages/gig-details';
 

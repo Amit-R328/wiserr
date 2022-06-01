@@ -1,7 +1,3 @@
-::selection {
-    // background-color: $bg-clr1;
-}
-
 * {
     box-sizing: border-box;
 }
@@ -17,114 +13,44 @@ body {
     height: 100vh;
     width: 100%;
     margin: 0;
-    // background-color: $bg-clr1;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;
     text-rendering: optimizeSpeed;
     font-family: roboto;
     overflow-y: scroll;
 
-    // @include for-normal-layout {
-    //     &.sidebar-open {
-    //         overflow: hidden;
-    //     }
-    // }
 }
-
-//         h1, h2, h3, h4, h5, h6 {
-//     font-weight: 500;
-//     margin: 0 0 1rem;
-//     line-height: lh(40px, 29px);
-// }
-
-// h1 {
-//     font-size: rem(60px);
-//     color: $clr7;
-// }
-
-// h2 {
-//     font-size: em(16px);
-//     margin: em(63px) 0;
-//     grid-area: title;
-//     color: $clr7;
-//     text-transform: uppercase;
-//     @include type(boldCondensed);
-// }
-
-// h3 {
-//     font-size: em(29px);
-// }
 
 img {
     width: 100%;
 }
 
-// p {
-//     color: $clr7;
-//     // margin: 0 0 16px;
-//     max-width: 60ch;
-//     @include type(light);
-//     // .main-text & {
-//     //     grid-column: 3 / 6;
-//     //     font-size: rem(22px);
-//     //     line-height: 1.384615;
-//     //     padding-inline-start: rem(30px);
-//     //     position: relative;
-
-//     //     &::after {
-//     //         content: "";
-//     //         position: absolute;
-//     //         display: block;
-//     //         top: 0;
-//     //         left: 0;
-//     //         width: 8px;
-//     //         height: 100%;
-//     //         max-height: 42px;
-//     //         background-color: $clr1;
-
-//     //         @include for-wide-layout {
-//     //             width: 10px;
-//     //         }
-//     //     }
-
-//         @include for-wide-layout {
-//             grid-column: 3 / 5;
-//             font-size: rem(26px);
-//         }
-//     // }
-// }
-
-// .btn {
-
-//     @include btn;
-
-//     &-dark {
-//         @include btn($type: dark);
-//     }
-
-//     &-light {
-//         @include btn($type: light);
-//     }
-// }
-
-
-// // links
-// a {
-//     color: $clr7;
-
-//     &.active {
-//         // background-color: $clr1;
-//         color: $clr6;
-//     }
-// }
-
-// mark {
-//     color: $clr1;
-//     background-color: transparent;
-// }
-
 a {
     text-decoration: none;
+}
+
+.app-container, .routes-container, .gigs-app-container {
+    // width: 100vw;
+    // height: 100vh;
+    // overflow-y: scroll;
+    // overflow-x: hidden;
+}
+
+
+.main-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    flex-grow: 1;
+    // height: 100vh;
+    width: 100%
+}
+
+.main-content-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
 }
 
 .sorting {

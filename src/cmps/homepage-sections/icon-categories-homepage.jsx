@@ -33,8 +33,8 @@ export const IconCategoriesHomepage = () => {
                         <ProgrammingIcon />Programming &amp; Tech</a>
                 </li>
                 <li>
-                    <a href="/categories/business">
-                        <BusinessIcon/>Business</a>
+                    <a href="/categories/seller">
+                        <BusinessIcon/>Seller</a>
                 </li>
                 <li>
                     <a href="/categories/lifestyle">
