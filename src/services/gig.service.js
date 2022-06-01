@@ -100,11 +100,11 @@ async function remove(gigId) {
 
 async function save(gig) {
     if (gig._id) {
-        console.log('BASE_URL + gig._id',BASE_URL + gig._id )
-        console.log('gig in gig service row 131',gig )
-        await httpService.put('gig',gig)
+        // console.log('BASE_URL + gig._id',BASE_URL + gig._id )
+        // console.log('gig in gig service row 131',gig )
+        await httpService.put(`gig/${gig._id}`,gig)
         // savedGig = await axios.put(BASE_URL + gig._id, gig)
-        console.log('gig',gig)
+        // console.log('gig',gig)
         return gig
         // gigChannel.postMessage(getActionUpdateGig(newGig))
     } else {
@@ -132,7 +132,7 @@ async function save(gig) {
             },
             "imgUrl": gig.imgUrl || [],
             "category": gig.category,
-            "likedByUser": []
+            "likedByUsers": []
         } 
 
         newGig = await httpService.post('gig',newGig)

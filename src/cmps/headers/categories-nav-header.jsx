@@ -23,7 +23,8 @@ export const CategoriesNavHeader = () => {
     { name: 'Writing & Translation', parameter: 'Writing & Translation' },
     { name: 'Video & Animation', parameter: 'Video & Animation' },
     { name: 'Music & Audio', parameter: 'Music & Audio' },
-    { name: 'Programming & Tech', parameter: 'Programming & Tech' }
+    { name: 'Lifestyle', parameter: 'Lifestyle' }
+    // { name: 'Programming & Tech', parameter: 'Programming & Tech' }
     ]
     return (
         <div id="categories-menu container" className="categories-menu-scroll ">
