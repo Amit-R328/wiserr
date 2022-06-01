@@ -106,7 +106,7 @@ return (
             </div>
             <div className="card-fav-price" onClick={onGoToDetails}>
                 <div className="heart-btn"><button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                    {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
+                   {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
                 </button></div>
                 {/* <div className="heart-btn"><button className="fav-btn">❤</button></div> */}
                 <div className="gig-price">

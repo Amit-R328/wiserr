@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
 import { BudgetFilter } from './budget-filter.jsx';
+import {DeliveryDateFilter} from './delivery-date-filter.jsx'
 
 export const FilterBreadCrumbs = () => {
 
     let [searchTerm] = useState('')
     let [budgetMenu, setBudgetMenu] = useState(false)
+    let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
 
@@ -35,6 +37,11 @@ export const FilterBreadCrumbs = () => {
     const onToggleBudget = () => {
         var flag = !budgetMenu;
         setBudgetMenu(flag);
+    }
+
+    const onToggleDeliveryTime = () => {
+        var flag = !deliveryDateMenu
+        setDeliveryDateMenu(flag)
     }
 
     const showSweetAlert = (ev) => {
@@ -99,8 +106,9 @@ export const FilterBreadCrumbs = () => {
                         {budgetMenu && <BudgetFilter />}
                         </div>
                         <div className="filter-floating-menu">
-                            <div className="filter-menu-title filter-menu">Delivery Time<span className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
+                            <div className="filter-menu-title filter-menu">Delivery Time<span onClick={onToggleDeliveryTime} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
                             </span>
+                            {deliveryDateMenu && <DeliveryDateFilter/>}
                             </div>
                         </div>
                     </div>
