@@ -146,7 +146,7 @@ class _AddGigDetails extends React.Component {
                                         </aside>
                                         <div className="field-content"><div className="inner-row description">
                                             <div className="description-input">
-                                                <textarea maxlength="600" minlength="150" placeholder="Share a bit about the gig, cool related, and your area of expertise." className="">
+                                                <textarea maxLength="600" minLength="150" placeholder="Share a bit about the gig, cool related, and your area of expertise." className="">
                                                 </textarea>
                                             </div>
                                             <div className="footer">
