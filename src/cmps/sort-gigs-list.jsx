@@ -16,17 +16,14 @@ export const SortGigsList = () => {
   let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
   const onHandleChange = (ev) => {
-    console.log('ev',ev )
     setSelectedOption(ev.value)
-    console.log('selectedOption', selectedOption)
     }
 
     useEffect(() => {
       filterBy = { ...filterBy, sortBy: selectedOption }
       dispatch(setFilter(filterBy))
       // dispatch(setFilter(selectedOption))  
-      dispatch(loadGigs())
-      console.log('selectedOption', selectedOption )  
+      dispatch(loadGigs()) 
     },[selectedOption])
 
   return (

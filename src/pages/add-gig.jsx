@@ -27,7 +27,6 @@ class _AddGigDetails extends React.Component {
         const field = target.name
         let value = (field === 'price' || field === 'dayToMake') ? +target.value : target.value
         if (field === 'imgUrl' && value) {
-            console.log('img')
             this.uploadImg(ev)
             this.setState(prevState => ({ ...prevState, isImg: true }))
             return
@@ -51,7 +50,7 @@ class _AddGigDetails extends React.Component {
             method: 'POST',
             body: formData
         }).then(res => res.json()).then(res => {
-            console.log('inguRL', res)
+
             this.setState(prevState => ({ gigInfo: { ...prevState.gigInfo, imgUrl: [res.url] } }))
         }).catch(err => console.error(err))
     }

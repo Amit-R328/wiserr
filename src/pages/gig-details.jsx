@@ -21,6 +21,7 @@ export const GigDetails = (props) => {
     // const {toys} = useSelector((storeState) =>  storeState.toyModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    
     const navigate = useNavigate()
     // const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const dispatch = useDispatch()
@@ -50,7 +51,7 @@ export const GigDetails = (props) => {
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
-            navigate('/profile/:userId')
+            navigate(`/profile/${loggedInUser._id}`)
         }
     }
 
@@ -58,7 +59,6 @@ export const GigDetails = (props) => {
     if (gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
-console.log('img', gig.imgUrl)
 const images = gig.imgUrl.map((img) => {
     return {original: img,thumbnail:img}
 })

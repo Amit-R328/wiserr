@@ -45,7 +45,7 @@ export const LoginSignup = () => {
             method: 'POST',
             body: formData
         }).then(res => res.json()).then(res => {
-            console.log('inguRL', res)
+            
             setImgUrl(res.url)
         }).catch(err => console.error(err))
 
@@ -63,7 +63,7 @@ export const LoginSignup = () => {
             
             // isRemember: (data.get('remember-me') !== null),
         }
-        console.log('loginInfo', loginInfo)
+    
 
         if (isLogin) {
             dispatch(login(loginInfo))
@@ -71,7 +71,7 @@ export const LoginSignup = () => {
         } else {
             loginInfo.fullname = data.get('fullname')
             loginInfo.imgUrl = imgUrl
-            console.log(' loginInfo.urlImg',  loginInfo.imgUrl)
+    
             dispatch(signup(loginInfo))
             dispatch(getLoggedinUser())
 

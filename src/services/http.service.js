@@ -11,18 +11,14 @@ var axios = Axios.create({
 
 export const httpService = {
     get(endpoint, data) {
-        // console.log('endpoint get ', endpoint)
-        // console.log('data from get', data)
         return ajax(endpoint, 'GET', data)
     },
     post(endpoint, data) {
-        // console.log('endpoint', endpoint)
-        // console.log('data', data)
+        
         return ajax(endpoint, 'POST', data)
     },
     put(endpoint, data) {
-        // console.log('endpoint', endpoint)
-        // console.log('data', data)
+        
         return ajax(endpoint, 'PUT', data)
     },
     delete(endpoint, data) {
@@ -31,8 +27,7 @@ export const httpService = {
 }
 
 async function ajax(endpoint, method = 'GET', data = null) {
-    // console.log('`${BASE_URL}${endpoint}`', `${BASE_URL}${endpoint}`)
-    // console.log('data in axios', data)
+    
     try {
         const res = await axios({
             url: `${BASE_URL}${endpoint}`,
@@ -40,7 +35,6 @@ async function ajax(endpoint, method = 'GET', data = null) {
             data,
             params: (method === 'GET') ? data : null
         })
-        // console.log('res.data of get',res.data )
         return res.data
     } catch (err) {
         console.log(`Had Issues ${method}ing to the backend, endpoint: ${endpoint}, with data: `, data)

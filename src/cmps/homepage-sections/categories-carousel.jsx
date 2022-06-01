@@ -1,7 +1,7 @@
 import React from "react";
 import "react-multi-carousel/lib/styles.css";
 
-export const HomepageCategoriesCarouselTest = (props, deviceType) => {
+export const CategoriesCarousel = (props, deviceType) => {
     return (
         <div className="slider-container">
             <div className="slick-slide1">

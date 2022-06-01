@@ -6,7 +6,7 @@ import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
 
-export const BusinessDashboard = (props) => {
+export const SellerDashboard = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
@@ -18,7 +18,6 @@ export const BusinessDashboard = (props) => {
         dispatch(loadOrders(loggedInUser))
     }, [])
     
-
     
     return (
         <div className="b-solutions">

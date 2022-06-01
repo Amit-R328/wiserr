@@ -1,13 +1,12 @@
 import {orderService} from '../../services/order.service.js'
 
 export function loadOrders(loggedInUser){
-    console.log('loggedInUser', loggedInUser)
     return async dispatch => {
         try {
             const orders = await orderService.query(loggedInUser)
-            console.log('orders', orders)
+            
             const action = {type: 'SET_ORDERS', orders}
-            console.log('action', action)
+            
             dispatch(action)               
         } catch(err) {
             console.error('Error:', err)
