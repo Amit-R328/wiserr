@@ -146,7 +146,7 @@ class _AddGigDetails extends React.Component {
                                         </aside>
                                         <div className="field-content"><div className="inner-row description">
                                             <div className="description-input">
-                                                <textarea maxlength="600" minlength="150" placeholder="Share a bit about the gig, cool related, and your area of expertise." className="">
+                                                <textarea maxLength="600" minLength="150" placeholder="Share a bit about the gig, cool related, and your area of expertise." className="">
                                                 </textarea>
                                             </div>
                                             <div className="footer">
@@ -180,7 +180,8 @@ class _AddGigDetails extends React.Component {
                                         <option value="Writing & Translation">Writing &amp; Translation</option>
                                         <option value="Video & Animation">Video &amp; Animation</option>
                                         <option value="Music & Audio">Music &amp; Audio</option>
-                                        <option value="Programming & Tech">Programming &amp; Tech</option>
+                                        <option value="Lifestyle">Lifestyle</option>
+                                        {/* <option value="Programming & Tech">Programming &amp; Tech</option> */}
                                     </select>
 
                                     <p>Origin</p>

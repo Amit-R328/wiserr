@@ -17,11 +17,9 @@ export const GigPreview = ({ gig, reviews }) => {
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
-    // console.log('price',price )
-
+    
 
     let images
-    // console.log('gig',gig )
     if (gig) {
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
@@ -31,36 +29,50 @@ export const GigPreview = ({ gig, reviews }) => {
     const onGoToDetails = (ev) => {
         console.log('event', ev)
         ev.stopPropagation()
-        // ev.preventDefault()
         navigate(`/categories/${gig._id}`)
     }
 
     const ToggleHeart = (ev, likedBy) => {
-        // ev.preventDefault()
+        
         ev.stopPropagation()
-        setLikedBy(!likedBy)
-        dispatch(getLoggedinUser())
         if (!loggedInUser) {
             console.log('Need go login')
             // showSuccessMsg('Need go login')
         } else {
-            console.log('loggedInUser', loggedInUser)
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
                 "imgUrl": loggedInUser.imgUrl
             }
 
-            console.log('likedByUser', likedByUser)
-            console.log('gig', gig)
-            if (gig.likedByUsers) gig.likedByUsers.push(likedByUser)
-            else gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
-            console.log('gig', gig)
+            //if theres is liked byUsers
+            if (gig.likedByUsers) {
+                const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
+                //if the user already did like we delte him
+                if(liked.length) {
+                  
+                    let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)                  
+                    gig.likedByUsers.splice(idx,1)
+                    setLikedBy(false)
+               
+                 } else {
+                     //else he insert into the collection
+                     gig.likedByUsers.push(likedByUser)
+                     setLikedBy(true)
+                 }
+            } else {
+                gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
+            }
             dispatch(updateGig(gig))
         }
     }
 
-    return (
+    const getLikeByUser =() => {
+        return gig.likedByUsers.some(user => user._id === loggedInUser._id )
+    }
+
+
+return (
 
         <li className="gig-preview" >
             {/* <article className="gig-card"> */}
@@ -91,7 +103,9 @@ export const GigPreview = ({ gig, reviews }) => {
                 {/* </Link> */}
             </div>
             <div className="card-fav-price" onClick={onGoToDetails}>
-                <div className="heart-btn"><button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>{(likedBy) ? <BlackHeart /> : <WhiteHeart />}</button></div>
+                <div className="heart-btn"><button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
+                    {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
+                </button></div>
                 {/* <div className="heart-btn"><button className="fav-btn">❤</button></div> */}
                 <div className="gig-price">
                     <h4 className="gig-price"><div className="price-text">STARTING AT</div>{price}</h4>
