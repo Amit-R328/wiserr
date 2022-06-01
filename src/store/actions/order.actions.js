@@ -1,31 +1,23 @@
-import {orderService} from '../../services/order.service.js'
+import { orderService } from '../../services/order.service.js'
 
-export function loadOrders(loggedInUser){
+export function loadOrders(loggedInUser) {
     return async dispatch => {
         try {
             const orders = await orderService.query(loggedInUser)
-            
-            const action = {type: 'SET_ORDERS', orders}
-            
-            dispatch(action)               
-        } catch(err) {
+            const action = { type: 'SET_ORDERS', orders }
+            dispatch(action)
+        } catch (err) {
             console.error('Error:', err)
         }
     }
 }
 
-
-
 export function onSaveOrder(gigId, loggedinUser) {
     return async (dispatch) => {
-        try {               
-            // console.log('gigId',gigId )
-            // console.log('loggedinUser', loggedinUser)
+        try {
             const order = await orderService.saveOrder(gigId, loggedinUser)
-            // console.log('order', order)
-            const action = {type: 'SET_ORDER', order}
-            // console.log('action', action)
-            dispatch(action)                           
+            const action = { type: 'SET_ORDER', order }
+            dispatch(action)
         } catch (err) {
             console.log('Cannot login', err)
         }

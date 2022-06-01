@@ -76,7 +76,7 @@ export class HeroCarousel extends React.Component {
 {/* <div className="hero-backgrounds">
                 <div className="hero max-width-container">
                     <h1 className="font-domaine">
-                        <span className="">Find the perfect <i>freelance</i><br></br> services for your business</span>
+                        <span className="">Find the perfect <i>freelance</i><br></br> services for your seller</span>
                     </h1>
                     <div className="hero-search-bar-package hero-search_bar-package">
                         <form className="">
@@ -109,7 +109,7 @@ export class HeroCarousel extends React.Component {
                                     <a href="/categories/graphics-design" className="text-body-2">Logo Design</a>
                                 </li>
                                 <li>
-                                    <a href="/search/business" className="text-body-2">NFT Art</a>
+                                    <a href="/search/seller" className="text-body-2">NFT Art</a>
                                 </li>
                             </ul>
                         </div>
