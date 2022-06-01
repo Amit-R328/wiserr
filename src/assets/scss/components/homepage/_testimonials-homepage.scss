@@ -1,19 +1,14 @@
 .testimonials {
     color: #62646a;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    display: flex !important;
-    -webkit-box-align: center;
+    display: flex;
     align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-direction: row;
-    height: em(291px);
-    margin: em(96px);
+    // height: em(291px);
+    // margin: em(96px);
     gap: 3em;
-    margin-left: 13.25%;
-    margin-right: 13.25%;
-
+    // margin-left: 13.25%;
+    // margin-right: 13.25%;
+    padding: 0;
 
     .video-modal .testimonial-modal {
         color: #62646a;

@@ -2,10 +2,11 @@
 .hero-backgrounds {
     width: 100%;
     // background-color: #023a15;
+    padding: 0;
 
     &.hero {
         & h1 {
-            padding-bottom: rem(32px);
+            padding-bottom: em(32px);
             color: #fff;
         }
     }

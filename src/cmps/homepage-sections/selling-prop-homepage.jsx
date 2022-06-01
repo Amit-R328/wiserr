@@ -4,7 +4,7 @@ import { VCircle } from '../../services/svg.service.js'
 export const SellingPropHomepage = () => {
     return (
         <div className="selling-proposition-wrapper container ">
-            <div className="selling-proposition container">
+            <div className="selling-proposition">
                 <div className="selling-text">
                     <h2>A whole world of freelance talent<br></br>at your fingertips</h2>
                     <ul>

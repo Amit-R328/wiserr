@@ -19,7 +19,7 @@
     .selling-text {
         grid-column: 1 / 1;
         padding-bottom: em(48px);
-        padding-left: em(68px);
+        // padding-left: em(68px);
 
         h2 {
             font-size: em(32px);
@@ -64,6 +64,6 @@
     }
 
     & img {
-        padding-right: em(68px);
+        // padding-right: em(68px);
     }
 }
