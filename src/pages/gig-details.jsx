@@ -1,29 +1,21 @@
 
-import { gigService } from '../services/gig.service.js';
-import { NavLink, useParams } from 'react-router-dom';
-import React, { useEffect, useState, Component } from 'react';
-import { connect, useSelector, useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+import { useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { showSuccessMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
 import { GigReview } from '../cmps/gig-review.jsx';
-import { AppHeader } from '../cmps/headers/app-header.jsx'
-import { NavCategories } from '../cmps/headers/nav--categories.jsx'
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import Sliders from '../cmps/carousel-list-details/sliders.js';
 import ImageGallery from 'react-image-gallery';
-// import { useNavigate } from 'react-router-dom'
 
 export const GigDetails = (props) => {
 
-    // const { user } = useSelector((storeState) => storeState.userModule)
-    // const {toys} = useSelector((storeState) =>  storeState.toyModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
 
     const navigate = useNavigate()
-    // const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const dispatch = useDispatch()
     const params = useParams()
 
@@ -42,15 +34,12 @@ export const GigDetails = (props) => {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
-
     const onConfirmOrder = (ev, gigId) => {
-        // console.log('gigId', gigId)
-        // console.log('loggedInUser', loggedInUser)
         if (!loggedInUser) {
-            // console.log('in')
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
+            console.log('loggedInUser._id',loggedInUser._id )
             navigate(`/profile/${loggedInUser._id}`)
         }
     }
@@ -59,9 +48,11 @@ export const GigDetails = (props) => {
     if (gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
+
     const images = gig.imgUrl.map((img) => {
         return { original: img, thumbnail: img }
     })
+    
     return (
         <React.Fragment>
             <div className="app-header">
@@ -74,7 +65,6 @@ export const GigDetails = (props) => {
                             <div className="owner-details owner-container" >
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
-
                             </div>
                             <div>
                                 <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />
@@ -140,7 +130,6 @@ export const GigDetails = (props) => {
                             })}
                         </section> : <p>Be the first to review</p>}
                     </div>
-
                     <div className="sticky-outer-wrapper-gig-buy">
                         <div className="sticky-inner-wrapper-gig-buy">
                             <aside className="sidebar-content">
@@ -169,5 +158,4 @@ export const GigDetails = (props) => {
             </section >
         </React.Fragment >
     )
-
 }
