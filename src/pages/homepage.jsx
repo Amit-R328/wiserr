@@ -22,23 +22,13 @@ export const HomePage = () => {
             </section>
 
             <div className="gig-slider-container container">
-                <div className="subcategory-carousel">
                     <h2>Popular professional services</h2>
                     <CategoriesCarousel />
-                </div>
             </div>
-            <div>
                 <SellingPropHomepage />
-            </div>
-            <div>
                 <IconCategoriesHomepage />
-            </div>
-            <div>
                 <SellerSectionHomepage />
-            </div>
-            <div>
                 <TestimonialsHomepage />
-            </div>
         </section>
     )
 }
