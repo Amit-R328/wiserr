@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 export const ProfileMenu = ({onLogout, user, closeMenu}) => {
+    console.log('user',user )
     return (
         <div className="profile-menu">
             <div className="Menu-subcategory"></div>
