@@ -12,9 +12,8 @@ export class RootCmp extends React.Component {
     render() {
         return (
             <section className="app-container">
-                <AppHeader/>
+                <AppHeader />
                 <main className="routes-container">
-
                     <Routes>
                         {routes.map(route =>
                             <Route key={route.path}
@@ -22,15 +21,11 @@ export class RootCmp extends React.Component {
                                 element={route.component}
                                 path={route.path} />)}
                         <Route path="user/:id" element={<UserDetails />} />
-                        {/* <Route path="/" element={<AppHeader />} /> */}
-                        {/* <Route path exact="/" element={<AppHeaderHomePage />} /> */}
                     </Routes>
                     <div className="footer-container">
                         <AppFooter />
                     </div>
                 </main>
-
-
             </section>
         )
     }
