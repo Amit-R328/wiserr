@@ -1,12 +1,12 @@
 import { height } from '@mui/material/node_modules/@mui/system'
-import { ArrowDown, PathArrow, PathArrow2, VideoIcon } from '../services/svg.service.js'
-import { SortGigsList } from './sort-gigs-list.jsx'
+import { ArrowDown, PathArrow, PathArrow2, VideoIcon } from '../../services/svg.service.js'
+import { SortGigsList } from '../sort-gigs-list.jsx'
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import Swal from 'sweetalert2'
-import { BudgetFilter } from './budget-filter.jsx';
-import {DeliveryDateFilter} from './delivery-date-filter.jsx'
+import { BudgetFilter } from '../filters/budget-filter.jsx';
+import {DeliveryDateFilter} from '../filters/delivery-date-filter.jsx'
 
 export const FilterBreadCrumbs = () => {
 
