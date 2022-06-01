@@ -39,6 +39,7 @@ export const GigPreview = ({ gig, reviews }) => {
             console.log('Need go login')
             // showSuccessMsg('Need go login')
         } else {
+            console.log('loggedInUser', loggedInUser)
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
@@ -68,6 +69,7 @@ export const GigPreview = ({ gig, reviews }) => {
     }
 
     const getLikeByUser =() => {
+        console.log('loggedInUser._id',loggedInUser._id )
         return gig.likedByUsers.some(user => user._id === loggedInUser._id )
     }
 
@@ -104,7 +106,7 @@ return (
             </div>
             <div className="card-fav-price" onClick={onGoToDetails}>
                 <div className="heart-btn"><button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                    {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
+                   {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
                 </button></div>
                 {/* <div className="heart-btn"><button className="fav-btn">❤</button></div> */}
                 <div className="gig-price">

@@ -39,6 +39,7 @@ export const GigDetails = (props) => {
             showSuccessMsg('Need go login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
+            console.log('loggedInUser._id',loggedInUser._id )
             navigate(`/profile/${loggedInUser._id}`)
         }
     }
