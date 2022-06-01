@@ -37,7 +37,7 @@ class _BudgetFilter extends React.Component {
     render() {
         return (
             <section className="budget-filter">
-                <div className="input-wrappers">
+                <div className="input-wrappers flex">
                     <div className="input-wrapper">
                         <label htmlFor="min">Min:</label>
                         <input type="number" name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min} />
