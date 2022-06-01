@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { CategoriesNavHeader } from '../cmps/headers/categories-nav-header.jsx'
 import { HeroCarousel } from '../cmps/headers/hero-carousel.jsx'
 import { AppHeaderHomePage } from '../cmps/headers/app-header-homepage.jsx'
-import { HomepageCategoriesCarouselTest } from '../cmps/homepage-sections/homepage-categories-carousel-copy.jsx'
+import { CategoriesCarousel } from '../cmps/homepage-sections/categories-carousel.jsx'
 // import { HomepageCategoriesCarousel } from '../cmps/homepage-sections/homepage-categories-carousel.jsx'
 import { SellingPropHomepage } from '../cmps/homepage-sections/selling-prop-homepage.jsx'
 import { TestimonialsHomepage } from '../cmps/homepage-sections/testimonials-homepage.jsx'
@@ -24,7 +24,8 @@ export const HomePage = (props, onChangeCategory) => {
 
                     <div className="main-header sticky">
                         <div>
-                        <AppHeaderHomePage />
+                            
+                        {/* <AppHeaderHomePage /> */}
                         <span className="line-sep"></span>
                         <CategoriesNavHeader onChangeCategory={onChangeCategory} />
                         <span className="line-sep"></span>
@@ -53,7 +54,7 @@ export const HomePage = (props, onChangeCategory) => {
                 <div className="gig-slider-container max-width-container">
                     <div className="subcategory-carousel">
                         <h2>Popular professional services</h2>
-                        <HomepageCategoriesCarouselTest />
+                        <CategoriesCarousel />
                     </div>
                 </div>
             </div>

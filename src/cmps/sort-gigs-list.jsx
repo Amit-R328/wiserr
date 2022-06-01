@@ -29,11 +29,12 @@ export const SortGigsList = () => {
   return (
     <div className="select-sort-gigs-list">
       <Select
-        defaultValue={selectedOption}
+        defaultValue={'title'}
         onChange={onHandleChange}
         // onClick={() => onHandleChange}
         options={options}
-        // placeholder="Newest Arrivals"        
+        placeholder="Title"        
+        // inputValue={selectedOption}
       />
     </div>
   );

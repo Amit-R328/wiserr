@@ -1,0 +1,23 @@
+@mixin from-mobile-layout{
+    @media (min-width: $mobile-viewport){
+        @content;
+    }
+}
+
+@mixin from-narrow-layout{
+    @media (min-width: $narrow-viewport){
+        @content;
+    }
+}
+
+@mixin from-normal-layout{
+    @media (min-width: $normal-viewport){
+        @content;
+    }
+}
+
+@mixin from-wide-layout{
+    @media (min-width: $wide-viewport){
+        @content;
+    }
+}

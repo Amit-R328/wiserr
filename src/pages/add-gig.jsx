@@ -72,6 +72,7 @@ class _AddGigDetails extends React.Component {
                 owner: this.props.loggedInUser
             }
         })
+        // this.props.onUpdateUser({isSeller:true})
         this.props.navigation('/')
     }
 
@@ -109,19 +110,54 @@ class _AddGigDetails extends React.Component {
                         <div className="gig-details">
                             <section className="add-gig">
                                 <form className="gig-form" onSubmit={this.handleSubmit}>
+
                                     <div className="gig-details-header"><h2>Gig Info</h2>
                                         <p>Tell us a bit about yourself. This information will appear on your public profile,<br></br>so that potential buyers can get to know you better.</p>
                                     </div>
+
                                     <div className="gig-image-upload">
-                                        <p>Picture (optional)</p>
-                                        <p>Upload an image of you'r work</p>
-                                        <label className='file-img'>
-                                            {!isImg ? '+' : <img src={`${gigInfo.imgUrl}`} alt="" />}
-                                            <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
-                                            <label htmlFor='title'>Title of your Gig</label>
-                                        </label>
+                                        <aside className="">
+                                            <h3>
+                                                <span className="">Picture (optional)</span>
+                                                <div className="popup-text">Add pictures of your gig so customers will know exactly what they'll be getting.</div>
+                                            </h3>
+                                        </aside>
+
+                                        <div className="img-content">
+                                            <section className="gig-photos">
+                                                <label className='file-img' />
+                                                {!isImg ? <span className="missing-gig-image"></span> : <img src={`${gigInfo.imgUrl}`} alt="" />}
+
+                                                <input className='file-input' accept="image/png,image/jpeg" type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
+                                            </section>
+                                        </div>
                                     </div>
-                                    <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={gigInfo.gigTitle} onChange={this.handleChange} />
+
+                                    <div className="add-gig-title">
+                                        <label htmlFor='title'>Gig Title</label>
+                                        <input type="text" id='title' required name="gigTitle" placeholder='I will...' value={gigInfo.gigTitle} onChange={this.handleChange} />
+                                    </div>
+
+                                    <div id="description" className="onboarding-field is-required">
+                                        <aside className="">
+                                            <h3 className="font-accent">
+                                                <span className="">Description</span>
+                                            </h3>
+                                        </aside>
+                                        <div className="field-content"><div className="inner-row description">
+                                            <div className="description-input">
+                                                <textarea maxlength="600" minlength="150" placeholder="Share a bit about the gig, cool related, and your area of expertise." className="">
+                                                </textarea>
+                                            </div>
+                                            <div className="footer">
+                                                <span className="">min. 150 characters</span><span className="char-count">0 / 600</span>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+
+
                                     <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
                                     <label className="description">
                                         <textarea className='desc' required type={'txt'} name='gigDescription' value={gigInfo.gigDescription} onChange={this.handleChange}></textarea>
@@ -132,8 +168,10 @@ class _AddGigDetails extends React.Component {
                                     <textarea name='whatDoYouGet' value={gigInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
                                     <label htmlFor='price'>Price</label>
                                     <input type="number" id='price' name='price' required onChange={this.handleChange} />
+                                    
                                     <label htmlFor='daysToMake'>Delivery Date</label>
                                     <input type="number" id="daysToMake" name="daysToMake" required onChange={this.handleChange} />
+
                                     <p>Category</p>
                                     <select className='select-field' value={gigInfo.category} name="category" onChange={this.handleChange}>
                                         <option value=""></option>
@@ -144,6 +182,7 @@ class _AddGigDetails extends React.Component {
                                         <option value="Music & Audio">Music &amp; Audio</option>
                                         <option value="Programming & Tech">Programming &amp; Tech</option>
                                     </select>
+
                                     <p>Origin</p>
                                     <select className="select-field" vlaue={gigInfo.origin} name="origin" onChange={this.handleChange}>
                                         <option value=""></option>
@@ -176,7 +215,9 @@ const MapStateToProps = (storeState) => {
 }
 
 const mapDispatchToProps = {
-    saveGig
+    saveGig,
+    // onUpdateUser
+
 }
 
 export const AddGigDetails = connect(
