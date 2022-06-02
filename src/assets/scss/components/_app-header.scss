@@ -12,6 +12,24 @@
     position: fixed;
     z-index: 10;
 
+    &.categories-header {
+      background-color: #fff;
+
+      .top {
+        margin: 0;
+
+        .logo-search-container {
+          .logo {
+            svg {
+              path:nth-child(1) {
+                fill: unset;
+              }
+            }
+          }
+        }
+      }
+    }
+
 
     &.scrolled {
       background-color: #fff;

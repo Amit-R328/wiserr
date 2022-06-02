@@ -20,7 +20,7 @@ export const GigPage = (onChangeCategory) => {
             <div className="main-wrapper">
                 <div className="app-header">
                     <div className="main-header sticky">
-                        <NavCategories onChangeCategory={onChangeCategory} />
+                        {/* <NavCategories onChangeCategory={onChangeCategory} /> */}
                     </div>
                 </div>
                 <div>
