@@ -156,8 +156,6 @@ class _AddGigDetails extends React.Component {
                                         </div>
                                     </div>
 
-
-
                                     <p className="title">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
                                     <label className="description">
                                         <textarea className='desc' required type={'txt'} name='gigDescription' value={gigInfo.gigDescription} onChange={this.handleChange}></textarea>

@@ -78,7 +78,7 @@ export function LogoFull2() {
     )
 }
 
-export function Search() {
+export function SearchIcon() {
     return (
         <svg viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false">
             <g fill="none">

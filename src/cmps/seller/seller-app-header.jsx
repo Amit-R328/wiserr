@@ -52,8 +52,6 @@ export const SellerAppHeader = (props) => {
                         <span className="seller seller-search-bar-icon" aria-hidden="true">
                             <SearchBar />
                         </span>
-                        {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
-                                    <button className="co-white seller-submit-button bg-co-green-700">Search</button> */}
                         <Search />
                     </form>
                 </div>
@@ -65,10 +63,6 @@ export const SellerAppHeader = (props) => {
                     <li className="seller-display-from-md seller-display-from-md">
                         <NavLink to="/seller" className="seller-homepage-nav-link seller-nav-link" target="_blank" ><SellerHomepage /> Wiserr Seller</NavLink>
                     </li>
-
-                    {/* <li className="seller-display-from-md display-from-md clean-list">
-                            <NavLink to="/seller-solutions" className="seller-dashboard-nav-link nav-link" target="_blank" ><SellerSolutions /> Seller Solutions</NavLink>
-                        </li> */}
 
                     <li className="seller-display-from-sm seller-display-from-sm">
                         <a href="/login" rel="nofollow" className="seller-js-open-popup-login seller-nav-link">Sign in</a>

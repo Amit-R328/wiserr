@@ -72,8 +72,6 @@ export const AppHeader = (props) => {
                             <SearchBar />
                         </span>
                         <Search />
-                        {/* <input type="search" autoComplete="off" placeholder="Find services" value="" />
-                                    <button className="co-white submit-button bg-co-green-700">Search</button> */}
                     </form>
                 </div>
 
