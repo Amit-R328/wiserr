@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { showSuccessMsg } from '../services/event-bus.service.js'
+import { eventBusService, showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
 import { loadOrders } from '../store/actions/order.actions.js'
@@ -12,6 +12,8 @@ import { GigReview } from '../cmps/gig-review.jsx';
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import ImageGallery from 'react-image-gallery';
+
+
 
 export const GigDetails = (props) => {
 
@@ -61,7 +63,8 @@ export const GigDetails = (props) => {
 
     const onConfirmOrder = (ev, gigId) => {
         if (!loggedInUser) {
-            showSuccessMsg('Need go login')
+            // showSuccessMsg('Need to login')
+            showErrorMsg('Need to login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
             // console.log('loggedInUser._id',loggedInUser._id )
