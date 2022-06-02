@@ -36,7 +36,7 @@ export const UserProfile = () => {
                     {(orders.length) ?
                         <div>
                             <h1>Your orders:</h1>
-                            {orders.map(order => <div key={order._id}><h4>{order.gig.description}</h4>
+                            {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4>
                                 <h5>{order.seller.fullName}</h5>
                                 <h5>{order.gig.price}</h5>
                                 <h5>{utilService.setDateTime(order.createdAt)}</h5>
