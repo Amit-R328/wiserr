@@ -39,7 +39,9 @@ export const GigDetails = (props) => {
 
     const getUser = async () => {
         const userId = gig.owner._id
+        console.log('userId', userId)
         const user = await loadUser(userId)
+        console.log('user', user)
         setUser(user)
     }
 

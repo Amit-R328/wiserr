@@ -29,11 +29,13 @@ async function query(loggedInUser, typeOf){
     // const urlToRequest =  '/order'
     // console.log('urlToRequest', urlToRequest)
     let orders =  await httpService.get('order')
+    
     if (typeOf === 'getBuys') {
         if(loggedInUser.isSeller){
             orders = orders.filter(order => {
                 console.log('orders', order.seller, loggedInUser.userName)
-                return order.seller.fullName !== loggedInUser.userName})
+                return order.buyer.fullName === loggedInUser.userName})
+                console.log('orders',orders )
         }else {
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }
@@ -55,7 +57,7 @@ async function saveOrder(gigId, loggedinUser){
     //   console.log('urlToRequest', urlToRequest)
     // let gig =  await httpService.get('gig',gigId)
     let gig = await httpService.get(`gig/${gigId}`)
-     
+     console.log('gig', gig)
 
     // const seller = await storageService.get('user',gig.owner._id)
     // urlToRequest = BASE_URL + 'user'
@@ -63,7 +65,9 @@ async function saveOrder(gigId, loggedinUser){
     
     // let seller =  httpService.get('user',gig.owner._id)
     // console.log('gig.owner._id',gig.owner._id )
-    let seller = await httpService.get(`user/${gig.owner._id}`)
+    // let seller = await httpService.get(`user/${gig.owner._id}`)
+    // console.log('seller', seller)
+    console.log('gig.owner',gig.owner )
     // console.log('seller', seller)
     const order =        
     {
@@ -91,8 +95,9 @@ async function saveOrder(gigId, loggedinUser){
     // console.log('order', order)
     // const addedOrder = await storageService.post('order', order)
     const urlToRequest =  'order'
-    // console.log('urlToRequest', urlToRequest)
-    let addedOrder =  httpService.post(urlToRequest,order)
-    // console.log('addedOrder', addedOrder)
+    console.log('urlToRequest', urlToRequest)
+    console.log('order', order)
+    let addedOrder =  await httpService.post(urlToRequest,order)
+    console.log('addedOrder', addedOrder)
     return addedOrder
 }
