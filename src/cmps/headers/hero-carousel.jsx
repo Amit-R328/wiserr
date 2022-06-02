@@ -116,7 +116,9 @@ export function HeroCarousel(props) {
           <div className="hero-content-container container">
               <div className='hero-content'>
                   <h1>Find the perfect <i>freelance</i> <br></br>services for your business</h1>
+                  <form className="search-bar">
                   <Search placeholder='Try "designing business logo"' />
+                    </form>
               </div>
               <div className="static-background"></div>
 
