@@ -24,10 +24,12 @@ export const Search = () => {
 
     return (
         <React.Fragment>
-            <label>
-                <input type="search" className="search-input" onChange={handleChange} placeholder="Find services" />
-            </label>
-            <button className="co-white submit-button bg-co-green-700 search-btn" onClick={onSearch}>Search</button>
+            <div className="search-container">
+                <label>
+                    <input type="search" className="search-input" onChange={handleChange} placeholder="Find services"/>                
+                </label>
+                    <button className="co-white submit-button bg-co-green-700 search-btn" onClick={onSearch}>Search</button>
+            </div>
         </React.Fragment>
     )
 

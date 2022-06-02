@@ -34,11 +34,12 @@ export const UserProfile = () => {
                 </div>
                 <div className='profile-right-container'>
                     {(orders.length) ?
-                        <div>
+                        <div className='user-profile-card'>
                             <h1>Your orders:</h1>
                             {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4>
-                                <h5>{order.seller.fullName}</h5>
+                                <label>Seller: <h5>{order.seller.fullName}</h5></label>
                                 <h5>{order.gig.price}</h5>
+                                <h5>{order.status}</h5>
                                 <h5>{utilService.setDateTime(order.createdAt)}</h5>
                                 <h5>{utilService.setDateTime(order.deliveryDate)}</h5></div>)}
                         </div> :
