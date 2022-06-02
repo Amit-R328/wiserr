@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { eventBusService, showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
+import {  showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
 import { loadOrders } from '../store/actions/order.actions.js'
@@ -12,6 +12,7 @@ import { GigReview } from '../cmps/gig-review.jsx';
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import ImageGallery from 'react-image-gallery';
+import { UserMsg } from '../cmps/user-msg.jsx';
 
 
 
@@ -63,12 +64,17 @@ export const GigDetails = (props) => {
 
     const onConfirmOrder = (ev, gigId) => {
         if (!loggedInUser) {
-            // showSuccessMsg('Need to login')
+            console.log('Need to login')
             showErrorMsg('Need to login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
-            // console.log('loggedInUser._id',loggedInUser._id )
-            navigate(`/profile/${loggedInUser._id}`)
+            showSuccessMsg('Order was created')
+            // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
+            // clearInterval(msgInterval);
+            
+            setTimeout(() => {
+                navigate(`/profile/${loggedInUser._id}`)                
+            }, 4000);
         }
     }
 
@@ -185,6 +191,7 @@ export const GigDetails = (props) => {
                         </div>
                     </div>
                 </div>
+                <UserMsg/>  
             </section >
         </React.Fragment >
     )

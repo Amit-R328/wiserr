@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect } from 'react';
 import { loadOrders } from '../store/actions/order.actions.js';
 import { userService } from '../services/user.service.js';
-import { getLoggedinUser } from '../store/actions/user.actions.js';
+// import { getLoggedinUser } from '../store/actions/user.actions.js';
 import { utilService } from '../services/util.service.js';
 
 export const UserProfile = () => {
@@ -14,7 +14,8 @@ export const UserProfile = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        let user = { type: 'buyer', fullName: loggedInUser.userName }
+        //2.6.22 rinat close no one use
+        // let user = { type: 'buyer', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser,'getBuys'))
         // console.log(orders)
         orders = orders.filter(order => order.seller !== loggedInUser.userName)

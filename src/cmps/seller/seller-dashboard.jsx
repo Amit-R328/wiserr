@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect } from 'react';
-import { loadOrders } from '../../store/actions/order.actions';
+import { loadOrders, onUpdateOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
@@ -25,6 +25,7 @@ export const SellerDashboard = (props) => {
         const value = ev.target.value
         order.status = value        
         setOrder(order)        
+        dispatch(onUpdateOrder(order))
     }  
 
     useEffect(() => {
@@ -35,14 +36,8 @@ export const SellerDashboard = (props) => {
 
 
     return (
-<<<<<<< HEAD
-        <div className="b-solutions">
-          
-            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
-=======
         <div className="seller-dashboard-container container">
-            <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
->>>>>>> 0acdaa1efad349bddbc0200c0c3edf76e618093f
+            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>

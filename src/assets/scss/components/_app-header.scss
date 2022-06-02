@@ -133,11 +133,12 @@
     padding: 10px;
     font-size: 1.4em;
     position: fixed;
-    top: 0;
+    top: 72px;
     right: 0;
     background-color: grey;
     border: 1px solid transparent;
     border-radius: 4px;
+    z-index: 100;
   }
 
   .user-msg button {
