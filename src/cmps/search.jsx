@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
+import { SearchIcon } from '../services/svg.service.js'
 
 export const Search = () => {
     const [searchResults, setSearchResults] = useState('')
@@ -24,10 +25,13 @@ export const Search = () => {
 
     return (
         <React.Fragment>
+            <div className="search-container">
+            <SearchIcon/>
             <label>
                 <input type="search" className="search-input" onChange={handleChange} placeholder="Find services" />
             </label>
-            <button className="co-white submit-button bg-co-green-700 search-btn" onClick={onSearch}>Search</button>
+            <button className="submit-button search-btn" onClick={onSearch}>Search</button>
+            </div>
         </React.Fragment>
     )
 

@@ -4,12 +4,13 @@ const initialState = {
 }
 
 export function orderReducer(state = initialState, action) {
-    // let orders
+    let orders;
     // let order
 
     switch (action.type) {
         case 'SET_ORDER':
-            return { ...state, order: action.order }
+            orders = state.orders.map(order => order._id === action.order._id ? action.order : order )
+            return { ...state, order: action.order, orders  }
         case 'SET_ORDERS':
             return { ...state, orders: action.orders }
         case 'GET_BY_ID':

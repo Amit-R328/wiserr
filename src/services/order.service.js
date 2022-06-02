@@ -32,8 +32,7 @@ async function query(loggedInUser, typeOf){
     if (typeOf === 'getBuys') {
         if(loggedInUser.isSeller){
             orders = orders.filter(order => {
-                console.log('orders', order.seller, loggedInUser.userName)
-                return order.seller.fullName !== loggedInUser.userName})
+                return order.buyer.fullName === loggedInUser.userName})
         }else {
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }

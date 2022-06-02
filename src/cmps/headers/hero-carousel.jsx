@@ -11,6 +11,8 @@ import 'swiper/css/autoplay';
 import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
+import { SearchIcon } from '../../services/svg.service';
+
 // export class HeroCarousel extends React.Component {
 //   state = {
 //     user: this.props.user,
