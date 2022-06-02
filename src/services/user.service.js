@@ -35,9 +35,10 @@ function onUserUpdate(user) {
 }
 
 async function getById(userId) {
-    const user = await storageService.get('user', userId)
-    
-    // const user = await httpService.get(`user/${userId}`)
+    console.log('userId', userId)
+    // const user = await storageService.get('user', userId)
+    const user = await httpService.get(`user/${userId}`)
+     console.log('user', user)
     // gWatchedUser = user;
 
     // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)

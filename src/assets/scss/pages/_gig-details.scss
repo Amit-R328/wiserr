@@ -42,6 +42,7 @@
         }
 
         .owner-details {
+            display: flex;
             align-items: center;
             font-size: 10px;
 
@@ -154,6 +155,52 @@
         font-size: 12px;
     }
 }
+
+.gig-details-img-container {
+    flex-grow: 1;
+   
+
+    .image-gallery{
+
+    //   &:hover{
+
+    //     button{
+    //       &:first-of-type{
+    //         left: -20px;
+    //       }
+
+    //       &:nth-of-type(2){
+    //         right: -20px;
+    //       }
+    //     }
+
+    //   }
+      button{
+        box-shadow: unset !important;
+
+        &:first-of-type{
+          left: -25px;
+        }
+        &:nth-of-type(2){
+          right: -25px;
+        }
+
+        svg{
+          width: 30px !important;
+          height: 30px !important;
+          background: #fff;
+          color: #000;
+          border-radius: 50%;
+          padding: 5px;
+        }
+      }
+      button.image-gallery-fullscreen-button{
+        display: none;
+      }
+    }
+  }
+
+
 
 .sticky-outer-wrapper-gig-buy {
     padding-bottom: 32px;

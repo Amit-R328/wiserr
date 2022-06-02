@@ -221,6 +221,8 @@
                 -webkit-transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 -o-transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
+                display: flex;
+                flex-direction: column;
 
                 .filter-chevron-icon-down {
                     padding-left: .5em;
