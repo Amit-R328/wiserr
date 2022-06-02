@@ -1,8 +1,13 @@
 .search-header {
   border-radius: 3px;
-  border-color: grey_500;
+  border:1px solid $grey_500;
   box-shadow: none;
   padding: 6px 6px 6px 24px;
+  width: 193px;
+}
+
+.search-header-btn{
+  display: none;
 }
 .trusted-by-brands {
   // width: 100%;
