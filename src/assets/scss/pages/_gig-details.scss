@@ -45,9 +45,16 @@
             display: flex;
             align-items: center;
             font-size: 10px;
+            margin-bottom: 10px;
 
             .owner-name {
                 font-weight: bold;
+            }
+            .owner-level {
+                color: #62646a;
+            }
+            .owner-order-qty {
+                color: #95979d;
             }
         }
 
@@ -55,7 +62,7 @@
             border-radius: 50%;
             width: 30px;
             // height: 30px;
-            margin-bottom: 10px;
+            
         }
 
         .img-container {
