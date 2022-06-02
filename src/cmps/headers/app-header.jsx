@@ -69,7 +69,7 @@ export const AppHeader = (props) => {
                         </NavLink>
                     </div>
                     <form className="search-bar">
-                        <Search handleScroll={handleScroll} loc={'appHeader'}/>
+                        {scrolled && <Search handleScroll={handleScroll} loc={'appHeader'}/>}
                     </form>
                 </div>
                 <ul className="nav-list clean-list" >

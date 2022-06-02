@@ -35,14 +35,8 @@ export const SellerDashboard = (props) => {
 
 
     return (
-<<<<<<< HEAD
-        <div className="b-solutions">
-          
-            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
-=======
         <div className="seller-dashboard-container container">
             <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
->>>>>>> 0acdaa1efad349bddbc0200c0c3edf76e618093f
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>
