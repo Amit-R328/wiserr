@@ -20,7 +20,7 @@ export const SellerDashboard = (props) => {
     
     
     return (
-        <div className="b-solutions">
+        <div className="seller-dashboard-container container">
             <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>

@@ -65,7 +65,7 @@ export const FilterBreadCrumbs = () => {
     }
 
     return (
-        <div className="layout-row container">
+        <div className="layout-row">
             <header>
                 <div className="breadcrumbs-container">
                     <ul className="breadcrumbs">
@@ -73,7 +73,7 @@ export const FilterBreadCrumbs = () => {
 
                         {(filterBy.category) ? <li><a href="/categories">{filterBy.category}</a>
                             <span className="chevron-icon-right">
-                                <PathArrow2 />
+                                {/* <PathArrow2 /> */}
                             </span></li> : <li><span></span></li>}
                     </ul>
                 </div>

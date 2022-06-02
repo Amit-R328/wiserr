@@ -21,17 +21,17 @@
 
         .breadcrumbs-container {
             height: 20px;
-            width: 100%;            
-            flex: 1 1;
+            width: 100%; 
+            // flex: 1 1;
             margin-bottom: 15px;
-
+            
             & ul.breadcrumbs {
                 list-style: none;
                 margin: 0;
                 padding: 0 0 15;
                 // overflow-x: hidden;
                 // white-space: nowrap;
-
+                
                 & li {
                     font-size: 14px;
                     line-height: 18px;
@@ -42,14 +42,14 @@
                     transition: color .2s;
                     cursor: pointer;
                     display: inline;
-
-
+                    
                     & a {
                         text-decoration: none;
                         cursor: pointer;
                         color: inherit;
                         font-size: inherit;
                         font-weight: inherit;
+                        color: grey_500;           
 
                         &:hover {
                             outline: none;
