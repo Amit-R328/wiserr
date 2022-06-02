@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import 'swiper/css/autoplay';
 
 import { EffectFade } from 'swiper'
-import { Search } from '../../services/svg.service';
+import { SearchIcon } from '../../services/svg.service';
 import React,{useState, useEffect} from 'react' 
 // export class HeroCarousel extends React.Component {
 //   state = {
@@ -115,7 +115,7 @@ export function HeroCarousel(props) {
           <div className="hero-content-container container">
               <div className='hero-content'>
                   <h1>Find the perfect <i>freelance</i> <br></br>services for your business</h1>
-                  <Search placeholder='Try "designing business logo"' />
+                  <SearchIcon placeholder='Try "designing business logo"' />
                   {/* <HeroPopularCategory /> */}
               </div>
               <div className="static-background"></div>
