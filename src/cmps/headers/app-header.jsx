@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
@@ -17,6 +17,9 @@ export const AppHeader = (props) => {
     const [profileMenu, setMenu] = useState(false)
 
     const [scrolled, setScrolled] = useState(false)
+
+    const { pathname } = useLocation()
+    console.log('pathname', pathname)
 
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
@@ -60,7 +63,7 @@ export const AppHeader = (props) => {
                         </NavLink>
                     </div>
                     <form className="search-bar">
-                        <Search loc={'appHeader'}/>
+                        <Search handleScroll={handleScroll} loc={'appHeader'}/>
                     </form>
                 </div>
                 <ul className="nav-list clean-list" >

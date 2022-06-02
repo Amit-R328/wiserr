@@ -57,7 +57,7 @@ export const FilterBreadCrumbs = () => {
             // html: '<iframe width="560" height="315" <source src="https://res.cloudinary.com/dcbbqlssh/video/upload/v1653985384/video/wiserr_video1_ntvtry.mp4" type="video/mp4"></iframe>',
             showCloseButton: true,
             focusConfirm: false,
-            confirmButtonText: '<i class="fa fa-thumbs-up"></i> OK',
+            confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
             confirmButtonAriaLabel: 'OK',
             allowOutsideClick: true,
             allowEscapeKey: true,

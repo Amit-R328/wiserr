@@ -45,11 +45,11 @@ export function login(credentials) {
 
 
 export function signup(credentials) {
-    console.log('credentials', credentials)
+    // console.log('credentials', credentials)
     return async (dispatch) => {
         try {
             const user = await userService.signup(credentials)
-            console.log('user', user)
+            // console.log('user', user)
             dispatch({
                 type: 'SET_USER',
                 user
@@ -82,7 +82,7 @@ export async function loadUser(userId) {
    
         try {
            const user = await userService.getById(userId);
-           console.log(user, 'user');
+        //    console.log(user, 'user');
            return user
            
         } catch (err) {

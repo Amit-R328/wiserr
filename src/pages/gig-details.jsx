@@ -3,20 +3,25 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { showSuccessMsg } from '../services/event-bus.service.js'
+import { eventBusService, showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
+import { loadOrders } from '../store/actions/order.actions.js'
 // import { getByUserId } from '../services/user.service.js'
 import { GigReview } from '../cmps/gig-review.jsx';
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import ImageGallery from 'react-image-gallery';
 
+
+
 export const GigDetails = (props) => {
 
     const { gig } =  useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
+    // const [orders, setOrders] = useState({})
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -24,24 +29,26 @@ export const GigDetails = (props) => {
 
     useEffect(() => {
         dispatch(getById(params.gigId))
+      
         
-        if(gig){
-            console.log('running..s')
-            getUser()               
-            console.log('user', user)
-        }
     }, [params])
+// console.log('orders',orders )
+    useEffect(() => {
+        if(gig){            
+            getUserAndOrders()             
+            // console.log('user', user)        
+        }
+    },[gig])
 
-    useEffect(()=>{
-        console.log(user,'user changed!')
-    },[user])
-
-
-    const getUser = async () => {
-        const userId = gig.owner._id
+    
+    const getUserAndOrders = async () => {
+        const userId = gig.owner._id        
         const user = await loadUser(userId)
+        dispatch(loadOrders(user,'seller'))
         setUser(user)
+
     }
+
 
     const onGoBack = () => {
         props.history.push('/categories')
@@ -56,10 +63,11 @@ export const GigDetails = (props) => {
 
     const onConfirmOrder = (ev, gigId) => {
         if (!loggedInUser) {
-            showSuccessMsg('Need go login')
+            // showSuccessMsg('Need to login')
+            showErrorMsg('Need to login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
-            console.log('loggedInUser._id',loggedInUser._id )
+            // console.log('loggedInUser._id',loggedInUser._id )
             navigate(`/profile/${loggedInUser._id}`)
         }
     }
@@ -85,6 +93,8 @@ export const GigDetails = (props) => {
                             <div className="owner-details owner-container" >
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
+                                <p className='owner-level'>{user.level? user.level : 'Level 1 Seller '}&nbsp;| </p>
+                                <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue` : ''}</p>
                             </div>
                             <div className="gig-details-img-container">
                                 <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />

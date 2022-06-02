@@ -26,6 +26,7 @@ export const GigPreview = ({ gig, reviews }) => {
         })
     }
 
+
     const onGoToDetails = (ev) => {
         
         ev.stopPropagation()

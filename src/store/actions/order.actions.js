@@ -1,6 +1,8 @@
 import { orderService } from '../../services/order.service.js'
 
 export function loadOrders(loggedInUser, typeOf) {
+    // console.log('loggedInUser', loggedInUser)
+    // console.log('typeOf',typeOf )
     return async dispatch => {
         try {
             const orders = await orderService.query(loggedInUser, typeOf)

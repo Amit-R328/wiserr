@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { HeroCarousel } from "./headers/hero-carousel.jsx";
 
-export const Search = ({loc}) => {
+
+export const Search = ({loc},handleScroll) => {
     const [searchResults, setSearchResults] = useState('')
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()

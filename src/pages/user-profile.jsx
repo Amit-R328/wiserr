@@ -30,7 +30,7 @@ export const UserProfile = () => {
                 <div className='profile-left-container'>
                     <div className='profile-img-user flex'>
                         <img className='profile-usr-img' src={user.imgUrl} alt="img" />
-                        <h1>userName: {user.userName}</h1>
+                        <h4>userName: {user.userName}</h4>
                     </div>
                 </div>
                 <div className='profile-right-container'>
@@ -38,11 +38,12 @@ export const UserProfile = () => {
                         <div className='user-profile-card'>
                             <h1>Your orders:</h1>
                             {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4>
-                                <label>Seller: <h5>{order.seller.fullName}</h5></label>
-                                <h5>{order.gig.price}</h5>
-                                <h5>{order.status}</h5>
-                                <h5>{utilService.setDateTime(order.createdAt)}</h5>
-                                <h5>{utilService.setDateTime(order.deliveryDate)}</h5></div>)}
+                            {/* {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4> */}
+                                <h5>Seller: {order.seller.fullName}</h5>
+                                <h5>Amont: {order.gig.price}</h5>
+                                <h5>Status: {order.status}</h5>
+                                <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
+                                <h5>Delivery Date:{utilService.setDateTime(order.deliveryDate)}</h5></div>)}
                         </div> :
                         (<h1>You don't have any orders yet!</h1>)}
                 </div>
