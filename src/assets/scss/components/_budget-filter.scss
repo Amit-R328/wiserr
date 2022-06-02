@@ -4,7 +4,7 @@
     flex-direction: column;
     // z-index: 100;
     // opacity: 0;
-    pointer-events: none;
+    // pointer-events: none;
     border: 1px solid $grey_500;
     line-height: 22px;
     font-size: 14px;
@@ -35,9 +35,9 @@
           border: 1px solid #c5c6c9;
           color: $grey_1100;
           padding: 8px 12px;
-          &:focus {
-            outline: none;
-          }
+          // &:focus {
+          //   outline: none;
+          // }
         }
       }
 }

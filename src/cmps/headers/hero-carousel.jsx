@@ -12,7 +12,7 @@ import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
 import { SearchIcon } from '../../services/svg.service';
-
+import {HeroPopularCategories} from './hero-popular-categories.jsx'
 // export class HeroCarousel extends React.Component {
 //   state = {
 //     user: this.props.user,
@@ -116,9 +116,10 @@ export function HeroCarousel(props) {
       </div>
       <div className="hero-content-container container">
         <div className='hero-content'>
-          <h1>Find the perfect <i>freelance</i> <br></br>services for your business</h1>
+          <h1>Find the perfect <i>freelance</i> <br/>services for your business</h1>
           <div className='search-hero-homepage'>
-            <Search />
+            <Search loc={'heroCarousel'}/>
+            <HeroPopularCategories/>
           </div>
           {/* <HeroPopularCategory /> */}
         </div>

@@ -103,7 +103,7 @@ export const FilterBreadCrumbs = () => {
                     <div className="filter-floating-menu">
                         <div className="filter-menu-title filter-menu">Budget<span onClick={onToggleBudget} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
                         </span>
-                        {budgetMenu && <BudgetFilter />}
+                        {budgetMenu && <BudgetFilter onClose={onToggleBudget}/>}
                         </div>
                         <div className="filter-floating-menu">
                             <div className="filter-menu-title filter-menu">Delivery Time<span onClick={onToggleDeliveryTime} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />

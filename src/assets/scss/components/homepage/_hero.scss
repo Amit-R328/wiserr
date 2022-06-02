@@ -59,15 +59,16 @@
 
 .hero-container {
     // overflow-x: hidden;
-    
+
     display: grid;
     grid-template-rows: 517px;
-    grid-template-columns: 1fr ;
+    grid-template-columns: 1fr;
     align-self: center;
-    
-    .hero-content-container{
+
+    .hero-content-container {
         background-color: purple;
         grid-area: 1/1/2/2;
+
         // padding-inline-start: 10rem;
         .seller-name {
             align-self: center;
@@ -84,56 +85,113 @@
 
         }
     }
+
+    .search-hero {
+
+        width: em(300px);
+        height: em(30px);
+        border-radius: 4px 0 0 4px;
+        font-size: em(10px);
+        font-family: roboto;
+        padding-left: em(40px);
+        border: 1px solid rgb(218, 219, 221);
+        
+    }
     
-    .background-images{
+    .search-hero-btn {
+        border: 1px solid rgb(218, 219, 221);
+        background-color: $wiserr_green;
+        color: white;
+        border-radius: 0 4px 4px 0;
+        font-size: 0.5625em;
+        font-family: roboto;
+        height: 2.1em;
+        /* margin-right: 151px; */
+        position: relative;
+        margin-top: 10px;
+        padding: 10px 24px;
+        box-sizing: border-box;
+        right: 8%;
+        top: 2%;
+        /* bottom: 231%; */
+    }
+
+    .background-images {
         grid-area: 1/1/2/2;
+
         .background {
             opacity: 0;
             position: relative;
-            .hero-pic{
+
+            .hero-pic {
                 position: absolute;
                 top: 0;
             }
+
             &.active {
                 opacity: 1;
             }
         }
-        
+
     }
-    
+
 }
 
-.search-hero-homepage{
+.search-hero-homepage {
     z-index: 999;
-    
+
+}
+
+.hero-popular-category {
+    display: flex;
+    display: row;
+    font-size: em(8px);
+    gap: em(10px);
+    font-family: roboto;
+
+    .btn-popular-category {
+        background-color: transparent;
+        font-weight: 600;
+        color: white;
+        padding: 1px 12px 0;
+        border: 1px solid white;
+        border-radius: 40px;
+
+        &:hover {
+            color: $grey_1100;
+            background-color: white;
+        }
+    }
 }
 
 .seller-name {
     // display: none;
-        color: white;
-        font-size: 1rem;
-        align-self: flex-end;
-        z-index: 5;
-        margin-block-end: em(20px);
-        position: absolute;
-        top: 45%;
-        right: 25%;
-        .seller {
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 600;
-            position: absolute;
-            width: 12rem;
-            text-align: right;
-            
-            opacity: 0;
-            transition: 1s;
+    color: white;
+    font-size: 1rem;
+    align-self: flex-end;
+    z-index: 5;
+    margin-block-end: em(20px);
+    position: absolute;
+    top: 45%;
+    right: 25%;
 
-            &.active {
-                display: block;
-                opacity: 1;
-            }
-            .seller-skill {
-                font-weight: 400;
-            }
+    .seller {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        position: absolute;
+        width: 12rem;
+        text-align: right;
+
+        opacity: 0;
+        transition: 1s;
+
+        &.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .seller-skill {
+            font-weight: 400;
         }
     }
+}

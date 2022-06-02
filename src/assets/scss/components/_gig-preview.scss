@@ -11,6 +11,13 @@
   .gig-img-container{
     flex-grow: 1;
 
+    img {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      object-fit: contain;
+    }
+
     .image-gallery{
 
       &:hover{

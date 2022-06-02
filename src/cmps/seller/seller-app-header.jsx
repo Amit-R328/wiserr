@@ -49,7 +49,7 @@ export const SellerAppHeader = (props) => {
             <div className="seller seller-wiserr-header-search-animated">
                 <form className="seller-search-bar">
                     <span className="seller seller-search-bar-icon" aria-hidden="true">
-                        <SearchBar />
+                        <SearchBar loc={'sellerAppHeader'}/>
                     </span>
                     <Search />
                 </form>
