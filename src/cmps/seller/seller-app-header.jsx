@@ -47,29 +47,27 @@ export const SellerAppHeader = (props) => {
             </div>
 
             <div className="seller seller-wiserr-header-search-animated">
-                <div className="seller seller-search-bar-package-container">
-                    <form className="seller seller-search-bar-package seller-search_bar-package">
-                        <span className="seller seller-search-bar-icon" aria-hidden="true">
-                            <SearchBar />
-                        </span>
-                        <Search />
-                    </form>
-                </div>
+                <form className="seller-search-bar">
+                    <span className="seller seller-search-bar-icon" aria-hidden="true">
+                        <SearchBar />
+                    </span>
+                    <Search />
+                </form>
             </div>
 
-            <nav className="seller seller-wiserr-nav seller-wiserr-nav-right">
+            <nav className="seller-wiserr-nav seller-wiserr-nav-right">
                 <ul className="seller-nav-list" >
 
-                    <li className="seller-display-from-md seller-display-from-md">
-                        <NavLink to="/seller" className="seller-homepage-nav-link seller-nav-link" target="_blank" ><SellerHomepage /> Wiserr Seller</NavLink>
+                    <li>
+                        <NavLink to="/seller" className="seller-nav-link" target="_blank" ><SellerHomepage /> Wiserr Seller</NavLink>
                     </li>
 
-                    <li className="seller-display-from-sm seller-display-from-sm">
-                        <a href="/login" rel="nofollow" className="seller-js-open-popup-login seller-nav-link">Sign in</a>
+                    <li>
+                        <a href="/login" rel="nofollow" className="seller-nav-link">Sign in</a>
                     </li>
 
-                    <li className="seller-signup-btn seller-signup-btn">
-                        <a className="seller-js-open-popup-join seller-wiserr-header-join" rel="nofollow" href="/join">Join</a>
+                    <li>
+                        <a className="seller-wiserr-header-join" rel="nofollow" href="/join">Join</a>
                     </li>
                 </ul>
             </nav>

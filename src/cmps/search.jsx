@@ -24,15 +24,15 @@ export const Search = () => {
     }
 
     return (
-        <React.Fragment>
-            <div className="search-container">
-            <SearchIcon/>
+        // <React.Fragment>
+            <div className="search-container search-header search-hero">
             <label>
+                <SearchIcon/>
                 <input type="search" className="search-input" onChange={handleChange} placeholder="Find services" />
             </label>
             <button className="submit-button search-btn" onClick={onSearch}>Search</button>
             </div>
-        </React.Fragment>
+        // </React.Fragment>
     )
 
 }

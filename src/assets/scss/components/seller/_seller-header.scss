@@ -15,7 +15,7 @@
       z-index: 9999;
       display: block;
 
-      .seller-header-row-wrapper {
+      .seller-header-row {
         // height: 81px;
       }
 
@@ -112,12 +112,12 @@
   }
 }
 
-.seller-search-bar-package {
+.seller-search-bar {
   display: flex;
   position: relative;
   // height: 34px;
 
-  .seller-search-bar-package form .seller-search-bar-icon {
+  .seller-search-bar form .seller-search-bar-icon {
     position: absolute;
     z-index: 5;
     top: em(8px);
@@ -126,7 +126,7 @@
     // height: em(16px);
   }
 
-  .seller-search-bar-package form input {
+  .seller-search-bar form input {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
     padding: em(7px) em(7px) em(7px) em(28px);
@@ -136,12 +136,12 @@
   }
 
   @media screen and (min-width: 1160px) {
-    .seller-search-bar-package form input {
+    .seller-search-bar form input {
       border-right: 0;
       border-radius: em(3px) 0 0 em(3px);
     }
 
-    .seller-search-bar-package .seller-submit-button:not(.minimal) {
+    .seller-search-bar .seller-submit-button:not(.minimal) {
       padding: em(8px) em(16px);
       display: block;
       font-size: em(14px);
@@ -151,7 +151,7 @@
   }
 
   @media screen and (min-width: 900px) {
-    .seller-search-bar-package form input {
+    .seller-search-bar form input {
       font-size: em(15px);
       padding-top: em(8px);
     }

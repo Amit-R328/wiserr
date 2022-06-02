@@ -1,15 +1,16 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import '../../assets/scss/main.scss';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import 'swiper/css/scrollbar'
+import '../../assets/scss/main.scss'
 import { useSelector } from 'react-redux';
-import 'swiper/css/autoplay';
+import 'swiper/css/autoplay'
 
 import { EffectFade } from 'swiper'
-import { SearchIcon } from '../../services/svg.service';
+import { Search } from '../search.jsx'
+
 import React,{useState, useEffect} from 'react' 
 // export class HeroCarousel extends React.Component {
 //   state = {
@@ -115,8 +116,7 @@ export function HeroCarousel(props) {
           <div className="hero-content-container container">
               <div className='hero-content'>
                   <h1>Find the perfect <i>freelance</i> <br></br>services for your business</h1>
-                  <SearchIcon placeholder='Try "designing business logo"' />
-                  {/* <HeroPopularCategory /> */}
+                  <Search placeholder='Try "designing business logo"' />
               </div>
               <div className="static-background"></div>
 
