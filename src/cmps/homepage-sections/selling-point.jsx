@@ -7,7 +7,7 @@ export const SellingPoint = () => {
             <div className="selling-proposition">
                 <div className="selling-text">
                     <h2>A whole world of freelance<br></br>talent at your fingertips</h2>
-                    <ul>
+                    <ul className="ul-selling-points">
                         <li><h6><VCircle /><strong>The best for every budget</strong></h6>
                             <p>Find high-quality services at every price point.<br></br> No hourly rates, just project-based pricing.</p>
                         </li>
