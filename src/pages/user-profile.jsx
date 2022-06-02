@@ -40,7 +40,7 @@ export const UserProfile = () => {
                             {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4>
                             {/* {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4> */}
                                 <h5>Seller: {order.seller.fullName}</h5>
-                                <h5>Amont: {order.gig.price}</h5>
+                                <h5>Amont: $ {order.gig.price}</h5>
                                 <h5>Status: {order.status}</h5>
                                 <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
                                 <h5>Delivery Date:{utilService.setDateTime(order.deliveryDate)}</h5></div>)}
