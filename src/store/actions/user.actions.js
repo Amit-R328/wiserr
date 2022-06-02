@@ -102,14 +102,14 @@ export function getLoggedinUser(){
         }
     }
 }
+//2.6.22 rinat closed no one use
+// export function onUpdateUser (userId) {
+//     return async (dispatch) => {
+//         try {
+//             const user = await userService.updateUser({isSeller: true},userId)
 
-export function onUpdateUser (userId) {
-    return async (dispatch) => {
-        try {
-            const user = await userService.updateUser({isSeller: true},userId)
-
-        }catch(err) {
-            console.log('Cannot update user', err)
-        }
-    }
-}
+//         }catch(err) {
+//             console.log('Cannot update user', err)
+//         }
+//     }
+// }

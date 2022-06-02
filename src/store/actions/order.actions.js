@@ -9,7 +9,7 @@ export function loadOrders(loggedInUser, typeOf) {
             const action = { type: 'SET_ORDERS', orders }
             dispatch(action)
         } catch (err) {
-            console.error('Error:', err)
+            console.error('Cannot load orders:', err)
         }
     }
 }
@@ -21,7 +21,21 @@ export function onSaveOrder(gigId, loggedinUser) {
             const action = { type: 'SET_ORDER', order }
             dispatch(action)
         } catch (err) {
-            console.log('Cannot login', err)
+            console.log('Cannot save order:', err)
+        }
+    }
+}
+
+
+export function onUpdateOrder(order) {
+    
+    return async (dispatch) => {
+        try {
+            await orderService.updateOrder(order)
+            const action = { type: 'SET_ORDER', order }
+            dispatch(action)
+        } catch (err) {
+            console.log('Cannot update order', err)
         }
     }
 }
