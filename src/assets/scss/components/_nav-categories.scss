@@ -1,8 +1,16 @@
+.bottom {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $grey_400;
+    border-bottom: 1px solid $grey_400;
+    padding: 0;
+  }
+
 .categories-menu-scroll {
     visibility: visible;
     width: 100%;
-    height: 40px;
-    // margin: 0;
+    // height: 40px;
+    padding: 0;
   
     background-color: #ffffff;
     position: relative;
@@ -13,8 +21,6 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            // margin-left: 13.25%;
-            // margin-right: 13.25%;
 
             & li {
                 flex-grow: 1;
@@ -22,15 +28,9 @@
                 flex-shrink: 0;
                 list-style: none;
                 text-decoration: none;
-                font-weight: inherit;
-                color: inherit;
-                font-family: inherit;
                 padding: 0 10px;
-                position: relative;
-                font-size: 1.2em;
+                // position: relative;
                 color: #62646a;
-                line-height: 24px;
-                list-style: none;
                 margin: 0;
                 outline: 0;
                 text-align: center;
@@ -52,21 +52,16 @@
             }
 
             & button {
-                font-size: 16px;
-                color: #62646a;
+                font-size: em(16px);
                 cursor: pointer;
-                display: block;
                 line-height: 24px;
-                list-style: none;
                 padding: 8px 0;
-                position: relative;
                 text-align: center;
-                text-decoration: none;
                 transition: color .2s;
                 background: transparent;
                 outline: none;
                 border: none;
-                min-width: 80px;
+                // min-width: 80px;
                 // overflow: hidden;
 
                 &:last-child {

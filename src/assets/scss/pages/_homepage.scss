@@ -1,29 +1,31 @@
 .trusted-by-brands {
-  width: 100%;
+  // width: 100%;
   background-color: #fafafa;
   color: #b5b6ba;
-
+  
   & ul {
     display: flex;
     align-items: center;
     justify-content: center;
     list-style: none;
-    height: rem(95px);
-
+    height: em(95px);
+    
     .brands-container {
       display: flex;
       flex-direction: row;
       align-items: center;
-
+      justify-content: space-between;
+      padding: 0;
+      
       & li {
         text-align: left;
         list-style: none;
         outline: 0;
       }
     }
-
+    
     & p {
-      font-size: inherit;
+      font-size: em(16px);
       margin: 0;
     }
   }
@@ -31,7 +33,9 @@
 
 .trusted-by {
   color: #62646a;
-  padding-right: rem(60px);
-  padding-left: rem(60px);
-
+  padding-right: em(60px);
+  padding-left: em(60px);
+  background-color: #fafafa;
+  font-size: em(16px);
+  
 }

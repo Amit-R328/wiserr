@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {  useEffect } from 'react';
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { NavCategories } from '../cmps/headers/nav--categories.jsx'
 import { useSelector, useDispatch } from 'react-redux'
-import { FilterBreadCrumbs } from '../cmps/filter-breadcrumbs.jsx'
+import { FilterBreadCrumbs } from '../cmps/filters/filter-breadcrumbs.jsx'
 
 export const GigPage = (onChangeCategory) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)

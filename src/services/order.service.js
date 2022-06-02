@@ -23,26 +23,29 @@ export const orderService = {
     saveOrder
 }
 
-async function query(loggedInUser){
+async function query(loggedInUser, typeOf){
     // console.log('loggedInUser', loggedInUser)
     // let orders = await storageService.query('order')
     // const urlToRequest =  '/order'
     // console.log('urlToRequest', urlToRequest)
     let orders =  await httpService.get('order')
-    
-    // for(var i=0;i< orders.length;i++){
-
-    //     console.log('order buyer', orders[i].buyer)
-    //     // console.log('order seller', orders[i].seller.fullName)
-    // }
-    
-    if(!loggedInUser.isSeller) {
-        orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)}
-    else orders = orders.filter(order => {
-        // console.log('order.seller.fullname', order.seller.fullName, 'loggedInUser.username', loggedInUser.userName )
-       return order.seller.fullName === loggedInUser.userName})
-    // console.log('order', orders)
+    if (typeOf === 'getBuys') {
+        if(loggedInUser.isSeller){
+            orders = orders.filter(order => {
+                console.log('orders', order.seller, loggedInUser.userName)
+                return order.seller.fullName !== loggedInUser.userName})
+        }else {
+            orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
+        }
+    }else {
+        if(loggedInUser.isSeller){
+            orders = orders.filter(order => order.seller.fullName === loggedInUser.userName)
+        }else {
+            orders = []
+        }
+    }
     return orders
+    // console.log('order', orders)
 }
 
 async function saveOrder(gigId, loggedinUser){

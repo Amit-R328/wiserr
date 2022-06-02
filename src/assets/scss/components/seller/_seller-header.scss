@@ -16,7 +16,7 @@
       display: block;
 
       .seller-header-row-wrapper {
-        height: 81px;
+        // height: 81px;
       }
 
       .seller-header-row {
@@ -47,7 +47,7 @@
       .seller-logo-main-header {
         // height: auto;
         margin: 4px 0 0;
-        min-width: rem(121px);
+        min-width: em(121px);
         align-self: auto;
         display: block;
         cursor: pointer;
@@ -74,7 +74,7 @@
           align-items: center;
           justify-content: center;
           color: #62646a;
-          padding: rem(18px);
+          padding: em(18px);
         }
       }
     }
@@ -91,7 +91,7 @@
     // display: block;
     margin-top: 0;
     order: 0;
-    width: rem(230px);
+    width: em(230px);
     opacity: 0;
     // visibility: hidden;
     transition: opacity 250ms ease;
@@ -115,21 +115,21 @@
 .seller-search-bar-package {
   display: flex;
   position: relative;
-  height: 34px;
+  // height: 34px;
 
   .seller-search-bar-package form .seller-search-bar-icon {
     position: absolute;
     z-index: 5;
-    top: rem(8px);
-    left: rem(8px);
-    width: rem(16px);
-    height: rem(16px);
+    top: em(8px);
+    left: em(8px);
+    width: em(16px);
+    // height: em(16px);
   }
 
   .seller-search-bar-package form input {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    padding: rem(7px) rem(7px) rem(7px) rem(28px);
+    padding: em(7px) em(7px) em(7px) em(28px);
     border-color: #dadbdd;
     box-shadow: none;
     z-index: 3;
@@ -138,22 +138,22 @@
   @media screen and (min-width: 1160px) {
     .seller-search-bar-package form input {
       border-right: 0;
-      border-radius: rem(3px) 0 0 rem(3px);
+      border-radius: em(3px) 0 0 em(3px);
     }
 
     .seller-search-bar-package .seller-submit-button:not(.minimal) {
-      padding: rem(8px) rem(16px);
+      padding: em(8px) em(16px);
       display: block;
-      font-size: rem(14px);
+      font-size: em(14px);
       font-weight: 700;
-      border-radius: 0 rem(3px) rem(3px) 0;
+      border-radius: 0 em(3px) em(3px) 0;
     }
   }
 
   @media screen and (min-width: 900px) {
     .seller-search-bar-package form input {
-      font-size: rem(15px);
-      padding-top: rem(8px);
+      font-size: em(15px);
+      padding-top: em(8px);
     }
   }
 }
@@ -161,8 +161,8 @@
 span.line-sep {
   background-color: #ddd;
   box-sizing: border-box;
-  flex: 0 0 rem(1px);
-  height: rem(24px);
+  flex: 0 0 em(1px);
+  // height: em(24px);
   text-align: left;
-  width: rem(1px);
+  width: em(1px);
 }

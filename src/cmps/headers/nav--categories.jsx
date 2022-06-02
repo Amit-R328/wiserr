@@ -26,10 +26,10 @@ export const NavCategories = () => {
     { name: 'Lifestyle', parameter: 'Lifestyle' }
     ]
     return (
-        <div id="categories-menu container" className="categories-menu-scroll ">
+        <div className="categories-menu-scroll">
             <ul className="categories">
-                {categories.map((category, index) => <li key={index} className='sub-menu-item target top-level default list'>
-                    <button onClick={() => onChangeCategory(category.parameter)} className="trending">{category.name}</button>
+                {categories.map((category, index) => <li key={index}>
+                    <button onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
                 </li>)}
             </ul>
         </div>

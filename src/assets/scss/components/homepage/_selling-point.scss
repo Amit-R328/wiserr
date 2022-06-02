@@ -1,28 +1,31 @@
 .selling-proposition-wrapper {
     width: 100%;
-    // height: rem(705px);
+    // height: em(705px);
     background-color: #f1fdf7;
-    padding-top: rem(96px);
-    padding-bottom: rem(96px);
+    padding-top: em(96px);
+    padding-bottom: em(96px);
 
 
     .selling-proposition {
-        // margin-left: 60px;
-        // margin-right: 60px;
+        margin-left: 60px;
+        margin-right: 60px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-areas: "selling-text picture-wrapper";
+        grid-template-areas: "selling-text";
         // margin-left: 13.25%;
         // margin-right: 13.25%;
     }
 
     .selling-text {
         grid-column: 1 / 1;
-        padding-bottom: rem(48px);
-        padding-left: rem(68px);
+        padding-bottom: em(48px);
+        padding-left: em(68px);
+        padding-right: em(68px);
+        font-size: em(16px);
+
 
         h2 {
-            font-size: rem(22px);
+            font-size: em(32px);
             line-height: 120%;
             display: block;
             margin-block-start: 0.83em;
@@ -30,40 +33,38 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
             font-weight: bold;
-            color: #404145;
+            color: #62646a;
         }
 
         li {
-            padding-bottom: rem(20px);
+            padding-bottom: em(24px);
 
             &:last-child {
                 padding-bottom: 0;
             }
 
             h6 {
-                padding-bottom: rem(8px);
+                // padding-bottom: em(8px);
                 display: flex;
                 align-items: flex-start;
-                font-size: rem(12px);
-                line-height: rem(26px);
+                font-size: em(18px);
                 color: #62646a;
 
                 .check-icon {
-                    margin-right: rem(10px);
-                    font-size: rem(18px);
+                    margin-right: em(10px);
                     color: #62646a;
                 }
             }
 
             p {
-                font-size: rem(18px);
-                line-height: rem(26px);
+                font-size: em(18px);
+                // line-height: em(26px);
                 color: #62646a;
             }
         }
     }
 
     & img {
-        padding-right: rem(68px);
+        // padding-right: em(68px);
     }
 }

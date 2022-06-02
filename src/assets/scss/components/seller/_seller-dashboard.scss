@@ -10,26 +10,26 @@
     }
 
     th {
-        padding: rem(20px) rem(15px);
+        padding: em(20px) em(15px);
         text-align: left;
         font-weight: 500;
-        font-size: rem(12px);
+        font-size: em(12px);
         color: #fff;
         text-transform: uppercase;
     }
 
     td {
-        padding: rem(15px);
+        padding: em(15px);
         text-align: left;
         vertical-align: middle;
         font-weight: 300;
-        font-size: rem(12px);
+        font-size: em(12px);
         color: #fff;
         border-bottom: solid 1px rgba(255, 255, 255, 0.1);
     }
 
     tbody {
-        height: rem(300px);
+        // height: em(300px);
         overflow-x: auto;
         margin-top: 0px;
         border: 1 solid rgba(255, 255, 255, 0.3);

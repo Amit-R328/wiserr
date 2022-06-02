@@ -54,7 +54,7 @@
         .sml-round-img {
             border-radius: 50%;
             width: 30px;
-            height: 30px;
+            // height: 30px;
             margin-bottom: 10px;
         }
 
@@ -104,7 +104,7 @@
             .md-round-img {
                 border-radius: 50%;
                 width: 80px;
-                height: 80px;
+                // height: 80px;
                 // margin-bottom: 51px;
             }
 
@@ -142,7 +142,7 @@
                     margin: 0;
 
                     .owner-summary {
-                        max-height: none;
+                        // max-height: none;
                         white-space: pre-line;
                     }
                 }
@@ -261,7 +261,7 @@
 
                 .days-to-make {
                     color:  #62646a;
-                    margin-top: rem(20px);
+                    margin-top: em(20px);
                 }
                 .description-littleDetails {
 
@@ -309,22 +309,22 @@
                 font-variant-numeric: inherit;
                 font-weight: 600;
                 line-height: 100%;
-                margin: rem(12px) 0;
+                margin: em(12px) 0;
                 padding: 12px 24px;
                 position: relative;
                 text-align: center;
                 text-decoration: none;
                 transition: all 70ms cubic-bezier(.75, 0, .25, 1);
                 width: 100%;
-                // margin-top: rem(12px);                
+                // margin-top: em(12px);                
 
                 .buy-btn-arrow {
                     fill: white;
-                    left: rem(20px);
+                    left: em(20px);
                 }
                 // span {
-                //     width: rem(16px);
-                //     height: rem(16px);
+                //     width: em(16px);
+                //     height: em(16px);
                    
                 // }
             }

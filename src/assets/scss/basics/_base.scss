@@ -5,20 +5,17 @@
 html {
     line-height: 1.8;
     line-height: lh(26px);
-    height: 100vh;
-    width: 100vw;
+    // height: 100vh;
+    // width: 100vw;
 }
 
 body {
     height: 100vh;
     width: 100%;
     margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
     text-rendering: optimizeSpeed;
     font-family: roboto;
-    overflow-y: scroll;
-
+    // overflow-y: scroll;
 }
 
 img {
@@ -35,7 +32,6 @@ a {
     // overflow-y: scroll;
     // overflow-x: hidden;
 }
-
 
 .main-wrapper {
     position: relative;
@@ -54,5 +50,5 @@ a {
 }
 
 .sorting {
-    margin-right: rem(10px);
+    margin-right: em(10px);
 }

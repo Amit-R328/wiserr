@@ -1,18 +1,17 @@
 import React from 'react'
 import { HeroCarousel } from '../cmps/headers/hero-carousel.jsx'
 import { CategoriesCarousel } from '../cmps/homepage-sections/categories-carousel.jsx'
-import { SellingPropHomepage } from '../cmps/homepage-sections/selling-prop-homepage.jsx'
-import { TestimonialsHomepage } from '../cmps/homepage-sections/testimonials-homepage.jsx'
-import { IconCategoriesHomepage } from '../cmps/homepage-sections/icon-categories-homepage.jsx'
-import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section-homepage.jsx'
+import { SellingPoint } from '../cmps/homepage-sections/selling-point.jsx'
+import { Testimonials } from '../cmps/homepage-sections/testimonials.jsx'
+import { IconCategories } from '../cmps/homepage-sections/icon-categories.jsx'
+import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section.jsx'
 
 export const HomePage = () => {
     return (
         <section>
-            {/* <NavCategories onChangeCategory={onChangeCategory} /> */}
             <HeroCarousel />
-            <section className="trusted-by-brands container">
-                <ul className="brands-container">
+            <section className="trusted-by-brands">
+                <ul className="brands-container container">
                     <p>Trusted By:</p>
                     <li className="trusted-by">FACEBOOK</li>
                     <li className="trusted-by">Google</li>
@@ -26,10 +25,14 @@ export const HomePage = () => {
                     <h2>Popular professional services</h2>
                     <CategoriesCarousel />
             </div>
-                <SellingPropHomepage />
-                <IconCategoriesHomepage />
+                <SellingPoint />
+                <div className="container">
+                <IconCategories />
+                </div>
+                
                 <SellerSectionHomepage />
-                <TestimonialsHomepage />
+                
+                <Testimonials />
         </section>
     )
 }
