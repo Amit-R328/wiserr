@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch} from 'react-redux'
+import { SearchIcon } from '../services/svg.service.js'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faMagnifyingGlass } from '@fortawesome/pro-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 export const Search = () => {
     const [searchResults, setSearchResults] = useState('')
@@ -23,14 +27,16 @@ export const Search = () => {
     }
 
     return (
-        <React.Fragment>
-            <div className="search-container">
-                <label>
-                    <input type="search" className="search-input" onChange={handleChange} placeholder="Find services"/>                
-                </label>
-                    <button className="co-white submit-button bg-co-green-700 search-btn" onClick={onSearch}>Search</button>
+        // <React.Fragment>
+            <div className="search-container search-header search-hero">
+            <label>
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                <input type="search" className="search-input" onChange={handleChange} placeholder="Find services" />
+                {/* <SearchIcon/> */}
+            </label>
+            <button className="submit-button search-btn" onClick={onSearch}>Search</button>
             </div>
-        </React.Fragment>
+        // </React.Fragment>
     )
 
 }

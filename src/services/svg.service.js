@@ -78,9 +78,9 @@ export function LogoFull2() {
     )
 }
 
-export function Search() {
+export function SearchIcon() {
     return (
-        <svg viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false">
+        <svg viewBox="0 0 16 16" aria-hidden="true" role="presentation" focusable="false">
             <g fill="none">
                 <path d="m13 24c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11zm8-3 9 9" class=""></path>
             </g>
