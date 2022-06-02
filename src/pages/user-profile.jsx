@@ -9,7 +9,6 @@ import { utilService } from '../services/util.service.js';
 export const UserProfile = () => {
 
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
-    console.log('loggedInUser', loggedInUser)
     const user = useSelector((storeState) => storeState.userModule.loggedInUser)
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
@@ -21,6 +20,8 @@ export const UserProfile = () => {
         orders = orders.filter(order => order.seller !== loggedInUser.userName)
         
     }, [])
+
+    console.log('orders from user-profile', orders)
 
 
     return (
