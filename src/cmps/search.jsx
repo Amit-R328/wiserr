@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faMagnifyingGlass } from '@fortawesome/pro-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
-export const Search = () => {
+export const Search = (handleScroll) => {
     const [searchResults, setSearchResults] = useState('')
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()
