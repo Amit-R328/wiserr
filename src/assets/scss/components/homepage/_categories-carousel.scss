@@ -1,12 +1,12 @@
 .gig-slider-container {
     color: #62646a;
-    margin-top: em(96px);
-    margin-bottom: em(96px);
-    padding: 0;
+    margin-top: em(60px);
+    margin-bottom: em(60px);
+    padding: unset;
 
     & h2 {
-        padding-bottom: em(24px);
-        font-size: em(24px);
+        padding-bottom: em(18px);
+        font-size: em(32px);
         line-height: 120%;
         font-weight: 700;
     }
@@ -17,7 +17,28 @@
         grid-template-rows: 1fr;
         grid-template-areas:
             "slide1 slide2 slide3 slide4 slide5";
-        column-gap: em(16px);
+        column-gap: em(32px);
+    }
+
+    .slide1 {
+        grid-area: slide1;
+        min-width: em(252px);
+    }
+    .slide2 {
+        grid-area: slide2;
+        min-width: em(252px);
+    }
+    .slide3 {
+        grid-area: slide3;
+        min-width: em(252px);
+    }
+    .slide4 {
+        grid-area: slide4;
+        min-width: em(252px);
+    }
+    .slide5 {
+        grid-area: slide5;
+        min-width: em(252px);
     }
 
     .category-legends {

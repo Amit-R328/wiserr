@@ -1,0 +1,158 @@
+.seller-info-container {
+    background-color: #0d084d;
+    color: #62646a;
+    padding-bottom: em(96px);
+
+    .wiserr-seller-logo {
+        margin-bottom: em(25px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-top: em(96px);
+        
+        .logo {
+            margin-right: em(40px);
+        }
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: em(3px) em(7px) em(3px);
+            border-width: em(1px);
+            border-style: solid;
+            text-align: center;
+            color: #fff;
+            font-size: em(12px);
+            font-weight: 700;
+            line-height: 100%;
+            border-radius: em(999px);
+            border-color: #584aff;
+            text-transform: uppercase;
+            background: #584aff;
+        }
+    }
+
+    .seller-container-grid {
+        display: grid;
+        grid-template-columns: 50%  50%;
+        grid-template-rows: 1fr;
+        grid-template-areas: "seller-text seller-image";
+        color: #62646a;
+        padding: 0;
+
+        .seller-image {
+            padding-top: em(96px);
+            margin-top: 0;
+            padding-bottom: em(48px);
+        }
+
+        .seller-text {
+            grid-column: 1;
+            padding-bottom: em(48px);
+            padding: 0 em(16px);
+            color: #fff;
+            
+            & p {
+                font-size: em(22px);
+                line-height: em(26px);
+                color: #fff;
+            }
+            
+            & ul {
+                color: #fff;
+                list-style: none;
+                list-style-image: none;
+                margin: 0;
+                padding: 0;
+                padding-bottom: em(52px);
+                
+                & li {
+                    color: #fff;
+                    list-style: none;
+                    list-style-image: none;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    font-size: em(16px);
+
+                    h6 {
+                        display: flex;
+                        align-items: flex-start;
+                        font-size: em(18px);
+                        line-height: em(16px);
+                        color: #62646a;
+
+                        .check-icon {
+                            margin-right: em(10px);
+                            min-width: em(24px);
+                            font-size: em(18px);
+                            color: #62646a;
+                        }
+                    }
+
+
+                }
+            }
+
+        }
+    }
+
+    .font-domaine {
+        margin: 0;
+        max-width: em(450px);
+        line-height: em(24px);
+        text-align: start;
+        margin-block-start: 0.83em;
+        margin-block-end: 0.83em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-size: em(32px);
+
+        & span {
+            font-weight: bold;
+            font-weight: 700;
+            line-height: 120%;
+
+            & .seller-text {
+                font-family: DomaineDisplay;
+                font-size: 32px;
+                font-style: italic;
+                line-height: em(24px);
+                font-weight: 500;
+            }
+        }
+    }
+
+    button {
+        outline: none;
+        border: none;
+    
+        .explore-seller {
+            background-color: #1dbf73;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            padding: 12px 24px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            transition: all 70ms cubic-bezier(.75, 0, .25, 1);
+    
+            &:focus {
+                outline: none;
+            }
+    
+            &:hover {
+                background-color: #19a463;
+                outline: none;
+            }
+    
+            &:active {
+                background-color: #188652;
+                outline: none;
+            }
+        }
+    }
+}

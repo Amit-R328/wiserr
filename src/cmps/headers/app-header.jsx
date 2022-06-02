@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { LogoFull, LogoFullWhite, HamburgerMenu, HamburgerMenuWhite, SearchBar } from '../../services/svg.service.js'
+import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
 import { NavLink } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
@@ -55,9 +55,6 @@ export const AppHeader = (props) => {
         <header className={`header ${scrolled ? 'scrolled' : ''}`} >
             <div className="top container">
 
-                {/* <header className="logged-out-header"> */}
-                {/* <div className="header-row-wrapper"> */}
-                {/* <div className="header-row max-width-container equal-padding row-main"> */}
                 <div className="logo-search-container">
 
                     <button className="btn-navicon">
@@ -67,7 +64,6 @@ export const AppHeader = (props) => {
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
                             <LogoFull />
-                            {/* <LogoFullWhite /> */}
                         </NavLink>
                     </div>
 
@@ -81,13 +77,6 @@ export const AppHeader = (props) => {
                     </form>
                 </div>
 
-                {/* <div className="nav-wiserr-header-search-animated"> */}
-                {/* <div className="search-bar-package-container"> */}
-
-                {/* </div> */}
-                {/* </div> */}
-                {/* <div className="wiserr-nav-right-container-helper"> */}
-                {/* <div className="wiserr-nav wiserr-nav-right"> */}
                 <ul className="nav-list clean-list" >
 
                     <li className="display-from-md">
@@ -100,29 +89,16 @@ export const AppHeader = (props) => {
                         </div>
                     </li>
                     <li className="display-from-sm">
-                        {/* <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink> */}
                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
                         <div className="profile-container">
-                            {/* {loggedInUser && <button className="user-logout user-btn" onClick={() => onToggleMenu()}></button>} */}
                             {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
                         </div>
                     </li>
-                    {/* <li className="display-from-sm">                                        
-                                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="js-open-popup-login nav-link">Login/Join</NavLink>}
-                                        <div className="avatar-container">
-                                        {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} alt="Avatar"></img>}
-                                    </div>
-                                    {loggedInUser && <button className="user-logout user-btn" onClick={() => onLogout()}>Logout</button>}
-                                    </li> */}
+                 
                 </ul>
-                {/* </div> */}
-                {/* </div> */}
-                {/* </div> */}
-                {/* </div> */}
-                {/* </header > */}
             </div>
 
             {scrolled && <div className="bottom container">

@@ -78,10 +78,12 @@ export function logout() {
 }
 
 export function loadUser(userId) {
+    console.log('userId',userId)
     return async (dispatch) => {
         try {
             const user = await userService.getById(userId);
             dispatch({ type: 'SET_WATCHED_USER', user })
+            console.log('user in load user', user)
         } catch (err) {
             showErrorMsg('Cannot load user')
             console.log('Cannot load user', err)

@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { showSuccessMsg } from '../services/event-bus.service.js'
 import { getById } from '../store/actions/gig.actions.js';
+import { loadUser } from '../store/actions/user.actions.js';
+import { getByUserId } from '../services/user.service.js'
 import { GigReview } from '../cmps/gig-review.jsx';
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
@@ -12,8 +14,8 @@ import ImageGallery from 'react-image-gallery';
 
 export const GigDetails = (props) => {
 
-    const { gig } = useSelector((storeState) => storeState.gigModule)
-    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    const { gig } =  useSelector((storeState) => storeState.gigModule)
+    const { loggedInUser, user } = useSelector((storeState) => storeState.userModule)
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -21,6 +23,12 @@ export const GigDetails = (props) => {
 
     useEffect(() => {
         dispatch(getById(params.gigId))
+        // if(gig){
+        //     const userId = gig.owner._id
+        //     console.log('userId',userId )
+        //     dispatch(loadUser(userId))
+        //     console.log('user', user)
+        // }
     }, [params])
 
     const onGoBack = () => {
@@ -66,7 +74,7 @@ export const GigDetails = (props) => {
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
                             </div>
-                            <div>
+                            <div className="gig-details-img-container">
                                 <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />
                             </div>
                         </section>
@@ -128,7 +136,7 @@ export const GigDetails = (props) => {
                                     <GigReview review={review} />
                                 </article>
                             })}
-                        </section> : <p>Be the first to review</p>}
+                        </section> : <span></span>}
                     </div>
                     <div className="sticky-outer-wrapper-gig-buy">
                         <div className="sticky-inner-wrapper-gig-buy">

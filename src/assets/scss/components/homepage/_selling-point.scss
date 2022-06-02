@@ -7,8 +7,8 @@
 
 
     .selling-proposition {
-        // margin-left: 60px;
-        // margin-right: 60px;
+        margin-left: 60px;
+        margin-right: 60px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: "selling-text";
@@ -19,7 +19,7 @@
     .selling-text {
         grid-column: 1 / 1;
         padding-bottom: em(48px);
-        // padding-left: em(68px);
+        padding-left: em(68px);
         padding-right: em(68px);
         font-size: em(16px);
 
@@ -28,7 +28,7 @@
             font-size: em(32px);
             line-height: 120%;
             display: block;
-            // margin-block-start: 0.83em;
+            margin-block-start: 0.83em;
             margin-block-end: 0.83em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;

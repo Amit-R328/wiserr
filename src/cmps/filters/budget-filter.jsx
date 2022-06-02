@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setFilter, loadGigs } from "../store/actions/gig.actions.js";
+import { setFilter, loadGigs } from "../../store/actions/gig.actions.js";
 
 class _BudgetFilter extends React.Component {
     state = {
@@ -40,7 +40,7 @@ class _BudgetFilter extends React.Component {
                 <div className="input-wrappers flex">
                     <div className="input-wrapper">
                         <label htmlFor="min">Min:</label>
-                        <input type="number" name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min} />
+                        <input type="number"  name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min} min="0"/>
                     </div>
                     <div className="input-wrapper flex">
                         <label htmlFor="max">Max:</label>

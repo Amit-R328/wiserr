@@ -27,7 +27,7 @@ export const GigPreview = ({ gig, reviews }) => {
     }
 
     const onGoToDetails = (ev) => {
-        console.log('event', ev)
+        
         ev.stopPropagation()
         navigate(`/categories/${gig._id}`)
     }
@@ -69,7 +69,7 @@ export const GigPreview = ({ gig, reviews }) => {
     }
 
     const getLikeByUser =() => {
-        console.log('loggedInUser._id',loggedInUser._id )
+        
         return gig.likedByUsers.some(user => user._id === loggedInUser._id )
     }
 

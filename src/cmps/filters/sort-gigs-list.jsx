@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
 import { useSelector,useDispatch } from 'react-redux';
-import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
+import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
 
 const options = [
