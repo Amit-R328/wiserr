@@ -108,23 +108,35 @@
     // margin-left: 2.5em;
   }
 
-  .search-btn {
-    // height: 34px;
-    border-radius: 7px;
-    border: none;
-    margin-left: -50px;
-    margin-top: 1px;
-    // line-height: 27px;
-  }
+  .search-container {
+    line-height: 32px;
+    
+    .search-input {
+      border: 1px solid #c5c6c9;
+      color: #404145;
+      line-height: 27px;
+      padding: 4px 50px 2px 36px;
+      border-radius: 3px 0 0 3px;
+      border-right: 0;
+    }
+  
+    .search-btn {
+      // height: 34px;
+      // border-radius: 2px;
+      border: none;
+      margin-left: -53px;
+      // margin-top: 1px;
+      background-color: #1dbf73;
+      color: #fff;
+      padding: 9px 8px ;
+      // padding: 4px 50px 2px 36px;
+      border-radius: 3px 0 0 3px;
+      align-self: center;
+      font-size: 12px;
+      font-style: bold;
+        }
+}
 
-  .search-input {
-    border: 1px solid #c5c6c9;
-    color: #404145;
-    line-height: 27px;
-    padding: 4px 50px 2px 36px;
-    border-radius: 3px 0 0 3px;
-    border-right: 0;
-  }
 
   .user-msg {
     color: white;
