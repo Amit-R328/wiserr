@@ -24,9 +24,9 @@ export const HomePage = () => {
                 <IconCategories />
                 </div>
                 
-                <SellerSectionHomepage />
+                {/* <SellerSectionHomepage />
                 
-                <Testimonials />
+                <Testimonials /> */}
         </section>
     )
 }
