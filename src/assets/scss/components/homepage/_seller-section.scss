@@ -4,7 +4,7 @@
     padding-bottom: em(96px);
 
     .wiserr-seller-logo {
-        margin-bottom: em(25px);
+        // margin-bottom: em(25px);
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -44,19 +44,21 @@
         .seller-image {
             padding-top: em(96px);
             margin-top: 0;
-            padding-bottom: em(48px);
+            // padding-bottom: em(48px);
         }
 
         .seller-text {
             grid-column: 1;
-            padding-bottom: em(48px);
+            // padding-bottom: em(48px);
             padding: 0 em(16px);
             color: #fff;
             
             & p {
-                font-size: em(22px);
+                font-size: em(18px);
                 line-height: em(26px);
                 color: #fff;
+                margin-top: 1em;
+                margin-bottom: 0.5em;
             }
             
             & ul {
@@ -65,29 +67,29 @@
                 list-style-image: none;
                 margin: 0;
                 padding: 0;
-                padding-bottom: em(52px);
+                // padding-bottom: em(52px);
                 
                 & li {
                     color: #fff;
                     list-style: none;
                     list-style-image: none;
-                    margin: 0;
-                    padding: 0;
-                    display: flex;
                     font-size: em(16px);
-
+                    margin: 0;
+                    
                     h6 {
                         display: flex;
-                        align-items: flex-start;
-                        font-size: em(18px);
-                        line-height: em(16px);
+                        align-items: center;
+                        font-size: em(14px);
+                        // line-height: em(16px);
                         color: #62646a;
-
+                        margin: 0;
+                        
                         .check-icon {
                             margin-right: em(10px);
                             min-width: em(24px);
-                            font-size: em(18px);
                             color: #62646a;
+                            margin-top: 0;
+                            margin-bottom: 0;
                         }
                     }
 
@@ -100,7 +102,7 @@
 
     .font-domaine {
         margin: 0;
-        max-width: em(450px);
+        // max-width: em(450px);
         line-height: em(24px);
         text-align: start;
         margin-block-start: 0.83em;
@@ -127,6 +129,7 @@
     button {
         outline: none;
         border: none;
+        margin-top: 1.2em;
     
         .explore-seller {
             background-color: #1dbf73;

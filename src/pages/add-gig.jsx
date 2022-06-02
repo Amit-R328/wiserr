@@ -79,12 +79,11 @@ class _AddGigDetails extends React.Component {
     render() {
         const { gigInfo, isImg } = this.state
         return (
-            <React.Fragment>
-                <div className="header-container container">
+                <main className="header-container container">
                     {/* <div className="header-row"> */}
                         {/* <LogoFull /> */}
                     {/* </div>  */}
-                </div>
+                {/* </div> */}
                 <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">
                         <nav>
@@ -105,9 +104,10 @@ class _AddGigDetails extends React.Component {
                     </div>
                 </div>
 
-                <div className="main-content-container">
+                {/* <div className="main-content-container"> */}
                     <section className="add-gig-container">
                         <div className="gig-details">
+
                             <section className="add-gig">
                                 <form className="gig-form" onSubmit={this.handleSubmit}>
 
@@ -196,8 +196,8 @@ class _AddGigDetails extends React.Component {
                             </section>
                         </div>
                     </section>
-                </div>
-            </React.Fragment>
+                {/* </div> */}
+                </main>
         )
     }
 }

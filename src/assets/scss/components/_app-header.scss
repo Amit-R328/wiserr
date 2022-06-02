@@ -34,6 +34,10 @@
     &.scrolled {
       background-color: #fff;
 
+      .nav-link {
+        color: $grey_1000;
+      }
+
       .top {
         margin: 0;
 
@@ -95,7 +99,7 @@
 
   ul {
     margin: 0;
-    color: #fff;
+    // color: #fff;
 
     &.nav-list {
       margin: 0;
