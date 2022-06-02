@@ -1,18 +1,18 @@
 .gigs-preview-main-wrapper {
     width: 100%;
-    background-color: rgba(255, 255, 255, .25);
+    // background-color: rgba(255, 255, 255, .25);
 
     .gigs-list-container {
-        width: 100%;
+        // width: 100%;
         display: flex;
         flex-direction: column;
 
         .list-of-gigs-container {
             position: relative;
-            margin-top: 40px;
+            // margin-top: 40px;
             z-index: 0;
-            margin-left: 13.25%;
-            margin-right: 13.25%;
+            // margin-left: 13.25%;
+            // margin-right: 13.25%;
 
             .gig-list {
                 color: #62646a;
@@ -20,7 +20,7 @@
                 grid-gap: 32px;
                 // min-height: 370px;
                 margin-top: 34px;
-                width: 100%;
+                // width: 100%;
                 display: grid;
                 list-style: none;
             }

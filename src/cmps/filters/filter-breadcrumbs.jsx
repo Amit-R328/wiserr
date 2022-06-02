@@ -1,9 +1,7 @@
-import { height } from '@mui/material/node_modules/@mui/system'
-import { ArrowDown, PathArrow, PathArrow2, VideoIcon } from '../../services/svg.service.js'
+import { ArrowDown, PathArrow2, VideoIcon } from '../../services/svg.service.js'
 import { SortGigsList } from '../filters/sort-gigs-list.jsx'
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
 import { BudgetFilter } from '../filters/budget-filter.jsx';
 import {DeliveryDateFilter} from '../filters/delivery-date-filter.jsx'
@@ -14,7 +12,6 @@ export const FilterBreadCrumbs = () => {
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-
 
     const onHandleChange = (ev, name, value) => {
         const field = name
@@ -54,7 +51,7 @@ export const FilterBreadCrumbs = () => {
             background: '#fff',
             backdrop: 'rgba(0,0,0,0.4)',
             title: 'How Wiserr Works',
-            // html: '<iframe width="560" height="315" <source src="https://res.cloudinary.com/dcbbqlssh/video/upload/v1653985384/video/wiserr_video1_ntvtry.mp4" type="video/mp4"></iframe>',
+            html: '<iframe width="560" height="315" <source src="https://res.cloudinary.com/dcbbqlssh/video/upload/v1653985384/video/wiserr_video1_ntvtry.mp4" type="video/mp4"></iframe>',
             showCloseButton: true,
             focusConfirm: false,
             confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
@@ -76,7 +73,7 @@ export const FilterBreadCrumbs = () => {
 
                         {(filterBy.category) ? <li><a href="/categories">{filterBy.category}</a>
                             <span className="chevron-icon-right">
-                                <PathArrow2 />
+                                {/* <PathArrow2 /> */}
                             </span></li> : <li><span></span></li>}
                     </ul>
                 </div>

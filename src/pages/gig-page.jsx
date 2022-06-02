@@ -24,8 +24,8 @@ export const GigPage = (onChangeCategory) => {
                     </div>
                 </div>
                 <div>
-                    <div className="main-content-container">
-                        <div className="gigs-preview-main-wrapper">
+                    {/* <div className="main-content-container"> */}
+                        <div className="gigs-preview-main-wrapper container">
                             <div className="gigs-list-container">
                                 <div className="filter-gigs-container">
                                     <FilterBreadCrumbs />
@@ -35,7 +35,7 @@ export const GigPage = (onChangeCategory) => {
                         </div>
                     </div>
                 </div>
-            </div>
+            {/* </div> */}
         </section>
     )
 }

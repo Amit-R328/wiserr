@@ -4,8 +4,6 @@
 
   .header {
     width: 100%;
-    // margin-top: 0 !important;
-    // background: red;
     display: flex;
     flex-direction: column;
     background-color: transparent;
@@ -22,7 +20,7 @@
           .logo {
             svg {
               path:nth-child(1) {
-                fill: unset;
+                fill: $grey_1100;
               }
             }
           }
@@ -33,6 +31,10 @@
 
     &.scrolled {
       background-color: #fff;
+
+      .nav-link {
+        color: $grey_1000;
+      }
 
       .top {
         margin: 0;
@@ -95,7 +97,7 @@
 
   ul {
     margin: 0;
-    color: #fff;
+    // color: #fff;
 
     &.nav-list {
       margin: 0;

@@ -1,17 +1,17 @@
 .seller-homepage-app-header {
     // height: em(680px);
     width: 100%;
-    margin-top: 0 !important;
+    // margin-top: 0 !important;
 
     .seller-main-header {
         padding-left: 13.25%;
         padding-right: 13.25%;
-        margin-bottom: 0 !important;
+        // margin-bottom: 0 !important;
         -webkit-transition: background-color .5s ease;
         -o-transition: background-color .5s ease;
         transition: background-color .5s ease;
         width: 100%;
-        margin-top: 0 !important;
+        // margin-top: 0 !important;
 
         &.seller-sticky {
             background-color: #ffffff;
@@ -19,7 +19,7 @@
             width: 100%;
             z-index: 9999;
             display: block;
-            margin-top: 0 !important;
+            // margin-top: 0 !important;
 
             .seller-header-row {
                 display: flex;

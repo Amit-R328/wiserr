@@ -6,8 +6,8 @@ import { LogoFullWhite, VCircle } from '../../services/svg.service.js'
 export const SellerSectionHomepage = () => {
 
     return (
-        <div className="seller-info-container">
-            <div className="seller-container-grid container">
+        <div className="seller-info-container container">
+            <div className="seller-container-grid">
                 <div className="seller-text">
                     <div className="wiserr-seller-logo"><LogoFullWhite />
                     <span className="text-upper">New</span>
