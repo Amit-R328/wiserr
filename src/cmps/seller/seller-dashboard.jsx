@@ -1,16 +1,24 @@
 
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect } from 'react';
-import { loadOrders } from '../../store/actions/order.actions';
+import { loadOrders, onUpdateOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
 
 export const SellerDashboard = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    const [totalOrderAmount, setTotalOrderAmount] = useState(0)
+    const [qtyTotalOrders, setQtyTotalOrders] = useState(0)
+    const [totalMonthlyOrdersAmount, setTotalMonthlyOrdersAmount] = useState(0)
+    const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
+    const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
+    const [qtyYearOrders, setQtyYearOrders] = useState(0)
+     
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
+    const [order, setOrder] = useState('pending')
     
     useEffect(() => {
         dispatch(getLoggedinUser())
@@ -18,10 +26,79 @@ export const SellerDashboard = (props) => {
         dispatch(loadOrders(loggedInUser))
     }, [])
     
+    const handleChange = (ev,order) => {
+        
+        const value = ev.target.value
+        order.status = value        
+        setOrder(order)        
+        dispatch(onUpdateOrder(order))
+    }  
+
+    useEffect(() => {
+        
+        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
+        setTotalOrderAmount(totalOrders.toFixed(2))        
+        setQtyTotalOrders(orders.length)
+
+        getMonthOrders()
+        getYearOrders()
+               
+    })
+
+    const getMonthOrders = () => {
+            
+        const thisMonth = (new Date()).getMonth()        
+        const monthlyOrders = orders.filter(order => {
+            return thisMonth+1 === utilService.getMonthNumber(order.createdAt)            
+        })        
+        
+        setQtyMonthlyOrders(monthlyOrders.length)
+        
+        // let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
+        if(monthlyOrders.length){
+            const totalMonthlyOrders = monthlyOrders.reduce((acc, order) => acc + order.gig.price,0)        
+            setTotalMonthlyOrdersAmount(totalMonthlyOrders)
+        }
+    }
+
+    const getYearOrders = () => {
     
+        const thisYear = (new Date()).getFullYear()        
+        const yearOrders = orders.filter(order => {
+            return thisYear === utilService.getYearNumber(order.createdAt)            
+        })        
+        if(yearOrders.length){
+            
+            setQtyYearOrders(yearOrders.length)
+            const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price,0)
+            setTotalYearOrdersAmount(totalYearOrders)
+        }
+    }
+
+
     return (
         <div className="seller-dashboard-container container">
-            <table className='orders-table' cellpadding="0" cellspacing="0" border="0">
+
+        <div className='seller-totalim'>
+            <div className='seller-Total-order'>
+                <p className='seller-total-amount'>Total orders<br></br>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
+            </div>
+            {/* <div className='seller-Total-order'>
+                <p className='seller-total-qty'>Total orders quantity<br></br> {qtyTotalOrders}</p>
+            </div>             */}
+              <div className='seller-Total-order'>
+                <p className='seller-orders-thisyear'>This year orders<br></br>Amount: ${totalYearOrdersAmount}<br></br>Quantity: {qtyYearOrders}</p>
+            </div>
+            <div className='seller-Total-order'>
+                <p className='seller-orders-amount'>This month orders<br></br>Amount: ${totalMonthlyOrdersAmount}<br></br>Quantity: {qtyMonthlyOrders}</p>
+            </div>
+            {/* <div className='seller-Total-order'>
+                <p className='seller-orders-qty'>This month orders qty:<br></br> {qtyMonthlyOrders}</p>
+            </div> */}
+            
+        </div>
+
+            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>
@@ -31,15 +108,21 @@ export const SellerDashboard = (props) => {
                     <th className='orders-th'>Status</th>
                 </thead>
                 <tbody>
-                    {orders.map((order) => <tr>                        
+                    {orders.map((order,idx) => <tr key={idx}>                        
                             <td>{utilService.setDateTime(order.createdAt)}</td>
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
-                            <td>{utilService.setDateTime(order.deliveryDate)}</td>
+                            <td>{(order.status === 'approved') && utilService.setDateTime(order.deliveryDate)}</td>
                             {/* <td>{order.gig.price}</td> */}
                             <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
-                            <td>{order.status}</td>
-                        </tr>)}
+                            {/* <td>{order.status}</td> */}
+                            {/* <td> <select  value={order.status}> */}
+                            <td> <select className='order-status-selector' value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                                    <option value="approved">approved</option>
+                                    <option value="pending">pending</option>
+                                    <option value="rejected">rejected</option>
+                                </select></td>
+                            </tr>)}
                 </tbody>
             </table>
         </div>

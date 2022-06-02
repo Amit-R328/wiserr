@@ -26,7 +26,7 @@ export class RootCmp extends React.Component {
                     </div>
                 </main>
 
-              <UserMsg/>  
+              {/* <UserMsg/>   */}
             </section>
         )
     }

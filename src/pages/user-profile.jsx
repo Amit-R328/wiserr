@@ -1,9 +1,9 @@
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect } from 'react';
 import { loadOrders } from '../store/actions/order.actions.js';
 import { userService } from '../services/user.service.js';
-import { getLoggedinUser } from '../store/actions/user.actions.js';
+// import { getLoggedinUser } from '../store/actions/user.actions.js';
 import { utilService } from '../services/util.service.js';
 
 export const UserProfile = () => {
@@ -14,7 +14,8 @@ export const UserProfile = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        let user = { type: 'buyer', fullName: loggedInUser.userName }
+        //2.6.22 rinat close no one use
+        // let user = { type: 'buyer', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser,'getBuys'))
         // console.log(orders)
         orders = orders.filter(order => order.seller !== loggedInUser.userName)
@@ -40,7 +41,7 @@ export const UserProfile = () => {
                             {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4>
                             {/* {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4> */}
                                 <h5>Seller: {order.seller.fullName}</h5>
-                                <h5>Amont: {order.gig.price}</h5>
+                                <h5>Amont: $ {order.gig.price}</h5>
                                 <h5>Status: {order.status}</h5>
                                 <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
                                 <h5>Delivery Date:{utilService.setDateTime(order.deliveryDate)}</h5></div>)}

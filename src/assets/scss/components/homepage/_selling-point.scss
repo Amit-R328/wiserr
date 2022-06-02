@@ -19,10 +19,18 @@
     .selling-text {
         grid-column: 1 / 1;
         // padding-bottom: em(48px);
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
         padding-left: em(68px);
         padding-right: em(68px);
         font-size: em(16px);
 
+        .ul-selling-points {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
 
         h2 {
             font-size: em(32px);
