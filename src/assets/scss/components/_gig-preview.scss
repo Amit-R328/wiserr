@@ -84,6 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 6px;
     .fav-btn {
       border: none;
       background: unset;
@@ -91,7 +92,18 @@
     .gig-price {
       color: #74767e;
       padding-bottom: 2px;
-      font-size: 10px;
+      font-size: 9px;
+      .gig-amount {
+        text-align: right;
+        font-size: 12px;
+      }
+      .price-text {
+        font-size: 9px;
+      }
+      .gig-price-title{
+        font-size: 7px;
+      }
     }
+    
   }
 }

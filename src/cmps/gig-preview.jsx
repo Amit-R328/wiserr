@@ -111,7 +111,7 @@ return (
                 </button></div>
                 {/* <div className="heart-btn"><button className="fav-btn">❤</button></div> */}
                 <div className="gig-price">
-                    <h4 className="gig-price"><div className="price-text">STARTING AT</div>{price}</h4>
+                    <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4>
                 </div>
             </ div>
             {/* </article> */}
