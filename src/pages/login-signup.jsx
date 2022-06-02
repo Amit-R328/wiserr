@@ -151,11 +151,11 @@ export const LoginSignup = () => {
                             {isLogin ? 'Login' : 'Sign in'}
                         </Button>
                         <Grid container>
-                            <Grid item xs>
+                            {/* <Grid item xs>
                                 {isLogin && <Link href="#" variant="body2">
                                     Forgot password
                                 </Link>}
-                            </Grid>
+                            </Grid> */}
                             <Grid item>
                                 <NavLink to="/signup"  variant="body2" onClick={onChangePage}>
                                     {isLogin ? 'Don\'t have an account? Sign Up' : 'Already have an account? Login'}
