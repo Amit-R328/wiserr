@@ -3,6 +3,13 @@
   background-color: #fafafa;
   color: #b5b6ba;
   
+  .search-header {
+    border-radius: 3px;
+    border-color: grey_500;
+    box-shadow: none;
+    padding: 6px 6px 6px 24px;
+  }
+
   & ul {
     display: flex;
     align-items: center;

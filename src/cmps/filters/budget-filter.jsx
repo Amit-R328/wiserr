@@ -28,6 +28,7 @@ class _BudgetFilter extends React.Component {
         this.props.setFilter({ ...filterBy, priceMin: min, priceMax: max })
         console.log('ON APPLY BUDGET', this.props.filterBy)
         this.props.loadGigs()
+        this.props.onClose()
     }
 
     onClearBudget = () => {
