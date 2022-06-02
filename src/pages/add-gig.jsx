@@ -80,12 +80,12 @@ class _AddGigDetails extends React.Component {
         const { gigInfo, isImg } = this.state
         return (
             <React.Fragment>
-                <div className="header-container">
-                    <div className="header-row">
-                        <LogoFull />
-                    </div>
+                <div className="header-container container">
+                    {/* <div className="header-row"> */}
+                        {/* <LogoFull /> */}
+                    {/* </div>  */}
                 </div>
-                <div className="progress-bar-container">
+                <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">
                         <nav>
                             <button className="personal_info active">

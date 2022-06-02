@@ -1,16 +1,16 @@
 .user-profile-layout {
-    margin-top: 135px;
+    padding-top: 200px;
     padding-left: 13.25%;
     padding-right: 13.25%;
-    background-color: $grey_300;
+    // background-color: $grey_400;
     color: #62646a;
 }
 
 .user-profile {
-    max-width: 1400;
+    // max-width: 1400;
     margin: auto;
     align-items: flex-start;
-    gap: 100px;
+    // gap: 100px;
 
     .profile-left-container {
         max-width: 300px;

@@ -25,10 +25,10 @@ export const UserProfile = () => {
 
 
     return (
-        <section className='user-profile-layout'>
-            <section className='user-profile flex'>
+        <section className='user-profile-layout container'>
+            <section className='user-profile '>
                 <div className='profile-left-container'>
-                    <div className='profile-img-user flex'>
+                    <div className='profile-img-user'>
                         <img className='profile-usr-img' src={user.imgUrl} alt="img" />
                         <h4>userName: {user.userName}</h4>
                     </div>
