@@ -26,7 +26,7 @@ export const AppHeader = (props) => {
     }
 
     useEffect(() => {
-        if(pathname !== '/categories'){
+        if(pathname === '/'){
         window.addEventListener("scroll", handleScroll)
         }
         return () => {
@@ -54,7 +54,7 @@ export const AppHeader = (props) => {
     }
 
     return (
-        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname==='/categories' ? 'categories-header' :''}`} >
+        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
            {/* <header className={(pathname !== '/' || !`${scrolled}`)  ? 'header' : ''}>  */}
         {/* <header className={(pathname !== '/' || window.scrollY === 0) `header ${scrolled ? 'scrolled' : ''}`} > */}
 
@@ -91,7 +91,7 @@ export const AppHeader = (props) => {
                 </ul>
             </div>
 
-            {(scrolled || (pathname === '/categories'))  && <div className="bottom container">
+            {(scrolled || (pathname !== '/'))  && <div className="bottom container">
                 <NavCategories />
             </div>}
         </header>

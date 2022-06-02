@@ -83,9 +83,9 @@ export const GigDetails = (props) => {
     
     return (
         <React.Fragment>
-            <div className="app-header">
-            </div>
-            <section className="gig-details-container">
+            {/* <div className="app-header">
+            </div> */}
+            <section className="gig-details-container container">
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="gig-info">
