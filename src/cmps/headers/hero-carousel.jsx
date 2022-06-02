@@ -3,6 +3,7 @@ import '../../assets/scss/main.scss'
 // import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
+import {HeroPopularCategories} from './hero-popular-categories'
 
 export function HeroCarousel(props) {
   var backIdx = 1;
@@ -46,10 +47,11 @@ export function HeroCarousel(props) {
       </div>
       <div className="hero-content-container container">
         <div className='hero-content'>
-          <h1>Find the perfect <i>freelance</i> <br></br>services for your business</h1>
-          <form className="search-bar">
-            <Search placeholder='Try "designing business logo"' />
-          </form>
+          <h1>Find the perfect <i>freelance</i> <br/>services for your business</h1>
+          <div className='search-hero-homepage'>
+            <Search loc={'heroCarousel'}/>
+            <HeroPopularCategories/>
+          </div>
         </div>
         <div className="static-background">
           {/* <HeroPopularCategory /> */}

@@ -6,8 +6,10 @@ import { SearchIcon } from '../services/svg.service.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faMagnifyingGlass } from '@fortawesome/pro-solid-svg-icons'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { HeroCarousel } from "./headers/hero-carousel.jsx";
 
-export const Search = (handleScroll) => {
+
+export const Search = ({loc},handleScroll) => {
     const [searchResults, setSearchResults] = useState('')
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()
@@ -25,16 +27,17 @@ export const Search = (handleScroll) => {
     const handleChange = (ev) => {
         setSearchTerm(ev.target.value)
     }
-
+    let className = (loc === 'heroCarousel') ? 'search-hero' : 'search-header'
+    let placeholder = (loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'
     return (
         // <React.Fragment>
-            <div className="search-container search-header search-hero">
+            <div className={`search-container`}>
             <label>
-                <FontAwesomeIcon icon={faMagnifyingGlass} />
-                <input type="search" className="search-input" onChange={handleChange} placeholder="Find services" />
+                {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
+                <input type="search" className={`search-input ${className}`} onChange={handleChange} placeholder={`${placeholder}`} />
                 {/* <SearchIcon/> */}
             </label>
-            <button className="submit-button search-btn" onClick={onSearch}>Search</button>
+            <button className={`${className}-btn`} onClick={onSearch}>Search</button>
             </div>
         // </React.Fragment>
     )

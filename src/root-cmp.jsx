@@ -4,6 +4,7 @@ import routes from './routes'
 import { UserDetails } from './pages/user-details'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
+import { UserMsg}  from './cmps/user-msg'
 
 export class RootCmp extends React.Component {
 
@@ -24,6 +25,8 @@ export class RootCmp extends React.Component {
                         <AppFooter />
                     </div>
                 </main>
+
+              <UserMsg/>  
             </section>
         )
     }

@@ -21,31 +21,33 @@ export const IconCategories = () => {
         <div className="main-categories">
             <h2>Explore the marketplace</h2>
             <ul className="categories-list">
-                <li onClick={() => onChangeCategory('Graphics & Design')}>
-                    {/* <a href="/categories/graphics-design"> */}
+                <li>
+                    <a href="/categories/graphics-design">
                     <GraphicsDesignIcon />
                     Graphics &amp; Design
-                    {/* </a> */}
+                    </a>
                 </li>
-                <li onClick={() => onChangeCategory('Digital Marketing')}>
-                    {/* <a href="/categories/online-marketing"> */}
+                <li>
+                    <a href="/categories/online-marketing">
                     <OnlineMarketingIcon />Digital Marketing
-                    {/* </a> */}
+                    </a>
                 </li>
-                <li onClick={() => onChangeCategory('Writing & Translation')}>
-                    {/* <a href="/categories/writing-translation"> */}
+                <li>
+                    <a href="/categories/writing-translation">
                         <WritingTranslationIcon />Writing &amp; Translation
-                        {/* </a> */}
+                        </a>
                 </li>
-                <li onClick={() => onChangeCategory('Video & Animation')}>
-                    {/* <a href="/categories/video-animation"> */}
+                <li>
+                {/* <li onClick={() => onChangeCategory('Video & Animation')}> */}
+                    <a href="/categories/video-animation">
                         <VideoAnimationIcon />Video &amp; Animation
-                        {/* </a> */}
+                        </a>
                 </li>
-                <li onClick={() => onChangeCategory('Music & Audio')}>
-                    {/* <a href="/categories/music-audio"> */}
+                <li>
+                {/* <li onClick={() => onChangeCategory('Music & Audio')}> */}
+                    <a href="/categories/music-audio">
                         <MusicAudioIcon />Music &amp; Audio
-                        {/* </a> */}
+                        </a>
                 </li>
                 {/* <li>
                     <a href="/categories/programming-tech">
