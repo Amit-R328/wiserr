@@ -81,6 +81,7 @@
             font-size: em(40px);
             line-height: em(30px);
             font-family: roboto;
+
         }
     }
     
@@ -102,16 +103,22 @@
     
 }
 
+.search-hero-homepage{
+    z-index: 999;
+    width: em(546px);
+    height: em(48px);
+}
 
 .seller-name {
-    display: none;
+    // display: none;
         color: white;
         font-size: 1rem;
         align-self: flex-end;
         z-index: 5;
         margin-block-end: em(20px);
-    
-
+        position: absolute;
+        top: 45%;
+        right: 25%;
         .seller {
             font-family: Arial, Helvetica, sans-serif;
             font-weight: 600;
@@ -123,6 +130,7 @@
             transition: 1s;
 
             &.active {
+                display: block;
                 opacity: 1;
             }
             .seller-skill {
