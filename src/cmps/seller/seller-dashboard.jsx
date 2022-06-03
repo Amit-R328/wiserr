@@ -5,6 +5,7 @@ import { loadOrders, onUpdateOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
+import { socketService } from '../../services/socket.service.js';
 
 export const SellerDashboard = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
@@ -21,11 +22,20 @@ export const SellerDashboard = (props) => {
     const [order, setOrder] = useState('pending')
     
     useEffect(() => {
+        
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))
     }, [])
     
+    const setSocket = () => {
+        socketService.on('added order', this.onAddOrder)
+    }
+
+    const onAddOrder = (order) => {
+       orders = ({...orders, order})
+    }
+
     const handleChange = (ev,order) => {        
         const value = ev.target.value
         order.status = value        

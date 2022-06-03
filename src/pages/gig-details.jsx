@@ -13,7 +13,8 @@ import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import ImageGallery from 'react-image-gallery';
 import { UserMsg } from '../cmps/user-msg.jsx';
-
+// import {ReviewAdd} from '../cmps/review-add.jsx'
+import { socketService } from '../services/socket.service.js';
 
 
 export const GigDetails = (props) => {
@@ -22,6 +23,7 @@ export const GigDetails = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
+    const [isReviewAdd, setReviewAdd] = useState(false)
     // const [orders, setOrders] = useState({})
 
     const navigate = useNavigate()
@@ -62,12 +64,14 @@ export const GigDetails = (props) => {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
-    const onConfirmOrder = (ev, gigId) => {
+    const onConfirmOrder =  async(ev, gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
             showErrorMsg('Need to login')
         } else {
-            dispatch(onSaveOrder(gigId, loggedInUser))
+            let savedGig = await dispatch(onSaveOrder(gigId, loggedInUser))
+             
+            socketService.emit('new order', {savedGig})
             showSuccessMsg('Order was created')
             // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
             // clearInterval(msgInterval);
@@ -157,6 +161,12 @@ export const GigDetails = (props) => {
                                 </div>
                             </article>
                         </section>
+                        
+                        {/* {(loggedInUser) ? 
+                        <button onClick={() => {setReviewAdd(!isReviewAdd)}} className="add-review-btn">{isReviewAdd ? 'Close' : 'Add Review'}</button> :
+                        <h3>Please log in to comment</h3>
+                        }
+                        {isReviewAdd && <ReviewAdd owner={loggedInUser} gigId={gig._id} setReviewAdd={setReviewAdd}/>} */}
                         {(gig.reviews.length) ? <section className="reviews">
 
                             {gig.reviews.map(review => {
