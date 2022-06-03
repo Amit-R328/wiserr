@@ -1,17 +1,13 @@
 form.search-bar {
   display: flex;
-  // align-items: center;
 
   .search-container {
-    // line-height: 32px;
     position: relative;
     
     & label {
-      
       &:after{
         content: "\f3ee";
         color: $grey_1100;
-        // color: #404145;
         padding-top:rem(5px);
         padding-left: rem(5px);
         font-family: awesome brands;
@@ -26,11 +22,9 @@ form.search-bar {
     input {
       flex-basis: 1;
       
-      
       .search-input {
         border: 1px solid $grey_600;
         color: $grey_1100;
-        // line-height: 27px;
         padding: 4px 50px 2px 36px;
         border-radius: 3px 0 0 3px;
         border-right: 0;
@@ -39,19 +33,43 @@ form.search-bar {
     }
     
     .search-btn {
-      // height: 34px;
-      // border-radius: 2px;
       border: none;
       margin-left: -53px;
-      // margin-top: 1px;
       background-color: $wiserr_green;
       color: $white;
       padding: 9px 8px;
-      // padding: 4px 50px 2px 36px;
       border-radius: 3px 0 0 3px;
       align-self: center;
       font-size: 12px;
       font-style: bold;
     }
   }
+}
+
+.search-header {
+  border-radius: 3px;
+  border:1px solid $grey_500;
+  box-shadow: none;
+  padding: 6px 6px 6px 24px;
+  width: 193px;
+}
+
+.search-input {
+  border-radius: 3px 0 0 3px;
+  border-right: 0;
+  padding-top: 8px;
+  border-color: $grey_500;
+  color: #404145;
+  padding: 7px 7px 7px 28px;
+  font-size: 14px;
+}
+
+.search-header-btn{
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: $wiserr_green;
+  border: 1px solid transparent;
+  color: $white;
+  border-radius: 0 3px 3px 0;
+  font-weight: 700;
 }

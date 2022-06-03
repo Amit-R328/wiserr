@@ -1,30 +1,23 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import { loadOrders } from '../store/actions/order.actions.js';
+import { useDispatch } from 'react-redux'
 import { cloudinaryService } from '../services/cloudinary.service.js';
 import { NavLink } from 'react-router-dom';
-import { connect } from "react-redux";
 import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
 
 const theme = createTheme();
 
 export const LoginSignup = () => {
-
     const [isImg, setIsImg] = useState(false)
     const [imgUrl, setImgUrl] = useState('')
     const [isLogin, setIsLogin] = useState(true)
@@ -34,32 +27,24 @@ export const LoginSignup = () => {
     const uploadImg = (event) => {
         const CLOUD_NAME = cloudinaryService.getCloudName()
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
-
         const formData = new FormData();
         formData.append('file', event.target.files[0])
         formData.append('upload_preset', cloudinaryService.getPreset());
-
         setIsImg(true)
-
         return fetch(UPLOAD_URL, {
             method: 'POST',
             body: formData
         }).then(res => res.json()).then(res => {
-            
             setImgUrl(res.url)
         }).catch(err => console.error(err))
-
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-
         const loginInfo = {
             userName: data.get('userName'),
             password: data.get('password'),
-            
-            // isRemember: (data.get('remember-me') !== null),
         }
     
         if (isLogin) {
@@ -68,7 +53,6 @@ export const LoginSignup = () => {
         } else {
             loginInfo.fullname = data.get('fullname')
             loginInfo.imgUrl = imgUrl
-    
             dispatch(signup(loginInfo))
             dispatch(getLoggedinUser())
         }
@@ -76,7 +60,6 @@ export const LoginSignup = () => {
     }
 
     const onChangePage = (ev) => {
-        // ev.preventDefault()
         setIsLogin(!isLogin)
     }
 
@@ -98,11 +81,11 @@ export const LoginSignup = () => {
                         {isLogin ? 'Login' : 'Sign Up'}
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
+                        <label for='file-input' className='file-img'>
                             { (!isLogin) ? (!isImg) ?
                                 <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={uploadImg} />
                             : <Avatar alt="profile" src={imgUrl}/>
                              : <span></span>}
-                        <label for='file-input' className='file-img'>Choose an Image
                         </label>
                         <TextField
                             margin="normal"
