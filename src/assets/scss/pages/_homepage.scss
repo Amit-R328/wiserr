@@ -6,8 +6,25 @@
   width: 193px;
 }
 
+.search-input {
+  border-radius: 3px 0 0 3px;
+  border-right: 0;
+  padding-top: 8px;
+  border-color: #dadbdd;
+  color: #404145;
+  padding: 7px 7px 7px 28px;
+  font-size: 14px;
+}
+
 .search-header-btn{
-  display: none;
+  // display: none;
+  font-size: 14px;
+  padding: 8px 16px;
+  background-color: #1dbf73;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 0 3px 3px 0;
+  font-weight: 700;
 }
 .trusted-by-brands {
   // width: 100%;
