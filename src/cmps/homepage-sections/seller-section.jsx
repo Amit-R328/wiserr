@@ -1,20 +1,22 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
+import { useSelector} from 'react-redux'
 
-import { LogoFullWhite, VCircle } from '../../services/svg.service.js'
+import { LogoFullWhiteSellers, VCircle } from '../../services/svg.service.js'
 
 export const SellerSectionHomepage = () => {
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
 
     return (
         <div className="seller-info-container container">
             <div className="seller-container-grid">
                 <div className="seller-text">
-                    <div className="wiserr-seller-logo"><LogoFullWhite />
+                    <div className="wiserr-seller-logo"><LogoFullWhiteSellers /><h2>sellers.</h2>
                         <span className="text-upper">New</span>
                     </div>
 
                     <h2 className="font-domaine">
-                        <span><span>Solution for Sellers<br></br>designed for<span><i>sellers</i></span>
+                        <span><span>A Business Solution<br></br>designed for<span><i>sellers</i></span>
                         </span></span>
                     </h2>
                     <p>Upgrade to a curated experience packed with tools and benefits, dedicated to sellers</p>
@@ -24,7 +26,7 @@ export const SellerSectionHomepage = () => {
                         <li><h6><VCircle /><p>Manage gigs and boost productivity with one powerful workspace</p></h6></li>
                     </ul>
                     <div className="explore-seller-container">
-                        <NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink>
+                    {loggedInUser ? <NavLink  to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink> :<NavLink  to="/login" className="explore-seller">Explore Wiserr Seller</NavLink>}
                     </div>
                 </div>
                 <div className="seller-image">

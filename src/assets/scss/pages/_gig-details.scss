@@ -38,7 +38,7 @@
             font-size: 20px;
             text-align: start;
             line-height: 36.4px;
-            color: #404145;
+            color: $grey_1100;
         }
 
         .owner-details {
@@ -51,10 +51,10 @@
                 font-weight: bold;
             }
             .owner-level {
-                color: #62646a;
+                color: $grey_1000;
             }
             .owner-order-qty {
-                color: #95979d;
+                color: $grey_800;
             }
         }
 
@@ -129,14 +129,14 @@
 
                     li {
                         width: 50%;
-                        color: #74767e;
+                        color: $grey_900;
                         box-sizing: border-box;
                         padding-bottom: 16px;
 
                         strong {
                             display: block;
                             padding-top: 4px;
-                            color: #62646a;
+                            color: $grey_1000;
                         }
                     }
                 }
@@ -267,14 +267,14 @@
                 }
 
                 .days-to-make {
-                    color:  #62646a;
+                    color:  $grey_1000;
                     margin-top: em(20px);
                 }
                 .description-littleDetails {
 
                 }
                 .littleDetails {
-                    color: #95979d;
+                    color: $grey_800;
                     svg {
                         margin-right: 5px;
                     }
@@ -344,7 +344,7 @@
             border: 1px solid currentcolor;
             border-radius: 4px;
             box-sizing: border-box;
-            color: #404145;
+            color: $grey_1100;
             display: flex;
             font-size: 16px;
             font-weight: 600;
@@ -363,13 +363,13 @@
             }
 
             &:hover {
-                background-color: #74767e;
+                background-color: $grey_900;
                 border-color: transparent;
                 color: #fff;
             }
 
             &:active {
-                background-color: #62646a;
+                background-color: $grey_1000;
                 border-color: transparent;
                 color: #fff;
             }

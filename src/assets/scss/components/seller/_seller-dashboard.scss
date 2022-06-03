@@ -8,7 +8,7 @@
 
         width: 100%;
         // background: linear-gradient(to right, #ccccce, #EFEFF0);
-        color: #62646a;
+        color: $grey_1000;
         font-family: 'Roboto', sans-serif;
 
         .orders-table-header {
@@ -76,7 +76,7 @@
         // width: 200px;
         border: 1px solid #dadbdd;
         margin-bottom:  10px ;
-        padding: 20px;
+        padding: 30px;
         text-align: center;
         font-size: 18px;
         

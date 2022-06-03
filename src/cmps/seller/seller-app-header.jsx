@@ -38,7 +38,7 @@ export const SellerAppHeader = (props) => {
 
     return (
         <header className="header-seller container">
-            <button className="btn-navicon">
+            <button className="hamburger-icon">
                 <HamburgerMenu />
                 {/* <HamburgerMenu /> */}
             </button>

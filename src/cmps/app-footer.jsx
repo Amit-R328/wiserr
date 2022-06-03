@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { IconContext } from 'react-icons'
-import { LogoFullFooter, Copyright } from '../services/svg.service.js'
+import { LogoFullFooter, Copyright, Instagram, Pinterest, LinkedIn, Facebook, Twitter } from '../services/svg.service.js'
 import { useSelector } from "react-redux";
 import React, { useState } from 'react'
 
@@ -10,21 +10,25 @@ export const AppFooter = (props) => {
 
     return (
         <footer className="footer-bottom">
-            <div className="footer-left">
-                <h1 className="footer-logo">
+            <div className="footer-left flex">
+                <div className="footer-logo">
                     <LogoFullFooter />
-                </h1>
-                <p className="text-body-2 legal">
-                    All rights reserved to Wiserr ltd.    
+                </div>
+                <p className="legal-text flex">
+                    <span className="copyright-icon">
+                        <Copyright />
+                    </span>
+                    All rights reserved to Wiserr ltd.
                 </p>
 
             </div>
-            <div className="social-container flex">
-                <i className='fab fa-facebook-f'></i>
-                <i className='fab fa-instagram'></i>
-                <i className='fab fa-github	'></i>
-                <i className='	fab fa-twitter'></i>
-            </div>
+            <ul className="social-container flex">
+                <li><Twitter /></li>
+                <li><Facebook /></li>
+                <li><LinkedIn /></li>
+                <li><Pinterest /></li>
+                <li><Instagram /></li>
+            </ul>
         </footer>
     )
 }

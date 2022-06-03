@@ -1,5 +1,5 @@
 .testimonials {
-    color: #62646a;
+    color: $grey_1000;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -7,7 +7,7 @@
     margin-top: 3em;
 
     .testimonial-modal {
-        color: #62646a;
+        color: $grey_1000;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,7 +82,7 @@ blockquote {
 }
 
 .testimonial-name {
-    color: #74767e;
+    color: $grey_900;
     padding-bottom: em(16px);
     font-size: em(18px);
     line-height: 140%;

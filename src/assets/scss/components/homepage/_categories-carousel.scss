@@ -1,9 +1,10 @@
 .gig-slider-container {
-    color: #62646a;
+    // color: $grey_1000;
     margin-top: em(60px);
     margin-bottom: em(60px);
 
     & h2 {
+        color: $grey_1100;
         padding-bottom: em(18px);
         font-size: em(32px);
         line-height: 120%;
@@ -15,43 +16,69 @@
         grid-template-columns: repeat(5 1fr);
         grid-template-rows: 1fr;
         grid-template-areas:
-            "slide1 slide2 slide3 slide4 slide5";
-        column-gap: em(32px);
+        "slide1 slide2 slide3 slide4 slide5";
+        // column-gap: em(6px);
+        padding: 0;
+    }
+    
+    .slide {
+        aspect-ratio: 1 / 0.8;
+    }
+    
+    @media screen and (min-width: 600px) {
+        .slide{
+            aspect-ratio: 1 / 0.8;
+        } 
+    }
+    
+    @media screen and (min-width: 900px) {
+        .slide{
+            aspect-ratio: 1 / 0.84;
+        }
+    } 
+    
+    @media screen and (min-width: 1180px) {
+        .slide{
+            aspect-ratio: 1 / 0.83;
+        }
+    } 
+    
+    @media screen and (min-width: 1400px) {
+        .slide:not(:first-of-type) {
+            width: 100%;
+            aspect-ratio: 1 / 0.79;
+            padding-left:32px;
+            
+            &:first-of-type {
+                width: 100%;
+                padding: 0;
+                padding-right: 16px;
+                aspect-ratio: 1 / 0.79;
+
+            }
+        } 
     }
 
-    .slide1 {
-        grid-area: slide1;
-        min-width: em(252px);
-    }
-    .slide2 {
-        grid-area: slide2;
-        min-width: em(252px);
-    }
-    .slide3 {
-        grid-area: slide3;
-        min-width: em(252px);
-    }
-    .slide4 {
-        grid-area: slide4;
-        min-width: em(252px);
-    }
-    .slide5 {
-        grid-area: slide5;
-        min-width: em(252px);
-    }
-
-    .category-legends {
+    h4 {
         position: absolute;
         z-index: 55;
         color: #fff;
         padding: 16px;
-        line-height: unset;
-        font-size: em(16px);
-        line-height: 130%;
-    }
+        width: 100%;
+        font-stretch: 100%;
+        // line-height: unset;
+        cursor: pointer;
 
-    .legends-small {
-        font-size: em(10px);
-        line-height: em(20px);
+        & span {
+            font-size: em(24px);
+            line-height: 32px;
+            font-weight: 700;
+        }
+
+        & small {
+            font-size: em(14px) !important;
+            line-height: em(20px);
+            font-weight: 400 !important;
+        }
     }
 }

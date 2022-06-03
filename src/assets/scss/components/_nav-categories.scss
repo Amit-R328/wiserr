@@ -4,9 +4,10 @@
     justify-content: space-between;
     border-top: 1px solid $grey_400;
     border-bottom: 1px solid $grey_400;
-  }
+}
 
 .categories-menu-scroll {
+    padding: em(10px) 0;
     visibility: visible;
     width: 100%;
     background-color: #ffffff;
@@ -27,7 +28,7 @@
                 text-decoration: none;
                 padding: 0 10px;
                 // position: relative;
-                color: #62646a;
+                color: $grey_1000;
                 margin: 0;
                 outline: 0;
                 text-align: center;
