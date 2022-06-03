@@ -7,7 +7,7 @@
 
     .layout-row {
         // background-color: #ffffff;
-        // color: #62646a;
+        // color: $grey_1000;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -69,7 +69,7 @@
                             background-image: none;
                             border-style: none;
                             display: inline-block;
-                            fill: #62646a;
+                            fill: $grey_1000;
                             height: 10px;
                             list-style: none;
                             margin: 0;
@@ -104,7 +104,7 @@
         }
 
         p {
-            color: #62646a;
+            color: $grey_1000;
             cursor: default;
             display: inline-block;
             line-height: 24px;
@@ -159,7 +159,7 @@
     div.top-filters.st-hover {
         -webkit-box-align: center;
         align-items: center;
-        color: #62646a;
+        color: $grey_1000;
         cursor: default;
         display: flex;
         font-family: Macan, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -170,7 +170,7 @@
 
     .sort-by-wrapper {
 
-        color: #62646a;
+        color: $grey_1000;
         display: inline-block;
         font-size: 16px;
         line-height: 120%;
@@ -194,7 +194,7 @@
         -webkit-box-pack: justify;
         align-items: center;
         box-sizing: border-box;
-        color: #62646a;
+        color: $grey_1000;
         flex: 1 1 0;
         flex-wrap: wrap;
         font-size: 16px;
@@ -289,7 +289,7 @@
                                 font-weight: 600;
                                 cursor: pointer;
                                 user-select: none;
-                                color: #62646a;
+                                color: $grey_1000;
                                 display: block;
                                 margin: 4px 0 10px;
                             }

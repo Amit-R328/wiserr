@@ -52,11 +52,11 @@ export const AppHeader = (props) => {
     }
 
     return (
-        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
-            <div className="top container">
+        <header className={`header container ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
+            <div className="top">
                 <div className="logo-search-container">
-                    <button className="btn-navicon">
-                        <HamburgerMenu />
+                    <button className="hamburger-icon">
+                        {/* <HamburgerMenu /> */}
                     </button>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">

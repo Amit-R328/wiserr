@@ -33,7 +33,7 @@
                 background-color: blue;
 
                 @media screen and (max-width: 600px) {
-                    .btn-navicon {
+                    .hamburger-icon {
                         display: block;
                         background-color: transparent;
                         outline: none;
@@ -42,7 +42,7 @@
                 }
             }
 
-            .btn-navicon {
+            .hamburger-icon {
                 display: none;
             }
 
@@ -142,7 +142,7 @@
                 text-align: left;
                 line-height: em(24px);
                 font-size: 1.2em;
-                color: #62646a;
+                color: $grey_1000;
                 // color: #ffffff;
 
                 & a {
@@ -176,18 +176,18 @@
 
     .font-domaine {
         // color: #ffffff;
-        color: #62646a;
+        color: $grey_1000;
     }
 
     .seller-text-body-2 {
         display: flex;
         flex-direction: row;
         // color: #ffffff;
-        color: #62646a;
+        color: $grey_1000;
 
         & li a {
             // color: #ffffff;
-            color: #62646a;
+            color: $grey_1000;
             list-style-type: none;
             text-decoration: none;
             cursor: pointer;
