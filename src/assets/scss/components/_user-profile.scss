@@ -13,7 +13,7 @@
     // gap: 100px;
 
     .profile-left-container {
-        max-width: 300px;
+        max-width: 200px;
         padding: 20px;
         border: 1px solid $grey_500;
         display: flex;
@@ -31,13 +31,57 @@
         width: 60px;
         border-radius: 50%;
     }
+    .your-orders-container{
+        margin-bottom: 30px;
+        font-size: 16px;
+
+    }
     .order-card {
         display: grid;
         margin-bottom: 20px;
+        height: 250px;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 1fr 3fr;
+        max-width: 600px;
         border: 1px solid $grey_400;
         padding: 10px;
         background-color: white;
         border-radius: 5px;
+        grid-row-gap: 10px;
+        grid-column-gap: 20px;
+        .gig-img-profile {
+            // border-radius: 50%;
+            border-radius: 3px;
+            width: 200px;
+            height: 200px;
+            order: -1;
+            margin-right: 10px;
+            grid-row: 1 / span 2;
+            align-self: center;
+            object-fit:contain;
+            background-image: cover;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .order-desc-profile {
+            width: 45ch;
+            align-self: center;
+            justify-self: end;
+            font-family: roboto;
+            font-weight: 600;
+            color: $grey_1100;
+            line-height: em(30px);
+            font-size: 15px;
+        }
+        .card-profile-info {
+            grid-column: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+        }
     }
 }
 

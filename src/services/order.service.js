@@ -2,6 +2,7 @@
 // import { utilService } from "./util.service.js"
 import Axios from 'axios'
 import { httpService } from './http.service.js'
+import { gigService } from './gig.service.js'
 
 const orderChannel = new BroadcastChannel('orderChannel')
 
@@ -30,13 +31,11 @@ async function query(loggedInUser, typeOf){
     // const urlToRequest =  '/order'
     // console.log('urlToRequest', urlToRequest)
     let orders =  await httpService.get('order')
-    
+    let gigs = await gigService.query();
     if (typeOf === 'getBuys') {
         if(loggedInUser.isSeller){
             orders = orders.filter(order => {
-                // console.log('orders', order.seller, loggedInUser.userName)
                 return order.buyer.fullName === loggedInUser.userName})
-                // console.log('orders',orders )
         }else {
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }
@@ -51,7 +50,10 @@ async function query(loggedInUser, typeOf){
             orders = []
         }
     }
-    return orders
+    orders = orders.map(order => {
+        return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig.title === order.gig.description).imgUrl[0]} }})
+    console.log(orders)
+        return orders
     // console.log('order', orders)
 }
 
