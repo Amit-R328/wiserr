@@ -9,6 +9,12 @@ import { utilService } from '../../services/util.service.js';
 export const SellerDashboard = (props) => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     const [totalOrderAmount, setTotalOrderAmount] = useState(0)
+    const [qtyTotalOrders, setQtyTotalOrders] = useState(0)
+    const [totalMonthlyOrdersAmount, setTotalMonthlyOrdersAmount] = useState(0)
+    const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
+    const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
+    const [qtyYearOrders, setQtyYearOrders] = useState(0)
+     
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
@@ -20,8 +26,7 @@ export const SellerDashboard = (props) => {
         dispatch(loadOrders(loggedInUser))
     }, [])
     
-    const handleChange = (ev,order) => {
-        
+    const handleChange = (ev,order) => {        
         const value = ev.target.value
         order.status = value        
         setOrder(order)        
@@ -29,14 +34,70 @@ export const SellerDashboard = (props) => {
     }  
 
     useEffect(() => {
+        console.log('orders',orders )
+        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
         
-        let totalOrder = orders.reduce((acc, order) => acc + order.gig.price,0)
-        setTotalOrderAmount(totalOrder.toFixed(2))       
+        setTotalOrderAmount(totalOrders.toFixed(2))        
+        setQtyTotalOrders(orders.length)
+
+        getMonthOrders()
+        getYearOrders()
+               
     })
+
+    const getMonthOrders = () => {
+            
+        const thisMonth = (new Date()).getMonth()        
+        const monthlyOrders = orders.filter(order => {
+            return thisMonth+1 === utilService.getMonthNumber(order.createdAt)            
+        })        
+        
+        setQtyMonthlyOrders(monthlyOrders.length)
+        
+        // let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
+        if(monthlyOrders.length){
+            const totalMonthlyOrders = monthlyOrders.reduce((acc, order) => acc + order.gig.price,0)        
+            setTotalMonthlyOrdersAmount(totalMonthlyOrders.toFixed(2))
+        }
+    }
+
+    const getYearOrders = () => {
+    
+        const thisYear = (new Date()).getFullYear()        
+        const yearOrders = orders.filter(order => {
+            return thisYear === utilService.getYearNumber(order.createdAt)            
+        })        
+        if(yearOrders.length){
+            
+            setQtyYearOrders(yearOrders.length)
+            const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price,0)
+            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
+        }
+    }
 
 
     return (
         <div className="seller-dashboard-container container">
+
+        <div className='seller-totalim'>
+            <div className='seller-Total-order'>
+                <p className='seller-total-amount'>Total orders<br></br>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
+            </div>
+            {/* <div className='seller-Total-order'>
+                <p className='seller-total-qty'>Total orders quantity<br></br> {qtyTotalOrders}</p>
+            </div>             */}
+              <div className='seller-Total-order'>
+                <p className='seller-orders-thisyear'>This year orders<br></br>Amount: ${totalYearOrdersAmount}<br></br>Quantity: {qtyYearOrders}</p>
+            </div>
+            <div className='seller-Total-order'>
+                <p className='seller-orders-amount'>This month orders<br></br>Amount: ${totalMonthlyOrdersAmount}<br></br>Quantity: {qtyMonthlyOrders}</p>
+            </div>
+            {/* <div className='seller-Total-order'>
+                <p className='seller-orders-qty'>This month orders qty:<br></br> {qtyMonthlyOrders}</p>
+            </div> */}
+            
+        </div>
+
             <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
@@ -56,7 +117,7 @@ export const SellerDashboard = (props) => {
                             <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
                             {/* <td>{order.status}</td> */}
                             {/* <td> <select  value={order.status}> */}
-                            <td> <select value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                            <td> <select className='order-status-selector' value={order.status} onChange={(ev) => handleChange(ev,order)}>
                                     <option value="approved">approved</option>
                                     <option value="pending">pending</option>
                                     <option value="rejected">rejected</option>
@@ -64,9 +125,6 @@ export const SellerDashboard = (props) => {
                             </tr>)}
                 </tbody>
             </table>
-            <div className='seller-Total-order'>
-                <p>Total order: {totalOrderAmount}</p>
-            </div>
         </div>
     )
 }

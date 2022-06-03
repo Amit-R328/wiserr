@@ -51,8 +51,6 @@ export const LoginSignup = () => {
 
     }
 
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -64,7 +62,6 @@ export const LoginSignup = () => {
             // isRemember: (data.get('remember-me') !== null),
         }
     
-
         if (isLogin) {
             dispatch(login(loginInfo))
             dispatch(getLoggedinUser())
@@ -74,24 +71,23 @@ export const LoginSignup = () => {
     
             dispatch(signup(loginInfo))
             dispatch(getLoggedinUser())
-
         }
         navigate('/')
-    };
+    }
 
     const onChangePage = (ev) => {
         // ev.preventDefault()
         setIsLogin(!isLogin)
     }
 
-
     return (
+        <main className="login-sign-up-container container">
         <ThemeProvider theme={theme} >
             <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box
                     sx={{
-                        marginTop: 8,
+                        marginTop: 0,
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
@@ -99,14 +95,14 @@ export const LoginSignup = () => {
                 >
                     <Avatar sx={{ m: 1, bgcolor: '#1cbf73' }} />
                     <Typography component="h1" variant="h5">
-                        {isLogin ? 'Login' : 'Sign in'}
+                        {isLogin ? 'Login' : 'Sign Up'}
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                        <label className='file-img'>
                             { (!isLogin) ? (!isImg) ?
                                 <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={uploadImg} />
                             : <Avatar alt="profile" src={imgUrl}/>
                              : <span></span>}
+                        <label for='file-input' className='file-img'>Choose an Image
                         </label>
                         <TextField
                             margin="normal"
@@ -166,6 +162,7 @@ export const LoginSignup = () => {
                 </Box>
             </Container>
         </ThemeProvider>
+        </main>
     )
 }
 

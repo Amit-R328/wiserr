@@ -4,6 +4,9 @@ export const utilService = {
     getRandomIntInclusive,
     delay,
     setDateTime,
+    getMonthNumber,
+    getYearNumber
+
 }
 
 function makeId(length = 6) {
@@ -48,5 +51,28 @@ function setDateTime(userDate){
     // var res = date.substr(0,19)
     return res
 }
+
+
+function getMonthNumber(userDate){
+
+    var date = new Date(userDate).toISOString() 
+    date = date.replace('T', ' ')
+    date = date.replace('Z', ' ')    
+    var res = date.substr(5,2)
+    // var res = date.substr(0,19)
+    return +res
+}
+
+
+function getYearNumber(userDate){
+
+    var date = new Date(userDate).toISOString() 
+    date = date.replace('T', ' ')
+    date = date.replace('Z', ' ')    
+    var res = date.substr(0,4)
+    // var res = date.substr(0,19)
+    return +res
+}
+
 
 

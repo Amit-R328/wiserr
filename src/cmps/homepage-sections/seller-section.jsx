@@ -10,7 +10,7 @@ export const SellerSectionHomepage = () => {
             <div className="seller-container-grid">
                 <div className="seller-text">
                     <div className="wiserr-seller-logo"><LogoFullWhite />
-                    <span className="text-upper">New</span>
+                        <span className="text-upper">New</span>
                     </div>
 
                     <h2 className="font-domaine">
@@ -23,7 +23,9 @@ export const SellerSectionHomepage = () => {
                         <li><h6><VCircle /><p>See order analysis to help manage your business and revenues</p></h6></li>
                         <li><h6><VCircle /><p>Manage gigs and boost productivity with one powerful workspace</p></h6></li>
                     </ul>
-                    <button><NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink></button>
+                    <div className="explore-seller-container">
+                        <NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink>
+                    </div>
                 </div>
                 <div className="seller-image">
                     <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" loading="lazy" alt="Wiserr Business freelancers" />
