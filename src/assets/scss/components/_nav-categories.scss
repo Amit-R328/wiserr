@@ -12,6 +12,8 @@
     width: 100%;
     background-color: $white;
     position: relative;
+    background-color: $white;
+    z-index: 150;
 
     ul {
         &.categories {
