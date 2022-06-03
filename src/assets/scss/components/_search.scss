@@ -8,25 +8,18 @@ form.search-bar {
     
     & label {
       
-      &::after{
+      &:after{
         content: "\f3ee";
         color: $grey_1100;
         // color: #404145;
-        color: #74767e;
-        padding-top:rrem(5px);
-        padding-left: rrem(5px);
+        padding-top:rem(5px);
+        padding-left: rem(5px);
         font-family: awesome brands;
         position: absolute;
         display: inline-block;
         z-index: 10;
         left: 5px;
         top: 4px;
-      }
-      svg {
-        path {
-          z-index: 10;
-          color: blue;
-        }
       }
     }
     

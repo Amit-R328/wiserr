@@ -18,13 +18,13 @@
 
             .hero-popular-category {
                 // align-items: center;
-            
+
                 span {
                     font-size: rem(14px);
                     // display: inline-flex;
                     margin-right: rem(10px);
                 }
-            
+
                 & ul {
                     display: flex;
                     justify-content: space-between;
@@ -35,7 +35,7 @@
                     padding: 0;
                     cursor: pointer;
                 }
-            
+
                 .btn-popular-category {
                     background-color: transparent;
                     font-weight: 400;
@@ -45,7 +45,7 @@
                     border-radius: 40px;
                     margin: 0;
                     font-size: rem(15px);
-            
+
                     &:hover {
                         color: $grey_1100;
                         background-color: white;
@@ -64,8 +64,23 @@
         border: none;
         margin-top: rem(28px);
         margin-bottom: rem(5px);
+
+            &::after {
+                content: "\f3ee";
+                color: $grey_1100;
+                // color: #404145;
+                color: #74767e;
+                padding-top: rem(5px);
+                padding-left: rem(5px);
+                font-family: awesome brands;
+                position: absolute;
+                display: inline-block;
+                z-index: 10;
+                left: 5px;
+                top: 4px;
+            }
     }
-    
+
     .search-hero-btn {
         border: none;
         background-color: $wiserr_green;

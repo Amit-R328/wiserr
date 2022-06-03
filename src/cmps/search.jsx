@@ -31,7 +31,7 @@ export const Search = ({loc},handleScroll) => {
     let placeholder = (loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'
     return (
         // <React.Fragment>
-            <div className={`search-container`}>
+            <div className="search-container">
             <label>
                 {/* <FontAwesomeIcon icon={faMagnifyingGlass}/> */}
                 <input type="search" className={`search-input ${className}`} onChange={handleChange} placeholder={`${placeholder}`} />
