@@ -67,7 +67,8 @@ export const GigDetails = (props) => {
     const onConfirmOrder =  async(ev, gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
-            showErrorMsg('Need to login')
+            navigate('/login')  
+            // showErrorMsg('Need to login')
         } else {
             let savedGig = await dispatch(onSaveOrder(gigId, loggedInUser))
              
