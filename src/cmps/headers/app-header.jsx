@@ -6,6 +6,7 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav--categories.jsx'
+import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -15,6 +16,8 @@ export const AppHeader = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
+    const [isSideMenu, setSideMenu] = useState(false)
+
 
     const [scrolled, setScrolled] = useState(false)
 
@@ -47,10 +50,10 @@ export const AppHeader = (props) => {
         setMenu(flag);
     }
 
-    // const onToggleSideMenu = () => {
-    //     var flag = !isSideMenu
-    //     setSideMenu(flag)
-    // }
+    const onToggleSideMenu = () => {
+        var flag = !isSideMenu
+        setSideMenu(flag)
+    }
 
     if (loggedInUser && !loggedInUser.imgUrl) {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
@@ -60,10 +63,10 @@ export const AppHeader = (props) => {
         <header className={`header container ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
             <div className="top">
                 <div className="logo-search-container">
-                    {/* <button  onClick={onToggleSideMenu} className="hamburger-icon"> */}
-                        {/* {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>} */}
+                    <button  onClick={onToggleSideMenu} className="hamburger-icon">
+                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
                         {/* <HamburgerMenu /> */}
-                    {/* </button> */}
+                    </button>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
                             <LogoFull />

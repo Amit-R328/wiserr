@@ -8,9 +8,14 @@
 
     &.categories-header {
       background-color: $white;
-
+      
       .top {
         margin: 0;
+
+        & a {
+        color: $grey_1000;
+        }
+        
 
         .logo-search-container {
           .logo {
@@ -27,6 +32,7 @@
 
     &.scrolled {
       background-color: $white;
+      
 
       .nav-link {
         color: $grey_1000;
@@ -54,6 +60,7 @@
     justify-content: space-between;
     padding: em(25px) 0;
     margin: 0;
+    
 
     .logo-search-container {
       display: flex;
