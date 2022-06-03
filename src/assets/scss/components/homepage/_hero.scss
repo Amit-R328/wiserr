@@ -143,3 +143,20 @@
         }
     }
 }
+
+@media (max-width: 425px){
+    .hero {
+        background-color: #023a15;
+        margin: unset !important;
+        width: 125%;
+    }
+    .hero-pic {
+        display: none;
+    }
+    .seller-name{
+        display: none;
+    }
+    .hero-content {
+        text-align: center;
+    }
+}
