@@ -105,7 +105,7 @@ async function save(gig) {
             },
             "daysToMake":gig.daysToMake,
             "description": {
-                "aboutThisGig": gig.sellerDescription,
+                "aboutThisGig": gig.gigDescription,
                 "whyUs": gig.whyUs || "",
                 "whatDoYouGet": gig.whatDoYouGet || ""
             },
