@@ -53,7 +53,7 @@
         & button {
             background: transparent;
             border: 0;
-            color: #95979d;
+            color: $grey_800;
             font-weight: 500;
             line-height: 100%;
             width: auto;
@@ -94,7 +94,7 @@
                 content: "\f054";
                 font-family: awesome;
                 font-size: 10px;
-                color: #95979d;
+                color: $grey_800;
                 position: relative;
                 left: 15px;
                 vertical-align: baseline;
@@ -170,7 +170,7 @@
             height: 136px;
 
             h2 {
-                color: #62646a;
+                color: $grey_1000;
                 margin-bottom: 12px;
                 font-size: 32px;
                 line-height: 120%;
@@ -179,7 +179,7 @@
                     margin: 0;
                     border: 0;
                     outline: 0;
-                    color: #95979d;
+                    color: $grey_800;
                     font-size: 16px;
                     line-height: 23px;
                     padding: 5px 20px 0 0;
@@ -246,7 +246,7 @@
                     z-index: 1;
 
                     &:hover {
-                        background-color: #62646a;
+                        background-color: $grey_1000;
                     }
 
                     .file-img {
@@ -263,7 +263,7 @@
                         &:before {
                             content: "\f030";
                             font-family: awesome;
-                            color: #62646a;
+                            color: $grey_1000;
                             border-radius: 50%;
                             position: absolute;
                             left: 270%;

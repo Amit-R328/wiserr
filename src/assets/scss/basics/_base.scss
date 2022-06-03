@@ -26,29 +26,6 @@ a {
     text-decoration: none;
 }
 
-.app-container, .routes-container, .gigs-app-container {
-    // width: 100vw;
-    // height: 100vh;
-    // overflow-y: scroll;
-    // overflow-x: hidden;
-}
-
-.main-wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-between;
-    flex-grow: 1;
-    // height: 100vh;
-    width: 100%
-}
-
-// .main-content-container {
-    // height: 100%;
-    // width: 100%;
-    // position: relative;
-// }
-
 .sorting {
     margin-right: em(10px);
 }
