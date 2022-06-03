@@ -34,8 +34,6 @@ export const AppHeader = (props) => {
         }
     }, [pathname])
 
-    
-
     const onLogout = () => {
         dispatch(logout())
         var flag = !profileMenu;
@@ -55,9 +53,6 @@ export const AppHeader = (props) => {
 
     return (
         <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
-           {/* <header className={(pathname !== '/' || !`${scrolled}`)  ? 'header' : ''}>  */}
-        {/* <header className={(pathname !== '/' || window.scrollY === 0) `header ${scrolled ? 'scrolled' : ''}`} > */}
-
             <div className="top container">
                 <div className="logo-search-container">
                     <button className="btn-navicon">

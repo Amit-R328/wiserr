@@ -4,9 +4,20 @@ form.search-bar {
 
   .search-container {
     // line-height: 32px;
-
+    position: relative;
+    
     & label {
-
+      
+      &::after{
+        content: "\f3ee";
+        color: #404145;
+        font-family: awesome brands;
+        position: absolute;
+        display: inline-block;
+        z-index: 10;
+        left: 5px;
+        top: 4px;
+      }
       svg {
         path {
           z-index: 10;
@@ -14,10 +25,11 @@ form.search-bar {
         }
       }
     }
-
+    
     input {
       flex-basis: 1;
-
+      
+      
       .search-input {
         border: 1px solid #c5c6c9;
         color: #404145;
@@ -28,7 +40,7 @@ form.search-bar {
         display: relative;
       }
     }
-
+    
     .search-btn {
       // height: 34px;
       // border-radius: 2px;

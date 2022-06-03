@@ -1,5 +1,5 @@
-import React from "react";
-import { GraphicsDesignIcon, BusinessIcon, WritingTranslationIcon, VideoAnimationIcon, ProgrammingIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, DataIcon } from '../../services/svg.service.js'
+import React, {useEffect} from "react"
+import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon } from '../../services/svg.service.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
@@ -37,34 +37,15 @@ export const IconCategories = () => {
                         <WritingTranslationIcon />Writing &amp; Translation
                         </a>
                 </li>
-                <li>
-                {/* <li onClick={() => onChangeCategory('Video & Animation')}> */}
-                    <a href="/categories/video-animation">
+                <li onClick={() => onChangeCategory('Video & Animation')}>
                         <VideoAnimationIcon />Video &amp; Animation
-                        </a>
                 </li>
-                <li>
-                {/* <li onClick={() => onChangeCategory('Music & Audio')}> */}
-                    <a href="/categories/music-audio">
+                <li onClick={() => onChangeCategory('Music & Audio')}>
                         <MusicAudioIcon />Music &amp; Audio
-                        </a>
                 </li>
-                {/* <li>
-                    <a href="/categories/programming-tech">
-                        <ProgrammingIcon />Programming &amp; Tech</a>
-                </li> */}
-                {/* <li>
-                    <a href="/categories/seller">
-                        <BusinessIcon />Seller</a>
-                </li> */}
-                <li>
-                    <a href="/categories/lifestyle">
-                        <LifeStyleIcon />Lifestyle</a>
+                <li onClick={() => onChangeCategory('Lifestyle')}>
+                        <LifeStyleIcon />Lifestyle
                 </li>
-                {/* <li>
-                    <a href="/categories/data">
-                        <DataIcon />Data</a>
-                </li> */}
             </ul>
         </div>
     )
