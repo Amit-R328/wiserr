@@ -1,7 +1,9 @@
 .gigs-preview-main-wrapper {
     width: 100%;
     // background-color: rgba(255, 255, 255, .25);
-
+    @include from-mobile-layout {
+        margin: 0 20px 0 10px;
+    }
     .gigs-list-container {
         // width: 100%;
         display: flex;
@@ -23,6 +25,10 @@
                 // width: 100%;
                 display: grid;
                 list-style: none;
+
+                @include from-mobile-layout {
+                    grid-template-columns: 400px;
+                }
             }
         }
     }

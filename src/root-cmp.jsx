@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router'
 import routes from './routes'
-import { UserDetails } from './pages/user-details'
+// import { UserDetails } from './pages/user-details'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 import { UserMsg}  from './cmps/user-msg'
@@ -19,7 +19,7 @@ export class RootCmp extends React.Component {
                                 exact={true}
                                 element={route.component}
                                 path={route.path} />)}
-                        <Route path="user/:id" element={<UserDetails />} />
+                        {/* <Route path="user/:id" element={<UserDetails />} /> */}
                     </Routes>
                     <div className="footer-container">
                         <AppFooter />

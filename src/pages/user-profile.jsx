@@ -29,7 +29,7 @@ export const UserProfile = () => {
 
     return (
         <section className='user-profile-layout container'>
-            <section className='user-profile '>
+            <section className='user-profile flex'>
                 {/* <div className='profile-left-container'>
                     <div className='profile-img-user'>
                         <img className='profile-usr-img' src={user.imgUrl} alt="img" />
