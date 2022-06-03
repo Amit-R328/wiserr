@@ -175,11 +175,14 @@
         font-size: 16px;
         line-height: 120%;
         font-weight: 700;
-        position: flex-end;
         display: flex;
         flex-direction: row;
         align-items: center;
-
+        @include from-mobile-layout {
+            justify-self: flex-start;
+            position: relative;
+            right: 5%;
+        }
     }
 
     .filter-floating-menu {
