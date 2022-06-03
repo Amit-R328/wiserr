@@ -232,6 +232,7 @@
                 width: 70%;
                 position: relative;
                 cursor: default;
+                
 
                 .gig-photos {
                     background-color: #f4f4f4;
@@ -339,3 +340,42 @@
 
 }
 
+.add-gig-titles {
+    display: flex;
+    // gap: 80px;
+    justify-content: space-between;
+    font-size: 14px;
+    font-style: unset;
+    
+    .add-gig-labels {
+        width: rem(450px);
+    }
+    .add-gig-input {
+        width: rem(388px);
+    }
+    @media screen and (max-width: 1024x) {
+        .add-gig-titles  {
+            font-size: 12px;
+              // gap: 80px;
+        }
+        .add-gig-labels {
+            width: rem(300px);
+        }
+   
+        .add-gig-input {
+            width: rem(288px);
+        }
+    }
+
+}
+
+.add-gig-btn {
+    border: 1px solid #dadbdd;
+    background-color: #1DBF73;
+    color: white;
+    // width: rem(150px);
+    margin-top: rem(15px);
+    padding: rem(10px) rem(20px);
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

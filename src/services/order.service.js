@@ -106,11 +106,12 @@ async function saveOrder(gigId, loggedinUser){
         console.log('order', order)
         let addedOrder =  await httpService.post(urlToRequest,order)
         console.log('addedOrder', addedOrder)
-        return addedOrder
+        return await addedOrder
     } catch (err) {
         console.dir('Cannot save order:',err)
         throw err
     } 
+    
 }
 
 async function updateOrder(order){
