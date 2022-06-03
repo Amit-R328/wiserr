@@ -10,7 +10,10 @@ form.search-bar {
       
       &::after{
         content: "\f3ee";
-        color: #404145;
+        // color: #404145;
+        color: #74767e;
+        padding-top:rem(5px);
+        padding-left: rem(5px);
         font-family: awesome brands;
         position: absolute;
         display: inline-block;
