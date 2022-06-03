@@ -1,10 +1,10 @@
-import { ArrowDown, PathArrow2, VideoIcon } from '../../services/svg.service.js'
+import { VideoIcon } from '../../services/svg.service.js'
 import { SortGigsList } from '../filters/sort-gigs-list.jsx'
 import React, { useState } from "react";
 import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
 import { BudgetFilter } from '../filters/budget-filter.jsx';
-import {DeliveryDateFilter} from '../filters/delivery-date-filter.jsx'
+import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
 
 export const FilterBreadCrumbs = () => {
 
@@ -18,31 +18,20 @@ export const FilterBreadCrumbs = () => {
         let { filterBy } = this.props
         if (field === 'labels') value = [value]
         filterBy = { ...filterBy, [field]: value }
-
-        // this.props.setFilter(filterBy)
     }
-    // const getCategoryTagLine = () => {
-    //     // let filterBy.category
-    //     switch (filterBy.category) {
-    //         case filterBy.category === 'Graphics & Design':
-    //             return 'Get a beautiful website design that people love to engage with.'
-    //         case filterBy.category === 'Digital Marketing':
-    //             return 'Connect with specialists for marketing guidance and professional relationships.'
-    //     }eo
-    // }
 
     const onToggleBudget = () => {
-        var flag = !budgetMenu;
+        let flag = !budgetMenu;
         setBudgetMenu(flag);
     }
 
     const onToggleDeliveryTime = () => {
-        var flag = !deliveryDateMenu
+        let flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
     }
 
     const showSweetAlert = (ev) => {
-        // ev.preventDefault()
+        ev.preventDefault()
         Swal.fire({
             className: "video-modal",
             width: 1000,
@@ -58,25 +47,21 @@ export const FilterBreadCrumbs = () => {
             confirmButtonAriaLabel: 'OK',
             allowOutsideClick: true,
             allowEscapeKey: true,
-            // grow: 'fullscreen'
         })
         ev.preventDefault();
         ev.stopPropagation()
     }
 
     return (
-        <div className="layout-row">
+        <main className="layout-row flex flex-column">
             <header>
-                <div className="breadcrumbs-container">
+                <section className="breadcrumbs-container flex">
                     <ul className="breadcrumbs">
-                        {(filterBy.category) ? <li><a href="/">Wiserr </a><span className="chevron-icon-right" aria-hidden="true"><PathArrow2 /></span></li> : <span></span>}
-
-                        {(filterBy.category) ? <li><a href="/categories">{filterBy.category}</a>
+                        {(filterBy.category) ? <li><a href="/categories"><p></p>Wiserr {filterBy.category}</a>
                             <span className="chevron-icon-right">
-                                {/* <PathArrow2 /> */}
-                            </span></li> : <li><span></span></li>}
+                            </span></li> : <li><span>Wiserr All</span></li>}
                     </ul>
-                </div>
+                </section>
 
                 <header className="results-category-header">
                     <div className="title-wrapper">
@@ -90,52 +75,25 @@ export const FilterBreadCrumbs = () => {
 
             </header >
 
-            <div className="filter-topbar">
-                <div className="filter-shadow-effect">
-                    <div className="filter-floating-top-bar">
-                        <div className="top-filters">
+            <section className="filter-topbar">
+                <div className="filter-shadow-effect flex">
+                    <div className="filter-floating-menu flex">
+                        <div onClick={onToggleBudget} className="filter-menu-title filter-menu flex">Budget
+                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
+                        </div>
+                    </div>
+                    <div className="filter-floating-menu flex">
+                        <div onClick={onToggleDeliveryTime} className="filter-menu-title filter-menu flex">Delivery Time
+                            {deliveryDateMenu && <DeliveryDateFilter />}
                         </div>
                     </div>
 
-                    <div className="filter-floating-menu">
-                        <div className="filter-menu-title filter-menu">Budget<span onClick={onToggleBudget} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
-                        </span>
-                        {budgetMenu && <BudgetFilter onClose={onToggleBudget}/>}
-                        </div>
-                        <div className="filter-floating-menu">
-                            <div className="filter-menu-title filter-menu">Delivery Time<span onClick={onToggleDeliveryTime} className="filter-chevron-icon-down" aria-hidden="true"><ArrowDown />
-                            </span>
-                            {deliveryDateMenu && <DeliveryDateFilter/>}
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className="sort-by-wrapper">
+                    <div className="sort-by-container flex">
                         <span className="pre-title sorting">Sort by</span>
-                        {/* <div className="floating-menu open"> */}
-                        {/* <div className="menu-title sort-filter">Best Selling<span className="chevron-icon-down" aria-hidden="true"><ArrowDown /></span>
-                            </div> */}
-
-                        {/* <div className="menu-content">
-                                <div className="content-scroll"> */}
                         <SortGigsList />
-                        {/* <div className="labels-list">
-                                        <label className="sort-label">Price</label>
-                                        <label className="sort-label">Name</label>
-                                        <label className="sort-label">Newest Arrivals</label>
-                                    </div> */}
-                        {/* </div> */}
-                        <div className="button-row">
-                        </div>
-                        {/* <div> */}
-                        {/* </div> */}
-
-                        {/* </div> */}
-                        {/* </div> */}
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }

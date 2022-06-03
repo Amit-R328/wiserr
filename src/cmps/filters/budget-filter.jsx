@@ -38,17 +38,17 @@ class _BudgetFilter extends React.Component {
     render() {
         return (
             <section className="budget-filter">
-                <div className="input-wrappers flex">
-                    <div className="input-wrapper">
+                <div className="inputs-container flex">
+                    <div className="input-container">
                         <label htmlFor="min">Min:</label>
                         <input type="number"  name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min} min="0"/>
                     </div>
-                    <div className="input-wrapper flex">
+                    <div className="input-container flex">
                         <label htmlFor="max">Max:</label>
                         <input type="number" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max} />
                     </div>
                 </div>
-                <div className="btns-wrappers">
+                <div className="btns-container">
                     <button className="close-btn" onClick={this.onClearBudget}>clear</button>
                     <button className="apply-filters-btn" onClick={this.onApplyBudget}>Apply</button>
                 </div>

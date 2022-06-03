@@ -60,8 +60,8 @@ export const AppHeader = (props) => {
     }
 
     return (
-        <header className={`header container ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
-            <div className="top">
+        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
+            <div className="top container">
                 <div className="logo-search-container">
                     <button  onClick={onToggleSideMenu} className="hamburger-icon">
                         {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
