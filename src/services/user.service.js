@@ -58,7 +58,11 @@ async function update(user) {
     const isSeller = user.isSeller
     user = await httpService.put(`user/${user._id}`, isSeller)
     // Handle case in which admin updates other user's details
-    if (getLoggedinUser()._id === user._id) saveLocalUser(user)
+    if (getLoggedinUser()._id === user._id) {
+        console.log('in update user')
+        saveLocalUser(user)
+        // _handleLogin(user)
+    }
     return user;
 }
 

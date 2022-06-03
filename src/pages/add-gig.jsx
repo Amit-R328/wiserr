@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { saveGig } from '../store/actions/gig.actions'
 import { cloudinaryService } from '../services/cloudinary.service.js'
+import { userService} from '../services/user.service.js'
 import { LogoFull } from '../services/svg.service.js'
 
 class _AddGigDetails extends React.Component {
@@ -72,6 +73,9 @@ class _AddGigDetails extends React.Component {
                 owner: this.props.loggedInUser
             }
         })
+        const userIsSeller = this.props.loggedInUser
+        userIsSeller.isSeller = true
+        userService.saveLocalUser(userIsSeller)
         // this.props.onUpdateUser({isSeller:true})
         this.props.navigation('/')
     }
