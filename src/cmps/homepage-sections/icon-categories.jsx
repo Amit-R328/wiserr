@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React  from "react"
 import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon } from '../../services/svg.service.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -18,35 +18,45 @@ export const IconCategories = () => {
     }
 
     return (
-        <div className="main-categories">
+        <div className="icon-categories">
             <h2>Explore the marketplace</h2>
-            <ul className="categories-list">
+            <ul className="icon-categories-list">
                 <li>
-                    <a href="/categories/graphics-design">
-                    <GraphicsDesignIcon />
-                    Graphics &amp; Design
-                    </a>
+                    <button onClick={() => onChangeCategory('All Categories')}>
+                        <GraphicsDesignIcon /> All Categories
+                    </button>
                 </li>
                 <li>
-                    <a href="/categories/online-marketing">
-                    <OnlineMarketingIcon />Digital Marketing
-                    </a>
+                    <button onClick={() => onChangeCategory('Graphics & Design')}>
+                        <GraphicsDesignIcon /> Graphics &amp; Design
+                    </button>
                 </li>
                 <li>
-                    <a href="/categories/writing-translation">
+                    <button onClick={() => onChangeCategory('Digital Marketing')}>
+                        <OnlineMarketingIcon />Digital Marketing
+                    </button>
+                </li>
+                <li>
+                    <button onClick={() => onChangeCategory('Writing & Translation')}>
                         <WritingTranslationIcon />Writing &amp; Translation
-                        </a>
+                    </button>
                 </li>
-                <li onClick={() => onChangeCategory('Video & Animation')}>
+                <li>
+                    <button onClick={() => onChangeCategory('Video & Animation')}>
                         <VideoAnimationIcon />Video &amp; Animation
+                    </button>
                 </li>
-                <li onClick={() => onChangeCategory('Music & Audio')}>
+                <li>
+                    <button onClick={() => onChangeCategory('Music & Audio')}>
                         <MusicAudioIcon />Music &amp; Audio
+                    </button>
                 </li>
-                <li onClick={() => onChangeCategory('Lifestyle')}>
+                <li>
+                    <button onClick={() => onChangeCategory('Lifestyle')}>
                         <LifeStyleIcon />Lifestyle
+                    </button>
                 </li>
             </ul>
-        </div>
+        </div >
     )
 }
