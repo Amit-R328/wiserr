@@ -75,10 +75,17 @@ export const AppHeader = (props) => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
+                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Sign in</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
+                        <div className="profile-container">
+                            {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
+                        </div>
+                    </li>
+                    
+                    <li>
+                        {!loggedInUser && <NavLink to="/signup" rel="nofollow" className="open-popup-signup nav-link">Join</NavLink>}
                         <div className="profile-container">
                             {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
                         </div>
