@@ -66,8 +66,8 @@
 
       .btn-navicon {
 
-        @include from-mobile-layout {
-          display: none;
+        @include from-narrow-layout {
+          display: block;
         }
       }
 

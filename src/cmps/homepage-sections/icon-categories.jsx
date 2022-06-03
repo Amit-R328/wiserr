@@ -1,5 +1,5 @@
 import React  from "react"
-import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon } from '../../services/svg.service.js'
+import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, AllCategoriesIcon } from '../../services/svg.service.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
@@ -22,37 +22,37 @@ export const IconCategories = () => {
             <h2>Explore the marketplace</h2>
             <ul className="icon-categories-list">
                 <li>
-                    <button onClick={() => onChangeCategory('All Categories')}>
-                        <GraphicsDesignIcon /> All Categories
+                    <button onClick={() => onChangeCategory('All Categories')} className="icon-all">
+                        <AllCategoriesIcon /> All Categories
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Graphics & Design')}>
+                    <button onClick={() => onChangeCategory('Graphics & Design')} className="graphic-icon">
                         <GraphicsDesignIcon /> Graphics &amp; Design
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Digital Marketing')}>
+                    <button onClick={() => onChangeCategory('Digital Marketing')} className="marketing-icon">
                         <OnlineMarketingIcon />Digital Marketing
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Writing & Translation')}>
+                    <button onClick={() => onChangeCategory('Writing & Translation')} className="writing-icon">
                         <WritingTranslationIcon />Writing &amp; Translation
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Video & Animation')}>
+                    <button onClick={() => onChangeCategory('Video & Animation')} className="video-icon">
                         <VideoAnimationIcon />Video &amp; Animation
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Music & Audio')}>
+                    <button onClick={() => onChangeCategory('Music & Audio')} className="audio-icon">
                         <MusicAudioIcon />Music &amp; Audio
                     </button>
                 </li>
                 <li>
-                    <button onClick={() => onChangeCategory('Lifestyle')}>
+                    <button onClick={() => onChangeCategory('Lifestyle')} className="lifestyle">
                         <LifeStyleIcon />Lifestyle
                     </button>
                 </li>
