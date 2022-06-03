@@ -21,7 +21,7 @@ export class RootCmp extends React.Component {
                                 path={route.path} />)}
                         {/* <Route path="user/:id" element={<UserDetails />} /> */}
                     </Routes>
-                    <div className="footer-container">
+                    <div className="footer-container container ">
                         <AppFooter />
                     </div>
                 </main>
