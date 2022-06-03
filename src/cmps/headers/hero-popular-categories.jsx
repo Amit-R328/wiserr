@@ -1,4 +1,4 @@
-import { useState, useEffect} from "react"
+import { useState, useEffect } from "react"
 import { gigService } from "../../services/gig.service.js"
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -14,13 +14,13 @@ export const HeroPopularCategories = () => {
     useEffect(async () => {
         let res = await getCategories()
         setPopularCategories(res)
-        return () => {     
+        return () => {
         }
     }, [])
 
     const getCategories = async () => {
         return await gigService.getPopularCategories()
-    } 
+    }
 
     const onChangeCategory = (category) => {
         filterBy = { txt: '', priceMin: 0, priceMax: Infinity, deliveryDate: 0, category: category }
@@ -30,14 +30,14 @@ export const HeroPopularCategories = () => {
     }
 
     return (
-        <ul className="clean-list hero-popular-category">
-            Popular:
+        <ul>
             {popularCategories.map((category, idx) => {
                 return (
-                    <li key={idx}><button className="btn-popular-category" onClick={() => onChangeCategory(category.param)}>{category.title}</button></li>
+                    <li key={idx}>
+                        <button className="btn-popular-category" onClick={() => onChangeCategory(category.param)}>{category.title}</button>
+                    </li>
                 )
             })}
         </ul>
     )
-
 }

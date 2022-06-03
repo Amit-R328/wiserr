@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 20;
   right: 0;
-  background-color: #fff;
+  background-color: $white;
   border: 1px solid #dbdbdb;
   border-radius: 3px;
   font-weight: 400;
@@ -28,7 +28,7 @@
       height: 0;
       top: 1px;
       transform: translateX(-50%);
-      border-bottom-color: #fff;
+      border-bottom-color: $white;
       position: absolute;
       border-color: transparent;
       border-top-width: 10px;

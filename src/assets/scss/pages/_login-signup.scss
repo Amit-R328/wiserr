@@ -14,7 +14,7 @@
     // background: #99c793;
     border: none;
     // border-radius: 5px;
-    color: #fff;
+    color: $white;
     cursor: pointer;
     display: inline-block;
     // font-family: 'Rubik', sans-serif;
@@ -37,7 +37,7 @@
         overflow: hidden;
 
         &::before {
-            color: #fff;
+            color: $white;
             content: "\f41a";
             font-family: awesome brands;
             font-size: 100%;
@@ -68,7 +68,7 @@
 // }
 
 // .wrapper {
-//     background-color: #fff;
+//     background-color: $white;
 //     border-radius: 1rem;
 //     margin: 0 auto;
 //     max-width: 500px;

@@ -3,7 +3,7 @@ import '../../assets/scss/main.scss'
 // import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
-import {HeroPopularCategories} from './hero-popular-categories'
+import { HeroPopularCategories } from './hero-popular-categories'
 
 export function HeroCarousel(props) {
   var backIdx = 1;
@@ -30,27 +30,31 @@ export function HeroCarousel(props) {
     <div className="hero-container">
       <div className='background-images'>
         <div className={`background ${backClass1}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png" />
+          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png" alt="" />
         </div>
         <div className={`background ${backClass2}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png" />
+          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png" alt="" />
         </div>
         <div className={`background ${backClass3}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png" />
+          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png" alt="" />
         </div>
         <div className={`background ${backClass4}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png" />
+          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png" alt="" />
         </div>
         <div className={`background ${backClass5}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png" />
+          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png" alt="" />
         </div>
       </div>
       <div className="hero-content-container container">
         <div className='hero-content'>
-          <h1>Find the perfect <i>freelance</i> <br/>services for your business</h1>
+          <h1>Find the perfect <i>freelance</i>
+            <br />services for your business</h1>
           <div className='search-hero-homepage'>
-            <Search loc={'heroCarousel'}/>
-            <HeroPopularCategories/>
+            <Search loc={'heroCarousel'} />
+            <div className='hero-popular-category flex clean list'>
+            <span>Popular:</span>
+              <HeroPopularCategories />
+            </div>
           </div>
         </div>
         <div className="static-background">

@@ -1,27 +1,27 @@
 .icon-categories {
     color: $grey_1000;
-    line-height: em(24px);
-    margin-top: em(96px);
-    margin-bottom: em(96px);
+    line-height: rem(24px);
+    margin-top: rem(96px);
+    margin-bottom: rem(96px);
     // padding: 0;
 
     h2 {
         color: $grey_1100;
-        font-size: em(32px);
+        font-size: rem(32px);
         font-weight: 700;
         line-height: 120%;
-        // margin: 0 0 em(40px);
-        padding-bottom: em(24px);
+        // margin: 0 0 rem(40px);
+        padding-bottom: rem(24px);
         outline: 0;
     }
 
         ul.icon-categories-list {
         // display: flex;
         // flex-wrap: wrap;
-        line-height: em(34px);
+        line-height: rem(34px);
         list-style: none;
-        font-size: em(16px);
-        margin-top: em(24px);
+        font-size: rem(16px);
+        margin-top: rem(24px);
 
         display: grid;
         // grid-template-columns: repeat(3, auto-fit, minmax(50px, 100px));
@@ -57,8 +57,8 @@
                     cursor: pointer;
                     min-width: 150px;
                     padding: 10px 10px 10px;
-                    font-size: em(16px);
-                    background-color: #fff;
+                    font-size: rem(16px);
+                    background-color: $white;
                     outline: none;
                     border: none;
 
@@ -76,8 +76,8 @@
                 }
                 
                 &:hover:after {
-                    border-color: #1dbf73;
-                    padding: 0 em(20px) em(18px);
+                    border-color: $wiserr_green;
+                    padding: 0 rem(20px) rem(18px);
                     transition: border-color .2s ease-in-out, padding .2s ease-in-out;
                 }
                 
@@ -85,9 +85,9 @@
                     color: #222325;
                     cursor: pointer;
                     display: block;
-                    height: em(60px);
-                    margin: 0 em(36px) em(15px);
-                    width: em(60px);
+                    height: rem(60px);
+                    margin: 0 em(36px) rem(15px);
+                    width: rem(60px);
                 }
             }
         }

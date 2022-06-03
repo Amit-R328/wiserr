@@ -74,7 +74,7 @@
           align-items: center;
           justify-content: center;
           color: $grey_1000;
-          padding: em(18px);
+          padding: rem(18px);
         }
       }
     }
@@ -120,17 +120,17 @@
   .seller-search-bar form .seller-search-bar-icon {
     position: absolute;
     z-index: 5;
-    top: em(8px);
-    left: em(8px);
-    width: em(16px);
-    // height: em(16px);
+    top: rem(8px);
+    left: rem(8px);
+    width: rem(16px);
+    // height: rem(16px);
   }
 
   .seller-search-bar form input {
     -webkit-box-flex: 1;
     flex: 1 1 auto;
-    padding: em(7px) em(7px) em(7px) em(28px);
-    border-color: #dadbdd;
+    padding: rem(7px) rem(7px) rem(7px) rem(28px);
+    border-color: $grey_500;
     box-shadow: none;
     z-index: 3;
   }
@@ -138,22 +138,22 @@
   @media screen and (min-width: 1160px) {
     .seller-search-bar form input {
       border-right: 0;
-      border-radius: em(3px) 0 0 em(3px);
+      border-radius: rem(3px) 0 0 rem(3px);
     }
 
     .seller-search-bar .seller-submit-button:not(.minimal) {
-      padding: em(8px) em(16px);
+      padding: rem(8px) rem(16px);
       display: block;
-      font-size: em(14px);
+      font-size: rem(14px);
       font-weight: 700;
-      border-radius: 0 em(3px) em(3px) 0;
+      border-radius: 0 rem(3px) rem(3px) 0;
     }
   }
 
   @media screen and (min-width: 900px) {
     .seller-search-bar form input {
-      font-size: em(15px);
-      padding-top: em(8px);
+      font-size: rem(15px);
+      padding-top: rem(8px);
     }
   }
 }
@@ -161,8 +161,8 @@
 span.line-sep {
   background-color: #ddd;
   box-sizing: border-box;
-  flex: 0 0 em(1px);
-  // height: em(24px);
+  flex: 0 0 rem(1px);
+  // height: rem(24px);
   text-align: left;
-  width: em(1px);
+  width: rem(1px);
 }
