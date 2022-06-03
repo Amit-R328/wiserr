@@ -26,8 +26,7 @@ export const SellerDashboard = (props) => {
         dispatch(loadOrders(loggedInUser))
     }, [])
     
-    const handleChange = (ev,order) => {
-        
+    const handleChange = (ev,order) => {        
         const value = ev.target.value
         order.status = value        
         setOrder(order)        
@@ -35,8 +34,9 @@ export const SellerDashboard = (props) => {
     }  
 
     useEffect(() => {
-        
+        console.log('orders',orders )
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
+        
         setTotalOrderAmount(totalOrders.toFixed(2))        
         setQtyTotalOrders(orders.length)
 
@@ -57,7 +57,7 @@ export const SellerDashboard = (props) => {
         // let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
         if(monthlyOrders.length){
             const totalMonthlyOrders = monthlyOrders.reduce((acc, order) => acc + order.gig.price,0)        
-            setTotalMonthlyOrdersAmount(totalMonthlyOrders)
+            setTotalMonthlyOrdersAmount(totalMonthlyOrders.toFixed(2))
         }
     }
 
@@ -71,7 +71,7 @@ export const SellerDashboard = (props) => {
             
             setQtyYearOrders(yearOrders.length)
             const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price,0)
-            setTotalYearOrdersAmount(totalYearOrders)
+            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
         }
     }
 

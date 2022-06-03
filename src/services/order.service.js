@@ -34,15 +34,19 @@ async function query(loggedInUser, typeOf){
     if (typeOf === 'getBuys') {
         if(loggedInUser.isSeller){
             orders = orders.filter(order => {
-                console.log('orders', order.seller, loggedInUser.userName)
+                // console.log('orders', order.seller, loggedInUser.userName)
                 return order.buyer.fullName === loggedInUser.userName})
-                console.log('orders',orders )
+                // console.log('orders',orders )
         }else {
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }
     }else {
         if(loggedInUser.isSeller){
-            orders = orders.filter(order => order.seller.fullName === loggedInUser.userName)
+            orders = orders.filter(order => {
+                // console.log('loggedInUser.userName',loggedInUser.userName )
+                // console.log('order.seller.fullName',order.seller.fullName )
+                return order.seller.fullName === loggedInUser.userName
+            })
         }else {
             orders = []
         }
