@@ -3,6 +3,7 @@
 import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
+import { socketService } from './socket.service.js'
 
 const orderChannel = new BroadcastChannel('orderChannel')
 
@@ -99,14 +100,14 @@ async function saveOrder(gigId, loggedinUser){
             },
             "status": "pending"
         }
-    // console.log('order', order)
+        socketService.emit('new order', {order})
     // const addedOrder = await storageService.post('order', order)
         const urlToRequest =  'order'
         console.log('urlToRequest', urlToRequest)
         console.log('order', order)
         let addedOrder =  await httpService.post(urlToRequest,order)
         console.log('addedOrder', addedOrder)
-        return await addedOrder
+        return  addedOrder
     } catch (err) {
         console.dir('Cannot save order:',err)
         throw err

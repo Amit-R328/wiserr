@@ -6,6 +6,7 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav--categories.jsx'
+import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -15,7 +16,7 @@ export const AppHeader = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
-
+    const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
@@ -56,7 +57,8 @@ export const AppHeader = (props) => {
             <div className="top container">
                 <div className="logo-search-container">
                     <button className="btn-navicon">
-                        <HamburgerMenu />
+                        <span onClick={setSideMenu}><HamburgerMenu/></span>
+                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleMenu} user={loggedInUser}/>}
                     </button>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">

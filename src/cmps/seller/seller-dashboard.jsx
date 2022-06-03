@@ -28,12 +28,14 @@ export const SellerDashboard = (props) => {
         dispatch(loadOrders(loggedInUser))
     }, [])
     
+    // setSocket()
+    const onAddOrder = (order) => {
+        order.createdAt = Date.now()
+        orders = ({...orders, order})
+    }
+    
     const setSocket = () => {
         socketService.on('added order', this.onAddOrder)
-    }
-
-    const onAddOrder = (order) => {
-       orders = ({...orders, order})
     }
 
     const handleChange = (ev,order) => {        
@@ -108,7 +110,7 @@ export const SellerDashboard = (props) => {
             
         </div>
 
-            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
+            <table onLoad={setSocket} className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>

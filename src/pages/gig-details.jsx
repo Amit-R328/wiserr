@@ -64,14 +64,12 @@ export const GigDetails = (props) => {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
-    const onConfirmOrder =  async(ev, gigId) => {
+    const onConfirmOrder = (ev, gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
             showErrorMsg('Need to login')
         } else {
-            let savedGig = await dispatch(onSaveOrder(gigId, loggedInUser))
-             
-            socketService.emit('new order', {savedGig})
+            dispatch(onSaveOrder(gigId, loggedInUser))
             showSuccessMsg('Order was created')
             // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
             // clearInterval(msgInterval);
