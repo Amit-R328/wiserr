@@ -6,7 +6,6 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav--categories.jsx'
-import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -16,7 +15,7 @@ export const AppHeader = (props) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
-    const [isSideMenu, setSideMenu] = useState(false)
+
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
@@ -57,8 +56,6 @@ export const AppHeader = (props) => {
             <div className="top">
                 <div className="logo-search-container">
                     <button className="hamburger-icon">
-                        <span onClick={setSideMenu}></span>
-                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleMenu} user={loggedInUser}/>}
                         {/* <HamburgerMenu /> */}
                     </button>
                     <div className="logo">
@@ -78,17 +75,10 @@ export const AppHeader = (props) => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Sign in</NavLink>}
+                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
-                        <div className="profile-container">
-                            {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
-                        </div>
-                    </li>
-                    
-                    <li>
-                        {!loggedInUser && <NavLink to="/signup" rel="nofollow" className="open-popup-signup nav-link">Join</NavLink>}
                         <div className="profile-container">
                             {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
                         </div>

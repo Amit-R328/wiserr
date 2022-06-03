@@ -28,9 +28,9 @@
     &.scrolled {
       background-color: $white;
 
-      // .nav-link {
-      //   color: $grey_1000;
-      // }
+      .nav-link {
+        color: $grey_1000;
+      }
 
       .top {
         margin: 0;
@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(25px) 0;
+    padding: em(25px) 0;
     margin: 0;
 
     .logo-search-container {
@@ -61,7 +61,6 @@
       // gap: 20px;
 
       .hamburger-icon {
-
         // \uf0c9
         @include from-narrow-layout {
           display: none;
@@ -80,32 +79,6 @@
         @include from-mobile-layout {
           display: block;
         }
-      }
-    }
-
-    .open-popup-signup {
-      border-color: #fff;
-      // padding: 0;
-      // padding: 7px 20px;
-      // transition: all .2s ease;
-      // background: none;
-      // border-radius: 4px;
-      // cursor: pointer;
-      // display: inline-block;
-      // font-size: 16px;
-      // font-weight: 600;
-      // line-height: 100%;
-      // position: relative;
-      // text-align: center;
-      // text-decoration: none;
-      // transition: 70ms cubic-bezier(.75, 0, .25, 1);
-      // list-style: none;
-      // list-style-image: none;
-      // margin: 0;
-      // padding: 0;
-
-      & a:hover {
-        color: #1dbf73;
       }
     }
   }
@@ -129,7 +102,7 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      font-size: rem(16px);
+      font-size: em(16px);
       font-weight: 600;
       font-family: roboto;
 
@@ -169,12 +142,11 @@
     border: 0;
     border-radius: 50%;
     margin: 5px;
-
+    
   }
 
   .success {
-    background-color: $wiserr_green;
-    ;
+    background-color: $wiserr_green;;
   }
 
   .danger {
