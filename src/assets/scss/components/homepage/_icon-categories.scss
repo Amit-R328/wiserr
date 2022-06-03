@@ -2,6 +2,7 @@
     color: #62646a;
     line-height: em(24px);
     margin-top: em(96px);
+    margin-bottom: em(96px);
     // padding: 0;
 
     h2 {
@@ -14,44 +15,57 @@
         outline: 0;
     }
 
-    ul.icon-categories-list {
-        display: flex;
-        flex-wrap: wrap;
+        ul.icon-categories-list {
+        // display: flex;
+        // flex-wrap: wrap;
         line-height: em(34px);
         list-style: none;
         font-size: em(16px);
+        margin-top: em(24px);
+
+        display: grid;
+        // grid-template-columns: repeat(3, auto-fit, minmax(50px, 100px));
+        grid-template-columns: repeat(7, 180px);
+        // grid-template-rows: 100px 100px;
+        grid-column-gap: 20px;
+        // grid-row-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        grid-template-areas: 
+        "icon-all graphic-icon marketing-icon writing-icon video-icon audio-icon lifestyle";
+        
         
         li {
             list-style: none;
             margin: 0;
             outline: 0;
-            padding: 0 10px 55px;
+            // padding: 0 10px 55px;
             text-align: center;
             
-            a {
-                color: #222325;
-                cursor: pointer;
-                display: inline-block;
-                list-style: none;
-                position: relative;
-                text-align: center;
-                text-decoration: none;
-                transition: color .2s;
-
-                &:hover {
+            // a {
+                //     list-style: none;
+                //     position: relative;
+                //     text-align: center;
+                //     text-decoration: none;
+                
+                button {
+                    display: inline-block;
+                    transition: color .2s;
+                    position: relative;
+                    text-align: center;
+                    color: #222325;
+                    cursor: pointer;
+                    min-width: 150px;
+                    padding: 10px 10px 10px;
+                    font-size: em(16px);
+                    background-color: #fff;
                     outline: none;
-                }
+                    border: none;
 
-                &:active {
-                    outline: none;
-                }
-
-                &:focus {
-                    outline: none;
-                }
-
+                
+                
                 &:after {
-                    border-bottom: 2px solid #c5c6c9;
+                    border-bottom: 2px solid transparent;
                     content: "";
                     position: absolute;
                     right: 50%;
@@ -60,19 +74,19 @@
                     transition: border-color .2s ease-in-out, padding .2s ease-in-out;
                     width: em(48px);
                 }
-
+                
                 &:hover:after {
                     border-color: #1dbf73;
-                    padding: 0 em(20px) em(14px);
+                    padding: 0 em(20px) em(18px);
                     transition: border-color .2s ease-in-out, padding .2s ease-in-out;
                 }
-
+                
                 svg {
                     color: #222325;
                     cursor: pointer;
                     display: block;
                     height: em(60px);
-                    margin: 0 auto em(15px);
+                    margin: 0 em(36px) em(15px);
                     width: em(60px);
                 }
             }
