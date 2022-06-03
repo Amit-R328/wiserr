@@ -81,16 +81,16 @@ export const SellerDashboard = (props) => {
 
         <div className='seller-totalim'>
             <div className='seller-Total-order'>
-                <p className='seller-total-amount'>Total orders<br></br>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
+                <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
             </div>
             {/* <div className='seller-Total-order'>
                 <p className='seller-total-qty'>Total orders quantity<br></br> {qtyTotalOrders}</p>
             </div>             */}
               <div className='seller-Total-order'>
-                <p className='seller-orders-thisyear'>This year orders<br></br>Amount: ${totalYearOrdersAmount}<br></br>Quantity: {qtyYearOrders}</p>
+                <p className='seller-orders-thisyear'>This year orders<hr className='gentel-line'></hr>Amount: ${totalYearOrdersAmount}<br></br>Quantity: {qtyYearOrders}</p>
             </div>
             <div className='seller-Total-order'>
-                <p className='seller-orders-amount'>This month orders<br></br>Amount: ${totalMonthlyOrdersAmount}<br></br>Quantity: {qtyMonthlyOrders}</p>
+                <p className='seller-orders-amount'>This month orders<hr className='gentel-line'></hr>Amount: ${totalMonthlyOrdersAmount}<br></br>Quantity: {qtyMonthlyOrders}</p>
             </div>
             {/* <div className='seller-Total-order'>
                 <p className='seller-orders-qty'>This month orders qty:<br></br> {qtyMonthlyOrders}</p>
@@ -123,6 +123,9 @@ export const SellerDashboard = (props) => {
                                     <option value="rejected">rejected</option>
                                 </select></td>
                             </tr>)}
+                            <thead className='orders-table-header'>
+                   
+                </thead>
                 </tbody>
             </table>
         </div>
