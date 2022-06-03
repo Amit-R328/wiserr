@@ -67,3 +67,18 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+    .selling-proposition-wrapper {
+        position: relative;
+        left: 12%;
+    }
+    .selling-proposition-wrapper .selling-proposition {
+        display: flex;
+        flex-direction: column;
+    }
+    .selling-proposition-wrapper .selling-text{
+        position: relative;
+        left: 4%;
+    }
+}

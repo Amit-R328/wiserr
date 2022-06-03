@@ -15,7 +15,7 @@ export const HomePage = () => {
             </div>
             <TrustedBy />
             <div className="gig-slider-container container">
-                <h2>Popular professional services</h2>
+                <h2 className='professional-services'>Popular professional services</h2>
                 <CategoriesCarousel />
             </div>
             <SellingPoint />

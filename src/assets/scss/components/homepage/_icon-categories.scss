@@ -114,3 +114,15 @@
         padding-bottom: 0
     }
 }
+
+@media (max-width:425px) {
+    .icon-categories ul.icon-categories-list {
+        max-width: 410px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .marketplace-title {
+        position: relative;
+        left: 11%;
+    }
+}

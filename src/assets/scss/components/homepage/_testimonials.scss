@@ -87,3 +87,12 @@ blockquote {
     font-size: rem(18px);
     line-height: 140%;
 }
+
+@media (max-width: 425px) {
+    .testimonials {
+        position: relative;
+        left: 11%;
+        display: flex;
+        flex-direction: column;
+    }
+}

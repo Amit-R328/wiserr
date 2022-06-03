@@ -61,11 +61,12 @@
       // gap: 20px;
 
       .hamburger-icon {
-        &::after{
+        &::after {
           content: '\f0c9';
           font-family: awesome;
           color: black;
         }
+
         // \uf0c9
         @include from-narrow-layout {
           display: none;
@@ -183,4 +184,20 @@
 
   .danger {
     background-color: rgb(227, 114, 114);
+  }
+
+  @media (max-width:425px) {
+    .header {
+      background-color: #fff;
+    }
+
+    top {
+      .logo {
+        svg {
+          path:nth-child(1) {
+            fill: $grey_1000;
+          }
+        }
+      }
+    }
   }
