@@ -10,7 +10,7 @@
   border-radius: 3px 0 0 3px;
   border-right: 0;
   padding-top: 8px;
-  border-color: #dadbdd;
+  border-color: $grey_500;
   color: #404145;
   padding: 7px 7px 7px 28px;
   font-size: 14px;
@@ -20,16 +20,16 @@
   // display: none;
   font-size: 14px;
   padding: 8px 16px;
-  background-color: #1dbf73;
+  background-color: $wiserr_green;
   border: 1px solid transparent;
-  color: #fff;
+  color: $white;
   border-radius: 0 3px 3px 0;
   font-weight: 700;
 }
 .trusted-by-brands {
   // width: 100%;
-  background-color: #fafafa;
-  color: #b5b6ba;
+  background-color: $grey_100;
+  color: $grey_700;
   
 
   & ul {
@@ -54,7 +54,7 @@
     }
     
     & p {
-      font-size: em(16px);
+      font-size: rem(16px);
       margin: 0;
     }
   }
@@ -62,9 +62,9 @@
 
 .trusted-by {
   color: $grey_1000;
-  padding-right: em(60px);
-  padding-left: em(60px);
-  background-color: #fafafa;
-  font-size: em(16px);
+  padding-right: rem(60px);
+  padding-left: rem(60px);
+  background-color: $grey_100;
+  font-size: rem(16px);
   
 }

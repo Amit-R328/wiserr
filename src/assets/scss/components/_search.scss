@@ -8,11 +8,10 @@ form.search-bar {
     
     & label {
       
-      &::after{
+      &:after{
         content: "\f3ee";
         color: $grey_1100;
         // color: #404145;
-        color: #74767e;
         padding-top:rem(5px);
         padding-left: rem(5px);
         font-family: awesome brands;
@@ -22,12 +21,6 @@ form.search-bar {
         left: 5px;
         top: 4px;
       }
-      svg {
-        path {
-          z-index: 10;
-          color: blue;
-        }
-      }
     }
     
     input {
@@ -35,7 +28,7 @@ form.search-bar {
       
       
       .search-input {
-        border: 1px solid #c5c6c9;
+        border: 1px solid $grey_600;
         color: $grey_1100;
         // line-height: 27px;
         padding: 4px 50px 2px 36px;
@@ -51,8 +44,8 @@ form.search-bar {
       border: none;
       margin-left: -53px;
       // margin-top: 1px;
-      background-color: #1dbf73;
-      color: #fff;
+      background-color: $wiserr_green;
+      color: $white;
       padding: 9px 8px;
       // padding: 4px 50px 2px 36px;
       border-radius: 3px 0 0 3px;

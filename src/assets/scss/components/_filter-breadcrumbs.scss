@@ -6,7 +6,7 @@
     margin-top: 135px;
 
     .layout-row {
-        // background-color: #ffffff;
+        // background-color: $whitefff;
         // color: $grey_1000;
         display: flex;
         flex-direction: column;
@@ -206,7 +206,7 @@
 
 
         .filter-menu-title {
-            border: 1px solid #dadbdd;
+            border: 1px solid $grey_500;
             border-radius: 4px;
             color: #222325;
             cursor: pointer;
@@ -250,9 +250,9 @@
                     // top: 100%;
                     font-size: 14px;
                     line-height: 22px;
-                    background: #fff;
+                    background: $white;
                     z-index: 1000;
-                    border: 1px solid #dadbdd;
+                    border: 1px solid $grey_500;
                     border-radius: 4px;
                     transition: all .24s cubic-bezier(.215, .61, .355, 1), opacity .12s cubic-bezier(.215, .61, .355, 1);
                     transition-delay: .12s;
@@ -305,7 +305,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    border-top: 1px solid #e4e5e7;
+                    border-top: 1px solid $grey_400;
                     user-select: none;
                     padding: 0 12px;
                 }

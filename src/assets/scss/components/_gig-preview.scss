@@ -4,7 +4,7 @@
   cursor: default !important;
   display: flex;
   flex-direction: column;
-  border: 1px solid #e4e5e7;
+  border: 1px solid $grey_400;
   overflow: hidden;
 
 
@@ -46,8 +46,8 @@
         svg{
           width: 30px !important;
           height: 30px !important;
-          background: #fff;
-          color: #000;
+          background: $white;
+          color: $black;
           border-radius: 50%;
           padding: 5px;
         }
@@ -80,7 +80,7 @@
     }
 
     .gig-rate{
-      border-top: 1px solid #e4e5e7;
+      border-top: 1px solid $grey_400;
       display: flex;
       align-items: center;
     }

@@ -1,12 +1,12 @@
 .gig-slider-container {
     // color: $grey_1000;
-    margin-top: em(60px);
-    margin-bottom: em(60px);
+    margin-top: rem(60px);
+    margin-bottom: rem(60px);
 
     & h2 {
         color: $grey_1100;
-        padding-bottom: em(18px);
-        font-size: em(32px);
+        padding-bottom: rem(18px);
+        font-size: rem(32px);
         line-height: 120%;
         font-weight: 700;
     }
@@ -17,7 +17,7 @@
         grid-template-rows: 1fr;
         grid-template-areas:
         "slide1 slide2 slide3 slide4 slide5";
-        // column-gap: em(6px);
+        // column-gap: rem(6px);
         padding: 0;
     }
     
@@ -47,12 +47,12 @@
         .slide:not(:first-of-type) {
             width: 100%;
             aspect-ratio: 1 / 0.79;
-            padding-left:32px;
+            padding-left: rem(32px);
             
             &:first-of-type {
                 width: 100%;
                 padding: 0;
-                padding-right: 16px;
+                padding-right: rem(16px);
                 aspect-ratio: 1 / 0.79;
 
             }
@@ -62,22 +62,22 @@
     h4 {
         position: absolute;
         z-index: 55;
-        color: #fff;
-        padding: 16px;
+        color: $white;
+        padding: rem(16px);
         width: 100%;
         font-stretch: 100%;
         // line-height: unset;
         cursor: pointer;
 
         & span {
-            font-size: em(24px);
-            line-height: 32px;
+            font-size: rem(24px);
+            line-height: rem(32px);
             font-weight: 700;
         }
 
         & small {
-            font-size: em(14px) !important;
-            line-height: em(20px);
+            font-size: rem(14px) !important;
+            line-height: rem(20px);
             font-weight: 400 !important;
         }
     }

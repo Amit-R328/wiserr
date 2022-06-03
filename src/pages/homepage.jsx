@@ -10,23 +10,22 @@ import { TrustedBy } from '../cmps/homepage-sections/trusted-by.jsx'
 export const HomePage = () => {
     return (
         <section>
-            <HeroCarousel />
-
-            <TrustedBy/>
-            
-
-            <div className="gig-slider-container container">
-                    <h2>Popular professional services</h2>
-                    <CategoriesCarousel />
+            <div className="hero">
+                <HeroCarousel />
             </div>
-                <SellingPoint />
-                <div className="container">
+            <TrustedBy />
+            <div className="gig-slider-container container">
+                <h2>Popular professional services</h2>
+                <CategoriesCarousel />
+            </div>
+            <SellingPoint />
+            <div className="container">
                 <IconCategories />
-                </div>
-                
-                <SellerSectionHomepage />
-                
-                <Testimonials />
+            </div>
+
+            <SellerSectionHomepage />
+
+            <Testimonials />
         </section>
     )
 }

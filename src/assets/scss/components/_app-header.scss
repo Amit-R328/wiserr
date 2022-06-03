@@ -7,7 +7,7 @@
     z-index: 10;
 
     &.categories-header {
-      background-color: #fff;
+      background-color: $white;
 
       .top {
         margin: 0;
@@ -26,7 +26,7 @@
 
 
     &.scrolled {
-      background-color: #fff;
+      background-color: $white;
 
       .nav-link {
         color: $grey_1000;
@@ -52,7 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: em(25px) 0;
+    padding: rem(25px) 0;
     margin: 0;
 
     .logo-search-container {
@@ -72,7 +72,7 @@
 
         svg {
           path:first-child {
-            fill: #fff;
+            fill: $white;
           }
         }
 
@@ -93,7 +93,7 @@
 
   ul {
     margin: 0;
-    // color: #fff;
+    // color: $white;
 
     &.nav-list {
       margin: 0;
@@ -102,12 +102,12 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      font-size: em(16px);
+      font-size: rem(16px);
       font-weight: 600;
       font-family: roboto;
 
       .nav-link {
-        color: #fff;
+        color: $white;
       }
 
     }
@@ -146,7 +146,7 @@
   }
 
   .success {
-    background-color: #1dbf73;;
+    background-color: $wiserr_green;;
   }
 
   .danger {
