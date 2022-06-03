@@ -21,12 +21,12 @@ export const FilterBreadCrumbs = () => {
     }
 
     const onToggleBudget = () => {
-        let flag = !budgetMenu;
+        var flag = !budgetMenu;
         setBudgetMenu(flag);
     }
 
     const onToggleDeliveryTime = () => {
-        let flag = !deliveryDateMenu
+        var flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
     }
 
@@ -48,8 +48,6 @@ export const FilterBreadCrumbs = () => {
             allowOutsideClick: true,
             allowEscapeKey: true,
         })
-        ev.preventDefault();
-        ev.stopPropagation()
     }
 
     return (
@@ -58,12 +56,11 @@ export const FilterBreadCrumbs = () => {
                 <section className="breadcrumbs-container flex">
                     <ul className="breadcrumbs">
                         {(filterBy.category) ? <li><a href="/categories"><p></p>Wiserr {filterBy.category}</a>
-                            <span className="chevron-icon-right">
-                            </span></li> : <li><span>Wiserr All</span></li>}
+                        </li> : <li><span>Wiserr</span>All</li>}
                     </ul>
                 </section>
 
-                <header className="results-category-header">
+                <section className="results-category-header">
                     <div className="title-wrapper">
                         {(filterBy.txt) ? <h1>Results for "<span>{filterBy.txt}</span>"</h1> : <span></span>}
                         {(filterBy.category && !filterBy.txt) ? <h1><span>{filterBy.category}</span></h1> : <span></span>}
@@ -71,26 +68,27 @@ export const FilterBreadCrumbs = () => {
                         <p>Connect with the best professionals for your project</p>
                         <button onClick={() => showSweetAlert()} className="play-video"><VideoIcon /><p>How Wiserr Works</p></button>
                     </div>
-                </header>
-
+                </section>
             </header >
 
             <section className="filter-topbar">
                 <div className="filter-shadow-effect flex">
                     <div className="filter-floating-menu flex">
-                        <div onClick={onToggleBudget} className="filter-menu-title filter-menu flex">Budget
+                        <div onClick={onToggleBudget} className="filter-menu-title filter-menu">Budget
                             {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
                         </div>
                     </div>
-                    <div className="filter-floating-menu flex">
-                        <div onClick={onToggleDeliveryTime} className="filter-menu-title filter-menu flex">Delivery Time
+                    <div className="filter-floating-menu">
+                        <div onClick={onToggleDeliveryTime} className="filter-menu-title filter-menu">Delivery Time
                             {deliveryDateMenu && <DeliveryDateFilter />}
                         </div>
                     </div>
 
                     <div className="sort-by-container flex">
-                        <span className="pre-title sorting">Sort by</span>
+                        <span className="pre-title">Sort by</span>
                         <SortGigsList />
+                        <div className="button-row">
+                        </div>
                     </div>
                 </div>
             </section>

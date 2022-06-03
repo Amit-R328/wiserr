@@ -48,8 +48,8 @@ class _BudgetFilter extends React.Component {
                         <input type="number" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max} />
                     </div>
                 </div>
-                <div className="btns-container">
-                    <button className="close-btn" onClick={this.onClearBudget}>clear</button>
+                <div className="button-row flex">
+                    <button className="close-btn" onClick={this.onClearBudget}>Clear</button>
                     <button className="apply-filters-btn" onClick={this.onApplyBudget}>Apply</button>
                 </div>
             </section>
