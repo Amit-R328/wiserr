@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
+import { useSelector} from 'react-redux'
 
 import { LogoFullWhiteSellers, VCircle } from '../../services/svg.service.js'
 
 export const SellerSectionHomepage = () => {
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
 
     return (
         <div className="seller-info-container container">
@@ -24,7 +26,7 @@ export const SellerSectionHomepage = () => {
                         <li><h6><VCircle /><p>Manage gigs and boost productivity with one powerful workspace</p></h6></li>
                     </ul>
                     <div className="explore-seller-container">
-                        <NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink>
+                    {loggedInUser ? <NavLink  to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink> :<NavLink  to="/login" className="explore-seller">Explore Wiserr Seller</NavLink>}
                     </div>
                 </div>
                 <div className="seller-image">
