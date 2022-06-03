@@ -48,6 +48,11 @@ export const AppHeader = (props) => {
         setMenu(flag);
     }
 
+    const onToggleSideMenu = () => {
+        var flag = !isSideMenu
+        setSideMenu(flag)
+    }
+
     if (loggedInUser && !loggedInUser.imgUrl) {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
     }
@@ -56,9 +61,8 @@ export const AppHeader = (props) => {
         <header className={`header container ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
             <div className="top">
                 <div className="logo-search-container">
-                    <button className="hamburger-icon">
-                        <span onClick={setSideMenu}></span>
-                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleMenu} user={loggedInUser}/>}
+                    <button  onClick={onToggleSideMenu} className="hamburger-icon">
+                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
                         {/* <HamburgerMenu /> */}
                     </button>
                     <div className="logo">

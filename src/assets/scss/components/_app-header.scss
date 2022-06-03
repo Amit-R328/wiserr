@@ -61,6 +61,11 @@
       // gap: 20px;
 
       .hamburger-icon {
+        &::after{
+          content: '\f0c9';
+          font-family: awesome;
+          color: black;
+        }
         // \uf0c9
         @include from-narrow-layout {
           display: none;
