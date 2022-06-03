@@ -1,30 +1,28 @@
 .selling-proposition-wrapper {
     width: 100%;
-    // height: em(705px);
     background-color: #f1fdf7;
     padding-top: em(96px);
     padding-bottom: em(96px);
 
-
     .selling-proposition {
-        // margin-left: 60px;
-        // margin-right: 60px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: "selling-text";
-        // margin-left: 13.25%;
-        // margin-right: 13.25%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: "selling-text selling-img";
+        vertical-align: middle;
+        align-items: center;
     }
 
     .selling-text {
         grid-column: 1 / 1;
-        // padding-bottom: em(48px);
         display: flex;
         flex-direction: column;
-        gap: 5px;
-        padding-left: em(68px);
-        padding-right: em(68px);
+        gap: 10px;
         font-size: em(16px);
+        padding: 0;
+        padding-right: 150px;
+        margin: 0;
+        overflow-wrap: break-word;
+        line-height: 120%;
 
         .ul-selling-points {
             display: flex;
@@ -33,46 +31,39 @@
         }
 
         h2 {
+            line-height: 120%;
             font-size: em(32px);
-            // line-height: 120%;
             display: block;
-            margin-block-start: 0.83em;
-            margin-block-end: 0.83em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
+            margin-block-end: 0.5em;
             font-weight: bold;
-            color: #62646a;
+            color: $grey_1100;
         }
 
         li {
-            // padding-bottom: em(24px);
-
             &:last-child {
                 padding-bottom: 0;
             }
 
             h6 {
-                // padding-bottom: em(8px);
                 display: flex;
                 align-items: flex-start;
                 font-size: em(18px);
-                color: #62646a;
-
+                color: $grey_1100;
+                padding: 0;
+                margin: 0;
+                line-height: 24px;
+                
                 .check-icon {
+                    margin-bottom: em(10px);
                     margin-right: em(10px);
-                    color: #62646a;
                 }
             }
-
-            p {
+            & p {
                 font-size: em(18px);
-                // line-height: em(26px);
-                color: #62646a;
+                color: $grey_1100;
+                line-height: 24px;
             }
+            
         }
-    }
-
-    & img {
-        // padding-right: em(68px);
     }
 }
