@@ -14,7 +14,7 @@
   .inputs-container {
     gap: 10px;
     display: flex;
-    flex-direction: column;
+    border-bottom: 1px solid $grey_400;
   }
 
   .input-container {
