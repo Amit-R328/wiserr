@@ -4,13 +4,14 @@
     flex-direction: column;
     background-color: transparent;
     position: fixed;
-    z-index: 10;
+    z-index: 150;
 
     &.categories-header {
       background-color: $white;
       
       .top {
         margin: 0;
+        background-color: $white;
 
         & a {
         color: $grey_1000;
@@ -100,6 +101,8 @@
     align-items: center;
     border-top: 1px solid $grey_400;
     border-bottom: 1px solid $grey_400;
+    background-color: $white;
+    z-index: 50;
   }
 
 

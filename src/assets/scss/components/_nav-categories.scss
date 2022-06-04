@@ -1,10 +1,12 @@
-.bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid $grey_400;
-    border-bottom: 1px solid $grey_400;
-}
+// .bottom {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     border-top: 1px solid $grey_400;
+//     border-bottom: 1px solid $grey_400;
+//     background-color: $white;
+//     z-index: 50;
+// }
 
 .categories-menu-scroll {
     padding: rem(10px) 0;
@@ -12,7 +14,6 @@
     width: 100%;
     background-color: $white;
     position: relative;
-    background-color: $white;
     z-index: 150;
 
     ul {
