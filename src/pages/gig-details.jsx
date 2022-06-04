@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {  showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
-import { getById } from '../store/actions/gig.actions.js';
+import { getById, updateGig } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
 import { loadOrders } from '../store/actions/order.actions.js'
 // import { getByUserId } from '../services/user.service.js'
@@ -15,6 +15,7 @@ import ImageGallery from 'react-image-gallery';
 import { UserMsg } from '../cmps/user-msg.jsx';
 // import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
+import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue } from '../services/svg.service.js';
 
 
 export const GigDetails = (props) => {
@@ -24,22 +25,28 @@ export const GigDetails = (props) => {
     const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
     const [isReviewAdd, setReviewAdd] = useState(false)
+    const [tumbUp, setTumbUp] = useState(false)
+    const [tumbDown, setTumbDown] = useState(false)
+    const [textColorUp, setTextColorUp] = useState('')
+    const [textColorDown, setTextColorDown] = useState('')
     // const [orders, setOrders] = useState({})
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
+    const BLACK = '#404145'
+    const BLUE = '#446ee7'
 
     useEffect(() => {
         dispatch(getById(params.gigId))
-      
         
     }, [params])
-// console.log('orders',orders )
+
+
     useEffect(() => {
         if(gig){            
             getUserAndOrders()             
-            // console.log('user', user)        
+    
         }
     },[gig])
 
@@ -92,6 +99,50 @@ export const GigDetails = (props) => {
         return { original: img, thumbnail: img }
     })
     
+    
+    const getTumbUp =(ev,gig,idx) => {
+              
+        gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful 
+        let flagUp = gig.reviews[idx].isHelpful
+        let color
+        if(flagUp){
+            color = BLUE
+            setTextColorUp(color)      
+            //if up was pressed and down is blue we change it to black
+            gig.reviews[idx].isNotHelpful = false   
+            color = BLACK
+            setTextColorDown(color)
+            setTumbDown(false)
+                  
+        } else {
+            color = BLACK
+            setTextColorUp(color)
+        }      
+        dispatch(updateGig(gig))
+        return setTumbUp(flagUp) 
+    }
+
+    const getTumbDown =(ev,gig,idx) => {
+       
+        gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful 
+        let flagDown = gig.reviews[idx].isNotHelpful
+        let color
+        if(flagDown) {
+            color = BLUE
+            setTextColorDown(color)
+            gig.reviews[idx].isHelpful = false
+            color = BLACK
+            setTextColorUp(color)
+          }  else {
+            color = BLACK
+            setTextColorDown(color)
+          }
+       
+        dispatch(updateGig(gig))
+    }
+
+   
+
     return (
         <React.Fragment>
             {/* <div className="app-header">
@@ -140,7 +191,8 @@ export const GigDetails = (props) => {
                                     <ul className="info-left flax">
                                         <li>
                                             From
-                                            <strong>Israel</strong>
+                                            <strong>{gig.owner.from}</strong>
+                                            {/* <strong>Israel</strong> */}
                                         </li>
                                         <li>
                                             Member Since
@@ -170,9 +222,22 @@ export const GigDetails = (props) => {
                         {isReviewAdd && <ReviewAdd owner={loggedInUser} gigId={gig._id} setReviewAdd={setReviewAdd}/>} */}
                         {(gig.reviews.length) ? <section className="reviews">
 
-                            {gig.reviews.map(review => {
+                            {gig.reviews.map((review,idx) => {
                                 return <article key={review._id}>
                                     <GigReview review={review} />
+                                    <div className='tumbs-container'>
+                                        <div className="tumbup-btn">
+                                            <button className="tumbs-btn"  style={{ color: `${review.isHelpful ? BLUE : BLACK}`}} onClick={(ev) => getTumbUp(ev, gig, +idx)}>
+                                            {review.isHelpful ? <TumbUpBlue /> : <TumbUpBlack />} Helpful
+                                        </button>
+                                    </div>
+                                    <div className="tumbdown-btn">
+                                        <button className="tumbs-btn" style={{ color: `${review.isNotHelpful ? BLUE : BLACK}`}} onClick={(ev) => getTumbDown(ev, gig, +idx)}>                                            
+                                            {review.isNotHelpful ? <TumbDownBlue /> : <TumbDownBlack />} Not Helpful 
+                                        </button>
+                                        {review.isHelpful && <p className='helpful-text'>You found this review helpful.</p>}
+                                    </div>
+                                   </div>
                                 </article>
                             })}
                         </section> : <span></span>}

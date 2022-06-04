@@ -160,6 +160,29 @@
 
     .reviews {
         font-size: 12px;
+
+        .tumbs-container {
+            display: flex;
+            
+            .tumbs-btn {
+                background: unset;
+                border: unset;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .tumbs-text-color {
+                color: #446ee7;
+            }
+            .helpful-text {                
+                color: #b5b6ba;
+                font-size: 14px;
+                padding-left: 4px;                
+                margin: 0;
+                display: inline;
+            }
+        }
     }
 }
 

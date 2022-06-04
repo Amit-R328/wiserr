@@ -212,7 +212,7 @@ class _AddGigDetails extends React.Component {
                                             <option value="Digital & Marketing">Digital Marketing</option>
                                             <option value="Writing & Translation">Writing &amp; Translation</option>
                                             <option value="Video & Animation">Video &amp; Animation</option>
-                                            <option value="Music & Audio">Music &amp; Audio</option>
+                                            <option value="Business">Business</option>
                                             <option value="Lifestyle">Lifestyle</option>
                                             {/* <option value="Programming & Tech">Programming &amp; Tech</option> */}
                                         </select>

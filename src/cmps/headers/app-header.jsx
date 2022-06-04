@@ -69,7 +69,8 @@ export const AppHeader = (props) => {
                 </div>
                 <ul className="nav-list clean-list" >
                     <li>
-                        {loggedInUser && <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>: <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {/* {loggedInUser && <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>} */}
                     </li>
                     <li>
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>

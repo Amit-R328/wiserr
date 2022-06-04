@@ -1,7 +1,7 @@
 .reviews {
     .review-card {
         border-top: 1px solid #dadbdd;
-        padding: 16px 0 32px 0;
+        padding: 16px 0 10px 0;
         position: relative;
         margin-top: 10px;
     }
@@ -27,6 +27,9 @@
         // font-size: 1.5rem;
         margin-right: 0.6rem;
         font-weight: bold;
+        color: #404145;
+        font-size: 14px;
+        font-style: bold;
     }
 
     span {
@@ -42,5 +45,26 @@
     .fa-star {
         margin-left: 0.2rem;
         color: #ffbe5b;
+    }
+
+    .user-country {
+
+        p {
+            margin: unset;
+        }
+
+        margin-left: 3rem;
+        padding: 0 0 10px 0;
+        color: #62646a;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.5rem
+    }
+    .country-flag {
+        width: 8%;
+        // height: rem(30px);
+        border-radius: 2px;
+        padding-right: rem(5px) ;
     }
 }
