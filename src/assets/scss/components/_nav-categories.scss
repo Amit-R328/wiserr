@@ -9,7 +9,7 @@
 // }
 
 .categories-menu-scroll {
-    padding: rem(10px) 0;
+    // padding: rem(10px) 0;
     visibility: visible;
     width: 100%;
     background-color: $white;
@@ -31,7 +31,6 @@
                 text-decoration: none;
                 padding: 0 10px;
                 // position: relative;
-                color: $grey_1000;
                 margin: 0;
                 outline: 0;
                 text-align: center;
@@ -64,6 +63,9 @@
                 border: none;
                 // min-width: 80px;
                 // overflow: hidden;
+                color: $grey_900;
+                font-weight: 400;
+                font-size: 16px;
 
                 &:last-child {
                     padding-right: 0;
