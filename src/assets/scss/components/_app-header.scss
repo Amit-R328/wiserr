@@ -4,13 +4,19 @@
     flex-direction: column;
     background-color: transparent;
     position: fixed;
-    z-index: 10;
+    z-index: 150;
 
     &.categories-header {
       background-color: $white;
-
+      
       .top {
         margin: 0;
+        background-color: $white;
+
+        & a {
+        color: $grey_1000;
+        }
+        
 
         .logo-search-container {
           .logo {
@@ -27,10 +33,11 @@
 
     &.scrolled {
       background-color: $white;
+      
 
-      // .nav-link {
-      //   color: $grey_1000;
-      // }
+      .nav-link {
+        color: $grey_1000;
+      }
 
       .top {
         margin: 0;
@@ -52,8 +59,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(25px) 0;
+    padding-top: em(25px);
+    padding-bottom: em(25px);
     margin: 0;
+    
 
     .logo-search-container {
       display: flex;
@@ -66,8 +75,6 @@
           font-family: awesome;
           color: black;
         }
-
-        // \uf0c9
         @include from-narrow-layout {
           display: none;
         }
@@ -87,32 +94,6 @@
         }
       }
     }
-
-    .open-popup-signup {
-      border-color: #fff;
-      // padding: 0;
-      // padding: 7px 20px;
-      // transition: all .2s ease;
-      // background: none;
-      // border-radius: 4px;
-      // cursor: pointer;
-      // display: inline-block;
-      // font-size: 16px;
-      // font-weight: 600;
-      // line-height: 100%;
-      // position: relative;
-      // text-align: center;
-      // text-decoration: none;
-      // transition: 70ms cubic-bezier(.75, 0, .25, 1);
-      // list-style: none;
-      // list-style-image: none;
-      // margin: 0;
-      // padding: 0;
-
-      & a:hover {
-        color: #1dbf73;
-      }
-    }
   }
 
   .bottom {
@@ -120,6 +101,8 @@
     align-items: center;
     border-top: 1px solid $grey_400;
     border-bottom: 1px solid $grey_400;
+    background-color: $white;
+    z-index: 50;
   }
 
 
@@ -130,13 +113,11 @@
     &.nav-list {
       margin: 0;
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap: 20px;
-      font-size: rem(16px);
+      font-size: em(16px);
       font-weight: 600;
-      font-family: roboto;
 
       .nav-link {
         color: $white;
@@ -147,13 +128,9 @@
 
   .avatar-img {
     width: 30px;
-    // height: 30px;
     border-radius: 50%;
     object-fit: cover;
     margin-top: 10px;
-    // position: absolute;
-    // margin-right: 5em;
-    // margin-left: 2.5em;
   }
 
   .user-msg {
@@ -174,12 +151,11 @@
     border: 0;
     border-radius: 50%;
     margin: 5px;
-
+    
   }
 
   .success {
     background-color: $wiserr_green;
-    ;
   }
 
   .danger {

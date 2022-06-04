@@ -1,43 +1,38 @@
 .budget-filter {
-    // position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $grey_500;
+  line-height: 22px;
+  font-size: 14px;
+  top: 100%;
+  margin-top: 10px;
+  border-radius: 4px;
+  background-color: $white;
+  color: $grey_1000;
+  box-shadow: 0 12px 18px 0.2;
+
+  .inputs-container {
+    gap: 10px;
     display: flex;
     flex-direction: column;
-    // z-index: 100;
-    // opacity: 0;
-    // pointer-events: none;
-    border: 1px solid $grey_500;
-    line-height: 22px;
-    font-size: 14px;
-    top: 100%;
-    margin-top: 10px;
-    border-radius: 4px;
-    background-color: $white;
-    color: $grey_1000;
-    box-shadow: 0 12px 18px 0.2;
-    .input-wrappers {
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
+  }
 
+  .input-container {
+    margin-bottom: 12px;
+
+    label {
+      margin-bottom: 4px;
+      font-size: 1rem;
+      line-height: 24px;
+      color: $grey_1000;
+      font-weight: 600;
     }
-    .input-wrapper {
-        margin-bottom: 12px;
-        label {
-          margin-bottom: 4px;
-          font-size: 1rem;
-          line-height: 24px;
-          color: $grey_1000;
-          font-weight: 600;
-        }
-        input {
-          // height: 40px;
-          width: 120px;
-          border: 1px solid $grey_600;
-          color: $grey_1100;
-          padding: 8px 12px;
-          // &:focus {
-          //   outline: none;
-          // }
-        }
-      }
+
+    input {
+      width: 120px;
+      border: 1px solid $grey_600;
+      color: $grey_1100;
+      padding: 8px 12px;
+    }
+  }
 }

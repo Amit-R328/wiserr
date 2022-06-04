@@ -17,6 +17,8 @@ export const AppHeader = (props) => {
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
+
+
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
@@ -58,8 +60,8 @@ export const AppHeader = (props) => {
     }
 
     return (
-        <header className={`header container ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
-            <div className="top">
+        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
+            <div className="top container">
                 <div className="logo-search-container">
                     <button  onClick={onToggleSideMenu} className="hamburger-icon">
                         {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
@@ -82,17 +84,10 @@ export const AppHeader = (props) => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Sign in</NavLink>}
+                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
-                        <div className="profile-container">
-                            {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
-                        </div>
-                    </li>
-                    
-                    <li>
-                        {!loggedInUser && <NavLink to="/signup" rel="nofollow" className="open-popup-signup nav-link">Join</NavLink>}
                         <div className="profile-container">
                             {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
                         </div>

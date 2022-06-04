@@ -1,0 +1,128 @@
+.filter-gigs-container {
+    width: 100%;
+    margin-top: 145px;
+
+    .layout-row {
+        color: $grey_1000;
+        flex-wrap: wrap;
+        flex: 1 1 0;
+        padding-top: 30px;
+        padding-bottom: 15px;
+
+        .breadcrumbs-container {
+            height: 40px;
+            flex: 1 1;
+            margin-top: rem(20px);
+
+            & ul.breadcrumbs {
+                list-style: none;
+                margin: 0;
+                padding: 0 0 15;
+
+                & li {
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: left;
+                    list-style: none;
+                    list-style-type: none;
+                    text-decoration: none;
+                    transition: color .2s;
+                    cursor: pointer;
+                    display: inline;
+
+                    & span {
+                        &::after {
+                            content: "\f105";
+                            font-family: awesome;
+                            margin: 0 rem(10px);
+                        }
+                    }
+
+                    & a {
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: inherit;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        color: $grey_1000;
+
+                        &:hover {
+                            text-decoration-line: underline;
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            outline: none;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        & span.chevron-icon-right {
+                            background-color: initial;
+                            background-image: none;
+                            border-style: none;
+                            display: inline-block;
+                            fill: $grey_1000;
+                            height: 10px;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0 5px;
+                            width: 10px;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .results-category-header {
+        h1 {
+            height: 40px;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 125%;
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            text-transform: none;
+            cursor: default;
+            color: #222325;
+        }
+
+        p {
+            color: $grey_1000;
+            cursor: default;
+            display: inline-block;
+            line-height: 24px;
+            margin: 0;
+            outline: 0;
+            padding: 10px 0 0;
+            text-align: left;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        button {
+            line-height: 24px;
+            width: 160px;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            background: none;
+            outline: none;
+            border: none;
+
+            p {
+                margin: unset;
+                padding: unset;
+                padding-left: 10px;
+            }
+        }
+    }
+}
