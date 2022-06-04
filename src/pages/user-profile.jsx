@@ -26,7 +26,7 @@ export const UserProfile = () => {
     console.log('totals', totals)
     console.log('orders from user-profile', orders)
 
-
+    const totalAmount = totals.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     return (
         <section className='user-profile-layout container'>
             <section className='user-profile flex'>
@@ -47,7 +47,7 @@ export const UserProfile = () => {
                                 <img className='gig-img-profile' alt="" src={order.gig.imgUrl} />
                                 <div className='card-profile-info'>
                                     <h5>Seller: {order.seller.fullName}</h5>
-                                    <h5>Amont: ${order.gig.price}</h5>
+                                    <h5>Amont: {order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h5>
                                     <h5>Status: {order.status}</h5>
                                     <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
                                     <h5>Delivery Date:{utilService.setDateTime(order.deliveryDate)}</h5></div>
@@ -56,7 +56,7 @@ export const UserProfile = () => {
                         (<h1>You don't have any orders yet!</h1>)}
                 </div>
                 <div className='total-price-container'>
-                        <h5>total amount: {`${totals}`}</h5>
+                        <h5>total amount: {`${totalAmount}`}</h5>
                 </div>
             </section>
         </section>
