@@ -14,15 +14,22 @@
         background-color: $white;
 
         & a {
-        color: $grey_1000;
+        color: $grey_900;
+
+          &.seller-nav-link {
+            color: $wiserr_business;
+          }
+
+          &:hover{
+            color: $wiserr_green;
+          }
         }
         
-
         .logo-search-container {
           .logo {
             svg {
               path:nth-child(1) {
-                fill: $grey_1000;
+                fill: $grey_1100;
               }
             }
           }
@@ -34,13 +41,21 @@
     &.scrolled {
       background-color: $white;
       
-
       .nav-link {
-        color: $grey_1000;
+        color: $grey_900;
+        
+        &.seller-nav-link {
+          color: $wiserr_business;
+        }
+        
+        &:hover{
+          color: $wiserr_green;
+        }
       }
 
       .top {
         margin: 0;
+
 
         .logo-search-container {
           .logo {
@@ -103,6 +118,7 @@
     border-bottom: 1px solid $grey_400;
     background-color: $white;
     z-index: 50;
+    color: $grey_900;
   }
 
 
