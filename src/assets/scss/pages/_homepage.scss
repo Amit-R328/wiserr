@@ -1,42 +1,45 @@
 .trusted-by-brands {
   // position: relative;
   // width: 100%;
-  padding-top: rem(100px);
+  margin-top: rem(200px);
   background-color: $grey_100;
   color: $grey_700;
   z-index: -5;
-  // padding: rem(95px) 0;
+  padding: rem(40px) 0;
   
-  & ul {
-    // display: flex;
-    align-items: center;
-    justify-content: space-around;
-    // list-style: none;
-    padding: 0 rem(95px);
+  // & ul {
+    //   // display: flex;
+    //   // list-style: none;
+    //   // padding: 0 rem(95px);
     
     .brands-container {
+      align-items: center;
+      justify-content: center;
+      
       .trusted-by {
           color: $grey_1000;
-          padding-right: rem(60px);
-          padding-left: rem(60px);
+          // padding-right: rem(60px);
+          // padding-left: rem(60px);
           background-color: $grey_100;
+          color: $grey_700;
           font-size: rem(16px);
         }
-      
-      & li {
-        text-align: left;
-        list-style: none;
-        outline: 0;
-        min-width: rem(225px);
+        
+        & li {
+          text-align: left;
+          list-style: none;
+          outline: 0;
+          min-width: rem(225px);
       }
     }
     
     & p {
-      font-size: rem(16px);
+      font-size: rem(14px);
+      padding-right: rem(40px);
       margin: 0;
     }
   }
-}
+// }
 
 
 @media (max-width:425px) {

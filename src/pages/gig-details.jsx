@@ -15,12 +15,11 @@ import ImageGallery from 'react-image-gallery';
 import { UserMsg } from '../cmps/user-msg.jsx';
 // import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
+import mailgo, { mailgoDirectRender } from "mailgo";
 import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue } from '../services/svg.service.js';
 
-
 export const GigDetails = (props) => {
-
-    const { gig } =  useSelector((storeState) => storeState.gigModule)
+    const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
@@ -30,7 +29,7 @@ export const GigDetails = (props) => {
     const [textColorUp, setTextColorUp] = useState('')
     const [textColorDown, setTextColorDown] = useState('')
     // const [orders, setOrders] = useState({})
-
+    const [subject] = useState("Contact us")
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
@@ -48,15 +47,14 @@ export const GigDetails = (props) => {
             getUserAndOrders()             
     
         }
-    },[gig])
+    }, [gig])
 
-    
+
     const getUserAndOrders = async () => {
-        const userId = gig.owner._id        
+        const userId = gig.owner._id
         const user = await loadUser(userId)
-        dispatch(loadOrders(user,'seller'))
+        dispatch(loadOrders(user, 'seller'))
         setUser(user)
-
     }
 
 
@@ -65,7 +63,6 @@ export const GigDetails = (props) => {
     }
 
     if (!gig) return <h1>Loading</h1>
-
     let whatYouGet
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
@@ -74,16 +71,16 @@ export const GigDetails = (props) => {
     const onConfirmOrder = (ev, gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
-            navigate('/login')  
+            navigate('/login')
             // showErrorMsg('Need to login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
             showSuccessMsg('Order was created')
             // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
             // clearInterval(msgInterval);
-            
+
             setTimeout(() => {
-                navigate(`/profile/${loggedInUser._id}`)                
+                navigate(`/profile/${loggedInUser._id}`)
             }, 4000);
         }
     }
@@ -153,7 +150,7 @@ export const GigDetails = (props) => {
                             <div className="owner-details owner-container" >
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
-                                <p className='owner-level'>{user.level? user.level : 'Level 1 Seller '}&nbsp;| </p>
+                                <p className='owner-level'>{user.level ? user.level : 'Level 1 Seller '}&nbsp;| </p>
                                 <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue` : ''}</p>
                             </div>
                             <div className="gig-details-img-container">
@@ -212,7 +209,7 @@ export const GigDetails = (props) => {
                                 </div>
                             </article>
                         </section>
-                        
+
                         {/* {(loggedInUser) ? 
                         <button onClick={() => {setReviewAdd(!isReviewAdd)}} className="add-review-btn">{isReviewAdd ? 'Close' : 'Add Review'}</button> :
                         <h3>Please log in to comment</h3>
@@ -258,14 +255,15 @@ export const GigDetails = (props) => {
                                             </button>
                                         </footer>
                                     </div>
-
-                                    <button className="contact-seller">Contact Seller</button>
+                                    <div className='contact-seller'>
+                                    <a href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
+                                    </div>
                                 </div>
                             </aside>
                         </div>
                     </div>
                 </div>
-                <UserMsg/>  
+                <UserMsg />
             </section >
         </React.Fragment >
     )
