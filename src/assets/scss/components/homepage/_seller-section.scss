@@ -142,3 +142,18 @@
         }
     }
 }
+
+@media (max-width:425px) {
+    .seller-info-container {
+        position: relative;
+        // left: 11%;
+    }
+    .seller-info-container .seller-container-grid {
+        display: flex;
+        flex-direction: column;
+    }
+    .seller-info-container .seller-container-grid .seller-text {
+        position: relative;
+        left: 6%;
+    }
+}

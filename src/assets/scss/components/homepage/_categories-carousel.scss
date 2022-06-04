@@ -82,3 +82,15 @@
         }
     }
 }
+
+@media (max-width: 425px) {
+    .gig-slider-container .slider-container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        // left: 12%;
+    }
+    .professional-services {
+        margin-left: 12%;
+    }
+}

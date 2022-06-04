@@ -39,3 +39,19 @@
 }
 
 
+@media (max-width:425px) {
+  .search-input.search-hero{
+    position: relative;
+    left: 6%;
+  }
+  .hero-container .search-hero-btn{
+    border-radius: 4px 4px 4px 4px;
+    width: 474px;
+    position: relative;
+    left: 6%;
+  }
+
+  .btn-popular-category {
+    display: none;
+  }
+}
