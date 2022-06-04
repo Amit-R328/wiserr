@@ -75,18 +75,42 @@
         }
 
         .about-title {
-            font-size: 16px;
+            font-size: 18px;
             line-height: 28px;
-            padding-bottom: 25px;
+            padding-bottom: rem(25px);
             margin-top: 64px;
             font-family: Helvetica, Arial, sans-serif;
             font-weight: 700;
-            color: rgb(64, 65, 69);
+            color: #404145;
+        }
+
+        .about-this-gig {
+            font-size: 16px;
+            line-height: rem(22px);
+            color: #62646a;
+        
         }
 
         .about-get {
-            color: rgb(64, 65, 69);
-            font-size: 14px;
+            color: #62646a;
+            font-size: 16px;
+            line-height: rem(22px);
+            margin-bottom: rem(10px);
+            margin-top: rem(15px);
+        }
+
+        .what-do-you-get {
+            font-size: 16px;
+            line-height: rem(22px);
+            color: #62646a;
+        }
+
+        .gig-details-whyus {
+            margin-bottom: rem(10px);
+            margin-top: rem(15px);
+            font-size: 16px;
+            line-height: rem(22px);
+            color: #62646a;
         }
 
         .about-seller {

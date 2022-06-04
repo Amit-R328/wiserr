@@ -159,14 +159,18 @@ export const GigDetails = (props) => {
                             </div>
                         </section>
                         <section className="about-details">
-                            <h2 className="about-title">About this Gig</h2>
-                            <p className="about-this-gig">{gig.description.aboutThisGig}</p>
-                            <br />
-                            {whatYouGet && <h3 className='about-get'>What Do You Get</h3>}
+                            <h2 className="about-title">About This Gig</h2>
+                           {gig.description.aboutThisGig && <p className="about-this-gig">{gig.description.aboutThisGig}</p>}
+                            
+                            {whatYouGet && <h3 className='about-get'>What Do You Get:</h3>}
                             <dl className="what-do-you-get">
 
                                 {whatYouGet && whatYouGet.map(line => <dd key={line}>{line}</dd>)}
                             </dl>
+
+                            {gig.description.whyUs && <h3 className="gig-details-whyus">Why us: </h3>}
+                            {gig.description.whyUs && <p className="about-this-gig">{gig.description.whyUs}</p>}
+
                             <article className="about-seller">
                                 <p className="about-title">About The Seller</p>
                                 <div className="owner-card">
