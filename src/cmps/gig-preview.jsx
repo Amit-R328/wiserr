@@ -68,7 +68,7 @@ export const GigPreview = ({ gig, reviews }) => {
 
 
 return (
-        <li className="gig-preview" >
+        <li className="gig-preview">
             <div className="gig-img-container">
                 <ImageGallery stopPropagation={true} showThumbnails={false} showPlayButton={false} items={images} />
             </div>
@@ -86,14 +86,16 @@ return (
                     <div className="avg-rate">4.9</div>
                 </div>
             </div>
-            <div className="card-fav-price" onClick={onGoToDetails}>
-                <div className="heart-btn"><button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
+            <footer className="card-footer" onClick={onGoToDetails}>
+                <div className="heart-btn">
+                    <button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
                    {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
-                </button></div>
+                </button>
+                </div>
                 <div className="gig-price">
                     <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4>
                 </div>
-            </ div>
+            </ footer>
         </li >
     )
 }
