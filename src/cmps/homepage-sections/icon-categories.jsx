@@ -1,5 +1,5 @@
 import React  from "react"
-import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, AllCategoriesIcon } from '../../services/svg.service.js'
+import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, AllCategoriesIcon, BusinessIcon } from '../../services/svg.service.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
@@ -46,9 +46,14 @@ export const IconCategories = () => {
                         <VideoAnimationIcon />Video &amp; Animation
                     </button>
                 </li>
-                <li>
+                {/* <li>
                     <button onClick={() => onChangeCategory('Music & Audio')} className="audio-icon">
                         <MusicAudioIcon />Music &amp; Audio
+                    </button>
+                </li>*/}
+                 <li> 
+                    <button onClick={() => onChangeCategory('Business')} className="business-icon">
+                        <BusinessIcon />Business
                     </button>
                 </li>
                 <li>
