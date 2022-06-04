@@ -66,7 +66,7 @@
         }
 
         .img-container {
-            border-top: 1px solid #efeff0;
+            border-top: 1px solid $grey_300;
             padding-top: 20px;
         }
 
@@ -90,7 +90,7 @@
         }
 
         .about-seller {
-            border-top: 1px solid #efeff0;
+            border-top: 1px solid $grey_300;
             margin-top: 20px;
 
             .owner-card {
@@ -116,7 +116,7 @@
             }
 
             .owner-info {
-                border: 1px solid #dadbdd;
+                border: 1px solid $grey_500;
                 border-radius: 3px;
                 padding: 24px;
                 font-size: 12px;
@@ -144,7 +144,7 @@
                 .seller-description {
                     line-height: 150%;
                     text-align: left;
-                    border-top: 1px solid #dadbdd;
+                    border-top: 1px solid $grey_500;
                     padding-top: 15px;
                     margin: 0;
 
@@ -218,8 +218,8 @@
         svg{
           width: 30px !important;
           height: 30px !important;
-          background: #fff;
-          color: #000;
+          background: $white;
+          color: $black;
           border-radius: 50%;
           padding: 5px;
         }
@@ -248,7 +248,7 @@
             flex-direction: column;
             gap: 10px;
             box-sizing: border-box;
-            border: 1px solid #dadbdd;
+            border: 1px solid $grey_500;
             margin: 33px 0 0 0;
             width: 400.547px;
             // height: 470px;
@@ -261,8 +261,8 @@
 
             .price-package {
                 height: 60px;
-                box-shadow: 0 3px 0 #1dbf73;
-                color: #1dbf73;
+                box-shadow: 0 3px 0 $wiserr_green;
+                color: $wiserr_green;
                 text-align: center;
                 font-size: 16px;
                 padding: 26px 16px 10px 16px;
@@ -291,7 +291,7 @@
 
                 .days-to-make {
                     color:  $grey_1000;
-                    margin-top: em(20px);
+                    margin-top: rem(20px);
                 }
                 .description-littleDetails {
 
@@ -313,7 +313,7 @@
 
             button.buy-btn {
                 // margin-top: 10px;
-                // background-color: #1dbf73;
+                // background-color: $wiserr_green;
                 // border: 1px solid transparent;
                 cursor: pointer;
                 display: inline-block;
@@ -322,12 +322,12 @@
                 line-height: 100%;
                 padding: 12px 24px;
                 text-align: center;
-                background-color: #1dbf73;
+                background-color: $wiserr_green;
                 background-image: none;
                 border: 1px solid transparent;
                 border-radius: 4px;
                 box-sizing: border-box;
-                color: #fff;
+                color: $white;
                 display: inline-block;
                 font-family: inherit;
                 font-size: 16px;
@@ -339,22 +339,22 @@
                 font-variant-numeric: inherit;
                 font-weight: 600;
                 line-height: 100%;
-                margin: em(12px) 0;
+                margin: rem(12px) 0;
                 padding: 12px 24px;
                 position: relative;
                 text-align: center;
                 text-decoration: none;
                 transition: all 70ms cubic-bezier(.75, 0, .25, 1);
                 width: 100%;
-                // margin-top: em(12px);                
+                // margin-top: rem(12px);                
 
                 .buy-btn-arrow {
                     fill: white;
-                    left: em(20px);
+                    left: rem(20px);
                 }
                 // span {
-                //     width: em(16px);
-                //     height: em(16px);
+                //     width: rem(16px);
+                //     height: rem(16px);
                    
                 // }
             }
@@ -388,13 +388,13 @@
             &:hover {
                 background-color: $grey_900;
                 border-color: transparent;
-                color: #fff;
+                color: $white;
             }
 
             &:active {
                 background-color: $grey_1000;
                 border-color: transparent;
-                color: #fff;
+                color: $white;
             }
         }
     }

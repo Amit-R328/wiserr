@@ -9,6 +9,11 @@ export class ReviewAdd extends React.Component {
         this.setState(prevState => ({...prevState, txt: target.value}))
     } 
 
+    submit = async (ev) => {
+        ev.preventDefault()
+        
+    }
+
     render() {
         return (<section className="review-add">
             <div className="review-add-header">

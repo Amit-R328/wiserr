@@ -18,7 +18,7 @@ export const GigPage = () => {
         <section className="gigs-app-container">
             <div>
                 <div className="gigs-preview-main-wrapper container">
-                    <div className="gigs-list-container">
+                    <div className="gigs-list-container flex flex-column">
                         <div className="filter-gigs-container">
                             <FilterBreadCrumbs />
                         </div>

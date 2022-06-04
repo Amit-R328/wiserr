@@ -1,0 +1,92 @@
+.filter-topbar {
+    width: 100%;
+    margin-top: 1.3em;
+
+    .filter-floating-menu {
+        align-items: flex-start;
+        // flex: 1 1 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .filter-menu-title {
+            gap: 10px;
+            color: $grey_900;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 0;
+            min-width: rem(200px);
+            transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
+            transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
+            padding: 6px 12px;
+            border: 1px solid $grey_500;
+            border-radius: 4px;
+            color: #222325;
+            cursor: pointer;
+            font-weight: 600;
+
+            &::after {
+                content: "\f107";
+                font-family: awesome;
+                margin: 0 rem(10px);
+            }
+        }
+
+        .floating-menu-open {
+            font-size: 16px;
+            line-height: 120%;
+            font-weight: 700;
+            position: relative;
+            margin: 0 6px;
+            display: inline-block;
+            padding: 10px 0;
+        }
+
+        .sort-gigs-list {
+            color: $grey_1000;
+
+            .sort-by-container {
+                font-size: 16px;
+                line-height: 120%;
+                font-weight: 700;
+                align-items: center;
+                align-self: flex-end;
+
+                // justify-content: space-between;
+                .sort-filter {
+                    font-size: 16px;
+                    line-height: 120%;
+                    font-weight: 700;
+                    color: #222325;
+                    cursor: pointer;
+
+
+                    @include from-mobile-layout {
+                        justify-self: flex-start;
+                        position: relative;
+                        right: 5%;
+                    }
+                }
+            }
+        }
+
+        .button-row {
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            gap: rem(6px);
+
+            .close-btn,
+            .apply-filters-btn {
+                // font-weight: 700;
+                font-size: 14px;
+                line-height: 22px;
+                border: 1px solid $grey_400;
+                outline: none;
+                user-select: none;
+                padding: 6px 24px;
+                background-color: transparent;
+                cursor: pointer;
+            }
+        }
+    }
+}

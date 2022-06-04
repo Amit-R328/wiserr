@@ -4,19 +4,32 @@
     flex-direction: column;
     background-color: transparent;
     position: fixed;
-    z-index: 10;
+    z-index: 150;
 
     &.categories-header {
-      background-color: #fff;
-
+      background-color: $white;
+      
       .top {
         margin: 0;
+        background-color: $white;
 
+        & a {
+        color: $grey_900;
+
+          &.seller-nav-link {
+            color: $wiserr_business;
+          }
+
+          &:hover{
+            color: $wiserr_green;
+          }
+        }
+        
         .logo-search-container {
           .logo {
             svg {
               path:nth-child(1) {
-                fill: $grey_1000;
+                fill: $grey_1100;
               }
             }
           }
@@ -26,14 +39,23 @@
 
 
     &.scrolled {
-      background-color: #fff;
-
+      background-color: $white;
+      
       .nav-link {
-        color: $grey_1000;
+        color: $grey_900;
+        
+        &.seller-nav-link {
+          color: $wiserr_business;
+        }
+        
+        &:hover{
+          color: $wiserr_green;
+        }
       }
 
       .top {
         margin: 0;
+
 
         .logo-search-container {
           .logo {
@@ -52,8 +74,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: em(25px) 0;
+    padding-top: em(25px);
+    padding-bottom: em(25px);
     margin: 0;
+    
 
     .logo-search-container {
       display: flex;
@@ -61,7 +85,11 @@
       // gap: 20px;
 
       .hamburger-icon {
-        // \uf0c9
+        &::after {
+          content: '\f0c9';
+          font-family: awesome;
+          color: black;
+        }
         @include from-narrow-layout {
           display: none;
         }
@@ -72,7 +100,7 @@
 
         svg {
           path:first-child {
-            fill: #fff;
+            fill: $white;
           }
         }
 
@@ -88,26 +116,27 @@
     align-items: center;
     border-top: 1px solid $grey_400;
     border-bottom: 1px solid $grey_400;
+    background-color: $white;
+    z-index: 50;
+    color: $grey_900;
   }
 
 
   ul {
     margin: 0;
-    // color: #fff;
+    // color: $white;
 
     &.nav-list {
       margin: 0;
       display: flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap: 20px;
       font-size: em(16px);
       font-weight: 600;
-      font-family: roboto;
 
       .nav-link {
-        color: #fff;
+        color: $white;
       }
 
     }
@@ -115,13 +144,9 @@
 
   .avatar-img {
     width: 30px;
-    // height: 30px;
     border-radius: 50%;
     object-fit: cover;
     margin-top: 10px;
-    // position: absolute;
-    // margin-right: 5em;
-    // margin-left: 2.5em;
   }
 
   .user-msg {
@@ -146,9 +171,25 @@
   }
 
   .success {
-    background-color: #1dbf73;;
+    background-color: $wiserr_green;
   }
 
   .danger {
     background-color: rgb(227, 114, 114);
+  }
+
+  @media (max-width:425px) {
+    .header {
+      background-color: #fff;
+    }
+
+    top {
+      .logo {
+        svg {
+          path:nth-child(1) {
+            fill: $grey_1000;
+          }
+        }
+      }
+    }
   }

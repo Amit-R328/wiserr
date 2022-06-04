@@ -1,8 +1,8 @@
 .selling-proposition-wrapper {
     width: 100%;
     background-color: #f1fdf7;
-    padding-top: em(96px);
-    padding-bottom: em(96px);
+    padding-top: rem(96px);
+    padding-bottom: rem(96px);
 
     .selling-proposition {
         display: grid;
@@ -17,7 +17,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        font-size: em(16px);
+        font-size: rem(16px);
         padding: 0;
         padding-right: 150px;
         margin: 0;
@@ -32,7 +32,7 @@
 
         h2 {
             line-height: 120%;
-            font-size: em(32px);
+            font-size: rem(32px);
             display: block;
             margin-block-end: 0.5em;
             font-weight: bold;
@@ -47,23 +47,40 @@
             h6 {
                 display: flex;
                 align-items: flex-start;
-                font-size: em(18px);
+                font-size: rem(18px);
                 color: $grey_1100;
                 padding: 0;
                 margin: 0;
                 line-height: 24px;
                 
                 .check-icon {
-                    margin-bottom: em(10px);
-                    margin-right: em(10px);
+                    margin-bottom: rem(10px);
+                    margin-right: rem(10px);
                 }
             }
             & p {
-                font-size: em(18px);
+                font-size: rem(18px);
                 color: $grey_1100;
                 line-height: 24px;
             }
             
         }
+    }
+}
+
+@media (max-width: 425px) {
+    .selling-proposition-wrapper {
+        position: relative;
+        // left: 12%;
+    }
+    .selling-proposition-wrapper .selling-proposition {
+        display: flex;
+        flex-direction: column;
+    }
+    .selling-proposition-wrapper .selling-text{
+        position: relative;
+        left: 4%;
+        padding-right: 50px;
+        overflow-wrap:normal;
     }
 }

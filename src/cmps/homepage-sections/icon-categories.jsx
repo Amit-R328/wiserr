@@ -19,7 +19,7 @@ export const IconCategories = () => {
 
     return (
         <div className="icon-categories">
-            <h2>Explore the marketplace</h2>
+            <h2 className="marketplace-title">Explore the marketplace</h2>
             <ul className="icon-categories-list">
                 <li>
                     <button onClick={() => onChangeCategory('All Categories')} className="icon-all">

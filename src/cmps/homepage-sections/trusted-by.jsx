@@ -2,8 +2,7 @@ import React from 'react'
 
 export const TrustedBy = () => {
     return (
-        <section className="trusted-by-brands">
-            <ul className="brands-container container">
+            <ul className="brands-container container flex clean-list">
                 <p>Trusted By:</p>
                 <li className="trusted-by">FACEBOOK</li>
                 <li className="trusted-by">Google</li>
@@ -11,6 +10,5 @@ export const TrustedBy = () => {
                 <li className="trusted-by ">P&G</li>
                 <li className="trusted-by">PAYPAL</li>
             </ul>
-        </section>
     )
 }
