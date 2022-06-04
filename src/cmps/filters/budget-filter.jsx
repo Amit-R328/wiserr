@@ -43,7 +43,7 @@ class _BudgetFilter extends React.Component {
                         <label htmlFor="min">Min:</label>
                         <input type="number"  name="min" onChange={this.handleChange} placeholder="Any" value={this.state.min} min="0"/>
                     </div>
-                    <div className="input-container flex">
+                    <div className="input-container">
                         <label htmlFor="max">Max:</label>
                         <input type="number" name="max" onChange={this.handleChange} placeholder="Any" value={this.state.max} />
                     </div>
