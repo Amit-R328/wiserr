@@ -40,8 +40,10 @@ export const UserProfile = () => {
                     {(orders.length) ?
                         <div className='user-profile-card'>
                             <div className='your-orders-container'>
-                                <h1>Your orders:</h1>
+                                <h1>Total orders amount: {`${totalAmount}`} </h1>
+          
                             </div>
+                            
                             {orders.map(order => <div className='order-card' key={order._id}><h4 className='order-desc-profile'>{order.gig.description}</h4>
                                 {/* {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4> */}
                                 <img className='gig-img-profile' alt="" src={order.gig.imgUrl} />
@@ -55,9 +57,9 @@ export const UserProfile = () => {
                         </div> :
                         (<h1>You don't have any orders yet!</h1>)}
                 </div>
-                <div className='total-price-container'>
+                {/* <div className='total-price-container'>
                         <h5>total amount: {`${totalAmount}`}</h5>
-                </div>
+                </div> */}
             </section>
         </section>
     )

@@ -51,7 +51,7 @@ async function query(loggedInUser, typeOf){
             orders = []
         }
     }
-    console.log('orders', orders)
+    // console.log('orders', orders)
     orders = orders.map(order => {
         return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id).imgUrl[0] } } } )
 
@@ -63,7 +63,7 @@ async function query(loggedInUser, typeOf){
 //     return gig.title === order.gig.description})
 
 // }}} )
-    console.log(orders)
+    // console.log(orders)
         return orders
     // console.log('order', orders)
 }

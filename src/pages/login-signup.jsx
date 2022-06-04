@@ -81,7 +81,7 @@ export const LoginSignup = () => {
                         {isLogin ? 'Login' : 'Sign Up'}
                     </Typography>
                     <Box component="form" onSubmit={handleSubmit} sx={{ mt: 1 }}>
-                        <label for='file-input' className='file-img'>
+                        <label htmlFor='file-input' className='file-img'>
                             { (!isLogin) ? (!isImg) ?
                                 <input className='file-input' type={'file'} name="imgUrl" value={''} onChange={uploadImg} />
                             : <Avatar alt="profile" src={imgUrl}/>

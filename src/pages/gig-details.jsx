@@ -75,13 +75,14 @@ export const GigDetails = (props) => {
             // showErrorMsg('Need to login')
         } else {
             dispatch(onSaveOrder(gigId, loggedInUser))
+            console.log('Order was created' )
             showSuccessMsg('Order was created')
             // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
             // clearInterval(msgInterval);
 
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
-            }, 4000);
+            }, 2000);
         }
     }
 
