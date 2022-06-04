@@ -2,7 +2,7 @@ import React from 'react'
 
 export const TrustedBy = () => {
     return (
-            <ul className="brands-container container flex clean-list">
+            <ul className="brands-container flex clean-list">
                 <p>Trusted By:</p>
                 <li className="trusted-by">FACEBOOK</li>
                 <li className="trusted-by">Google</li>

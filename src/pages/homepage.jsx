@@ -13,7 +13,7 @@ export const HomePage = () => {
             <div className="hero">
                 <HeroCarousel />
             </div>
-            <div className="trusted-by-brands">
+            <div className="trusted-by-brands container">
             <TrustedBy />
             </div>
             <div className="gig-slider-container container">
