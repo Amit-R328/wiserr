@@ -25,6 +25,9 @@ export const FilterBreadCrumbs = () => {
         setBudgetMenu(flag);
     }
 
+    let className = (budgetMenu) ? 'open' : ''
+    let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
+
     const onToggleDeliveryTime = () => {
         var flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
@@ -72,16 +75,16 @@ export const FilterBreadCrumbs = () => {
             </header >
 
             <section className="filter-topbar">
-                <div className="filter-shadow-effect flex">
+                <div className={`filter-shadow-effect flex ${className}`}>
                     <div className="filter-floating-menu flex">
-                        <div onClick={onToggleBudget} className="filter-menu-title filter-menu">Budget
-                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
+                        <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
                         </div>
+                        {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
                     </div>
                     <div className="filter-floating-menu">
-                        <div onClick={onToggleDeliveryTime} className="filter-menu-title filter-menu">Delivery Time
-                            {deliveryDateMenu && <DeliveryDateFilter />}
+                        <div onClick={onToggleDeliveryTime} className={`filter-menu-title ${classNameDelivery} filter-menu`}>Delivery Time
                         </div>
+                        {deliveryDateMenu && <DeliveryDateFilter />}
                     </div>
 
                     <div className="sort-by-container flex">

@@ -22,7 +22,8 @@ export const NavCategories = () => {
     { name: 'Digital Marketing', parameter: 'Digital Marketing' },
     { name: 'Writing & Translation', parameter: 'Writing & Translation' },
     { name: 'Video & Animation', parameter: 'Video & Animation' },
-    { name: 'Music & Audio', parameter: 'Music & Audio' },
+    { name: 'Business', parameter: 'Business' },
+    // { name: 'Music & Audio', parameter: 'Music & Audio' },
     { name: 'Lifestyle', parameter: 'Lifestyle' }
     ]
     return (

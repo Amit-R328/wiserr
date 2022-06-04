@@ -33,11 +33,17 @@ export const CategoriesCarousel = () => {
                 <img alt="WordPress" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/ae11e2d45410b0eded7fba0e46b09dbd-1598561917003/wordpress-2x.png 2x" />
             </div>
 
-            <div className="slide" onClick={() => onChangeCategory('Music & Audio')}>
+            <div className="slide" onClick={() => onChangeCategory('Business')}>
+                <h4 className="category-legends">
+                    <small>Learn your business</small><br></br><span>Data Entry</span></h4>
+                <img alt="Data Entry" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png" />
+            </div>
+
+            {/* <div className="slide" onClick={() => onChangeCategory('Music & Audio')}>
                 <h4 className="category-legends">
                     <small>Share your message</small><br></br><span>Voice Over</span></h4>
                 <img alt="Voice Over" src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png" srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png 1x, https://fiverr-res.cloudinary.com/q_auto,f_auto,w_255,dpr_2.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741669/voiceover-2x.png 2x" />
-            </div>
+            </div> */}
 
             <div className="slide" onClick={() => onChangeCategory('Video & Animation')}>
                 <h4 className="category-legends">
