@@ -124,6 +124,18 @@
       display: flex;
       align-items: center;
       padding: 10px 12px;
+
+      &::before {
+        content: "\f005";
+        font-size: rem(14px);
+        font-family: awesome;
+        color: #ffbe5b;
+        letter-spacing: rem(5px);
+      }
+      
+      .avg-rate{
+        color: #ffbe5b;
+      }
     }
   }
 

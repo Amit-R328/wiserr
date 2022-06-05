@@ -93,7 +93,6 @@ return (
                     <p >{gig.title.substr(0, 40)}...</p>
                 </div>
                 <div className="gig-rate">
-                    <StarIcon />
                     <div className="avg-rate">4.9</div>
                 </div>
             </div>

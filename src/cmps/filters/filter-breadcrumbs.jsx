@@ -21,7 +21,7 @@ export const FilterBreadCrumbs = () => {
     }
 
     const onToggleBudget = () => {
-        var flag = !budgetMenu;
+        let flag = !budgetMenu;
         setBudgetMenu(flag);
     }
 
@@ -29,7 +29,7 @@ export const FilterBreadCrumbs = () => {
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
     const onToggleDeliveryTime = () => {
-        var flag = !deliveryDateMenu
+        let flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
     }
 
@@ -80,7 +80,7 @@ export const FilterBreadCrumbs = () => {
                         <div className="filter-floating-menu">
                             <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
                             </div>
-                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
+                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} deliveryDateMenu={deliveryDateMenu} budgetMenu={budgetMenu}/>}
                         </div>
                         <div className="filter-floating-menu">
                             <div onClick={onToggleDeliveryTime} className={`filter-menu-title ${classNameDelivery} filter-menu`}>Delivery Time
@@ -92,8 +92,6 @@ export const FilterBreadCrumbs = () => {
                         <span className="pre-title">Sort by
                         </span>
                             <SortGigsList />
-                        <div className="button-row">
-                        </div>
                     </div>
                 </div>
             </section>

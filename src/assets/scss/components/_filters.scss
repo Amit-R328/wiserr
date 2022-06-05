@@ -7,10 +7,14 @@
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-
+        // visibility: hidden;
+        // overflow: hidden;
+        
         &.open {
             gap: 0px;
             z-index: 160;
+            // visibility: visible;
+            // overflow: visible;
         }
 
         .filters-only {
@@ -40,7 +44,8 @@
                 &.open {
                     min-width: 5.75rem;
                     margin-right: 50%;
-                    z-index: 150;
+                    z-index: 10;
+                    // overflow: visible;
                 }
 
                 &::after {
@@ -56,40 +61,37 @@
                 font-weight: 700;
                 position: relative;
                 margin: 0 6px;
-                display: inline-block;
                 padding: 10px 0;
+                display: relative;
+                position: absolute;
+                visibility: visible;
             }
         }
 
         .sort-by-container {
-            width: rem(190px);
+            // width: rem(190px);
             font-size: 16px;
             line-height: 120%;
             font-weight: 700;
             position: relative;
             flex-direction: row;
             align-items: center;
+            justify-content: flex-end;
             z-index: 150;
 
             .pre-title {
                 margin-right: rem(10px);
                 font-weight: 500;
             }
-
-            @include from-mobile-layout {
-                justify-self: flex-start;
-                position: relative;
-                right: 5%;
-            }
         }
     }
 }
 
 .button-row {
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px;
-    gap: rem(6px);
+    // align-items: center;
+    // justify-content: space-between;
+    // padding: 12px;
+    // gap: rem(6px);
 
     .close-btn {
         // font-weight: 700;
@@ -112,13 +114,13 @@
     }
 }
 
-
-
 .deliveryTime-filter {
     flex-direction: column;
     border: 1px solid $grey_500;
     padding: 20px;
     margin-top: 10px;
+    // visibility: hidden;
+    
 
     .input-wrapper {
         gap: 8px;
@@ -147,8 +149,4 @@
 
         }
     }
-}
-
-div#react-select-3-listbox.css-2613qy-menu {
-    z-index: 160;
 }
