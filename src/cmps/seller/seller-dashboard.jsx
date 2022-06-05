@@ -17,7 +17,10 @@ export const SellerDashboard = (props) => {
     const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
     const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
     const [qtyYearOrders, setQtyYearOrders] = useState(0)
-     
+     const RED = '#F74040'
+     const GRAY = '#62646A'
+     const GREEN = '#1DBF73'
+     const BLACK = '#404145'
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
@@ -30,8 +33,7 @@ export const SellerDashboard = (props) => {
         }, 2000)
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
-        dispatch(loadOrders(loggedInUser))        
-        
+        dispatch(loadOrders(loggedInUser))                
        
     }, [])
     
@@ -135,7 +137,8 @@ export const SellerDashboard = (props) => {
                             <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
                             {/* <td>{order.status}</td> */}
                             {/* <td> <select  value={order.status}> */}
-                            <td> <select className='order-status-selector' value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                            <td> <select className='order-status-selector' style={{color: `${order.status === 'rejected' ? RED : order.status === 'completed' ? GREEN : order.status === 'approved' ? BLACK : GRAY}`}} value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                            {/* <td> <select className='order-status-selector' style={{color: `${order.status === 'rejected' ? RED : GRAY}`}} value={order.status} onChange={(ev) => handleChange(ev,order)}> */}
                                     <option value="approved">approved</option>
                                     <option value="pending">pending</option>
                                     <option value="rejected">rejected</option>

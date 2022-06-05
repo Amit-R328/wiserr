@@ -78,7 +78,7 @@ export function logout() {
 }
 
 export async function loadUser(userId) {
-  console.log('userId', userId)
+//   console.log('userId', userId)
    
         try {
            const user = await userService.getById(userId);

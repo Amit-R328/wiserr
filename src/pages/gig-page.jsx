@@ -17,6 +17,8 @@ export const GigPage = () => {
             setLoader(false)
         }, 1000)
         dispatch(loadGigs(filterBy))
+        //take the page to the begining
+        window.scrollTo(0, 0)
     }, [])
 
     return (
