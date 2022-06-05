@@ -5,6 +5,7 @@ export function GigList({ gigs, reviews }) {
     // if (!gigs) {
     //     return (<h1>Loading</h1>)
     // }
+    
     return (
 
         <div className="list-of-gigs-container">
