@@ -95,9 +95,9 @@ export const AppHeader = (props) => {
             {(scrolled || (pathname !== '/' && pathname !== '/categories/:gigId'))  && <div className="bottom container">
                 <NavCategories />
             </div>}
-            {(scrolled || (pathname === '/categories/:gigId'))  && <div className="nav-details container">
+            {/* {(scrolled || (pathname !== '/' && pathname === '/categories/:gigId'))  && <div className="nav-details container">
                 <NavDetails />
-            </div>}
+            </div>} */}
         </header>
     )
 }

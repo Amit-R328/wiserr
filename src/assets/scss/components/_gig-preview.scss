@@ -164,16 +164,17 @@
 
     .gig-price {
       color: $grey_900;
-      padding-bottom: 2px;
-      font-size: 9px;
-
+      
       .gig-amount {
         text-align: right;
-        font-size: 12px;
+        padding: rem(5px);
+        font-size: rem(20px);
+        font-weight: 500;
       }
-
+      
       .price-text {
-        font-size: 11px;
+        font-size: rem(10px);
+        text-transform: uppercase;
       }
 
       .gig-price-title {
