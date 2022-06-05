@@ -10,6 +10,12 @@
 
         &.open {
             gap: 0px;
+            z-index: 160;
+        }
+
+        .filters-only {
+            align-items: center;
+            gap: rem(16px);
         }
 
         .filter-floating-menu {
@@ -18,21 +24,18 @@
             flex-wrap: wrap;
             justify-content: space-between;
 
-
             .filter-menu-title {
-                color: $grey_900;
                 font-size: 16px;
                 font-weight: 600;
                 padding: 0;
-                // min-width: rem(100px);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 padding: 6px 15px;
                 border: 1px solid $grey_500;
                 border-radius: 4px;
-                color: $grey_900;
                 cursor: pointer;
                 font-weight: 600;
+                color: $grey_1100;
 
                 &.open {
                     min-width: 5.75rem;
@@ -63,24 +66,14 @@
             font-size: 16px;
             line-height: 120%;
             font-weight: 700;
-            // align-self: flex-end;
             position: relative;
-            // left: 78%;
-            // gap: 10px;
             flex-direction: row;
-            // justify-content: center;
             align-items: center;
             z-index: 150;
 
             .pre-title {
                 margin-right: rem(10px);
-
-                .sort-gigs-list {
-                        color: $grey_1000;
-                        // align-items: center;
-                        // justify-content: center;
-                        width: rem(120px) !important;
-                }
+                font-weight: 500;
             }
 
             @include from-mobile-layout {
@@ -157,5 +150,5 @@
 }
 
 div#react-select-3-listbox.css-2613qy-menu {
-    z-index: 100;
+    z-index: 160;
 }
