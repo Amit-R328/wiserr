@@ -8,6 +8,7 @@ import { WhiteHeart, BlackHeart } from "../services/svg.service";
 import { useState } from "react";
 import { updateGig } from '../store/actions/gig.actions.js'
 import { loadUser } from "../store/actions/user.actions";
+import { orderService } from "../services/order.service";
 
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
@@ -94,7 +95,9 @@ return (
                 </div>
                 <div className="gig-rate">
                     <StarIcon />
-                    <div className="avg-rate">4.9</div>
+                    
+                   {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc,review) =>  acc + (review.stars),0))/gig.reviews.length).toFixed(1)}</div> :
+                    <div className="avg-rate">4.9</div> }
                 </div>
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
