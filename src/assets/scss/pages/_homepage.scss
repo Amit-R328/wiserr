@@ -66,3 +66,9 @@
     margin-top: 0.5rem;
   }
 }
+@media (max-width: 1024px) {
+  .trusted-by-brands .brands-container{
+    max-width: 1000px;
+    justify-content: right;
+  }
+}

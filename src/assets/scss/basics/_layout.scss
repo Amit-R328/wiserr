@@ -22,10 +22,21 @@
         padding-inline-end: calc((100vw - #{$wide-viewport}) / 2);
     }
 }
-
+@media (max-width:1024px) {
+    .container {
+        padding-inline-start: calc((100vw - 878px) / 2);
+        padding-inline-end: calc((100vw - 742px) / 2);
+    }
+}
 @media (max-width:744px) {
     .container {
         padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
         padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
+    }
+}
+@media (max-width:425px) {
+    .container {
+        padding-inline-start: calc((100vw - 310px) / 2);
+        padding-inline-end: calc((100vw - 310px) / 2);
     }
 }

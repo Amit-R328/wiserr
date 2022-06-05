@@ -100,3 +100,12 @@
         flex-direction: column;
     }
 }
+@media (max-width:1024px) {
+    .gig-slider-container .slider-container {
+        display: flex;
+        gap: 15px;
+    }
+    .gig-slider-container h4 span {
+        font-size: 1rem;
+    }
+}
