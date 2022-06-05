@@ -32,6 +32,7 @@ export const SellerDashboard = (props) => {
         let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))        
         
+       
     }, [])
     
     // setSocket()
@@ -129,7 +130,7 @@ export const SellerDashboard = (props) => {
                             <td>{utilService.setDateTime(order.createdAt)}</td>
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
-                            <td>{(order.status === 'approved') && utilService.setDateTime(order.deliveryDate)}</td>
+                            <td>{(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</td>
                             {/* <td>{order.gig.price}</td> */}
                             <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
                             {/* <td>{order.status}</td> */}
@@ -138,6 +139,7 @@ export const SellerDashboard = (props) => {
                                     <option value="approved">approved</option>
                                     <option value="pending">pending</option>
                                     <option value="rejected">rejected</option>
+                                    <option value="completed">completed</option>
                                 </select></td>
                             </tr>)}
                             <thead className='orders-table-header'>

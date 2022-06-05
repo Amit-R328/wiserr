@@ -6,6 +6,7 @@ export function loadOrders(loggedInUser, typeOf) {
     return async dispatch => {
         try {
             const orders = await orderService.query(loggedInUser, typeOf)
+            
             const action = { type: 'SET_ORDERS', orders }
             dispatch(action)
         } catch (err) {
