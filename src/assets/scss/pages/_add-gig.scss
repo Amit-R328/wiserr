@@ -6,6 +6,7 @@
     overflow: hidden;
     padding: 32px 32px 64px;
     // height: 80px;
+    padding-top: rem(135px);
 
     .header-row {
         display: flex;
@@ -27,7 +28,7 @@
 }
 
 .progress-bar-container {
-    // width: 100%;
+    width: 100%;
     align-items: center;
     color: $grey_700;
     border-bottom: none;
@@ -35,6 +36,9 @@
     border-bottom: 1px solid $grey_500;
     // padding: 0 30px;
     border-top: 1px solid $grey_500;
+    position: fixed;
+    z-index: 9999;
+    background-color: $white;
 
 
     .inner-progress-wrapper {
@@ -151,6 +155,7 @@
     // margin-left: 13.5%;
     padding-bottom: 100px;
     // background-color: pink;
+    padding-top: rem(50px);
 
     .gig-details {
         padding-top: 40px;
