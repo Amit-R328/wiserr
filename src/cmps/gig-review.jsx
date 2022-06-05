@@ -18,27 +18,30 @@ export const GigReview = ({ review }) => {
         <React.Fragment>
             <article className="review-card flex">
                 <div className="flex">
+                 
                     <img className="sml-review-img" src={review.userImage} alt="" />
-                    <p className="reviewer-name">{review.userName}</p>
-                
-                    <br></br>
+                    <div className="review-owner-detailes">
+                        <p className="reviewer-name">{review.userName}</p>
                     
-                    <div className="rating">
-                        {/* <span>
-                            <RatingValue handleRatingChange={handleRatingChange} reviewId={review._Id} />
-                        </span> */}
-                    </div>
+                        {/* <br></br> */}
+                        
+                        <div className="rating">
+                            {/* <span>
+                                <RatingValue handleRatingChange={handleRatingChange} reviewId={review._Id} />
+                            </span> */}
+                        </div>
 
-                    {/* <p> */}
-                    {/* <i className="fa fa-star filled"></i>
-                        <span className="review-rate">{review.stars}</span> */}
-                    {/* </p> */}
+                        {/* <p> */}
+                        {/* <i className="fa fa-star filled"></i>
+                            <span className="review-rate">{review.stars}</span> */}
+                        {/* </p> */}
+                        <div className="user-country">
+                            <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`}></img>
+                            <p className="reviewer-userCountry">{review.userCountry}</p>
+                        </div>
+                    </div>
                 </div>
             </article>
-            <div className="user-country">
-                <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`}></img>
-                <p className="reviewer-userCountry">{review.userCountry}</p>
-            </div>
 
             <div className="review-txt">
                 <p>{review.content}</p>

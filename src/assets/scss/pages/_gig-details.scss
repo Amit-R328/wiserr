@@ -37,7 +37,7 @@
         .text-display {
             margin-top: 130px;
             padding-bottom: 16px;
-            font-size: 20px;
+            font-size: 28px;
             text-align: start;
             line-height: 36.4px;
             color: $grey_1100;
@@ -50,19 +50,27 @@
             margin-bottom: 10px;
 
             .owner-name {
-                font-weight: bold;
+                // font-weight: bold;
+                color: #404145;
+                font-weight: 700;
+                font-size: 14px;
             }
             .owner-level {
                 color: $grey_1000;
+                // font-weight: 700;
+                font-size: 14px;
             }
             .owner-order-qty {
                 color: $grey_800;
+                font-size: 14px;
+                margin-left: rem(8px);
             }
         }
 
         .sml-round-img {
             border-radius: 50%;
             width: 30px;
+            margin-right: rem(8px);
             // height: 30px;
             
         }
@@ -77,9 +85,9 @@
         }
 
         .about-title {
-            font-size: 18px;
+            font-size: 20px;
             line-height: 28px;
-            padding-bottom: rem(25px);
+            padding-bottom: rem(30px);
             margin-top: 64px;
             font-family: Helvetica, Arial, sans-serif;
             font-weight: 700;
@@ -87,31 +95,34 @@
         }
 
         .about-this-gig {
-            font-size: 16px;
-            line-height: rem(22px);
+            font-size: 18px;
+            line-height: rem(26px);
             color: #62646a;
+            white-space: pre-line;  
+            vertical-align: bottom;
+            
         
         }
 
         .about-get {
             color: #62646a;
-            font-size: 16px;
-            line-height: rem(22px);
+            font-size: 18px;
+            line-height: rem(26px);
             margin-bottom: rem(10px);
             margin-top: rem(15px);
         }
 
         .what-do-you-get {
-            font-size: 16px;
-            line-height: rem(22px);
+            font-size: 18px;
+            line-height: rem(26px);
             color: #62646a;
         }
 
         .gig-details-whyus {
             margin-bottom: rem(10px);
             margin-top: rem(15px);
-            font-size: 16px;
-            line-height: rem(22px);
+            font-size: 18px;
+            line-height: rem(26px);
             color: #62646a;
         }
 
@@ -128,10 +139,30 @@
             }
 
             .owner-card-right {
-                margin-left: 15px;
-                font-size: 10px;
-                font-weight: bold;
-                gap: 5px;
+                display: flex;
+                flex-direction: column;
+                padding-left: 15px;
+                align-items: flex-start;
+                line-height: 130%;
+                gap: rem(6px);
+                // margin-left: 15px;
+                // font-weight: bold;
+                .gig-detailes-owner-name {
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-align: center;
+                    color: #62646a;
+                    font-weight: 700;
+                    letter-spacing: 0.5px;
+                    
+
+                }
+                .gig-detailes-owner-tagline {
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-align: left;
+                    color: #62646a;
+                }
             }
 
             .md-round-img {
@@ -145,7 +176,8 @@
                 border: 1px solid $grey_500;
                 border-radius: 3px;
                 padding: 24px;
-                font-size: 12px;
+                font-size: 16px;
+                line-height: 20px;
 
                 .info-left {
                     -webkit-box-orient: horizontal;
@@ -177,12 +209,24 @@
                     .owner-summary {
                         // max-height: none;
                         white-space: pre-line;
+                        color: #62646a;
+                        padding-top: rem(15px);
                     }
                 }
             }
 
         }
     }
+    .review-owner-detailes {
+        font-size: 16px;
+        line-height: 20px;
+        color: #404145;
+        padding-top: rem(10px);
+        // font-weight: 700;
+    }
+    // .reviewer-name {
+   
+    // }
 
     .reviews {
         font-size: 12px;
@@ -264,6 +308,7 @@
     width: 33.6%;
 
     .sticky-inner-wrapper-gig-buy {
+        margin-top: rem(100px);
         margin-bottom: 16px;
         padding-bottom: 32px;
         position: fixed;
@@ -306,27 +351,33 @@
                 padding-top: 12px;
 
                 .order-price {
-                    font-size: 20px;
+                    font-size: 22px;
                     font-weight: 700;
                     white-space: nowrap;
                     line-height: 24px;
+                    color: #404145;
                 }
 
                 .order-subtitle {
                     font-size: 18px;
+                    margin-top: rem(10px);
+                    color: #62646a;
                 }
 
                 .days-to-make {
                     color:  $grey_1000;
                     margin-top: rem(20px);
+                    margin-bottom: rem(10px);
                 }
                 .description-littleDetails {
 
                 }
                 .littleDetails {
                     color: $grey_800;
+                    font-size: 14px;
+                    line-height: 22px;
                     svg {
-                        margin-right: 5px;
+                        margin-right: 10px;
                     }
                 }
             }
@@ -418,11 +469,22 @@
                 color: $white;
             }
 
+            
             &:active {
                 background-color: $grey_1000;
                 border-color: transparent;
                 color: $white;
             }
+            .gig-detailes-contact-seller {
+
+            &:link{
+                color: #404145;
+            }
+            &:hover {
+                color: #fff;
+                background: #74767e;
+            }
+        }
         }
     }
 }

@@ -1,15 +1,24 @@
 .reviews {
+
+    
     .review-card {
-        border-top: 1px solid $grey_500;
-        padding: 16px 0 32px 0;
+        padding: 16px 0 0 0;
         position: relative;
         margin-top: 10px;
+        border-top: 1px solid $grey_500;
+        // &:not(:first-of-type){
+        // }
     }
 
     .flex {
         align-items: center;
     }
-
+    .gig-reviews-title {
+        font-size: 22px;        
+        line-height: 42px;
+        color: #404145;
+        margin-top: rem(30px);
+    }
     .sml-review-img {
         margin-right: 1rem;
         width: 32px;
@@ -19,7 +28,7 @@
 
     .review-txt {
         font-family: roboto, Arial, Helvetica, sans-serif;
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         margin-left: 2.9rem;
         font-size: 14px;
         line-height: rem(20px);
@@ -55,7 +64,7 @@
             margin: unset;
         }
 
-        margin-left: 3rem;
+        // margin-left: 3rem;
         padding: 0 0 10px 0;
         color: #62646a;
         font-size: 14px;
