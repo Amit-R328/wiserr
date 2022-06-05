@@ -70,26 +70,11 @@ async function query(loggedInUser, typeOf){
 
 async function saveOrder(gigId, loggedinUser){
     try {
-    // let gig = await storageService.get('gig',gigId)
-    // let urlToRequest = BASE_URL
-    //   console.log('urlToRequest', urlToRequest)
-    // let gig =  await httpService.get('gig',gigId)
        let gig = await httpService.get(`gig/${gigId}`)
-       console.log('gig', gig)
-
-    // const seller = await storageService.get('user',gig.owner._id)
-    // urlToRequest = BASE_URL + 'user'
-    //   console.log('urlToRequest', urlToRequest)
     
-    // let seller =  httpService.get('user',gig.owner._id)
-    // console.log('gig.owner._id',gig.owner._id )
-    // let seller = await httpService.get(`user/${gig.owner._id}`)
-    // console.log('seller', seller)
-    // console.log('gig.owner',gig.owner )
-    // console.log('seller', seller)
         const order =        
         {
-            // "_id": utilService.makeId(),
+            
             "createdAt": Date.now(),
             "deliveryDate": Date.now() + (gig.daysToMake * 86400000),
             "buyer": {
@@ -110,7 +95,7 @@ async function saveOrder(gigId, loggedinUser){
             },
             "status": "pending"
         }
-        socketService.emit('new order', {order})
+        
     // const addedOrder = await storageService.post('order', order)
         const urlToRequest =  'order'
         console.log('urlToRequest', urlToRequest)
@@ -124,6 +109,7 @@ async function saveOrder(gigId, loggedinUser){
     } 
     
 }
+
 
 async function updateOrder(order){
     try {

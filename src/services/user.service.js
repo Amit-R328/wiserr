@@ -36,16 +36,8 @@ function onUserUpdate(user) {
 }
 
 async function getById(userId) {
-    // console.log('userId', userId)
-    // const user = await storageService.get('user', userId)
     const user = await httpService.get(`user/${userId}`)
-    //  console.log('user', user)
-    // gWatchedUser = user;
-
-    // socketService.emit(SOCKET_EMIT_USER_WATCH, userId)
-    // socketService.off(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-    // socketService.on(SOCKET_EVENT_USER_UPDATED, onUserUpdate)
-
+    
     return user
 }
 
@@ -74,7 +66,6 @@ async function login(userCred) {
     // let user = users.find(user => user.userName === userCred.userName && user.password === userCred.password)
 
     if (user) {
-        // socketService.login(user._id)
         _handleLogin(user)
         return user
     }
@@ -90,18 +81,7 @@ async function signup(userCred) {
             throw err
         }
         
-        // userCred.avgOrdersRate = 0
-        // userCred.email = userCred.userName + '@gmail.com'
-        // userCred.facebook_account = ''
-        // userCred.google_account = ''
-        // userCred.twitter_account = ''
-        // userCred.imgUrl = userCred.imgUrl
-        // userCred.isSeller = false
-        // userCred.level = ''
-        
-        // const user = await storageService.post('user', userCred)
         const user = await httpService.post('auth/signup', userCred)
-        // socketService.login(user._id)
         _handleLogin(user)
         return user
     } catch (err) {
