@@ -5,6 +5,7 @@ import { loadOrders } from '../store/actions/order.actions.js';
 import { userService } from '../services/user.service.js';
 // import { getLoggedinUser } from '../store/actions/user.actions.js';
 import { utilService } from '../services/util.service.js';
+import { Loader } from '../cmps/loader.jsx';
 
 export const UserProfile = () => {
 
@@ -12,12 +13,16 @@ export const UserProfile = () => {
     const user = useSelector((storeState) => storeState.userModule.loggedInUser)
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const [ordersTotal, setOrdersTotal] = useState(0)
+    const [loader, setLoader] = useState(true)
     const dispatch = useDispatch()
 
     useEffect(() => {
         //2.6.22 rinat close no one use
         // let user = { type: 'buyer', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser, 'getBuys'))
+        setTimeout(() =>{
+            setLoader(false)
+        }, 1000)
         // console.log(orders)
         orders = orders.filter(order => order.seller !== loggedInUser.userName)
     }, [])
@@ -29,6 +34,7 @@ export const UserProfile = () => {
     const totalAmount = totals.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     return (
         <section className='user-profile-layout container'>
+            {loader && <Loader/>}
             <section className='user-profile flex'>
                 {/* <div className='profile-left-container'>
                     <div className='profile-img-user'>
