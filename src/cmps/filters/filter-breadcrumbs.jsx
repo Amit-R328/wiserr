@@ -58,7 +58,7 @@ export const FilterBreadCrumbs = () => {
             <header>
                 <section className="breadcrumbs-container flex">
                     <ul className="breadcrumbs">
-                        {(filterBy.category) ? <li><a href="/categories"><p></p>Wiserr {filterBy.category}</a>
+                        {(filterBy.category) ? <li><a href="/categories"><span>Wiserr</span>{filterBy.category}</a>
                         </li> : <li><span>Wiserr</span>All</li>}
                     </ul>
                 </section>
