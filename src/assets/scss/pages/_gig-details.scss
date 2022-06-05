@@ -32,7 +32,7 @@
         // margin-right: 113px;
         margin-right: 9.15%;
         width: 57.42%;
-        margin-top: rem(150px);
+        margin-top: rem(50px);
 
         .text-display {
             margin-top: 130px;
@@ -51,7 +51,7 @@
 
             .owner-name {
                 // font-weight: bold;
-                color: #404145;
+                color: $grey_1100;
                 font-weight: 700;
                 font-size: 14px;
             }
@@ -91,13 +91,13 @@
             margin-top: 64px;
             font-family: Helvetica, Arial, sans-serif;
             font-weight: 700;
-            color: #404145;
+            color: $grey_1100;
         }
 
         .about-this-gig {
             font-size: 18px;
             line-height: rem(26px);
-            color: #62646a;
+            color: #62646A;
             white-space: pre-line;  
             vertical-align: bottom;
             
@@ -105,7 +105,7 @@
         }
 
         .about-get {
-            color: #62646a;
+            color: #62646A;
             font-size: 18px;
             line-height: rem(26px);
             margin-bottom: rem(10px);
@@ -115,7 +115,7 @@
         .what-do-you-get {
             font-size: 18px;
             line-height: rem(26px);
-            color: #62646a;
+            color:$grey_1000;
         }
 
         .gig-details-whyus {
@@ -123,7 +123,7 @@
             margin-top: rem(15px);
             font-size: 18px;
             line-height: rem(26px);
-            color: #62646a;
+            color:$grey_1000;
         }
 
         .about-seller {
@@ -151,7 +151,7 @@
                     font-size: 16px;
                     line-height: 20px;
                     text-align: center;
-                    color: #62646a;
+                    color: $grey_1000;
                     font-weight: 700;
                     letter-spacing: 0.5px;
                     
@@ -161,7 +161,7 @@
                     font-size: 16px;
                     line-height: 20px;
                     text-align: left;
-                    color: #62646a;
+                    color: $grey_1000;
                 }
             }
 
@@ -209,7 +209,7 @@
                     .owner-summary {
                         // max-height: none;
                         white-space: pre-line;
-                        color: #62646a;
+                        color:$grey_1000;
                         padding-top: rem(15px);
                     }
                 }
@@ -220,7 +220,7 @@
     .review-owner-detailes {
         font-size: 16px;
         line-height: 20px;
-        color: #404145;
+        color: $grey_1100;
         padding-top: rem(10px);
         // font-weight: 700;
     }
@@ -300,7 +300,17 @@
     }
   }
 
+  @media (max-width:744px) {
+    .sticky-outer-wrapper-gig-buy { 
+        // margin-top: rem(400px);
+        // margin-right: 50%;
 
+        .sticky-inner-wrapper-gig-buy {
+            // position: unset;
+            // z-index: 0;
+        }
+    }
+  }
 
 .sticky-outer-wrapper-gig-buy {
     padding-bottom: 32px;
@@ -354,13 +364,13 @@
                     font-weight: 700;
                     white-space: nowrap;
                     line-height: 24px;
-                    color: #404145;
+                    color: $grey_1100;
                 }
 
                 .order-subtitle {
                     font-size: 18px;
                     margin-top: rem(10px);
-                    color: #62646a;
+                    color: $grey_1000;
                 }
 
                 .days-to-make {
@@ -477,7 +487,7 @@
             .gig-detailes-contact-seller {
 
             &:link{
-                color: #404145;
+                color: $grey_1100;
             }
             &:hover {
                 color: #fff;

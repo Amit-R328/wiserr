@@ -16,7 +16,7 @@
     .gig-reviews-title {
         font-size: 22px;        
         line-height: 42px;
-        color: #404145;
+        color: $grey_1100;
         margin-top: rem(30px);
     }
     .sml-review-img {
@@ -38,7 +38,7 @@
         // font-size: 1.5rem;
         margin-right: 0.6rem;
         font-weight: bold;
-        color: #404145;
+        color: $grey_1100;
         font-size: 14px;
         font-style: bold;
     }
@@ -66,7 +66,7 @@
 
         // margin-left: 3rem;
         padding: 0 0 10px 0;
-        color: #62646a;
+        color: #62646A;
         font-size: 14px;
         display: flex;
         align-items: center;

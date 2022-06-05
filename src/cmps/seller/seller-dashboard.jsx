@@ -27,7 +27,7 @@ export const SellerDashboard = (props) => {
         
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
-        dispatch(loadOrders(loggedInUser))
+        dispatch(loadOrders(loggedInUser))        
         
     }, [])
     
