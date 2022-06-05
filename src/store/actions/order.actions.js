@@ -1,4 +1,5 @@
 import { orderService } from '../../services/order.service.js'
+import { socketService } from '../../services/socket.service.js'
 
 export function loadOrders(loggedInUser, typeOf) {
     // console.log('loggedInUser', loggedInUser)
@@ -6,6 +7,7 @@ export function loadOrders(loggedInUser, typeOf) {
     return async dispatch => {
         try {
             const orders = await orderService.query(loggedInUser, typeOf)
+        
             
             const action = { type: 'SET_ORDERS', orders }
             dispatch(action)
@@ -15,12 +17,15 @@ export function loadOrders(loggedInUser, typeOf) {
     }
 }
 
+
 export function onSaveOrder(gigId, loggedinUser) {
     return async (dispatch) => {
         try {
             const order = await orderService.saveOrder(gigId, loggedinUser)
+            
             const action = { type: 'SET_ORDER', order }
             dispatch(action)
+            return order
         } catch (err) {
             console.log('Cannot save order:', err)
         }
@@ -34,6 +39,19 @@ export function onUpdateOrder(order) {
         try {
             await orderService.updateOrder(order)
             const action = { type: 'SET_ORDER', order }
+            dispatch(action)
+        } catch (err) {
+            console.log('Cannot update order', err)
+        }
+    }
+}
+
+
+export function addOrder(gigId,loggedInUser){
+    return async (dispatch) => {
+        try {
+            const order = await orderService.saveOrder(gigId, loggedInUser)
+            const action = { type: 'ADD_ORDER', order }
             dispatch(action)
         } catch (err) {
             console.log('Cannot update order', err)

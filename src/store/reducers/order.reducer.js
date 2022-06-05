@@ -15,6 +15,8 @@ export function orderReducer(state = initialState, action) {
             return { ...state, orders: action.orders }
         case 'GET_BY_ID':
             return { ...state, order: action.order }
+             case 'ADD_ORDER':
+            return { ...state, orders:[...state.orders, action.order ]}
         case 'GET_SELECTED':
             return { ...state, selectedOption: action.selectedOption }
         default:

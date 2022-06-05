@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect, useRef } from 'react';
-import { loadOrders, onUpdateOrder } from '../../store/actions/order.actions';
+import { loadOrders, onSaveOrder, onUpdateOrder, addOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
@@ -23,6 +23,7 @@ export const SellerDashboard = (props) => {
      const BLACK = '#404145'
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
+    console.log('**************************', orders)
     const dispatch = useDispatch()
     const [order, setOrder] = useState('pending')
     const [loader, setLoader] = useState(true)
@@ -33,18 +34,21 @@ export const SellerDashboard = (props) => {
         }, 2000)
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
-        dispatch(loadOrders(loggedInUser))                
-       
+        dispatch(loadOrders(loggedInUser))        
+        setSocket()
     }, [])
     
     // setSocket()
-    const onAddOrder = (order) => {
+    const onAddOrder = async (order) => {
         order.createdAt = Date.now()
-        orders = ({...orders, order})
+        let seller = await userService.getById(order.buyer._id)
+        console.log('%%%%%%%%%%%%%%%%%%', seller)
+        dispatch(addOrder(order.gig._id,seller))
     }
     
     const setSocket = () => {
-        socketService.on('added order', this.onAddOrder)
+        socketService.on('added order', onAddOrder)
+        socketService.emit('join order', loggedInUser._id)
     }
 
     const handleChange = (ev,order) => {        
@@ -56,6 +60,7 @@ export const SellerDashboard = (props) => {
 
     useEffect(() => {
         // console.log('orders',orders )
+       
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
         
         setTotalOrderAmount(totalOrders.toFixed(2))        
@@ -64,7 +69,7 @@ export const SellerDashboard = (props) => {
         getMonthOrders()
         getYearOrders()
                
-    })
+    },[])
 
     const getMonthOrders = () => {
             
@@ -118,7 +123,7 @@ export const SellerDashboard = (props) => {
             
         </div>
 
-            <table onLoad={setSocket} className='orders-table' cellPadding="0" cellSpacing="0" border="0">
+            <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>
@@ -129,7 +134,7 @@ export const SellerDashboard = (props) => {
                 </thead>
                 <tbody>
                     {orders.map((order,idx) => <tr key={idx}>                        
-                            <td>{utilService.setDateTime(order.createdAt)}</td>
+                            {/* <td>{utilService.setDateTime(order.createdAt)}</td> */}
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
                             <td>{(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</td>
