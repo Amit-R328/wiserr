@@ -16,7 +16,7 @@ import { UserMsg } from '../cmps/user-msg.jsx';
 // import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
 import mailgo, { mailgoDirectRender } from "mailgo";
-import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue } from '../services/svg.service.js';
+import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
 
 export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
@@ -147,7 +147,7 @@ export const GigDetails = (props) => {
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="gig-info">
-                            <h3 className="text-display">{gig.title}</h3>
+                            <h1 className="text-display">{gig.title}</h1>
                             <div className="owner-details owner-container" >
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
@@ -176,13 +176,14 @@ export const GigDetails = (props) => {
                                 <div className="owner-card">
                                     <img className="md-round-img" src={`${gig.owner.imgUrl}`} alt="" />
                                     <div className="owner-card-right">
-                                        <p>{gig.owner.fullName}</p>
+                                        <p className="gig-detailes-owner-name">{gig.owner.fullName}</p>
+                                        {gig.owner.tagline && <p className="gig-detailes-owner-tagline">{gig.owner.tagline}</p>}
                                         <p><i className="fa fa-star filled">
                                             <i className="fa fa-star filled">
                                                 <i className="fa fa-star filled">
                                                     <i className="fa fa-star filled">
                                                         <i className="fa fa-star filled">
-                                                            5</i></i></i></i></i>
+                                                        &nbsp; 5</i></i></i></i></i>
 
                                         </p>
                                     </div>
@@ -222,6 +223,7 @@ export const GigDetails = (props) => {
                         {isReviewAdd && <ReviewAdd owner={loggedInUser} gigId={gig._id} setReviewAdd={setReviewAdd}/>} */}
                         {(gig.reviews.length) ? <section className="reviews">
 
+                            <h1 className="gig-reviews-title">Reviews</h1>
                             {gig.reviews.map((review,idx) => {
                                 return <article key={review._id}>
                                     <GigReview review={review} />
@@ -246,22 +248,23 @@ export const GigDetails = (props) => {
                         <div className="sticky-inner-wrapper-gig-buy">
                             <aside className="sidebar-content">
                                 <div className="call-to-action">
-                                    <div className="price-package">Special Offer</div>
+                                    <div className="price-package">Our Offer</div>
                                     <div className="order-title-wrapper">
                                         <span className="order-price">{price}</span>
                                         <p className="order-subtitle">{gig.title}</p>
                                         <p className='days-to-make'><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>
-                                            <b>{` ${gig.daysToMake} Days Delivery`}</b></p>
+                                            <b>{` ${gig.daysToMake} ${gig.daysToMake === "1" ? "Day Delivery": "Days Delivery"}`}</b></p>
+                                            {/* <b>{` ${gig.daysToMake} Days Delivery`}</b></p> */}
 
                                         {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail, idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer className='buy-btn-container'>
-                                            <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue <span className='buy-btn-arrow'>&#x2192;</span>
+                                            <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue <span className='buy-btn-arrow'><ContinueArrow/></span>
                                             </button>
                                         </footer>
                                     </div>
-                                    <div className='contact-seller'>
-                                    <a href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
+                                    <div className="contact-seller">
+                                    <a className='gig-detailes-contact-seller' href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
                                     </div>
                                 </div>
                             </aside>
