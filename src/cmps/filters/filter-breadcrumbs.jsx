@@ -8,17 +8,17 @@ import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
 
 export const FilterBreadCrumbs = () => {
 
-    let [searchTerm] = useState('')
+    // let [searchTerm] = useState('')
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
-    const onHandleChange = (ev, name, value) => {
-        const field = name
-        let { filterBy } = this.props
-        if (field === 'labels') value = [value]
-        filterBy = { ...filterBy, [field]: value }
-    }
+    // const onHandleChange = (ev, name, value) => {
+    //     const field = name
+    //     let { filterBy } = this.props
+    //     if (field === 'labels') value = [value]
+    //     filterBy = { ...filterBy, [field]: value }
+    // }
 
     const onToggleBudget = () => {
         let flag = !budgetMenu;

@@ -37,6 +37,8 @@ export const GigDetails = (props) => {
     const params = useParams()
     const BLACK = '#404145'
     const BLUE = '#446ee7'
+    let { filterBy } = useSelector((storeState) => storeState.gigModule)
+
 
     useEffect(() => {
         dispatch(getById(params.gigId))
@@ -169,6 +171,12 @@ export const GigDetails = (props) => {
             <section className="gig-details-container container">
                 <div className="gig-details">
                     <div className="left-container">
+                    <section className="breadcrumbs-container flex">
+                    <ul className="breadcrumbs">
+                        {(filterBy.category) ? <li><a href="/categories"><span>Wiserr</span>{filterBy.category}</a>
+                        </li> : <li><span>Wiserr</span>All</li>}
+                    </ul>
+                </section>
                         <section className="gig-info">
                             <h1 className="text-display">{gig.title}</h1>
                             <div className="owner-details owner-container" >
