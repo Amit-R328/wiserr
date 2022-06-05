@@ -63,7 +63,9 @@ async function query(loggedInUser, typeOf){
 //     return gig.title === order.gig.description})
 
 // }}} )
-    // console.log(orders)
+    
+       orders = orders.sort((a,b) => b.createdAt - a.createdAt)
+       
         return orders
     // console.log('order', orders)
 }

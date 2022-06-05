@@ -17,17 +17,19 @@ import { UserMsg } from '../cmps/user-msg.jsx';
 import { socketService } from '../services/socket.service.js';
 import mailgo, { mailgoDirectRender } from "mailgo";
 import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
+import { utilService } from '../services/util.service.js'
 
 export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
-    const [user, setUser] = useState({})
+    const [ user, setUser] = useState({})
     const [isReviewAdd, setReviewAdd] = useState(false)
     const [tumbUp, setTumbUp] = useState(false)
     const [tumbDown, setTumbDown] = useState(false)
     const [textColorUp, setTextColorUp] = useState('')
     const [textColorDown, setTextColorDown] = useState('')
+    const [memberSince, setMemberSince] = useState(2)
     // const [orders, setOrders] = useState({})
     const [subject] = useState("Contact us")
     const navigate = useNavigate()
@@ -38,7 +40,9 @@ export const GigDetails = (props) => {
 
     useEffect(() => {
         dispatch(getById(params.gigId))
-        
+        //take the page to the begining
+        window.scrollTo(0, 0)
+     
     }, [params])
 
 
@@ -55,8 +59,25 @@ export const GigDetails = (props) => {
         const user = await loadUser(userId)
         dispatch(loadOrders(user, 'seller'))
         setUser(user)
+        calcMemberSince()
     }
 
+
+    const  calcMemberSince = () => {
+        if(orders.length){
+        
+        let orderCreatedDate = orders[orders.length-1].createdAt        
+        orderCreatedDate = utilService.getMonthNumber(orderCreatedDate)
+        
+        const thisMonth = (new Date()).getMonth()  
+        let calcSince  = 0
+        if(orderCreatedDate >  thisMonth) calcSince = (12- orderCreatedDate) + thisMonth
+        else calcSince = thisMonth - orderCreatedDate
+        
+        setMemberSince(Math.abs(calcSince))
+       
+        }
+    }
 
     const onGoBack = () => {
         props.history.push('/categories')
@@ -199,7 +220,7 @@ export const GigDetails = (props) => {
                                         </li>
                                         <li>
                                             Member Since
-                                            <strong>2 month ago</strong>
+                                            <strong>{`${memberSince > 2 ? memberSince: 2} month ago`}</strong>
                                         </li>
                                         <li>
                                             Avg response time

@@ -17,7 +17,10 @@ export const SellerDashboard = (props) => {
     const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
     const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
     const [qtyYearOrders, setQtyYearOrders] = useState(0)
-     
+     const RED = '#F74040'
+     const GRAY = '#62646A'
+     const GREEN = '#1DBF73'
+     const BLACK = '#404145'
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     console.log('**************************', orders)
@@ -134,15 +137,17 @@ export const SellerDashboard = (props) => {
                             {/* <td>{utilService.setDateTime(order.createdAt)}</td> */}
                             <td>{order.buyer.fullName}</td>
                             <td>{order.gig.description}</td>
-                            <td>{(order.status === 'approved') && utilService.setDateTime(order.deliveryDate)}</td>
+                            <td>{(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</td>
                             {/* <td>{order.gig.price}</td> */}
                             <td>{order.gig.price.toLocaleString('en-US', {style: 'currency',currency: 'USD'})}</td>
                             {/* <td>{order.status}</td> */}
                             {/* <td> <select  value={order.status}> */}
-                            <td> <select className='order-status-selector' value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                            <td> <select className='order-status-selector' style={{color: `${order.status === 'rejected' ? RED : order.status === 'completed' ? GREEN : order.status === 'approved' ? BLACK : GRAY}`}} value={order.status} onChange={(ev) => handleChange(ev,order)}>
+                            {/* <td> <select className='order-status-selector' style={{color: `${order.status === 'rejected' ? RED : GRAY}`}} value={order.status} onChange={(ev) => handleChange(ev,order)}> */}
                                     <option value="approved">approved</option>
                                     <option value="pending">pending</option>
                                     <option value="rejected">rejected</option>
+                                    <option value="completed">completed</option>
                                 </select></td>
                             </tr>)}
                             <thead className='orders-table-header'>

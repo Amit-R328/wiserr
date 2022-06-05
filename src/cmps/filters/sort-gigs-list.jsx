@@ -24,13 +24,14 @@ export const SortGigsList = () => {
   }, [selectedOption])
 
   return (
-    <div className="sort-gigs-list">
+    // <div className="sort-gigs-list">
       <Select
+        classNamePrefix="sort-gigs-list"
         defaultValue={'title'}
         onChange={onHandleChange}
         options={options}
         placeholder="Title"
       />
-    </div>
+    // </div>
   )
 }

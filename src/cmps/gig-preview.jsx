@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import StarIcon from '@mui/icons-material/Star';
 import Rating from '@mui/material/Rating';
@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { WhiteHeart, BlackHeart } from "../services/svg.service";
 import { useState } from "react";
 import { updateGig } from '../store/actions/gig.actions.js'
+import { loadUser } from "../store/actions/user.actions";
+import { orderService } from "../services/order.service";
 
 export const GigPreview = ({ gig, reviews }) => {
     const price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
@@ -14,6 +16,7 @@ export const GigPreview = ({ gig, reviews }) => {
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
+    // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
 
     let images
     if (gig) {
@@ -21,6 +24,12 @@ export const GigPreview = ({ gig, reviews }) => {
             return { original: img, thumbnail: img }
         })
     }
+
+
+    // useEffect(() => {
+    //     const user = dispatch(loadUser(gig.owner._Id))        
+    // }, [])
+
 
     const onGoToDetails = (ev) => {
         ev.stopPropagation()
@@ -75,15 +84,18 @@ return (
             <div className="info" onClick={onGoToDetails}>
                 <div className="seller-info">
                     <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="owner" />
-                    <div className="owner-name">{gig.owner.fullName}</div>
+                    <div className="gig-preview-seller-detailes">
+                        <p className="owner-name">{gig.owner.fullName}</p>
+                        {/* <p className="owner-name">{user.level}</p> */}
+                    </div>
                 </div>
 
                 <div className="gig-title">
-                    <p>{gig.title.substr(0, 40)}...</p>
+                    <p >{gig.title.substr(0, 40)}...</p>
                 </div>
                 <div className="gig-rate">
-                    <StarIcon />
-                    <div className="avg-rate">4.9</div>
+                   {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc,review) =>  acc + (review.stars),0))/gig.reviews.length).toFixed(1)}</div> :
+                    <div className="avg-rate">4.9</div> }
                 </div>
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>

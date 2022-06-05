@@ -9,7 +9,6 @@ class _DeliveryDateFilter extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.filterBy !== this.props.filterBy) {
-
         }
     }
 
@@ -19,7 +18,7 @@ class _DeliveryDateFilter extends React.Component {
         this.setState({ [field]: value })
     }
 
-    onApplyDeliveyFilter = () => {
+    onApplyDeliveryFilter = () => {
         const { filterBy } = this.props
 
         this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays })
@@ -29,17 +28,31 @@ class _DeliveryDateFilter extends React.Component {
     onClearDeliveryDate = () => {
         this.setState((prevState) => ({ ...prevState, deliveryDate: 0 }))
     }
+    
+    // onToggleBudget() {
+    //     let flag = !this.props.budgetMenu;
+    //     this.setState(flag);
+    // }
 
+    
+    // onToggleDeliveryTime() {
+    //     let flag = !this.props.deliveryDateMenu
+    //     this.setState(flag)
+    // }
+    // let className = (this.props.budgetMenu) ? 'open' : ''
+    // let classNameDelivery = (this.props.deliveryDateMenu) ? 'open' : ''
+    
+    
     render() {
         return (
             <section className="deliveryTime-filter flex">
                 <div className="input-wrapper flex" >
-                    <label htmlFor="deliveryDays">Deliverd by:</label>
+                    <label htmlFor="deliveryDays">Delivered by:</label>
                     <input type="number" name="deliveryDays" onChange={this.handleChange} placeholder="Any" value={this.state.deliveryDays} />
                 </div>
                 <div className="btn-deliveryTime">
                     <button className="close-btn" onClick={this.onClearDeliveryDate}>clear</button>
-                    <button className="apply-filters-btn" onClick={this.onApplyDeliveyFilter}>Apply</button>
+                    <button className="apply-filters-btn" onClick={this.onApplyDeliveryFilter}>Apply</button>
                 </div>
             </section>
         )

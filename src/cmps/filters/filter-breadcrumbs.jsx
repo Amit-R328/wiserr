@@ -21,7 +21,7 @@ export const FilterBreadCrumbs = () => {
     }
 
     const onToggleBudget = () => {
-        var flag = !budgetMenu;
+        let flag = !budgetMenu;
         setBudgetMenu(flag);
     }
 
@@ -29,12 +29,12 @@ export const FilterBreadCrumbs = () => {
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
     const onToggleDeliveryTime = () => {
-        var flag = !deliveryDateMenu
+        let flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
     }
 
     const showSweetAlert = (ev) => {
-        ev.preventDefault()
+        // ev.preventDefault()
         Swal.fire({
             className: "video-modal",
             width: 1000,
@@ -76,22 +76,22 @@ export const FilterBreadCrumbs = () => {
 
             <section className="filter-topbar">
                 <div className={`filter-shadow-effect flex ${className}`}>
-                    <div className="filter-floating-menu flex">
-                        <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
+                    <div className="filters-only flex">
+                        <div className="filter-floating-menu">
+                            <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
+                            </div>
+                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} deliveryDateMenu={deliveryDateMenu} budgetMenu={budgetMenu}/>}
                         </div>
-                        {budgetMenu && <BudgetFilter onClose={onToggleBudget} />}
-                    </div>
-                    <div className="filter-floating-menu">
-                        <div onClick={onToggleDeliveryTime} className={`filter-menu-title ${classNameDelivery} filter-menu`}>Delivery Time
+                        <div className="filter-floating-menu">
+                            <div onClick={onToggleDeliveryTime} className={`filter-menu-title ${classNameDelivery} filter-menu`}>Delivery Time
+                            </div>
+                            {deliveryDateMenu && <DeliveryDateFilter />}
                         </div>
-                        {deliveryDateMenu && <DeliveryDateFilter />}
                     </div>
-
                     <div className="sort-by-container flex">
-                        <span className="pre-title">Sort by</span>
-                        <SortGigsList />
-                        <div className="button-row">
-                        </div>
+                        <span className="pre-title">Sort by
+                        </span>
+                            <SortGigsList />
                     </div>
                 </div>
             </section>

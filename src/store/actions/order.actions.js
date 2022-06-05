@@ -8,6 +8,7 @@ export function loadOrders(loggedInUser, typeOf) {
         try {
             const orders = await orderService.query(loggedInUser, typeOf)
         
+            
             const action = { type: 'SET_ORDERS', orders }
             dispatch(action)
         } catch (err) {

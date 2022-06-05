@@ -4,8 +4,8 @@
 
     .layout-row {
         color: $grey_1000;
-        flex-wrap: wrap;
-        flex: 1 1 0;
+        // flex-wrap: wrap;
+        // flex: 1 1 0;
         padding-top: 30px;
         padding-bottom: 15px;
 
@@ -92,7 +92,7 @@
             outline: 0;
             text-transform: none;
             cursor: default;
-            color: #222325;
+            color: $grey_1100;
         }
 
         p {

@@ -1,19 +1,18 @@
 .gig-preview {
   // width: 100%;
-  // min-width: 245px;
+  min-width: 245px;
   // cursor: default !important;
-
-  display: grid;
+  // display: grid;
   // grid-template-columns: 100%;
-  grid-template-rows: 48% repeat(2, 14.5%) 12.5% 10.5%;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas: 
-  "image-gallery"
-  "seller-info"
-  "gig-title"
-  "gig-rate"
-  "card-footer";
+  // grid-template-rows: 48% repeat(2, 14.5%) 12.5% 10.5%;
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+  // grid-template-areas: 
+  // "image-gallery"
+  // "seller-info"
+  // "gig-title"
+  // "gig-rate"
+  // "card-footer";
   // overflow: hidden;
   aspect-ratio: 0.79 / 1;
 
@@ -36,6 +35,7 @@
         // object-fit: contain;
         // vertical-align: middle;
       }
+ 
 
       &:hover {
         button {
@@ -92,6 +92,7 @@
     .seller-info {
       display: flex;
       align-items: center;
+      padding: 6px 12px 6px;
 
       >img {
         height: 24px;
@@ -105,12 +106,36 @@
 
     .gig-title {
       // flex-grow: 1;
+      cursor: pointer;
+      color: #222325;      
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 0 12px 5px;
+      // margin-top: 5px;
+
     }
 
+    .gig-title:hover {
+      color: #1dbf73;
+    }
     .gig-rate {
       border-bottom: 1px solid $grey_400;
       display: flex;
       align-items: center;
+      padding: 10px 12px;
+
+      &::before {
+        content: "\f005";
+        font-size: rem(14px);
+        font-family: awesome;
+        color: #ffbe5b;
+        letter-spacing: rem(5px);
+      }
+      
+      .avg-rate{
+        color: #ffbe5b;
+      }
     }
   }
 
@@ -120,14 +145,16 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding-right: 6px;
+    // padding-right: 6px;
     border-left: 1px solid $grey_500;
     border-right: 1px solid $grey_500;
     border-bottom: 1px solid $grey_500;
+    padding: 10px 12px;
 
     .fav-btn {
       border: none;
       background: unset;
+     
     }
 
     .gig-price {
@@ -141,11 +168,11 @@
       }
 
       .price-text {
-        font-size: 9px;
+        font-size:11px;
       }
 
       .gig-price-title {
-        font-size: 7px;
+        font-size: 9px;
       }
     }
 
