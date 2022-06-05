@@ -280,11 +280,12 @@
 
         &:first-of-type{
           left: -25px;
+          
         }
         &:nth-of-type(2){
           right: -25px;
+            
         }
-
         svg{
           width: 30px !important;
           height: 30px !important;

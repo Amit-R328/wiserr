@@ -22,9 +22,12 @@ export const SellerDashboard = (props) => {
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
     const [order, setOrder] = useState('pending')
+    const [loader, setLoader] = useState(true)
     
     useEffect(() => {
-        
+        setTimeout(() =>{
+            setLoader(false)
+        }, 5000)
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))        
@@ -92,7 +95,7 @@ export const SellerDashboard = (props) => {
     
     return (
         <div className="seller-dashboard-container container">
-        {!orders.length && <Loader/>}
+            {loader && <Loader/>}
         <div className='seller-totalim'>
             <div className='seller-Total-order'>
                 <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
