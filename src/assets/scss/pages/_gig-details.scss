@@ -397,14 +397,11 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            justify-content: center;
             
 
             button.buy-btn {
-                // margin-top: 10px;
-                // background-color: $wiserr_green;
-                // border: 1px solid transparent;
                 cursor: pointer;
-                display: inline-block;
                 font-size: 16px;
                 font-weight: 600;
                 line-height: 100%;
@@ -414,32 +411,31 @@
                 background-image: none;
                 border: 1px solid transparent;
                 border-radius: 4px;
-                box-sizing: border-box;
                 color: $white;
                 display: inline-block;
-                font-family: inherit;
-                font-size: 16px;
-                font-stretch: inherit;
-                font-style: inherit;
-                font-variant-caps: inherit;
-                font-variant-east-asian: inherit;
-                font-variant-ligatures: inherit;
-                font-variant-numeric: inherit;
-                font-weight: 600;
-                line-height: 100%;
                 margin: rem(12px) 0;
-                padding: 12px 24px;
                 position: relative;
-                text-align: center;
                 text-decoration: none;
                 transition: all 70ms cubic-bezier(.75, 0, .25, 1);
                 width: 100%;
+                
                 // margin-top: rem(12px);                
-
-                .buy-btn-arrow {
-                    fill: white;
-                    left: rem(20px);
+                & span {
+                    position: relative;
+                    &::after {
+                        content: "\f105";
+                        font-size: rem(18px);
+                        font-family: awesome;
+                        letter-spacing: rem(30px);
+                        padding-left: rem(48px);
+                        position: absolute;
+                        left: rem(48px);
+                    }
                 }
+                // .buy-btn-arrow {
+                //     fill: white;
+                //     left: rem(20px);
+                // }
                 // span {
                 //     width: rem(16px);
                 //     height: rem(16px);
