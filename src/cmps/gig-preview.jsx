@@ -79,7 +79,7 @@ return (
                 </div>
 
                 <div className="gig-title">
-                    <p>{gig.title.substr(0, 75)}...</p>
+                    <p>{gig.title.substr(0, 40)}...</p>
                 </div>
                 <div className="gig-rate">
                     <StarIcon />

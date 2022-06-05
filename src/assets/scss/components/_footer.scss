@@ -46,3 +46,10 @@
         // left: 11%;
     }
 }
+@media (max-width: 744px) {
+    .footer-bottom {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 15px;
+    }
+}

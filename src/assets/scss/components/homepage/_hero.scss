@@ -150,6 +150,14 @@
         margin: unset !important;
         width: 125%;
     }
+    .hero-container .hero-content-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    .hero-container .hero-content-container .hero-content {
+        position: relative;
+
+    }
     .hero-pic {
         display: none;
     }
@@ -158,5 +166,36 @@
     }
     .hero-content {
         text-align: center;
+    }
+}
+@media (max-width: 744px) {
+    .hero-pic {
+        display: none;
+    }
+    .hero {
+        background-color: #023a15;
+        margin: unset !important;
+        width: 140%;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-popular-category {
+        display: none;
+    }
+}
+@media (max-width:1024px) {
+    .hero-container {
+        grid-template-rows: 185px;
+    }
+    .hero-container .hero-content-container .hero-content {
+        position: relative;
+        top: 42%;
+        font-size: 2rem;
+    }
+    .seller-name {
+        position: relative;
+        top: 47%;
+        right: 0%;
     }
 }

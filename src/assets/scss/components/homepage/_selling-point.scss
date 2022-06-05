@@ -84,3 +84,13 @@
         overflow-wrap:normal;
     }
 }
+@media (max-width: 744px) {
+    .selling-proposition-wrapper .selling-text {
+        overflow-wrap: unset;
+        padding-right: 0px;
+    }
+    .selling-proposition-wrapper .selling-proposition {
+        display: flex;
+        flex-direction: column;
+    }
+}

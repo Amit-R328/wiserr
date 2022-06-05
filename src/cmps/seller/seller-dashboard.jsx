@@ -1,11 +1,12 @@
 
 import { useSelector, useDispatch } from 'react-redux'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { loadOrders, onUpdateOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
 import { socketService } from '../../services/socket.service.js';
+import { Loader } from '../loader.jsx';
 import ReactLoading from "react-loading";
 
 export const SellerDashboard = (props) => {
@@ -22,26 +23,12 @@ export const SellerDashboard = (props) => {
     const dispatch = useDispatch()
     const [order, setOrder] = useState('pending')
     
-
-    let intervalId
     useEffect(() => {
-        console.log('intervalId',intervalId )
-        intervalId = setInterval(() => {
-            console.log('Loading')
-        },8000)
         
-            console.log('intervalId',intervalId )
-            clearInterval(intervalId);
-            intervalId = null
-            console.log('intervalId',intervalId )
-          
-        
-        
-
-
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))
+        
     }, [])
     
     // setSocket()
@@ -105,7 +92,7 @@ export const SellerDashboard = (props) => {
     
     return (
         <div className="seller-dashboard-container container">
-        {intervalId && <ReactLoading type={"spinningBubbles"} color="#1DBF73" height={'20%'} width={'20%'}/>}
+        {!orders.length && <Loader/>}
         <div className='seller-totalim'>
             <div className='seller-Total-order'>
                 <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
