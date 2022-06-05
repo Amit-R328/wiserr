@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,9 +9,13 @@ export const GigPage = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const { reviews } = useSelector((storeState) => storeState.reviewModule)
     const { gigs } = useSelector((storeState) => storeState.gigModule)
+    const [loader, setLoader] = useState(true)
     const dispatch = useDispatch()
 
     useEffect(() => {
+        setTimeout(() =>{
+            setLoader(false)
+        }, 5000)
         dispatch(loadGigs(filterBy))
     }, [])
 
@@ -23,7 +27,7 @@ export const GigPage = () => {
                         <div className="filter-gigs-container">
                             <FilterBreadCrumbs />
                         </div>
-                        {!gigs.length && <Loader/>}
+                        {loader && <Loader/>}
                         <GigList gigs={gigs} reviews={reviews} />
                     </div>
                 </div>

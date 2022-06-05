@@ -1,10 +1,8 @@
+import { useEffect, useState } from 'react'
 import { GigPreview } from './gig-preview.jsx'
+import { Loader } from './loader.jsx'
 
-
-export function GigList({ gigs, reviews }) {
-    // if (!gigs) {
-    //     return (<h1>Loading</h1>)
-    // }
+export const GigList = ({ gigs, reviews }) => {
     
     return (
 
