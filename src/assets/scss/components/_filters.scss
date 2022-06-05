@@ -10,6 +10,7 @@
 
         &.open {
             gap: 0px;
+            z-index: 160;
         }
 
         .filters-only {
@@ -23,13 +24,10 @@
             flex-wrap: wrap;
             justify-content: space-between;
 
-
-
             .filter-menu-title {
                 font-size: 16px;
                 font-weight: 600;
                 padding: 0;
-                // min-width: rem(100px);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 padding: 6px 15px;
@@ -68,34 +66,23 @@
             font-size: 16px;
             line-height: 120%;
             font-weight: 700;
-            // align-self: flex-end;
             position: relative;
-            // left: 78%;
-            // gap: 10px;
             flex-direction: row;
-            // justify-content: center;
             align-items: center;
             z-index: 150;
 
             .pre-title {
                 margin-right: rem(10px);
                 font-weight: 500;
+            }
 
-                .sort-gigs-list {
-                    color: $grey_1100;
-                    outline: none !important;
-                    border: none !important;
-                    width: rem(120px) !important;
+            @include from-mobile-layout {
+                justify-self: flex-start;
+                position: relative;
+                right: 5%;
             }
         }
-
-        @include from-mobile-layout {
-            justify-self: flex-start;
-            position: relative;
-            right: 5%;
-        }
     }
-}
 }
 
 .button-row {
@@ -163,5 +150,5 @@
 }
 
 div#react-select-3-listbox.css-2613qy-menu {
-    z-index: 100;
+    z-index: 160;
 }

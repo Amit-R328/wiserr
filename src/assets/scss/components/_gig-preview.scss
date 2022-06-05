@@ -1,19 +1,18 @@
 .gig-preview {
   // width: 100%;
-  // min-width: 245px;
+  min-width: 245px;
   // cursor: default !important;
-
   // display: grid;
   // grid-template-columns: 100%;
   // grid-template-rows: 48% repeat(2, 14.5%) 12.5% 10.5%;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  grid-template-areas: 
-  "image-gallery"
-  "seller-info"
-  "gig-title"
-  "gig-rate"
-  "card-footer";
+  // grid-column-gap: 0px;
+  // grid-row-gap: 0px;
+  // grid-template-areas: 
+  // "image-gallery"
+  // "seller-info"
+  // "gig-title"
+  // "gig-rate"
+  // "card-footer";
   // overflow: hidden;
   aspect-ratio: 0.79 / 1;
 
