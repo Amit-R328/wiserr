@@ -3,6 +3,7 @@ import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { useSelector, useDispatch } from 'react-redux'
 import { FilterBreadCrumbs } from '../cmps/filters/filter-breadcrumbs.jsx'
+import { Loader } from '../cmps/loader.jsx';
 
 export const GigPage = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
@@ -22,6 +23,7 @@ export const GigPage = () => {
                         <div className="filter-gigs-container">
                             <FilterBreadCrumbs />
                         </div>
+                        {!gigs.length && <Loader/>}
                         <GigList gigs={gigs} reviews={reviews} />
                     </div>
                 </div>

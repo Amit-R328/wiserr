@@ -6,6 +6,7 @@ import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
 import { socketService } from '../../services/socket.service.js';
+import { Loader } from '../loader.jsx';
 import ReactLoading from "react-loading";
 
 export const SellerDashboard = (props) => {
@@ -21,8 +22,6 @@ export const SellerDashboard = (props) => {
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
     const [order, setOrder] = useState('pending')
-    const intervalIdRef = useRef()
-    let flag = false
     
     useEffect(() => {
         
@@ -93,7 +92,7 @@ export const SellerDashboard = (props) => {
     
     return (
         <div className="seller-dashboard-container container">
-        {!orders.length && <ReactLoading type={"spinningBubbles"} color="#1DBF73" height={'20%'} width={'20%'}/>}
+        {!orders.length && <Loader/>}
         <div className='seller-totalim'>
             <div className='seller-Total-order'>
                 <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
