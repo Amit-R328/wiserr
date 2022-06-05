@@ -27,10 +27,10 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         setTimeout(() =>{
             setLoader(false)
-        }, 5000)
+        }, 2000)
         dispatch(getLoggedinUser())
         let user = {type: 'seller', fullName: loggedInUser.userName}
-        dispatch(loadOrders(loggedInUser))
+        dispatch(loadOrders(loggedInUser))        
         
     }, [])
     

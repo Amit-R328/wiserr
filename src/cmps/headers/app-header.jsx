@@ -28,6 +28,8 @@ export const AppHeader = (props) => {
         setScrolled(window.scrollY > 200)
     }
 
+    let className = (window.scrollY > 200) ? 'white' : 'black'
+
     useEffect(() => {
         if(pathname === '/'){
         window.addEventListener("scroll", handleScroll)

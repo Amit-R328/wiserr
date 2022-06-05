@@ -15,7 +15,7 @@ export const GigPage = () => {
     useEffect(() => {
         setTimeout(() =>{
             setLoader(false)
-        }, 5000)
+        }, 1000)
         dispatch(loadGigs(filterBy))
     }, [])
 

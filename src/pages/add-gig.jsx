@@ -209,7 +209,7 @@ class _AddGigDetails extends React.Component {
                                         <select className='add-gig-input' value={gigInfo.category} name="category" onChange={this.handleChange}>
                                             <option value=""></option>
                                             <option value="Graphics & Design">Graphics &amp; Design</option>
-                                            <option value="Digital & Marketing">Digital Marketing</option>
+                                            <option value="Digital Marketing">Digital Marketing</option>
                                             <option value="Writing & Translation">Writing &amp; Translation</option>
                                             <option value="Video & Animation">Video &amp; Animation</option>
                                             <option value="Business">Business</option>
