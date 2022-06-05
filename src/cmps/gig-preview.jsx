@@ -54,7 +54,6 @@ export const GigPreview = ({ gig, reviews }) => {
                 const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
                 //if the user already did like we delte him
                 if(liked.length) {
-                  
                     let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)                  
                     gig.likedByUsers.splice(idx,1)
                     setLikedBy(false)
@@ -84,7 +83,7 @@ return (
             <div className="info" onClick={onGoToDetails}>
                 <div className="seller-info">
                     <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="owner" />
-                    <div className="gig-preview-seller-detailes">
+                    <div className="gig-preview-seller-detailed">
                         <p className="owner-name">{gig.owner.fullName}</p>
                         {/* <p className="owner-name">{user.level}</p> */}
                     </div>
@@ -102,6 +101,7 @@ return (
                 <div className="heart-btn">
                     <button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
                    {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
+                   <div className={loggedInUser && getLikeByUser() ? 'like' : <span></span>}></div>
                 </button>
                 </div>
                 <div className="gig-price">

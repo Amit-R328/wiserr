@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import {  showSuccessMsg ,showErrorMsg } from '../services/event-bus.service.js'
+import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { getById, updateGig } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
 import { loadOrders } from '../store/actions/order.actions.js'
@@ -23,7 +23,7 @@ export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
-    const [ user, setUser] = useState({})
+    const [user, setUser] = useState({})
     const [isReviewAdd, setReviewAdd] = useState(false)
     const [tumbUp, setTumbUp] = useState(false)
     const [tumbDown, setTumbDown] = useState(false)
@@ -42,14 +42,14 @@ export const GigDetails = (props) => {
         dispatch(getById(params.gigId))
         //take the page to the begining
         window.scrollTo(0, 0)
-     
+
     }, [params])
 
 
     useEffect(() => {
-        if(gig){            
-            getUserAndOrders()             
-    
+        if (gig) {
+            getUserAndOrders()
+
         }
     }, [gig])
 
@@ -63,19 +63,19 @@ export const GigDetails = (props) => {
     }
 
 
-    const  calcMemberSince = () => {
-        if(orders.length){
-        
-        let orderCreatedDate = orders[orders.length-1].createdAt        
-        orderCreatedDate = utilService.getMonthNumber(orderCreatedDate)
-        
-        const thisMonth = (new Date()).getMonth()  
-        let calcSince  = 0
-        if(orderCreatedDate >  thisMonth) calcSince = (12- orderCreatedDate) + thisMonth
-        else calcSince = thisMonth - orderCreatedDate
-        
-        setMemberSince(Math.abs(calcSince))
-       
+    const calcMemberSince = () => {
+        if (orders.length) {
+
+            let orderCreatedDate = orders[orders.length - 1].createdAt
+            orderCreatedDate = utilService.getMonthNumber(orderCreatedDate)
+
+            const thisMonth = (new Date()).getMonth()
+            let calcSince = 0
+            if (orderCreatedDate > thisMonth) calcSince = (12 - orderCreatedDate) + thisMonth
+            else calcSince = thisMonth - orderCreatedDate
+
+            setMemberSince(Math.abs(calcSince))
+
         }
     }
 
@@ -96,7 +96,7 @@ export const GigDetails = (props) => {
             // showErrorMsg('Need to login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-            console.log('&&&&&&&&&&&&&&&&&&&', order )
+            console.log('&&&&&&&&&&&&&&&&&&&', order)
 
             socketService.emit('new order', order)
             showSuccessMsg('Order was created')
@@ -117,50 +117,50 @@ export const GigDetails = (props) => {
     const images = gig.imgUrl.map((img) => {
         return { original: img, thumbnail: img }
     })
-    
-    
-    const getTumbUp =(ev,gig,idx) => {
-              
-        gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful 
+
+
+    const getTumbUp = (ev, gig, idx) => {
+
+        gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful
         let flagUp = gig.reviews[idx].isHelpful
         let color
-        if(flagUp){
+        if (flagUp) {
             color = BLUE
-            setTextColorUp(color)      
+            setTextColorUp(color)
             //if up was pressed and down is blue we change it to black
-            gig.reviews[idx].isNotHelpful = false   
+            gig.reviews[idx].isNotHelpful = false
             color = BLACK
             setTextColorDown(color)
             setTumbDown(false)
-                  
+
         } else {
             color = BLACK
             setTextColorUp(color)
-        }      
+        }
         dispatch(updateGig(gig))
-        return setTumbUp(flagUp) 
+        return setTumbUp(flagUp)
     }
 
-    const getTumbDown =(ev,gig,idx) => {
-       
-        gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful 
+    const getTumbDown = (ev, gig, idx) => {
+
+        gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful
         let flagDown = gig.reviews[idx].isNotHelpful
         let color
-        if(flagDown) {
+        if (flagDown) {
             color = BLUE
             setTextColorDown(color)
             gig.reviews[idx].isHelpful = false
             color = BLACK
             setTextColorUp(color)
-          }  else {
+        } else {
             color = BLACK
             setTextColorDown(color)
-          }
-       
+        }
+
         dispatch(updateGig(gig))
     }
 
-   
+
 
     return (
         <React.Fragment>
@@ -183,8 +183,8 @@ export const GigDetails = (props) => {
                         </section>
                         <section className="about-details">
                             <h2 className="about-title">About This Gig</h2>
-                           {gig.description.aboutThisGig && <p className="about-this-gig">{gig.description.aboutThisGig}</p>}
-                            
+                            {gig.description.aboutThisGig && <p className="about-this-gig">{gig.description.aboutThisGig}</p>}
+
                             {whatYouGet && <h3 className='about-get'>What Do You Get:</h3>}
                             <dl className="what-do-you-get">
 
@@ -206,7 +206,7 @@ export const GigDetails = (props) => {
                                                 <i className="fa fa-star filled">
                                                     <i className="fa fa-star filled">
                                                         <i className="fa fa-star filled">
-                                                        &nbsp; 5</i></i></i></i></i>
+                                                            &nbsp; 5</i></i></i></i></i>
 
                                         </p>
                                     </div>
@@ -220,7 +220,7 @@ export const GigDetails = (props) => {
                                         </li>
                                         <li>
                                             Member Since
-                                            <strong>{`${memberSince > 2 ? memberSince: 2} month ago`}</strong>
+                                            <strong>{`${memberSince > 2 ? memberSince : 2} month ago`}</strong>
                                         </li>
                                         <li>
                                             Avg response time
@@ -247,22 +247,22 @@ export const GigDetails = (props) => {
                         {(gig.reviews.length) ? <section className="reviews">
 
                             <h1 className="gig-reviews-title">Reviews</h1>
-                            {gig.reviews.map((review,idx) => {
+                            {gig.reviews.map((review, idx) => {
                                 return <article key={review._id}>
                                     <GigReview review={review} />
                                     <div className='tumbs-container'>
                                         <div className="tumbup-btn">
-                                            <button className="tumbs-btn"  style={{ color: `${review.isHelpful ? BLUE : BLACK}`}} onClick={(ev) => getTumbUp(ev, gig, +idx)}>
-                                            {review.isHelpful ? <TumbUpBlue /> : <TumbUpBlack />} Helpful
-                                        </button>
+                                            <button className="tumbs-btn" style={{ color: `${review.isHelpful ? BLUE : BLACK}` }} onClick={(ev) => getTumbUp(ev, gig, +idx)}>
+                                                {review.isHelpful ? <TumbUpBlue /> : <TumbUpBlack />} Helpful
+                                            </button>
+                                        </div>
+                                        <div className="tumbdown-btn">
+                                            <button className="tumbs-btn" style={{ color: `${review.isNotHelpful ? BLUE : BLACK}` }} onClick={(ev) => getTumbDown(ev, gig, +idx)}>
+                                                {review.isNotHelpful ? <TumbDownBlue /> : <TumbDownBlack />} Not Helpful
+                                            </button>
+                                            {review.isHelpful && <p className='helpful-text'>You found this review helpful.</p>}
+                                        </div>
                                     </div>
-                                    <div className="tumbdown-btn">
-                                        <button className="tumbs-btn" style={{ color: `${review.isNotHelpful ? BLUE : BLACK}`}} onClick={(ev) => getTumbDown(ev, gig, +idx)}>                                            
-                                            {review.isNotHelpful ? <TumbDownBlue /> : <TumbDownBlack />} Not Helpful 
-                                        </button>
-                                        {review.isHelpful && <p className='helpful-text'>You found this review helpful.</p>}
-                                    </div>
-                                   </div>
                                 </article>
                             })}
                         </section> : <span></span>}
@@ -272,25 +272,23 @@ export const GigDetails = (props) => {
                             <aside className="sidebar-content">
                                 <div className="call-to-action">
                                     <div className="price-package">Our Offer</div>
-                                    <div className="order-title-wrapper">
-                                        <span className="order-price">{price}</span>
-                                        <p className="order-subtitle">{gig.title}</p>
-                                        <p className='days-to-make'><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg>
-                                            <b>{` ${gig.daysToMake} ${gig.daysToMake === "1" ? "Day Delivery": "Days Delivery"}`}</b></p>
-                                            {/* <b>{` ${gig.daysToMake} Days Delivery`}</b></p> */}
+                                    <div className="order-title-wrapper flex flex-column">
+                                        <div className="order-price flex"><div className="total-price">Total</div><div>{price}</div></div>
+                                        <div className="order-subtitle">{gig.title}</div>
+                                        <p className='days-to-make'><b>{` ${gig.daysToMake} ${gig.daysToMake === "1" ? "Day Delivery" : "Days Delivery"}`}</b></p>
 
-                                        {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail, idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
+                                        {gig.description.littleDetails && <dl className="description-little-details"> {gig.description.littleDetails.map((detail, idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer className='buy-btn-container'>
                                             <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue <span></span>
                                             </button>
                                         </footer>
                                     </div>
-                                    <div className="contact-seller">
-                                    <a className='gig-detailes-contact-seller' href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
-                                    </div>
                                 </div>
                             </aside>
+                            <div className="contact-seller flex">
+                                <a className='gig-details-contact-seller' href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
+                            </div>
                         </div>
                     </div>
                 </div>
