@@ -1,47 +1,19 @@
-  .header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: transparent;
-    position: fixed;
-    z-index: 150;
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  position: fixed;
+  z-index: 150;
 
-    &.categories-header {
+  &.categories-header {
+    background-color: $white;
+
+    .top {
+      margin: 0;
       background-color: $white;
 
-      .top {
-        margin: 0;
-        background-color: $white;
-
-        & a {
-          color: $grey_900;
-
-          &.seller-nav-link {
-            color: $wiserr_business;
-          }
-
-          &:hover {
-            color: $wiserr_green;
-          }
-        }
-
-        .logo-search-container {
-          .logo {
-            svg {
-              path:nth-child(1) {
-                fill: $grey_1100;
-              }
-            }
-          }
-        }
-      }
-    }
-
-
-    &.scrolled {
-      background-color: $white;
-
-      .nav-link {
+      & a {
         color: $grey_900;
 
         &.seller-nav-link {
@@ -53,23 +25,11 @@
         }
       }
 
-      .top {
-        margin: 0;
-
-        & a {
-          color: $grey_900;
-
-          &.seller-nav-link {
-            color: $wiserr_business;
-          }
-
-          .logo-search-container {
-            .logo {
-              svg {
-                path:nth-child(1) {
-                  fill: unset;
-                }
-              }
+      .logo-search-container {
+        .logo {
+          svg {
+            path:nth-child(1) {
+              fill: $grey_1100;
             }
           }
         }
@@ -77,131 +37,178 @@
     }
   }
 
-  .top {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: em(25px);
-    padding-bottom: em(25px);
-    margin: 0;
 
-
-    .logo-search-container {
-      display: flex;
-      align-items: center;
-      // gap: 20px;
-
-      .hamburger-icon {
-        &::after {
-          content: '\f0c9';
-          font-family: awesome;
-          color: black;
-        }
-
-        @include from-narrow-layout {
-          display: none;
-        }
-      }
-
-      .logo {
-        display: none;
-
-        svg {
-          path:first-child {
-            fill: $white;
-          }
-        }
-
-        @include from-mobile-layout {
-          display: block;
-        }
-      }
-    }
-  }
-
-  .bottom {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid $grey_400;
-    border-bottom: 1px solid $grey_400;
+  &.scrolled {
     background-color: $white;
-    z-index: 50;
-    color: $grey_900;
-  }
 
+    .nav-link {
+      color: $grey_900;
 
-  ul {
-    margin: 0;
-    // color: $white;
+      &.seller-nav-link {
+        color: $wiserr_business;
+      }
 
-    &.nav-list {
-      margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      font-size: em(16px);
-      font-weight: 600;
-
-      .nav-link {
-        color: $white;
-        
-        &.open-popup-login:hover {
-          color: $wiserr_green;
-        }
+      &:hover {
+        color: $wiserr_green;
       }
     }
-  }
 
-  .avatar-img {
-    width: 30px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-top: 10px;
-  }
+    .top {
+      margin: 0;
 
-  .user-msg {
-    color: white;
-    padding: 10px;
-    font-size: 1.4em;
-    position: fixed;
-    top: 72px;
-    right: 0;
-    background-color: grey;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    z-index: 200;
-  }
+      & a {
+        color: $grey_900;
 
-  .user-msg button {
-    float: right;
-    border: 0;
-    border-radius: 50%;
-    margin: 5px;
+        &.seller-nav-link {
+          color: $wiserr_business;
+        }
+      }
 
-  }
-
-  .success {
-    background-color: $wiserr_green;
-  }
-
-  .danger {
-    background-color: rgb(227, 114, 114);
-  }
-
-  @media (max-width:425px) {
-    .header {
-      background-color: #fff;
-    }
-
-    top {
-      .logo {
-        svg {
-          path:nth-child(1) {
-            fill: $grey_1000;
+      .logo-search-container {
+        .logo {
+          svg {
+            path:nth-child(1) {
+              fill: $grey_1100;
+            }
           }
         }
       }
     }
   }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: em(25px);
+  padding-bottom: em(25px);
   
+  // margin: 0;
+
+
+  .logo-search-container {
+    display: flex;
+    align-items: center;
+    // gap: 20px;
+
+    .hamburger-icon {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      
+      &::after {
+        content: '\f0c9';
+        font-family: awesome;
+        font-weight: 100;
+        font-size: rem(28px);
+        letter-spacing: rem(5px);
+        color: $white;
+      }
+
+      @include from-normal-layout {
+        display: none;
+      }
+    }
+
+    .logo {
+      display: none;
+
+      svg {
+        path:first-child {
+          fill: $white;
+        }
+      }
+
+      @include from-mobile-layout {
+        display: block;
+      }
+    }
+  }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $grey_400;
+  border-bottom: 1px solid $grey_400;
+  background-color: $white;
+  z-index: 50;
+  color: $grey_900;
+}
+
+
+ul {
+  margin: unset;
+  // color: $white;
+
+  &.nav-list {
+    // margin: 0;
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    gap: 20px;
+    font-size: em(16px);
+    font-weight: 600;
+
+    .nav-link {
+      color: $white;
+
+      &.open-popup-login:hover {
+        color: $wiserr_green;
+      }
+    }
+  }
+}
+
+.avatar-img {
+  width: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.user-msg {
+  color: white;
+  padding: 10px;
+  font-size: 1.4em;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  background-color: grey;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  z-index: 200;
+}
+
+.user-msg button {
+  float: right;
+  border: 0;
+  border-radius: 50%;
+  margin: 5px;
+
+}
+
+.success {
+  background-color: $wiserr_green;
+}
+
+.danger {
+  background-color: rgb(227, 114, 114);
+}
+
+@media (max-width:425px) {
+  .header {
+    background-color: #fff;
+  }
+
+  top {
+    .logo {
+      svg {
+        path:nth-child(1) {
+          fill: $grey_1000;
+        }
+      }
+    }
+  }
+}
