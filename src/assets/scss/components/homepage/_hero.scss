@@ -160,3 +160,19 @@
         text-align: center;
     }
 }
+@media (max-width: 744px) {
+    .hero-pic {
+        display: none;
+    }
+    .hero {
+        background-color: #023a15;
+        margin: unset !important;
+        width: 140%;
+    }
+    .hero-content {
+        text-align: center;
+    }
+    .hero-popular-category {
+        display: none;
+    }
+}

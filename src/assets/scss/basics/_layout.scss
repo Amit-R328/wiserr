@@ -1,24 +1,31 @@
-.container{
-    padding-inline-start:  calc((100vw - #{$mobile-viewport}) / 2);
-    padding-inline-end:  calc((100vw - #{$mobile-viewport}) / 2);
+.container {
+    padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
+    padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
 
-    @include from-mobile-layout{
-        padding-inline-start:  calc((100vw - #{$mobile-viewport}) / 2);
-        padding-inline-end:  calc((100vw - #{$mobile-viewport}) / 2);
+    @include from-mobile-layout {
+        padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
+        padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
     }
 
-    @include from-narrow-layout{
-        padding-inline-start:  calc((100vw - #{$narrow-viewport}) / 2);
-        padding-inline-end:  calc((100vw - #{$narrow-viewport}) / 2);
+    @include from-narrow-layout {
+        padding-inline-start: calc((100vw - #{$narrow-viewport}) / 2);
+        padding-inline-end: calc((100vw - #{$narrow-viewport}) / 2);
     }
 
-    @include from-normal-layout{
-        padding-inline-start:  calc((100vw - #{$normal-viewport}) / 2);
-        padding-inline-end:  calc((100vw - #{$normal-viewport}) / 2);
+    @include from-normal-layout {
+        padding-inline-start: calc((100vw - #{$normal-viewport}) / 2);
+        padding-inline-end: calc((100vw - #{$normal-viewport}) / 2);
     }
 
-    @include from-wide-layout{
-        padding-inline-start:  calc((100vw - #{$wide-viewport}) / 2);
-        padding-inline-end:  calc((100vw - #{$wide-viewport}) / 2);
+    @include from-wide-layout {
+        padding-inline-start: calc((100vw - #{$wide-viewport}) / 2);
+        padding-inline-end: calc((100vw - #{$wide-viewport}) / 2);
+    }
+}
+
+@media (max-width:744px) {
+    .container {
+        padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
+        padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
     }
 }

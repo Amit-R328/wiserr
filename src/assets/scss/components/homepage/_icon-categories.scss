@@ -126,3 +126,11 @@
         // left: 11%;
     }
 }
+@media (max-width:744px) {
+    .icon-categories ul.icon-categories-list {
+        display: flex;
+        flex-direction: row;
+        max-width: 735px;
+        flex-wrap: wrap;
+    }
+}
