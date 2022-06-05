@@ -21,6 +21,8 @@
         font-family: roboto, Arial, Helvetica, sans-serif;
         margin-bottom: 3rem;
         margin-left: 2.9rem;
+        font-size: 14px;
+        line-height: rem(20px);
     }
 
     .reviewer-name {
@@ -62,9 +64,10 @@
         margin-bottom: 0.5rem
     }
     .country-flag {
-        width: 8%;
-        // height: rem(30px);
-        border-radius: 2px;
+        width: 6%;
+        // width: rem(20px);
+        // height: rem(20px);
+        border-radius: 1px !important;
         padding-right: rem(5px) ;
     }
 }

@@ -13,7 +13,7 @@ export class UserMsg extends React.Component {
       this.setState({ msg })
       setTimeout(()=>{
         this.setState({ msg : null })
-      }, 3000)
+      }, 2000)
     })
   }
 

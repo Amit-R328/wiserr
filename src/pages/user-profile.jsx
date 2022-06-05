@@ -26,7 +26,7 @@ export const UserProfile = () => {
     console.log('totals', totals)
     console.log('orders from user-profile', orders)
 
-
+    const totalAmount = totals.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     return (
         <section className='user-profile-layout container'>
             <section className='user-profile flex'>
@@ -40,14 +40,16 @@ export const UserProfile = () => {
                     {(orders.length) ?
                         <div className='user-profile-card'>
                             <div className='your-orders-container'>
-                                <h1>Your orders:</h1>
+                                <h1>Total orders amount: {`${totalAmount}`} </h1>
+          
                             </div>
+                            
                             {orders.map(order => <div className='order-card' key={order._id}><h4 className='order-desc-profile'>{order.gig.description}</h4>
                                 {/* {orders.map(order => <div  className='order-card flex' key={order._id}><h4>{order.gig.description}</h4> */}
                                 <img className='gig-img-profile' alt="" src={order.gig.imgUrl} />
                                 <div className='card-profile-info'>
                                     <h5>Seller: {order.seller.fullName}</h5>
-                                    <h5>Amont: ${order.gig.price}</h5>
+                                    <h5>Amont: {order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h5>
                                     <h5>Status: {order.status}</h5>
                                     <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
                                     <h5>Delivery Date:{utilService.setDateTime(order.deliveryDate)}</h5></div>
@@ -55,9 +57,9 @@ export const UserProfile = () => {
                         </div> :
                         (<h1>You don't have any orders yet!</h1>)}
                 </div>
-                <div className='total-price-container'>
-                        <h5>total amount: {`${totals}`}</h5>
-                </div>
+                {/* <div className='total-price-container'>
+                        <h5>total amount: {`${totalAmount}`}</h5>
+                </div> */}
             </section>
         </section>
     )

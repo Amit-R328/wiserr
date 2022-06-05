@@ -51,9 +51,19 @@ async function query(loggedInUser, typeOf){
             orders = []
         }
     }
+    // console.log('orders', orders)
     orders = orders.map(order => {
-        return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig.title === order.gig.description).imgUrl[0]} }})
-    console.log(orders)
+        return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id).imgUrl[0] } } } )
+
+// return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => {
+//     console.log('gig.title === order.gig.description',gig.title === order.gig.description )
+//     console.log('gig.title', gig._id,gig.title)
+//     console.log('order.gig.description', order.gig._id, order.gig.description)
+//     console.log('gig', gig)
+//     return gig.title === order.gig.description})
+
+// }}} )
+    // console.log(orders)
         return orders
     // console.log('order', orders)
 }

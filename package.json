@@ -28,6 +28,7 @@
     "react-icons": "^4.4.0",
     "react-image-gallery": "^1.2.8",
     "react-items-carousel": "^2.8.0",
+    "react-loading": "^2.0.3",
     "react-multi-carousel": "^2.8.0",
     "react-redux": "^7.2.5",
     "react-router-dom": "^6.2.1",
