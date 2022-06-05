@@ -280,7 +280,7 @@ export const GigDetails = (props) => {
                                         {gig.description.littleDetails && <dl> {gig.description.littleDetails.map((detail, idx) => <dt className='littleDetails' key={idx}><GreenVMark />{detail}</dt>)}</dl>}
 
                                         <footer className='buy-btn-container'>
-                                            <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue <span className='buy-btn-arrow'><ContinueArrow/></span>
+                                            <button className="buy-btn" onClick={(ev) => onConfirmOrder(ev, gig._id)}>Continue <span></span>
                                             </button>
                                         </footer>
                                     </div>
