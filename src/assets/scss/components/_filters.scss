@@ -12,6 +12,11 @@
             gap: 0px;
         }
 
+        .filters-only {
+            align-items: center;
+            gap: rem(16px);
+        }
+
         .filter-floating-menu {
             align-items: flex-start;
             // flex: 1 1 0;
@@ -19,8 +24,8 @@
             justify-content: space-between;
 
 
+
             .filter-menu-title {
-                color: $grey_900;
                 font-size: 16px;
                 font-weight: 600;
                 padding: 0;
@@ -30,9 +35,9 @@
                 padding: 6px 15px;
                 border: 1px solid $grey_500;
                 border-radius: 4px;
-                color: $grey_900;
                 cursor: pointer;
                 font-weight: 600;
+                color: $grey_1100;
 
                 &.open {
                     min-width: 5.75rem;
@@ -74,22 +79,23 @@
 
             .pre-title {
                 margin-right: rem(10px);
+                font-weight: 500;
 
                 .sort-gigs-list {
-                        color: $grey_1000;
-                        // align-items: center;
-                        // justify-content: center;
-                        width: rem(120px) !important;
-                }
-            }
-
-            @include from-mobile-layout {
-                justify-self: flex-start;
-                position: relative;
-                right: 5%;
+                    color: $grey_1100;
+                    outline: none !important;
+                    border: none !important;
+                    width: rem(120px) !important;
             }
         }
+
+        @include from-mobile-layout {
+            justify-self: flex-start;
+            position: relative;
+            right: 5%;
+        }
     }
+}
 }
 
 .button-row {
