@@ -92,9 +92,6 @@
   padding-top: em(25px);
   padding-bottom: em(25px);
 
-  // margin: 0;
-
-
   .logo-search-container {
     display: flex;
     align-items: center;
@@ -143,18 +140,14 @@
   background-color: $white;
   z-index: 50;
   color: $grey_900;
- 
 }
 
 ul {
   margin: unset;
-  // color: $white;
 
   &.nav-list {
-    // margin: 0;
     display: flex;
     align-items: center;
-    // justify-content: center;
     gap: 20px;
     font-size: em(16px);
     font-weight: 600;
@@ -173,7 +166,6 @@ ul {
   width: 30px;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 10px;
 }
 
 .user-msg {
