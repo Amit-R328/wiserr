@@ -134,6 +134,31 @@
                 font-size: 14px;
                 margin-left: rem(8px);
             }
+
+            .gig-rate {
+                // border-bottom: 1px solid $grey_400;
+                display: flex;
+                align-items: center;
+                padding: 10px 12px;
+                font-size: 14px;
+          
+                &::before {
+                  content: "\f005";
+                //   font-size: rem(14px);
+                  font-family: awesome;
+                  color: #ffbe5b;
+                  letter-spacing: rem(5px);
+                }
+          
+                .avg-rate {
+                  color: #ffbe5b;
+                }
+                .rate-reviews-qty {
+                  color: #b5b6ba;
+                  display: inline-block;
+                  margin-right: rem(8px);
+                }
+              }
         }
 
         .sml-round-img {
