@@ -10,7 +10,6 @@
       img {
         aspect-ratio: 1 / 0.59;
         max-height: rem(194px);
-        // width: 100%;
         object-fit: cover;
       }
 
@@ -90,16 +89,13 @@
   }
 
   .info {
-    // height: rem(140px);
     display: flex;
     flex-direction: column;
-    // gap: rem(18px);
     justify-content: space-between;
     
     .seller-info {
       display: flex;
       align-items: center;
-      // padding: rem(16px) 0 0 rem(16px);
       padding: rem(10px) rem(12px);
       font-size: rem(14px);
       font-weight: 600;
@@ -123,8 +119,6 @@
       font-size: rem(16px);
       overflow-wrap: break-word;
       line-height: 20px;
-      // padding: 0 12px 5px;
-      // padding-left: rem(16px);
       padding: rem(10px) rem(16px);
       height: rem(54px);
       
@@ -138,7 +132,6 @@
       display: flex;
       align-items: center;
       padding: rem(10px) rem(16px);
-      // margin-top: rem(35px);
 
       &::before {
         content: "\f005";
@@ -167,17 +160,10 @@
   }
 
   .card-footer {
-    // height: 60px;
-    // height: rem(38px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // padding-right: 6px;
-    // border-left: 1px solid $grey_500;
-    // border-right: 1px solid $grey_500;
-    // border-bottom: 1px solid $grey_500;
     padding: 10px 12px;
-    // max-height: rem(60px);
 
     .fav-btn {
       border: none;
