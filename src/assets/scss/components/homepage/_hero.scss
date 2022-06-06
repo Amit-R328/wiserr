@@ -1,8 +1,4 @@
-.hero {
-
     .hero-container {
-        // overflow-x: hidden;
-
         display: grid;
         grid-template-rows: 517px;
         grid-template-columns: 1fr;
@@ -59,7 +55,6 @@
         }
 
         .search-hero {
-            // width: em(300px);
             height: rem(48px);
             aspect-ratio: 1 / 0.079;
             border-radius: 4px 0 0 4px;
@@ -107,7 +102,6 @@
 
         }
     }
-}
 
 
 // @media (max-width: 425px) {

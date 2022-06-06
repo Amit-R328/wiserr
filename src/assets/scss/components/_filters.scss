@@ -2,19 +2,14 @@
     width: 100%;
     margin-top: 1.3em;
 
-
     .filter-shadow-effect {
         justify-content: space-between;
         align-items: center;
         gap: 20px;
-        // visibility: hidden;
-        // overflow: hidden;
-        
+
         &.open {
             gap: 0px;
             z-index: 160;
-            // visibility: visible;
-            // overflow: visible;
         }
 
         .filters-only {
@@ -24,7 +19,6 @@
 
         .filter-floating-menu {
             align-items: flex-start;
-            // flex: 1 1 0;
             flex-wrap: wrap;
             justify-content: space-between;
             width: rem(150px);
@@ -43,10 +37,7 @@
                 white-space: nowrap;
 
                 &.open {
-                    // min-width: 5.75rem;
                     margin-right: 50%;
-                    // z-index: 10;
-                    // overflow: visible;
                 }
 
                 &::after {
@@ -70,7 +61,6 @@
         }
 
         .sort-by-container {
-            // width: rem(190px);
             font-size: 16px;
             line-height: 120%;
             font-weight: 700;
@@ -79,7 +69,7 @@
             align-items: center;
             justify-content: flex-end;
             z-index: 150;
-            
+
             .pre-title {
                 margin-right: rem(10px);
                 font-weight: 500;
@@ -88,31 +78,24 @@
     }
 }
 
-.button-row {
-    // align-items: center;
-    // justify-content: space-between;
-    // padding: 12px;
-    // gap: rem(6px);
-    
-    .close-btn {
-        // font-weight: 700;
-        font-size: 14px;
-        line-height: 22px;
-        border: none;
-        outline: none;
-        user-select: none;
-        padding: 6px 24px;
-        background-color: transparent;
-        cursor: pointer;
-    }
-    
-    .apply-filters-btn {
-        background-color: $wiserr_green;
-        padding: 4px 12px;
-        color: #fff;
-        border-radius: 4px;
-        border: none;
-    }
+.close-btn {
+    // font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    border: none;
+    outline: none;
+    user-select: none;
+    padding: 6px 24px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.apply-filters-btn {
+    background-color: $wiserr_green;
+    padding: 4px 12px;
+    color: #fff;
+    border-radius: 4px;
+    border: none;
 }
 
 .deliveryTime-filter {
@@ -120,19 +103,17 @@
     border: 1px solid $grey_500;
     padding: rem(20px) rem(40px);
     margin-top: 10px;
-    // visibility: hidden;
     white-space: nowrap;
     z-index: 5;
     background-color: $white;
     position: absolute;
     gap: rem(16px);
     font-size: rem(18px);
-    
+
     .input-wrapper {
         white-space: nowrap;
         gap: rem(18px);
-        // width: rem(50px);
-        
+
         input {
             width: 40px;
             font-size: rem(16px);
