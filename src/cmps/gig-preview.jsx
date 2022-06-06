@@ -11,19 +11,25 @@ import { loadUser } from "../store/actions/user.actions";
 import { orderService } from "../services/order.service";
 
 export const GigPreview = ({ gig, reviews }) => {
-    const price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+   
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
-    
+    let price = gig.price
+    let decNumber = 0
+
     let images
     if (gig) {
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
         })
+    
+        decNumber = (price - Math.floor(price))        
+        price = Math.floor(price)
     }
+
     const onGoToDetails = (ev) => {
         ev.stopPropagation()
         navigate(`/categories/${gig._id}`)
@@ -106,7 +112,7 @@ export const GigPreview = ({ gig, reviews }) => {
                 </div>
                 <div className="gig-price">
                     {/* <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4> */}
-                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>{price}</h4>
+                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>${price}<sup className="sup-price">{decNumber ? Math.floor(decNumber*100): " "}</sup></h4>
                 </div>
             </ footer>
         </li >

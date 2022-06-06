@@ -33,8 +33,7 @@ export const SellerDashboard = (props) => {
         }, 2000)
         dispatch(getLoggedinUser())
         let user = { type: 'seller', fullName: loggedInUser.userName }
-        dispatch(loadOrders(loggedInUser))
-
+        dispatch(loadOrders(loggedInUser))        
         setSocket()
     }, [])
 
@@ -63,8 +62,10 @@ export const SellerDashboard = (props) => {
         console.log('totalOrders', totalOrders)
         if(totalOrders) {            
             setTotalOrderAmount(totalOrders.toFixed(2),)
-            console.log('totalOrderAmount', totalOrderAmount)
+            //do not delete this console
+            console.log('totalOrderAmount', totalOrderAmount)            
             setQtyTotalOrders(orders.length)
+            //do not delete this console
             console.log('qtyTotalOrders', qtyTotalOrders)
             getMonthOrders()
             getYearOrders()
