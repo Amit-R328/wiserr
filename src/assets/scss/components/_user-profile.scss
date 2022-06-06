@@ -37,6 +37,15 @@
         width: fit-content;
         position: relative;
         top: 5%;
+        font-weight: 400;
+        
+        & span {
+            font-size: 20px;
+            color: $wiserr_green;
+            font-weight: 700;
+            padding: rem(10px);
+
+        }
     
     }
     .order-card {

@@ -106,15 +106,15 @@ export const SellerDashboard = (props) => {
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
                     <p className='seller-total-amount'>Total orders
-                    <hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
+                    <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'><span>{year}</span> orders<hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
+                    <p className='seller-total-amount'><span>{year}</span> orders<hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'>This month's orders<hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalMonthlyOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyMonthlyOrders}</p></p>
+                    <p className='seller-total-amount'>This month's orders<hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalMonthlyOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyMonthlyOrders}</p></p>
                 </div>
             </div>
 
@@ -124,7 +124,7 @@ export const SellerDashboard = (props) => {
                     <th className='orders-th'>Buyer</th>
                     <th className='orders-th'>Gig</th>
                     <th className='orders-th'>Delivery Date</th>
-                    <th className='orders-th'>Amount</th>
+                    <th className='orders-th'>Price</th>
                     <th className='orders-th'>Status</th>
                 </thead>
 
