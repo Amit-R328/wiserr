@@ -92,19 +92,31 @@ export const GigDetails = (props) => {
     }
 
     const onConfirmOrder = async (ev, gigId) => {
+  
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
+            onUpdateRewviewsQty(gigId)
+     
             console.log('orderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',order )
             socketService.emit('new order', order)
-            showSuccessMsg('Order was created')
+            showSuccessMsg('Order accepted')
 
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
             }, 2000);
         }
+    }
+
+    const onUpdateRewviewsQty = async (gigId)  => {
+        
+        if(gig.reviewsQty) gig.reviewsQty++
+        else gig. reviewsQty = 1
+        
+        let newGig = await dispatch(updateGig(gig))
+        // console.log('newGig', newGig)
     }
 
     let price = 0
@@ -159,7 +171,7 @@ export const GigDetails = (props) => {
     }
 
 
-
+    let reviewsQty = utilService.getRandomIntInclusive(50,1500)
     return (
         <React.Fragment>
             {/* <div className="app-header">
@@ -182,7 +194,7 @@ export const GigDetails = (props) => {
                                 <p className='owner-level'>{user.level ? user.level : 'Level 1 Seller '}&nbsp;| </p>
                                 <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue |` : ''}</p>
                                 <div className="gig-rate">
-                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviews.length})</p></div> :
+                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
                                 <div className="avg-rate">4.9</div>}
                             </div>
 
