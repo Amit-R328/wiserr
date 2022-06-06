@@ -30,6 +30,77 @@
         width: 57.42%;
         margin-top: rem(140px);
 
+        .breadcrumbs-container {
+            height: 40px;
+            flex: 1 1;
+            margin-top: rem(20px);
+
+            & ul.breadcrumbs {
+                list-style: none;
+                margin: 0;
+                padding: 0 0 15;
+
+                & li {
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: left;
+                    list-style: none;
+                    list-style-type: none;
+                    text-decoration: none;
+                    transition: color .2s;
+                    cursor: pointer;
+                    display: inline;
+
+                    & span {
+                        &::after {
+                            content: "\f105";
+                            font-family: awesome;
+                            margin: 0 rem(10px);
+                        }
+                    }
+
+                    & a {
+                        text-decoration: none;
+                        cursor: pointer;
+                        color: inherit;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        color: $grey_1000;
+
+                        &:hover {
+                            text-decoration-line: underline;
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            outline: none;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        & span.chevron-icon-right {
+                            background-color: initial;
+                            background-image: none;
+                            border-style: none;
+                            display: inline-block;
+                            fill: $grey_1000;
+                            height: 10px;
+                            list-style: none;
+                            margin: 0;
+                            padding: 0 5px;
+                            width: 10px;
+
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         .text-display {
             margin-top: 30px;
             padding-bottom: 16px;
@@ -70,7 +141,6 @@
             width: 30px;
             margin-right: rem(8px);
             // height: 30px;
-
         }
 
         .img-container {
@@ -98,8 +168,6 @@
             color: #62646A;
             white-space: pre-line;
             vertical-align: bottom;
-
-
         }
 
         .about-get {
@@ -292,7 +360,9 @@
             cursor: pointer;
 
             &:hover {
-            transform: scale(120%);
+                // transform: scale(105%);
+                -webkit-animation: kenburns-top 2s ease-in-out both;
+                animation: kenburns-top 2s ease-in-out both;
             }
         }
 
@@ -492,8 +562,9 @@
     position: relative;
     align-items: center;
     justify-content: center;
-
+    
     .gig-details-contact-seller {
+        background-color: $white;
         border: 1px solid $grey_1100;
         border-radius: 4px;
         color: $grey_1100;
@@ -532,5 +603,37 @@
             color: #fff;
             background: #74767e;
         }
+    }
+}
+
+@-webkit-keyframes kenburns-top {
+    0% {
+        -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+    }
+
+    100% {
+        -webkit-transform: scale(1.25) translateY(-15px);
+        transform: scale(1.25) translateY(-15px);
+        -webkit-transform-origin: top;
+        transform-origin: top;
+    }
+}
+
+@keyframes kenburns-top {
+    0% {
+        -webkit-transform: scale(1) translateY(0);
+        transform: scale(1) translateY(0);
+        -webkit-transform-origin: 50% 16%;
+        transform-origin: 50% 16%;
+    }
+
+    100% {
+        -webkit-transform: scale(1.25) translateY(-15px);
+        transform: scale(1.25) translateY(-15px);
+        -webkit-transform-origin: top;
+        transform-origin: top;
     }
 }

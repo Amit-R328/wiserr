@@ -40,7 +40,7 @@ export const GigReview = ({ review }) => {
                             <span className="review-rate">{review.stars}</span> */}
                         {/* </p> */}
                         <div className="user-country">
-                            <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`}></img>
+                            <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`} alt=""></img>
                             <p className="reviewer-userCountry">{review.userCountry}</p>
                         </div>
                     </div>

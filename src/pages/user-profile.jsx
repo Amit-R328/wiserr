@@ -50,7 +50,7 @@ export const UserProfile = () => {
                     {(orders.length) ?
                         <div className='user-profile-card'>
                             <div className='your-orders-container'>
-                                <h1>Total revenues: <span>{`${totalAmount}`}</span></h1>
+                                <h1>Total orders amount: <span>{`${totalAmount}`}</span></h1>
           
                             </div>
                             
@@ -59,7 +59,7 @@ export const UserProfile = () => {
                                 <img className='gig-img-profile' alt="" src={order.gig.imgUrl} />
                                 <div className='card-profile-info'>
                                     <h5>Seller: {order.seller.fullName}</h5>
-                                    <h5>Amont: {order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h5>
+                                    <h5>Amount: {order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h5>
                                     <h5>Status: <span style={{color: `${order.status === 'rejected' ? RED : order.status === 'completed' ? GREEN : order.status === 'approved' ? BLACK : GRAY}`}}>{order.status}</span></h5>                                    
                                     <h5>Created Date: {utilService.setDateTime(order.createdAt)}</h5>
                                     <h5>Delivery Date: {(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</h5>
