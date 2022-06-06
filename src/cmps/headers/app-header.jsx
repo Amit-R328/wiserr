@@ -5,7 +5,8 @@ import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
-import { NavCategories } from './nav--categories.jsx'
+import { NavCategories } from './nav-categories.jsx'
+import { NavDetails } from './nav-details.jsx'
 import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
@@ -22,13 +23,10 @@ export const AppHeader = (props) => {
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
-    console.log('pathname', pathname)
 
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
-
-    // let className = (window.scrollY > 200) ? 'white' : 'black'
 
     useEffect(() => {
         if(pathname === '/'){
@@ -43,8 +41,6 @@ export const AppHeader = (props) => {
         dispatch(logout())
         var flag = !profileMenu;
         setMenu(flag);
-        // setIsSignIn(false)
-        // setLoggedInUser(null)
     }
 
     const onToggleMenu = () => {
@@ -67,7 +63,6 @@ export const AppHeader = (props) => {
                 <div className="logo-search-container">
                     <button  onClick={onToggleSideMenu} className="hamburger-icon">
                         {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
-                        {/* <HamburgerMenu /> */}
                     </button>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
@@ -81,7 +76,6 @@ export const AppHeader = (props) => {
                 <ul className="nav-list clean-list" >
                     <li>
                         {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>: <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
-                        {/* {loggedInUser && <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>} */}
                     </li>
                     <li>
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
@@ -98,9 +92,12 @@ export const AppHeader = (props) => {
                 </ul>
             </div>
 
-            {(scrolled || (pathname !== '/'))  && <div className="bottom container">
+            {(scrolled || (pathname !== '/' && pathname !== '/categories/:gigId'))  && <div className="bottom container">
                 <NavCategories />
             </div>}
+            {/* {(scrolled || (pathname !== '/' && pathname === '/categories/:gigId'))  && <div className="nav-details container">
+                <NavDetails />
+            </div>} */}
         </header>
     )
 }

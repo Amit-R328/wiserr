@@ -17,6 +17,7 @@ export const GigPreview = ({ gig, reviews }) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
+    let [className, setClassName] = useState('')
 
     let images
     if (gig) {
@@ -24,11 +25,6 @@ export const GigPreview = ({ gig, reviews }) => {
             return { original: img, thumbnail: img }
         })
     }
-
-
-    // useEffect(() => {
-    //     const user = dispatch(loadUser(gig.owner._Id))        
-    // }, [])
 
 
     const onGoToDetails = (ev) => {
@@ -40,9 +36,10 @@ export const GigPreview = ({ gig, reviews }) => {
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
+            navigate(`/login`)
             // showSuccessMsg('Need go login')
         } else {
-            console.log('loggedInUser', loggedInUser)
+            // console.log('loggedInUser', loggedInUser)
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
@@ -53,16 +50,16 @@ export const GigPreview = ({ gig, reviews }) => {
             if (gig.likedByUsers) {
                 const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
                 //if the user already did like we delte him
-                if(liked.length) {
-                  
-                    let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)                  
-                    gig.likedByUsers.splice(idx,1)
+                if (liked.length) {
+                    let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)
+                    gig.likedByUsers.splice(idx, 1)
                     setLikedBy(false)
                
                  } else {
                      //else he insert into the collection
                      gig.likedByUsers.push(likedByUser)
                      setLikedBy(true)
+                     setClassName('liked')
                  }
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
@@ -70,13 +67,11 @@ export const GigPreview = ({ gig, reviews }) => {
             dispatch(updateGig(gig))
         }
     }
-
-    const getLikeByUser =() => {
-        return gig.likedByUsers.some(user => user._id === loggedInUser._id )
+    const getLikeByUser = () => {
+        return gig.likedByUsers.some(user => user._id === loggedInUser._id)
     }
 
-
-return (
+    return (
         <li className="gig-preview">
             <div className="gig-img-container">
                 <ImageGallery stopPropagation={true} showThumbnails={false} showPlayButton={false} items={images} />
@@ -84,9 +79,8 @@ return (
             <div className="info" onClick={onGoToDetails}>
                 <div className="seller-info">
                     <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="owner" />
-                    <div className="gig-preview-seller-detailes">
+                    <div className="gig-preview-seller-detailed">
                         <p className="owner-name">{gig.owner.fullName}</p>
-                        {/* <p className="owner-name">{user.level}</p> */}
                     </div>
                 </div>
 
@@ -94,18 +88,22 @@ return (
                     <p >{gig.title.substr(0, 40)}...</p>
                 </div>
                 <div className="gig-rate">
-                   {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc,review) =>  acc + (review.stars),0))/gig.reviews.length).toFixed(1)}</div> :
-                    <div className="avg-rate">4.9</div> }
+                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}</div> :
+                        <div className="avg-rate">4.9</div>}
                 </div>
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-                    <button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                   {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
+                    <button className={`fav-btn ${className}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
+                        
+                   {/* {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                  {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
+                  
                 </button>
                 </div>
                 <div className="gig-price">
-                    <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4>
+                    {/* <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4> */}
+                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>{price}</h4>
                 </div>
             </ footer>
         </li >

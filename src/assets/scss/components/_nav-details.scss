@@ -1,24 +1,23 @@
-// .bottom {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//     border-top: 1px solid $grey_400;
-//     border-bottom: 1px solid $grey_400;
-//     background-color: $white;
-//     z-index: 50;
-// }
+.nav-details {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $grey_400;
+  border-bottom: 1px solid $grey_400;
+  background-color: $white;
+  z-index: 50;
+  color: $grey_900;
+}
 
-.categories-menu-scroll {
+.details-menu-scroll {
     // padding: rem(10px) 0;
     visibility: visible;
     width: 100%;
     background-color: $white;
     position: relative;
     z-index: 150;
-    
 
     ul {
-        &.categories {
+        &.nav-details-sections {
             display: flex;
             flex-direction: row;
             justify-content: space-between;

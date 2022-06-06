@@ -1,6 +1,6 @@
 .profile-menu {
   position: absolute;
-  z-index: 200;
+  z-index: 9999;
   right: 0;
   background-color: $white;
   border: 1px solid #dbdbdb;
@@ -21,6 +21,7 @@
     border-bottom-color: $primary_600;
     background: 0 0;
     transform: translateX(-50%);
+    z-index: 9999;
 
     &::after {
       content: "";
@@ -64,4 +65,5 @@
 
 .profile-container {
   position: relative;
+  z-index: 9999;
 }
