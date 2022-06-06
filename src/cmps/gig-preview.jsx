@@ -16,11 +16,8 @@ export const GigPreview = ({ gig, reviews }) => {
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
-<<<<<<< HEAD
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
     let [className, setClassName] = useState('')
-=======
->>>>>>> 75e66f417fb57f0fb110abeaac6499a534f1cd01
 
     let images
     if (gig) {
@@ -42,10 +39,7 @@ export const GigPreview = ({ gig, reviews }) => {
             navigate(`/login`)
             // showSuccessMsg('Need go login')
         } else {
-<<<<<<< HEAD
             // console.log('loggedInUser', loggedInUser)
-=======
->>>>>>> 75e66f417fb57f0fb110abeaac6499a534f1cd01
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
@@ -60,7 +54,6 @@ export const GigPreview = ({ gig, reviews }) => {
                     let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)
                     gig.likedByUsers.splice(idx, 1)
                     setLikedBy(false)
-<<<<<<< HEAD
                
                  } else {
                      //else he insert into the collection
@@ -68,13 +61,6 @@ export const GigPreview = ({ gig, reviews }) => {
                      setLikedBy(true)
                      setClassName('liked')
                  }
-=======
-                } else {
-                    //else he insert into the collection
-                    gig.likedByUsers.push(likedByUser)
-                    setLikedBy(true)
-                }
->>>>>>> 75e66f417fb57f0fb110abeaac6499a534f1cd01
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
             }
@@ -84,8 +70,6 @@ export const GigPreview = ({ gig, reviews }) => {
     const getLikeByUser = () => {
         return gig.likedByUsers.some(user => user._id === loggedInUser._id)
     }
-
-    
 
     return (
         <li className="gig-preview">
@@ -110,19 +94,12 @@ export const GigPreview = ({ gig, reviews }) => {
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-<<<<<<< HEAD
                     <button className={`fav-btn ${className}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
                         
                    {/* {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
                   {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
                   
                 </button>
-=======
-                    <button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                        {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
-                        <div className={loggedInUser && getLikeByUser() ? 'like' : <span></span>}></div>
-                    </button>
->>>>>>> 75e66f417fb57f0fb110abeaac6499a534f1cd01
                 </div>
                 <div className="gig-price">
                     {/* <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4> */}
