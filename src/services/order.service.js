@@ -66,8 +66,8 @@ async function query(loggedInUser, typeOf){
     
        orders = orders.sort((a,b) => b.createdAt - a.createdAt)
        
+       console.log('order', orders)
         return orders
-    // console.log('order', orders)
 }
 
 async function saveOrder(gigId, loggedinUser){
