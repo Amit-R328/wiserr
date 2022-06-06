@@ -23,7 +23,6 @@ export const SellerDashboard = (props) => {
      const BLACK = '#404145'
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
-    console.log('**************************', orders)
     const dispatch = useDispatch()
     const [order, setOrder] = useState('pending')
     const [loader, setLoader] = useState(true)
@@ -33,7 +32,6 @@ export const SellerDashboard = (props) => {
             setLoader(false)
         }, 2000)
         dispatch(getLoggedinUser())
-        let user = {type: 'seller', fullName: loggedInUser.userName}
         dispatch(loadOrders(loggedInUser))        
         setSocket()
     }, [])
@@ -42,7 +40,6 @@ export const SellerDashboard = (props) => {
     const onAddOrder = async (order) => {
         order.createdAt = Date.now()
         let seller = await userService.getById(order.buyer._id)
-        console.log('%%%%%%%%%%%%%%%%%%', seller)
         dispatch(addOrder(order.gig._id,seller))
     }
     
@@ -58,14 +55,10 @@ export const SellerDashboard = (props) => {
         dispatch(onUpdateOrder(order))
     }  
 
-    useEffect(() => {
-        // console.log('orders',orders )
-       
+    useEffect(() => {       
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
-        
         setTotalOrderAmount(totalOrders.toFixed(2))        
         setQtyTotalOrders(orders.length)
-
         getMonthOrders()
         getYearOrders()
                
