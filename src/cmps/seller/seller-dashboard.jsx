@@ -32,10 +32,11 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setLoader(false)
-        }, 2000)
+        }, 5000)
         dispatch(getLoggedinUser())
         let user = { type: 'seller', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser))        
+        calcTotals()
         setSocket()
     }, [])
 
@@ -59,11 +60,15 @@ export const SellerDashboard = (props) => {
         dispatch(onUpdateOrder(order))
     }
 
-    useEffect(() => {
+    const calcTotals = () => {
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
         console.log('totalOrders', totalOrders)
         if (totalOrders) {
+            //do not delete this console
+            
             setTotalOrderAmount(totalOrders.toFixed(2),)
+            console.log('totalOrders', totalOrders)
+            console.log('setTotalOrderAmount', setTotalOrderAmount)
             //do not delete this console
             console.log('totalOrderAmount', totalOrderAmount)            
             setQtyTotalOrders(orders.length)
@@ -72,7 +77,7 @@ export const SellerDashboard = (props) => {
             getMonthOrders()
             getYearOrders()
         }
-    }, [])
+    }
 
     const getMonthOrders = () => {
         const thisMonth = (new Date()).getMonth()
