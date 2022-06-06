@@ -27,11 +27,11 @@
             // flex: 1 1 0;
             flex-wrap: wrap;
             justify-content: space-between;
+            width: rem(150px);
 
             .filter-menu-title {
                 font-size: 16px;
                 font-weight: 600;
-                padding: 0;
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 transition: border-color .12s cubic-bezier(.215, .61, .355, 1);
                 padding: 6px 15px;
@@ -40,11 +40,12 @@
                 cursor: pointer;
                 font-weight: 600;
                 color: $grey_1100;
+                white-space: nowrap;
 
                 &.open {
-                    min-width: 5.75rem;
+                    // min-width: 5.75rem;
                     margin-right: 50%;
-                    z-index: 10;
+                    // z-index: 10;
                     // overflow: visible;
                 }
 
@@ -78,7 +79,7 @@
             align-items: center;
             justify-content: flex-end;
             z-index: 150;
-
+            
             .pre-title {
                 margin-right: rem(10px);
                 font-weight: 500;
@@ -92,7 +93,7 @@
     // justify-content: space-between;
     // padding: 12px;
     // gap: rem(6px);
-
+    
     .close-btn {
         // font-weight: 700;
         font-size: 14px;
@@ -104,7 +105,7 @@
         background-color: transparent;
         cursor: pointer;
     }
-
+    
     .apply-filters-btn {
         background-color: $wiserr_green;
         padding: 4px 12px;
@@ -117,28 +118,37 @@
 .deliveryTime-filter {
     flex-direction: column;
     border: 1px solid $grey_500;
-    padding: 20px;
+    padding: rem(20px) rem(40px);
     margin-top: 10px;
     // visibility: hidden;
+    white-space: nowrap;
+    z-index: 5;
+    background-color: $white;
+    position: absolute;
+    gap: rem(16px);
+    font-size: rem(18px);
     
-
     .input-wrapper {
-        gap: 8px;
-
+        white-space: nowrap;
+        gap: rem(18px);
+        // width: rem(50px);
+        
         input {
-            max-width: 20px;
+            width: 40px;
+            font-size: rem(16px);
+            padding: rem(4px) rem(32px);
         }
     }
 
     .btn-deliveryTime {
-        margin-top: 10px;
+        margin-top: rem(10px);
         display: flex;
         justify-content: space-between;
 
         .apply-filters-btn {
             background-color: $wiserr_green;
             color: #fff;
-            padding: 4px 12px;
+            padding: rem(8px) rem(18px);
             border-radius: 4px;
             border: none;
         }
@@ -146,7 +156,8 @@
         .close-btn {
             border: none;
             background-color: transparent;
-
+            font-size: rem(18px);
+            color: $grey_800;
         }
     }
 }

@@ -1,55 +1,62 @@
-.footer-bottom {
-    // margin: 20px 76px 0 76px;
-    margin-top: rem(60px);
-    padding: rem(20px) 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    color: $grey_1000;
-    font-weight: 400;
-    font-size: 16px;
+.footer-container {
     border-top: 1px solid $grey_500;
+    width: 100%;
+    max-height: rem(75px);
+    position: absolute;
+    margin-top: rem(60px);
 
-    .footer-left {
+    
+    .footer-bottom {
+        // margin: 20px 76px 0 76px;
+        padding: rem(20px) 0;
+        display: flex;
         align-items: center;
-
-        .legal-text {
-            margin-left: 30px;
-            color: $grey_1000;
-            margin-top: rem(5px);
+        flex-wrap: wrap;
+        justify-content: space-between;
+        color: $grey_1000;
+        font-weight: 400;
+        font-size: 16px;
+        // bottom: 0;
+        .footer-left {
             align-items: center;
-
-            .copyright-icon {
-                margin-right: rem(2px);
+            
+            .legal-text {
+                margin-left: 30px;
+                color: $grey_1000;
+                margin-top: rem(5px);
+                align-items: center;
+                
+                .copyright-icon {
+                    margin-right: rem(2px);
+                }
+            }
+        }
+        
+        .social-container {
+            justify-content: space-between;
+            // width: 7.5rem;
+            gap: 20px;
+            
+            li:hover {
+                opacity: 0.8;
+                cursor: pointer;
             }
         }
     }
-
-    .social-container {
-        justify-content: space-between;
-        // width: 7.5rem;
-        gap: 20px;
-
-        li:hover {
-            opacity: 0.8;
-            cursor: pointer;
+    
+    @media (max-width: 425px) {
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            // left: 11%;
         }
     }
-}
-
-@media (max-width: 425px) {
-    .footer-bottom {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        // left: 11%;
-    }
-}
-@media (max-width: 744px) {
-    .footer-bottom {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        gap: 15px;
+    @media (max-width: 744px) {
+        .footer-bottom {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 15px;
+        }
     }
 }

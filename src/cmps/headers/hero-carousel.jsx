@@ -30,19 +30,19 @@ export function HeroCarousel(props) {
     <div className="hero-container">
       <div className='background-images'>
         <div className={`background ${backClass1}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png" alt="" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/RitikaN_ykznwx.jpg" alt="Ritika" />
         </div>
         <div className={`background ${backClass2}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png" alt="" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/AndreaZ_jatehm.jpg" alt="Andrea" />
         </div>
         <div className={`background ${backClass3}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png" alt="" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/GabrielleN_svkqno.jpg" alt="Gabrielle" />
         </div>
         <div className={`background ${backClass4}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png" alt="" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/moonZ_qqzcge.jpg" alt="moon" />
         </div>
         <div className={`background ${backClass5}`}>
-          <img className='hero-pic' src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png" alt="" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/ZachN_m3pq3u.jpg" alt="Zach" />
         </div>
       </div>
       <div className="hero-content-container container">
@@ -61,13 +61,13 @@ export function HeroCarousel(props) {
           {/* <HeroPopularCategory /> */}
         </div>
 
-        <div className="seller-name">
+        {/* <div className="seller-name">
           <span className={`seller ${backClass1}`}>Andrea, <span className='seller-skill'>Fashion Designer</span></span>
           <span className={`seller ${backClass2}`}>Moon, <span className='seller-skill'>Marketing Expert</span></span>
           <span className={`seller ${backClass3}`}>Ritika, <span className='seller-skill'>Shoemaker And Designer</span></span>
           <span className={`seller ${backClass4}`}>Zach, <span className='seller-skill'>Bar Owner</span></span>
           <span className={`seller ${backClass5}`}>Gabrielle, <span className='seller-skill'>Video Editor</span></span>
-        </div>
+        </div> */}
       </div>
     </div >
   )

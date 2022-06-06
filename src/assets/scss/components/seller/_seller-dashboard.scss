@@ -1,5 +1,7 @@
 .seller-dashboard-container {
     padding-top: 120px;
+    min-height: calc(100vh - 75px); 
+    width: 100%;
 
     
     .orders-table {
