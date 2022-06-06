@@ -50,7 +50,7 @@ export const UserProfile = () => {
                     {(orders.length) ?
                         <div className='user-profile-card'>
                             <div className='your-orders-container'>
-                                <h1>Total orders amount: {`${totalAmount}`} </h1>
+                                <h1>Total revenues: <span>{`${totalAmount}`}</span></h1>
           
                             </div>
                             

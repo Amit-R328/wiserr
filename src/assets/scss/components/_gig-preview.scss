@@ -153,26 +153,27 @@
         font-size: rem(18px);
         color: $grey_700;
       }
-
+      
       &.like {
-                
+        
         &::after {
-        color: #f74040;
-       
+          color: #f74040;
+          
+        }
+        
       }
-
-      }
-
+      
     }
-
+    
     .gig-price {
       color: $grey_900;
       
       .gig-amount {
         text-align: right;
         padding: rem(5px);
-        font-size: rem(20px);
-        font-weight: 500;
+        font-size: rem(18px);
+        font-weight: 400;
+        color: $grey_1100;
       }
       .sup-price {
         font-size: rem(16px);
@@ -183,9 +184,10 @@
         font-size: rem(10px);
         text-transform: uppercase;
       }
-
+      
       .gig-price-title {
-        font-size: 9px;
+        font-size: rem(10px);
+        font-weight: 700;
       }
     }
 
