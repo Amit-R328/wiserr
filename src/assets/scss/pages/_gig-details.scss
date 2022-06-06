@@ -569,13 +569,13 @@
         border-radius: 4px;
         color: $grey_1100;
         font-size: 16px;
-        font-weight: 600;
+        font-weight: 500;
         margin: 0;
-        padding: 10px 12px;
+        padding: 10px 24px;
         text-align: center;
         text-decoration: none;
         transition: all 70ms cubic-bezier(.75, 0, .25, 1);
-        width: 85%;
+        width: 87%;
 
         &:focus {
             outline: none;
