@@ -171,12 +171,13 @@ export const GigDetails = (props) => {
             <section className="gig-details-container container">
                 <div className="gig-details">
                     <div className="left-container">
-                    <section className="breadcrumbs-container flex">
-                    <ul className="breadcrumbs">
-                        {(filterBy.category) ? <li><a href="/categories"><span>Wiserr</span>{filterBy.category}</a>
-                        </li> : <li><span>Wiserr</span>All</li>}
-                    </ul>
-                </section>
+                        <section className="breadcrumbs-container flex">
+                            <ul className="breadcrumbs">
+                                <li>
+                                    <a href="/categories"><span>Wiserr</span>{gig.category}</a>
+                                </li>
+                            </ul>
+                        </section>
                         <section className="gig-info">
                             <h1 className="text-display">{gig.title}</h1>
                             <div className="owner-details owner-container" >
@@ -207,8 +208,8 @@ export const GigDetails = (props) => {
                                 <div className="owner-card">
                                     <img className="md-round-img" src={`${gig.owner.imgUrl}`} alt="" />
                                     <div className="owner-card-right">
-                                        <p className="gig-detailes-owner-name">{gig.owner.fullName}</p>
-                                        {gig.owner.tagline && <p className="gig-detailes-owner-tagline">{gig.owner.tagline}</p>}
+                                        <p className="gig-details-owner-name">{gig.owner.fullName}</p>
+                                        {gig.owner.tagline && <p className="gig-details-owner-tagline">{gig.owner.tagline}</p>}
                                         <p><i className="fa fa-star filled">
                                             <i className="fa fa-star filled">
                                                 <i className="fa fa-star filled">

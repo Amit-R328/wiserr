@@ -20,7 +20,7 @@ export const GigReview = ({ review }) => {
                 <div className="flex">
                  
                     <img className="sml-review-img" src={review.userImage} alt="" />
-                    <div className="review-owner-detailes">
+                    <div className="review-owner-details">
                         <div className="name-and-stars">
                             <p className="reviewer-name">{review.userName}</p>
                         {/* <div className="gig-rate ">{review.stars}</div> */}
