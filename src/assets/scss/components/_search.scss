@@ -1,15 +1,46 @@
 form.search-bar {
   display: flex;
 
+
+  & .search-header {
+    border-radius: 3px;
+    border: 1px solid $grey_500;
+    box-shadow: none;
+    padding: 6px 6px 6px 24px;
+    margin-left: 24px;
+    min-width: 311px;
+  }
+    & .search-input {
+      border-radius: 3px 0 0 3px;
+      border-right: 0;
+      padding-top: 8px;
+      border-color: $grey_500;
+      color: $grey_1100;
+      padding: 7px 7px 7px 28px;
+      font-size: rem(15px);
+
+    }
+      & .search-header-btn {
+        font-size: 15px;
+        padding: 8px 16px;
+        background-color: $wiserr_green;
+        border: 1px solid transparent;
+        color: $white;
+        border-radius: 0 3px 3px 0;
+        font-weight: 700;
+      }
+
   .search-container {
     position: relative;
-    
+
     & label {
-      &:after{
+
+      &:before {
         content: "\f3ee";
         color: $grey_1100;
-        padding-top:rem(5px);
+        padding-top: rem(5px);
         padding-left: rem(5px);
+        margin-left: rem(24px);
         font-family: awesome brands;
         position: absolute;
         display: inline-block;
@@ -18,20 +49,20 @@ form.search-bar {
         top: 4px;
       }
     }
-    
+
     input {
       flex-basis: 1;
-      
+      padding: 8px 34px;
+
       .search-input {
         border: 1px solid $grey_600;
         color: $grey_1100;
-        padding: 4px 50px 2px 36px;
         border-radius: 3px 0 0 3px;
         border-right: 0;
         display: relative;
       }
     }
-    
+
     .search-btn {
       border: none;
       margin-left: -53px;
@@ -44,32 +75,4 @@ form.search-bar {
       font-style: bold;
     }
   }
-}
-
-.search-header {
-  border-radius: 3px;
-  border:1px solid $grey_500;
-  box-shadow: none;
-  padding: 6px 6px 6px 24px;
-  width: 193px;
-}
-
-.search-input {
-  border-radius: 3px 0 0 3px;
-  border-right: 0;
-  padding-top: 8px;
-  border-color: $grey_500;
-  color: $grey_1100;
-  padding: 7px 7px 7px 28px;
-  font-size: 14px;
-}
-
-.search-header-btn{
-  font-size: 14px;
-  padding: 8px 16px;
-  background-color: $wiserr_green;
-  border: 1px solid transparent;
-  color: $white;
-  border-radius: 0 3px 3px 0;
-  font-weight: 700;
 }
