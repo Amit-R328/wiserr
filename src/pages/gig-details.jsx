@@ -81,9 +81,9 @@ export const GigDetails = (props) => {
         }
     }
 
-    const onGoBack = () => {
-        props.history.push('/categories')
-    }
+    // const onGoBack = () => {
+    //     props.history.push('/categories')
+    // }
 
     if (!gig) return <h1>Loading</h1>
     let whatYouGet
