@@ -21,10 +21,14 @@ export const GigReview = ({ review }) => {
                  
                     <img className="sml-review-img" src={review.userImage} alt="" />
                     <div className="review-owner-detailes">
-                        <p className="reviewer-name">{review.userName}</p>
-                    
+                        <div className="name-and-stars">
+                            <p className="reviewer-name">{review.userName}</p>
+                        {/* <div className="gig-rate ">{review.stars}</div> */}
+                            <div className="gig-rate gig-review-rate">
+                                {review.stars && <div className="avg-rate">{review.stars}</div> }                   
+                            </div>
                         {/* <br></br> */}
-                        
+                        </div>
                         <div className="rating">
                             {/* <span>
                                 <RatingValue handleRatingChange={handleRatingChange} reviewId={review._Id} />
