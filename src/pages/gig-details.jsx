@@ -180,7 +180,12 @@ export const GigDetails = (props) => {
                                 <img className="sml-round-img" src={`${gig.owner.imgUrl}`} alt="" /> &nbsp;
                                 <p className="owner-name">&nbsp;{gig.owner.fullName} &nbsp;</p>
                                 <p className='owner-level'>{user.level ? user.level : 'Level 1 Seller '}&nbsp;| </p>
-                                <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue` : ''}</p>
+                                <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue |` : ''}</p>
+                                <div className="gig-rate">
+                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviews.length})</p></div> :
+                                <div className="avg-rate">4.9</div>}
+                            </div>
+
                             </div>
                             <div className="gig-details-img-container">
                                 <ImageGallery showThumbnails={false} showPlayButton={false} items={images} />
