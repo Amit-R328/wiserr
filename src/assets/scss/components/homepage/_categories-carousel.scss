@@ -1,6 +1,6 @@
 .gig-slider-container {
     // color: $grey_1000;
-    margin-top: rem(60px);
+    margin-top: rem(100px);
     margin-bottom: rem(60px);
 
     & h2 {
@@ -9,6 +9,7 @@
         font-size: rem(32px);
         line-height: 120%;
         font-weight: 700;
+        letter-spacing: rem(1.3px);
     }
 
     .slider-container {

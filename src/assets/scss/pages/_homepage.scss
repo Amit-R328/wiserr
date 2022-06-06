@@ -1,8 +1,12 @@
 .trusted-by-brands {
   margin-top: rem(163px);
   background-color: $grey_200;
+  height: rem(95px);
   color: $grey_800;
   z-index: -5;
+  align-items: center;
+  justify-content: center;
+
 
   .brands-container {
     align-items: center;
