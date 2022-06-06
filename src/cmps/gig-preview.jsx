@@ -11,21 +11,24 @@ import { loadUser } from "../store/actions/user.actions";
 import { orderService } from "../services/order.service";
 
 export const GigPreview = ({ gig, reviews }) => {
-    const price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
+   
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
-    let [className, setClassName] = useState('')
+    let price = gig.price
+    let decNumber = 0
 
     let images
     if (gig) {
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
         })
+    
+        decNumber = (price - Math.floor(price))        
+        price = Math.floor(price)
     }
-
 
     const onGoToDetails = (ev) => {
         ev.stopPropagation()
@@ -33,6 +36,7 @@ export const GigPreview = ({ gig, reviews }) => {
     }
 
     const ToggleHeart = (ev, likedBy) => {
+        console.log('likedBy', likedBy)
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
@@ -47,9 +51,11 @@ export const GigPreview = ({ gig, reviews }) => {
             }
 
             //if theres is liked byUsers
+            console.log('gig',gig )
             if (gig.likedByUsers) {
                 const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
                 //if the user already did like we delte him
+                console.log('liked.length', liked)
                 if (liked.length) {
                     let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)
                     gig.likedByUsers.splice(idx, 1)
@@ -59,11 +65,13 @@ export const GigPreview = ({ gig, reviews }) => {
                      //else he insert into the collection
                      gig.likedByUsers.push(likedByUser)
                      setLikedBy(true)
-                     setClassName('liked')
+                     console.log('likedBy', likedBy)
+                    //  setClassName('liked')
                  }
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
             }
+            console.log('likedBy',likedBy )
             dispatch(updateGig(gig))
         }
     }
@@ -94,16 +102,17 @@ export const GigPreview = ({ gig, reviews }) => {
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-                    <button className={`fav-btn ${className}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
+                    <button className={`fav-btn ${loggedInUser && getLikeByUser() ? 'like': ''}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
                         
-                   {/* {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                    {/* {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                   {/* {loggedInUser && likedBy ? 'like': '' } */}
                   {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
                   
                 </button>
                 </div>
                 <div className="gig-price">
                     {/* <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4> */}
-                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>{price}</h4>
+                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>${price}<sup className="sup-price">{decNumber ? Math.floor(decNumber*100): " "}</sup></h4>
                 </div>
             </ footer>
         </li >

@@ -26,6 +26,23 @@
             right: -30px;
             transition: right 0.3s ease-in-out;
           }
+
+          &[disabled] {
+            cursor: disabled;
+            opacity: .6;
+            pointer-events: none;
+          }
+        }
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: $grey_1000;
+          }
+        }
+
+        &:focus {
+          // a11y support
+          outline: none;
         }
       }
 
@@ -34,7 +51,7 @@
 
         &:first-of-type {
           left: -52px;
-          
+
           svg {
             width: 40px !important;
             height: 30px !important;
@@ -49,7 +66,7 @@
 
         &:nth-of-type(2) {
           right: -52px;
-          
+
           svg {
             width: 40px !important;
             height: 30px !important;
@@ -61,7 +78,6 @@
             padding-right: 15px;
           }
         }
-
       }
 
       button.image-gallery-fullscreen-button {
@@ -134,7 +150,7 @@
     // height: 60px;
     max-height: 60px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
     // padding-right: 6px;
     border-left: 1px solid $grey_500;
@@ -152,8 +168,11 @@
         font-family: awesome;
         font-size: rem(18px);
         color: $grey_700;
+      }
 
-        & .liked {
+      &.like {
+
+        &::after {
           color: #f74040;
 
         }
@@ -164,21 +183,28 @@
 
     .gig-price {
       color: $grey_900;
-      
+
       .gig-amount {
         text-align: right;
         padding: rem(5px);
-        font-size: rem(20px);
-        font-weight: 500;
+        font-size: rem(18px);
+        font-weight: 400;
+        color: $grey_1100;
       }
-      
+
+      .sup-price {
+        font-size: rem(16px);
+        margin-left: rem(2px);
+      }
+
       .price-text {
         font-size: rem(10px);
         text-transform: uppercase;
       }
 
       .gig-price-title {
-        font-size: 9px;
+        font-size: rem(10px);
+        font-weight: 700;
       }
     }
 

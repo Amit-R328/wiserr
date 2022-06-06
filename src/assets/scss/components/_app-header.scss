@@ -142,9 +142,6 @@
  
 }
 
-
-
-
 ul {
   margin: unset;
   // color: $white;
@@ -185,7 +182,7 @@ ul {
   background-color: grey;
   border: 1px solid transparent;
   border-radius: 4px;
-  z-index: 200;
+  z-index: 2000;
 }
 
 .user-msg button {

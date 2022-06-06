@@ -20,7 +20,7 @@ export const GigReview = ({ review }) => {
                 <div className="flex">
                  
                     <img className="sml-review-img" src={review.userImage} alt="" />
-                    <div className="review-owner-detailes">
+                    <div className="review-owner-details">
                         <div className="name-and-stars">
                             <p className="reviewer-name">{review.userName}</p>
                         {/* <div className="gig-rate ">{review.stars}</div> */}
@@ -40,7 +40,7 @@ export const GigReview = ({ review }) => {
                             <span className="review-rate">{review.stars}</span> */}
                         {/* </p> */}
                         <div className="user-country">
-                            <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`}></img>
+                            <img className="country-flag" src={`https://countryflagsapi.com/png/${review.userCountry}`} alt=""></img>
                             <p className="reviewer-userCountry">{review.userCountry}</p>
                         </div>
                     </div>

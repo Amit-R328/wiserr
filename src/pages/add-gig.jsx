@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { saveGig } from '../store/actions/gig.actions'
 import { cloudinaryService } from '../services/cloudinary.service.js'
-import { userService} from '../services/user.service.js'
-import { LogoFull } from '../services/svg.service.js'
+import { userService } from '../services/user.service.js'
+// import { LogoFull } from '../services/svg.service.js'
 
 class _AddGigDetails extends React.Component {
     state = {
@@ -83,10 +83,10 @@ class _AddGigDetails extends React.Component {
     render() {
         const { gigInfo, isImg } = this.state
         return (
-                <main className="header-container container">
-                    {/* <div className="header-row"> */}
-                        {/* <LogoFull /> */}
-                    {/* </div>  */}
+            <main className="header-container container">
+                {/* <div className="header-row"> */}
+                {/* <LogoFull /> */}
+                {/* </div>  */}
                 {/* </div> */}
                 <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">
@@ -109,136 +109,136 @@ class _AddGigDetails extends React.Component {
                 </div>
 
                 {/* <div className="main-content-container"> */}
-                    <section className="add-gig-container">
-                        <div className="gig-details">
+                <section className="add-gig-container">
+                    <div className="gig-details">
 
-                            <section className="add-gig">
-                                <form className="gig-form" onSubmit={this.handleSubmit}>
+                        <section className="add-gig">
+                            <form className="gig-form" onSubmit={this.handleSubmit}>
 
-                                    <div className="gig-details-header"><h2>Gig Info</h2>
-                                        <p>Tell us a bit about yourself. This information will appear on your public profile,<br></br>so that potential buyers can get to know you better.</p>
+                                <div className="gig-details-header"><h2>Gig Info</h2>
+                                    <p>Tell us a bit about yourself. This information will appear on your public profile,<br></br>so that potential buyers can get to know you better.</p>
+                                </div>
+
+                                <div className="gig-image-upload">
+                                    <aside className="">
+                                        <h3>
+                                            <span className="add-gig-titles">Picture (optional)</span>
+                                            <div className="popup-text">Add pictures of your gig so customers will know exactly what they'll be getting.</div>
+                                        </h3>
+                                    </aside>
+
+                                    <div className="img-content">
+                                        <section className="gig-photos">
+                                            <label className='file-img' />
+                                            {!isImg ? <span className="missing-gig-image"></span> : <img src={`${gigInfo.imgUrl}`} alt="" />}
+
+                                            <input className='file-input' accept="image/png,image/jpeg" type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
+                                        </section>
                                     </div>
+                                </div>
 
-                                    <div className="gig-image-upload">
-                                        <aside className="">
-                                            <h3>
-                                                <span className="add-gig-titles">Picture (optional)</span>
-                                                <div className="popup-text">Add pictures of your gig so customers will know exactly what they'll be getting.</div>
-                                            </h3>
-                                        </aside>
-
-                                        <div className="img-content">
-                                            <section className="gig-photos">
-                                                <label className='file-img' />
-                                                {!isImg ? <span className="missing-gig-image"></span> : <img src={`${gigInfo.imgUrl}`} alt="" />}
-
-                                                <input className='file-input' accept="image/png,image/jpeg" type={'file'} name="imgUrl" value={''} onChange={this.handleChange} />
-                                            </section>
-                                        </div>
-                                    </div>
-
-                                    <div className="add-gig-titles">
-                                        <p className="add-gig-labels">Gig Title</p>
-                                        <label>
+                                <div className="add-gig-titles">
+                                    <p className="add-gig-labels">Gig Title</p>
+                                    <label>
                                         {/* <input clasName="add-gig-input" type="text"  required name="gigTitle" placeholder='' value={gigInfo.gigTitle} onChange={this.handleChange} /> */}
                                         <textarea maxLength="600" minLength="15" rows={5} cols={50} id='title' placeholder="I will..." value={gigInfo.gigTitle} onChange={this.handleChange} >
-                                                </textarea></label>
-                                    </div>
+                                        </textarea></label>
+                                </div>
 
-                                    <div id="description" className="onboarding-field is-required">
-                                        {/* <aside className="">
+                                <div id="description" className="onboarding-field is-required">
+                                    {/* <aside className="">
                                             <h3 className="add-gig-titles">
                                                 <span className="add-gig-titles">Description</span>
                                             </h3>
                                         </aside> */}
-                              
-                                        <br></br>
-                                        {/* <div className="field-content"><div className="inner-row description"> */}
-                                            <div className="add-gig-titles">
-                                            <p className="add-gig-labels">Description (min. 15 characters)</p>
-                                            <label className="description">
-                                                <textarea maxLength="600" minLength="15" rows={5} cols={50} placeholder="Share a bit about the gig, cool related, and your area of expertise.">
-                                                </textarea></label>
-                                            
-                                            {/* <div className="footer">
+
+                                    <br></br>
+                                    {/* <div className="field-content"><div className="inner-row description"> */}
+                                    <div className="add-gig-titles">
+                                        <p className="add-gig-labels">Description (min. 15 characters)</p>
+                                        <label className="description">
+                                            <textarea maxLength="600" minLength="15" rows={5} cols={50} placeholder="Share a bit about the gig, cool related, and your area of expertise.">
+                                            </textarea></label>
+
+                                        {/* <div className="footer">
                                                 <span className="">min. 15 characters</span><span className="char-count">0 / 600</span>
                                             </div> */}
-                                            {/* </div> */}
-                                        </div>
                                         {/* </div> */}
                                     </div>
-                                    <br></br>
-                                    <div className='add-gig-titles'>
-                                        <p className="add-gig-labels">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
-                                        <label className="description">
-                                            <textarea  maxLength="600" minLength="15" rows={5} cols={50} className='desc' required type={'txt'} name='gigDescription' value={gigInfo.gigDescription} onChange={this.handleChange}>
-                                            </textarea></label>
-                                    </div>
-                                    <br></br>
+                                    {/* </div> */}
+                                </div>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <p className="add-gig-labels">Tell us a bit about yourself. This information will appear on your public profile, so that potential buyers can get to know you better.</p>
+                                    <label className="description">
+                                        <textarea maxLength="600" minLength="15" rows={5} cols={50} className='desc' required type={'txt'} name='gigDescription' value={gigInfo.gigDescription} onChange={this.handleChange}>
+                                        </textarea></label>
+                                </div>
+                                <br></br>
 
-                                    <div className='add-gig-titles'>
-                                      <p className='add-gig-labels'>Tell your potential buyers why they should choose you</p>
-                                      <label className="description">
-                                         <textarea name='whyUs' maxLength="600" minLength="15" rows={5} cols={50} value={gigInfo.whyUs} onChange={this.handleChange}></textarea>
-                                        </label>
-                                     </div>
+                                <div className='add-gig-titles'>
+                                    <p className='add-gig-labels'>Tell your potential buyers why they should choose you</p>
+                                    <label className="description">
+                                        <textarea name='whyUs' maxLength="600" minLength="15" rows={5} cols={50} value={gigInfo.whyUs} onChange={this.handleChange}></textarea>
+                                    </label>
+                                </div>
 
-                                     <br></br>
-                                     <div className='add-gig-titles'>
-                                        <p className='add-gig-labels'>Tell your potential buyers what will they get</p>
-                                        <label className="description">
-                                            <textarea name='whatDoYouGet'maxLength="600" minLength="15" rows={5} cols={50} value={gigInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
-                                        </label>
-                                    </div>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <p className='add-gig-labels'>Tell your potential buyers what will they get</p>
+                                    <label className="description">
+                                        <textarea name='whatDoYouGet' maxLength="600" minLength="15" rows={5} cols={50} value={gigInfo.whatDoYouGet} onChange={this.handleChange}></textarea>
+                                    </label>
+                                </div>
 
-                                    <br></br>
-                                    <div className='add-gig-titles'>
-                                        <label className='add-gig-labels'>Price</label>
-                                            <input className='add-gig-input' type="number" id='price' name='price' required onChange={this.handleChange} />
-                                    </div>
-                                    
-                                    <br></br>
-                                    <div className='add-gig-titles'>
-                                        <label className='add-gig-labels'>Days delivery</label>
-                                        <input  className='add-gig-input' type="number" id="daysToMake" name="daysToMake" required onChange={this.handleChange} />
-                                    </div>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <label className='add-gig-labels'>Price</label>
+                                    <input className='add-gig-input' type="number" id='price' name='price' required onChange={this.handleChange} />
+                                </div>
 
-                                    <br></br>
-                                    <div className='add-gig-titles'>
-                                        <p className="add-gig-labels">Category</p>
-                                        <select className='add-gig-input' value={gigInfo.category} name="category" onChange={this.handleChange}>
-                                            <option value=""></option>
-                                            <option value="Graphics & Design">Graphics &amp; Design</option>
-                                            <option value="Digital Marketing">Digital Marketing</option>
-                                            <option value="Writing & Translation">Writing &amp; Translation</option>
-                                            <option value="Video & Animation">Video &amp; Animation</option>
-                                            <option value="Business">Business</option>
-                                            <option value="Lifestyle">Lifestyle</option>
-                                            {/* <option value="Programming & Tech">Programming &amp; Tech</option> */}
-                                        </select>
-                                    </div>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <label className='add-gig-labels'>Days delivery</label>
+                                    <input className='add-gig-input' type="number" id="daysToMake" name="daysToMake" required onChange={this.handleChange} />
+                                </div>
 
-                                    <br></br>
-                                    <div className='add-gig-titles'>
-                                        <p className="add-gig-labels">Origin</p>
-                                        <select className="add-gig-input" vlaue={gigInfo.origin} name="origin" onChange={this.handleChange}>
-                                            <option value=""></option>
-                                            <option value="israel">Israel</option>
-                                            <option value="USA">USA</option>
-                                            <option value="UK">UK</option>
-                                            <option value="france">France</option>
-                                            <option value="japan">Japan</option>
-                                        </select>
-                                    </div>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <p className="add-gig-labels">Category</p>
+                                    <select className='add-gig-input' value={gigInfo.category} name="category" onChange={this.handleChange}>
+                                        <option value=""></option>
+                                        <option value="Graphics & Design">Graphics &amp; Design</option>
+                                        <option value="Digital Marketing">Digital Marketing</option>
+                                        <option value="Writing & Translation">Writing &amp; Translation</option>
+                                        <option value="Video & Animation">Video &amp; Animation</option>
+                                        <option value="Business">Business</option>
+                                        <option value="Lifestyle">Lifestyle</option>
+                                        {/* <option value="Programming & Tech">Programming &amp; Tech</option> */}
+                                    </select>
+                                </div>
 
-                                    <button className='add-gig-btn' type='submit'>Add Gig</button>
-                                    {/* <button className='btn' type='submit'>Add Gig</button> */}
-                                </form>
-                            </section>
-                        </div>
-                    </section>
+                                <br></br>
+                                <div className='add-gig-titles'>
+                                    <p className="add-gig-labels">Origin</p>
+                                    <select className="add-gig-input" vlaue={gigInfo.origin} name="origin" onChange={this.handleChange}>
+                                        <option value=""></option>
+                                        <option value="israel">Israel</option>
+                                        <option value="USA">USA</option>
+                                        <option value="UK">UK</option>
+                                        <option value="france">France</option>
+                                        <option value="japan">Japan</option>
+                                    </select>
+                                </div>
+
+                                <button className='add-gig-btn' type='submit'>Add Gig</button>
+                                {/* <button className='btn' type='submit'>Add Gig</button> */}
+                            </form>
+                        </section>
+                    </div>
+                </section>
                 {/* </div> */}
-                </main>
+            </main>
         )
     }
 }

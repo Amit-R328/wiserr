@@ -69,23 +69,50 @@
     display: flex;
     justify-content: space-between;
     margin-top: rem(50px);
+    color: $grey_1000;
 
     
     .seller-Total-order  {
         display: flex;
         justify-content: center;
         // width: 200px;
-        border: 1px solid $grey_500;
+        // border: 1px solid $grey_500;
         margin-bottom:  10px ;
         padding: 30px;
         text-align: center;
-        font-size: 18px;
+        font-size: 14px;
         
         .seller-total .seller-orders-qty{
             padding: 10px;
             
         }
         
+    }
+    .seller-total-amount {
+        font-size: rem(14px);
+        font-weight: 500;
+        
+        & span {
+            font-weight: 700;
+        }
+    }
+    .gentle-line {
+        margin: rem(10px) 0;
+       
+    }
+    .amount-total-order {
+        font-size: 18px;
+        .amount-total-order-green {
+            font-size: 20px;
+            color:$wiserr_green;
+            font-weight: 700;
+
+        }
+    }
+    .qty-total-order {
+        font-size: 14px;
+        margin-top: rem(6px);
+        // color: $grey_500;
     }
 
     @media screen and (max-width: 740px) {

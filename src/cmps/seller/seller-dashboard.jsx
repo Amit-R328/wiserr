@@ -21,6 +21,8 @@ export const SellerDashboard = (props) => {
     const GRAY = '#62646A'
     const GREEN = '#1DBF73'
     const BLACK = '#404145'
+    const [year] = useState(new Date().getFullYear())
+    
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
@@ -30,14 +32,17 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setLoader(false)
-        }, 2000)
+        }, 5000)
         dispatch(getLoggedinUser())
+        let user = { type: 'seller', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser))        
+        calcTotals()
         setSocket()
     }, [])
 
     // setSocket()
     const onAddOrder = async (order) => {
+        console.log('hi dashboard')
         order.createdAt = Date.now()
         let seller = await userService.getById(order.buyer._id)
         dispatch(addOrder(order.gig._id,seller))
@@ -55,17 +60,26 @@ export const SellerDashboard = (props) => {
         dispatch(onUpdateOrder(order))
     }
 
-    useEffect(() => {       
-        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
-        setTotalOrderAmount(totalOrders.toFixed(2))        
-        setQtyTotalOrders(orders.length)
-        getMonthOrders()
-        getYearOrders()
-
-    }, [])
+    const calcTotals = () => {
+        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
+        console.log('totalOrders', totalOrders)
+        if (totalOrders) {
+            //do not delete this console
+            
+            setTotalOrderAmount(totalOrders.toFixed(2),)
+            console.log('totalOrders', totalOrders)
+            console.log('setTotalOrderAmount', setTotalOrderAmount)
+            //do not delete this console
+            console.log('totalOrderAmount', totalOrderAmount)            
+            setQtyTotalOrders(orders.length)
+            //do not delete this console
+            console.log('qtyTotalOrders', qtyTotalOrders)
+            getMonthOrders()
+            getYearOrders()
+        }
+    }
 
     const getMonthOrders = () => {
-
         const thisMonth = (new Date()).getMonth()
         const monthlyOrders = orders.filter(order => {
             return thisMonth + 1 === utilService.getMonthNumber(order.createdAt)
@@ -80,7 +94,6 @@ export const SellerDashboard = (props) => {
     }
 
     const getYearOrders = () => {
-
         const thisYear = (new Date()).getFullYear()
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
@@ -93,21 +106,21 @@ export const SellerDashboard = (props) => {
         }
     }
 
-
     return (
         <div className="seller-dashboard-container container">
             {loader && <Loader />}
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr>Amount: ${totalOrderAmount}<br></br>Quantity: {qtyTotalOrders}</p>
+                    <p className='seller-total-amount'>Total orders
+                    <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-orders-thisyear'>This year orders<hr className='gentel-line'></hr>Amount: ${totalYearOrdersAmount}<br></br>Quantity: {qtyYearOrders}</p>
+                    <p className='seller-total-amount'><span>{year}</span> orders<hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-orders-amount'>This month orders<hr className='gentel-line'></hr>Amount: ${totalMonthlyOrdersAmount}<br></br>Quantity: {qtyMonthlyOrders}</p>
+                    <p className='seller-total-amount'>This month's orders<hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalMonthlyOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyMonthlyOrders}</p></p>
                 </div>
             </div>
 
@@ -117,7 +130,7 @@ export const SellerDashboard = (props) => {
                     <th className='orders-th'>Buyer</th>
                     <th className='orders-th'>Gig</th>
                     <th className='orders-th'>Delivery Date</th>
-                    <th className='orders-th'>Amount</th>
+                    <th className='orders-th'>Price</th>
                     <th className='orders-th'>Status</th>
                 </thead>
 

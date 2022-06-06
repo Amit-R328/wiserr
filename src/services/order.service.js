@@ -73,10 +73,8 @@ async function query(loggedInUser, typeOf){
 async function saveOrder(gigId, loggedinUser){
     try {
        let gig = await httpService.get(`gig/${gigId}`)
-    
         const order =        
-        {
-            
+        {  
             "createdAt": Date.now(),
             "deliveryDate": Date.now() + (gig.daysToMake * 86400000),
             "buyer": {
@@ -97,21 +95,15 @@ async function saveOrder(gigId, loggedinUser){
             },
             "status": "pending"
         }
-        
-    // const addedOrder = await storageService.post('order', order)
+   
         const urlToRequest =  'order'
-        console.log('urlToRequest', urlToRequest)
-        console.log('order', order)
         let addedOrder =  await httpService.post(urlToRequest,order)
-        console.log('addedOrder', addedOrder)
         return  addedOrder
     } catch (err) {
         console.dir('Cannot save order:',err)
         throw err
-    } 
-    
+    }    
 }
-
 
 async function updateOrder(order){
     try {
