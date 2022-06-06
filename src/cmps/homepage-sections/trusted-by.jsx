@@ -1,14 +1,17 @@
 import React from 'react'
+import { FacebookLogo, GoogleLogo, NetflixLogo, PGLogo, PayPalLogo } from '../../services/svg.service.js'
 
 export const TrustedBy = () => {
     return (
-            <ul className="brands-container flex clean-list">
-                <p>Trusted By:</p>
-                <li className="trusted-by">FACEBOOK</li>
-                <li className="trusted-by">Google</li>
-                <li className="trusted-by">NETFLIX</li>
-                <li className="trusted-by ">P&G</li>
-                <li className="trusted-by">PAYPAL</li>
-            </ul>
+        <ul className="brands-container flex clean-list">
+            <p>Trusted By:</p>
+            <div className="brands flex">
+                <li className="trusted-by"><FacebookLogo /></li>
+                <li className="trusted-by"><GoogleLogo /></li>
+                <li className="trusted-by"><NetflixLogo /></li>
+                <li className="trusted-by "><PGLogo /></li>
+                <li className="trusted-by"><PayPalLogo /></li>
+            </div>
+        </ul>
     )
 }
