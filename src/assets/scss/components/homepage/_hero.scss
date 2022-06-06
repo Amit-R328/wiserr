@@ -66,20 +66,20 @@
         margin-top: rem(28px);
         margin-bottom: rem(5px);
 
-            &::after {
-                content: "\f3ee";
-                color: $grey_1100;
-                // color: #404145;
-                color: #74767e;
-                padding-top: rem(5px);
-                padding-left: rem(5px);
-                font-family: awesome brands;
-                position: absolute;
-                display: inline-block;
-                z-index: 10;
-                left: 5px;
-                top: 4px;
-            }
+        &::after {
+            content: "\f3ee";
+            color: $grey_1100;
+            // color: #404145;
+            color: #74767e;
+            padding-top: rem(5px);
+            padding-left: rem(5px);
+            font-family: awesome brands;
+            position: absolute;
+            display: inline-block;
+            z-index: 10;
+            left: 5px;
+            top: 4px;
+        }
     }
 
     .search-hero-btn {
@@ -145,55 +145,67 @@
     }
 }
 
-@media (max-width: 425px){
+@media (max-width: 425px) {
     .hero {
         background-color: #023a15;
         margin: unset !important;
         width: 125%;
     }
+
     .hero-container .hero-content-container {
         display: flex;
         align-items: flex-start;
     }
+
     .hero-container .hero-content-container .hero-content {
         position: relative;
 
     }
+
     .hero-pic {
         display: none;
     }
-    .seller-name{
+
+    .seller-name {
         display: none;
     }
+
     .hero-content {
         text-align: center;
     }
 }
+
 @media (max-width: 744px) {
     .hero-pic {
         display: none;
     }
+
     .hero {
         background-color: #023a15;
         margin: unset !important;
         width: 140%;
     }
+
     .hero-content {
         text-align: center;
     }
+
     .hero-popular-category {
         display: none;
     }
 }
+
 @media (max-width:1024px) {
     .hero-container {
         grid-template-rows: 185px;
     }
+
     .hero-container .hero-content-container .hero-content {
         position: relative;
         top: 42%;
         font-size: 2rem;
     }
+
     .seller-name {
         position: relative;
         top: 47%;
