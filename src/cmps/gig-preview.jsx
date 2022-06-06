@@ -17,6 +17,7 @@ export const GigPreview = ({ gig, reviews }) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
+    let [className, setClassName] = useState('')
 
     let images
     if (gig) {
@@ -40,9 +41,10 @@ export const GigPreview = ({ gig, reviews }) => {
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
+            navigate(`/login`)
             // showSuccessMsg('Need go login')
         } else {
-            console.log('loggedInUser', loggedInUser)
+            // console.log('loggedInUser', loggedInUser)
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
@@ -62,6 +64,7 @@ export const GigPreview = ({ gig, reviews }) => {
                      //else he insert into the collection
                      gig.likedByUsers.push(likedByUser)
                      setLikedBy(true)
+                     setClassName('liked')
                  }
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
@@ -74,6 +77,7 @@ export const GigPreview = ({ gig, reviews }) => {
         return gig.likedByUsers.some(user => user._id === loggedInUser._id )
     }
 
+    
 
 return (
         <li className="gig-preview">
@@ -99,9 +103,11 @@ return (
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-                    <button className="fav-btn" onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                   {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />}
-                   <div className={loggedInUser && getLikeByUser() ? 'like' : <span></span>}></div>
+                    <button className={`fav-btn ${className}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
+                        
+                   {/* {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                  {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
+                  
                 </button>
                 </div>
                 <div className="gig-price">
