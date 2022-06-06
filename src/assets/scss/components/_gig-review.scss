@@ -53,11 +53,17 @@
         margin-block-end: 0px;
     }
 
-    .fa-star {
-        margin-left: 0.2rem;
-        color: #ffbe5b;
-    }
 
+    .name-and-stars {
+        display: flex;
+
+        .avg-rate {
+            padding-left: rem(4px);
+            color: #ffb33e;
+            font-weight: bold;
+            font-size: 14px;
+        }
+    }
     .user-country {
 
         p {
@@ -79,4 +85,10 @@
         border-radius: 1px !important;
         padding-right: rem(5px) ;
     }
+}
+
+.fa, .fas {
+    margin-left: 0.2rem;
+    color: #ffbe5b;
+    
 }
