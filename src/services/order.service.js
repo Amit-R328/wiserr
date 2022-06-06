@@ -112,7 +112,6 @@ async function saveOrder(gigId, loggedinUser){
     
 }
 
-
 async function updateOrder(order){
     try {
         const urlToRequest =  `order/${order._id}`       

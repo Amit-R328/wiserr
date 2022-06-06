@@ -21,6 +21,8 @@ export const SellerDashboard = (props) => {
     const GRAY = '#62646A'
     const GREEN = '#1DBF73'
     const BLACK = '#404145'
+    const [year] = useState(new Date().getFullYear())
+    
 
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const dispatch = useDispatch()
@@ -59,10 +61,9 @@ export const SellerDashboard = (props) => {
     }
 
     useEffect(() => {
-
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
         console.log('totalOrders', totalOrders)
-        if(totalOrders) {            
+        if (totalOrders) {
             setTotalOrderAmount(totalOrders.toFixed(2),)
             console.log('totalOrderAmount', totalOrderAmount)
             setQtyTotalOrders(orders.length)
@@ -70,11 +71,9 @@ export const SellerDashboard = (props) => {
             getMonthOrders()
             getYearOrders()
         }
-
     }, [])
 
     const getMonthOrders = () => {
-
         const thisMonth = (new Date()).getMonth()
         const monthlyOrders = orders.filter(order => {
             return thisMonth + 1 === utilService.getMonthNumber(order.createdAt)
@@ -89,7 +88,6 @@ export const SellerDashboard = (props) => {
     }
 
     const getYearOrders = () => {
-
         const thisYear = (new Date()).getFullYear()
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
@@ -102,21 +100,21 @@ export const SellerDashboard = (props) => {
         }
     }
 
-
     return (
         <div className="seller-dashboard-container container">
             {loader && <Loader />}
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'>Total orders<hr className='gentel-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
+                    <p className='seller-total-amount'>Total orders
+                    <hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'>This year orders<hr className='gentel-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
+                    <p className='seller-total-amount'><span>{year}</span> orders<hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
-                    <p className='seller-total-amount'>This month orders<hr className='gentel-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalMonthlyOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyMonthlyOrders}</p></p>
+                    <p className='seller-total-amount'>This month's orders<hr className='gentle-line'></hr><p className='amount-total-order'>Amount: <span className='amount-total-order-green'>${totalMonthlyOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyMonthlyOrders}</p></p>
                 </div>
             </div>
 

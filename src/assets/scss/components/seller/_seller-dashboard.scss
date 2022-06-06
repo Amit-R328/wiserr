@@ -76,7 +76,7 @@
         display: flex;
         justify-content: center;
         // width: 200px;
-        border: 1px solid $grey_500;
+        // border: 1px solid $grey_500;
         margin-bottom:  10px ;
         padding: 30px;
         text-align: center;
@@ -89,9 +89,14 @@
         
     }
     .seller-total-amount {
-        font-size: 14px;
+        font-size: rem(14px);
+        font-weight: 500;
+        
+        & span {
+            font-weight: 700;
+        }
     }
-    .gentel-line {
+    .gentle-line {
         margin: rem(10px) 0;
        
     }
