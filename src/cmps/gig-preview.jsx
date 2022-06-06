@@ -17,22 +17,20 @@ export const GigPreview = ({ gig, reviews }) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
     // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
-    let [className, setClassName] = useState('')
-
+    
     let images
     if (gig) {
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
         })
     }
-
-
     const onGoToDetails = (ev) => {
         ev.stopPropagation()
         navigate(`/categories/${gig._id}`)
     }
 
     const ToggleHeart = (ev, likedBy) => {
+        console.log('likedBy', likedBy)
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
@@ -47,9 +45,11 @@ export const GigPreview = ({ gig, reviews }) => {
             }
 
             //if theres is liked byUsers
+            console.log('gig',gig )
             if (gig.likedByUsers) {
                 const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
                 //if the user already did like we delte him
+                console.log('liked.length', liked)
                 if (liked.length) {
                     let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)
                     gig.likedByUsers.splice(idx, 1)
@@ -59,11 +59,13 @@ export const GigPreview = ({ gig, reviews }) => {
                      //else he insert into the collection
                      gig.likedByUsers.push(likedByUser)
                      setLikedBy(true)
-                     setClassName('liked')
+                     console.log('likedBy', likedBy)
+                    //  setClassName('liked')
                  }
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
             }
+            console.log('likedBy',likedBy )
             dispatch(updateGig(gig))
         }
     }
@@ -94,9 +96,10 @@ export const GigPreview = ({ gig, reviews }) => {
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-                    <button className={`fav-btn ${className}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
+                    <button className={`fav-btn ${loggedInUser && getLikeByUser() ? 'like': ''}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
                         
-                   {/* {loggedInUser && getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                    {/* {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
+                   {/* {loggedInUser && likedBy ? 'like': '' } */}
                   {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
                   
                 </button>

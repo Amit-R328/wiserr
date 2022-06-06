@@ -152,11 +152,14 @@
         font-family: awesome;
         font-size: rem(18px);
         color: $grey_700;
+      }
 
-        & .liked {
-          color: #f74040;
-
-        }
+      &.like {
+                
+        &::after {
+        color: #f74040;
+       
+      }
 
       }
 

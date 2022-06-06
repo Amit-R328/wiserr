@@ -60,12 +60,13 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
 
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
-
-        setTotalOrderAmount(totalOrders.toFixed(2))
-        setQtyTotalOrders(orders.length)
-
-        getMonthOrders()
-        getYearOrders()
+        console.log('totalOrders', totalOrders)
+        if(totalOrders) {            
+            setTotalOrderAmount(totalOrders.toFixed(2))
+            setQtyTotalOrders(orders.length)
+            getMonthOrders()
+            getYearOrders()
+        }
 
     }, [])
 
