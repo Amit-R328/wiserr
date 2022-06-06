@@ -97,7 +97,7 @@ export const GigPreview = ({ gig, reviews }) => {
                     {/* <p >{gig.title.substr(0, 40)}...</p> */}
                 </div>
                 <div className="gig-rate">
-                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviews.length})</p></div> :
+                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
                         <div className="avg-rate">4.9</div>}
                 </div>
             </div>

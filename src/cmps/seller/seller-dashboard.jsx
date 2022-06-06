@@ -22,30 +22,34 @@ export const SellerDashboard = (props) => {
     const GREEN = '#1DBF73'
     const BLACK = '#404145'
     const [year] = useState(new Date().getFullYear())
-    
+    let orders = useSelector((storeState) => storeState.orderModule.orders)
 
-    let { orders } = useSelector((storeState) => storeState.orderModule)
-    const dispatch = useDispatch()
+
+    const dispatch = useDispatch();
+
     const [order, setOrder] = useState('pending')
     const [loader, setLoader] = useState(true)
 
     useEffect(() => {
+        dispatch(getLoggedinUser())
+        getOrders()
+        console.log('orderssssssssssssssssssssssssssssssssssssssssssss', orders)
         setTimeout(() => {
             setLoader(false)
         }, 3000)
-        dispatch(getLoggedinUser())
         let user = { type: 'seller', fullName: loggedInUser.userName }
-        dispatch(loadOrders(loggedInUser))        
-        calcTotals()
         setSocket()
     }, [])
 
+    const getOrders = async () => {
+        orders = await dispatch(loadOrders(loggedInUser, 'getSells'))
+    }
     // setSocket()
     const onAddOrder = async (order) => {
         console.log('hi dashboard')
         order.createdAt = Date.now()
         let seller = await userService.getById(order.buyer._id)
-        dispatch(addOrder(order.gig._id,seller))
+        dispatch(addOrder(order.gig._id, seller))
     }
 
     const setSocket = () => {
@@ -60,22 +64,17 @@ export const SellerDashboard = (props) => {
         dispatch(onUpdateOrder(order))
     }
 
-    const calcTotals = () => {
-        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
-        console.log('totalOrders', totalOrders)
-        if (totalOrders) {
-            //do not delete this console
-            
-            setTotalOrderAmount(totalOrders.toFixed(2),)
-            console.log('totalOrders', totalOrders)
-            console.log('setTotalOrderAmount', setTotalOrderAmount)
-            //do not delete this console
-            console.log('totalOrderAmount', totalOrderAmount)            
-            setQtyTotalOrders(orders.length)
-            //do not delete this console
-            console.log('qtyTotalOrders', qtyTotalOrders)
-            getMonthOrders()
-            getYearOrders()
+
+    const getYearOrders = () => {
+        const thisYear = (new Date()).getFullYear()
+        const yearOrders = orders.filter(order => {
+            return thisYear === utilService.getYearNumber(order.createdAt)
+        })
+        if (yearOrders.length) {
+
+            setQtyYearOrders(yearOrders.length)
+            const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price, 0)
+            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
         }
     }
 
@@ -93,18 +92,30 @@ export const SellerDashboard = (props) => {
         }
     }
 
-    const getYearOrders = () => {
-        const thisYear = (new Date()).getFullYear()
-        const yearOrders = orders.filter(order => {
-            return thisYear === utilService.getYearNumber(order.createdAt)
-        })
-        if (yearOrders.length) {
+    const calcTotals = () => {
+        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
+        console.log('totalOrders', totalOrders)
+        if (totalOrders) {
+            //do not delete this console
 
-            setQtyYearOrders(yearOrders.length)
-            const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price, 0)
-            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
+            setTotalOrderAmount(totalOrders.toFixed(2),)
+            console.log('totalOrders', totalOrders)
+            console.log('setTotalOrderAmount', setTotalOrderAmount)
+            //do not delete this console
+            console.log('totalOrderAmount', totalOrderAmount)
+            setQtyTotalOrders(orders.length)
+            //do not delete this console
+            console.log('qtyTotalOrders', qtyTotalOrders)
+            getMonthOrders()
+            getYearOrders()
         }
     }
+
+    useEffect(() => {
+        console.log('orderssssss', orders)
+        calcTotals()
+    }, [orders])
+
 
     return (
         <div className="seller-dashboard-container container">
@@ -112,7 +123,7 @@ export const SellerDashboard = (props) => {
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
                     <p className='seller-total-amount'>Total orders
-                    <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
+                        <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
                 </div>
 
                 <div className='seller-Total-order'>
