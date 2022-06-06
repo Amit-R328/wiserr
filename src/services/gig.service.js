@@ -40,7 +40,7 @@ function getAllGigs() {
 }
 
 function getPopularCategories() {
-    return [{title:'Logo Design', param: 'Graphics & Design'}, {title:'Marketing', param:'Digital Marketing'}, {title: 'Translation', param: 'Writing & Translation'}, {title:'Crafts', param:'Lifestyle'}]
+    return [{title:'Logo Design', param: 'Graphics & Design'}, {title:'Marketing', param:'Digital Marketing'}, {title: 'Translation', param: 'Writing & Translation'}, {title:'Arts & Crafts', param:'Lifestyle'}]
 }
 
 function getById(gigId) {
