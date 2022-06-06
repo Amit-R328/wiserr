@@ -32,7 +32,7 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         setTimeout(() => {
             setLoader(false)
-        }, 5000)
+        }, 3000)
         dispatch(getLoggedinUser())
         let user = { type: 'seller', fullName: loggedInUser.userName }
         dispatch(loadOrders(loggedInUser))        
@@ -129,7 +129,7 @@ export const SellerDashboard = (props) => {
                     <th className='orders-th'>Date</th>
                     <th className='orders-th'>Buyer</th>
                     <th className='orders-th'>Gig</th>
-                    <th className='orders-th'>Delivery Date</th>
+                    <th className='orders-th'>Completed Date</th>
                     <th className='orders-th'>Price</th>
                     <th className='orders-th'>Status</th>
                 </thead>
