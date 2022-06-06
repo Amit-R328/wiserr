@@ -32,13 +32,7 @@ export const SellerDashboard = (props) => {
             setLoader(false)
         }, 2000)
         dispatch(getLoggedinUser())
-<<<<<<< HEAD
         dispatch(loadOrders(loggedInUser))        
-=======
-        let user = { type: 'seller', fullName: loggedInUser.userName }
-        dispatch(loadOrders(loggedInUser))
-
->>>>>>> 854fdb9957c02c09b78f734303933715ee8429f7
         setSocket()
     }, [])
 
@@ -46,11 +40,7 @@ export const SellerDashboard = (props) => {
     const onAddOrder = async (order) => {
         order.createdAt = Date.now()
         let seller = await userService.getById(order.buyer._id)
-<<<<<<< HEAD
         dispatch(addOrder(order.gig._id,seller))
-=======
-        dispatch(addOrder(order.gig._id, seller))
->>>>>>> 854fdb9957c02c09b78f734303933715ee8429f7
     }
 
     const setSocket = () => {
@@ -65,17 +55,9 @@ export const SellerDashboard = (props) => {
         dispatch(onUpdateOrder(order))
     }
 
-<<<<<<< HEAD
     useEffect(() => {       
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price,0)
         setTotalOrderAmount(totalOrders.toFixed(2))        
-=======
-    useEffect(() => {
-
-        let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
-
-        setTotalOrderAmount(totalOrders.toFixed(2))
->>>>>>> 854fdb9957c02c09b78f734303933715ee8429f7
         setQtyTotalOrders(orders.length)
         getMonthOrders()
         getYearOrders()

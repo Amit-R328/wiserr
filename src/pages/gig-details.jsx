@@ -95,15 +95,11 @@ export const GigDetails = (props) => {
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
-            // showErrorMsg('Need to login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-            console.log('&&&&&&&&&&&&&&&&&&&', order)
-
+            console.log('orderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',order )
             socketService.emit('new order', order)
             showSuccessMsg('Order was created')
-            // const msgInterval = setInterval(showSuccessMsg('Order was created'), 4000);
-            // clearInterval(msgInterval);
 
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
