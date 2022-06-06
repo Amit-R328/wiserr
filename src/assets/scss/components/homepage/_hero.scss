@@ -56,11 +56,12 @@
     }
 
     .search-hero {
-        width: em(300px);
-        height: em(30px);
+        // width: em(300px);
+        height: rem(48px);
+        aspect-ratio: 1 / 0.095;
         border-radius: 4px 0 0 4px;
         font-size: em(10px);
-        padding-left: em(40px);
+        padding-left: rem(40px);
         border: none;
         margin-top: rem(28px);
         margin-bottom: rem(5px);
@@ -89,7 +90,7 @@
         font-size: 0.5925em;
         position: relative;
         margin-top: 10px;
-        padding: 10.5px 24px;
+        padding: 11px 24px;
         right: 8%;
         // top: 2%;
         /* bottom: 231%; */
