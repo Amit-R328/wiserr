@@ -20,7 +20,6 @@
                 padding: 0 0 15;
 
                 & li {
-                    font-size: 14px;
                     line-height: 18px;
                     text-align: left;
                     list-style: none;
@@ -30,7 +29,7 @@
                     display: inline;
                     text-transform: uppercase;
                     cursor: pointer;
-                    font-size: rem(12px);
+                    font-size: rem(14px);
                     font-weight: 400;
                     color: $grey_1000;
 
@@ -42,9 +41,11 @@
                             font-size: rem(14px);
                         }
                     }
-
+                    
                     & a {
                         text-decoration: none;
+                        font-size: rem(14px);
+                        color: $grey_1000;
 
 
                         &:hover {
