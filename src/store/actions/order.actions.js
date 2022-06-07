@@ -47,10 +47,9 @@ export function onUpdateOrder(order) {
 }
 
 
-export function addOrder(gigId,loggedInUser){
+export function addOrder(order,loggedInUser){
     return async (dispatch) => {
         try {
-            const order = await orderService.saveOrder(gigId, loggedInUser)
             const action = { type: 'ADD_ORDER', order }
             dispatch(action)
         } catch (err) {
