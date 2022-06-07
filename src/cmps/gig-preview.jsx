@@ -93,7 +93,6 @@ export const GigPreview = ({ gig, reviews }) => {
                 </div>
 
                 <div className="gig-title">
-                    {/* <p >{gig.title}</p> */}
                     <p >{gig.title.substr(0, 70)}...</p>
                 </div>
                 <div className="gig-rate">

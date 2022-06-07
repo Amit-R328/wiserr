@@ -19,6 +19,8 @@ import mailgo, { mailgoDirectRender } from "mailgo";
 import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
 import { utilService } from '../services/util.service.js'
 // import { NavDetails } from '../cmps/headers/nav-details.jsx'
+import Swal from 'sweetalert2'
+
 
 export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
@@ -194,23 +196,50 @@ export const GigDetails = (props) => {
         console.log('click from share')
     }
 
+    const onShareModal = (ev) => {
+        // ev.preventDefault()
+        Swal.fire({
+            className: "share-modal",
+            width: 620,
+            height: 285,
+            padding: '45px',
+            color: '#62646',
+            background: '#fff',
+            backdrop: 'rgba(0,0,0,0.4)',
+            title: 'Share This Gig',
+            titleText: 'Spread the word about this Gig on Wiserr',
+            imageUrl: 'https://unsplash.it/400/200',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            showCloseButton: true,
+            focusConfirm: false,
+            confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
+            confirmButtonAriaLabel: 'OK',
+            allowOutsideClick: true,
+            allowEscapeKey: true,
+        })
+    }
+
     let reviewsQty = utilService.getRandomIntInclusive(50, 1500)
     return (
         <>
             {/* <div className="nav-details container">
                 <NavDetails />
             </div> */}
-                 <section className="gig-details-container container">
-                <div className="nav-details">
-                    <div className="details-menu-scroll">
+            <section className="gig-details-container container">
+                <div className="nav-details-container">
+                    <nav className="details-menu-scroll">
                         <ul className="nav-details-sections">
-                            <li onClick={() => scrollOverview()} className="detail-btn-top"></li>
-                            <li onClick={() => scrollDescription()} className="detail-btn-top"></li>
-                            <li onClick={() => scrollAbout()} className="detail-btn-top"></li>
-                            <li onClick={() => scrollReviews()} className="detail-btn-top"></li>
-                            <li onClick={() => onSharePage()} className="detail-btn-top"></li>
+                            <li onClick={() => scrollOverview()} className="detail-btn-top">Overview</li>
+                            <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
+                            <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
+                            <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
+                            <aside className="details-menu-share">
+                                <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
+                            </aside>
                         </ul>
-                    </div>
+                    </nav>
                 </div>
 
 

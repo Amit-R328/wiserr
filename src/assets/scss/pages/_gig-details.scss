@@ -1,43 +1,43 @@
 .gig-details-container {
     width: 100%;
 
-    .nav-details {
-        min-height: 40px;
-        // background-color: blue;
-        // padding-top: 250px;
+    .nav-details-container {
         position: sticky;
         top: 0;
         z-index: 5;
+        width: 100%;
+        top: 0;
+        left: 0;
 
         .details-menu-scroll {
-            // padding: rem(10px) 0;
             width: 100%;
             height: 40px;
-            background-color: $white;
             position: relative;
-            background-color: $white;
-            z-index: 10;
-
+            background: $white;
+            justify-content: space-between;
+            padding-top: 0;
+            padding-bottom: 0;
 
             .nav-details-sections {
                 display: flex;
-                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                // background-color: red;
+                border-bottom: 1px solid $grey_400;
 
                 li {
                     flex-grow: 1;
-                    display: inline-block;
-                    flex-shrink: 0;
                     list-style: none;
                     text-decoration: none;
-                    padding: 0 10px;
-                    // position: relative;
-                    margin: 0;
-                    outline: 0;
+                    font-size: rem(16px);
+                    cursor: pointer;
                     text-align: center;
-
+                    transition: color .2s;
+                    color: $grey_800;
+                    font-weight: 600;
+                    background-color: $white;
+                    min-height: 40px;
+                    max-width: rem(126px);
+                    padding: rem(12px) 0;
 
                     &:first-child {
                         padding-left: 0;
@@ -47,37 +47,6 @@
                     &:last-child {
                         padding-right: 0;
                         text-align: right;
-                    }
-
-                    &:after {
-                        content: "";
-                    }
-
-
-                    font-size: rem(16px);
-                    cursor: pointer;
-                    line-height: 24px;
-                    padding: 8px 0;
-                    text-align: center;
-                    transition: color .2s;
-                    background: transparent;
-                    outline: none;
-                    border: none;
-                    // min-width: 80px;
-                    // overflow: hidden;
-                    // color: $grey_900;
-                    font-weight: 400;
-                    font-size: 16px;
-                    background-color: yellow;
-                    min-height: 40px;
-
-                    &:last-child {
-                        padding-right: 0;
-                        text-align: right;
-                    }
-
-                    &:first-child {
-                        text-align: left;
                     }
 
                     &:after {
@@ -94,20 +63,31 @@
                         box-shadow: inset 0 -3px 0 $wiserr_green;
                         outline: none;
                         cursor: pointer;
+                        color: $grey_1100;
+                        font-weight: 600;
                     }
 
                     &:active {
-                        outline: none;
-                        text-decoration: none;
-                    }
-
-                    &:focus {
-                        outline: none;
-                        text-decoration: none;
+                        box-shadow: inset 0 -3px 0 $wiserr_green;
+                        color: $grey_1100;
+                        font-weight: 400;
                     }
                 }
             }
         }
+
+        .details-menu-share {
+            // min-width: rem(150px);
+            background-color: transparent;
+            outline: none;
+            border: none;
+            
+            &::before {
+                content: "$0"
+            }
+
+        }
+
     }
 
     .gig-details {
@@ -121,6 +101,7 @@
         align-items: flex-start;
         display: flex;
         flex-direction: row;
+        
     }
 
     .about-details {
