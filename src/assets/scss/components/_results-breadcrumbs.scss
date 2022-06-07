@@ -27,24 +27,25 @@
                     list-style-type: none;
                     text-decoration: none;
                     transition: color .2s;
-                    cursor: pointer;
                     display: inline;
+                    text-transform: uppercase;
+                    cursor: pointer;
+                    font-size: rem(12px);
+                    font-weight: 400;
+                    color: $grey_1000;
 
                     & span {
                         &::after {
                             content: "\f105";
                             font-family: awesome;
                             margin: 0 rem(10px);
+                            font-size: rem(14px);
                         }
                     }
 
                     & a {
                         text-decoration: none;
-                        cursor: pointer;
-                        color: inherit;
-                        font-size: inherit;
-                        font-weight: inherit;
-                        color: $grey_1000;
+
 
                         &:hover {
                             text-decoration-line: underline;

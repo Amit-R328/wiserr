@@ -1,6 +1,115 @@
 .gig-details-container {
     width: 100%;
 
+    .nav-details {
+        min-height: 40px;
+        // background-color: blue;
+        // padding-top: 250px;
+        position: sticky;
+        top: 0;
+        z-index: 5;
+
+        .details-menu-scroll {
+            // padding: rem(10px) 0;
+            width: 100%;
+            height: 40px;
+            background-color: $white;
+            position: relative;
+            background-color: $white;
+            z-index: 10;
+
+
+            .nav-details-sections {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                // background-color: red;
+
+                li {
+                    flex-grow: 1;
+                    display: inline-block;
+                    flex-shrink: 0;
+                    list-style: none;
+                    text-decoration: none;
+                    padding: 0 10px;
+                    // position: relative;
+                    margin: 0;
+                    outline: 0;
+                    text-align: center;
+
+
+                    &:first-child {
+                        padding-left: 0;
+                        text-align: left;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                        text-align: right;
+                    }
+
+                    &:after {
+                        content: "";
+                    }
+
+
+                    font-size: rem(16px);
+                    cursor: pointer;
+                    line-height: 24px;
+                    padding: 8px 0;
+                    text-align: center;
+                    transition: color .2s;
+                    background: transparent;
+                    outline: none;
+                    border: none;
+                    // min-width: 80px;
+                    // overflow: hidden;
+                    // color: $grey_900;
+                    font-weight: 400;
+                    font-size: 16px;
+                    background-color: yellow;
+                    min-height: 40px;
+
+                    &:last-child {
+                        padding-right: 0;
+                        text-align: right;
+                    }
+
+                    &:first-child {
+                        text-align: left;
+                    }
+
+                    &:after {
+                        bottom: 0;
+                        content: "";
+                        height: 3px;
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        z-index: 1;
+                    }
+
+                    &:hover {
+                        box-shadow: inset 0 -3px 0 $wiserr_green;
+                        outline: none;
+                        cursor: pointer;
+                    }
+
+                    &:active {
+                        outline: none;
+                        text-decoration: none;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
     .gig-details {
         padding: 32px 32px 0 32px;
         // max-width: 1304px;
@@ -10,7 +119,6 @@
         // margin: 0 76px 0 76px;
         flex-direction: row;
         align-items: flex-start;
-        // background-color: blue;
         display: flex;
         flex-direction: row;
     }
@@ -56,16 +164,17 @@
                             content: "\f105";
                             font-family: awesome;
                             margin: 0 rem(10px);
+                            font-size: rem(16px);
                         }
                     }
 
                     & a {
                         text-decoration: none;
                         cursor: pointer;
-                        color: inherit;
-                        font-size: inherit;
-                        font-weight: inherit;
+                        font-size: rem(12px);
+                        font-weight: 400;
                         color: $grey_1000;
+                        text-transform: uppercase;
 
                         &:hover {
                             text-decoration-line: underline;
@@ -141,24 +250,25 @@
                 align-items: center;
                 padding: 10px 12px;
                 font-size: 14px;
-          
+
                 &::before {
-                  content: "\f005";
-                //   font-size: rem(14px);
-                  font-family: awesome;
-                  color: #ffbe5b;
-                  letter-spacing: rem(5px);
+                    content: "\f005";
+                    //   font-size: rem(14px);
+                    font-family: awesome;
+                    color: #ffbe5b;
+                    letter-spacing: rem(5px);
                 }
-          
+
                 .avg-rate {
-                  color: #ffbe5b;
+                    color: #ffbe5b;
                 }
+
                 .rate-reviews-qty {
-                  color: #b5b6ba;
-                  display: inline-block;
-                  margin-right: rem(8px);
+                    color: #b5b6ba;
+                    display: inline-block;
+                    margin-right: rem(8px);
                 }
-              }
+            }
         }
 
         .sml-round-img {
@@ -587,7 +697,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    
+
     .gig-details-contact-seller {
         background-color: $white;
         border: 1px solid $grey_1100;

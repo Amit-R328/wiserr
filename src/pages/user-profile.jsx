@@ -66,7 +66,7 @@ export const UserProfile = () => {
                                 </div>
                             </div>)}
                         </div> :
-                        (<h1>You don't have any orders yet!</h1>)}
+                        (<h1>You don't have orders yet!</h1>)}
                 </div>
                 {/* <div className='total-price-container'>
                         <h5>total amount: {`${totalAmount}`}</h5>

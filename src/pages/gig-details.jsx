@@ -18,6 +18,7 @@ import { socketService } from '../services/socket.service.js';
 import mailgo, { mailgoDirectRender } from "mailgo";
 import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
 import { utilService } from '../services/util.service.js'
+// import { NavDetails } from '../cmps/headers/nav-details.jsx'
 
 export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
@@ -92,15 +93,15 @@ export const GigDetails = (props) => {
     }
 
     const onConfirmOrder = async (ev, gigId) => {
-  
+
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
             onUpdateRewviewsQty(gigId)
-     
-            console.log('orderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',order )
+
+            console.log('orderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', order)
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
 
@@ -110,11 +111,11 @@ export const GigDetails = (props) => {
         }
     }
 
-    const onUpdateRewviewsQty = async (gigId)  => {
-        
-        if(gig.reviewsQty) gig.reviewsQty++
-        else gig. reviewsQty = 1
-        
+    const onUpdateRewviewsQty = async (gigId) => {
+
+        if (gig.reviewsQty) gig.reviewsQty++
+        else gig.reviewsQty = 1
+
         let newGig = await dispatch(updateGig(gig))
         // console.log('newGig', newGig)
     }
@@ -170,13 +171,64 @@ export const GigDetails = (props) => {
         dispatch(updateGig(gig))
     }
 
+    const scrollOverview = () => {
+        const section = document.querySelector('.gig-details-container');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-    let reviewsQty = utilService.getRandomIntInclusive(50,1500)
+    const scrollDescription = () => {
+        const section = document.querySelector('.about-details');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    const scrollAbout = () => {
+        const section = document.querySelector('.about-seller');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    const scrollReviews = () => {
+        const section = document.querySelector('.reviews');
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    const onSharePage = () => {
+        console.log('click from share')
+    }
+
+    let reviewsQty = utilService.getRandomIntInclusive(50, 1500)
     return (
-        <React.Fragment>
-            {/* <div className="app-header">
+        <>
+            {/* <div className="nav-details container">
+                <NavDetails />
             </div> */}
-            <section className="gig-details-container container">
+                 <section className="gig-details-container container">
+                <div className="nav-details">
+                    <div className="details-menu-scroll">
+                        <ul className="nav-details-sections">
+                            <li onClick={() => scrollOverview()} className="detail-btn-top"></li>
+                            <li onClick={() => scrollDescription()} className="detail-btn-top"></li>
+                            <li onClick={() => scrollAbout()} className="detail-btn-top"></li>
+                            <li onClick={() => scrollReviews()} className="detail-btn-top"></li>
+                            <li onClick={() => onSharePage()} className="detail-btn-top"></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="breadcrumbs-container flex">
@@ -195,8 +247,8 @@ export const GigDetails = (props) => {
                                 <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue |` : ''}</p>
                                 <div className="gig-rate">
                                     {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
-                                <div className="avg-rate">4.9</div>}
-                            </div>
+                                        <div className="avg-rate">4.9</div>}
+                                </div>
 
                             </div>
                             <div className="gig-details-img-container">
@@ -316,6 +368,6 @@ export const GigDetails = (props) => {
                 </div>
                 <UserMsg />
             </section >
-        </React.Fragment >
+        </>
     )
 }
