@@ -1,6 +1,95 @@
 .gig-details-container {
     width: 100%;
 
+    .nav-details-container {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        width: 100%;
+        top: 0;
+        left: 0;
+
+        .details-menu-scroll {
+            width: 100%;
+            height: 40px;
+            position: relative;
+            background: $white;
+            justify-content: space-between;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .nav-details-sections {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid $grey_400;
+
+                li {
+                    flex-grow: 1;
+                    list-style: none;
+                    text-decoration: none;
+                    font-size: rem(16px);
+                    cursor: pointer;
+                    text-align: center;
+                    transition: color .2s;
+                    color: $grey_800;
+                    font-weight: 600;
+                    background-color: $white;
+                    min-height: 40px;
+                    max-width: rem(126px);
+                    padding: rem(12px) 0;
+
+                    &:first-child {
+                        padding-left: 0;
+                        text-align: left;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;
+                        text-align: right;
+                    }
+
+                    &:after {
+                        bottom: 0;
+                        content: "";
+                        height: 3px;
+                        left: 0;
+                        position: absolute;
+                        width: 100%;
+                        z-index: 1;
+                    }
+
+                    &:hover {
+                        box-shadow: inset 0 -3px 0 $wiserr_green;
+                        outline: none;
+                        cursor: pointer;
+                        color: $grey_1100;
+                        font-weight: 600;
+                    }
+
+                    &:active {
+                        box-shadow: inset 0 -3px 0 $wiserr_green;
+                        color: $grey_1100;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+
+        .details-menu-share {
+            // min-width: rem(150px);
+            background-color: transparent;
+            outline: none;
+            border: none;
+            
+            &::before {
+                content: "$0"
+            }
+
+        }
+
+    }
+
     .gig-details {
         padding: 32px 32px 0 32px;
         // max-width: 1304px;
@@ -10,9 +99,9 @@
         // margin: 0 76px 0 76px;
         flex-direction: row;
         align-items: flex-start;
-        // background-color: blue;
         display: flex;
         flex-direction: row;
+        
     }
 
     .about-details {
@@ -56,16 +145,17 @@
                             content: "\f105";
                             font-family: awesome;
                             margin: 0 rem(10px);
+                            font-size: rem(16px);
                         }
                     }
 
                     & a {
                         text-decoration: none;
                         cursor: pointer;
-                        color: inherit;
-                        font-size: inherit;
-                        font-weight: inherit;
+                        font-size: rem(12px);
+                        font-weight: 400;
                         color: $grey_1000;
+                        text-transform: uppercase;
 
                         &:hover {
                             text-decoration-line: underline;
@@ -141,24 +231,25 @@
                 align-items: center;
                 padding: 10px 12px;
                 font-size: 14px;
-          
+
                 &::before {
-                  content: "\f005";
-                //   font-size: rem(14px);
-                  font-family: awesome;
-                  color: #ffbe5b;
-                  letter-spacing: rem(5px);
+                    content: "\f005";
+                    //   font-size: rem(14px);
+                    font-family: awesome;
+                    color: #ffbe5b;
+                    letter-spacing: rem(5px);
                 }
-          
+
                 .avg-rate {
-                  color: #ffbe5b;
+                    color: #ffbe5b;
                 }
+
                 .rate-reviews-qty {
-                  color: #b5b6ba;
-                  display: inline-block;
-                  margin-right: rem(8px);
+                    color: #b5b6ba;
+                    display: inline-block;
+                    margin-right: rem(8px);
                 }
-              }
+            }
         }
 
         .sml-round-img {
@@ -587,7 +678,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    
+
     .gig-details-contact-seller {
         background-color: $white;
         border: 1px solid $grey_1100;

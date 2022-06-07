@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useSearchParams } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
-import { NavDetails } from './nav-details.jsx'
+// import { NavDetails } from './nav-details.jsx'
 import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
@@ -18,11 +18,14 @@ export const AppHeader = (props) => {
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
-
-
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
+    // const location = useLocation()
+    // const location = useHistory()
+    // const location = useRoute()
+    // const location = useSearchParams()
+    console.log('pathname', pathname)
 
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
@@ -58,7 +61,8 @@ export const AppHeader = (props) => {
     }
 
     return (
-        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''}`} >
+        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''} ${pathname.includes('categories/') ? 'nav-details' :''}`} >
+            
             <div className="top container">
                 <div className="logo-search-container">
                     <button  onClick={onToggleSideMenu} className="hamburger-icon">
@@ -95,11 +99,6 @@ export const AppHeader = (props) => {
             {(scrolled || (pathname !== '/'))  && <div className="bottom container">
                 <NavCategories />
             </div>}
-            <div className="nav-details container">
-            {/* {(scrolled || (pathname !== '/' && pathname === '/categories/:gigId'))  && <div className="nav-details container"> */}
-                <NavDetails />
-            {/* </div>} */}
-            </div>
         </header>
     )
 }

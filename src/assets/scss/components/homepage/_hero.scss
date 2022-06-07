@@ -1,6 +1,6 @@
     .hero-container {
         display: grid;
-        grid-template-rows: 517px;
+        grid-template-rows: 100%;
         grid-template-columns: 1fr;
         align-self: center;
 
@@ -82,17 +82,19 @@
 
         .background-images {
             grid-area: 1/1/2/2;
+            // width: 100%;
             // height: 100%;
-
+            
             .background {
                 opacity: 0;
                 position: relative;
-
+                
                 .hero-pic {
                     position: absolute;
                     top: 0;
+                    aspect-ratio: 1 / 0.47;
                     height: rem(680px);
-
+                    object-fit: cover;       
                 }
 
                 &.active {

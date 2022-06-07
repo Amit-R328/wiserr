@@ -6,6 +6,12 @@
   position: fixed;
   z-index: 1500;
 
+  &.nav-details {
+    position: static;
+    // border-bottom: 1px solid #dadbdd;
+    // border-top: 1px solid #dadbdd;
+  }
+
   &.categories-header {
     background-color: $white;
 
@@ -95,7 +101,6 @@
   .logo-search-container {
     display: flex;
     align-items: center;
-    // gap: 20px;
 
     .hamburger-icon {
       background-color: transparent;
@@ -142,8 +147,6 @@
 }
 
 ul {
-  margin: unset;
-
   &.nav-list {
     display: flex;
     align-items: center;
