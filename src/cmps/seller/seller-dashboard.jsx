@@ -46,11 +46,11 @@ export const SellerDashboard = (props) => {
     }
     // setSocket()
     const onAddOrder = async (order) => {
-        console.log('hi dashboard')
+        console.log('order:::::::::::::::::::::::::::::::::::::::::', order)
         order.createdAt = Date.now()
         setOrder('')
-        // let seller = await userService.getById(order.buyer._id)
-        // dispatch(addOrder(order.gig._id, seller))
+        let seller = await userService.getById(order.buyer._id)
+        dispatch(addOrder(order, seller))
     }
 
     const setSocket = () => {
