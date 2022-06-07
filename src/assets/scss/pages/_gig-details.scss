@@ -79,15 +79,16 @@
         .details-menu-share {
             // min-width: rem(150px);
             background-color: transparent;
-            outline: none;
+            outline: 1px solid $grey_400;
             border: none;
             
-            &::before {
-                content: "$0"
+            &:after {
+                content: "\f1e1";
+                font-family: awesome;
+                font-size: rem(28px);
+                color: $wiserr_green;
             }
-
         }
-
     }
 
     .gig-details {

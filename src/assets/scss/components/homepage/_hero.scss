@@ -58,13 +58,25 @@
             height: rem(48px);
             aspect-ratio: 1 / 0.079;
             border-radius: 4px 0 0 4px;
-            font-size: rem(16px);
+            font-size: rem(18px);
             padding-left: rem(40px);
             border: none;
             margin-top: rem(30px);
             margin-bottom: rem(13px);
+            position: relative;
 
+            
         }
+        svg {
+            position: absolute;
+            top: 154px;
+            z-index: 100;
+            left: 8px;
+            font-size: 22px;
+            color: gray;
+        }
+
+
 
         .search-hero-btn {
             border: none;
@@ -84,17 +96,17 @@
             grid-area: 1/1/2/2;
             // width: 100%;
             // height: 100%;
-            
+
             .background {
                 opacity: 0;
                 position: relative;
-                
+
                 .hero-pic {
                     position: absolute;
                     top: 0;
                     aspect-ratio: 1 / 0.47;
                     height: rem(680px);
-                    object-fit: cover;       
+                    object-fit: cover;
                 }
 
                 &.active {
@@ -106,75 +118,75 @@
     }
 
 
-// @media (max-width: 425px) {
-//     .hero {
-//         background-color: #023a15;
-//         margin: unset !important;
-//         width: 125%;
-//     }
+    // @media (max-width: 425px) {
+    //     .hero {
+    //         background-color: #023a15;
+    //         margin: unset !important;
+    //         width: 125%;
+    //     }
 
-//     .hero-container .hero-content-container {
-//         display: flex;
-//         align-items: flex-start;
-//     }
+    //     .hero-container .hero-content-container {
+    //         display: flex;
+    //         align-items: flex-start;
+    //     }
 
-//     .hero-container .hero-content-container .hero-content {
-//         position: relative;
+    //     .hero-container .hero-content-container .hero-content {
+    //         position: relative;
 
-//     }
+    //     }
 
-//     .hero-pic {
-//         display: none;
-//     }
+    //     .hero-pic {
+    //         display: none;
+    //     }
 
-//     .seller-name {
-//         display: none;
-//     }
+    //     .seller-name {
+    //         display: none;
+    //     }
 
-//     .hero-content {
-//         text-align: center;
-//     }
-// }
+    //     .hero-content {
+    //         text-align: center;
+    //     }
+    // }
 
-// @media (max-width: 744px) {
-//     .hero-pic {
-//         display: none;
-//     }
+    // @media (max-width: 744px) {
+    //     .hero-pic {
+    //         display: none;
+    //     }
 
-//     .hero {
-//         background-color: #023a15;
-//         margin: unset !important;
-//         width: 140%;
-//     }
+    //     .hero {
+    //         background-color: #023a15;
+    //         margin: unset !important;
+    //         width: 140%;
+    //     }
 
-//     .hero-content {
-//         text-align: center;
-//     }
+    //     .hero-content {
+    //         text-align: center;
+    //     }
 
-//     .hero-popular-category {
-//         display: none;
-//     }
-// }
+    //     .hero-popular-category {
+    //         display: none;
+    //     }
+    // }
 
-// @media (max-width:1024px) {
-//     .hero-container {
-//         grid-template-rows: 185px;
-//     }
+    // @media (max-width:1024px) {
+    //     .hero-container {
+    //         grid-template-rows: 185px;
+    //     }
 
-//     .hero-container .hero-content-container .hero-content {
-//         position: relative;
-//         top: 42%;
-//         font-size: 2rem;
-//     }
+    //     .hero-container .hero-content-container .hero-content {
+    //         position: relative;
+    //         top: 42%;
+    //         font-size: 2rem;
+    //     }
 
-//     .seller-name {
-//         position: relative;
-//         top: 30%;
-//         right: 0%;
-//     }
+    //     .seller-name {
+    //         position: relative;
+    //         top: 30%;
+    //         right: 0%;
+    //     }
 
-//     .seller {
-//         position: relative;
-//         top: 30%;
-//     }
-// }
+    //     .seller {
+    //         position: relative;
+    //         top: 30%;
+    //     }
+    // }

@@ -4,6 +4,8 @@ import '../../assets/scss/main.scss'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
 import { HeroPopularCategories } from './hero-popular-categories'
+import { AirOutlined } from '@mui/icons-material';
+// import {AiOutlinedSearch} from 'react-icons/ai'
 
 export function HeroCarousel(props) {
   var backIdx = 1;
