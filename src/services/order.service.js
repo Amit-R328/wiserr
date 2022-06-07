@@ -82,29 +82,28 @@ async function saveOrder(gigId, loggedinUser){
        let gig = await httpService.get(`gig/${gigId}`)
         const order =        
         {  
-            "createdAt": Date.now(),
-            "deliveryDate": Date.now() + (gig.daysToMake * 86400000),
-            "buyer": {
-                "_id": loggedinUser._id,
-                "fullName": loggedinUser.userName,
-                "ImgUrl": loggedinUser.imgUrl
+            createdAt: Date.now(),
+            deliveryDate: Date.now() + (gig.daysToMake * 86400000),
+            buyer: {
+                _id: loggedinUser._id,
+                fullName: loggedinUser.userName,
+                ImgUrl: loggedinUser.imgUrl
             },
-            "seller": {
-                "_id": gig.owner._id,
-                "fullName":  gig.owner.fullName,
-                "imgUrl": gig.owner.imgUrl
+            seller: {
+                _id: gig.owner._id,
+                fullName:gig.owner.fullName,
+                imgUrl: gig.owner.imgUrl
             },
-            "gig": {
-                "_id": gigId,
-                "description": gig.title,
-                "price": gig.price,
-                "category": gig.category
+            gig: {
+                _id: gigId,
+                description: gig.title,
+                price: gig.price,
+                category: gig.category
             },
-            "status": "pending"
+            status: "pending"
         }
-   
-        const urlToRequest =  'order'
-        let addedOrder =  await httpService.post(urlToRequest,order)
+        
+        let addedOrder =  await httpService.post('order',order)
         return  addedOrder
     } catch (err) {
         console.dir('Cannot save order:',err)

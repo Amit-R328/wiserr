@@ -16,7 +16,7 @@ import { UserMsg } from '../cmps/user-msg.jsx';
 // import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
 import mailgo, { mailgoDirectRender } from "mailgo";
-import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, FacebookShare } from '../services/svg.service.js';
+import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
 import { utilService } from '../services/util.service.js'
 // import { NavDetails } from '../cmps/headers/nav-details.jsx'
 import Swal from 'sweetalert2'
@@ -102,8 +102,6 @@ export const GigDetails = (props) => {
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
             onUpdateRewviewsQty(gigId)
-
-            console.log('orderrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr', order)
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
 
@@ -207,11 +205,11 @@ export const GigDetails = (props) => {
             background: '#fff',
             backdrop: 'rgba(0,0,0,0.4)',
             title: 'Share This Gig',
-            text: 'Spread the word about this Gig on Wiserr',
-            // imageWidth: 400,
-            // imageHeight: 200,
-            // imageAlt: 'Custom image',
-            // content: <FacebookShare/>,
+            titleText: 'Spread the word about this Gig on Wiserr',
+            imageUrl: 'https://unsplash.it/400/200',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
             showCloseButton: true,
             focusConfirm: false,
             confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
@@ -235,8 +233,8 @@ export const GigDetails = (props) => {
                             <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
                             <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
                             <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
-                            <aside>
-                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
+                            <aside className="details-menu-share">
+                                <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
                             </aside>
                         </ul>
                     </nav>
@@ -275,7 +273,7 @@ export const GigDetails = (props) => {
                                 <p className='owner-level'>{user.level ? user.level : 'Level 1 Seller '}&nbsp;| </p>
                                 <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue |` : ''}</p>
                                 <div className="gig-rate">
-                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<span> </span><p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
+                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
                                         <div className="avg-rate">4.9</div>}
                                 </div>
 
