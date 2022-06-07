@@ -16,7 +16,7 @@ import { UserMsg } from '../cmps/user-msg.jsx';
 // import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
 import mailgo, { mailgoDirectRender } from "mailgo";
-import { TumbUpBlack, TumbUpBlue, TumbDownBlack, TumbDownBlue, ContinueArrow } from '../services/svg.service.js';
+import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js';
 import { utilService } from '../services/util.service.js'
 // import { NavDetails } from '../cmps/headers/nav-details.jsx'
 import Swal from 'sweetalert2'
@@ -28,8 +28,8 @@ export const GigDetails = (props) => {
     const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
     const [isReviewAdd, setReviewAdd] = useState(false)
-    const [tumbUp, setTumbUp] = useState(false)
-    const [tumbDown, setTumbDown] = useState(false)
+    const [thumbUp, setThumbUp] = useState(false)
+    const [thumbDown, setThumbDown] = useState(false)
     const [textColorUp, setTextColorUp] = useState('')
     const [textColorDown, setTextColorDown] = useState('')
     const [memberSince, setMemberSince] = useState(2)
@@ -95,13 +95,13 @@ export const GigDetails = (props) => {
     }
 
     const onConfirmOrder = async (ev, gigId) => {
-
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-            onUpdateRewviewsQty(gigId)
+            onUpdateReviewsQty(gigId)
+
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
 
@@ -111,7 +111,7 @@ export const GigDetails = (props) => {
         }
     }
 
-    const onUpdateRewviewsQty = async (gigId) => {
+    const onUpdateReviewsQty = async (gigId) => {
 
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
@@ -129,8 +129,7 @@ export const GigDetails = (props) => {
         return { original: img, thumbnail: img }
     })
 
-
-    const getTumbUp = (ev, gig, idx) => {
+    const getThumbUp = (ev, gig, idx) => {
 
         gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful
         let flagUp = gig.reviews[idx].isHelpful
@@ -142,17 +141,17 @@ export const GigDetails = (props) => {
             gig.reviews[idx].isNotHelpful = false
             color = BLACK
             setTextColorDown(color)
-            setTumbDown(false)
+            setThumbDown(false)
 
         } else {
             color = BLACK
             setTextColorUp(color)
         }
         dispatch(updateGig(gig))
-        return setTumbUp(flagUp)
+        return setThumbUp(flagUp)
     }
 
-    const getTumbDown = (ev, gig, idx) => {
+    const getThumbDown = (ev, gig, idx) => {
 
         gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful
         let flagDown = gig.reviews[idx].isNotHelpful
@@ -190,9 +189,6 @@ export const GigDetails = (props) => {
         const section = document.querySelector('.reviews');
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    const onSharePage = () => {
-        console.log('click from share')
-    }
 
     const onShareModal = (ev) => {
         // ev.preventDefault()
@@ -205,11 +201,7 @@ export const GigDetails = (props) => {
             background: '#fff',
             backdrop: 'rgba(0,0,0,0.4)',
             title: 'Share This Gig',
-            titleText: 'Spread the word about this Gig on Wiserr',
-            imageUrl: 'https://unsplash.it/400/200',
-            imageWidth: 400,
-            imageHeight: 200,
-            imageAlt: 'Custom image',
+            text: 'Spread the word about this Gig on Wiserr',
             showCloseButton: true,
             focusConfirm: false,
             confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
@@ -219,12 +211,8 @@ export const GigDetails = (props) => {
         })
     }
 
-    let reviewsQty = utilService.getRandomIntInclusive(50, 1500)
     return (
         <>
-            {/* <div className="nav-details container">
-                <NavDetails />
-            </div> */}
             <section className="gig-details-container container">
                 <div className="nav-details-container">
                     <nav className="details-menu-scroll">
@@ -239,23 +227,6 @@ export const GigDetails = (props) => {
                         </ul>
                     </nav>
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="breadcrumbs-container flex">
@@ -317,7 +288,6 @@ export const GigDetails = (props) => {
                                         <li>
                                             From
                                             <strong>{gig.owner.from}</strong>
-                                            {/* <strong>Israel</strong> */}
                                         </li>
                                         <li>
                                             Member Since
@@ -340,26 +310,21 @@ export const GigDetails = (props) => {
                             </article>
                         </section>
 
-                        {/* {(loggedInUser) ? 
-                        <button onClick={() => {setReviewAdd(!isReviewAdd)}} className="add-review-btn">{isReviewAdd ? 'Close' : 'Add Review'}</button> :
-                        <h3>Please log in to comment</h3>
-                        }
-                        {isReviewAdd && <ReviewAdd owner={loggedInUser} gigId={gig._id} setReviewAdd={setReviewAdd}/>} */}
                         {(gig.reviews.length) ? <section className="reviews">
 
                             <h1 className="gig-reviews-title">Reviews</h1>
                             {gig.reviews.map((review, idx) => {
                                 return <article key={review._id}>
                                     <GigReview review={review} />
-                                    <div className='tumbs-container'>
-                                        <div className="tumbup-btn">
-                                            <button className="tumbs-btn" style={{ color: `${review.isHelpful ? BLUE : BLACK}` }} onClick={(ev) => getTumbUp(ev, gig, +idx)}>
-                                                {review.isHelpful ? <TumbUpBlue /> : <TumbUpBlack />} Helpful
+                                    <div className='thumbs-container'>
+                                        <div className="thumbup-btn">
+                                            <button className="thumbs-btn" style={{ color: `${review.isHelpful ? BLUE : BLACK}` }} onClick={(ev) => getThumbUp(ev, gig, +idx)}>
+                                                {review.isHelpful ? <ThumbUpBlue /> : <ThumbUpBlack />} Helpful
                                             </button>
                                         </div>
-                                        <div className="tumbdown-btn">
-                                            <button className="tumbs-btn" style={{ color: `${review.isNotHelpful ? BLUE : BLACK}` }} onClick={(ev) => getTumbDown(ev, gig, +idx)}>
-                                                {review.isNotHelpful ? <TumbDownBlue /> : <TumbDownBlack />} Not Helpful
+                                        <div className="thumbdown-btn">
+                                            <button className="thumbs-btn" style={{ color: `${review.isNotHelpful ? BLUE : BLACK}` }} onClick={(ev) => getThumbDown(ev, gig, +idx)}>
+                                                {review.isNotHelpful ? <ThumbDownBlue /> : <ThumbDownBlack />} Not Helpful
                                             </button>
                                             {review.isHelpful && <p className='helpful-text'>You found this review helpful.</p>}
                                         </div>
