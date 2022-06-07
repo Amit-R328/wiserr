@@ -52,12 +52,7 @@ form.search-bar {
       }
       
       svg {
-        position: absolute;
-        top: 154px;
-        z-index: 100;
-        left: 8px;
-        font-size: 22px;
-        color: white;
+        display: none;
       }
       
     }
