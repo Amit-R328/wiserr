@@ -81,6 +81,7 @@
             background-color: transparent;
             outline: 1px solid $grey_400;
             border: none;
+            cursor: pointer;
             
             &:after {
                 content: "\f1e1";
