@@ -51,9 +51,19 @@ async function query(loggedInUser, typeOf){
             orders = []
         }
     }
-    // console.log('orders', orders)
+    
+
+    if(gigs){
+    console.log('gigs', gigs.forEach( (gig,idx)=> console.log('gig number' + idx, gig.imgUrl[0])))
+    
+//10 order
+//100 gigs
     orders = orders.map(order => {
-        return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id).imgUrl[0] } } } )
+        return  {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id)?.imgUrl[0] } } } )
+    }
+
+        console.log('orders', orders)
+        
 
 // return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => {
 //     console.log('gig.title === order.gig.description',gig.title === order.gig.description )
