@@ -208,7 +208,6 @@ export const GigDetails = (props) => {
             backdrop: 'rgba(0,0,0,0.4)',
             title: 'Share This Gig',
             text: 'Spread the word about this Gig on Wiserr',
-            imageUrl: <FacebookShare/>,
             // imageWidth: 400,
             // imageHeight: 200,
             // imageAlt: 'Custom image',
