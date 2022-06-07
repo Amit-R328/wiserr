@@ -79,15 +79,16 @@
         .details-menu-share {
             // min-width: rem(150px);
             background-color: transparent;
-            outline: none;
+            outline: 1px solid $grey_400;
             border: none;
             
-            &::before {
-                content: "$0"
+            &:after {
+                content: "\f1e1";
+                font-family: awesome;
+                font-size: rem(28px);
+                color: $wiserr_green;
             }
-
         }
-
     }
 
     .gig-details {
@@ -117,7 +118,7 @@
         // margin-right: 113px;
         margin-right: 9.15%;
         width: 57.42%;
-        margin-top: rem(140px);
+        // margin-top: rem(140px);
 
         .breadcrumbs-container {
             height: 40px;
@@ -130,7 +131,7 @@
                 padding: 0 0 15;
 
                 & li {
-                    font-size: 14px;
+                    font-size: rem(16px);
                     line-height: 18px;
                     text-align: left;
                     list-style: none;
@@ -139,6 +140,7 @@
                     transition: color .2s;
                     cursor: pointer;
                     display: inline;
+                    color: $grey_1000;
 
                     & span {
                         &::after {
@@ -152,7 +154,7 @@
                     & a {
                         text-decoration: none;
                         cursor: pointer;
-                        font-size: rem(12px);
+                        font-size: rem(14px);
                         font-weight: 400;
                         color: $grey_1000;
                         text-transform: uppercase;
@@ -207,7 +209,6 @@
             margin-bottom: 10px;
 
             .owner-name {
-                // font-weight: bold;
                 color: $grey_1100;
                 font-weight: 700;
                 font-size: 14px;
@@ -215,7 +216,6 @@
 
             .owner-level {
                 color: $grey_1000;
-                // font-weight: 700;
                 font-size: 14px;
             }
 
@@ -226,7 +226,6 @@
             }
 
             .gig-rate {
-                // border-bottom: 1px solid $grey_400;
                 display: flex;
                 align-items: center;
                 padding: 10px 12px;
@@ -234,7 +233,6 @@
 
                 &::before {
                     content: "\f005";
-                    //   font-size: rem(14px);
                     font-family: awesome;
                     color: #ffbe5b;
                     letter-spacing: rem(5px);
@@ -247,7 +245,7 @@
                 .rate-reviews-qty {
                     color: #b5b6ba;
                     display: inline-block;
-                    margin-right: rem(8px);
+                    margin-left: rem(8px);
                 }
             }
         }
@@ -256,7 +254,6 @@
             border-radius: 50%;
             width: 30px;
             margin-right: rem(8px);
-            // height: 30px;
         }
 
         .img-container {
@@ -558,18 +555,22 @@
 .sticky-outer-wrapper-gig-buy {
     padding-bottom: 32px;
     width: 33.6%;
+    align-self: stretch;
+    margin-top: 20px;
+    
 
     .sticky-inner-wrapper-gig-buy {
-        margin-top: rem(100px);
-        position: fixed;
+        // margin-top: rem(100px);
+        position: sticky;
         z-index: 5;
         width: 414.547px;
+        top: 100px;
 
         .call-to-action {
             flex-direction: column;
             gap: 10px;
             border: 1px solid $grey_500;
-            margin: 33px 0 0 0;
+            // margin: 33px 0 0 0;
             width: 400.547px;
             z-index: 5;
 
