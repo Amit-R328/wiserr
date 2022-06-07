@@ -3,61 +3,46 @@ import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
+import { showSuccessMsg } from '../services/event-bus.service.js'
 import { getById, updateGig } from '../store/actions/gig.actions.js';
 import { loadUser } from '../store/actions/user.actions.js';
 import { loadOrders } from '../store/actions/order.actions.js'
-// import { getByUserId } from '../services/user.service.js'
 import { GigReview } from '../cmps/gig-review.jsx';
 import { GreenVMark } from '../services/svg.service.js';
 import { onSaveOrder } from '../store/actions/order.actions.js'
 import ImageGallery from 'react-image-gallery';
 import { UserMsg } from '../cmps/user-msg.jsx';
-// import {ReviewAdd} from '../cmps/review-add.jsx'
 import { socketService } from '../services/socket.service.js';
-import mailgo, { mailgoDirectRender } from "mailgo";
 import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js';
 import { utilService } from '../services/util.service.js'
-// import { NavDetails } from '../cmps/headers/nav-details.jsx'
 import Swal from 'sweetalert2'
-
 
 export const GigDetails = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
     const [user, setUser] = useState({})
-    const [isReviewAdd, setReviewAdd] = useState(false)
     const [thumbUp, setThumbUp] = useState(false)
     const [thumbDown, setThumbDown] = useState(false)
     const [textColorUp, setTextColorUp] = useState('')
     const [textColorDown, setTextColorDown] = useState('')
     const [memberSince, setMemberSince] = useState(2)
-    // const [orders, setOrders] = useState({})
-    const [subject] = useState("Contact us")
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
     const BLACK = '#404145'
     const BLUE = '#446ee7'
-    let { filterBy } = useSelector((storeState) => storeState.gigModule)
-
 
     useEffect(() => {
         dispatch(getById(params.gigId))
-        //take the page to the begining
         window.scrollTo(0, 0)
-
     }, [params])
-
 
     useEffect(() => {
         if (gig) {
             getUserAndOrders()
-
         }
     }, [gig])
-
 
     const getUserAndOrders = async () => {
         const userId = gig.owner._id
@@ -67,26 +52,17 @@ export const GigDetails = (props) => {
         calcMemberSince()
     }
 
-
     const calcMemberSince = () => {
         if (orders.length) {
-
             let orderCreatedDate = orders[orders.length - 1].createdAt
             orderCreatedDate = utilService.getMonthNumber(orderCreatedDate)
-
             const thisMonth = (new Date()).getMonth()
             let calcSince = 0
             if (orderCreatedDate > thisMonth) calcSince = (12 - orderCreatedDate) + thisMonth
             else calcSince = thisMonth - orderCreatedDate
-
             setMemberSince(Math.abs(calcSince))
-
         }
     }
-
-    // const onGoBack = () => {
-    //     props.history.push('/categories')
-    // }
 
     if (!gig) return <h1>Loading</h1>
     let whatYouGet
@@ -112,12 +88,11 @@ export const GigDetails = (props) => {
     }
 
     const onUpdateReviewsQty = async (gigId) => {
-
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
 
         let newGig = await dispatch(updateGig(gig))
-        // console.log('newGig', newGig)
+        console.log('newGig', newGig)
     }
 
     let price = 0
@@ -130,14 +105,12 @@ export const GigDetails = (props) => {
     })
 
     const getThumbUp = (ev, gig, idx) => {
-
         gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful
         let flagUp = gig.reviews[idx].isHelpful
         let color
         if (flagUp) {
             color = BLUE
             setTextColorUp(color)
-            //if up was pressed and down is blue we change it to black
             gig.reviews[idx].isNotHelpful = false
             color = BLACK
             setTextColorDown(color)
@@ -166,7 +139,6 @@ export const GigDetails = (props) => {
             color = BLACK
             setTextColorDown(color)
         }
-
         dispatch(updateGig(gig))
     }
 
@@ -279,7 +251,6 @@ export const GigDetails = (props) => {
                                                     <i className="fa fa-star filled">
                                                         <i className="fa fa-star filled">
                                                             &nbsp; 5</i></i></i></i></i>
-
                                         </p>
                                     </div>
                                 </div>

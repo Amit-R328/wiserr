@@ -1,5 +1,3 @@
-// import { storageService } from "./async-storage.service.js"
-// import { utilService } from "./util.service.js"
 import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
@@ -13,12 +11,9 @@ const BASE_URL =
         ? '/api/gig/'
         : 'http://localhost:3030/api/gig/'
 
-
-        
 let axios = Axios.create({
     withCredentials: true,
 })
-
 
 export const orderService = {
     query,
@@ -26,99 +21,80 @@ export const orderService = {
     updateOrder
 }
 
-async function query(loggedInUser, typeOf){
-    // console.log('loggedInUser', loggedInUser)
+async function query(loggedInUser, typeOf) {
     // let orders = await storageService.query('order')
     // const urlToRequest =  '/order'
-    // console.log('urlToRequest', urlToRequest)
-    let orders =  await httpService.get('order')
+    let orders = await httpService.get('order')
     let gigs = await gigService.query();
     if (typeOf === 'getBuys') {
-        if(loggedInUser.isSeller){
+        if (loggedInUser.isSeller) {
             orders = orders.filter(order => {
-                return order.buyer.fullName === loggedInUser.userName})
-        }else {
+                return order.buyer.fullName === loggedInUser.userName
+            })
+        } else {
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }
-    }else {
-        if(loggedInUser.isSeller){
+    } else {
+        if (loggedInUser.isSeller) {
             orders = orders.filter(order => {
 
                 return order.seller.fullName === loggedInUser.userName
             })
-        }else {
+        } else {
             orders = []
         }
     }
-    
 
-    
-//10 order
-//100 gigs
     orders = orders.map(order => {
-        return  {...order, gig: {...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id)?.imgUrl[0] } } } )
-    
+        return { ...order, gig: { ...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id)?.imgUrl[0] } }
+    })
 
-       
-        
-
-// return orders = {...order, gig: {...order.gig, imgUrl: gigs.find(gig => {
-//     console.log('gig.title === order.gig.description',gig.title === order.gig.description )
-//     console.log('gig.title', gig._id,gig.title)
-//     console.log('order.gig.description', order.gig._id, order.gig.description)
-//     console.log('gig', gig)
-//     return gig.title === order.gig.description})
-
-// }}} )
-    
-       orders = orders.sort((a,b) => b.createdAt - a.createdAt)
-       
-       console.log('order', orders)
-        return orders
+    orders = orders.sort((a, b) => b.createdAt - a.createdAt)
+    console.log('order', orders)
+    return orders
 }
 
-async function saveOrder(gigId, loggedinUser){
+async function saveOrder(gigId, loggedinUser) {
     try {
-       let gig = await httpService.get(`gig/${gigId}`)
-        const order =        
-        {  
-            "createdAt": Date.now(),
-            "deliveryDate": Date.now() + (gig.daysToMake * 86400000),
-            "buyer": {
-                "_id": loggedinUser._id,
-                "fullName": loggedinUser.userName,
-                "ImgUrl": loggedinUser.imgUrl
+        let gig = await httpService.get(`gig/${gigId}`)
+        const order =
+        {
+            createdAt: Date.now(),
+            deliveryDate: Date.now() + (gig.daysToMake * 86400000),
+            buyer: {
+                _id: loggedinUser._id,
+                fullName: loggedinUser.userName,
+                ImgUrl: loggedinUser.imgUrl
             },
-            "seller": {
-                "_id": gig.owner._id,
-                "fullName":  gig.owner.fullName,
-                "imgUrl": gig.owner.imgUrl
+            seller: {
+                _id: gig.owner._id,
+                fullName: gig.owner.fullName,
+                imgUrl: gig.owner.imgUrl
             },
-            "gig": {
-                "_id": gigId,
-                "description": gig.title,
-                "price": gig.price,
-                "category": gig.category
+            gig: {
+                _id: gigId,
+                description: gig.title,
+                price: gig.price,
+                category: gig.category
             },
-            "status": "pending"
+            status: "pending"
         }
-   
-        const urlToRequest =  'order'
-        let addedOrder =  await httpService.post(urlToRequest,order)
-        return  addedOrder
+
+        let addedOrder = await httpService.post('order', order)
+        return addedOrder
     } catch (err) {
-        console.dir('Cannot save order:',err)
+        console.dir('Cannot save order:', err)
         throw err
-    }    
+    }
 }
 
-async function updateOrder(order){
+async function updateOrder(order) {
     try {
-        const urlToRequest =  `order/${order._id}`       
-        await httpService.put(urlToRequest,order)
+        const urlToRequest = `order/${order._id}`
+        await httpService.put(urlToRequest, order)
         return order
     } catch (err) {
-        console.dir('Cannot update order:',err)
+        console.dir('Cannot update order:', err)
         throw err
     }
 }
