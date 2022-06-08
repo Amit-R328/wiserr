@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import {AiOutlineSearch} from 'react-icons/ai'
+import { AiOutlineSearch } from 'react-icons/ai'
 
 
 export const Search = ({ loc }, handleScroll) => {
@@ -27,7 +27,7 @@ export const Search = ({ loc }, handleScroll) => {
     return (
         <div className="search-container">
             <label>
-                <AiOutlineSearch className="search-icon"/>
+                <AiOutlineSearch className="search-icon" />
                 <input type="search" className={`search-input ${className}`} onChange={handleChange} placeholder={`${placeholder}`} />
             </label>
             <button className={`${className}-btn`} onClick={onSearch}>Search</button>

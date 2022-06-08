@@ -5,13 +5,13 @@ export class ReviewAdd extends React.Component {
         txt: ""
     }
 
-    handleChange = ({target}) => {
-        this.setState(prevState => ({...prevState, txt: target.value}))
-    } 
+    handleChange = ({ target }) => {
+        this.setState(prevState => ({ ...prevState, txt: target.value }))
+    }
 
     submit = async (ev) => {
         ev.preventDefault()
-        
+
     }
 
     render() {

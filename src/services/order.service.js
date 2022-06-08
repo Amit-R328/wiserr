@@ -22,8 +22,7 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-    // let orders = await storageService.query('order')
-    // const urlToRequest =  '/order'
+
     let orders = await httpService.get('order')
     let gigs = await gigService.query();
     if (typeOf === 'getBuys') {
@@ -50,15 +49,14 @@ async function query(loggedInUser, typeOf) {
     })
 
     orders = orders.sort((a, b) => b.createdAt - a.createdAt)
-    console.log('order', orders)
     return orders
 }
 
 async function saveOrder(gigId, loggedinUser) {
     try {
-       let gig = await httpService.get(`gig/${gigId}`)
-        const order =        
-        {  
+        let gig = await httpService.get(`gig/${gigId}`)
+        const order =
+        {
             createdAt: Date.now(),
             deliveryDate: Date.now() + (gig.daysToMake * 86400000),
             buyer: {
@@ -68,7 +66,7 @@ async function saveOrder(gigId, loggedinUser) {
             },
             seller: {
                 _id: gig.owner._id,
-                fullName:gig.owner.fullName,
+                fullName: gig.owner.fullName,
                 imgUrl: gig.owner.imgUrl
             },
             gig: {
@@ -79,9 +77,9 @@ async function saveOrder(gigId, loggedinUser) {
             },
             status: "pending"
         }
-        
-        let addedOrder =  await httpService.post('order',order)
-        return  addedOrder
+
+        let addedOrder = await httpService.post('order', order)
+        return addedOrder
     } catch (err) {
         console.dir('Cannot save order:', err)
         throw err

@@ -1,14 +1,11 @@
 import { orderService } from '../../services/order.service.js'
-import { socketService } from '../../services/socket.service.js'
+
 
 export function loadOrders(loggedInUser, typeOf) {
-    // console.log('loggedInUser', loggedInUser)
-    // console.log('typeOf',typeOf )
+    
     return async dispatch => {
         try {
-            const orders = await orderService.query(loggedInUser, typeOf)
-        
-            
+            const orders = await orderService.query(loggedInUser, typeOf)            
             const action = { type: 'SET_ORDERS', orders }
             dispatch(action)
         } catch (err) {
@@ -21,8 +18,7 @@ export function loadOrders(loggedInUser, typeOf) {
 export function onSaveOrder(gigId, loggedinUser) {
     return async (dispatch) => {
         try {
-            const order = await orderService.saveOrder(gigId, loggedinUser)
-            
+            const order = await orderService.saveOrder(gigId, loggedinUser)            
             const action = { type: 'SET_ORDER', order }
             dispatch(action)
             return order

@@ -26,7 +26,6 @@ class _BudgetFilter extends React.Component {
         if (!min) min = 0
         if (!max) max = 1000000
         this.props.setFilter({ ...filterBy, priceMin: min, priceMax: max })
-        console.log('ON APPLY BUDGET', this.props.filterBy)
         this.props.loadGigs()
         this.props.onClose()
     }

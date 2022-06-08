@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 import { saveGig } from '../store/actions/gig.actions'
 import { cloudinaryService } from '../services/cloudinary.service.js'
 import { userService } from '../services/user.service.js'
-// import { LogoFull } from '../services/svg.service.js'
 
 class _AddGigDetails extends React.Component {
     state = {
@@ -76,7 +75,6 @@ class _AddGigDetails extends React.Component {
         const userIsSeller = this.props.loggedInUser
         userIsSeller.isSeller = true
         userService.saveLocalUser(userIsSeller)
-        // this.props.onUpdateUser({isSeller:true})
         this.props.navigation('/')
     }
 
@@ -84,10 +82,6 @@ class _AddGigDetails extends React.Component {
         const { gigInfo, isImg } = this.state
         return (
             <main className="header-container container">
-                {/* <div className="header-row"> */}
-                {/* <LogoFull /> */}
-                {/* </div>  */}
-                {/* </div> */}
                 <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">
                         <nav>
@@ -108,7 +102,6 @@ class _AddGigDetails extends React.Component {
                     </div>
                 </div>
 
-                {/* <div className="main-content-container"> */}
                 <section className="add-gig-container">
                     <div className="gig-details">
 
@@ -140,32 +133,19 @@ class _AddGigDetails extends React.Component {
                                 <div className="add-gig-titles">
                                     <p className="add-gig-labels">Gig Title</p>
                                     <label>
-                                        {/* <input clasName="add-gig-input" type="text"  required name="gigTitle" placeholder='' value={gigInfo.gigTitle} onChange={this.handleChange} /> */}
                                         <textarea maxLength="600" minLength="15" rows={5} cols={50} id='title' placeholder="I will..." value={gigInfo.gigTitle} onChange={this.handleChange} >
                                         </textarea></label>
                                 </div>
 
                                 <div id="description" className="onboarding-field is-required">
-                                    {/* <aside className="">
-                                            <h3 className="add-gig-titles">
-                                                <span className="add-gig-titles">Description</span>
-                                            </h3>
-                                        </aside> */}
-
                                     <br></br>
-                                    {/* <div className="field-content"><div className="inner-row description"> */}
                                     <div className="add-gig-titles">
                                         <p className="add-gig-labels">Description (min. 15 characters)</p>
                                         <label className="description">
                                             <textarea maxLength="600" minLength="15" rows={5} cols={50} placeholder="Share a bit about the gig, cool related, and your area of expertise.">
                                             </textarea></label>
 
-                                        {/* <div className="footer">
-                                                <span className="">min. 15 characters</span><span className="char-count">0 / 600</span>
-                                            </div> */}
-                                        {/* </div> */}
                                     </div>
-                                    {/* </div> */}
                                 </div>
                                 <br></br>
                                 <div className='add-gig-titles'>
@@ -214,7 +194,6 @@ class _AddGigDetails extends React.Component {
                                         <option value="Video & Animation">Video &amp; Animation</option>
                                         <option value="Business">Business</option>
                                         <option value="Lifestyle">Lifestyle</option>
-                                        {/* <option value="Programming & Tech">Programming &amp; Tech</option> */}
                                     </select>
                                 </div>
 
@@ -232,12 +211,10 @@ class _AddGigDetails extends React.Component {
                                 </div>
 
                                 <button className='add-gig-btn' type='submit'>Add Gig</button>
-                                {/* <button className='btn' type='submit'>Add Gig</button> */}
                             </form>
                         </section>
                     </div>
                 </section>
-                {/* </div> */}
             </main>
         )
     }
@@ -256,7 +233,7 @@ const MapStateToProps = (storeState) => {
 
 const mapDispatchToProps = {
     saveGig,
-    // onUpdateUser
+
 
 }
 
