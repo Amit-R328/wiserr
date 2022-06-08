@@ -197,8 +197,8 @@ export const GigDetails = (props) => {
                             <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
                             <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
                             <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
-                            <aside>
-                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
+                            <aside className="details-menu-share">
+                                <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
                             </aside>
                         </ul>
                     </nav>
@@ -220,7 +220,7 @@ export const GigDetails = (props) => {
                                 <p className='owner-level'>{user.level ? user.level : 'Level 1 Seller '}&nbsp;| </p>
                                 <p className='owner-order-qty'> {orders.length ? `   ${orders.length} Order in Queue |` : ''}</p>
                                 <div className="gig-rate">
-                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<span> </span><p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
+                                    {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
                                         <div className="avg-rate">4.9</div>}
                                 </div>
 

@@ -22,8 +22,7 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-    // let orders = await storageService.query('order')
-    // const urlToRequest =  '/order'
+
     let orders = await httpService.get('order')
     let gigs = await gigService.query();
     if (typeOf === 'getBuys') {
@@ -50,7 +49,6 @@ async function query(loggedInUser, typeOf) {
     })
 
     orders = orders.sort((a, b) => b.createdAt - a.createdAt)
-    console.log('order', orders)
     return orders
 }
 

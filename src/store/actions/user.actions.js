@@ -30,9 +30,8 @@ export function removeUser(userId) {
 export function login(credentials) {
     return async (dispatch) => {
         try {
-            // console.log('credentials', credentials)
+
             const user = await userService.login(credentials)
-            // console.log('user', user)
             dispatch({
                 type: 'SET_USER',
                 user
@@ -46,11 +45,11 @@ export function login(credentials) {
 
 
 export function signup(credentials) {
-    // console.log('credentials', credentials)
+
     return async (dispatch) => {
         try {
             const user = await userService.signup(credentials)
-            // console.log('user', user)
+
             dispatch({
                 type: 'SET_USER',
                 user
@@ -63,7 +62,7 @@ export function signup(credentials) {
 }
 
 export function logout() {
-    
+
     return async (dispatch) => {
         try {
             await userService.logout()
@@ -79,38 +78,26 @@ export function logout() {
 }
 
 export async function loadUser(userId) {
-//   console.log('userId', userId)
-   
-        try {
-           const user = await userService.getById(userId);
-        //    console.log(user, 'user');
-           return user
-           
-        } catch (err) {
-            showErrorMsg('Cannot load user')
-            console.log('Cannot load user', err)
-        }
-    
+
+    try {
+        const user = await userService.getById(userId);
+        return user
+
+    } catch (err) {
+        showErrorMsg('Cannot load user')
+        console.log('Cannot load user', err)
+    }
+
 }
 
-export function getLoggedinUser(){
+export function getLoggedinUser() {
+
     return async (dispatch) => {
         try {
             const user = await userService.getLoggedinUser()
-            dispatch({type:'SET_LOGGED_USER', user})
-        } catch(err) {
+            dispatch({ type: 'SET_LOGGED_USER', user })
+        } catch (err) {
             console.log('Cannot load user', err)
         }
     }
 }
-//2.6.22 rinat closed no one use
-// export function onUpdateUser (userId) {
-//     return async (dispatch) => {
-//         try {
-//             const user = await userService.updateUser({isSeller: true},userId)
-
-//         }catch(err) {
-//             console.log('Cannot update user', err)
-//         }
-//     }
-// }

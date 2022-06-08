@@ -14,7 +14,7 @@ export const HomePage = () => {
                 <HeroCarousel />
             </div>
             <div className="trusted-by-brands container flex">
-            <TrustedBy />
+                <TrustedBy />
             </div>
             <div className="gig-slider-container container">
                 <h2 className='professional-services'>Popular professional services</h2>

@@ -1,26 +1,25 @@
-// import { httpService } from './http.service'
 import { storageService } from './async-storage.service'
 import { userService } from './user.service'
 import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from './socket.service'
 import { getActionRemoveReview, getActionAddReview } from '../store/actions/review.actions.js'
-import { store } from  '../store/root.reducer.js'
+import { store } from '../store/root.reducer.js'
 import { showSuccessMsg } from '../services/event-bus.service'
 
 const reviewChannel = new BroadcastChannel('reviewChannel')
 const STORAGE_KEY = 'gig'
 
-;(() => {
-  reviewChannel.addEventListener('message', (ev) => {
-    store.dispatch(ev.data)
-  })
-  socketService.on(SOCKET_EVENT_REVIEW_ADDED, (review) => {
-    console.log('GOT from socket', review)
-    store.dispatch(getActionAddReview(review))
-  })
-  socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, (review) => {
-    showSuccessMsg(`New review about me ${review.txt}`)
-  })
-})()
+  ; (() => {
+    reviewChannel.addEventListener('message', (ev) => {
+      store.dispatch(ev.data)
+    })
+    socketService.on(SOCKET_EVENT_REVIEW_ADDED, (review) => {
+      console.log('GOT from socket', review)
+      store.dispatch(getActionAddReview(review))
+    })
+    socketService.on(SOCKET_EVENT_REVIEW_ABOUT_YOU, (review) => {
+      showSuccessMsg(`New review about me ${review.txt}`)
+    })
+  })()
 
 
 
@@ -35,7 +34,7 @@ export const reviewService = {
 function query(filterBy) {
   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
   // return httpService.get(`review${queryStr}`)
-  let gigs =  storageService.query(STORAGE_KEY)
+  let gigs = storageService.query(STORAGE_KEY)
   gigs = gigs.filter(gig => gig._id === filterBy)
   let reviews = gigs.map(gig => gig.reviews.map(review => review))
   return Promise.resolve(reviews)

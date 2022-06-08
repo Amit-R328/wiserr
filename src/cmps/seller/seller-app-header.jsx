@@ -6,7 +6,7 @@ import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.j
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
-import { NavCategories } from './nav--categories.jsx'
+
 
 export const SellerAppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
@@ -21,8 +21,6 @@ export const SellerAppHeader = (props) => {
         dispatch(logout())
         var flag = !profileMenu;
         setMenu(flag);
-        // setIsSignIn(false)
-        // setLoggedInUser(null)
     }
 
     const onToggleMenu = () => {
@@ -34,13 +32,10 @@ export const SellerAppHeader = (props) => {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
     }
 
-    
-
     return (
         <header className="header-seller container">
             <button className="hamburger-icon">
                 <HamburgerMenu />
-                {/* <HamburgerMenu /> */}
             </button>
             <div className="seller-logo-main-header">
                 <NavLink to="/" className="site-logo">
@@ -51,7 +46,7 @@ export const SellerAppHeader = (props) => {
             <div className="seller seller-wiserr-header-search-animated">
                 <form className="seller-search-bar">
                     <span className="seller seller-search-bar-icon" aria-hidden="true">
-                        <SearchBar loc={'sellerAppHeader'}/>
+                        <SearchBar loc={'sellerAppHeader'} />
                     </span>
                     <Search />
                 </form>

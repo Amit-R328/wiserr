@@ -20,13 +20,13 @@ export class ImgUploader extends Component {
     else return isUploading ? 'Uploading....' : 'Upload Image'
   }
   render() {
-    const { imgUrl} = this.state
+    const { imgUrl } = this.state
 
     return (
       <div className="upload-preview"  >
-        {imgUrl && <img src={imgUrl} style={{maxWidth: '200px', float: 'right'}} alt="" />}
-        <label htmlFor="imgUpload">{ this.uploadMsg }</label>
-        <input type="file" onChange={ this.uploadImg } accept="img/*" id="imgUpload" />
+        {imgUrl && <img src={imgUrl} style={{ maxWidth: '200px', float: 'right' }} alt="" />}
+        <label htmlFor="imgUpload">{this.uploadMsg}</label>
+        <input type="file" onChange={this.uploadImg} accept="img/*" id="imgUpload" />
       </div>
     )
   }

@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 export const ProfileMenu = ({ onLogout, user, closeMenu }) => {
-    console.log('user', user)
+
     return (
         <section className="profile-menu-wrapper">
             <div className="profile-menu">

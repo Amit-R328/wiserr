@@ -1,10 +1,5 @@
-import { connect } from 'react-redux'
-import { IconContext } from 'react-icons'
 import { LogoFullFooter, Copyright, Instagram, Pinterest, LinkedIn, Facebook, Twitter } from '../services/svg.service.js'
-import { useSelector } from "react-redux";
-import React, { useState } from 'react'
 
-// import { removeFromCart, checkout } from '../store/car.actions'
 
 export const AppFooter = (props) => {
 

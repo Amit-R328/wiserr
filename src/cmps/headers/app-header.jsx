@@ -6,7 +6,6 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
-// import { NavDetails } from './nav-details.jsx'
 import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = (props) => {
@@ -25,7 +24,7 @@ export const AppHeader = (props) => {
     // const location = useHistory()
     // const location = useRoute()
     // const location = useSearchParams()
-    console.log('pathname', pathname)
+    
 
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
