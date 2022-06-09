@@ -64,13 +64,9 @@ export const GigDetails = (props) => {
         }
     }
 
-    if (!gig) return <h1>Loading</h1>
-    let whatYouGet
-    if (gig.description && gig.description.whatDoYouGet) {
-        whatYouGet = gig.description.whatDoYouGet.split('\n')
-    }
 
-    const onConfirmOrder = async (ev, gigId) => {
+
+    const onConfirmOrder = async (gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
@@ -86,6 +82,8 @@ export const GigDetails = (props) => {
             }, 2000);
         }
     }
+
+
 
     const onUpdateReviewsQty = async (gigId) => {
         if (gig.reviewsQty) gig.reviewsQty++
@@ -181,6 +179,12 @@ export const GigDetails = (props) => {
             allowOutsideClick: true,
             allowEscapeKey: true,
         })
+    }
+
+    if (!gig) return <h1>Loading</h1>
+    let whatYouGet
+    if (gig.description && gig.description.whatDoYouGet) {
+        whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
     return (
