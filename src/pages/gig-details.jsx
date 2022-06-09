@@ -85,6 +85,7 @@ export const GigDetails = (props) => {
 
 
 
+
     const onUpdateReviewsQty = async (gigId) => {
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
@@ -197,7 +198,7 @@ export const GigDetails = (props) => {
                             <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
                             <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
                             <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
-                            <aside className="details-menu-share">
+                            <aside>
                                 <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
                             </aside>
                         </ul>
