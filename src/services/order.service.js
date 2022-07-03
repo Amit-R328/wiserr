@@ -1,9 +1,8 @@
 import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
-import { socketService } from './socket.service.js'
-
-const orderChannel = new BroadcastChannel('orderChannel')
+// import { socketService } from './socket.service.js'
+// const orderChannel = new BroadcastChannel('orderChannel')
 
 const BASE_URL =
     process.env.NODE_ENV === 'production'
@@ -46,7 +45,6 @@ async function query(loggedInUser, typeOf) {
 }
 
 async function saveOrder(gigId, loggedinUser) {
-
     try {
         let gig = await httpService.get(`gig/${gigId}`)
         const order =

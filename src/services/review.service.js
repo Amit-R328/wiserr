@@ -7,7 +7,6 @@ import { showSuccessMsg } from '../services/event-bus.service'
 
 const reviewChannel = new BroadcastChannel('reviewChannel')
 const STORAGE_KEY = 'gig'
-
    (() => {
     reviewChannel.addEventListener('message', (ev) => {
       store.dispatch(ev.data)
@@ -21,15 +20,12 @@ const STORAGE_KEY = 'gig'
     })
   })()
 
-
-
 export const reviewService = {
   add,
   query,
   remove,
   addStarRate
 }
-
 
 function query(filterBy) {
   let queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
@@ -48,32 +44,18 @@ async function remove(reviewId) {
 
 async function add(review) {
   // const addedReview = await httpService.post(`review`, review)
-
   review.byUser = userService.getLoggedinUser()
   review.aboutUser = await userService.getById(review.aboutUserId)
   const addedReview = await storageService.post('review', review)
-
   reviewChannel.postMessage(getActionAddReview(addedReview))
-
   return addedReview
 }
 
 async function addStarRate(review, stars) {
   // const addStarRate = await httpService.post(`review`, review)
-
   review.byUser = userService.getLoggedinUser()
   review.aboutGig = await userService.getById(review.aboutGigId)
   const addedReview = await storageService.post('review', review)
-
   reviewChannel.postMessage(getActionAddReview(addedReview))
-
   return addedReview
 }
-
-// This way, we can also subscribe to none-store data change
-// function subscribe(listener) {
-//   reviewChannel.addEventListener('message', listener)
-// }
-// function unsubscribe(listener) {
-//   reviewChannel.removeEventListener('message', listener)
-// }
