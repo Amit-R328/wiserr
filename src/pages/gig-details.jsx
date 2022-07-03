@@ -84,7 +84,10 @@ export const GigDetails = (props) => {
         }
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 354af69f4f5f89649cdb0510d0921e32dbd7cb9b
     const onUpdateReviewsQty = async (gigId) => {
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
@@ -99,7 +102,11 @@ export const GigDetails = (props) => {
     }
 
     let images
+<<<<<<< HEAD
     if(gig && gig.imgUrl) {
+=======
+    if (gig && gig.imgUrl) {
+>>>>>>> 354af69f4f5f89649cdb0510d0921e32dbd7cb9b
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
         })
@@ -126,7 +133,6 @@ export const GigDetails = (props) => {
     }
 
     const getThumbDown = (ev, gig, idx) => {
-
         gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful
         let flagDown = gig.reviews[idx].isNotHelpful
         let color
