@@ -19,13 +19,13 @@ export const SellerAppHeader = (props) => {
 
     const onLogout = () => {
         dispatch(logout())
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleMenu = () => {
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {

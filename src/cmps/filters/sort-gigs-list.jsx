@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import Select from 'react-select';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import Select from 'react-select'
+import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
 const options = [
@@ -9,7 +9,7 @@ const options = [
 ]
 
 export const SortGigsList = () => {
-  const [selectedOption, setSelectedOption] = useState('title');
+  const [selectedOption, setSelectedOption] = useState('title')
   const dispatch = useDispatch()
   let { filterBy } = useSelector((storeState) => storeState.gigModule)
 

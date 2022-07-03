@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export function userReducer(state = initialState, action) {
-    var newState = state;
+    let newState = state;
     switch (action.type) {
         case 'SET_LOGGED_USER':
             newState = { ...state, loggedInUser: action.user }

@@ -1,18 +1,17 @@
 import '../../assets/scss/main.scss'
-
 // import { EffectFade } from 'swiper'
-import { Search } from '../search.jsx';
+import { Search } from '../search.jsx'
 import React, { useState, useEffect } from 'react'
 import { HeroPopularCategories } from './hero-popular-categories'
-import { AirOutlined } from '@mui/icons-material';
+import { AirOutlined } from '@mui/icons-material'
 // import {AiOutlinedSearch} from 'react-icons/ai'
 
 export function HeroCarousel(props) {
-  var backIdx = 1;
-  const [backClass1, setBack1] = useState('active');
-  const [backClass2, setBack2] = useState('');
-  const [backClass3, setBack3] = useState('');
-  const [backClass4, setBack4] = useState('');
+  let backIdx = 1
+  const [backClass1, setBack1] = useState('active')
+  const [backClass2, setBack2] = useState('')
+  const [backClass3, setBack3] = useState('')
+  const [backClass4, setBack4] = useState('')
   const [backClass5, setBack5] = useState('')
 
 
@@ -24,7 +23,7 @@ export function HeroCarousel(props) {
 
     }, 7000)
     return () => {
-      clearInterval(intervalId);
+      clearInterval(intervalId)
     }
   }, [])
 
@@ -83,35 +82,35 @@ function _switchBackClass(backIdx, setBack1, setBack2, setBack3, setBack4, setBa
       setBack3('')
       setBack4('')
       setBack5('')
-      break;
+      break
     case 2:
       setBack1('')
       setBack2('active')
       setBack3('')
       setBack4('')
       setBack5('')
-      break;
+      break
     case 3:
       setBack1('')
       setBack2('')
       setBack3('active')
       setBack4('')
       setBack5('')
-      break;
+      break
     case 4:
       setBack1('')
       setBack2('')
       setBack3('')
       setBack4('active')
       setBack5('')
-      break;
+      break
     case 5:
       setBack1('')
       setBack2('')
       setBack3('')
       setBack4('')
       setBack5('active')
-      break;
+      break
     default:
       setBack1('')
   }

@@ -41,17 +41,17 @@ export const AppHeader = (props) => {
 
     const onLogout = () => {
         dispatch(logout())
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleMenu = () => {
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleSideMenu = () => {
-        var flag = !isSideMenu
+        let flag = !isSideMenu
         setSideMenu(flag)
     }
 

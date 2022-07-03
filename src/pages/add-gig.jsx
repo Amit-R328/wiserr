@@ -36,15 +36,15 @@ class _AddGigDetails extends React.Component {
 
     handleSelectChange = (skills) => {
         this.setState((prevState) => ({ gigInfo: { ...prevState.gigInfo, skills } }))
-    };
+    }
 
     uploadImg = (ev) => {
         const CLOUD_NAME = cloudinaryService.getCloudName()
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
 
-        const formData = new FormData();
+        const formData = new FormData()
         formData.append('file', ev.target.files[0])
-        formData.append('upload_preset', cloudinaryService.getPreset());
+        formData.append('upload_preset', cloudinaryService.getPreset())
 
         return fetch(UPLOAD_URL, {
             method: 'POST',

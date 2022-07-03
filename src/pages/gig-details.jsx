@@ -1,19 +1,19 @@
 
-import { useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { showSuccessMsg } from '../services/event-bus.service.js'
-import { getById, updateGig } from '../store/actions/gig.actions.js';
-import { loadUser } from '../store/actions/user.actions.js';
+import { getById, updateGig } from '../store/actions/gig.actions.js'
+import { loadUser } from '../store/actions/user.actions.js'
 import { loadOrders } from '../store/actions/order.actions.js'
-import { GigReview } from '../cmps/gig-review.jsx';
-import { GreenVMark } from '../services/svg.service.js';
+import { GigReview } from '../cmps/gig-review.jsx'
+import { GreenVMark } from '../services/svg.service.js'
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import ImageGallery from 'react-image-gallery';
-import { UserMsg } from '../cmps/user-msg.jsx';
-import { socketService } from '../services/socket.service.js';
-import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js';
+import ImageGallery from 'react-image-gallery'
+import { UserMsg } from '../cmps/user-msg.jsx'
+import { socketService } from '../services/socket.service.js'
+import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js'
 import { utilService } from '../services/util.service.js'
 import Swal from 'sweetalert2'
 
@@ -92,7 +92,7 @@ export const GigDetails = (props) => {
             showSuccessMsg('Order accepted')
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
-            }, 2000);
+            }, 2000)
         }
     }
 
@@ -151,8 +151,8 @@ export const GigDetails = (props) => {
     }
 
     const onScroll = (el) => {
-        const section = document.querySelector(el);
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const section = document.querySelector(el)
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
 
     const onShareModal = (ev) => {

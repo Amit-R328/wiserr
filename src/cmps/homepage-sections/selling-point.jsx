@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { VCircle } from '../../services/svg.service.js'
 
 export const SellingPoint = () => {

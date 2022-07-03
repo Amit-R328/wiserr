@@ -7,7 +7,7 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
         closeMenu()
         navigate('/signup')
     }
-    const className = (menuOpen) ? "open" : "";
+    const className = (menuOpen) ? "open" : ""
 
     return (
         <section className={`side-bar ${className}`}>

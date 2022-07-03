@@ -1,21 +1,21 @@
 import * as React from 'react'
 import { useState } from 'react'
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Avatar from '@mui/material/Avatar'
+import Button from '@mui/material/Button'
+import CssBaseline from '@mui/material/CssBaseline'
+import TextField from '@mui/material/TextField'
+import Grid from '@mui/material/Grid'
+import Box from '@mui/material/Box'
+import Typography from '@mui/material/Typography'
+import Container from '@mui/material/Container'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import { cloudinaryService } from '../services/cloudinary.service.js';
-import { NavLink } from 'react-router-dom';
+import { cloudinaryService } from '../services/cloudinary.service.js'
+import { NavLink } from 'react-router-dom'
 import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
 
-const theme = createTheme();
+const theme = createTheme()
 
 export const LoginSignup = () => {
     const [isImg, setIsImg] = useState(false)
@@ -28,9 +28,9 @@ export const LoginSignup = () => {
     const uploadImg = (event) => {
         const CLOUD_NAME = cloudinaryService.getCloudName()
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
-        const formData = new FormData();
+        const formData = new FormData()
         formData.append('file', event.target.files[0])
-        formData.append('upload_preset', cloudinaryService.getPreset());
+        formData.append('upload_preset', cloudinaryService.getPreset())
         setIsImg(true)
         return fetch(UPLOAD_URL, {
             method: 'POST',
@@ -41,8 +41,8 @@ export const LoginSignup = () => {
     }
 
     const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
+        event.preventDefault()
+        const data = new FormData(event.currentTarget)
         const loginInfo = {
             userName: data.get('userName'),
             password: data.get('password'),

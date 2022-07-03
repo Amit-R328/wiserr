@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'

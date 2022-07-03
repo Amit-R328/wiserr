@@ -1,9 +1,9 @@
 import { VideoIcon } from '../../services/svg.service.js'
 import { SortGigsList } from '../filters/sort-gigs-list.jsx'
-import React, { useState } from "react";
+import React, { useState } from "react"
 import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
-import { BudgetFilter } from '../filters/budget-filter.jsx';
+import { BudgetFilter } from '../filters/budget-filter.jsx'
 import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
 
 export const FilterBreadCrumbs = () => {
@@ -21,8 +21,8 @@ export const FilterBreadCrumbs = () => {
     // }
 
     const onToggleBudget = () => {
-        let flag = !budgetMenu;
-        setBudgetMenu(flag);
+        let flag = !budgetMenu
+        setBudgetMenu(flag)
     }
 
     let className = (budgetMenu) ? 'open' : ''

@@ -55,7 +55,7 @@ async function update(user) {
     if (getLoggedinUser()._id === user._id) {
         saveLocalUser(user)
     }
-    return user;
+    return user
 }
 
 async function login(userCred) {

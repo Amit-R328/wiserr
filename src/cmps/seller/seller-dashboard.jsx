@@ -1,12 +1,12 @@
 
 import { useSelector, useDispatch } from 'react-redux'
-import React, { useState, useEffect, useRef } from 'react';
-import { loadOrders, onSaveOrder, onUpdateOrder, addOrder } from '../../store/actions/order.actions';
-import { userService } from '../../services/user.service.js';
-import { getLoggedinUser } from '../../store/actions/user.actions.js';
-import { utilService } from '../../services/util.service.js';
-import { socketService } from '../../services/socket.service.js';
-import { Loader } from '../loader.jsx';
+import React, { useState, useEffect, useRef } from 'react'
+import { loadOrders, onSaveOrder, onUpdateOrder, addOrder } from '../../store/actions/order.actions'
+import { userService } from '../../services/user.service.js'
+import { getLoggedinUser } from '../../store/actions/user.actions.js'
+import { utilService } from '../../services/util.service.js'
+import { socketService } from '../../services/socket.service.js'
+import { Loader } from '../loader.jsx'
 
 
 export const SellerDashboard = (props) => {
@@ -25,7 +25,7 @@ export const SellerDashboard = (props) => {
     let orders = useSelector((storeState) => storeState.orderModule.orders)
 
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
     const [order, setOrder] = useState('pending')
     const [loader, setLoader] = useState(true)

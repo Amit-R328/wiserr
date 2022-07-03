@@ -2,7 +2,7 @@ import { eventBusService } from '../services/event-bus.service.js'
 import React from "react"
 
 export class UserMsg extends React.Component {
-  removeEvent;
+  removeEvent
   state = {
     msg: null
   }

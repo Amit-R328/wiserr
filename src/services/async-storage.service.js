@@ -9,7 +9,7 @@ export const storageService = {
 }
 
 function query(entityType, delay = 600) {
-    var entities = JSON.parse(localStorage.getItem(entityType)) || []
+    let entities = JSON.parse(localStorage.getItem(entityType)) || []
 
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -26,7 +26,7 @@ function get(entityType, entityId) {
 }
 
 // function query(entityType, entityId, delay = 600) {
-//     var entities = JSON.parse(localStorage.getItem(entityType))
+//     let entities = JSON.parse(localStorage.getItem(entityType))
 //     if (entityType === 'user' && entityId) {
 //         const entity = entities.find(entity => entity._id === entityId)
 //         return entity
@@ -92,9 +92,9 @@ function _save(entityType, entities) {
 }
 
 function _makeId(length = 5) {
-    var text = ''
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    for (var i = 0; i < length; i++) {
+    let text = ''
+    let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for (let i = 0; i < length; i++) {
         text += possible.charAt(Math.floor(Math.random() * possible.length))
     }
     return text

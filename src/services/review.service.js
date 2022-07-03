@@ -8,7 +8,7 @@ import { showSuccessMsg } from '../services/event-bus.service'
 const reviewChannel = new BroadcastChannel('reviewChannel')
 const STORAGE_KEY = 'gig'
 
-  ; (() => {
+   (() => {
     reviewChannel.addEventListener('message', (ev) => {
       store.dispatch(ev.data)
     })
@@ -32,7 +32,7 @@ export const reviewService = {
 
 
 function query(filterBy) {
-  var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+  let queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
   // return httpService.get(`review${queryStr}`)
   let gigs = storageService.query(STORAGE_KEY)
   gigs = gigs.filter(gig => gig._id === filterBy)

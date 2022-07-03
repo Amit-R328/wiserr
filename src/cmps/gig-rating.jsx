@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Rating from '@mui/material/Rating';
-import StarIcon from '@mui/icons-material/Star';
+import Rating from '@mui/material/Rating'
+import StarIcon from '@mui/icons-material/Star'
 
 
 export const RatingValue = ({ handleRatingChange, reviewId }) => {
@@ -12,19 +12,19 @@ export const RatingValue = ({ handleRatingChange, reviewId }) => {
     }
 
     const handleOnChange = (e, reviewId, newValue) => {
-        setValue(newValue);
-        let rateIndex = reviewId.stars.findIndex(r => r.reviewId === reviewId);
+        setValue(newValue)
+        let rateIndex = reviewId.stars.findIndex(r => r.reviewId === reviewId)
         if (rateIndex === -1) {
-            reviewId.stars.push({ reviewId: reviewId, stars: newValue });
+            reviewId.stars.push({ reviewId: reviewId, stars: newValue })
         } else {
-            reviewId.stars[rateIndex] = { reviewId: reviewId, stars: newValue };
+            reviewId.stars[rateIndex] = { reviewId: reviewId, stars: newValue }
         }
-        handleRatingChange(reviewId);
+        handleRatingChange(reviewId)
     }
     const getAvg = (stars) => {
         let avgRating = null
         if (stars.length > 0) {
-            let sum = 0;
+            let sum = 0
             stars.forEach(r => sum += r.stars)
             avgRating = (sum / stars.length).toFixed(1)
         }

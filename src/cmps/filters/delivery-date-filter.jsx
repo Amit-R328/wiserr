@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { setFilter, loadGigs } from "../../store/actions/gig.actions.js";
+import React from "react"
+import { connect } from "react-redux"
+import { setFilter, loadGigs } from "../../store/actions/gig.actions.js"
 
 class _DeliveryDateFilter extends React.Component {
     state = {
@@ -30,8 +30,8 @@ class _DeliveryDateFilter extends React.Component {
     }
     
     // onToggleBudget() {
-    //     let flag = !this.props.budgetMenu;
-    //     this.setState(flag);
+    //     let flag = !this.props.budgetMenu
+    //     this.setState(flag)
     // }
 
     
