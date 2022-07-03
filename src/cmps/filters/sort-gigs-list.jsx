@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import Select from 'react-select';
+import React, { useEffect, useState } from 'react'
+import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
@@ -23,12 +23,11 @@ export const SortGigsList = () => {
   }, [selectedOption])
 
   return (
-    <Select
-      classNamePrefix="sort-gigs-list"
-      defaultValue={'title'}
-      onChange={onHandleChange}
-      options={options}
-      placeholder="Title"
-    />
+      <Select
+        classNamePrefix="sort-gigs-list"
+        defaultValue={'title'}
+        onChange={onHandleChange}
+        placeholder="Title"
+      />
   )
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { LogoFull } from '../../services/svg.service.js'
-import { NavLink, useLocation } from 'react-router-dom'
+import { LogoFull} from '../../services/svg.service.js'
+import { NavLink, useLocation} from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
@@ -15,6 +15,20 @@ export const AppHeader = () => {
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const { pathname } = useLocation()
+    const handleScroll = e => {
+        setScrolled(window.scrollY > 200)
+    }
+
+    useEffect(() => {
+        if (pathname === '/') {
+            window.addEventListener("scroll", handleScroll)
+        }
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [pathname])
+
+    const onLogout = () => {
         dispatch(logout())
         let flag = !profileMenu
         setMenu(flag)
