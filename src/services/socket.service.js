@@ -1,6 +1,5 @@
 import io from 'socket.io-client'
-import { userService } from './user.service'
-
+// import { userService } from './user.service'
 export const SOCKET_EMIT_LEAVE = 'leave'
 export const SOCKET_EMIT_JOIN_IS_CONNECTED = 'join isConnected'
 export const SOCKET_EMIT_JOIN = 'join'
@@ -14,7 +13,6 @@ export const SOCKET_EMIT_ADD_REVIEW = 'add-review'
 
 const baseUrl = (process.env.NODE_ENV === 'production') ? '' : '//localhost:3030'
 export const socketService = createSocketService()
-
 socketService.setup()
 
 function createSocketService() {
