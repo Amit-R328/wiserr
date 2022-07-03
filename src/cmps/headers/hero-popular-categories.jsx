@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react"
 import { gigService } from "../../services/gig.service.js"
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 export const HeroPopularCategories = () => {
     const [popularCategories, setPopularCategories] = useState([])
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-    const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
