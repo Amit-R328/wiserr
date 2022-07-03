@@ -54,9 +54,14 @@ class _AddGigDetails extends React.Component {
         }).catch(err => console.error(err))
     }
 
-    handleSubmit = (ev) => {
+    onSaveGig = async () => {
+        const gig = await this.props.saveGig(this.state.gigInfo)
+        return gig
+    }
+
+    handleSubmit = async (ev) => {
         ev.preventDefault()
-        const gig = this.props.saveGig(this.state.gigInfo)
+        const gig = await this.onSaveGig()
         this.setState({
             gigInfo: {
                 imgUrl: '',
@@ -74,7 +79,7 @@ class _AddGigDetails extends React.Component {
         const userIsSeller = this.props.loggedInUser
         userIsSeller.isSeller = true
         userService.saveLocalUser(userIsSeller)
-        this.props.navigation('/categories')
+        this.props.navigation(`/categories/${gig._id}`)
     }
 
     render() {
@@ -142,7 +147,7 @@ class _AddGigDetails extends React.Component {
                                             </textarea></label>
                                     </div>
                                 </div>
-                                
+
                                 <div className="add-gig-titles">
                                     <p className="add-gig-labels">Tell your potential buyers why they should choose you</p>
                                     <label className="description">
