@@ -50,7 +50,6 @@ export const GigDetails = (props) => {
             sectionTitle: 'Reviews'
         }
     ]
-
     
     useEffect(() => {
         dispatch(getById(params.gigId))
@@ -83,23 +82,12 @@ export const GigDetails = (props) => {
         }
     }
 
-<<<<<<< HEAD
     const onConfirmOrder = async (ev, gigId) => {
-=======
-
-
-    const onConfirmOrder = async (ev,gigId) => {
-
->>>>>>> 9c844e6e42d4bf8ca5314bc665fd004ee2665e1f
         if (!loggedInUser) {
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-<<<<<<< HEAD
             onUpdateReviewsQty()
-=======
-            onUpdateReviewsQty(gigId)
->>>>>>> 9c844e6e42d4bf8ca5314bc665fd004ee2665e1f
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
             setTimeout(() => {
