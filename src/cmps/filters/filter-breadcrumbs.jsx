@@ -13,6 +13,7 @@ export const FilterBreadCrumbs = async () => {
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
     const onToggleBudget = () => {
         let flag = !budgetMenu
+        console.log('flag')
         setBudgetMenu(flag)
     }
     const onToggleDeliveryTime = () => {
