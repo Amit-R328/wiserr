@@ -5,9 +5,6 @@ import { Provider } from 'react-redux'
 import "mailgo/dist/mailgo.min.js"
 import {store} from './store/root.reducer.js'
 import {RootCmp} from './root-cmp'
-// import './assets/scss/main.scss'
-
-
 
 ReactDOM.render(
 <React.StrictMode>
