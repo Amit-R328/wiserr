@@ -33,6 +33,7 @@ export const GigDetails = (props) => {
     const BLACK = '#404145'
     const BLUE = '#446ee7'
 
+    
     useEffect(() => {
         dispatch(getById(params.gigId))
         window.scrollTo(0, 0)
@@ -84,8 +85,6 @@ export const GigDetails = (props) => {
     }
 
 
-
-
     const onUpdateReviewsQty = async (gigId) => {
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
@@ -93,15 +92,18 @@ export const GigDetails = (props) => {
         let newGig = await dispatch(updateGig(gig))
         console.log('newGig', newGig)
     }
-
+    
     let price = 0
-    if (gig.price) {
+    if (gig && gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
 
-    const images = gig.imgUrl.map((img) => {
-        return { original: img, thumbnail: img }
-    })
+    let images
+    if(gig && gig.imgUrl) {
+        images = gig.imgUrl.map((img) => {
+            return { original: img, thumbnail: img }
+        })
+    }
 
     const getThumbUp = (ev, gig, idx) => {
         gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful
@@ -187,7 +189,7 @@ export const GigDetails = (props) => {
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
-
+    
     return (
         <>
             <section className="gig-details-container container">
