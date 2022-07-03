@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import React, { useEffect, useState } from 'react';
 import Select from 'react-select';
-=======
-import React, { useEffect, useState } from 'react'
-import Select from 'react-select'
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
@@ -28,7 +23,6 @@ export const SortGigsList = () => {
   }, [selectedOption])
 
   return (
-<<<<<<< HEAD
     <Select
       classNamePrefix="sort-gigs-list"
       defaultValue={'title'}
@@ -36,14 +30,5 @@ export const SortGigsList = () => {
       options={options}
       placeholder="Title"
     />
-=======
-      <Select
-        classNamePrefix="sort-gigs-list"
-        defaultValue={'title'}
-        onChange={onHandleChange}
-        options={options}
-        placeholder="Title"
-      />
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
   )
 }

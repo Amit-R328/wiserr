@@ -187,19 +187,10 @@ export const GigDetails = (props) => {
                 <div className="nav-details-container">
                     <nav className="details-menu-scroll">
                         <ul className="nav-details-sections">
-<<<<<<< HEAD
-                            <li onClick={() => scrollOverview()} className="detail-btn-top">Overview</li>
-                            <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
-                            <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
-                            <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
-                            <aside className="details-menu">
-                                <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
-=======
                             {sections.map(section =>
                                 <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
                             <aside>
                                 <button onClick={() => onShareModal()} className="details-menu-share"></button>
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
                             </aside>
                         </ul>
                     </nav>

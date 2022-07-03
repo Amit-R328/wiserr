@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react"
 import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
@@ -12,27 +11,6 @@ export const FilterBreadCrumbs = () => {
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-
-
-    const onToggleBudget = () => {
-        let flag = !budgetMenu;
-        setBudgetMenu(flag);
-    }
-
-=======
-import { VideoIcon } from '../../services/svg.service.js'
-import { SortGigsList } from '../filters/sort-gigs-list.jsx'
-import React, { useState } from "react"
-import { useSelector } from 'react-redux'
-import Swal from 'sweetalert2'
-import { BudgetFilter } from '../filters/budget-filter.jsx'
-import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
-
-export const FilterBreadCrumbs = async () => {
-    let [budgetMenu, setBudgetMenu] = useState(false)
-    let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
-    let { filterBy } = useSelector((storeState) => storeState.gigModule)
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
     let className = (budgetMenu) ? 'open' : ''
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
@@ -46,11 +24,7 @@ export const FilterBreadCrumbs = async () => {
         setDeliveryDateMenu(flag)
     }
 
-<<<<<<< HEAD
     const showSweetAlert = () => {
-=======
-    const showSweetAlert = (ev) => {
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
         Swal.fire({
             className: "video-modal",
             width: 1000,
