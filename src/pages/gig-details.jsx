@@ -270,8 +270,7 @@ export const GigDetails = (props) => {
                                         </li>
                                     </ul>
                                     <article className="seller-description">
-                                        <div className="owner-summary">Hello I am Freelance Graphic Design and Illustrator based in Israel, I have working in graphic design industry for almost 6 years.</div>
-
+                                        <div className="owner-summary">Hello, I am a freelancer who have been working in this industry for almost 6 years. I am open to different challenges and opportunities</div>
                                     </article>
                                 </div>
                             </article>

@@ -23,13 +23,6 @@ export const UserProfile = () => {
         }, 3000)
     }, [])
 
-<<<<<<< HEAD
-=======
-    let totals = orders.reduce(((acc, curr) => acc + curr.gig.price), 0)
-
-
-    const totalAmount = totals.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
->>>>>>> 9c844e6e42d4bf8ca5314bc665fd004ee2665e1f
     return (
         <section className='user-profile-layout container'>
             {loader && <Loader />}
