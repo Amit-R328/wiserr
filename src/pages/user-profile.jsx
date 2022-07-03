@@ -17,19 +17,10 @@ export const UserProfile = () => {
     let totals = orders.reduce(((acc, curr) => acc + curr.gig.price), 0).toLocaleString('en-US', { style: 'currency', currency: 'USD' })
 
     useEffect(() => {
-<<<<<<< HEAD
-        
-        dispatch(loadOrders(loggedInUser, 'getBuys'))
-        setTimeout(() => {
-            setLoader(false)
-        }, 3700)
-        orders = orders.filter(order => order.seller !== loggedInUser.userName)
-=======
         dispatch(loadOrders(loggedInUser, 'getBuys'))
         setTimeout(() => {
             setLoader(false)
         }, 3000)
->>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
     }, [])
 
     return (
