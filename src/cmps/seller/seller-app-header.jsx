@@ -7,7 +7,6 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 
-
 export const SellerAppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
