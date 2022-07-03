@@ -10,7 +10,6 @@ class _BudgetFilter extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.filterBy !== this.props.filterBy) {
-
         }
     }
 
