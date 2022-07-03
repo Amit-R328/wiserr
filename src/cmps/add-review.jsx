@@ -1,6 +1,6 @@
 import React from "react"
 
-export class ReviewAdd extends React.Component {
+export class AddReview extends React.Component {
     state = {
         txt: ""
     }
@@ -11,7 +11,6 @@ export class ReviewAdd extends React.Component {
 
     submit = async (ev) => {
         ev.preventDefault()
-
     }
 
     render() {
