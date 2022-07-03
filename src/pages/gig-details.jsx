@@ -51,6 +51,7 @@ export const GigDetails = (props) => {
         }
     ]
 
+    
     useEffect(() => {
         dispatch(getById(params.gigId))
         window.scrollTo(0, 0)
@@ -82,12 +83,23 @@ export const GigDetails = (props) => {
         }
     }
 
+<<<<<<< HEAD
     const onConfirmOrder = async (ev, gigId) => {
+=======
+
+
+    const onConfirmOrder = async (ev,gigId) => {
+
+>>>>>>> 9c844e6e42d4bf8ca5314bc665fd004ee2665e1f
         if (!loggedInUser) {
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
+<<<<<<< HEAD
             onUpdateReviewsQty()
+=======
+            onUpdateReviewsQty(gigId)
+>>>>>>> 9c844e6e42d4bf8ca5314bc665fd004ee2665e1f
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
             setTimeout(() => {
@@ -101,7 +113,7 @@ export const GigDetails = (props) => {
         else gig.reviewsQty = 1
         await dispatch(updateGig(gig))
     }
-
+    
     let price = 0
     if (gig && gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
@@ -180,7 +192,7 @@ export const GigDetails = (props) => {
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
-
+    
     return (
         <>
             <section className="gig-details-container container">

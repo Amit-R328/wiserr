@@ -46,6 +46,7 @@ async function query(loggedInUser, typeOf) {
 }
 
 async function saveOrder(gigId, loggedinUser) {
+
     try {
         let gig = await httpService.get(`gig/${gigId}`)
         const order =
