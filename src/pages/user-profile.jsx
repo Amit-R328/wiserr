@@ -26,7 +26,7 @@ export const UserProfile = () => {
         dispatch(loadOrders(loggedInUser, 'getBuys'))
         setTimeout(() =>{
             setLoader(false)
-        }, 3000)
+        }, 3700)
         // console.log(orders)
         orders = orders.filter(order => order.seller !== loggedInUser.userName)
     }, [])
