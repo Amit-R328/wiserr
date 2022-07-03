@@ -1,11 +1,7 @@
 import '../../assets/scss/main.scss'
-
-// import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx';
 import React, { useState, useEffect } from 'react'
 import { HeroPopularCategories } from './hero-popular-categories'
-import { AirOutlined } from '@mui/icons-material';
-// import {AiOutlinedSearch} from 'react-icons/ai'
 
 export function HeroCarousel(props) {
   var backIdx = 1;
@@ -59,17 +55,6 @@ export function HeroCarousel(props) {
             </div>
           </div>
         </div>
-        <div className="static-background">
-          {/* <HeroPopularCategory /> */}
-        </div>
-
-        {/* <div className="seller-name">
-          <span className={`seller ${backClass1}`}>Andrea, <span className='seller-skill'>Fashion Designer</span></span>
-          <span className={`seller ${backClass2}`}>Moon, <span className='seller-skill'>Marketing Expert</span></span>
-          <span className={`seller ${backClass3}`}>Ritika, <span className='seller-skill'>Shoemaker And Designer</span></span>
-          <span className={`seller ${backClass4}`}>Zach, <span className='seller-skill'>Bar Owner</span></span>
-          <span className={`seller ${backClass5}`}>Gabrielle, <span className='seller-skill'>Video Editor</span></span>
-        </div> */}
       </div>
     </div >
   )

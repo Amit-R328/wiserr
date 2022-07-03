@@ -11,12 +11,11 @@ import { loadUser } from "../store/actions/user.actions";
 import { orderService } from "../services/order.service";
 
 export const GigPreview = ({ gig, reviews }) => {
-   
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [likedBy, setLikedBy] = useState(false)
-    // let user = (gig) ? dispatch(loadUser(gig.owner._Id)) :  ''
     let price = gig.price
     let decNumber = 0
 
@@ -25,8 +24,8 @@ export const GigPreview = ({ gig, reviews }) => {
         images = gig.imgUrl.map((img) => {
             return { original: img, thumbnail: img }
         })
-    
-        decNumber = (price - Math.floor(price))        
+
+        decNumber = (price - Math.floor(price))
         price = Math.floor(price)
     }
 
@@ -36,14 +35,12 @@ export const GigPreview = ({ gig, reviews }) => {
     }
 
     const ToggleHeart = (ev, likedBy) => {
-        console.log('likedBy', likedBy)
+
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
             navigate(`/login`)
-            // showSuccessMsg('Need go login')
         } else {
-            // console.log('loggedInUser', loggedInUser)
             const likedByUser = {
                 "_id": loggedInUser._id,
                 "fullName": loggedInUser.userName,
@@ -51,27 +48,22 @@ export const GigPreview = ({ gig, reviews }) => {
             }
 
             //if theres is liked byUsers
-            console.log('gig',gig )
             if (gig.likedByUsers) {
                 const liked = gig.likedByUsers.filter(user => user._id === likedByUser._id)
-                //if the user already did like we delte him
-                console.log('liked.length', liked)
+                //if the user already did like we delte him                
                 if (liked.length) {
                     let idx = gig.likedByUsers.findIndex(user => user._id === liked[0]._id)
                     gig.likedByUsers.splice(idx, 1)
                     setLikedBy(false)
-               
-                 } else {
-                     //else he insert into the collection
-                     gig.likedByUsers.push(likedByUser)
-                     setLikedBy(true)
-                     console.log('likedBy', likedBy)
-                    //  setClassName('liked')
-                 }
+
+                } else {
+                    //else he insert into the collection
+                    gig.likedByUsers.push(likedByUser)
+                    setLikedBy(true)
+                }
             } else {
                 gig.likedByUsers = [gig.likedByUsers.push(likedByUser)]
             }
-            console.log('likedBy',likedBy )
             dispatch(updateGig(gig))
         }
     }
@@ -102,17 +94,10 @@ export const GigPreview = ({ gig, reviews }) => {
             </div>
             <footer className="card-footer" onClick={onGoToDetails}>
                 <div className="heart-btn">
-                    <button className={`fav-btn ${loggedInUser && getLikeByUser() ? 'like': ''}`} onClick={(ev) => ToggleHeart(ev, likedBy)}>
-                        
-                    {/* {getLikeByUser() ? <BlackHeart /> : <WhiteHeart />} */}
-                   {/* {loggedInUser && likedBy ? 'like': '' } */}
-                  {/* {loggedInUser && getLikeByUser() ? 'liked' : ''} */}
-                  
-                </button>
+                    <button className={`fav-btn ${loggedInUser && getLikeByUser() ? 'like' : ''}`} onClick={(ev) => ToggleHeart(ev, likedBy)}></button>
                 </div>
                 <div className="gig-price">
-                    {/* <h4 className="gig-amount"><div className="price-text">S<span className="gig-price-title">TARTIN</span>G&nbsp; <span className="gig-price-title">AT</span></div>{price}</h4> */}
-                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>${price}<sup className="sup-price">{decNumber ? Math.floor(decNumber*100): " "}</sup></h4>
+                    <h4 className="gig-amount"><div className="price-text">STARTING AT</div>${price}<sup className="sup-price">{decNumber ? Math.floor(decNumber * 100) : " "}</sup></h4>
                 </div>
             </ footer>
         </li >

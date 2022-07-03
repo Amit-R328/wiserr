@@ -13,11 +13,10 @@ export const GigPage = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        setTimeout(() =>{
+        setTimeout(() => {
             setLoader(false)
         }, 1000)
         dispatch(loadGigs(filterBy))
-        //take the page to the begining
         window.scrollTo(0, 0)
     }, [])
 
@@ -29,7 +28,7 @@ export const GigPage = () => {
                         <div className="filter-gigs-container">
                             <FilterBreadCrumbs />
                         </div>
-                        {loader && <Loader/>}
+                        {loader && <Loader />}
                         <GigList gigs={gigs} reviews={reviews} />
                     </div>
                 </div>

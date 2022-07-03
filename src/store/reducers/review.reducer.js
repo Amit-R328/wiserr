@@ -15,7 +15,8 @@ export function reviewReducer(state = initialState, action = {}) {
         ...state,
         reviews: state.reviews.map(review =>
           review._id === action.review._id ? action.review : review
-        )}
+        )
+      }
     default:
       return state
   }

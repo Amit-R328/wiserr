@@ -118,10 +118,7 @@ export const LoginSignup = () => {
                                 id="password"
                                 autoComplete="current-password"
                             />
-                            {/* <FormControlLabel
-                                control={<Checkbox value="remember" color="primary" name="remember-me" />}
-                                label="Remember me"
-                            /> */}
+
                             <Button
                                 type="submit"
                                 fullWidth
@@ -131,11 +128,7 @@ export const LoginSignup = () => {
                                 {isLogin ? 'Login' : 'Sign in'}
                             </Button>
                             <Grid container>
-                                {/* <Grid item xs>
-                                {isLogin && <Link href="#" variant="body2">
-                                    Forgot password
-                                </Link>}
-                            </Grid> */}
+
                                 <Grid item>
                                     <NavLink to="/signup" variant="body2" onClick={onChangePage}>
                                         {isLogin ? 'Don\'t have an account? Sign Up' : 'Already have an account? Login'}

@@ -33,7 +33,6 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         dispatch(getLoggedinUser())
         getOrders()
-        console.log('orderssssssssssssssssssssssssssssssssssssssssssss', orders)
         setTimeout(() => {
             setLoader(false)
         }, 3000)
@@ -46,7 +45,6 @@ export const SellerDashboard = (props) => {
     }
     // setSocket()
     const onAddOrder = async (order) => {
-        console.log('order:::::::::::::::::::::::::::::::::::::::::', order)
         order.createdAt = Date.now()
         setOrder('')
         let seller = await userService.getById(order.buyer._id)

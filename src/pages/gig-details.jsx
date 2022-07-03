@@ -64,13 +64,9 @@ export const GigDetails = (props) => {
         }
     }
 
-    if (!gig) return <h1>Loading</h1>
-    let whatYouGet
-    if (gig.description && gig.description.whatDoYouGet) {
-        whatYouGet = gig.description.whatDoYouGet.split('\n')
-    }
 
-    const onConfirmOrder = async (ev, gigId) => {
+
+    const onConfirmOrder = async (gigId) => {
         if (!loggedInUser) {
             console.log('Need to login')
             navigate('/login')
@@ -96,13 +92,16 @@ export const GigDetails = (props) => {
     }
 
     let price = 0
-    if (gig.price) {
+    if (gig && gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     }
 
-    const images = gig.imgUrl.map((img) => {
-        return { original: img, thumbnail: img }
-    })
+    let images
+    if (gig && gig.imgUrl) {
+        images = gig.imgUrl.map((img) => {
+            return { original: img, thumbnail: img }
+        })
+    }
 
     const getThumbUp = (ev, gig, idx) => {
         gig.reviews[idx].isHelpful = !gig.reviews[idx].isHelpful
@@ -125,7 +124,6 @@ export const GigDetails = (props) => {
     }
 
     const getThumbDown = (ev, gig, idx) => {
-
         gig.reviews[idx].isNotHelpful = !gig.reviews[idx].isNotHelpful
         let flagDown = gig.reviews[idx].isNotHelpful
         let color
@@ -181,6 +179,12 @@ export const GigDetails = (props) => {
             allowOutsideClick: true,
             allowEscapeKey: true,
         })
+    }
+
+    if (!gig) return <h1>Loading</h1>
+    let whatYouGet
+    if (gig.description && gig.description.whatDoYouGet) {
+        whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
 
     return (

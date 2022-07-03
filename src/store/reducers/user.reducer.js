@@ -5,14 +5,14 @@ const initialState = {
     count: 10,
     loggedInUser: userService.getLoggedinUser() || null,
     users: [],
-    watchedUser : null,
-    // loggedInUser:null
+    watchedUser: null,
 }
+
 export function userReducer(state = initialState, action) {
     var newState = state;
     switch (action.type) {
         case 'SET_LOGGED_USER':
-            newState = {...state, loggedInUser: action.user}
+            newState = { ...state, loggedInUser: action.user }
             break;
         case 'SET_USER':
             newState = { ...state, loggedInUser: action.user }
@@ -26,7 +26,7 @@ export function userReducer(state = initialState, action) {
         case 'SET_USERS':
             newState = { ...state, users: action.users }
             break;
-      
+
         default:
     }
     // For debug:

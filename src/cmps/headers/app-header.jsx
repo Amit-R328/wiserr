@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { LogoFull, HamburgerMenu, SearchBar } from '../../services/svg.service.js'
-import { NavLink, useLocation, useSearchParams } from 'react-router-dom'
+import { LogoFull} from '../../services/svg.service.js'
+import { NavLink, useLocation} from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
-// import { NavDetails } from './nav-details.jsx'
 import { SideMenu } from '../side-menu.jsx'
 
-export const AppHeader = (props) => {
-    const [searchBar, setSearchBar] = useState('hidden')
-    const [navHeader, setNavHeader] = useState('hidden')
-    const [logo, setLogo] = useState('logo-white')
-    const [headerTextColor, setHeaderTextColor] = useState('white')
+export const AppHeader = () => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
     const [profileMenu, setMenu] = useState(false)
@@ -21,12 +16,7 @@ export const AppHeader = (props) => {
     const [scrolled, setScrolled] = useState(false)
 
     const { pathname } = useLocation()
-    // const location = useLocation()
-    // const location = useHistory()
-    // const location = useRoute()
-    // const location = useSearchParams()
-    console.log('pathname', pathname)
-
+    
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }

@@ -11,11 +11,11 @@ export const storageService = {
 function query(entityType, delay = 600) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
 
-    return new Promise((resolve, reject)=>{
-        setTimeout(()=>{
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             // reject('OOOOPs')
             resolve(entities)
-        }, delay)   
+        }, delay)
     })
     return Promise.resolve(entities)
 }
@@ -26,18 +26,13 @@ function get(entityType, entityId) {
 }
 
 // function query(entityType, entityId, delay = 600) {
-//     console.log('entityType',entityType)
 //     var entities = JSON.parse(localStorage.getItem(entityType))
-//     console.log('entities', entities)
 //     if (entityType === 'user' && entityId) {
 //         const entity = entities.find(entity => entity._id === entityId)
-//         console.log('entity', entity)
-//         console.log('need to go out in query')
 //         return entity
 //     } else  if (entityType === 'order' && !entities) {
 //         entities = _createOrders()
 //         _save(entityType, entities)
-//        console.log('entities',entities )
 //     } else if (entityType === 'user' && !entities) {
 //         entities = _createUsers()
 //         _save(entityType, entities)
@@ -46,12 +41,9 @@ function get(entityType, entityId) {
 //         entities = _createGigs()
 //         _save(entityType, entities)
 //     }
-//     console.log('entities', entities)
 //     return new Promise((resolve, reject) => {
 //         setTimeout(() => {
 //             // reject('OOOOPs')
-//             console.log('entities', entities)
-//             console.log('in query promise')
 //             resolve(entities)
 //         }, delay)
 //     })
@@ -60,10 +52,7 @@ function get(entityType, entityId) {
 
 
 // function get(entityType, entityId) {
-//     console.log('entityType',entityType )
-//     console.log('entityId',entityId )
 //     const entity = query(entityType, entityId)
-//     console.log('entity in get',entity )
 //     return entity
 //     // .then(entities => entities.find(entity => entity._id === entityId))
 // }
@@ -122,7 +111,7 @@ function postMany(entityType, newEntities) {
 }
 
 function _createOrders() {
-    console.log('Create orders log')
+    
     let orders = [
         {
             "_id": "o101",

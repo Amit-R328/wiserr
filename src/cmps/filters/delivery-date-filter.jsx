@@ -29,20 +29,6 @@ class _DeliveryDateFilter extends React.Component {
         this.setState((prevState) => ({ ...prevState, deliveryDate: 0 }))
     }
     
-    // onToggleBudget() {
-    //     let flag = !this.props.budgetMenu;
-    //     this.setState(flag);
-    // }
-
-    
-    // onToggleDeliveryTime() {
-    //     let flag = !this.props.deliveryDateMenu
-    //     this.setState(flag)
-    // }
-    // let className = (this.props.budgetMenu) ? 'open' : ''
-    // let classNameDelivery = (this.props.deliveryDateMenu) ? 'open' : ''
-    
-    
     render() {
         return (
             <section className="deliveryTime-filter flex">
