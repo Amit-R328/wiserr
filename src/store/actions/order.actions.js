@@ -16,9 +16,10 @@ export function loadOrders(loggedInUser, typeOf) {
 
 
 export function onSaveOrder(gigId, loggedinUser) {
+    
     return async (dispatch) => {
         try {
-            const order = await orderService.saveOrder(gigId, loggedinUser)            
+            const order = await orderService.saveOrder(gigId, loggedinUser)  
             const action = { type: 'SET_ORDER', order }
             dispatch(action)
             return order

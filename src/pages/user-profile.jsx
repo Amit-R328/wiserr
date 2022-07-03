@@ -29,8 +29,7 @@ export const UserProfile = () => {
     }, [])
 
     let totals = orders.reduce(((acc, curr) => acc + curr.gig.price), 0)
-    console.log('totals', totals)
-    console.log('orders from user-profile', orders)
+
 
     const totalAmount = totals.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
     return (
