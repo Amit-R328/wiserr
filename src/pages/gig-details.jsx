@@ -32,6 +32,24 @@ export const GigDetails = (props) => {
     const params = useParams()
     const BLACK = '#404145'
     const BLUE = '#446ee7'
+    const sections = [
+        {
+            sectionElement: '.gig-details-container',
+            sectionTitle: 'Overview'
+        },
+        {
+            sectionElement: '.about-details',
+            sectionTitle: 'Description'
+        },
+        {
+            sectionElement: '.about-seller',
+            sectionTitle: 'About the Seller'
+        },
+        {
+            sectionElement: '.reviews',
+            sectionTitle: 'Reviews'
+        }
+    ]
 
     useEffect(() => {
         dispatch(getById(params.gigId))
@@ -64,31 +82,24 @@ export const GigDetails = (props) => {
         }
     }
 
-
-
-    const onConfirmOrder = async (gigId) => {
+    const onConfirmOrder = async (ev, gigId) => {
         if (!loggedInUser) {
-            console.log('Need to login')
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-            onUpdateReviewsQty(gigId)
-
+            onUpdateReviewsQty()
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
-
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
             }, 2000);
         }
     }
 
-    const onUpdateReviewsQty = async (gigId) => {
+    const onUpdateReviewsQty = async () => {
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
-
-        let newGig = await dispatch(updateGig(gig))
-        console.log('newGig', newGig)
+        await dispatch(updateGig(gig))
     }
 
     let price = 0
@@ -114,7 +125,6 @@ export const GigDetails = (props) => {
             color = BLACK
             setTextColorDown(color)
             setThumbDown(false)
-
         } else {
             color = BLACK
             setTextColorUp(color)
@@ -140,28 +150,12 @@ export const GigDetails = (props) => {
         dispatch(updateGig(gig))
     }
 
-    const scrollOverview = () => {
-        const section = document.querySelector('.gig-details-container');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollDescription = () => {
-        const section = document.querySelector('.about-details');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollAbout = () => {
-        const section = document.querySelector('.about-seller');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollReviews = () => {
-        const section = document.querySelector('.reviews');
+    const onScroll = (el) => {
+        const section = document.querySelector(el);
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     const onShareModal = (ev) => {
-        // ev.preventDefault()
         Swal.fire({
             className: "share-modal",
             width: 620,
@@ -193,12 +187,10 @@ export const GigDetails = (props) => {
                 <div className="nav-details-container">
                     <nav className="details-menu-scroll">
                         <ul className="nav-details-sections">
-                            <li onClick={() => scrollOverview()} className="detail-btn-top">Overview</li>
-                            <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
-                            <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
-                            <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
+                            {sections.map(section =>
+                                <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
                             <aside>
-                                <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
+                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
                             </aside>
                         </ul>
                     </nav>

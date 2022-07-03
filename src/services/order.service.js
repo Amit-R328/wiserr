@@ -5,7 +5,6 @@ import { socketService } from './socket.service.js'
 
 const orderChannel = new BroadcastChannel('orderChannel')
 
-
 const BASE_URL =
     process.env.NODE_ENV === 'production'
         ? '/api/gig/'
@@ -22,7 +21,6 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-
     let orders = await httpService.get('order')
     let gigs = await gigService.query();
     if (typeOf === 'getBuys') {
