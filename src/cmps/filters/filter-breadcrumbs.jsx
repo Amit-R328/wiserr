@@ -5,24 +5,20 @@ import { useSelector } from 'react-redux'
 import Swal from 'sweetalert2'
 import { BudgetFilter } from '../filters/budget-filter.jsx'
 import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
-
 export const FilterBreadCrumbs = async () => {
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     let className = (budgetMenu) ? 'open' : ''
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
-
     const onToggleBudget = () => {
         let flag = !budgetMenu
         setBudgetMenu(flag)
     }
-
     const onToggleDeliveryTime = () => {
         let flag = !deliveryDateMenu
         setDeliveryDateMenu(flag)
     }
-
     const showSweetAlert = (ev) => {
         Swal.fire({
             className: "video-modal",
@@ -41,7 +37,6 @@ export const FilterBreadCrumbs = async () => {
             allowEscapeKey: true,
         })
     }
-
     return (
         <main className="layout-row flex flex-column">
             <header>
@@ -51,7 +46,6 @@ export const FilterBreadCrumbs = async () => {
                         </li> : <li><span>Wiserr</span>All</li>}
                     </ul>
                 </section>
-
                 <section className="results-category-header">
                     <div className="title-wrapper">
                         {(filterBy.txt) ? <h1>Results for "<span>{filterBy.txt}</span>"</h1> : <span></span>}
@@ -62,7 +56,6 @@ export const FilterBreadCrumbs = async () => {
                     </div>
                 </section>
             </header >
-
             <section className="filter-topbar">
                 <div className={`filter-shadow-effect flex ${className}`}>
                     <div className="filters-only flex">
