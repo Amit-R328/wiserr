@@ -9,18 +9,16 @@ import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { cloudinaryService } from '../services/cloudinary.service.js'
-import { NavLink } from 'react-router-dom'
 import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
-
-const theme = createTheme()
 
 export const LoginSignup = () => {
     const [isImg, setIsImg] = useState(false)
     const [imgUrl, setImgUrl] = useState('')
     const [isLogin, setIsLogin] = useState(true)
+    const theme = createTheme()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -46,19 +44,18 @@ export const LoginSignup = () => {
             userName: data.get('userName'),
             password: data.get('password'),
         }
-
         if (isLogin) {
             dispatch(login(loginInfo))
-            dispatch(getLoggedinUser())
         } else {
             loginInfo.fullname = data.get('fullname')
             loginInfo.imgUrl = imgUrl
             dispatch(signup(loginInfo))
-            dispatch(getLoggedinUser())
         }
+        dispatch(getLoggedinUser())
         navigate('/')
     }
-    const onChangePage = (ev) => {
+
+    const onChangePage = () => {
         setIsLogin(!isLogin)
     }
 
@@ -116,7 +113,6 @@ export const LoginSignup = () => {
                                 id="password"
                                 autoComplete="current-password"
                             />
-
                             <Button
                                 type="submit"
                                 fullWidth
