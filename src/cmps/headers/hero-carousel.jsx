@@ -1,10 +1,7 @@
 import '../../assets/scss/main.scss'
-// import { EffectFade } from 'swiper'
 import { Search } from '../search.jsx'
 import React, { useState, useEffect } from 'react'
 import { HeroPopularCategories } from './hero-popular-categories'
-import { AirOutlined } from '@mui/icons-material'
-// import {AiOutlinedSearch} from 'react-icons/ai'
 
 export function HeroCarousel(props) {
   let backIdx = 1
@@ -14,13 +11,11 @@ export function HeroCarousel(props) {
   const [backClass4, setBack4] = useState('')
   const [backClass5, setBack5] = useState('')
 
-
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (backIdx === 5) backIdx = 1
       else backIdx++
       _switchBackClass(backIdx, setBack1, setBack2, setBack3, setBack4, setBack5)
-
     }, 7000)
     return () => {
       clearInterval(intervalId)
@@ -29,7 +24,7 @@ export function HeroCarousel(props) {
 
   return (
     <div className="hero-container">
-      <div className='background-images'>
+      <div className="background-images">
         <div className={`background ${backClass1}`}>
           <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/RitikaN_ykznwx.jpg" alt="Ritika" />
         </div>
@@ -47,28 +42,17 @@ export function HeroCarousel(props) {
         </div>
       </div>
       <div className="hero-content-container container">
-        <div className='hero-content'>
+        <div className="hero-content">
           <h1>Find the perfect <i>freelance</i>
             <br />services for your business</h1>
-          <div className='search-hero-homepage'>
+          <div className="search-hero-homepage">
             <Search loc={'heroCarousel'} />
-            <div className='hero-popular-category flex clean list'>
+            <div className="hero-popular-category flex clean list">
             <span>Popular:</span>
               <HeroPopularCategories />
             </div>
           </div>
         </div>
-        <div className="static-background">
-          {/* <HeroPopularCategory /> */}
-        </div>
-
-        {/* <div className="seller-name">
-          <span className={`seller ${backClass1}`}>Andrea, <span className='seller-skill'>Fashion Designer</span></span>
-          <span className={`seller ${backClass2}`}>Moon, <span className='seller-skill'>Marketing Expert</span></span>
-          <span className={`seller ${backClass3}`}>Ritika, <span className='seller-skill'>Shoemaker And Designer</span></span>
-          <span className={`seller ${backClass4}`}>Zach, <span className='seller-skill'>Bar Owner</span></span>
-          <span className={`seller ${backClass5}`}>Gabrielle, <span className='seller-skill'>Video Editor</span></span>
-        </div> */}
       </div>
     </div >
   )
