@@ -11,6 +11,7 @@
         "sweetalert",
         "thumbdown",
         "thumbup",
+        "topbar",
         "Wiserr"
     ],
     "workbench.colorCustomizations": {

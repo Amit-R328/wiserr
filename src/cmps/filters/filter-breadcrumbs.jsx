@@ -6,27 +6,17 @@ import Swal from 'sweetalert2'
 import { BudgetFilter } from '../filters/budget-filter.jsx'
 import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
 
-export const FilterBreadCrumbs = () => {
-
-    // let [searchTerm] = useState('')
+export const FilterBreadCrumbs = async () => {
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-
-    // const onHandleChange = (ev, name, value) => {
-    //     const field = name
-    //     let { filterBy } = this.props
-    //     if (field === 'labels') value = [value]
-    //     filterBy = { ...filterBy, [field]: value }
-    // }
+    let className = (budgetMenu) ? 'open' : ''
+    let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
     const onToggleBudget = () => {
         let flag = !budgetMenu
         setBudgetMenu(flag)
     }
-
-    let className = (budgetMenu) ? 'open' : ''
-    let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
     const onToggleDeliveryTime = () => {
         let flag = !deliveryDateMenu
@@ -34,7 +24,6 @@ export const FilterBreadCrumbs = () => {
     }
 
     const showSweetAlert = (ev) => {
-        // ev.preventDefault()
         Swal.fire({
             className: "video-modal",
             width: 1000,
@@ -80,7 +69,7 @@ export const FilterBreadCrumbs = () => {
                         <div className="filter-floating-menu">
                             <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
                             </div>
-                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} deliveryDateMenu={deliveryDateMenu} budgetMenu={budgetMenu}/>}
+                            {budgetMenu && <BudgetFilter onClose={onToggleBudget} deliveryDateMenu={deliveryDateMenu} budgetMenu={budgetMenu} />}
                         </div>
                         <div className="filter-floating-menu">
                             <div onClick={onToggleDeliveryTime} className={`filter-menu-title ${classNameDelivery} filter-menu`}>Delivery Time
@@ -91,7 +80,7 @@ export const FilterBreadCrumbs = () => {
                     <div className="sort-by-container flex">
                         <span className="pre-title">Sort by
                         </span>
-                            <SortGigsList />
+                        <SortGigsList />
                     </div>
                 </div>
             </section>
