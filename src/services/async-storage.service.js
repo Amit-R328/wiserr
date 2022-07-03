@@ -61,7 +61,7 @@ function _save(entityType, entities) {
 function postMany(entityType, newEntities) {
     return query(entityType)
         .then(entities => {
-            newEntities = newEntities.map(entity => ({ ...entity, _id: _makeId() }))
+            newEntities = newEntities.map(entity => ({ ...entity, _id: utilService.makeId() }))
             entities.push(...newEntities)
             _save(entityType, entities)
             return entities
