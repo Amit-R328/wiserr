@@ -7,7 +7,6 @@ import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 
-
 export const SellerAppHeader = (props) => {
     const [searchBar, setSearchBar] = useState('hidden')
     const [navHeader, setNavHeader] = useState('hidden')
@@ -19,13 +18,13 @@ export const SellerAppHeader = (props) => {
 
     const onLogout = () => {
         dispatch(logout())
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleMenu = () => {
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {

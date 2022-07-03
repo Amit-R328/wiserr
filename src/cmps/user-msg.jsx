@@ -2,13 +2,13 @@ import { eventBusService } from '../services/event-bus.service.js'
 import React from "react"
 
 export class UserMsg extends React.Component {
-  removeEvent;
+  removeEvent
   state = {
     msg: null
   }
 
   componentDidMount() {
-    // Here we listen to the event that we emited, its important to remove the listener 
+    // Here we listen to the event that we emitted, it's important to remove the listener 
     this.removeEvent = eventBusService.on('show-user-msg', (msg) => {
       this.setState({ msg })
       setTimeout(() => {

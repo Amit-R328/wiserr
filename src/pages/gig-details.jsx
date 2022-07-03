@@ -1,19 +1,19 @@
 
-import { useParams } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { showSuccessMsg } from '../services/event-bus.service.js'
-import { getById, updateGig } from '../store/actions/gig.actions.js';
-import { loadUser } from '../store/actions/user.actions.js';
+import { getById, updateGig } from '../store/actions/gig.actions.js'
+import { loadUser } from '../store/actions/user.actions.js'
 import { loadOrders } from '../store/actions/order.actions.js'
-import { GigReview } from '../cmps/gig-review.jsx';
-import { GreenVMark } from '../services/svg.service.js';
+import { GigReview } from '../cmps/gig-review.jsx'
+import { GreenVMark } from '../services/svg.service.js'
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import ImageGallery from 'react-image-gallery';
-import { UserMsg } from '../cmps/user-msg.jsx';
-import { socketService } from '../services/socket.service.js';
-import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js';
+import ImageGallery from 'react-image-gallery'
+import { UserMsg } from '../cmps/user-msg.jsx'
+import { socketService } from '../services/socket.service.js'
+import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js'
 import { utilService } from '../services/util.service.js'
 import Swal from 'sweetalert2'
 
@@ -32,7 +32,25 @@ export const GigDetails = (props) => {
     const params = useParams()
     const BLACK = '#404145'
     const BLUE = '#446ee7'
-
+    const sections = [
+        {
+            sectionElement: '.gig-details-container',
+            sectionTitle: 'Overview'
+        },
+        {
+            sectionElement: '.about-details',
+            sectionTitle: 'Description'
+        },
+        {
+            sectionElement: '.about-seller',
+            sectionTitle: 'About the Seller'
+        },
+        {
+            sectionElement: '.reviews',
+            sectionTitle: 'Reviews'
+        }
+    ]
+    
     useEffect(() => {
         dispatch(getById(params.gigId))
         window.scrollTo(0, 0)
@@ -64,33 +82,26 @@ export const GigDetails = (props) => {
         }
     }
 
-
-
-    const onConfirmOrder = async (gigId) => {
+    const onConfirmOrder = async (ev, gigId) => {
         if (!loggedInUser) {
-            console.log('Need to login')
             navigate('/login')
         } else {
             let order = await dispatch(onSaveOrder(gigId, loggedInUser))
-            onUpdateReviewsQty(gigId)
-
+            onUpdateReviewsQty()
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
-
             setTimeout(() => {
                 navigate(`/profile/${loggedInUser._id}`)
-            }, 2000);
+            }, 2000)
         }
     }
 
-    const onUpdateReviewsQty = async (gigId) => {
+    const onUpdateReviewsQty = async () => {
         if (gig.reviewsQty) gig.reviewsQty++
         else gig.reviewsQty = 1
-
-        let newGig = await dispatch(updateGig(gig))
-        console.log('newGig', newGig)
+        await dispatch(updateGig(gig))
     }
-
+    
     let price = 0
     if (gig && gig.price) {
         price = gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })
@@ -114,7 +125,6 @@ export const GigDetails = (props) => {
             color = BLACK
             setTextColorDown(color)
             setThumbDown(false)
-
         } else {
             color = BLACK
             setTextColorUp(color)
@@ -140,28 +150,12 @@ export const GigDetails = (props) => {
         dispatch(updateGig(gig))
     }
 
-    const scrollOverview = () => {
-        const section = document.querySelector('.gig-details-container');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollDescription = () => {
-        const section = document.querySelector('.about-details');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollAbout = () => {
-        const section = document.querySelector('.about-seller');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    const scrollReviews = () => {
-        const section = document.querySelector('.reviews');
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const onScroll = (el) => {
+        const section = document.querySelector(el)
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
 
     const onShareModal = (ev) => {
-        // ev.preventDefault()
         Swal.fire({
             className: "share-modal",
             width: 620,
@@ -186,19 +180,26 @@ export const GigDetails = (props) => {
     if (gig.description && gig.description.whatDoYouGet) {
         whatYouGet = gig.description.whatDoYouGet.split('\n')
     }
-
+    
     return (
         <>
             <section className="gig-details-container container">
                 <div className="nav-details-container">
                     <nav className="details-menu-scroll">
                         <ul className="nav-details-sections">
+<<<<<<< HEAD
                             <li onClick={() => scrollOverview()} className="detail-btn-top">Overview</li>
                             <li onClick={() => scrollDescription()} className="detail-btn-top">Description</li>
                             <li onClick={() => scrollAbout()} className="detail-btn-top">About the Seller</li>
                             <li onClick={() => scrollReviews()} className="detail-btn-top">Review</li>
                             <aside className="details-menu">
                                 <button onClick={() => onShareModal()} className="details-menu-share">Share</button>
+=======
+                            {sections.map(section =>
+                                <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
+                            <aside>
+                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
+>>>>>>> 2934e093e68ff24dd0edf75d7234d4db7333397d
                             </aside>
                         </ul>
                     </nav>
@@ -278,8 +279,7 @@ export const GigDetails = (props) => {
                                         </li>
                                     </ul>
                                     <article className="seller-description">
-                                        <div className="owner-summary">Hello I am Freelance Graphic Design and Illustrator based in Israel, I have working in graphic design industry for almost 6 years.</div>
-
+                                        <div className="owner-summary">Hello, I am a freelancer who have been working in this industry for almost 6 years. I am open to different challenges and opportunities</div>
                                     </article>
                                 </div>
                             </article>

@@ -1,10 +1,8 @@
 import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
-import { socketService } from './socket.service.js'
-
-const orderChannel = new BroadcastChannel('orderChannel')
-
+// import { socketService } from './socket.service.js'
+// const orderChannel = new BroadcastChannel('orderChannel')
 
 const BASE_URL =
     process.env.NODE_ENV === 'production'
@@ -22,21 +20,15 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-
     let orders = await httpService.get('order')
-    let gigs = await gigService.query();
+    let gigs = await gigService.query()
     if (typeOf === 'getBuys') {
-        if (loggedInUser.isSeller) {
-            orders = orders.filter(order => {
-                return order.buyer.fullName === loggedInUser.userName
-            })
-        } else {
-            orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
-        }
+        orders = orders.filter(order => {
+            return order.buyer.fullName === loggedInUser.userName
+        })
     } else {
         if (loggedInUser.isSeller) {
             orders = orders.filter(order => {
-
                 return order.seller.fullName === loggedInUser.userName
             })
         } else {

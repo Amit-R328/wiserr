@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { LogoFull} from '../../services/svg.service.js'
-import { NavLink, useLocation} from 'react-router-dom'
+import { LogoFull } from '../../services/svg.service.js'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { logout } from '../../store/actions/user.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
@@ -14,35 +14,19 @@ export const AppHeader = () => {
     const [profileMenu, setMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
-
     const { pathname } = useLocation()
-    
-    const handleScroll = e => {
-        setScrolled(window.scrollY > 200)
-    }
-
-    useEffect(() => {
-        if(pathname === '/'){
-        window.addEventListener("scroll", handleScroll)
-        }
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [pathname])
-
-    const onLogout = () => {
         dispatch(logout())
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleMenu = () => {
-        var flag = !profileMenu;
-        setMenu(flag);
+        let flag = !profileMenu
+        setMenu(flag)
     }
 
     const onToggleSideMenu = () => {
-        var flag = !isSideMenu
+        let flag = !isSideMenu
         setSideMenu(flag)
     }
 
@@ -51,12 +35,11 @@ export const AppHeader = () => {
     }
 
     return (
-        <header className={`header ${scrolled  ? 'scrolled' : ''} ${pathname !=='/' ? 'categories-header' :''} ${pathname.includes('categories/') ? 'nav-details' :''}`} >
-            
+        <header className={`header ${scrolled ? 'scrolled' : ''} ${pathname !== '/' ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
-                    <button  onClick={onToggleSideMenu} className="hamburger-icon">
-                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser}/>}
+                    <button onClick={onToggleSideMenu} className="hamburger-icon">
+                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}
                     </button>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
@@ -64,7 +47,7 @@ export const AppHeader = () => {
                         </NavLink>
                     </div>
                     <form className="search-bar">
-                        {scrolled && <Search handleScroll={handleScroll} loc={'appHeader'}/>}
+                        {scrolled && <Search handleScroll={handleScroll} loc={'appHeader'} />}
                     </form>
                 </div>
                 <ul className="nav-list clean-list" >
@@ -72,7 +55,7 @@ export const AppHeader = () => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink>: <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
                     </li>
                     <li>
                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
@@ -86,7 +69,7 @@ export const AppHeader = () => {
                 </ul>
             </div>
 
-            {(scrolled || (pathname !== '/'))  && <div className="bottom container">
+            {(scrolled || (pathname !== '/')) && <div className="bottom container">
                 <NavCategories />
             </div>}
         </header>

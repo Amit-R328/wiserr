@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "cloudinary",
+        "fullname",
         "kenburns",
         "loggedin",
         "mailgo",
@@ -10,6 +11,7 @@
         "sweetalert",
         "thumbdown",
         "thumbup",
+        "topbar",
         "Wiserr"
     ],
     "workbench.colorCustomizations": {

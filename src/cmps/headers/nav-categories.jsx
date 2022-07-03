@@ -1,14 +1,12 @@
 import React from 'react'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 export const NavCategories = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-    const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const params = useParams()
 
     const onChangeCategory = (category) => {
         filterBy = { txt: '', priceMin: 0, priceMax: Infinity, deliveryDate: 0, category: category }
@@ -23,9 +21,9 @@ export const NavCategories = () => {
     { name: 'Writing & Translation', parameter: 'Writing & Translation' },
     { name: 'Video & Animation', parameter: 'Video & Animation' },
     { name: 'Business', parameter: 'Business' },
-    // { name: 'Music & Audio', parameter: 'Music & Audio' },
     { name: 'Lifestyle', parameter: 'Lifestyle' }
     ]
+    
     return (
         <div className="categories-menu-scroll">
             <ul className="categories">

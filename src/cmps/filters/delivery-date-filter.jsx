@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { setFilter, loadGigs } from "../../store/actions/gig.actions.js";
+import React from "react"
+import { connect } from "react-redux"
+import { setFilter, loadGigs } from "../../store/actions/gig.actions.js"
 
 class _DeliveryDateFilter extends React.Component {
     state = {
@@ -20,7 +20,6 @@ class _DeliveryDateFilter extends React.Component {
 
     onApplyDeliveryFilter = () => {
         const { filterBy } = this.props
-
         this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays })
         this.props.loadGigs()
     }

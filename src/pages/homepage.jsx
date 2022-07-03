@@ -17,16 +17,14 @@ export const HomePage = () => {
                 <TrustedBy />
             </div>
             <div className="gig-slider-container container">
-                <h2 className='professional-services'>Popular professional services</h2>
+                <h2 className="professional-services">Popular professional services</h2>
                 <CategoriesCarousel />
             </div>
             <SellingPoint />
             <div className="container">
                 <IconCategories />
             </div>
-
             <SellerSectionHomepage />
-
             <Testimonials />
         </section>
     )

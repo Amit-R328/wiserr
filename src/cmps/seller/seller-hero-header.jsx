@@ -18,8 +18,6 @@ export const SellerHeroHeader = () => {
                     <h1 className="font-domaine">
                         <div className="expertise">Expertise<span>,</span><p>When you need it</p></div>
                     </h1>
-
-
                 </div>
             </div>
         </div>

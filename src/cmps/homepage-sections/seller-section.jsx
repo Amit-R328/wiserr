@@ -1,7 +1,6 @@
-import React from "react";
+import React from "react"
 import { NavLink } from 'react-router-dom'
-import { useSelector} from 'react-redux'
-
+import { useSelector } from 'react-redux'
 import { LogoFullWhiteSellers, VCircle } from '../../services/svg.service.js'
 
 export const SellerSectionHomepage = () => {
@@ -14,7 +13,6 @@ export const SellerSectionHomepage = () => {
                     <div className="wiserr-seller-logo"><LogoFullWhiteSellers /><h2>sellers.</h2>
                         <span className="text-upper">New</span>
                     </div>
-
                     <h2 className="font-domaine">
                         <span><span>A Business Solution<br></br>designed for<span><i>sellers</i></span>
                         </span></span>
@@ -26,11 +24,11 @@ export const SellerSectionHomepage = () => {
                         <li><h6><VCircle /><p>Manage gigs and boost productivity with one powerful workspace</p></h6></li>
                     </ul>
                     <div className="explore-seller-container">
-                    {loggedInUser ? <NavLink  to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink> :<NavLink  to="/login" className="explore-seller">Explore Wiserr Seller</NavLink>}
+                        {loggedInUser ? <NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink> : <NavLink to="/login" className="explore-seller">Explore Wiserr Seller</NavLink>}
                     </div>
                 </div>
                 <div className="seller-image">
-                    <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_1.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624757/business-desktop-870-x1.png" loading="lazy" alt="Wiserr Business freelancers" />
+                    <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858784/business-desktop-870-x1_cvrzpi.webp" loading="lazy" alt="Wiserr Business freelancers" />
                 </div>
             </div>
         </div>

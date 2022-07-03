@@ -2,12 +2,12 @@ import { NavLink, useNavigate } from 'react-router-dom'
 
 export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     const navigate = useNavigate()
+    const className = (menuOpen) ? "open" : ""
 
     const openJoin = () => {
         closeMenu()
         navigate('/signup')
     }
-    const className = (menuOpen) ? "open" : "";
 
     return (
         <section className={`side-bar ${className}`}>
@@ -19,10 +19,10 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
                     <ul className='clean-list'>
                         <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
                         <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/categories">Explore</NavLink></li>
+                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller/dashboard">Wiserr Seller</NavLink></li>
                     </ul>
                 </nav>
             </div>
         </section>
     )
-
 }
