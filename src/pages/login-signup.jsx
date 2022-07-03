@@ -24,12 +24,11 @@ export const LoginSignup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
-    const uploadImg = (event) => {
+    const uploadImg = (ev) => {
         const CLOUD_NAME = cloudinaryService.getCloudName()
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
         const formData = new FormData()
-        formData.append('file', event.target.files[0])
+        formData.append('file', ev.target.files[0])
         formData.append('upload_preset', cloudinaryService.getPreset())
         setIsImg(true)
         return fetch(UPLOAD_URL, {
@@ -40,9 +39,9 @@ export const LoginSignup = () => {
         }).catch(err => console.error(err))
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        const data = new FormData(event.currentTarget)
+    const handleSubmit = (ev) => {
+        ev.preventDefault()
+        const data = new FormData(ev.currentTarget)
         const loginInfo = {
             userName: data.get('userName'),
             password: data.get('password'),
@@ -59,7 +58,6 @@ export const LoginSignup = () => {
         }
         navigate('/')
     }
-
     const onChangePage = (ev) => {
         setIsLogin(!isLogin)
     }
@@ -128,7 +126,6 @@ export const LoginSignup = () => {
                                 {isLogin ? 'Login' : 'Sign in'}
                             </Button>
                             <Grid container>
-
                                 <Grid item>
                                     <NavLink to="/signup" variant="body2" onClick={onChangePage}>
                                         {isLogin ? 'Don\'t have an account? Sign Up' : 'Already have an account? Login'}

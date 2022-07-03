@@ -96,7 +96,6 @@ export const SellerDashboard = (props) => {
         console.log('totalOrders', totalOrders)
         if (totalOrders) {
             //do not delete this console
-
             setTotalOrderAmount(totalOrders.toFixed(2),)
             console.log('totalOrders', totalOrders)
             console.log('setTotalOrderAmount', setTotalOrderAmount)

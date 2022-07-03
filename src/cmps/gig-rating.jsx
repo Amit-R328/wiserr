@@ -43,7 +43,7 @@ export const RatingValue = ({ handleRatingChange, reviewId }) => {
                 icon={<StarIcon fontSize="inherit" />}
                 style={rateStyle}
                 emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-                onChange={(event, newValue) => handleOnChange(event, reviewId, newValue)}
+                onChange={(ev, newValue) => handleOnChange(ev, reviewId, newValue)}
             />
             {avgRating !== undefined && avgRating !== null && <h4><span>{avgRating}</span> (<span className="number-rates">{reviewId.stars.length}</span>)</h4>}
             {!avgRating && avgRating !== 0 && <span>no ratings yet</span>}
