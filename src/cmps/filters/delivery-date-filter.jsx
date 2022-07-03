@@ -20,7 +20,6 @@ class _DeliveryDateFilter extends React.Component {
 
     onApplyDeliveryFilter = () => {
         const { filterBy } = this.props
-
         this.props.setFilter({ ...filterBy, deliveryDate: this.state.deliveryDays })
         this.props.loadGigs()
     }
@@ -28,20 +27,6 @@ class _DeliveryDateFilter extends React.Component {
     onClearDeliveryDate = () => {
         this.setState((prevState) => ({ ...prevState, deliveryDate: 0 }))
     }
-    
-    // onToggleBudget() {
-    //     let flag = !this.props.budgetMenu
-    //     this.setState(flag)
-    // }
-
-    
-    // onToggleDeliveryTime() {
-    //     let flag = !this.props.deliveryDateMenu
-    //     this.setState(flag)
-    // }
-    // let className = (this.props.budgetMenu) ? 'open' : ''
-    // let classNameDelivery = (this.props.deliveryDateMenu) ? 'open' : ''
-    
     
     render() {
         return (
