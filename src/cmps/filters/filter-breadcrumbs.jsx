@@ -15,6 +15,7 @@ export const FilterBreadCrumbs = async () => {
 
     const onToggleBudget = () => {
         let flag = !budgetMenu
+        console.log('flag')
         setBudgetMenu(flag)
     }
 
