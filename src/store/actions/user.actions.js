@@ -1,4 +1,4 @@
-import { userService } from "../../services/user.service.js";
+import { userService } from "../../services/user.service.js"
 import { showErrorMsg } from '../../services/event-bus.service.js'
 
 export function loadUsers() {
@@ -72,7 +72,7 @@ export function logout() {
 
 export async function loadUser(userId) {
     try {
-        const user = await userService.getById(userId);
+        const user = await userService.getById(userId)
         return user
 
     } catch (err) {

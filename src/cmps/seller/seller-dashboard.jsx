@@ -1,62 +1,62 @@
 
 import { useSelector, useDispatch } from 'react-redux'
-import React, { useState, useEffect, useRef } from 'react';
-import { loadOrders, onUpdateOrder, addOrder } from '../../store/actions/order.actions';
-import { userService } from '../../services/user.service.js';
-import { getLoggedinUser } from '../../store/actions/user.actions.js';
-import { utilService } from '../../services/util.service.js';
-import { socketService } from '../../services/socket.service.js';
-import { Loader } from '../loader.jsx';
+import React, { useState, useEffect, useRef } from 'react'
+import { loadOrders, onUpdateOrder, addOrder } from '../../store/actions/order.actions'
+import { userService } from '../../services/user.service.js'
+import { getLoggedinUser } from '../../store/actions/user.actions.js'
+import { utilService } from '../../services/util.service.js'
+import { socketService } from '../../services/socket.service.js'
+import { Loader } from '../loader.jsx'
 
 
 export const SellerDashboard = (props) => {
-    const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    const RED = '#F74040'
+    const GRAY = '#62646A'
+    const GREEN = '#1DBF73'
+    const BLACK = '#404145'
+    const year = new Date().getFullYear()
+
     const [totalOrderAmount, setTotalOrderAmount] = useState(0)
     const [qtyTotalOrders, setQtyTotalOrders] = useState(0)
     const [totalMonthlyOrdersAmount, setTotalMonthlyOrdersAmount] = useState(0)
     const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
     const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
     const [qtyYearOrders, setQtyYearOrders] = useState(0)
-    const RED = '#F74040'
-    const GRAY = '#62646A'
-    const GREEN = '#1DBF73'
-    const BLACK = '#404145'
-    const [year] = useState(new Date().getFullYear())
-    let orders = useSelector((storeState) => storeState.orderModule.orders)
+    // const [order, setOrder] = useState('pending')
+    const orders = useSelector((storeState) => storeState.orderModule.orders)
+    const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
 
+    const dispatch = useDispatch()
 
-    const dispatch = useDispatch();
-
-    const [order, setOrder] = useState('pending')
     const [loader, setLoader] = useState(true)
 
     useEffect(() => {
-        orders = []
+      
         dispatch(getLoggedinUser())
         getOrders()
-        console.log('orders', orders)
         setTimeout(() => {
             setLoader(false)
         }, 3000)
-        // let user = { type: 'seller', fullName: loggedInUser.userName }
+        
         setSocket()
     }, [])
 
+
     useEffect(() => {
-        
-        console.log('orderssssss', orders)
-        if(orders.length) calcTotals()
+         calcTotals()
     }, [orders])
     
+
     const getOrders = async () => {
-        orders = await dispatch(loadOrders(loggedInUser, 'getSells'))
-        console.log('orders', orders)
+        // const currOrders = await dispatch(loadOrders(loggedInUser, 'getSells'))
+        await dispatch(loadOrders(loggedInUser, 'getSells'))
+        console.log('orders from mount', orders)
     }
 
     // setSocket()
     const onAddOrder = async (order) => {
         order.createdAt = Date.now()
-        setOrder('')
+        // setOrder('')
         let seller = await userService.getById(order.buyer._id)
         dispatch(addOrder(order, seller))
     }
@@ -69,23 +69,22 @@ export const SellerDashboard = (props) => {
     const handleChange = (ev, order) => {
         const value = ev.target.value
         order.status = value
-        setOrder(order)
+        // setOrder(order)
         dispatch(onUpdateOrder(order))
     }
 
 
     const getYearOrders = () => {
         const thisYear = (new Date()).getFullYear()
-        console.log('orders', orders)
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
         })
-        if (yearOrders.length) {
+        // if (yearOrders.length) {
 
             setQtyYearOrders(yearOrders.length)
             const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price, 0)
             setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
-        }
+        // }
     }
 
     const getMonthOrders = () => {
@@ -96,50 +95,40 @@ export const SellerDashboard = (props) => {
 
         setQtyMonthlyOrders(monthlyOrders.length)
 
-        if (monthlyOrders.length) {
+        // if (monthlyOrders.length) {
             const totalMonthlyOrders = monthlyOrders.reduce((acc, order) => acc + order.gig.price, 0)
             setTotalMonthlyOrdersAmount(totalMonthlyOrders.toFixed(2))
-        }
+        // }
     }
 
     const calcTotals = () => {
+        console.log('orders from calc',orders);
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
         console.log('totalOrders', totalOrders)
-        if (totalOrders) {
+        // if (totalOrders) {
             //do not delete this console
+            setTotalOrderAmount(totalOrders.toFixed(2))
+            // console.log('totalOrders', totalOrders)
+            // console.log('setTotalOrderAmount', setTotalOrderAmount)
 
-            setTotalOrderAmount(totalOrders.toFixed(2),)
-            console.log('totalOrders', totalOrders)
-            console.log('setTotalOrderAmount', setTotalOrderAmount)
             //do not delete this console
-            console.log('totalOrderAmount', totalOrderAmount)
+            // console.log('totalOrderAmount', totalOrderAmount)
             setQtyTotalOrders(orders.length)
+
             //do not delete this console
-            console.log('qtyTotalOrders', qtyTotalOrders)
+            // console.log('qtyTotalOrders', qtyTotalOrders)
             getMonthOrders()
             getYearOrders()
-        }
+        // }
     }
 
-    useEffect(() => {
-        getOrders()
-        setTimeout(() => {
-            setLoader(false)
-        }, 3000)
-        console.log('orderssssss', orders)
-        calcTotals()
-    } )
-
-
-    console.log('orderssssss', orders)
     return (
         <div className="seller-dashboard-container container">
             {loader && <Loader />}
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
                     <p className='seller-total-amount'>Total orders
-                        <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>
-                </div>
+                        <hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalOrderAmount}</span></p><p className='qty-total-order'>Quantity: {qtyTotalOrders}</p></p>                </div>
 
                 <div className='seller-Total-order'>
                     <p className='seller-total-amount'><span>{year}</span> orders<hr className='gentle-line'></hr><p className='amount-total-order'>Revenues: <span className='amount-total-order-green'>${totalYearOrdersAmount}</span></p><p className='qty-total-order'>Quantity: {qtyYearOrders}</p></p>
@@ -152,12 +141,14 @@ export const SellerDashboard = (props) => {
 
             <table className='orders-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='orders-table-header'>
-                    <th className='orders-th'>Date</th>
-                    <th className='orders-th'>Buyer</th>
-                    <th className='orders-th'>Gig</th>
-                    <th className='orders-th'>Completed Date</th>
-                    <th className='orders-th'>Price</th>
-                    <th className='orders-th'>Status</th>
+                    <tr>
+                        <th className='orders-th'>Date</th>
+                        <th className='orders-th'>Buyer</th>
+                        <th className='orders-th'>Gig</th>
+                        <th className='orders-th'>Completed Date</th>
+                        <th className='orders-th'>Price</th>
+                        <th className='orders-th'>Status</th>
+                    </tr>
                 </thead>
 
                 <tbody>
