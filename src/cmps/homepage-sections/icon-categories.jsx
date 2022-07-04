@@ -1,14 +1,58 @@
-import React  from "react"
-import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, MusicAudioIcon, AllCategoriesIcon, BusinessIcon } from '../../services/svg.service.js'
+import React from "react"
+import { GraphicsDesignIcon, WritingTranslationIcon, VideoAnimationIcon, OnlineMarketingIcon, LifeStyleIcon, AllCategoriesIcon, BusinessIcon } from '../../services/svg.service.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
 export const IconCategories = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
-    const { gigs } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
+
+    let iconCategories = [
+        {
+            elementName: 'All Categories',
+            className: 'icon-all',
+            icon: <AllCategoriesIcon />,
+            caption: 'All Categories'
+        },
+        {
+            elementName: 'Graphics & Design',
+            className: 'graphic-icon',
+            icon: <GraphicsDesignIcon />,
+            caption: 'Graphics & Design'
+        },
+        {
+            elementName: 'Digital Marketing',
+            className: 'marketing-icon',
+            icon: <OnlineMarketingIcon />,
+            caption: 'Digital Marketing'
+        },
+        {
+            elementName: 'Writing & Translation',
+            className: 'writing-icon',
+            icon: <WritingTranslationIcon />,
+            caption: 'Writing & Translation'
+        },
+        {
+            elementName: 'Video & Animation',
+            className: 'video-icon',
+            icon: <VideoAnimationIcon />,
+            caption: 'Video & Animation'
+        },
+        {
+            elementName: 'Business',
+            className: 'business-icon',
+            icon: <BusinessIcon />,
+            caption: 'Business'
+        },
+        {
+            elementName: 'Lifestyle',
+            className: 'lifestyle',
+            icon: <LifeStyleIcon />,
+            caption: 'Lifestyle'
+        },
+    ]
 
     const onChangeCategory = (category) => {
         filterBy = { txt: '', priceMin: 0, priceMax: Infinity, deliveryDate: 0, category: category }
@@ -21,47 +65,14 @@ export const IconCategories = () => {
         <div className="icon-categories">
             <h2 className="marketplace-title">Explore the marketplace</h2>
             <ul className="icon-categories-list">
-                <li>
-                    <button onClick={() => onChangeCategory('All Categories')} className="icon-all">
-                        <AllCategoriesIcon /> All Categories
-                    </button>
-                </li>
-                <li>
-                    <button onClick={() => onChangeCategory('Graphics & Design')} className="graphic-icon">
-                        <GraphicsDesignIcon /> Graphics &amp; Design
-                    </button>
-                </li>
-                <li>
-                    <button onClick={() => onChangeCategory('Digital Marketing')} className="marketing-icon">
-                        <OnlineMarketingIcon />Digital Marketing
-                    </button>
-                </li>
-                <li>
-                    <button onClick={() => onChangeCategory('Writing & Translation')} className="writing-icon">
-                        <WritingTranslationIcon />Writing &amp; Translation
-                    </button>
-                </li>
-                <li>
-                    <button onClick={() => onChangeCategory('Video & Animation')} className="video-icon">
-                        <VideoAnimationIcon />Video &amp; Animation
-                    </button>
-                </li>
-                {/* <li>
-                    <button onClick={() => onChangeCategory('Music & Audio')} className="audio-icon">
-                        <MusicAudioIcon />Music &amp; Audio
-                    </button>
-                </li>*/}
-                 <li> 
-                    <button onClick={() => onChangeCategory('Business')} className="business-icon">
-                        <BusinessIcon />Business
-                    </button>
-                </li>
-                <li>
-                    <button onClick={() => onChangeCategory('Lifestyle')} className="lifestyle">
-                        <LifeStyleIcon />Lifestyle
-                    </button>
-                </li>
+                {iconCategories.map(category =>
+                    <li key={category}>
+                        <button onClick={() => onChangeCategory(`${category.elementName}`)} className={category.className}>
+                            {category.icon} {category.caption}
+                        </button>
+                    </li>
+                )}
             </ul>
-        </div >
+        </div>
     )
 }

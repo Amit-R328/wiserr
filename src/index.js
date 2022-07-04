@@ -2,12 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import "mailgo/dist/mailgo.min.js";
+import "mailgo/dist/mailgo.min.js"
 import {store} from './store/root.reducer.js'
 import {RootCmp} from './root-cmp'
-// import './assets/scss/main.scss'
-
-
 
 ReactDOM.render(
 <React.StrictMode>

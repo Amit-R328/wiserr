@@ -1,9 +1,9 @@
-import React from "react";
+import React from "react"
 import { VCircle } from '../../services/svg.service.js'
 
 export const SellingPoint = () => {
     return (
-        <div className="selling-proposition-wrapper container ">
+        <div className="selling-proposition-wrapper container">
             <div className="selling-proposition">
                 <div className="selling-text">
                     <h2>A whole world of freelance<br></br>talent at your fingertips</h2>
@@ -22,11 +22,10 @@ export const SellingPoint = () => {
                         <li><h6><VCircle /><strong>24/7 support</strong></h6>
                             <p>Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
                         </li>
-
                     </ul>
                 </div>
                 <div className="selling-img">
-                    <img srcSet="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_700,dpr_1.0/v1/attachments/generic_asset/asset/089e3bb9352f90802ad07ad9f6a4a450-1599517407052/selling-proposition-still-1400-x1.png" alt="" />
+                    <img srcSet="https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858355/selling-proposition-still-1400-x1_vtle7v.webp" alt="" />
                 </div>
             </div>
         </div >

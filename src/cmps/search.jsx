@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
 
-
-export const Search = ({ loc }, handleScroll) => {
+export const Search = ({ loc }) => {
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -22,17 +21,18 @@ export const Search = ({ loc }, handleScroll) => {
     const handleChange = (ev) => {
         setSearchTerm(ev.target.value)
     }
-    let className = (loc === 'heroCarousel') ? 'search-hero' : 'search-header'
-    let placeholder = (loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'
+
     return (
         <div className="search-container">
             <label>
                 <AiOutlineSearch className="search-icon" />
-                <input type="search" className={`search-input ${className}`} onChange={handleChange} placeholder={`${placeholder}`} />
+                <input type="search"
+                    className={`search-input ${(loc === 'heroCarousel') ? 'search-hero' : 'search-header'}`}
+                    onChange={handleChange}
+                    placeholder={`${(loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'}`} />
             </label>
-            <button className={`${className}-btn`} onClick={onSearch}>Search</button>
+            <button className={`${(loc === 'heroCarousel') ? 'search-hero-btn' : 'search-header-btn'}`} onClick={onSearch}>Search</button>
         </div>
     )
-
 }
 

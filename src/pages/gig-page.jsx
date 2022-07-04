@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { loadGigs } from '../store/actions/gig.actions.js'
 import { GigList } from '../cmps/gig-list.jsx'
 import { useSelector, useDispatch } from 'react-redux'
 import { FilterBreadCrumbs } from '../cmps/filters/filter-breadcrumbs.jsx'
-import { Loader } from '../cmps/loader.jsx';
+import { Loader } from '../cmps/loader.jsx'
 
 export const GigPage = () => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)

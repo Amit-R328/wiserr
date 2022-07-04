@@ -31,6 +31,7 @@ export const SellerDashboard = (props) => {
     const [loader, setLoader] = useState(true)
 
     useEffect(() => {
+        orders = []
         dispatch(getLoggedinUser())
         getOrders()
         console.log('orders', orders)
@@ -120,6 +121,14 @@ export const SellerDashboard = (props) => {
         }
     }
 
+    useEffect(() => {
+        getOrders()
+        setTimeout(() => {
+            setLoader(false)
+        }, 3000)
+        console.log('orderssssss', orders)
+        calcTotals()
+    } )
 
 
     console.log('orderssssss', orders)

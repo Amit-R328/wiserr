@@ -1,10 +1,8 @@
 import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
-import { socketService } from './socket.service.js'
-
-const orderChannel = new BroadcastChannel('orderChannel')
-
+// import { socketService } from './socket.service.js'
+// const orderChannel = new BroadcastChannel('orderChannel')
 
 const BASE_URL =
     process.env.NODE_ENV === 'production'
@@ -22,26 +20,17 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-    console.log('typeOf',typeOf )
     let orders = await httpService.get('order')
-    let gigs = await gigService.query();
-    if (typeOf === 'getBuys') {    
-        console.log('1' )    
-        if (loggedInUser.isSeller) {
-            console.log('2' )    
-            orders = orders.filter(order => {
-                return order.buyer.fullName === loggedInUser.userName
-            })
-        } else {
-            console.log('3' )    
-            orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
-        }
+    let gigs = await gigService.query()
+    if (typeOf === 'getBuys') {
+        orders = orders.filter(order => {
+            return order.buyer.fullName === loggedInUser.userName
+        })
     } else {
         console.log('4' )    
         if (loggedInUser.isSeller) {
             console.log('5' )    
             orders = orders.filter(order => {
-
                 return order.seller.fullName === loggedInUser.userName
             })            
         } else {
@@ -59,7 +48,6 @@ async function query(loggedInUser, typeOf) {
 }
 
 async function saveOrder(gigId, loggedinUser) {
-
     try {
         let gig = await httpService.get(`gig/${gigId}`)
         const order =

@@ -1,6 +1,6 @@
-import React from "react";
-import { connect } from "react-redux";
-import { setFilter, loadGigs } from "../../store/actions/gig.actions.js";
+import React from "react"
+import { connect } from "react-redux"
+import { setFilter, loadGigs } from "../../store/actions/gig.actions.js"
 
 class _BudgetFilter extends React.Component {
     state = {
@@ -10,7 +10,6 @@ class _BudgetFilter extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.filterBy !== this.props.filterBy) {
-
         }
     }
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React from "react"
 
 export const Testimonials = () => {
     return (
         <div className="testimonials container">
             <div className="testimonial-modal">
-                        <img src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_560,dpr_1.0/v1/attachments/generic_asset/asset/42a6fd208670a0361b38bd72b47b9317-1599519173399/testimonial-video-still-rooted.jpg" loading="lazy" alt="Video"/>
+                <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858236/testimonial-video-still-rooted_sofapk.webp" loading="lazy" alt="Video" />
             </div>
 
             <div className="text-content">

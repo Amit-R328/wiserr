@@ -26,8 +26,8 @@ export function gigsReducer(state = initialState, action) {
             gigs = state.gigs.filter(gig => gig._id !== action.gigId)
             return { ...state, gigs }
         case 'UPDATE_GIG':
-            gigs = state.gigs.map(currgig =>
-                (currgig._id === action.gig._id) ? action.gig : currgig)
+            gigs = state.gigs.map(currGig =>
+                (currGig._id === action.gig._id) ? action.gig : currGig)
             return { ...state, gigs }
         case 'SET_FILTERBY':
             return { ...state, filterBy: action.filterBy }

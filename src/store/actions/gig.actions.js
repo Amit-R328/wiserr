@@ -23,8 +23,7 @@ export function getActionUpdateGig(gig) {
     }
 }
 
-var subscriber
-
+let subscriber
 export function searchGigByName() {
     return async dispatch => {
         try {
@@ -100,13 +99,10 @@ export function removeGig(gigId) {
     }
 }
 
-
 export function updateGig(gig) {
-
     return async dispatch => {
         try {
-            const savedGig = await gigService.save(gig)
-
+            await gigService.save(gig)
             dispatch(getActionUpdateGig(gig))
             // showSuccessMsg('Gig saved Successfully!')
         } catch (err) {
@@ -121,7 +117,6 @@ export function updateGig(gig) {
         }
         gigService.subscribe(subscriber)
     }
-
 }
 
 export function saveGig(gig) {

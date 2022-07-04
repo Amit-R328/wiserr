@@ -4,7 +4,6 @@ import routes from './routes'
 import { AppFooter } from './cmps/app-footer.jsx'
 import { AppHeader } from './cmps/headers/app-header.jsx'
 
-
 export class RootCmp extends React.Component {
 
     render() {
