@@ -55,9 +55,10 @@ class _AddGigDetails extends React.Component {
         }).catch(err => console.error(err))
     }
 
-    handleSubmit = (ev) => {
+    handleSubmit = async (ev) => {
         ev.preventDefault()
-        this.props.saveGig(this.state.gigInfo)
+        // const gig = this.props.saveGig(this.state.gigInfo)
+        const gig = await this.saveNewgig()
         this.setState({
             gigInfo: {
                 imgUrl: '',
@@ -75,9 +76,14 @@ class _AddGigDetails extends React.Component {
         const userIsSeller = this.props.loggedInUser
         userIsSeller.isSeller = true
         userService.saveLocalUser(userIsSeller)
-        this.props.navigation('/')
+        this.props.navigation(`/categories/${gig._id}`)
     }
 
+
+    saveNewgig  = async () => {
+        let gig = await this.props.saveGig(this.state.gigInfo)
+        return gig
+    }
     render() {
         const { gigInfo, isImg } = this.state
         return (

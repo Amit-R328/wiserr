@@ -129,6 +129,7 @@ export function saveGig(gig) {
         try {
             const savedGig = await gigService.save(gig)
             dispatch(getActionAddGig(savedGig))
+            return savedGig
             // showSuccessMsg('Gig saved Successfully!')
         } catch (err) {
             console.error('Error:', err)

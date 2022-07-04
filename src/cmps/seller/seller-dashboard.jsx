@@ -1,7 +1,7 @@
 
 import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect, useRef } from 'react';
-import { loadOrders, onSaveOrder, onUpdateOrder, addOrder } from '../../store/actions/order.actions';
+import { loadOrders, onUpdateOrder, addOrder } from '../../store/actions/order.actions';
 import { userService } from '../../services/user.service.js';
 import { getLoggedinUser } from '../../store/actions/user.actions.js';
 import { utilService } from '../../services/util.service.js';
@@ -33,16 +33,25 @@ export const SellerDashboard = (props) => {
     useEffect(() => {
         dispatch(getLoggedinUser())
         getOrders()
+        console.log('orders', orders)
         setTimeout(() => {
             setLoader(false)
         }, 3000)
-        let user = { type: 'seller', fullName: loggedInUser.userName }
+        // let user = { type: 'seller', fullName: loggedInUser.userName }
         setSocket()
     }, [])
 
+    useEffect(() => {
+        
+        console.log('orderssssss', orders)
+        if(orders.length) calcTotals()
+    }, [orders])
+    
     const getOrders = async () => {
         orders = await dispatch(loadOrders(loggedInUser, 'getSells'))
+        console.log('orders', orders)
     }
+
     // setSocket()
     const onAddOrder = async (order) => {
         order.createdAt = Date.now()
@@ -66,6 +75,7 @@ export const SellerDashboard = (props) => {
 
     const getYearOrders = () => {
         const thisYear = (new Date()).getFullYear()
+        console.log('orders', orders)
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
         })
@@ -110,12 +120,9 @@ export const SellerDashboard = (props) => {
         }
     }
 
-    useEffect(() => {
-        console.log('orderssssss', orders)
-        calcTotals()
-    }, [orders])
 
 
+    console.log('orderssssss', orders)
     return (
         <div className="seller-dashboard-container container">
             {loader && <Loader />}

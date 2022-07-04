@@ -22,24 +22,30 @@ export const orderService = {
 }
 
 async function query(loggedInUser, typeOf) {
-
+    console.log('typeOf',typeOf )
     let orders = await httpService.get('order')
     let gigs = await gigService.query();
-    if (typeOf === 'getBuys') {
+    if (typeOf === 'getBuys') {    
+        console.log('1' )    
         if (loggedInUser.isSeller) {
+            console.log('2' )    
             orders = orders.filter(order => {
                 return order.buyer.fullName === loggedInUser.userName
             })
         } else {
+            console.log('3' )    
             orders = orders.filter(order => order.buyer.fullName === loggedInUser.userName)
         }
     } else {
+        console.log('4' )    
         if (loggedInUser.isSeller) {
+            console.log('5' )    
             orders = orders.filter(order => {
 
                 return order.seller.fullName === loggedInUser.userName
-            })
+            })            
         } else {
+            console.log('6' )    
             orders = []
         }
     }
