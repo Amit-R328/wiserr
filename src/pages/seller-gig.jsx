@@ -29,7 +29,7 @@ export const SellerGig = () => {
                     <tr>
                         <th className='gig-th'>Gig Name</th>
                         <th className='gig-th'>Price</th>
-                        {/* <th className='gig-th'>Total Orders</th>                    */}
+                        <th className='gig-th'>Total Orders</th>                   
                     </tr>
                 </thead>
 
@@ -38,7 +38,7 @@ export const SellerGig = () => {
                    
                         <td>{gig.title}</td>
                         <td>{gig.price}</td>
-                        {/* <td>{gig.orderQty}</td> */}
+                        <td>{gig.orderQty}</td>
                     </tr>)}
                 </tbody>
             </table>

@@ -22,7 +22,6 @@ export const SellerDashboard = (props) => {
     const [qtyMonthlyOrders, setQtyMonthlyOrders] = useState(0)
     const [totalYearOrdersAmount, setTotalYearOrdersAmount] = useState(0)
     const [qtyYearOrders, setQtyYearOrders] = useState(0)
-    // const [order, setOrder] = useState('pending')
     const orders = useSelector((storeState) => storeState.orderModule.orders)
     const loggedInUser = useSelector((storeState) => storeState.userModule.loggedInUser)
 
@@ -48,15 +47,12 @@ export const SellerDashboard = (props) => {
     
 
     const getOrders = async () => {
-        // const currOrders = await dispatch(loadOrders(loggedInUser, 'getSells'))
         await dispatch(loadOrders(loggedInUser, 'getSells'))
-        console.log('orders from mount', orders)
     }
 
     // setSocket()
     const onAddOrder = async (order) => {
         order.createdAt = Date.now()
-        // setOrder('')
         let seller = await userService.getById(order.buyer._id)
         dispatch(addOrder(order, seller))
     }
@@ -68,8 +64,7 @@ export const SellerDashboard = (props) => {
 
     const handleChange = (ev, order) => {
         const value = ev.target.value
-        order.status = value
-        // setOrder(order)
+        order.status = value        
         dispatch(onUpdateOrder(order))
     }
 
@@ -79,12 +74,10 @@ export const SellerDashboard = (props) => {
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
         })
-        // if (yearOrders.length) {
 
             setQtyYearOrders(yearOrders.length)
             const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price, 0)
-            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))
-        // }
+            setTotalYearOrdersAmount(totalYearOrders.toFixed(2))        
     }
 
     const getMonthOrders = () => {
@@ -95,31 +88,17 @@ export const SellerDashboard = (props) => {
 
         setQtyMonthlyOrders(monthlyOrders.length)
 
-        // if (monthlyOrders.length) {
             const totalMonthlyOrders = monthlyOrders.reduce((acc, order) => acc + order.gig.price, 0)
             setTotalMonthlyOrdersAmount(totalMonthlyOrders.toFixed(2))
-        // }
     }
 
     const calcTotals = () => {
-        console.log('orders from calc',orders);
+
         let totalOrders = orders.reduce((acc, order) => acc + order.gig.price, 0)
-        console.log('totalOrders', totalOrders)
-        // if (totalOrders) {
-            //do not delete this console
             setTotalOrderAmount(totalOrders.toFixed(2))
-            // console.log('totalOrders', totalOrders)
-            // console.log('setTotalOrderAmount', setTotalOrderAmount)
-
-            //do not delete this console
-            // console.log('totalOrderAmount', totalOrderAmount)
             setQtyTotalOrders(orders.length)
-
-            //do not delete this console
-            // console.log('qtyTotalOrders', qtyTotalOrders)
             getMonthOrders()
             getYearOrders()
-        // }
     }
 
     return (
@@ -165,9 +144,7 @@ export const SellerDashboard = (props) => {
                             <option value="completed">completed</option>
                         </select></td>
                     </tr>)}
-                    <thead className='orders-table-header'>
-
-                    </thead>
+                
                 </tbody>
             </table>
         </div>

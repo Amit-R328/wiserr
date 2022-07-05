@@ -22,7 +22,7 @@ export const orderService = {
 async function query(loggedInUser, typeOf) {
     let orders = await httpService.get('order')
     let gigs = await gigService.query()
-    console.log('query by ',typeOf);
+
     if (typeOf === 'getBuys') {
         orders = orders.filter(order => {
             return order.buyer.fullName === loggedInUser.userName
@@ -39,7 +39,7 @@ async function query(loggedInUser, typeOf) {
             orders = []
         }
     }
-console.log('orders from server',orders);
+
     orders = orders.map(order => {
         return { ...order, gig: { ...order.gig, imgUrl: gigs.find(gig => gig._id === order.gig._id)?.imgUrl[0] } }
     })
