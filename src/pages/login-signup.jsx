@@ -13,6 +13,8 @@ import { useNavigate, NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { cloudinaryService } from '../services/cloudinary.service.js'
 import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
+import { showErrorMsg } from '../services/event-bus.service.js'
+import { UserMsg } from '../cmps/user-msg.jsx'
 
 export const LoginSignup = () => {
     const [isImg, setIsImg] = useState(false)
@@ -38,22 +40,34 @@ export const LoginSignup = () => {
     }
 
     const handleSubmit = (ev) => {
-        ev.preventDefault()
-        const data = new FormData(ev.currentTarget)
-        const loginInfo = {
-            userName: data.get('userName'),
-            password: data.get('password'),
+        try {
+
+            ev.preventDefault()
+            const data = new FormData(ev.currentTarget)
+            const loginInfo = {
+                userName: data.get('userName'),
+                password: data.get('password'),
+            }
+            if (isLogin) {
+                dispatch(login(loginInfo))
+                console.log('1' )
+                dispatch(getLoggedinUser())
+                console.log('2' )
+                navigate('/')
+            } else {
+                loginInfo.fullname = data.get('fullname')
+                loginInfo.imgUrl = imgUrl
+                dispatch(signup(loginInfo))
+                dispatch(getLoggedinUser())
+                navigate('/')
+            }
+        } catch (err) {
+            console.log('err', err)
+            showErrorMsg('Username or password invalid')
         }
-        if (isLogin) {
-            dispatch(login(loginInfo))
-        } else {
-            loginInfo.fullname = data.get('fullname')
-            loginInfo.imgUrl = imgUrl
-            dispatch(signup(loginInfo))
-        }
-        dispatch(getLoggedinUser())
-        navigate('/')
     }
+
+
 
     const onChangePage = () => {
         setIsLogin(!isLogin)
@@ -132,6 +146,7 @@ export const LoginSignup = () => {
                     </Box>
                 </Container>
             </ThemeProvider>
+            <UserMsg />
         </main>
     )
 }

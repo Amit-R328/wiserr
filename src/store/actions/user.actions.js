@@ -1,6 +1,7 @@
 import { userService } from "../../services/user.service.js"
 import { showErrorMsg } from '../../services/event-bus.service.js'
 
+
 export function loadUsers() {
     return async dispatch => {
         try {
@@ -35,8 +36,13 @@ export function login(credentials) {
                 type: 'SET_USER',
                 user
             })
-        } catch (err) {
-            console.log('Cannot login', err)
+        } catch (err) {            
+            console.error('Error - cannot login:', err)
+            showErrorMsg('Username or password invalid')
+            setTimeout(() => {
+                console.log('user error msg')
+            },3000)
+            throw err
         }
     }
 }
