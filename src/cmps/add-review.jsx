@@ -37,8 +37,8 @@ export class AddReview extends React.Component {
                         starHoverColor="#ffb33e"
                     />
                     <h2 className="title">Share with the community your experience when working with this seller.</h2>
-                    <textarea name="txt" value={this.state.txt} onChange={this.handleChange}></textarea>
-                    <button type="submit" className="comment-post-btn">Add</button>
+                    <textarea className="rating-review-txt" name="txt" value={this.state.txt} onChange={this.handleChange} rows={5} cols={50}></textarea>
+                    <button type="submit" className="comment-post-btn">Save</button>
                 </form>
             </div>
         </section>)

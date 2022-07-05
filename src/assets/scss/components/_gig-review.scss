@@ -92,3 +92,56 @@
     color: #ffbe5b;
     
 }
+
+.comment-form{
+    display: flex ;
+    flex-direction: column;
+    margin-top: 20px;
+    .rating-review {
+        
+        font-size: 20px;
+        line-height: 28px;
+        // padding-bottom: rem(30px);
+        margin-top: 20px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        color: $grey_1100;
+    }
+    
+    .title {
+        font-size: 16px;
+        line-height: 28px;
+        // padding-bottom: rem(30px);
+        margin-top: 20px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 600;
+        color: $grey_1100;
+    }
+    
+    .rating-review-txt {
+        color: $grey_500;
+        border: 1px solid $grey_500;
+    }
+
+}
+
+.add-review-btn {
+    background-color: $wiserr_green;
+    color: $white;
+    border: unset;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100px;
+    margin-top: 10px;
+
+}
+
+.comment-post-btn {
+    margin-top: 10px;
+    width: 100px;
+    background-color: $white;
+    color: $wiserr_green;
+    border: 1px solid $wiserr_green;
+    border-radius: 4px;
+    padding: 10px;
+}
