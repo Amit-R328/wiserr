@@ -6,11 +6,16 @@ import { GigDetails } from './pages/gig-details.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
 import { AddGigDetailsWrapper } from './pages/add-gig.jsx'
 import { UserProfile } from './pages/user-profile.jsx'
+import { SellerGig } from './pages/seller-gig.jsx'
 
 const routes = [
     {
         path: '/seller/dashboard',
         component: <SellerDashboard />,
+    },
+    {
+        path: '/seller/gig',
+        component: <SellerGig />,
     },
     {
         path: '/seller/add-gig',

@@ -611,6 +611,7 @@
                 .order-subtitle {
                     font-size: rem(18px);
                     color: $grey_1000;
+                    overflow-wrap: break-word;
                 }
 
                 .days-to-make {

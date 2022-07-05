@@ -82,6 +82,11 @@ class _AddGigDetails extends React.Component {
         this.props.navigation(`/categories/${gig._id}`)
     }
 
+
+    saveNewgig  = async () => {
+        let gig = await this.props.saveGig(this.state.gigInfo)
+        return gig
+    }
     render() {
         const { gigInfo, isImg } = this.state
         return (
