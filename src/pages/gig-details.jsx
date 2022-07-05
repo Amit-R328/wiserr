@@ -15,6 +15,7 @@ import { UserMsg } from '../cmps/user-msg.jsx'
 import { socketService } from '../services/socket.service.js'
 import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js'
 import { utilService } from '../services/util.service.js'
+import { AddReview } from '../cmps/add-review.jsx'
 import Swal from 'sweetalert2'
 
 export const GigDetails = (props) => {
@@ -27,6 +28,7 @@ export const GigDetails = (props) => {
     const [textColorUp, setTextColorUp] = useState('')
     const [textColorDown, setTextColorDown] = useState('')
     const [memberSince, setMemberSince] = useState(2)
+    const [isToggleAddReview, setAddReview] = useState(false)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const params = useParams()
@@ -155,6 +157,11 @@ export const GigDetails = (props) => {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
 
+    const onAddReview = () => {
+        if(!loggedInUser) navigate('/login')
+        else setAddReview(!isToggleAddReview)
+    }
+
     const onShareModal = (ev) => {
         Swal.fire({
             className: "share-modal",
@@ -275,9 +282,10 @@ export const GigDetails = (props) => {
                                 </div>
                             </article>
                         </section>
-
+                    <section className="review-list">
+                        <button className="add-review-btn" onClick={onAddReview}>Add Review</button>
+                        {isToggleAddReview && <AddReview user={loggedInUser} gig={gig} setAddReview={setAddReview}/>}
                         {(gig.reviews.length) ? <section className="reviews">
-
                             <h1 className="gig-reviews-title">Reviews</h1>
                             {gig.reviews.map((review, idx) => {
                                 return <article key={review._id}>
@@ -298,6 +306,9 @@ export const GigDetails = (props) => {
                                 </article>
                             })}
                         </section> : <span></span>}
+
+                    </section>
+
                     </div>
                     <div className="sticky-outer-wrapper-gig-buy">
                         <div className="sticky-inner-wrapper-gig-buy">
