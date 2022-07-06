@@ -52,10 +52,15 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    let user = await httpService.post('auth/login', userCred)
-    if (user) {
-        _handleLogin(user)
-        return user
+    try{
+
+        let user = await httpService.post('auth/login', userCred)
+        if (user) {
+            _handleLogin(user)
+            return user
+        }
+    } catch (err) {
+        throw err
     }
 }
 

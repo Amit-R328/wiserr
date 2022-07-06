@@ -52,7 +52,7 @@ export const CategoriesCarousel = () => {
         <div className="slider-container">
             <ul className="slider-categories-list">
                 {slideCategories.map(category =>
-                    <li key={category}>
+                    <li key={category.img}>
                         <div className="slide" onClick={() => onChangeCategory(`${category.elementName}`)}>
                             <h4 className="category-legends"><small>{category.legends}</small><br></br><span>{category.title}</span></h4>
                             <img alt={category.title} src={category.img} />

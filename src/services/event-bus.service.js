@@ -22,6 +22,7 @@ export function showSuccessMsg(txt) {
 }
 
 export function showErrorMsg(txt) {
+    console.log('txt',txt )
     showUserMsg(txt, 'danger')
 }
 

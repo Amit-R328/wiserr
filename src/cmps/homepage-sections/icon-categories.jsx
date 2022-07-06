@@ -9,7 +9,7 @@ export const IconCategories = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    let iconCategories = [
+    let iconDetailes = [
         {
             elementName: 'All Categories',
             className: 'icon-all',
@@ -65,8 +65,8 @@ export const IconCategories = () => {
         <div className="icon-categories">
             <h2 className="marketplace-title">Explore the marketplace</h2>
             <ul className="icon-categories-list">
-                {iconCategories.map(category =>
-                    <li key={category}>
+                {iconDetailes.map(category =>
+                    <li key={category.elementName}>
                         <button onClick={() => onChangeCategory(`${category.elementName}`)} className={category.className}>
                             {category.icon} {category.caption}
                         </button>

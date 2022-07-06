@@ -38,10 +38,15 @@ export function searchGigByName() {
     }
 }
 
-export function loadGigs() {
+export function loadGigs(loggedInUser = '', type = '') {
+    // console.log('loggedInUser', loggedInUser)
+    // console.log('type',type )
     return async (dispatch, getState) => {
+        let filterBy = getState().gigModule.filterBy
         try {
-            const filterBy = getState().gigModule.filterBy
+            if(loggedInUser){
+                filterBy.userId = loggedInUser._id
+            }
             const gigs = await gigService.query(filterBy)
             const action = { type: 'SET_GIGS', gigs }
             dispatch(action)
@@ -55,6 +60,24 @@ export function loadGigs() {
         gigService.subscribe(subscriber)
     }
 }
+
+// export function loadGigs() {
+//     return async (dispatch, getState) => {
+//         try {
+//             const filterBy = getState().gigModule.filterBy
+//             const gigs = await gigService.query(filterBy)
+//             const action = { type: 'SET_GIGS', gigs }
+//             dispatch(action)
+//         } catch (err) {
+//             console.error('Error:', err)
+//         }
+//         if (subscriber) gigService.unsubscribe(subscriber)
+//         subscriber = (ev) => {
+//             dispatch(ev.data)
+//         }
+//         gigService.subscribe(subscriber)
+//     }
+// }
 
 export function getById(gigId) {
     
@@ -141,7 +164,7 @@ export function saveGig(gig) {
 export function addGig(gig) {
     return async dispatch => {
         try {
-            const savedGig = await gigService.save(gig)
+            await gigService.save(gig)
             dispatch(getActionAddGig(gig))
             showSuccessMsg('Gig added Successfully!')
         } catch (err) {
