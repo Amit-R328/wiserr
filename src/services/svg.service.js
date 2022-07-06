@@ -449,6 +449,28 @@ export function VCircle() {
         </span>
     )
 }
+export function PlusCircle() {
+    return (
+        <svg stroke="#fff" fill="#1DBF73" stroke-width="0" viewBox="0 0 1024 1024" height="2em" width="2em">
+            <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm192 472c0 4.4-3.6 8-8 8H544v152c0 4.4-3.6 8-8 8h-48c-4.4 0-8-3.6-8-8V544H328c-4.4 0-8-3.6-8-8v-48c0-4.4 3.6-8 8-8h152V328c0-4.4 3.6-8 8-8h48c4.4 0 8 3.6 8 8v152h152c4.4 0 8 3.6 8 8v48z">
+            </path>
+        </svg>
+    )
+}
+export function Edit() {
+    return (
+        <svg fill="#1e1692" viewBox="0 0 24 24" height="1.5em" width="1.5em">
+            <path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zM16.045 4.401l1.587 1.585-1.59 1.584-1.586-1.585L16.045 4.401zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zM4 20H20V22H4z"></path></svg>
+    )
+}
+export function Delete() {
+    return (
+        <svg fill="#F74040" viewBox="0 0 24 24" height="1.5em" width="1.5em">
+            <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z">
+            </path>
+        </svg>
+    )
+}
 
 export function AllCategoriesIcon() {
     return (

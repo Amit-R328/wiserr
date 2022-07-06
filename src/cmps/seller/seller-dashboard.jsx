@@ -8,7 +8,6 @@ import { utilService } from '../../services/util.service.js'
 import { socketService } from '../../services/socket.service.js'
 import { Loader } from '../loader.jsx'
 
-
 export const SellerDashboard = () => {
     const dispatch = useDispatch()
     const [loader, setLoader] = useState(true)

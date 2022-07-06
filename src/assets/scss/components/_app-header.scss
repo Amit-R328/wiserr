@@ -140,8 +140,8 @@
 .bottom {
   display: flex;
   align-items: center;
-  // border-top: 1px solid $grey_400;
-  // border-bottom: 1px solid $grey_400;
+  border-top: 1px solid $grey_400;
+  border-bottom: 1px solid $grey_400;
   background-color: $white;
   color: $grey_900;
 }
