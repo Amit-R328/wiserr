@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from "react-router-dom"
-import { loadGigs } from '../store/actions/gig.actions.js'
 import { userService } from '../services/user.service.js'
 import { utilService } from '../services/util.service.js'
 import { Loader } from '../cmps/loader.jsx'
@@ -19,6 +19,12 @@ export const SellerGig = () => {
     const navigate = useNavigate()
 
     useEffect(() => {
+        dispatch(setFilter({txt: '',
+        priceMin: 0,
+        priceMax: Infinity,
+        deliveryDate: 0,
+        category: '',
+        sortBy: 'title'}))
         dispatch(loadGigs(loggedInUser, 'getSelles'))
         setTimeout(() => {
             setLoader(false)
