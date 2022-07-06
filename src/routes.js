@@ -7,6 +7,7 @@ import { LoginSignup } from './pages/login-signup.jsx'
 import { AddGigDetailsWrapper } from './pages/add-gig.jsx'
 import { UserProfile } from './pages/user-profile.jsx'
 import { SellerGig } from './pages/seller-gig.jsx'
+import { EditGig } from './pages/edit-gig.jsx'
 
 const routes = [
     {
@@ -16,6 +17,10 @@ const routes = [
     {
         path: '/seller/gig',
         component: <SellerGig />,
+    },
+    {
+        path: '/seller/edit-gig',
+        component: <EditGig />
     },
     {
         path: '/seller/add-gig',

@@ -1,6 +1,3 @@
-// import HomeIcon from '@mui/icons-material/Home'
-// import BedroomBabyIcon from '@mui/icons-material/BedroomBaby';
-
 export function LogoFull() {
     return (
         <div className="logo">
@@ -449,6 +446,7 @@ export function VCircle() {
         </span>
     )
 }
+
 export function PlusCircle() {
     return (
         <svg stroke="#fff" fill="#1DBF73" stroke-width="0" viewBox="0 0 1024 1024" height="2em" width="2em">
@@ -457,16 +455,29 @@ export function PlusCircle() {
         </svg>
     )
 }
+
 export function Edit() {
     return (
         <svg fill="#1e1692" viewBox="0 0 24 24" height="1.5em" width="1.5em">
             <path d="M19.045 7.401c.378-.378.586-.88.586-1.414s-.208-1.036-.586-1.414l-1.586-1.586c-.378-.378-.88-.586-1.414-.586s-1.036.208-1.413.585L4 13.585V18h4.413L19.045 7.401zM16.045 4.401l1.587 1.585-1.59 1.584-1.586-1.585L16.045 4.401zM6 16v-1.585l7.04-7.018 1.586 1.586L7.587 16H6zM4 20H20V22H4z"></path></svg>
     )
 }
+
 export function Delete() {
     return (
         <svg fill="#F74040" viewBox="0 0 24 24" height="1.5em" width="1.5em">
             <path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z">
+            </path>
+        </svg>
+    )
+}
+
+export function ShowDetails() {
+    return (
+        <svg stroke="#1DBF73" fill="#1DBF73" stroke-width="0" viewBox="0 0 24 24" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14,12c-1.095,0-2-0.905-2-2c0-0.354,0.103-0.683,0.268-0.973C12.178,9.02,12.092,9,12,9c-1.642,0-3,1.359-3,3 c0,1.642,1.358,3,3,3c1.641,0,3-1.358,3-3c0-0.092-0.02-0.178-0.027-0.268C14.683,11.897,14.354,12,14,12z">
+            </path>
+            <path d="M12,5c-7.633,0-9.927,6.617-9.948,6.684L1.946,12l0.105,0.316C2.073,12.383,4.367,19,12,19s9.927-6.617,9.948-6.684 L22.054,12l-0.105-0.316C21.927,11.617,19.633,5,12,5z M12,17c-5.351,0-7.424-3.846-7.926-5C4.578,10.842,6.652,7,12,7 c5.351,0,7.424,3.846,7.926,5C19.422,13.158,17.348,17,12,17z">
             </path>
         </svg>
     )

@@ -5,11 +5,14 @@ import { loadGigs } from '../store/actions/gig.actions.js'
 import { userService } from '../services/user.service.js'
 import { utilService } from '../services/util.service.js'
 import { Loader } from '../cmps/loader.jsx'
-import { PlusCircle, Edit, Delete } from '../services/svg.service.js'
+import { PlusCircle, Edit, Delete, ShowDetails } from '../services/svg.service.js'
+import { updateGig, removeGig } from '../store/actions/gig.actions.js'
+import Swal from 'sweetalert2'
 
 export const SellerGig = () => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     let { gigs } = useSelector((storeState) => storeState.gigModule)
+    const { gig } = useSelector((storeState) => storeState.gigModule)
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const [loader, setLoader] = useState(true)
     const dispatch = useDispatch()
@@ -27,14 +30,37 @@ export const SellerGig = () => {
         navigate(`/seller/add-gig`)
     }
 
-    const onUpdateGig = (ev) => {
-        console.log('updategig')
+    const onGoToDetails = (gig) => {
+        navigate(`/categories/${gig._id}`)
     }
 
-    const onRemoveGig = (ev) => {
+    const onEditGig = (gig) => {
+        console.log('edit')
+        navigate(`/seller/edit-gig}`)
+    }
+
+    const onRemoveGig = (gigId) => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#1e1692',
+            cancelButtonColor: '#F74040',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+        dispatch(removeGig(gigId))
         console.log('removed gig')
-
     }
+
     return (
         <div className="seller-gig-container container">
             {loader && <Loader />}
@@ -61,8 +87,9 @@ export const SellerGig = () => {
                         <td>${gig.price}</td>
                         <td>{gig.orderQty}</td>
                         <td className="gig-actions">
-                            <button onClick={(ev) => onUpdateGig(ev)}><Edit /></button>
-                            <button onClick={() => onRemoveGig()}><Delete /></button>
+                            <button onClick={() => onGoToDetails(gig)}><ShowDetails /></button>
+                            <button onClick={() => onEditGig(gig)}><Edit /></button>
+                            <button onClick={() => onRemoveGig(gig._id)}><Delete /></button>
                         </td>
                     </tr>)}
                 </tbody>
