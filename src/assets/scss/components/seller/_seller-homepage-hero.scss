@@ -1,12 +1,19 @@
-.seller-details-container {
-    height: em(680px);
-    width: 100%;
-    margin-top: 0 !important;
+.seller-hero-container {
+    height: em(560px);
+    // width: 100%;
     background-color: $wiserr_business;
-
+    overflow: hidden;
+    
+    .seller-hero-left{
+        // width: 760px;
+        // height: 560px;
+        padding-top: 220px;
+    }
+    
     .seller-img-background {
-        width: 760px;
-        height: 560px;
+        // width: 760px;
+        width: 85%;
+        // object-fit: cover;
         object-fit: contain;
         content: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657116745/seller-backgound2_npy51f.png);
     }

@@ -49,7 +49,7 @@ export const AppHeader = () => {
     }
 
     return (
-        <header className={`header ${scrolled ? 'scrolled' : ''} ${pathname !== '/' ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
+        <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
                     <button onClick={onToggleSideMenu} className="hamburger-icon">
@@ -83,7 +83,7 @@ export const AppHeader = () => {
                 </ul>
             </div>
 
-            {(scrolled || (pathname !== '/')) && <div className="bottom container">
+            {(scrolled || (pathname !== '/' && pathname !== '/seller')) && <div className="bottom container">
                 <NavCategories />
             </div>}
         </header>
