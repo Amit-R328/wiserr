@@ -41,8 +41,7 @@
 // seller
 @import './components/seller/seller-homepage';
 // @import './components/seller/seller-header';
-// @import './components/seller/seller-hero';
-// @import './components/seller/seller-homepage-header';
+@import './components/seller/seller-homepage-hero';
 @import './components/seller/seller-dashboard';
 
 // PAGES
@@ -51,4 +50,5 @@
 @import './pages/gig-details';
 @import './pages/login-signup';
 @import './pages/seller-gig';
+@import './pages/seller-edit-gig';
 

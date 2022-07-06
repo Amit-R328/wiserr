@@ -69,7 +69,7 @@ export const AppHeader = () => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {loggedInUser ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
                     </li>
                     <li>
                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}

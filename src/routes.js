@@ -19,7 +19,7 @@ const routes = [
         component: <SellerGig />,
     },
     {
-        path: '/seller/edit-gig',
+        path: '/seller/edit-gig/:gigId',
         component: <EditGig />
     },
     {

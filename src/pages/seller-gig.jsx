@@ -36,7 +36,7 @@ export const SellerGig = () => {
 
     const onEditGig = (gig) => {
         console.log('edit')
-        navigate(`/seller/edit-gig}`)
+        navigate(`/seller/edit-gig/${gig._id}}`)
     }
 
     const onRemoveGig = (gigId) => {

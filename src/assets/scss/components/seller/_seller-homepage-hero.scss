@@ -1,0 +1,13 @@
+.seller-details-container {
+    height: em(680px);
+    width: 100%;
+    margin-top: 0 !important;
+    background-color: $wiserr_business;
+
+    .seller-img-background {
+        width: 760px;
+        height: 560px;
+        object-fit: contain;
+        content: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657115667/seller-backgound_prereq.webp);
+    }
+}
