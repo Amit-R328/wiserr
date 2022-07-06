@@ -1,5 +1,6 @@
 import React from 'react'
 import {SellerHero} from './seller-hero.jsx'
+import {CategoriesCarousel} from '../homepage-sections/categories-carousel.jsx'
 import {LorealLogo, UnileverLogo, EightLogo, MyHeritageLogo} from '../../services/svg.service.js'
 
 export const SellerHomepage = () => {
@@ -18,6 +19,11 @@ export const SellerHomepage = () => {
                     <li><MyHeritageLogo/></li>
                 </ul>
             </section>
+
+            <div className="gig-slider-container container">
+                <h2 className="professional-services">Popular services for businesses</h2>
+                <CategoriesCarousel />
+            </div>
         </section>
 
     )
