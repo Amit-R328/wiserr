@@ -56,6 +56,7 @@ async function query(filterBy = {}) {
 
 async function remove(gigId) {
     gigChannel.postMessage(getActionRemoveGig(gigId))
+    await httpService.delete(`gig/${gigId}`)
 }
 
 async function save(gig) {
