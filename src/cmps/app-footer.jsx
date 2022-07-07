@@ -1,7 +1,7 @@
 import { LogoFullFooter, Copyright, Instagram, Pinterest, LinkedIn, Facebook, Twitter } from '../services/svg.service.js'
 
 
-export const AppFooter = (props) => {
+export const AppFooter = () => {
 
     return (
         <footer className="footer-bottom">

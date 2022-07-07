@@ -1,8 +1,8 @@
-import React, { useState, useRef, useImperativeHandle } from "react"
-import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
+import React, { useState, useRef } from "react"
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
+import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 
 
 export const Search = ({ loc }) => {

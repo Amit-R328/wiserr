@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
-import { gigService } from "../../services/gig.service.js"
-import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { gigService } from "../../services/gig.service.js"
+import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 
 export const HeroPopularCategories = () => {
     const [popularCategories, setPopularCategories] = useState([])
