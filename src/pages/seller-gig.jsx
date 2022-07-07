@@ -71,12 +71,12 @@ export const SellerGig = () => {
         <div className="seller-gig-container container">
             {loader && <Loader />}
             <div className="seller-total-gigs flex">
-                <div className="total-gigs flex flex-column">{gigs ? <p>You've created<br></br><h3>{gigs.length}<br></br></h3>wonderful gigs!</p> : <p>Create your 1st gig today!</p>}</div>
+                <div className="total-gigs flex flex-column">{gigs ? <p>You've created<br></br><span>{gigs.length}<br></br></span>wonderful gigs!</p> : <p>Create your 1st gig today!</p>}</div>
                 <div className="add-new-gig-container flex flex-column" onClick={(ev) => onAddGig(ev)}>
                     <p className="add-new-gig">Add New Gig</p>
                     <div className="plus-circle-add-gig"><PlusCircle /></div>
                 </div>
-                <div className="orders-total flex flex-column">{gigs ? <p>Total Orders<h3>{orders.length}</h3></p> : <span></span>}</div>
+                <div className="orders-total flex flex-column">{gigs ? <p>Total Orders<br></br><span>{orders.length}<br></br></span></p> : <span></span>}</div>
             </div>
             <table className='gig-table' cellPadding="0" cellSpacing="0" border="0">
                 <thead className='gigs-table-header'>
