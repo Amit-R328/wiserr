@@ -1,20 +1,39 @@
-.seller-hero-container {
+.app-header-seller {
     height: em(560px);
-    // width: 100%;
+    width: 100%;
     background-color: $wiserr_business;
     overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
     
-    .seller-hero-left{
-        // width: 760px;
-        // height: 560px;
-        padding-top: 220px;
+    .seller-details-container {
+        align-self: center;
+        grid-area: 1/1/2/2;
+
+        // grid-template-rows: em(560px);
+
+        // .seller-hero-container {
+
+            .seller-hero-left {
+                // width: 760px;
+                // height: 560px;
+                // padding-top: 220px;
+                position: absolute;
+                top: 24%;
+                color: white;
+                font-size: rem(40px);
+                line-height: rem(55px);
+                letter-spacing: rem(2.8px);
+            }
+
+            .seller-img-background {
+                width: 760px;
+                min-width: 100%;
+                object-fit: contain;
+                // object-fit: cover;
+                content: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657116745/seller-backgound2_npy51f.png);
+            }
+        }
     }
-    
-    .seller-img-background {
-        // width: 760px;
-        width: 85%;
-        // object-fit: cover;
-        object-fit: contain;
-        content: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657116745/seller-backgound2_npy51f.png);
-    }
-}
+// }
