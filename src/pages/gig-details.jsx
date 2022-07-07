@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import ImageGallery from 'react-image-gallery'
-import Swal from 'sweetalert2'
+
 
 import { showSuccessMsg } from '../services/event-bus.service.js'
 import { GreenVMark } from '../services/svg.service.js'
@@ -18,6 +18,7 @@ import { onSaveOrder } from '../store/actions/order.actions.js'
 import { GigReview } from '../cmps/gig-review.jsx'
 import { UserMsg } from '../cmps/user-msg.jsx'
 import { AddReview } from '../cmps/add-review.jsx'
+import { GigDetailsHeader } from '../cmps/add-gig/gig-details-header.jsx'
 
 export const GigDetails = () => {
     const navigate = useNavigate()
@@ -32,24 +33,6 @@ export const GigDetails = () => {
     const [user, setUser] = useState({})  
     const [memberSince, setMemberSince] = useState()
     const [isToggleAddReview, setAddReview] = useState(false)
-    const sections = [
-        {
-            sectionElement: '.gig-details-container',
-            sectionTitle: 'Overview'
-        },
-        {
-            sectionElement: '.about-details',
-            sectionTitle: 'Description'
-        },
-        {
-            sectionElement: '.about-seller',
-            sectionTitle: 'About the Seller'
-        },
-        {
-            sectionElement: '.reviews',
-            sectionTitle: 'Reviews'
-        }
-    ]
     
     useEffect(() => {
         dispatch(getById(params.gigId))
@@ -142,35 +125,11 @@ export const GigDetails = () => {
         dispatch(updateGig(gig))
     }
 
-    const onScroll = (el) => {
-        const section = document.querySelector(el)
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-
     const onAddReview = () => {
         if(!loggedInUser) navigate('/login')
         else setAddReview(!isToggleAddReview)
     }
 
-    const onShareModal = (ev) => {
-        Swal.fire({
-            className: "share-modal",
-            width: 620,
-            height: 285,
-            padding: '45px',
-            color: '#62646',
-            background: '#fff',
-            backdrop: 'rgba(0,0,0,0.4)',
-            title: 'Share This Gig',
-            text: 'Spread the word about this Gig on Wiserr',
-            showCloseButton: true,
-            focusConfirm: false,
-            confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
-            confirmButtonAriaLabel: 'OK',
-            allowOutsideClick: true,
-            allowEscapeKey: true,
-        })
-    }
 
     if (!gig) return <h1>Loading</h1>
     let whatYouGet
@@ -181,17 +140,7 @@ export const GigDetails = () => {
     return (
         <>
             <section className="gig-details-container container">
-                <div className="nav-details-container">
-                    <nav className="details-menu-scroll">
-                        <ul className="nav-details-sections">
-                            {sections.map(section =>
-                                <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
-                            <aside>
-                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
-                            </aside>
-                        </ul>
-                    </nav>
-                </div>
+               <GigDetailsHeader/>
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="breadcrumbs-container flex">
