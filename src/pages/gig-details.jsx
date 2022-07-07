@@ -18,7 +18,7 @@ import { onSaveOrder } from '../store/actions/order.actions.js'
 import { GigReview } from '../cmps/gig-review.jsx'
 import { UserMsg } from '../cmps/user-msg.jsx'
 import { AddReview } from '../cmps/add-review.jsx'
-import { GigDetailsHeader } from '../cmps/add-gig/gig-details-header.jsx'
+import { GigDetailsHeader } from '../cmps/gig-details/gig-details-header.jsx'
 
 export const GigDetails = () => {
     const navigate = useNavigate()
