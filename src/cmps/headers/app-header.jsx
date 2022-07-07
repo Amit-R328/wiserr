@@ -20,7 +20,7 @@ export const AppHeader = () => {
     }
 
     useEffect(() => {
-        if (pathname === '/') {
+        if (pathname === '/' || pathname === '/seller' ) {
             window.addEventListener("scroll", handleScroll)
         }
         return () => {
@@ -49,7 +49,7 @@ export const AppHeader = () => {
     }
 
     return (
-        <header className={`header ${scrolled ? 'scrolled' : ''} ${pathname !== '/' ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
+        <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
                     <button onClick={onToggleSideMenu} className="hamburger-icon">
@@ -69,7 +69,7 @@ export const AppHeader = () => {
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {loggedInUser ? <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {loggedInUser ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
                     </li>
                     <li>
                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
@@ -83,7 +83,7 @@ export const AppHeader = () => {
                 </ul>
             </div>
 
-            {(scrolled || (pathname !== '/')) && <div className="bottom container">
+            {(scrolled || (pathname !== '/' && pathname !== '/seller')) && <div className="bottom container">
                 <NavCategories />
             </div>}
         </header>

@@ -1,35 +1,82 @@
 .seller-gig-container {
     padding-top: 120px;
-    min-height: calc(100vh - 75px); 
+    min-height: calc(100vh - 75px);
     width: 100%;
-    
+
+    .seller-total-gigs {
+        justify-content: space-between;
+        margin: 0;
+        margin-top: rem(30px);
+        margin-bottom: rem(10px);
+        color: $grey_1000;
+
+        .total-gigs,
+        .orders-total {
+            & p {
+                padding-top: rem(30px);
+                padding-bottom: rem(30px);
+                text-align: center;
+                font-size: rem(16px);
+
+                h3 {
+                    font-size: rem(24px);
+                    padding-top: rem(10px);
+                    padding-bottom: rem(10px);
+                    color: $wiserr_green;
+                }
+            }
+        }
+
+        .add-new-gig-container {
+            align-items: center;
+            padding-top: rem(30px);
+            font-size: rem(16px);
+
+            .add-new-gig {
+                padding-bottom: rem(10px);
+                text-align: center;
+            }
+        }
+    }
 
     .gig-table {
         background: unset;
         border: 1px solid $grey_500;
-        margin: 1em 0;
+        // margin: 1em 0;
         width: 100%;
         color: $grey_1000;
         font-family: 'Roboto', sans-serif;
-        
-            th {
-                padding: rem(20px) rem(15px);
-                text-align: left;
-                font-weight: 700;
-                font-size: rem(16px);
-                text-transform: uppercase;
-                border: 1px solid $grey_500;
-            }
-            td {
-                padding: rem(15px);
-                text-align: left;
-                vertical-align: middle;
-                font-weight: 300;
-                font-size: rem(14px);          
-                border: 1px solid $grey_500;
-            }
+
+        th {
+            padding: rem(20px) rem(15px);
+            text-align: left;
+            font-weight: 700;
+            font-size: rem(16px);
+            text-transform: uppercase;
+            border: 1px solid $grey_500;
+        }
+
+        td {
+            padding: rem(15px);
+            text-align: left;
+            vertical-align: middle;
+            font-weight: 300;
+            font-size: rem(14px);
+            border: 1px solid $grey_500;
+
+        }
         
     }
+    
+    .gig-actions {
+        & button {
+            padding: rem(10px);
+            background: none;
+            outline: none;
+            border: none;
+        }
+    }
+
     @media screen and (max-width: 740px) {
         th {
             font-size: rem(14px);
@@ -47,6 +94,5 @@
         margin-top: 0px;
         // border: 1 solid rgba(255, 255, 255, 0.3);
         border: 1px solid $grey_500;
-
     }
 }

@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
 
 
 // Lets wire up thunk and also redux-dev-tools:
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 export const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 

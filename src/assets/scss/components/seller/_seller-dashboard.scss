@@ -3,7 +3,6 @@
     min-height: calc(100vh - 75px); 
     width: 100%;
 
-    
     .orders-table {
         background: unset;
         border: 1px solid $grey_500;
@@ -82,7 +81,7 @@
         margin-bottom:  10px ;
         padding: 30px;
         text-align: center;
-        font-size: 14px;
+        font-size: rem(14px);
         
         .seller-total .seller-orders-qty{
             padding: 10px;

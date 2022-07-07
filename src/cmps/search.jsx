@@ -1,20 +1,26 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useImperativeHandle } from "react"
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
 
+
 export const Search = ({ loc }) => {
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const inputRef = useRef()
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
 
     const onSearch = (ev) => {
         ev.preventDefault()
         filterBy = { ...filterBy, txt: searchTerm }
         dispatch(setFilter(filterBy))
+<<<<<<< HEAD
         console.log('filterBy',filterBy )
+=======
+        inputRef.current.value = ''
+>>>>>>> bbcdf8df7188287ea279a7e747697c01aca1fb05
         navigate('/categories')
         dispatch(loadGigs())
         
@@ -30,6 +36,7 @@ export const Search = ({ loc }) => {
                 <AiOutlineSearch className="search-icon" />
                 <input type="search"
                     className={`search-input ${(loc === 'heroCarousel') ? 'search-hero' : 'search-header'}`}
+                    ref={inputRef}
                     onChange={handleChange}
                     placeholder={`${(loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'}`} />
             </label>

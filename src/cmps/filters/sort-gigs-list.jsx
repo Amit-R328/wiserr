@@ -26,6 +26,7 @@ export const SortGigsList = () => {
       <Select
         classNamePrefix="sort-gigs-list"
         defaultValue={'title'}
+        options={options}
         onChange={onHandleChange}
         placeholder="Title"
       />

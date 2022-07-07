@@ -41,13 +41,11 @@ export function searchGigByName() {
 export function loadGigs(loggedInUser = '', type = '') {
     // console.log('loggedInUser', loggedInUser)
     // console.log('type',type )
-    let filterBy = {}
     return async (dispatch, getState) => {
+        let filterBy = getState().gigModule.filterBy
         try {
             if(loggedInUser){
                 filterBy.userId = loggedInUser._id
-            } else  {
-                filterBy = getState().gigModule.filterBy
             }
             const gigs = await gigService.query(filterBy)
             const action = { type: 'SET_GIGS', gigs }
@@ -62,6 +60,24 @@ export function loadGigs(loggedInUser = '', type = '') {
         gigService.subscribe(subscriber)
     }
 }
+
+// export function loadGigs() {
+//     return async (dispatch, getState) => {
+//         try {
+//             const filterBy = getState().gigModule.filterBy
+//             const gigs = await gigService.query(filterBy)
+//             const action = { type: 'SET_GIGS', gigs }
+//             dispatch(action)
+//         } catch (err) {
+//             console.error('Error:', err)
+//         }
+//         if (subscriber) gigService.unsubscribe(subscriber)
+//         subscriber = (ev) => {
+//             dispatch(ev.data)
+//         }
+//         gigService.subscribe(subscriber)
+//     }
+// }
 
 export function getById(gigId) {
     
