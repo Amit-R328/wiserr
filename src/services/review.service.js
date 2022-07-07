@@ -27,7 +27,7 @@ export const reviewService = {
   add,
   query,
   remove,
-  addStarRate
+  
 }
 
 function query(filterBy) {
@@ -64,13 +64,4 @@ async function add(txt, rate, user, gig) {
     console.dir('Cannot add review:', err)
     throw err
   }
-}
-
-async function addStarRate(review, stars) {
-  // const addStarRate = await httpService.post(`review`, review)
-  review.byUser = userService.getLoggedinUser()
-  review.aboutGig = await userService.getById(review.aboutGigId)
-  const addedReview = await storageService.post('review', review)
-  reviewChannel.postMessage(getActionAddReview(addedReview))
-  return addedReview
 }

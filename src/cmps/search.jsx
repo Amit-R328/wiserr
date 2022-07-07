@@ -16,9 +16,14 @@ export const Search = ({ loc }) => {
         ev.preventDefault()
         filterBy = { ...filterBy, txt: searchTerm }
         dispatch(setFilter(filterBy))
+<<<<<<< HEAD
+        console.log('filterBy',filterBy )
+=======
         inputRef.current.value = ''
+>>>>>>> bbcdf8df7188287ea279a7e747697c01aca1fb05
         navigate('/categories')
         dispatch(loadGigs())
+        
     }
 
     const handleChange = (ev) => {

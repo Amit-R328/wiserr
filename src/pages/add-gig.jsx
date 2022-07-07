@@ -80,6 +80,7 @@ class _AddGigDetails extends React.Component {
         userIsSeller.isSeller = true
         userService.saveLocalUser(userIsSeller)
         this.props.navigation(`/categories/${gig._id}`)
+
     }
 
 
@@ -207,7 +208,7 @@ class _AddGigDetails extends React.Component {
                                     </select>
                                 </div>
 
-                                <button className="add-gig-btn" type="submit">Add Gig</button>
+                                <button className="add-gig-btn" type="submit" >Add Gig</button>
                             </form>
                         </section>
                     </div>
