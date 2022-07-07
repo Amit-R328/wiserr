@@ -113,7 +113,7 @@ export const GigDetails = () => {
     return (
         <>
             <section className="gig-details-container container">
-               <GigDetailsHeader/>
+               <GigDetailsHeader gig={gig}/>
                 <div className="gig-details">
                     <div className="left-container">
                         <section className="breadcrumbs-container flex">

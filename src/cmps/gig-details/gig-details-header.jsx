@@ -1,6 +1,10 @@
 import Swal from 'sweetalert2'
+import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { FacebookIcon, TwitterIcon } from "react-share";
+import { useState } from 'react';
 
-export const GigDetailsHeader = () => {
+export const GigDetailsHeader = ({gig}) => {
+    const [shareModal, setShareModal] = useState(false)
 
     const sections = [
         {
@@ -20,46 +24,45 @@ export const GigDetailsHeader = () => {
             sectionTitle: 'Reviews'
         }
     ]
-    
-    
+
+
     const onScroll = (el) => {
         const section = document.querySelector(el)
         section.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
 
 
-    const onShareModal = (ev) => {
-        Swal.fire({
-            className: "share-modal",
-            width: 620,
-            height: 285,
-            padding: '45px',
-            color: '#62646',
-            background: '#fff',
-            backdrop: 'rgba(0,0,0,0.4)',
-            title: 'Share This Gig',
-            text: 'Spread the word about this Gig on Wiserr',
-            showCloseButton: true,
-            focusConfirm: false,
-            confirmButtonText: '<i className="fa fa-thumbs-up"></i> OK',
-            confirmButtonAriaLabel: 'OK',
-            allowOutsideClick: true,
-            allowEscapeKey: true,
-        })
-    }
+
     return (
         <section className="gig-details-header">
-             <div className="nav-details-container">
-                    <nav className="details-menu-scroll">
-                        <ul className="nav-details-sections">
-                            {sections.map(section =>
-                                <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
-                            <aside>
-                                <button onClick={() => onShareModal()} className="details-menu-share"></button>
-                            </aside>
-                        </ul>
-                    </nav>
-                </div>
+            <div className="nav-details-container">
+                <nav className="details-menu-scroll">
+                    <ul className="nav-details-sections">
+                        {sections.map(section =>
+                            <li onClick={() => onScroll(section.sectionElement)} key={section.sectionTitle}>{section.sectionTitle}</li>)}
+                        <aside>
+                            <button onClick={()=>setShareModal(!shareModal)} className="details-menu-share"></button>
+                        </aside>
+                    </ul>
+                </nav>
+            </div>
+            {shareModal && <section className="share-modal">
+                <h2>Share this gig with the world!</h2>
+                <FacebookShareButton
+                    url={`https://wiserr-app.herokuapp.com/categories/${gig._id}`}
+                    className="Demo__some-network__share-button"
+                >
+                    <FacebookIcon size={32} round /> Facebook share
+                </FacebookShareButton>
+                <br />
+                <TwitterShareButton
+                    title={"test"}
+                    url={`https://wiserr-app.herokuapp.com/categories/${gig._id}`}
+                >
+                    <TwitterIcon size={32} round />
+                    Twitter share
+                </TwitterShareButton>
+            </section>}
         </section>
     )
 }
