@@ -1,6 +1,6 @@
 import '../../assets/scss/main.scss'
-import { Search } from '../search.jsx'
 import React, { useState, useEffect } from 'react'
+import { Search } from '../search.jsx'
 import { HeroPopularCategories } from './hero-popular-categories'
 
 export function HeroCarousel(props) {

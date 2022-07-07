@@ -1,16 +1,10 @@
-import React, { useEffect } from "react"
 import { useSelector, useDispatch } from 'react-redux'
-import StarIcon from '@mui/icons-material/Star'
-import Rating from '@mui/material/Rating'
 import ImageGallery from 'react-image-gallery'
 import { useNavigate } from "react-router-dom"
-import { WhiteHeart, BlackHeart } from "../services/svg.service"
 import { useState } from "react"
 import { updateGig } from '../store/actions/gig.actions.js'
-import { loadUser } from "../store/actions/user.actions"
-import { orderService } from "../services/order.service"
 
-export const GigPreview = ({ gig, reviews }) => {
+export const GigPreview = ({ gig }) => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch()

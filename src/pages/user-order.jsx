@@ -1,12 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux'
 import React, { useState, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { loadOrders } from '../store/actions/order.actions.js'
 import { userService } from '../services/user.service.js'
 import { utilService } from '../services/util.service.js'
 import { Loader } from '../cmps/loader.jsx'
 
 export const UserOrder = () => {
-    const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    // const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const [loader, setLoader] = useState(true)
     const dispatch = useDispatch()

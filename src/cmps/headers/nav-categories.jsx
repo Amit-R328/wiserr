@@ -1,6 +1,6 @@
 import React from 'react'
-import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
+import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 
 export const NavCategories = () => {

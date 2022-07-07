@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react'
-import { LogoFull} from '../../services/svg.service.js'
+import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, useLocation} from 'react-router-dom'
 import { Search } from '../search.jsx'
+import { LogoFull} from '../../services/svg.service.js'
 import { logout } from '../../store/actions/user.actions.js'
-import { useSelector, useDispatch } from 'react-redux'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
 
 export const AppHeader = () => {
-    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const dispatch = useDispatch()
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [profileMenu, setMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
