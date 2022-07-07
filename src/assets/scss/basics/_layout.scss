@@ -1,42 +1,40 @@
 .container {
-    padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
-    padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
+        // padding: calc(32px + 1.5625vw);
+    padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
+    padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
 
-    @include from-mobile-layout {
-        padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
-        padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
-    }
-
-    @include from-narrow-layout {
-        padding-inline-start: calc((100vw - #{$narrow-viewport}) / 2);
-        padding-inline-end: calc((100vw - #{$narrow-viewport}) / 2);
+    @include from-tablet-layout {
+        padding-inline-start: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
+        padding-inline-end: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
     }
 
     @include from-normal-layout {
-        padding-inline-start: calc((100vw - #{$normal-viewport}) / 2);
-        padding-inline-end: calc((100vw - #{$normal-viewport}) / 2);
+        padding-inline-start: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
+        padding-inline-end: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
     }
 
     @include from-wide-layout {
-        padding-inline-start: calc((100vw - #{$wide-viewport}) / 2);
-        padding-inline-end: calc((100vw - #{$wide-viewport}) / 2);
+        padding-inline-start: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
+        padding-inline-end: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
     }
+
 }
-@media (max-width:1024px) {
-    .container {
-        padding-inline-start: calc((100vw - 878px) / 2);
-        padding-inline-end: calc((100vw - 742px) / 2);
-    }
-}
-@media (max-width:744px) {
-    .container {
-        padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
-        padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
-    }
-}
-@media (max-width:425px) {
-    .container {
-        padding-inline-start: calc((100vw - 310px) / 2);
-        padding-inline-end: calc((100vw - 310px) / 2);
-    }
-}
+
+// @media (max-width:1024px) {
+//     .container {
+//         padding-inline-start: calc((100vw - 878px) / 2);
+//         padding-inline-end: calc((100vw - 742px) / 2);
+//     }
+// }
+// @media (max-width:744px) {
+//     .container {
+//         padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2);
+//         padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2);
+//     }
+// }
+// @media (max-width:425px) {
+//     .container {
+//         padding-inline-start: calc((100vw - 310px) / 2);
+//         padding-inline-end: calc((100vw - 310px) / 2);
+//     }
+// }

@@ -1,23 +1,23 @@
 @mixin from-mobile-layout{
     @media (min-width: $mobile-viewport){
-        @content;
+        @content; //min - 600, max - 900
     }
 }
 
-@mixin from-narrow-layout{
-    @media (min-width: $narrow-viewport){
-        @content;
+@mixin from-tablet-layout{
+    @media (min-width: $tablet-viewport){
+        @content; //min - 900, max - 1200
     }
 }
 
 @mixin from-normal-layout{
     @media (min-width: $normal-viewport){
-        @content;
+        @content; //min - 1200, max - 1800
     }
 }
 
 @mixin from-wide-layout{
     @media (min-width: $wide-viewport){
-        @content;
+        @content; //min - 1800, max - 1800+
     }
 }
