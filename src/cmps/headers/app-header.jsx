@@ -20,7 +20,7 @@ export const AppHeader = () => {
     }
 
     useEffect(() => {
-        if (pathname === '/') {
+        if (pathname === '/' || pathname === '/seller' ) {
             window.addEventListener("scroll", handleScroll)
         }
         return () => {
