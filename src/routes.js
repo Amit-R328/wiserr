@@ -5,7 +5,7 @@ import { GigPage } from './pages/gig-page.jsx'
 import { GigDetails } from './pages/gig-details.jsx'
 import { LoginSignup } from './pages/login-signup.jsx'
 import { AddGigDetailsWrapper } from './pages/add-gig.jsx'
-import { UserProfile } from './pages/user-profile.jsx'
+import { UserOrder } from './pages/user-order.jsx'
 import { SellerGig } from './pages/seller-gig.jsx'
 import { EditGig } from './pages/edit-gig.jsx'
 
@@ -31,8 +31,8 @@ const routes = [
         component: <SellerHomepage />,
     },
     {
-        path: '/profile/:userId',
-        component: <UserProfile/>
+        path: '/order/:userId',
+        component: <UserOrder/>
     },
     { 
         path: '/login',

@@ -1,9 +1,8 @@
-import React, { useState, useRef, useImperativeHandle } from "react"
+import React, { useState, useRef } from "react"
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
-
 
 export const Search = ({ loc }) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -16,11 +15,9 @@ export const Search = ({ loc }) => {
         ev.preventDefault()
         filterBy = { ...filterBy, txt: searchTerm }
         dispatch(setFilter(filterBy))
-        console.log('filterBy',filterBy )
         inputRef.current.value = ''
         navigate('/categories')
         dispatch(loadGigs())
-        
     }
 
     const handleChange = (ev) => {

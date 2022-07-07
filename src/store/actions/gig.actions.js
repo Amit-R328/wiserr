@@ -109,6 +109,10 @@ export function removeGig(gigId) {
             await gigService.remove(gigId)
             dispatch(getActionRemoveGig(gigId))
             showSuccessMsg('Gig removed Successfully!')
+            dispatch({
+                type: 'REMOVE_GIG',
+                gigId
+            })
         } catch (err) {
             console.error('Error:', err)
             showErrorMsg(err.response.data)

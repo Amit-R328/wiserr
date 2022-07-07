@@ -13,10 +13,9 @@ export function loadOrders(loggedInUser, typeOf) {
     }
 }
 
-export function onSaveOrder(gigId, loggedinUser) {
-    
+export function onSaveOrder(gigId, loggedinUser) {    
     return async (dispatch) => {
-        try {
+        try {        
             const order = await orderService.saveOrder(gigId, loggedinUser)
             const action = { type: 'SET_ORDER', order }
             dispatch(action)
@@ -29,7 +28,6 @@ export function onSaveOrder(gigId, loggedinUser) {
 
 
 export function onUpdateOrder(order) {
-
     return async (dispatch) => {
         try {
             await orderService.updateOrder(order)

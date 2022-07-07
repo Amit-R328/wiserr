@@ -68,7 +68,7 @@ export const SellerDashboard = () => {
         const thisYear = (new Date()).getFullYear()
         const yearOrders = orders.filter(order => {
             return thisYear === utilService.getYearNumber(order.createdAt)
-        })
+        })        
         setQtyYearOrders(yearOrders.length)
         const totalYearOrders = yearOrders.reduce((acc, order) => acc + order.gig.price, 0)
         setTotalYearOrdersAmount(totalYearOrders.toFixed(2))

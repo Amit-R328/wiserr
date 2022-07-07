@@ -3,37 +3,35 @@ import { useParams } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import ImageGallery from 'react-image-gallery'
+import Swal from 'sweetalert2'
+
 import { showSuccessMsg } from '../services/event-bus.service.js'
+import { GreenVMark } from '../services/svg.service.js'
+import { socketService } from '../services/socket.service.js'
+import { utilService } from '../services/util.service.js'
+import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js'
 import { getById, updateGig } from '../store/actions/gig.actions.js'
 import { loadUser } from '../store/actions/user.actions.js'
 import { loadOrders } from '../store/actions/order.actions.js'
-import { GigReview } from '../cmps/gig-review.jsx'
-import { GreenVMark } from '../services/svg.service.js'
 import { onSaveOrder } from '../store/actions/order.actions.js'
-import ImageGallery from 'react-image-gallery'
+import { GigReview } from '../cmps/gig-review.jsx'
 import { UserMsg } from '../cmps/user-msg.jsx'
-import { socketService } from '../services/socket.service.js'
-import { ThumbUpBlack, ThumbUpBlue, ThumbDownBlack, ThumbDownBlue } from '../services/svg.service.js'
-import { utilService } from '../services/util.service.js'
 import { AddReview } from '../cmps/add-review.jsx'
-import Swal from 'sweetalert2'
 
-export const GigDetails = (props) => {
+export const GigDetails = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const BLACK = '#404145'
+    const BLUE = '#446ee7'
+    const params = useParams()
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { orders } = useSelector((storeState) => storeState.orderModule)
-    const [user, setUser] = useState({})
-    const [thumbUp, setThumbUp] = useState(false)
-    const [thumbDown, setThumbDown] = useState(false)
-    const [textColorUp, setTextColorUp] = useState('')
-    const [textColorDown, setTextColorDown] = useState('')
-    const [memberSince, setMemberSince] = useState(2)
+    const { order } = useSelector((storeState) => storeState.orderModule)
+    const [user, setUser] = useState({})  
+    const [memberSince, setMemberSince] = useState()
     const [isToggleAddReview, setAddReview] = useState(false)
-    const navigate = useNavigate()
-    const dispatch = useDispatch()
-    const params = useParams()
-    const BLACK = '#404145'
-    const BLUE = '#446ee7'
     const sections = [
         {
             sectionElement: '.gig-details-container',
@@ -88,7 +86,7 @@ export const GigDetails = (props) => {
         if (!loggedInUser) {
             navigate('/login')
         } else {
-            let order = await dispatch(onSaveOrder(gigId, loggedInUser))
+            await dispatch(onSaveOrder(gigId, loggedInUser))                 
             onUpdateReviewsQty()
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')
@@ -121,18 +119,13 @@ export const GigDetails = (props) => {
         let flagUp = gig.reviews[idx].isHelpful
         let color
         if (flagUp) {
-            color = BLUE
-            setTextColorUp(color)
+            color = BLUE            
             gig.reviews[idx].isNotHelpful = false
             color = BLACK
-            setTextColorDown(color)
-            setThumbDown(false)
         } else {
-            color = BLACK
-            setTextColorUp(color)
+            color = BLACK            
         }
-        dispatch(updateGig(gig))
-        return setThumbUp(flagUp)
+        dispatch(updateGig(gig))        
     }
 
     const getThumbDown = (ev, gig, idx) => {
@@ -141,13 +134,10 @@ export const GigDetails = (props) => {
         let color
         if (flagDown) {
             color = BLUE
-            setTextColorDown(color)
             gig.reviews[idx].isHelpful = false
             color = BLACK
-            setTextColorUp(color)
         } else {
             color = BLACK
-            setTextColorDown(color)
         }
         dispatch(updateGig(gig))
     }
