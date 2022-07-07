@@ -86,8 +86,7 @@ export const GigDetails = () => {
         if (!loggedInUser) {
             navigate('/login')
         } else {
-            await dispatch(onSaveOrder(gigId, loggedInUser))
-            // let order = await dispatch(onSaveOrder(gigId, loggedInUser))            
+            await dispatch(onSaveOrder(gigId, loggedInUser))                 
             onUpdateReviewsQty()
             socketService.emit('new order', order)
             showSuccessMsg('Order accepted')

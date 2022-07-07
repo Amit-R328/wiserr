@@ -5,7 +5,7 @@ import { userService } from '../services/user.service.js'
 import { utilService } from '../services/util.service.js'
 import { Loader } from '../cmps/loader.jsx'
 
-export const UserProfile = () => {
+export const UserOrder = () => {
     const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     let { orders } = useSelector((storeState) => storeState.orderModule)
     const [loader, setLoader] = useState(true)
