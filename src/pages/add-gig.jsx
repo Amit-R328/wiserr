@@ -134,7 +134,6 @@ class _AddGigDetails extends React.Component {
         const { gigInfo, isImg, imgUrl, currentStep } = this.state
         return (
             <main className="header-container container">
-
                 <section className="add-gig-container">
                 <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">

@@ -23,6 +23,12 @@
 
 @mixin from-wide-layout{
     @media (min-width: $wide-viewport){
-        @content; //min - 1800, max - 1800+
+        @content; //min - 1800, max - 2200
+    }
+}
+
+@mixin from-extra-wide-layout{
+    @media (min-width: $extra-wide-viewport){
+        @content; //min - 2200, max - 2200+
     }
 }

@@ -6,8 +6,8 @@
     overflow: hidden;
     padding: 32px 32px 64px;
     // height: 80px;
-    padding-top: rem(135px);
-
+    // padding-top: rem(135px);
+    
     .header-row {
         display: flex;
         flex-wrap: wrap;
@@ -18,7 +18,7 @@
         margin: 0;
         // margin-right: 13.5%;
         // margin-left: 13.5%;
-
+        
         .clean-logo-container {
             width: 20px;
             // height: 24px;
@@ -39,8 +39,8 @@
     position: fixed;
     z-index: 9999;
     background-color: $white;
-
-
+    
+    
     .inner-progress-wrapper {
         display: flex;
         justify-content: space-between;
@@ -53,7 +53,7 @@
         height: 48px;
         // margin-right: 13.5%;
         // margin-left: 13.5%;
-
+        
         & button {
             background: transparent;
             border: 0;
@@ -64,19 +64,19 @@
             overflow: visible;
             margin: 0;
             padding: 0;
-
+            
             &:not(:last-of-type) {
                 padding-right: 30px;
             }
-
+            
             &.active {
                 color: $wiserr_green;
-
+                
                 & span {
                     background: $wiserr_green;
                 }
             }
-
+            
             & span {
                 align-items: center;
                 justify-content: center;
@@ -93,7 +93,7 @@
                 margin-right: 9px;
                 cursor: pointer;
             }
-
+            
             &:not(:last-child):after {
                 content: "\f054";
                 font-family: awesome;
@@ -104,7 +104,7 @@
                 vertical-align: baseline;
             }
         }
-
+        
         .completion-score {
             display: flex;
             flex-direction: column;
@@ -113,27 +113,27 @@
             height: 48px;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
-
+            
             .text {
                 font-size: 15px;
                 line-height: 18px;
                 width: 100%;
             }
-
+            
             .full-width-progressbar {
                 width: 100%;
                 display: flex;
                 align-items: center;
                 font-size: 100%;
                 vertical-align: baseline;
-
+                
                 .progress-bar-completion-indicator {
                     position: relative;
                     height: 8px;
                     background: $grey_400;
                     flex-grow: 1;
                     border-radius: 999px;
-
+                    
                     span {
                         background: $wiserr_green;
                         height: 100%;
@@ -155,8 +155,9 @@
     // margin-left: 13.5%;
     padding-bottom: 100px;
     // background-color: pink;
-    padding-top: rem(50px);
-
+    // padding-top: rem(50px);
+    padding-top: rem(92px);
+    
     .gig-details {
         padding-top: 40px;
         margin-right: 13.5%;
