@@ -1,0 +1,45 @@
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    color: $grey_1000;
+
+    .edit-gig-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3em;
+    }
+    .edit-gig-input-container {
+        display: flex;
+        margin: 1em 0;
+        justify-content: space-between;
+
+        .edit-gig-label {
+            // margin-right: 1em;
+        }
+        .edit-gig-input {
+            width: calc(100% - 150px);
+        }
+    }
+    .edit-gig-img-container {
+        display: flex;
+        justify-content: space-between;
+
+        .edit-gig-img {
+            border: 1px solid $grey_1000;            
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+    }
+    .edit-gig-littleDetails {
+        display: flex;
+        margin: 1em 0;        
+        justify-content: space-between;
+        .edit-gig-textarea {
+            width: calc(100% - 150px);
+        }
+    }
+}

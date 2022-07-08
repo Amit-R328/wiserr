@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Step1 = (props) => {
-
+    
     if (props.currentStep !== 1) { // Prop: The current step
         return null
     }
@@ -26,7 +26,14 @@ export const Step1 = (props) => {
                         <section className="gig-photos">
                             <label className="file-img" />
                             {!props.isImg ? <span className="missing-gig-image"></span> : <img src={`${props.gigInfo.imgUrl}`} alt="" />}
-                            <input className="file-input" accept="image/png,image/jpeg" type="file" name="imgUrl" value={''} onChange={props.handleChange} />
+                            <input
+                                className="file-input"
+                                accept="image/png,image/jpeg"
+                                type="file"
+                                name="imgUrl"
+                                required
+                                value={''}
+                                onChange={props.handleChange} />
                         </section>
                     </div>
                 </div>
@@ -34,8 +41,18 @@ export const Step1 = (props) => {
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Gig Title</p>
                     <label>
-                        <textarea name="gigTitle" maxLength="600" minLength="15" rows={5} cols={50} placeholder="I will..." value={props.gigInfo.gigTitle} onChange={props.handleChange}>
-                        </textarea></label>
+                        <textarea
+                            name="gigTitle"
+                            maxLength="600"
+                            minLength="15"
+                            rows={5}
+                            cols={50}
+                            required
+                            placeholder="I will..."
+                            value={props.gigInfo.gigTitle}
+                            onChange={props.handleChange}>
+                        </textarea>
+                    </label>
                 </div>
 
                 <div id="description" className="onboarding-field is-required">
@@ -43,8 +60,20 @@ export const Step1 = (props) => {
                     <div className="add-gig-titles">
                         <p className="add-gig-labels">Description (min. 15 characters)</p>
                         <label className="description">
-                            <textarea maxLength="600" minLength="15" rows={5} cols={50} className="desc" required type="txt" name="gigDescription" placeholder="Share a bit about the gig, cool related, and your area of expertise." value={props.gigInfo.gigDescription} onChange={props.handleChange}>
-                            </textarea></label>
+                            <textarea
+                                maxLength="600"
+                                minLength="15"
+                                rows={5}
+                                cols={50}
+                                className="desc"
+                                required
+                                type="txt"
+                                name="gigDescription"
+                                placeholder="Share a bit about the gig, cool related, and your area of expertise."
+                                value={props.gigInfo.gigDescription}
+                                onChange={props.handleChange}>
+                            </textarea>
+                        </label>
                     </div>
                 </div>
 

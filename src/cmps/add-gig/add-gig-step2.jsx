@@ -13,7 +13,7 @@ export const Step2 = (props) => {
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Tell your potential buyers what will they get</p>
                     <label className="description">
-                        <textarea name="whatDoYouGet" maxLength="600" minLength="15" rows={5} cols={50} value={props.gigInfo.whatDoYouGet} onChange={props.handleChange}></textarea>
+                        <textarea name="whatDoYouGet" maxLength="600" minLength="15" rows={5} cols={50} required value={props.gigInfo.whatDoYouGet} onChange={props.handleChange}></textarea>
                     </label>
                 </div>
 
