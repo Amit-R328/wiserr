@@ -7,6 +7,7 @@ import { logout } from '../../store/actions/user.actions.js'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
+import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx' 
 
 export const AppHeader = () => {
     const dispatch = useDispatch()
@@ -15,6 +16,8 @@ export const AppHeader = () => {
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const { pathname } = useLocation()
+    const { width } = useWindowDimensions()
+
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
@@ -27,6 +30,8 @@ export const AppHeader = () => {
             window.removeEventListener("scroll", handleScroll)
         }
     }, [pathname])
+
+    let classHamburgerMenu = (window.scrollY > 200 || pathname !== '/') ? 'gray' : 'white' 
 
     const onLogout = () => {
         dispatch(logout())
@@ -52,7 +57,7 @@ export const AppHeader = () => {
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
-                    <button onClick={onToggleSideMenu} className="hamburger-icon">
+                    <button onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
                         {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}
                     </button>
                     <div className="logo">
@@ -82,8 +87,7 @@ export const AppHeader = () => {
                     </li>
                 </ul>
             </div>
-
-            {(scrolled || (pathname !== '/' && pathname !== '/seller')) && <div className="bottom container">
+            {(width > 700 && (scrolled || (pathname !== '/' && pathname !== '/seller'))) && <div className="bottom">
                 <NavCategories />
             </div>}
         </header>

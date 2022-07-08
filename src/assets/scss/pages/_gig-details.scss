@@ -1,9 +1,18 @@
+.share-modal {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #1DBF73;
+    border-radius: 4px;
+    z-index: 999;
+    position: absolute;
+    top: 27%;
+    left: 85%;
+}
 .gig-details-container {
     width: 100%;
-
     .nav-details-container {
         position: sticky;
-        z-index: -1;
+        z-index: 1;
         width: 100%;
         top: 0;
         left: 0;

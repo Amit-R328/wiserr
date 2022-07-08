@@ -7,6 +7,7 @@ import { userService } from '../services/user.service.js'
 import { Step1 } from '../cmps/add-gig/add-gig-step1.jsx'
 import { Step2 } from '../cmps/add-gig/add-gig-step2.jsx'
 import { Step3 } from '../cmps/add-gig/add-gig-step3.jsx'
+import { ProgressBar } from '../cmps/add-gig/progress-bar.jsx'
 
 class _AddGigDetails extends React.Component {
     state = {
@@ -107,7 +108,7 @@ class _AddGigDetails extends React.Component {
         if (currentStep !== 1) {
             return (
                 <button
-                    className="btn btn-secondary"
+                    className="btn-secondary"
                     type="button" onClick={this._prev}>
                     Previous
                 </button>
@@ -121,7 +122,7 @@ class _AddGigDetails extends React.Component {
         if (currentStep < 3) {
             return (
                 <button
-                    className="btn btn-primary float-right"
+                    className="btn-primary"
                     type="button" onClick={this._next}>
                     Next
                 </button>
@@ -134,27 +135,11 @@ class _AddGigDetails extends React.Component {
         const { gigInfo, isImg, imgUrl, currentStep } = this.state
         return (
             <main className="header-container container">
-                <div className="progress-bar-container container">
-                    <div className="inner-progress-wrapper">
-                        <nav>
-                            <button className="personal_info active">
-                                <span className="">1</span>Personal Info</button>
-                            <button className="professional_info disabled">
-                                <span className="">2</span>Professional Info</button>
-                            <button className="Gig Details disabled">
-                                <span className="">3</span>Gig Details</button>
-                        </nav><div className="completion-score incomplete">
-                            <div className="text">Completion Rate: 15%</div>
-                            <div className="full-width-progressbar">
-                                <div className="progress-bar-completion-indicator"><span className="" style={{ width: '15%' }}>
-                                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <section className="add-gig-container">
+                    <div className="progress-bar-container container">
+                        <ProgressBar currentStep={currentStep} />
+                    </div>
+
                     <div className="gig-details">
                         <section className="add-gig">
                             <form className="gig-form" onSubmit={this.handleSubmit}>
@@ -175,13 +160,14 @@ class _AddGigDetails extends React.Component {
                                     currentStep={currentStep}
                                     handleChange={this.handleChange}
                                 />
-                                <div className="buttons-container">
+                                <div className="buttons-container flex">
                                     <button className="add-gig-btn">{this.previousButton()}</button>
                                     <button className="add-gig-btn">{this.nextButton()}</button>
                                 </div>
                             </form>
                         </section>
                     </div>
+
                 </section>
             </main>
         )

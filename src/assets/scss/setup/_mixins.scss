@@ -10,14 +10,25 @@
     }
 }
 
+@mixin from-narrow-layout{
+    @media (min-width: $narrow-viewport){
+        @content; //min - 1200, max - 1400
+    }
+}
 @mixin from-normal-layout{
     @media (min-width: $normal-viewport){
-        @content; //min - 1200, max - 1800
+        @content; //min - 1400, max - 1800
     }
 }
 
 @mixin from-wide-layout{
     @media (min-width: $wide-viewport){
-        @content; //min - 1800, max - 1800+
+        @content; //min - 1800, max - 2200
+    }
+}
+
+@mixin from-extra-wide-layout{
+    @media (min-width: $extra-wide-viewport){
+        @content; //min - 2200, max - 2200+
     }
 }

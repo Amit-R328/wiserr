@@ -12,7 +12,7 @@ export const Step3 = (props) => {
             <div className="form-group">
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Category</p>
-                    <select className="add-gig-input" value={props.gigInfo.category} name="category" onChange={props.handleChange}>
+                    <select className="add-gig-input" value={props.gigInfo.category} name="category" required onChange={props.handleChange}>
                         <option value=""></option>
                         <option value="Graphics & Design">Graphics &amp; Design</option>
                         <option value="Digital Marketing">Digital Marketing</option>
@@ -25,7 +25,7 @@ export const Step3 = (props) => {
 
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Origin</p>
-                    <select className="add-gig-input" value={props.gigInfo.origin} name="origin" onChange={props.handleChange}>
+                    <select className="add-gig-input" value={props.gigInfo.origin} name="origin" required onChange={props.handleChange}>
                         <option value=""></option>
                         <option value="israel">Israel</option>
                         <option value="USA">USA</option>
@@ -34,7 +34,7 @@ export const Step3 = (props) => {
                         <option value="japan">Japan</option>
                     </select>
                 </div>
-                <button className="add-gig-btn" type="submit" >Add Gig</button>
+                <button className="add-gig-btn submit-add-gig-form" type="submit" >Add Gig</button>
             </div>
         </React.Fragment>
     )

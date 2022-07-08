@@ -25,7 +25,7 @@ export const NavCategories = () => {
     ]
     
     return (
-        <div className="categories-menu-scroll">
+        <div className="categories-menu-scroll container">
             <ul className="categories">
                 {categories.map((category, index) => <li key={index}>
                     <button onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
