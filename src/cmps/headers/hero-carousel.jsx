@@ -41,8 +41,8 @@ export function HeroCarousel(props) {
           <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/ZachN_m3pq3u.jpg" alt="Zach" />
         </div>
       </div>
-      <div className="hero-content-container container">
-        <div className="hero-content">
+      <div className="hero-content-container">
+        <div className="hero-content container">
           <h1>Find the perfect <i>freelance</i>
             <br />services for your business</h1>
           <div className="search-hero-homepage">

@@ -134,6 +134,8 @@ class _AddGigDetails extends React.Component {
         const { gigInfo, isImg, imgUrl, currentStep } = this.state
         return (
             <main className="header-container container">
+
+                <section className="add-gig-container">
                 <div className="progress-bar-container container">
                     <div className="inner-progress-wrapper">
                         <nav>
@@ -153,8 +155,6 @@ class _AddGigDetails extends React.Component {
                         </div>
                     </div>
                 </div>
-
-                <section className="add-gig-container">
                     <div className="gig-details">
                         <section className="add-gig">
                             <form className="gig-form" onSubmit={this.handleSubmit}>
