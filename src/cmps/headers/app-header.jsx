@@ -27,7 +27,6 @@ export const AppHeader = () => {
     }, [isSideMenu])
     
     useEffect(() => {
-        
         if (pathname === '/' || pathname === '/seller') {
             window.addEventListener("scroll", handleScroll)
         }
@@ -39,11 +38,12 @@ export const AppHeader = () => {
     const handleClickOutside = (e) => {
         if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
     }
+
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
 
-    let classHamburgerMenu = (window.scrollY > 200 || pathname !== '/') ? 'gray' : 'white'
+    let classHamburgerMenu = (window.scrollY > 200 || (pathname !== '/' && pathname !== '/seller')) ? 'gray' : 'white'
 
     const onLogout = () => {
         dispatch(logout())

@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const Step1 = (props) => {
-    
+
     if (props.currentStep !== 1) { // Prop: The current step
         return null
     }
@@ -80,7 +80,15 @@ export const Step1 = (props) => {
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Tell your potential buyers why they should choose you</p>
                     <label className="description">
-                        <textarea name="whyUs" maxLength="600" minLength="15" rows={5} cols={50} value={props.gigInfo.whyUs} onChange={props.handleChange}></textarea>
+                        <textarea
+                            name="whyUs"
+                            maxLength="600"
+                            minLength="15"
+                            rows={5}
+                            cols={50}
+                            value={props.gigInfo.whyUs}
+                            onChange={props.handleChange}>
+                        </textarea>
                     </label>
                 </div>
             </div>
