@@ -36,7 +36,6 @@ export const CategoriesSliderMobile = () => {
     ]
 
     const slideStyles = {
-        width: "391px",
         height: "534px",
         borderRadius: "10px",
         backgroundSize: "cover",

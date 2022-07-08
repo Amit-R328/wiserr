@@ -16,14 +16,14 @@
     }
 
         ul.icon-categories-list {
-        // display: flex;
-        // flex-wrap: wrap;
+        display: flex;
+        flex-wrap: wrap;
         line-height: rem(34px);
         list-style: none;
         font-size: rem(16px);
         margin-top: rem(24px);
 
-        display: grid;
+        // display: grid;
         // grid-template-columns: repeat(3, auto-fit, minmax(50px, 100px));
         grid-template-columns: repeat(7, 180px);
         // grid-template-rows: 100px 100px;

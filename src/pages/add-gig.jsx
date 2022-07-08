@@ -102,11 +102,6 @@ class _AddGigDetails extends React.Component {
         })
     }
 
-    // saveNewGig  = async () => {
-    //     let gig = await this.props.saveGig(this.state.gigInfo)
-    //     return gig
-    // }
-
     previousButton() {
         let currentStep = this.state.currentStep
         if (currentStep !== 1) {
@@ -180,8 +175,10 @@ class _AddGigDetails extends React.Component {
                                     currentStep={currentStep}
                                     handleChange={this.handleChange}
                                 />
-                                {this.previousButton()}
-                                {this.nextButton()}
+                                <div className="buttons-container">
+                                    <button className="add-gig-btn">{this.previousButton()}</button>
+                                    <button className="add-gig-btn">{this.nextButton()}</button>
+                                </div>
                             </form>
                         </section>
                     </div>

@@ -10,7 +10,7 @@ import { CategoriesSliderMobile } from '../cmps/homepage-sections/categories-sli
 import { useWindowDimensions } from '../hooks/useWindowDimensions.jsx'
 
 export const HomePage = () => {
-    const { height, width } = useWindowDimensions()
+    const { width } = useWindowDimensions()
     return (
         <section>
             <div className="hero">
@@ -21,7 +21,7 @@ export const HomePage = () => {
             </div>
             <div className="gig-slider-container container">
                 <h2 className="professional-services">Popular professional services</h2>
-                {(width <= 700) ? <CategoriesSliderMobile/> : <CategoriesCarousel />}
+                {(width <= 650) ? <CategoriesSliderMobile/> : <CategoriesCarousel />}
             </div>
             <SellingPoint />
             <div className="container">
