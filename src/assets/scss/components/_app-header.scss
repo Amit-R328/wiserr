@@ -55,7 +55,6 @@
 
       &.seller-nav-link {
         color: $wiserr_business;
-
       }
 
       &:hover {
@@ -171,6 +170,7 @@
     }
   }
 }
+
 @include from-tablet-layout {
   ul {
     &.nav-list {

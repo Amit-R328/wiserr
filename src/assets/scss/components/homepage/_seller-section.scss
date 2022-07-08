@@ -148,24 +148,29 @@
         position: relative;
         // left: 11%;
     }
+
     .seller-info-container .seller-container-grid {
         display: flex;
         flex-direction: column;
     }
+
     .seller-info-container .seller-container-grid .seller-text {
         position: relative;
         left: 6%;
     }
 }
+
 @media (max-width:744px) {
     .seller-info-container .seller-container-grid .seller-text {
         overflow-wrap: unset;
     }
+
     .seller-info-container .seller-container-grid {
         display: flex;
         flex-direction: column;
     }
 }
+
 @media (max-width: 900px) {
     .seller-info-container {
         .seller-container-grid {

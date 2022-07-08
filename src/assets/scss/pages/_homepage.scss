@@ -1,5 +1,5 @@
 .trusted-by-brands {
-  margin-top: rem(460px);
+  margin-top: rem(678px);
   background-color: $grey_300;
   height: rem(95px);
   color: $grey_800;
@@ -7,18 +7,14 @@
   align-items: center;
   justify-content: center;
 
-  // @media (max-width: 600px) {
-  //   display: none; 
-  // }
-
   .brands-container {
     align-items: center;
     justify-content: center;
-    
+
     .brands {
       gap: rem(60px);
       align-items: center;
-      
+
       & li {
         text-align: left;
         list-style: none;
@@ -26,7 +22,7 @@
       }
     }
   }
-  
+
   & p {
     padding-right: rem(45px);
     color: $grey_700;
@@ -35,6 +31,7 @@
     font-weight: 550;
   }
 }
+
 @media (max-width:600px) {
   .trusted-by-brands {
     width: 643px;

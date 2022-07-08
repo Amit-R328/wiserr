@@ -1,37 +1,22 @@
 .container {
     // padding: calc(32px + 1.5625vw);
-    padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
-    padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
-    padding-left: calc(32px + 1.5625vw);
-    padding-right: calc(32px + 1.5625vw);
+padding-inline-start: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
+padding-inline-end: calc((100vw - #{$mobile-viewport}) / 2); // max-600px
 
-    @include from-tablet-layout {
-        padding-inline-start: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
-        padding-inline-end: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
-        padding-left: calc(32px + 1.5625vw);
-        padding-right: calc(32px + 1.5625vw);
-    }
+@include from-tablet-layout {
+    padding-inline-start: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
+    padding-inline-end: calc((100vw - #{$tablet-viewport}) / 2); //max-900px
+}
 
-    @include from-narrow-layout {
-        padding-inline-start: calc((100vw - #{$narrow-viewport}) / 2); //max-1200px
-        padding-inline-end: calc((100vw - #{$narrow-viewport}) / 2); //max-1200px
-        padding-left: calc(32px + 1.5625vw);
-        padding-right: calc(32px + 1.5625vw);
-    }
+@include from-normal-layout {
+    padding-inline-start: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
+    padding-inline-end: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
+}
 
-    @include from-normal-layout {
-        padding-inline-start: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
-        padding-inline-end: calc((100vw - #{$normal-viewport}) / 2); //max-1200px
-        padding-left: calc(32px + 1.5625vw);
-        padding-right: calc(32px + 1.5625vw);
-    }
-
-    @include from-wide-layout {
-        padding-inline-start: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
-        padding-inline-end: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
-        padding-left: calc(32px + 1.5625vw);
-        padding-right: calc(32px + 1.5625vw);
-    }
+@include from-wide-layout {
+    padding-inline-start: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
+    padding-inline-end: calc((100vw - #{$wide-viewport}) / 2); //min-1200px
+}
 
 }
 

@@ -15,7 +15,7 @@
         outline: 0;
     }
 
-        ul.icon-categories-list {
+    ul.icon-categories-list {
         display: flex;
         flex-wrap: wrap;
         line-height: rem(34px);
@@ -31,39 +31,39 @@
         // grid-row-gap: 20px;
         justify-content: center;
         align-items: center;
-        grid-template-areas: 
-        "icon-all graphic-icon marketing-icon writing-icon video-icon business-icon lifestyle";
-        
-        
+        grid-template-areas:
+            "icon-all graphic-icon marketing-icon writing-icon video-icon business-icon lifestyle";
+
+
         li {
             list-style: none;
             margin: 0;
             outline: 0;
             // padding: 0 10px 55px;
             text-align: center;
-            
-            // a {
-                //     list-style: none;
-                //     position: relative;
-                //     text-align: center;
-                //     text-decoration: none;
-                
-                button {
-                    display: inline-block;
-                    transition: color .2s;
-                    position: relative;
-                    text-align: center;
-                    color: #222325;
-                    cursor: pointer;
-                    min-width: 150px;
-                    padding: 10px 10px 10px;
-                    font-size: rem(16px);
-                    background-color: $white;
-                    outline: none;
-                    border: none;
 
-                
-                
+            // a {
+            //     list-style: none;
+            //     position: relative;
+            //     text-align: center;
+            //     text-decoration: none;
+
+            button {
+                display: inline-block;
+                transition: color .2s;
+                position: relative;
+                text-align: center;
+                color: #222325;
+                cursor: pointer;
+                min-width: 150px;
+                padding: 10px 10px 10px;
+                font-size: rem(16px);
+                background-color: $white;
+                outline: none;
+                border: none;
+
+
+
                 &:after {
                     border-bottom: 2px solid transparent;
                     content: "";
@@ -74,13 +74,13 @@
                     transition: border-color .2s ease-in-out, padding .2s ease-in-out;
                     width: em(48px);
                 }
-                
+
                 &:hover:after {
                     border-color: $wiserr_green;
                     padding: 0 rem(20px) rem(18px);
                     transition: border-color .2s ease-in-out, padding .2s ease-in-out;
                 }
-                
+
                 svg {
                     color: #222325;
                     cursor: pointer;
@@ -121,11 +121,13 @@
         display: flex;
         flex-wrap: wrap;
     }
+
     .marketplace-title {
         position: relative;
         // left: 11%;
     }
 }
+
 @media (max-width:744px) {
     .icon-categories ul.icon-categories-list {
         display: flex;
@@ -134,6 +136,7 @@
         flex-wrap: wrap;
     }
 }
+
 @media (max-width:1024px) {
     .icon-categories ul.icon-categories-list {
         display: flex;
