@@ -53,6 +53,7 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
             <div className="side-bar-content">
                 <div className="menu-header">
                     {!user && <button className="btn" onClick={() => { openJoin() }}>Join Wiserr</button>}
+                    {console.log('before push')}
                 </div>
                 <nav className='menu-nav'>
                     <ul className='clean-list'>
