@@ -171,7 +171,7 @@
             // width: 100%;
 
             .gig-form {
-                margin-top: rem(50px);
+                margin-top: rem(80px);
 
                 .buttons-container {
                     justify-content: flex-end;
@@ -417,3 +417,15 @@
 //     border: 1px solid transparent;
 //     border-radius: 4px;
 // }
+
+.add-gig-btn {
+    border: 1px solid $grey_500;
+    background-color: $wiserr_green;
+    color: white;
+    // width: rem(150px);
+    margin-top: rem(15px);
+    padding: rem(10px) rem(20px);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
