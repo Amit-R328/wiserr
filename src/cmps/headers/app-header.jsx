@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, useLocation} from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { Search } from '../search.jsx'
-import { LogoFull} from '../../services/svg.service.js'
+import { LogoFull } from '../../services/svg.service.js'
 import { logout } from '../../store/actions/user.actions.js'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
-import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx' 
+import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
+import { useRef } from 'react'
+import { OutsideClick } from '../../hooks/outsideClick.jsx'
 
 export const AppHeader = () => {
     const dispatch = useDispatch()
@@ -17,21 +19,31 @@ export const AppHeader = () => {
     const [scrolled, setScrolled] = useState(false)
     const { pathname } = useLocation()
     const { width } = useWindowDimensions()
-
-    const handleScroll = e => {
-        setScrolled(window.scrollY > 200)
-    }
+    const menuRef = useRef(null)
+    const menuOutsideClick = OutsideClick(menuRef)
 
     useEffect(() => {
-        if (pathname === '/' || pathname === '/seller' ) {
+        document.addEventListener("click", handleClickOutside)
+    }, [isSideMenu])
+    
+    useEffect(() => {
+        
+        if (pathname === '/' || pathname === '/seller') {
             window.addEventListener("scroll", handleScroll)
         }
         return () => {
             window.removeEventListener("scroll", handleScroll)
         }
     }, [pathname])
+    
+    const handleClickOutside = (e) => {
+        if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
+    }
+    const handleScroll = e => {
+        setScrolled(window.scrollY > 200)
+    }
 
-    let classHamburgerMenu = (window.scrollY > 200 || pathname !== '/') ? 'gray' : 'white' 
+    let classHamburgerMenu = (window.scrollY > 200 || pathname !== '/') ? 'gray' : 'white'
 
     const onLogout = () => {
         dispatch(logout())
@@ -57,9 +69,11 @@ export const AppHeader = () => {
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
-                    <button onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
-                        {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}
-                    </button>
+                    <div className="side-menu">
+                        <button ref={menuRef} onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
+                            {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}
+                        </button>
+                    </div>
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
                             <LogoFull />

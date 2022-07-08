@@ -15,6 +15,7 @@
         .filters-only {
             align-items: center;
             gap: rem(16px);
+            flex-direction: column;
         }
 
         .filter-floating-menu {
@@ -38,6 +39,10 @@
 
                 &.open {
                     margin-right: 50%;
+                }
+
+                &.budget {
+                    width: rem(100px)
                 }
 
                 &::after {

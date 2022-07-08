@@ -65,7 +65,7 @@ export const FilterBreadCrumbs =  () => {
                 <div className={`filter-shadow-effect flex ${className}`}>
                     <div className="filters-only flex">
                         <div className="filter-floating-menu">
-                            <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu`}>Budget
+                            <div onClick={onToggleBudget} className={`filter-menu-title ${className} filter-menu budget`}>Budget
                             </div>
                             {budgetMenu && <BudgetFilter onClose={onToggleBudget} deliveryDateMenu={deliveryDateMenu} budgetMenu={budgetMenu} />}
                         </div>

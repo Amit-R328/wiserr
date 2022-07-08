@@ -27,7 +27,7 @@ export const Search = ({ loc }) => {
     return (
         <div className="search-container">
             <label>
-                <AiOutlineSearch className="search-icon" />
+                {/* <AiOutlineSearch className="search-icon" /> */}
                 <input type="search"
                     className={`search-input ${(loc === 'heroCarousel') ? 'search-hero' : 'search-header'}`}
                     ref={inputRef}

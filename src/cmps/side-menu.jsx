@@ -11,15 +11,7 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const className = (menuOpen) ? "open" : ""
-    const menuRef = useRef()
-    const menuOutsideClick = OutsideClick(menuRef)
-
-    useEffect(() => {
-        const handleClickOutside = () => {
-            if(menuOutsideClick) closeMenu()
-        }
-        document.addEventListener("Click", handleClickOutside)
-    },[menuOutsideClick])
+    
 
     const onLogout = () => {
         dispatch(logout())
@@ -49,11 +41,10 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     ]
 
     return (
-        <section ref={menuRef} className={`side-bar ${className}`}>
+        <section className={`side-bar ${className}`}>
             <div className="side-bar-content">
                 <div className="menu-header">
                     {!user && <button className="btn" onClick={() => { openJoin() }}>Join Wiserr</button>}
-                    {console.log('before push')}
                 </div>
                 <nav className='menu-nav'>
                     <ul className='clean-list'>
@@ -61,12 +52,12 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
                         <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller/dashboard">Wiserr Seller</NavLink></li>
                         <ul className="categories-side-bar">
                             {categories.map((category, index) => <li key={index}>
-                                <button onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
+                                <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
                             </li>)}
                         </ul>
                     </ul>
                     {user && <ul>
-                        <li><img src={`${user.imgUrl}`} alt="user img small" /></li>
+                        <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
                         <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
                         {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
                         {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
