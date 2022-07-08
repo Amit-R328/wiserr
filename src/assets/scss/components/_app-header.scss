@@ -108,6 +108,7 @@
       background-color: transparent;
       outline: none;
       border: none;
+      color: $white;
 
       &::after {
         content: '\f0c9';
@@ -115,7 +116,10 @@
         font-weight: 100;
         font-size: rem(28px);
         letter-spacing: rem(5px);
-        color: $white;
+      }
+
+      &.gray {
+        color: black;
       }
 
       @include from-normal-layout {
@@ -236,6 +240,12 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-list {
+    display: none;
   }
 }
 

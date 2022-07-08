@@ -168,11 +168,23 @@
         .hero-popular-category {
             display: none;
         }
+
+        .search-hero {
+            width: 495px;
+        }
     }
 
     @media (max-width:1200px) {
         .hero-container {
-            grid-template-rows: 185px;
+            height: 500px;
+            .background-images {
+                .background {
+                    .hero-pic {
+                        height: 32.5rem;
+                        object-fit: unset;
+                    }
+                }
+            }
         }
 
         .hero-container .hero-content-container .hero-content {

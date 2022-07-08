@@ -6,8 +6,11 @@ import { Testimonials } from '../cmps/homepage-sections/testimonials.jsx'
 import { IconCategories } from '../cmps/homepage-sections/icon-categories.jsx'
 import { SellerSectionHomepage } from '../cmps/homepage-sections/seller-section.jsx'
 import { TrustedBy } from '../cmps/homepage-sections/trusted-by.jsx'
+import { CategoriesSliderMobile } from '../cmps/homepage-sections/categories-slider-mobile.jsx'
+import { useWindowDimensions } from '../hooks/useWindowDimensions.jsx'
 
 export const HomePage = () => {
+    const { width } = useWindowDimensions()
     return (
         <section>
             <div className="hero">
@@ -17,15 +20,15 @@ export const HomePage = () => {
                 <TrustedBy />
             </div>
             <div className="gig-slider-container container">
-                {/* <h2 className="professional-services">Popular professional services</h2> */}
-                {/* <CategoriesCarousel /> */}
+                <h2 className="professional-services">Popular professional services</h2>
+                {(width <= 650) ? <CategoriesSliderMobile/> : <CategoriesCarousel />}
             </div>
-            {/* <SellingPoint /> */}
+            <SellingPoint />
             <div className="container">
-                {/* <IconCategories /> */}
+                <IconCategories />
             </div>
-            {/* <SellerSectionHomepage /> */}
-            {/* <Testimonials /> */}
+            <SellerSectionHomepage />
+            <Testimonials />
         </section>
     )
 }

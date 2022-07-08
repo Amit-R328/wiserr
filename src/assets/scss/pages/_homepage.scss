@@ -14,11 +14,11 @@
   .brands-container {
     align-items: center;
     justify-content: center;
-
+    
     .brands {
       gap: rem(60px);
       align-items: center;
-
+      
       & li {
         text-align: left;
         list-style: none;
@@ -26,7 +26,7 @@
       }
     }
   }
-
+  
   & p {
     padding-right: rem(45px);
     color: $grey_700;
@@ -35,7 +35,24 @@
     font-weight: 550;
   }
 }
+@media (max-width:600px) {
+  .trusted-by-brands {
+    width: 643px;
+  }
+}
 
+@media (max-width:900px) {
+  .trusted-by-brands {
+    margin-top: unset;
+    // justify-content: unset;
+  }
+}
+
+@media (max-width:1200px) {
+  .trusted-by-brands {
+    margin-top: unset;
+  }
+}
 
 
 // @media (max-width:425px) {

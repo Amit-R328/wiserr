@@ -10,7 +10,7 @@ export const TrustedBy = () => {
                 <li className="trusted-by"><GoogleLogo /></li>
                 <li className="trusted-by"><NetflixLogo /></li>
                 <li className="trusted-by "><PGLogo /></li>
-                <li className="trusted-by"><PayPalLogo /></li>
+                {/* <li className="trusted-by"><PayPalLogo /></li> */}
             </div>
         </ul>
     )

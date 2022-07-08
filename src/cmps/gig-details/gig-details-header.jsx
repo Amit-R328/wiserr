@@ -47,7 +47,6 @@ export const GigDetailsHeader = ({gig}) => {
                 </nav>
             </div>
             {shareModal && <section className="share-modal">
-                <h2>Share this gig with the world!</h2>
                 <FacebookShareButton
                     url={`https://wiserr-app.herokuapp.com/categories/${gig._id}`}
                     className="Demo__some-network__share-button"
