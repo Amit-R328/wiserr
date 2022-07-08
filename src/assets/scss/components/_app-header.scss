@@ -27,10 +27,11 @@
 
       &.seller-nav-link {
         color: $wiserr_business;
-        
+
       }
-        &:hover {
-          color: $wiserr_green;
+
+      &:hover {
+        color: $wiserr_green;
       }
     }
 
@@ -46,48 +47,49 @@
   }
 
 
-&.scrolled {
-  background-color: $white;
+  &.scrolled {
+    background-color: $white;
 
-  .nav-link {
-    color: $grey_900;
-
-    &.seller-nav-link {
-      color: $wiserr_business;
-      
-    }
-      &:hover {
-        color: $wiserr_green;
-    }
-  }
-
-  .top {
-    margin: 0;
-
-    & a {
+    .nav-link {
       color: $grey_900;
 
       &.seller-nav-link {
         color: $wiserr_business;
+
       }
 
-        &:hover {
-          color: $wiserr_green;
+      &:hover {
+        color: $wiserr_green;
       }
     }
 
+    .top {
+      margin: 0;
 
-    .logo-search-container {
-      .logo {
-        svg {
-          path:nth-child(1) {
-            fill: $grey_1100;
+      & a {
+        color: $grey_900;
+
+        &.seller-nav-link {
+          color: $wiserr_business;
+        }
+
+        &:hover {
+          color: $wiserr_green;
+        }
+      }
+
+
+      .logo-search-container {
+        .logo {
+          svg {
+            path:nth-child(1) {
+              fill: $grey_1100;
+            }
           }
         }
       }
     }
   }
-}
 }
 
 
@@ -146,19 +148,40 @@
   color: $grey_900;
 }
 
-ul {
-  &.nav-list {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    font-size: em(16px);
-    font-weight: 600;
+@include from-mobile-layout {
+  ul {
+    &.nav-list {
+      display: none;
+      // align-items: center;
+      // gap: 20px;
+      // font-size: em(16px);
+      // font-weight: 600;
 
-    .nav-link {
-      color: $white;
+      // .nav-link {
+      //   color: $white;
 
-      &.open-popup-login:hover {
-        color: $wiserr_green;
+      //   &.open-popup-login:hover {
+      //     color: $wiserr_green;
+      //   }
+      // }
+    }
+  }
+}
+@include from-tablet-layout {
+  ul {
+    &.nav-list {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: em(16px);
+      font-weight: 600;
+
+      .nav-link {
+        color: $white;
+
+        &.open-popup-login:hover {
+          color: $wiserr_green;
+        }
       }
     }
   }
@@ -216,18 +239,21 @@ ul {
   }
 }
 
- @-webkit-keyframes fade-in {
+@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

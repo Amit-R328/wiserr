@@ -17,15 +17,15 @@ export const HomePage = () => {
                 <TrustedBy />
             </div>
             <div className="gig-slider-container container">
-                <h2 className="professional-services">Popular professional services</h2>
-                <CategoriesCarousel />
+                {/* <h2 className="professional-services">Popular professional services</h2> */}
+                {/* <CategoriesCarousel /> */}
             </div>
-            <SellingPoint />
+            {/* <SellingPoint /> */}
             <div className="container">
-                <IconCategories />
+                {/* <IconCategories /> */}
             </div>
-            <SellerSectionHomepage />
-            <Testimonials />
+            {/* <SellerSectionHomepage /> */}
+            {/* <Testimonials /> */}
         </section>
     )
 }

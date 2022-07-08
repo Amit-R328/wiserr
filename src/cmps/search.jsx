@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react"
+import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { AiOutlineSearch } from 'react-icons/ai'
-import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
-
 
 export const Search = ({ loc }) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -19,7 +18,6 @@ export const Search = ({ loc }) => {
         inputRef.current.value = ''
         navigate('/categories')
         dispatch(loadGigs())
-        
     }
 
     const handleChange = (ev) => {
