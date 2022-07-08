@@ -42,7 +42,7 @@ export const SellerGig = () => {
 
     const onEditGig = (gig) => {
         console.log('edit')
-        navigate(`/seller/edit-gig/${gig._id}}`)
+        navigate(`/seller/edit-gig/${gig._id}`)
     }
 
     const onRemoveGig = (gigId) => {
@@ -64,6 +64,7 @@ export const SellerGig = () => {
             }
         })
         dispatch(removeGig(gigId))
+        dispatch(loadGigs(loggedInUser, 'getSelles'))
         console.log('removed gig')
     }
 

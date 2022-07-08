@@ -83,7 +83,8 @@ export function getById(gigId) {
     
     return async dispatch => {
         try {
-            const gig = await gigService.getById(gigId)            
+            const gig = await gigService.getById(gigId)    
+            console.log('gig', gig)
             dispatch({
                 type: 'GET_BY_ID',
                 gig
