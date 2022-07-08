@@ -22,7 +22,7 @@ export const Step3 = (props) => {
                         <option value="Lifestyle">Lifestyle</option>
                     </select>
                 </div>
-
+                <br></br>
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Origin</p>
                     <select className="add-gig-input" value={props.gigInfo.origin} name="origin" required onChange={props.handleChange}>
@@ -34,8 +34,8 @@ export const Step3 = (props) => {
                         <option value="japan">Japan</option>
                     </select>
                 </div>
-                <button className="add-gig-btn submit-add-gig-form" type="submit" >Add Gig</button>
             </div>
+            <button className="add-gig-btn submit-add-gig-form" type="submit" >Add Gig</button>
         </React.Fragment>
     )
 }
