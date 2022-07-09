@@ -1,20 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 export function OutsideClick(ref) {
-  const [isClicked, setIsClicked] = useState();
+  const [isClicked, setIsClicked] = useState()
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
-        setIsClicked(true);
-      } else {
-        setIsClicked(false);
-      }
+    function handleClickOutside(ev) {
+      setIsClicked(ref.current && !ref.current.contains(ev.target))
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside)
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [ref]);
-  return isClicked;
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [ref])
+  return isClicked
 }

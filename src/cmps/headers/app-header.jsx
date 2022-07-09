@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { NavLink, useLocation } from 'react-router-dom'
 import { Search } from '../search.jsx'
@@ -8,7 +8,6 @@ import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
-import { useRef } from 'react'
 import { OutsideClick } from '../../hooks/outsideClick.jsx'
 
 export const AppHeader = () => {
@@ -20,12 +19,16 @@ export const AppHeader = () => {
     const { pathname } = useLocation()
     const { width } = useWindowDimensions()
     const menuRef = useRef(null)
-    const menuOutsideClick = OutsideClick(menuRef)
+    // const menuOutsideClick = OutsideClick(menuRef)
 
     useEffect(() => {
         document.addEventListener("click", handleClickOutside)
     }, [isSideMenu])
     
+    useEffect(() => {
+        document.addEventListener("click", handleClickOutside)
+    }, [profileMenu])
+
     useEffect(() => {
         if (pathname === '/' || pathname === '/seller') {
             window.addEventListener("scroll", handleScroll)
@@ -34,11 +37,12 @@ export const AppHeader = () => {
             window.removeEventListener("scroll", handleScroll)
         }
     }, [pathname])
-    
-    const handleClickOutside = (e) => {
-        if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
-    }
 
+    const handleClickOutside = (ev) => {
+        if (menuRef.current && isSideMenu && !menuRef.current.contains(ev.target)) onToggleSideMenu()
+        else if (menuRef.current && profileMenu && !menuRef.current.contains(ev.target)) onToggleMenu()
+    }
+   
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
@@ -47,18 +51,15 @@ export const AppHeader = () => {
 
     const onLogout = () => {
         dispatch(logout())
-        let flag = !profileMenu
-        setMenu(flag)
+        setMenu(!profileMenu)
     }
 
     const onToggleMenu = () => {
-        let flag = !profileMenu
-        setMenu(flag)
+        setMenu(!profileMenu)
     }
 
     const onToggleSideMenu = () => {
-        let flag = !isSideMenu
-        setSideMenu(flag)
+        setSideMenu(!isSideMenu)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {
@@ -95,8 +96,13 @@ export const AppHeader = () => {
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
-                        <div className="profile-container">
+                        {/* <div className="profile-container">
                             {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
+                        </div> */}
+                        <div className="profile-container">
+                            <button ref={menuRef} onClick={onToggleMenu}>
+                                {profileMenu && <ProfileMenu menuOpen={profileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
+                            </button>
                         </div>
                     </li>
                 </ul>
