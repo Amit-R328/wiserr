@@ -69,7 +69,7 @@ export const SellerGig = () => {
     }
 
     return (
-        <div className="seller-gig-container container">
+        <div className="seller-gig-container">
             {loader && <Loader />}
             <div className="seller-total-gigs flex">
                 <div className="total-gigs flex flex-column">{gigs ? <p>You've created<br></br><span>{gigs.length}<br></br></span>wonderful gigs!</p> : <p>Create your 1st gig today!</p>}</div>

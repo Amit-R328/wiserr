@@ -45,8 +45,6 @@ export const Step1 = (props) => {
                             name="gigTitle"
                             maxLength="600"
                             minLength="15"
-                            rows={5}
-                            cols={50}
                             required
                             placeholder="I will..."
                             value={props.gigInfo.gigTitle}
@@ -62,8 +60,6 @@ export const Step1 = (props) => {
                             <textarea
                                 maxLength="600"
                                 minLength="15"
-                                rows={5}
-                                cols={50}
                                 className="desc"
                                 required
                                 type="txt"
@@ -83,8 +79,6 @@ export const Step1 = (props) => {
                             name="whyUs"
                             maxLength="600"
                             minLength="15"
-                            rows={5}
-                            cols={50}
                             value={props.gigInfo.whyUs}
                             onChange={props.handleChange}>
                         </textarea>
