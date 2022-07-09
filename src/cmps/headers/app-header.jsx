@@ -13,7 +13,7 @@ import { OutsideClick } from '../../hooks/outsideClick.jsx'
 export const AppHeader = () => {
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
-    const [profileMenu, setMenu] = useState(false)
+    const [showProfileMenu, setShowProfileMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const { pathname } = useLocation()
@@ -25,10 +25,10 @@ export const AppHeader = () => {
     useEffect(() => {
         document.addEventListener("click", handleClickOutside)
     }, [isSideMenu])
-    
+
     useEffect(() => {
         document.addEventListener("click", handleClickOutside)
-    }, [profileMenu])
+    }, [showProfileMenu])
 
     useEffect(() => {
         if (pathname === '/' || pathname === '/seller') {
@@ -41,9 +41,9 @@ export const AppHeader = () => {
 
     const handleClickOutside = (e) => {
         if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
-        else if (profileRef.current && profileMenu && !profileRef.current.contains(e.target)) onToggleMenu()
+        else if (profileRef.current && showProfileMenu && !profileRef.current.contains(e.target)) onToggleMenu()
     }
-   
+
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
@@ -52,11 +52,16 @@ export const AppHeader = () => {
 
     const onLogout = () => {
         dispatch(logout())
-        setMenu(!profileMenu)
+        setShowProfileMenu(!showProfileMenu)
     }
 
-    const onToggleMenu = () => {
-        setMenu(!profileMenu)
+    const onToggleMenu = (ev) => {
+        ev.stopPropagation()
+        setShowProfileMenu(!showProfileMenu)
+    }
+
+    const onCloseMenu = () => {
+        setShowProfileMenu(false)
     }
 
     const onToggleSideMenu = () => {
@@ -87,6 +92,19 @@ export const AppHeader = () => {
                     </form>
                 </div>
                 <ul className="nav-list clean-list" >
+                    <li>{pathname === '/seller' && loggedInUser ?
+                        <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Dashboard</NavLink>
+                        : <span></span>}</li>
+                    <li>{pathname === '/seller' && loggedInUser ?
+                        <li><NavLink to="/seller/gig" className="seller-nav-link nav-link">My Gigs</NavLink></li>
+                        : <span></span>}</li>
+                    <li>{pathname === '/seller' && loggedInUser ?
+                        <li><NavLink to="/order/:userId" className="seller-nav-link nav-link">My Orders</NavLink></li>
+                        : <span></span>}</li>
+                    <li>{pathname === '/seller' && loggedInUser ?
+                        <li><NavLink to="/" className="seller-nav-link nav-link">Home</NavLink></li>
+                        : <span></span>}</li>
+
                     <li>
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
@@ -98,13 +116,11 @@ export const AppHeader = () => {
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
-                        {/* <div className="profile-container">
-                            {profileMenu && <ProfileMenu onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
-                        </div> */}
+                        
                         <div className="profile-container">
-                            <button ref={profileRef} onClick={onToggleMenu}>
-                                {profileMenu && <ProfileMenu menuOpen={profileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onToggleMenu} />}
-                            </button>
+                            {/* <button ref={menuRef}> */}
+                                {showProfileMenu && <ProfileMenu menuOpen={showProfileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onCloseMenu} onToggleMenu={onToggleMenu}/>}
+                            {/* </button> */}
                         </div>
                     </li>
                 </ul>

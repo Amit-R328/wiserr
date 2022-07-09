@@ -97,3 +97,12 @@
         border: 1px solid $grey_500;
     }
 }
+
+@media (max-width: 600px) {
+    .seller-gig-container {
+        .seller-total-gigs {
+            display: flex;
+            gap: 50px;
+        }
+    }
+}
