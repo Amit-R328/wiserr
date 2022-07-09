@@ -16,9 +16,11 @@ export const HomePage = () => {
             <div className="hero">
                 <HeroCarousel />
             </div>
+            {width > 600 &&
             <div className="trusted-by-brands container flex">
                 <TrustedBy />
             </div>
+            }
             <section className="middle-section">
                 <div className="gig-slider-container container">
                     <h2 className="professional-services">Popular professional services</h2>
@@ -27,7 +29,7 @@ export const HomePage = () => {
                 <SellingPoint />
                 <div className="container">
                     <IconCategories />
-                </div>
+                </div> */
                 <SellerSectionHomepage />
                 <Testimonials />
             </section>

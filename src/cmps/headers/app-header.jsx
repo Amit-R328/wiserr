@@ -48,7 +48,7 @@ export const AppHeader = () => {
         setScrolled(window.scrollY > 200)
     }
 
-    let classHamburgerMenu = (window.scrollY > 200 || (pathname !== '/' && pathname !== '/seller')) ? 'gray' : 'white'
+    let classHamburgerMenu = (width < 600 || window.scrollY > 200 || (pathname !== '/' && pathname !== '/seller')) ? 'gray' : 'white'
 
     const onLogout = () => {
         dispatch(logout())
