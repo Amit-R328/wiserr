@@ -28,7 +28,6 @@
 @import './components/loader';
 
 // HOMEPAGE
-// HOMEPAGE-HEADERS
 @import './components/homepage/hero';
 
 // HOMEPAGE-SECTIONS
@@ -40,9 +39,10 @@
 
 // seller
 @import './components/seller/seller-homepage';
-// @import './components/seller/seller-header';
 @import './components/seller/seller-homepage-hero';
 @import './components/seller/seller-dashboard';
+@import './components/seller/_seller-q-a';
+@import './components/seller/_freelancer-preview';
 
 // PAGES
 @import './pages/add-gig';

@@ -38,12 +38,6 @@ export const FreelancersPreview = (props) => {
                 <h6 className="freelancer-legends">I am<br></br>
                     {props.freelancer.legends}</h6>
             </li>
-            <li className="last-li">
-                <div>
-                    <h3>What's<br></br>your skill?</h3>
-                    <a className="open-popup-join" href="/join" rel="nofollow">Become a Seller</a>
-                </div>
-            </li>
         </>
     )
 }

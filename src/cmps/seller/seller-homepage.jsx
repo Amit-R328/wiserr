@@ -1,6 +1,5 @@
 import React from 'react'
 import { SellerHero } from './seller-homepage-sections/seller-hero.jsx'
-import { CategoriesCarousel } from '../homepage-sections/categories-carousel.jsx'
 import { FreelancersPreview } from './seller-homepage-sections/seller-preview.jsx'
 import { SellerQuestionAnswer } from './seller-homepage-sections/seller-question-answer.jsx'
 
@@ -93,17 +92,21 @@ export const SellerHomepage = () => {
 
             <section className="freelance-community-container container">
                 <h2>Join Our Growing Freelance Community</h2>
-                <div className="freelance-community-list">
-                    <ul className="freelancers-pics container clean-list">
-                        {freelancers.map(freelancer =>
-                            <FreelancersPreview
-                                key={freelancer.sellerName}
-                                freelancers={freelancers}
-                                freelancer={freelancer}
-                            />
-                        )}
-                    </ul>
-                </div>
+                <ul className="freelance-community-list clean-list">
+                    {freelancers.map(freelancer =>
+                        <FreelancersPreview
+                            key={freelancer.sellerName}
+                            freelancers={freelancers}
+                            freelancer={freelancer}
+                        />
+                    )}
+                    <li className="last-li">
+                        <div>
+                            <h3>What's<br></br>your skill?</h3>
+                            <a className="open-popup-join" href="/join" rel="nofollow">Become a Seller</a>
+                        </div>
+                    </li>
+                </ul>
             </section>
 
             <section class="questions-answer-container container">

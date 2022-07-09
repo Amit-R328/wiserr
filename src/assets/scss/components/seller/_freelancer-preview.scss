@@ -1,0 +1,66 @@
+.freelance-community-container {
+    margin: 0 auto;
+    position: relative;
+    background-color: $white;
+
+    h2 {
+        text-align: center;
+        text-transform: capitalize;
+        padding-bottom: rem(30px);
+        color: #222325;
+        // font-size: rem(32px);
+        // line-height: 120%;
+        margin: rem(24px) 0;
+    }
+
+    .freelance-community-list {
+        // zoom: 1;
+        // list-style-image: none;
+        display: grid; 
+        grid-auto-flow: row dense; 
+        grid-auto-columns: 1fr 1fr 1fr 1fr; 
+        grid-auto-rows: 1fr 1fr; 
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: repeat(2, 1fr); 
+        gap: 15px 15px; 
+        grid-template-areas: 
+          "designer developer writer video-editor"
+          "musician voice social last-li"; 
+
+        .slide {
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            transition: background-size 1s;
+            object-fit: cover;
+
+            h6 {
+                font-size: 24px;
+                line-height: 25px;
+                font-weight: 700;
+                color: #fff;
+                position: absolute;
+                left: 15px;
+                bottom: 15px;
+                z-index: 1;
+                -webkit-transition: opacity .3s;
+                transition: opacity .3s;
+            }
+        }
+    }
+
+    ::before {
+        content: '';
+        // background: #1f1f1f;
+        opacity: .1;
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        pointer-events: none;
+        -webkit-transition: opacity .3s;
+        transition: opacity .3s;
+    }
+}
