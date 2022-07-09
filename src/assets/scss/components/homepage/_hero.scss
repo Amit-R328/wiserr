@@ -214,3 +214,21 @@
         }
     }
 }
+
+@media (max-width: 500px) {
+    .hero {
+        width: 141%;
+    }
+}
+
+@media (max-width: 450px) {
+    .hero {
+        width: 151%;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero {
+        width: 198%
+    }    
+}

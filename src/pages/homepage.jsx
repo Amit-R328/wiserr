@@ -19,16 +19,18 @@ export const HomePage = () => {
             <div className="trusted-by-brands container flex">
                 <TrustedBy />
             </div>
-            <div className="gig-slider-container container">
-                <h2 className="professional-services">Popular professional services</h2>
-                {(width <= 650) ? <CategoriesSliderMobile/> : <CategoriesCarousel />}
-            </div>
-            <SellingPoint />
-            <div className="container">
-                <IconCategories />
-            </div>
-            <SellerSectionHomepage />
-            <Testimonials />
+            <section className="middle-section">
+                <div className="gig-slider-container container">
+                    <h2 className="professional-services">Popular professional services</h2>
+                    {(width <= 650) ? <CategoriesSliderMobile /> : <CategoriesCarousel />}
+                </div>
+                <SellingPoint />
+                <div className="container">
+                    <IconCategories />
+                </div>
+                <SellerSectionHomepage />
+                <Testimonials />
+            </section>
         </section>
     )
 }

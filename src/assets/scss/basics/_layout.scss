@@ -50,6 +50,17 @@
         // padding-inline-start: calc((132px + 1.5625vw) / 2); // max-600px
         // padding-inline-end: calc((132px + 1.5625vw) / 2); // max-600px
     }
-
+    
 }
 
+
+    .middle-section {
+        display: grid;
+        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1400px) minmax(1rem, 1fr);
+        > *{
+            grid-column: 2;
+        }
+        >:nth-child(even) {
+            grid-column: 1/-1;
+        }
+    }
