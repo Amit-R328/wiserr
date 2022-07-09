@@ -32,7 +32,6 @@ export const GigDetailsHeader = ({gig}) => {
     }
 
 
-
     return (
         <section className="gig-details-header">
             <div className="nav-details-container">
