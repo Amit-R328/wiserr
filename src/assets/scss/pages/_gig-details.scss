@@ -763,4 +763,28 @@
     }
 }
 
+@media (max-width: 600px) {
+    .gig-details-container {
+        .gig-details {
+            flex-direction: column;
+        }
+        .left-container {
+            width: unset;
+            .breadcrumbs-container {
+                margin-top: 2.25rem;
+            }
+            .owner-details {
+                gap: 11px;
+            }
+        }
+        .nav-details-container {
+            .details-menu-scroll {
+                .nav-details-sections {
+                    gap: 10px;
+                }
+            }
+        }
+
+    }
+}
 
