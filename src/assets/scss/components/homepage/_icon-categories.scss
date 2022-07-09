@@ -144,3 +144,10 @@
         flex-wrap: wrap;
     }
 }
+
+@media (min-width:1025px) {
+    .icon-categories ul.icon-categories-list {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+}
