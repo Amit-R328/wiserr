@@ -55,7 +55,7 @@ export const AppHeader = () => {
     }
 
     const onToggleMenu = (ev) => {
-gi        ev.stopPropagation()
+        ev.stopPropagation()
         setShowProfileMenu(!showProfileMenu)
     }
 
