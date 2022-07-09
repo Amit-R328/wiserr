@@ -1,5 +1,5 @@
 import React from 'react'
-import VideoPlayer from "react-background-video-player"
+import VideoPlayer from 'react-background-video-player'
 import { useSelector } from 'react-redux'
 
 
