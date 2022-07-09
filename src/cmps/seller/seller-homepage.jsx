@@ -1,7 +1,8 @@
 import React from 'react'
-import { SellerHero } from './seller-hero.jsx'
+import { SellerHero } from './seller-homepage-sections/seller-hero.jsx'
 import { CategoriesCarousel } from '../homepage-sections/categories-carousel.jsx'
-import { FreelancersPreview } from './seller-preview.jsx'
+import { FreelancersPreview } from './seller-homepage-sections/seller-preview.jsx'
+import { SellerQuestionAnswer } from './seller-homepage-sections/seller-question-answer.jsx'
 
 export const SellerHomepage = () => {
 
@@ -105,12 +106,16 @@ export const SellerHomepage = () => {
                 </div>
             </section>
 
-            <section>
-                <div className="gig-slider-container container">
-                    <h2 className="professional-services">Popular services for businesses</h2>
-                    <CategoriesCarousel />
-                </div>
+            <section class="questions-answer-container container">
+                <SellerQuestionAnswer />
             </section>
+
+            <aside class="become-seller-section-container container">
+                <div class="box-row">
+                    <p>Sign up and create your first Gig today</p><br></br>
+                    <a className="open-popup-join" href="/join" rel="nofollow">Get Started</a>
+                </div>
+            </aside>
         </section>
     )
 }
