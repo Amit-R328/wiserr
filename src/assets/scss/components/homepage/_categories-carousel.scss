@@ -9,11 +9,11 @@
         line-height: 120%;
         font-weight: 700;
         letter-spacing: rem(1.3px);
+        
     }
 
     .slider-container {
         .slider-categories-list {
-
             display: grid;
             grid-template-columns: repeat(5 1fr);
             grid-template-rows: 1fr;
@@ -107,6 +107,10 @@
     .gig-slider-container .slider-container {
         display: flex;
         gap: 15px;
+    }
+
+    h2 {
+        text-align: center;
     }
 
     .gig-slider-container h4 span {

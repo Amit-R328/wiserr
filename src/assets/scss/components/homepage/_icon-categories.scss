@@ -103,6 +103,10 @@
     &:nth-child(n+7) {
         padding-bottom: 0
     }
+
+    h2 {
+        text-align: center;
+    }
 }
 
 @media only screen and (min-width:900px) {
@@ -122,6 +126,10 @@
         flex-wrap: wrap;
     }
 
+    h2 {
+        text-align: center;
+    }
+
     .marketplace-title {
         position: relative;
         // left: 11%;
@@ -135,6 +143,10 @@
         max-width: 735px;
         flex-wrap: wrap;
     }
+
+    h2 {
+        text-align: center;
+    }
 }
 
 @media (max-width:1024px) {
@@ -143,11 +155,16 @@
         max-width: 1000px;
         flex-wrap: wrap;
     }
+
 }
 
 @media (min-width:1025px) {
     .icon-categories ul.icon-categories-list {
         display: flex;
         flex-wrap: nowrap;
+    }
+
+    h2 {
+        text-align: left;
     }
 }
