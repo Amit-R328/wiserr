@@ -93,7 +93,7 @@ export const SellerDashboard = () => {
     }
 
     return (
-        <div className="seller-dashboard-container container">
+        <div className="seller-dashboard-container">
             {loader && <Loader />}
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>
@@ -120,12 +120,12 @@ export const SellerDashboard = () => {
 
                 <tbody>
                     {orders.map((order, idx) => <tr key={idx}>
-                        <td>{utilService.setDateTime(order.createdAt)}</td>
-                        <td>{order.buyer.fullName}</td>
-                        <td>{order.gig.description}</td>
-                        <td>{(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</td>
-                        <td>{order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
-                        <td> <select className='order-status-selector' style={{ color: `${order.status === 'rejected' ? RED : order.status === 'completed' ? GREEN : order.status === 'approved' ? BLACK : GRAY}` }} value={order.status} onChange={(ev) => handleChange(ev, order)}>
+                        <td data-label="DATE">{utilService.setDateTime(order.createdAt)}</td>
+                        <td data-label="BUYER">{order.buyer.fullName}</td>
+                        <td data-label="GIG">{order.gig.description}</td>
+                        <td data-label="COMPLETED DATE">{(order.status === 'completed') && utilService.setDateTime(order.deliveryDate)}</td>
+                        <td data-label="PRICE">{order.gig.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</td>
+                        <td data-label="STATUS"> <select className='order-status-selector' style={{ color: `${order.status === 'rejected' ? RED : order.status === 'completed' ? GREEN : order.status === 'approved' ? BLACK : GRAY}` }} value={order.status} onChange={(ev) => handleChange(ev, order)}>
                             <option value="approved">approved</option>
                             <option value="pending">pending</option>
                             <option value="rejected">rejected</option>

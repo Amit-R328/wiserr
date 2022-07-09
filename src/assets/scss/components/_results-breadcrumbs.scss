@@ -128,3 +128,11 @@
         }
     }
 }
+
+@media (max-width: 600px) {
+    .title-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}

@@ -43,3 +43,16 @@
         }
     }
 }
+@media (max-width: 600px) {
+    .form-group {
+        .edit-gig-input-container {   
+            flex-direction: column;
+            .edit-gig-input {
+                width: unset;
+            }
+        }
+        .edit-gig-img-container {
+            flex-direction: column;
+        }
+    }
+}

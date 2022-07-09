@@ -109,3 +109,21 @@
     height: 100px;
     border-radius: 50%;
 }
+
+@media (max-width: 600px) {
+    .user-profile {
+        .order-card {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            .order-desc-profile {
+                width: 20ch;
+                align-self: unset;
+            }
+            .gig-img-profile {
+                width: rem(100px);
+                align-self: unset;
+            }
+        }
+    }
+}

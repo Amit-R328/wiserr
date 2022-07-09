@@ -18,6 +18,7 @@ export const AppHeader = () => {
     const { pathname } = useLocation()
     const { width } = useWindowDimensions()
     const menuRef = useRef(null)
+    const profileRef =useRef(null)
     // const menuOutsideClick = OutsideClick(menuRef)
 
     useEffect(() => {
@@ -37,16 +38,16 @@ export const AppHeader = () => {
         }
     }, [pathname])
 
-    const handleClickOutside = (ev) => {
-        if (menuRef.current && isSideMenu && !menuRef.current.contains(ev.target)) onToggleSideMenu()
-        else if (menuRef.current && showProfileMenu && !menuRef.current.contains(ev.target)) onToggleMenu(ev)
+    const handleClickOutside = (e) => {
+        if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
+        else if (profileRef.current && showProfileMenu && !profileRef.current.contains(e.target)) onToggleMenu()
     }
 
     const handleScroll = e => {
         setScrolled(window.scrollY > 200)
     }
 
-    let classHamburgerMenu = (window.scrollY > 200 || (pathname !== '/' && pathname !== '/seller')) ? 'gray' : 'white'
+    let classHamburgerMenu = (width < 600 || window.scrollY > 200 || (pathname !== '/' && pathname !== '/seller')) ? 'gray' : 'white'
 
     const onLogout = () => {
         dispatch(logout())
@@ -63,7 +64,8 @@ export const AppHeader = () => {
     }
 
     const onToggleSideMenu = () => {
-        setSideMenu(!isSideMenu)
+        let flag = !isSideMenu
+        setSideMenu(flag)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {
