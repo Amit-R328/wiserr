@@ -134,7 +134,9 @@
 
     .hero-container .hero-content-container .hero-content {
         position: relative;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .hero-pic {
@@ -155,21 +157,21 @@
     .hero-pic {
         display: none;
     }
-    
+
     .hero {
         background-color: #023a15;
         // margin: unset !important;
         // width: 140%;
     }
-    
+
     .hero-content {
         text-align: center;
     }
-    
+
     .hero-popular-category {
         display: none;
     }
-    
+
     .search-hero {
         width: 495px;
     }
@@ -178,7 +180,7 @@
 @media (max-width:1200px) {
     .hero-container {
         height: 500px;
-        
+
         .background-images {
             .background {
                 .hero-pic {
@@ -188,28 +190,32 @@
             }
         }
     }
-    
+
     .hero-container .hero-content-container .hero-content {
         position: relative;
         font-size: 2rem;
     }
-    
+
     .seller-name {
         position: relative;
         top: 30%;
         right: 0%;
     }
-    
+
     .seller {
         position: relative;
         top: 30%;
     }
 }
+
 @media (max-width:700px) {
     .hero-container {
         .hero-content-container {
             .hero-content {
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
         }
     }
@@ -221,11 +227,13 @@
             max-width: 300px;
         }
     }
+
     .hero-content {
         &.container {
             padding-inline-start: unset;
             padding-inline-end: unset;
         }
+
         h1 {
             font-size: rem(16px);
             width: 300px
@@ -239,11 +247,13 @@
             max-width: 300px;
         }
     }
+
     .hero-content {
         &.container {
             padding-inline-start: unset;
             padding-inline-end: unset;
         }
+
         h1 {
             font-size: rem(16px);
             width: 300px
@@ -257,17 +267,19 @@
 //     }
 // }
 
-@media (max-width: 400px) {    
+@media (max-width: 400px) {
     .hero-container {
         .search-hero {
             max-width: 300px;
         }
     }
+
     .hero-content {
         &.container {
             padding-inline-start: unset;
             padding-inline-end: unset;
         }
+
         h1 {
             font-size: rem(16px);
             width: 300px

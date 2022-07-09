@@ -247,6 +247,11 @@
   .nav-list {
     display: none;
   }
+  .top {
+    &.container {
+      padding-inline-start: unset;
+    }
+  }
 }
 
 @-webkit-keyframes fade-in {

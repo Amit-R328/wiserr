@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation, useParams } from 'react-router-dom'
 import { Search } from '../search.jsx'
 import { LogoFull } from '../../services/svg.service.js'
 import { logout } from '../../store/actions/user.actions.js'
@@ -9,10 +9,13 @@ import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
 import { OutsideClick } from '../../hooks/outsideClick.jsx'
+import { getById } from '../../store/actions/gig.actions.js'
 
 export const AppHeader = () => {
+    const params = useParams()
     const dispatch = useDispatch()
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    const { gig } = useSelector((storeState) => storeState.gigModule)
     const [showProfileMenu, setShowProfileMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
@@ -31,6 +34,7 @@ export const AppHeader = () => {
     }, [showProfileMenu])
 
     useEffect(() => {
+
         if (pathname === '/' || pathname === '/seller') {
             window.addEventListener("scroll", handleScroll)
         }
@@ -73,15 +77,18 @@ export const AppHeader = () => {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
     }
 
+
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
+                    {(pathname === `/categories` || pathname === `/seller/dashboard` || pathname === '/') &&
                     <div className="side-menu">
                         <button ref={menuRef} onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
                             {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}
                         </button>
                     </div>
+                    } 
                     <div className="logo">
                         <NavLink to="/" className="site-logo">
                             <LogoFull />
