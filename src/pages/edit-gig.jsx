@@ -96,7 +96,7 @@ export const EditGig = (props) => {
                     <label className="edit-gig-label">Gig Image</label>
                     <img className="edit-gig-img" src={currGig.imgUrl[0]} alt="Gig img"></img>
                 </div>
-
+                {console.log('currGig description', currGig.description)}
                 <EditGigInput inputRef="aboutThisGig" label="About This Gig" name="aboutThisGig" description={currGig.description.aboutThisGig} handleChange={handleChange} />
                 <EditGigInput inputRef="whyUs" label="Why Us" name="whyUs" description={currGig.description.whyUs} handleChange={handleChange} />
                 <EditGigInput inputRef="whatYouGet" label="What Do You Get" name="whatYouGet" description={whatYouGet} handleChange={handleChange} /> 
