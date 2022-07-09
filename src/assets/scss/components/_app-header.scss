@@ -55,6 +55,7 @@
 
       &.seller-nav-link {
         color: $wiserr_business;
+
       }
 
       &:hover {
@@ -69,7 +70,7 @@
         color: $grey_900;
 
         &.seller-nav-link {
-          color: $wiserr_business;
+          color: #74767E;
         }
 
         &:hover {
@@ -170,7 +171,6 @@
     }
   }
 }
-
 @include from-tablet-layout {
   ul {
     &.nav-list {
