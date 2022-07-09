@@ -1,12 +1,11 @@
 import React from 'react'
 
 export const Step1 = (props) => {
-    
-    if (props.currentStep !== 1) { // Prop: The current step
+
+    if (props.currentStep !== 1) {
         return null
     }
 
-    // The markup for the Step 1 UI
     return (
         <React.Fragment>
             <div className="form-group">
@@ -22,8 +21,8 @@ export const Step1 = (props) => {
                         </h3>
                     </aside>
 
-                    <div className="img-content">
-                        <section className="gig-photos">
+                    <div className="img-content flex">
+                        <section className="gig-photos flex flex-column">
                             <label className="file-img" />
                             {!props.isImg ? <span className="missing-gig-image"></span> : <img src={`${props.gigInfo.imgUrl}`} alt="" />}
                             <input
@@ -33,7 +32,8 @@ export const Step1 = (props) => {
                                 name="imgUrl"
                                 required
                                 value={''}
-                                onChange={props.handleChange} />
+                                onChange={props.handleChange}
+                            />
                         </section>
                     </div>
                 </div>
@@ -54,9 +54,8 @@ export const Step1 = (props) => {
                         </textarea>
                     </label>
                 </div>
-
+                <br></br>
                 <div id="description" className="onboarding-field is-required">
-                    <br></br>
                     <div className="add-gig-titles">
                         <p className="add-gig-labels">Description (min. 15 characters)</p>
                         <label className="description">
@@ -76,11 +75,19 @@ export const Step1 = (props) => {
                         </label>
                     </div>
                 </div>
-
+                <br></br>
                 <div className="add-gig-titles">
                     <p className="add-gig-labels">Tell your potential buyers why they should choose you</p>
                     <label className="description">
-                        <textarea name="whyUs" maxLength="600" minLength="15" rows={5} cols={50} value={props.gigInfo.whyUs} onChange={props.handleChange}></textarea>
+                        <textarea
+                            name="whyUs"
+                            maxLength="600"
+                            minLength="15"
+                            rows={5}
+                            cols={50}
+                            value={props.gigInfo.whyUs}
+                            onChange={props.handleChange}>
+                        </textarea>
                     </label>
                 </div>
             </div>

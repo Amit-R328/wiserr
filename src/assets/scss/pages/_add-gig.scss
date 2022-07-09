@@ -179,14 +179,19 @@
                     & button.add-gig-btn {
                         outline: none;
                         border: none;
-                        background-color: transparent
+                        background-color: transparent;
+                        position: relative;
+                        margin-right: 0;
+                        float: right;
+                        padding: 0;
+                        margin-left: rem(20px);
                     }
 
-                    .btn-primary, .btn-secondary, .submit-add-gig-form {
+                    .btn-primary, .btn-secondary {
                         border: 1px solid $grey_500;
                         background-color: $wiserr_green;
                         color: white;
-                        // width: rem(150px);
+                        width: rem(150px);
                         margin-top: rem(15px);
                         padding: rem(10px) rem(20px);
                         border: 1px solid transparent;
@@ -262,9 +267,9 @@
             }
 
             .img-content {
-                width: 70%;
+                // width: 70%;
                 position: relative;
-                cursor: default;
+                cursor: pointer;
 
 
                 .gig-photos {
@@ -277,6 +282,7 @@
                     overflow: hidden;
                     // display: flex;
                     z-index: 1;
+                    cursor: pointer;
 
                     &:hover {
                         background-color: $grey_1000;
@@ -299,8 +305,9 @@
                             color: $grey_1000;
                             border-radius: 50%;
                             position: absolute;
-                            left: 270%;
-                            z-index: 999;
+                            left: 0;
+                            top: 75px;
+                            // z-index: 999;
                             opacity: 1;
                             width: 100%;
                             height: 100%;
@@ -308,9 +315,8 @@
                             display: flex;
                             align-items: center;
                             justify-content: center;
-                            margin: 0;
-                            padding: 0;
                             transition: opacity .3s ease-in-out;
+                            cursor: pointer;
                         }
                     }
 
@@ -324,9 +330,9 @@
                         margin: 0;
                         padding: 0;
                         position: relative;
-                        width: 800px;
-                        // width: 100%;
-                        // height: 150px;
+                        // width: 800px;
+                        width: 100%;
+                        height: 150px;
                         z-index: 50;
                         cursor: pointer;
                         // display: none !important;
@@ -386,6 +392,7 @@
 
     .add-gig-input {
         width: rem(388px);
+        height: rem(30px);
 
     }
 
@@ -407,18 +414,19 @@
 }
 
 
-// .add-gig-btn {
-//     border: 1px solid $grey_500;
-//     background-color: $wiserr_green;
-//     color: white;
-//     // width: rem(150px);
-//     margin-top: rem(15px);
-//     padding: rem(10px) rem(20px);
-//     border: 1px solid transparent;
-//     border-radius: 4px;
-// }
-
 .add-gig-btn {
+    border: 1px solid $grey_500;
+    background-color: $wiserr_green;
+    color: white;
+    // width: rem(150px);
+    margin-top: rem(15px);
+    // padding: rem(10px) rem(20px);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-add-gig-form {
     border: 1px solid $grey_500;
     background-color: $wiserr_green;
     color: white;
@@ -428,4 +436,8 @@
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
+    width: 150px;
+    float: right;
+    margin-right: 0;
+    margin-top: rem(30px);
 }

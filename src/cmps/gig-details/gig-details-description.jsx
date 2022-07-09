@@ -2,7 +2,6 @@
 
 export const GigDetailsDescription = ({gig}) => {
 
- 
 
     let whatYouGet
     if (gig.description && gig.description.whatDoYouGet) {
