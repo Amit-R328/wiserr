@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
 import { SellerHero } from './seller-homepage-sections/seller-hero.jsx'
 import { FreelancersPreview } from './seller-homepage-sections/seller-preview.jsx'
 import { SellerQuestionAnswer } from './seller-homepage-sections/seller-question-answer.jsx'
 
 export const SellerHomepage = () => {
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
 
     let freelancers = [{
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657381804/seller-hero/designer_u5vxlt.webp',
@@ -95,7 +98,6 @@ export const SellerHomepage = () => {
                 <ul className="freelance-community-list clean-list">
                     {freelancers.map(freelancer =>
                         <FreelancersPreview
-                            key={freelancer.sellerName}
                             freelancers={freelancers}
                             freelancer={freelancer}
                         />
@@ -103,7 +105,7 @@ export const SellerHomepage = () => {
                     <li className="last-li">
                         <div>
                             <h3>What's<br></br>your skill?</h3>
-                            <a className="open-popup-join" href="/join" rel="nofollow">Become a Seller</a>
+                            {!loggedInUser ? <a href="/join" className="open-popup-join-preview">Get Started</a> : <a href="/seller/add-gig" className="open-popup-join-preview">Add New Gig</a>}
                         </div>
                     </li>
                 </ul>
