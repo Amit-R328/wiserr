@@ -94,7 +94,7 @@ export const EditGig = (props) => {
                
                 <label htmlFor="imageFile" className="label-for-img tooltip" >
                     <span className="tooltiptext">Load image</span>
-                    <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile"></img>
+                    <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile" alt=""></img>
                     <input className="img-input" hidden={true} type="file" accept="image/*" id="imageFile" name="imageFile"  onChange={imageUpload} />
                 </label>
                 {/* <EditGigInput inputRef="aboutThisGig" label="About This Gig" name="aboutThisGig" description={currGig.description.aboutThisGig} handleChange={handleChange} />

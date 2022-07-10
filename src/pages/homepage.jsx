@@ -29,7 +29,7 @@ export const HomePage = () => {
                 <SellingPoint />
                 <div className="container">
                     <IconCategories />
-                </div> */
+                </div>
                 <SellerSectionHomepage />
                 <Testimonials />
             </section>

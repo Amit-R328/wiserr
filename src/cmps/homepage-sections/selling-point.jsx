@@ -4,12 +4,13 @@ import { VCircle } from '../../services/svg.service.js'
 export const SellingPoint = () => {
     return (
         <div className="selling-proposition-wrapper container">
-            <div className="selling-proposition">
+            <div className="selling-proposition ">
                 <div className="selling-text">
                     <h2>A whole world of freelance<br></br>talent at your fingertips</h2>
+                    <div className="optional-img"></div>
                     <ul className="ul-selling-points">
                         <li><h6><VCircle /><strong>The best for every budget</strong></h6>
-                            <p>Find high-quality services at every price point.<br></br> No hourly rates, just project-based pricing.</p>
+                            <p>Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
                         </li>
 
                         <li><h6><VCircle /><strong>Quality work done quickly</strong></h6>

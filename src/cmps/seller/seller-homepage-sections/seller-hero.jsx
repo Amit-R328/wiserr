@@ -18,13 +18,13 @@ export const SellerHero = () => {
                 loop={true}
             />
 
-            <div class="hero-text">
-                <h1 class="catch-phrase">Work Your Way</h1>
-                <p class="catch-phrase">You bring the skill. We'll make earning easy.</p>
+            <div className="hero-text">
+                <h1 className="catch-phrase">Work Your Way</h1>
+                <p className="catch-phrase">You bring the skill. We'll make earning easy.</p>
                 {!loggedInUser  ? <a href="/join" className="open-popup-join-seller">Become a Seller</a> : <a href="/seller/add-gig" className="open-popup-join-seller">Add New Gig</a>}
             </div>
-            <aside class="hero-stats">
-                <div class="box-row container">
+            <aside className="hero-stats">
+                <div className="box-row container">
                     <ul>
                         <li>
                             A Gig is Bought Every<br></br>
