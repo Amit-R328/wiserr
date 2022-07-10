@@ -88,11 +88,15 @@
       cursor: pointer;
     }
 
-    .categories-sidebar {
+    .categories-side-bar {
       color: #95979d;
       padding-left: 20px;
       padding-right: 20px;
-
+      .menu-btn {
+        &.hidden {
+          display: none;
+        }
+      }
 
       .menu-item {
         color: #95979d;
@@ -136,7 +140,7 @@
 }
 
 @media (min-width: 1201px) {
-
+  .hamburger-icon
   .side-bar,
   .side-bar.open,
   .menu-header,

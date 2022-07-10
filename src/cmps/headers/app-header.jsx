@@ -74,8 +74,9 @@ export const AppHeader = () => {
     }
 
     const onToggleSideMenu = () => {
-        // let flag = !isSideMenu
-        setSideMenu(!isSideMenu)
+        console.log('on toggle side menu', isSideMenu )
+        let flag = !isSideMenu
+        setSideMenu(flag)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {

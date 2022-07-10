@@ -25,20 +25,21 @@ export const CollapsibleSideItem = ({ onChangeCategory }) => {
         ev.preventDefault()
         ev.stopPropagation()
         setIsExpanded(!isExpanded)
-        getContent()
+        if(isExpanded) getContent()
     }
     
-    let className = {...getToggleProps({onClick: handleOnClick})} 
+    let className = getToggleProps(handleOnClick) 
+    let hiddenMenu = isExpanded ? 'visible' : 'hidden'
 
     return (
 
         <>
             {/* // <Collapsible> */}
             {/* <h1 className="categories-side-bar clean-list">Browse Categories</h1> */}
-            <ul className={isExpanded ? 'categories-side-bar clean-list Collapse ' + `${className}` : 'categories-side-bar clean-list Expand' + `${className}`} onClick={(ev) => handleOnClick(ev)}>Browse Categories
+            <ul className={isExpanded ? `categories-side-bar clean-list Collapse ${className}` : `categories-side-bar clean-list Expand ${className}`} onClick={(ev) => handleOnClick(ev)}>Browse Categories
             {/* <ul className={`categories-side-bar clean-list ${className}`} onClick={() => getContent()}>Browse Categories */}
-                
-                {categories.map((category, index) => <li key={index} onClick={() => onChangeCategory(category.parameter)} className="menu-btn">{category.name}
+                {console.log(getToggleProps)}
+                {categories.map((category, index) => <li key={index}  className={`menu-btn ${hiddenMenu}`} onClick={() => onChangeCategory(category.parameter)}>{category.name}
                 {/* {isExpanded ? categories.map((category, index) => <li key={index} onClick={() => onChangeCategory(category.parameter)} className="menu-btn">{category.name} */}
                     {/* <div className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</div> */}
                 </li>)}
