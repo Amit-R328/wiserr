@@ -10,6 +10,7 @@
 }
 .gig-details-container {
     width: 100%;
+
     .nav-details-container {
         position: sticky;
         z-index: 1;
@@ -111,7 +112,6 @@
         align-items: flex-start;
         display: flex;
         flex-direction: row;
-        
     }
 
     .about-details {
@@ -343,8 +343,6 @@
                     color: $grey_1000;
                     font-weight: 700;
                     letter-spacing: 0.5px;
-
-
                 }
 
                 .gig-details-owner-tagline {
@@ -404,7 +402,6 @@
                     }
                 }
             }
-
         }
     }
 
@@ -431,7 +428,6 @@
 
             .avg-rate {
                 color: #ffbe5b;
-
                 padding-left: unset;
             }
         }

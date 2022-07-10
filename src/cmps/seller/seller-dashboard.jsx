@@ -93,7 +93,7 @@ export const SellerDashboard = () => {
     }
 
     return (
-        <div className="seller-dashboard-container">
+        <div className="seller-dashboard-container container">
             {loader && <Loader />}
             <div className='seller-totalim'>
                 <div className='seller-Total-order'>

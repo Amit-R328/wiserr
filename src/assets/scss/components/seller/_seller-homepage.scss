@@ -1,56 +1,30 @@
-  .seller-trusted-by-brands {
-    width: 100%;
-    background-color: $grey_100;
-    color: $grey_700;
-    margin-bottom: rem(96px);
+  .become-seller-section-container {
+    font-size: rem(18px);
+    line-height: 120%;
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    
+    .box-row {
+      margin: 0 auto;
+      position: relative;
+      box-sizing: border-box;
+      padding: rem(50px) 0;
+    }
 
-    & ul {
-      // height: em(95px);
-      align-items: center;
-      justify-content: space-between;
-      list-style: none;
-      margin: 0;
-      // padding: 0 rem(24px);
-      gap: 40px;
+    .open-popup-join {
+      background-color: $wiserr_green;
       font-size: rem(16px);
-      line-height: rem(24px);
-
-      .seller-brands-container {
-        // height: rem(60px);
-        margin-left: em(120px);
-        margin-right: em(120px);
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        // justify-content: center;
-        background-color: green;
-
-        & li {
-          text-align: left;
-          // height: rem(60px);
-          list-style: none;
-          margin: 0;
-          padding: 0 rem(60px) 0 0;
-          outline: 0;
-          background-color: purple;
-
-          &:last-of-type {
-            padding-right: 0;
-          }
-        }
-      }
-
-      & button {
-        background-color: none;
-        background: none;
-        outline: none;
-        border: none;
-      }
-
-      & p {
-        font-size: inherit;
-        padding-right: rem(20px);
-        margin: 0;
-      }
+      line-height: rem(16px);
+      font-weight: 700;
+      color: $white;
+      border: 1px solid transparent;
+      padding: rem(15px) rem(35px);
+      margin: 0;
+      display: inline-block;
+      border-radius: rem(3px);
+      box-sizing: border-box;
+      -webkit-transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+      transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
     }
   }

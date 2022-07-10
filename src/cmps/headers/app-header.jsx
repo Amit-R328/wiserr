@@ -8,8 +8,6 @@ import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu.jsx'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
-import { OutsideClick } from '../../hooks/outsideClick.jsx'
-import { getById } from '../../store/actions/gig.actions.js'
 
 export const AppHeader = () => {
     const params = useParams()
@@ -108,15 +106,12 @@ export const AppHeader = () => {
                     <li>{pathname === '/seller' && loggedInUser ?
                         <li><NavLink to="/order/:userId" className="seller-nav-link nav-link">My Orders</NavLink></li>
                         : <span></span>}</li>
-                    <li>{pathname === '/seller' && loggedInUser ?
-                        <li><NavLink to="/" className="seller-nav-link nav-link">Home</NavLink></li>
-                        : <span></span>}</li>
 
                     <li>
                         <NavLink to="/categories" className="explore-nav-link nav-link">Explore</NavLink>
                     </li>
                     <li>
-                        {loggedInUser ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <NavLink to="/login" className="seller-nav-link nav-link">Wiserr Seller</NavLink>}
+                        {pathname !== '/seller' ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <span></span>}
                     </li>
                     <li>
                         {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
@@ -132,9 +127,9 @@ export const AppHeader = () => {
                     </li>
                 </ul>
             </div>
-            {(width > 700 && (scrolled || (pathname !== '/' && pathname !== '/seller'))) && <div className="bottom">
+            {pathname !== '/seller' ? (width > 700 && (scrolled || pathname !== '/' )) && <div className="bottom">
                 <NavCategories />
-            </div>}
+            </div> : <span></span>}
         </header>
     )
 }

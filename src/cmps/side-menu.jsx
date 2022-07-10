@@ -2,16 +2,12 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../store/actions/user.actions.js'
-import { useRef } from 'react'
-import { OutsideClick } from '../hooks/outsideClick.jsx'
-import { useEffect } from 'react'
 
 export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const className = (menuOpen) ? "open" : ""
-    
 
     const onLogout = () => {
         dispatch(logout())
@@ -49,7 +45,7 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
                 <nav className='menu-nav'>
                     <ul className='clean-list'>
                         <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
-                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller/dashboard">Wiserr Seller</NavLink></li>
+                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
                         <ul className="categories-side-bar">
                             {categories.map((category, index) => <li key={index}>
                                 <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>

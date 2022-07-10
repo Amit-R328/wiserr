@@ -7,7 +7,7 @@ import { SortGigsList } from '../filters/sort-gigs-list.jsx'
 import { BudgetFilter } from '../filters/budget-filter.jsx'
 import { DeliveryDateFilter } from '../filters/delivery-date-filter.jsx'
 
-export const FilterBreadCrumbs =  () => {
+export const FilterBreadCrumbs = () => {
     let [budgetMenu, setBudgetMenu] = useState(false)
     let [deliveryDateMenu, setDeliveryDateMenu] = useState(false)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
@@ -15,15 +15,13 @@ export const FilterBreadCrumbs =  () => {
     let classNameDelivery = (deliveryDateMenu) ? 'open' : ''
 
     const onToggleBudget = () => {
-        let flag = !budgetMenu
-        setBudgetMenu(flag)
+        setBudgetMenu(!budgetMenu)
     }
 
     const onToggleDeliveryTime = () => {
-        let flag = !deliveryDateMenu
-        setDeliveryDateMenu(flag)
+        setDeliveryDateMenu(!deliveryDateMenu)
     }
-    
+
     const showSweetAlert = (ev) => {
         Swal.fire({
             className: "video-modal",

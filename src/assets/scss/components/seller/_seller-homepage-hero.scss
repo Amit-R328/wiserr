@@ -1,39 +1,102 @@
 .app-header-seller {
-    height: em(560px);
+    height: em(580px);
     width: 100%;
-    background-color: $wiserr_business;
+    // background-color: $wiserr_business;
     overflow: hidden;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    
-    .seller-details-container {
-        align-self: center;
-        grid-area: 1/1/2/2;
+    position: relative;
+    z-index: 0;
+    margin: 0 auto;
 
-        // grid-template-rows: em(560px);
+    .BackgroundVideo {
+        width: 100%;
+        // position: absolute;
+        position: fixed;
+        top: 0;
+        min-height: em(580px);
+        z-index: 0;
+        object-fit: cover;
+        aspect-ratio: auto 1031 / 580;
+    }
 
-        // .seller-hero-container {
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        // left: 0;
+        // position: relative;
+        // margin: 0 auto;
+        // padding-top: 50%;
+        width: 100%;
+        text-align: center;
+        -webkit-filter: blur(0);
+        -webkit-backface-visibility: hidden;
+        transform: translateY(-50%);
+        text-shadow: 0 -1px 2px rgba(0, 0, 0, .3);
+        z-index: 5;
 
-            .seller-hero-left {
-                // width: 760px;
-                // height: 560px;
-                // padding-top: 220px;
-                position: absolute;
-                top: 24%;
-                color: white;
-                font-size: rem(40px);
-                line-height: rem(55px);
-                letter-spacing: rem(2.8px);
-            }
+        h1 {
+            color: #fff;
+            font-size: 50px;
+            line-height: 110%;
+            max-width: rem(750px);
+            margin: 0 auto;
+        }
 
-            .seller-img-background {
-                width: 760px;
-                min-width: 100%;
-                object-fit: contain;
-                // object-fit: cover;
-                content: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657116745/seller-backgound2_npy51f.png);
+        p {
+            color: #fff;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 32px;
+            max-width: 750px;
+            margin: 5px auto 15px;
+        }
+
+        .open-popup-join-seller {
+            background-color: $wiserr_green;
+            font-size: rem(16px);
+            line-height: rem(16px);
+            font-weight: 700;
+            color: $white;
+            border: 1px solid transparent;
+            padding: rem(15px) rem(35px);
+            margin: 0;
+            display: inline-block;
+            border-radius: rem(3px);
+            box-sizing: border-box;
+            -webkit-transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+            transition: color .2s, background-color .2s, box-shadow .2s, border .2s;
+        }
+
+    }
+    .hero-stats {
+        background-color: rgba(255, 255, 255, .3);
+        width: 100%;
+        padding: 25px 0;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+
+        .box-row {
+            width: 988px;
+            margin: 0 auto;
+            position: relative;
+            box-sizing: border-box;
+
+            ul {
+                zoom: 1;
+
+                li {
+                    color: #fff;
+                    font-size: 22px;
+                    line-height: 30px;
+                    width: 33.33%;
+                    float: left;
+                    text-align: center;
+
+                    strong {
+                        text-transform: uppercase;
+                    }
+                }
             }
         }
     }
-// }
+}
