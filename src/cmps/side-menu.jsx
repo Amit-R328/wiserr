@@ -7,7 +7,7 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const className = (menuOpen) ? "open" : ""
+    const className = (menuOpen) ? 'open' : ''
 
     const onLogout = () => {
         dispatch(logout())
@@ -37,31 +37,33 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     ]
 
     return (
-        <section className={`side-bar ${className}`}>
-            <div className="side-bar-content">
-                <div className="menu-header">
-                    {!user && <button className="btn" onClick={() => { openJoin() }}>Join Wiserr</button>}
-                </div>
-                <nav className='menu-nav'>
-                    <ul className='clean-list'>
-                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
-                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
-                        <ul className="categories-side-bar">
-                            {categories.map((category, index) => <li key={index}>
-                                <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
-                            </li>)}
+        <div className={`background-backdrop overlay ${menuOpen ? 'visible' : ''}`}>
+            <section className={`side-bar flex flex-column ${className}`} >
+                <div className="side-bar-content">
+                    <div className="menu-header">
+                        {!user && <button className="btn" onClick={() => { openJoin() }}>Join Wiserr</button>}
+                    </div>
+                    <nav className='menu-nav'>
+                        <ul className='clean-list'>
+                            <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
+                            <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
+                            <ul className="categories-side-bar">
+                                {categories.map((category, index) => <li key={index}>
+                                    <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
+                                </li>)}
+                            </ul>
                         </ul>
-                    </ul>
-                    {user && <ul>
-                        <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
-                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
-                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
-                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
-                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
-                        <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
-                    </ul>}
-                </nav>
-            </div>
-        </section >
+                        {user && <ul>
+                            <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
+                            <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
+                            {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
+                            {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
+                            <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
+                            <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
+                        </ul>}
+                    </nav>
+                </div>
+            </section>
+        </div>
     )
 }
