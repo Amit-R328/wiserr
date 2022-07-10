@@ -111,12 +111,12 @@ export const SellerHomepage = () => {
                 </ul>
             </section>
 
-            <section class="questions-answer-container container">
+            <section className="questions-answer-container container">
                 <SellerQuestionAnswer />
             </section>
 
-            <aside class="become-seller-section-container">
-                <div class="box-row container">
+            <aside className="become-seller-section-container">
+                <div className="box-row container">
                     <p>Sign up and create your first Gig today</p><br></br>
                     {!loggedInUser ? <a className="open-popup-join-start" href="/join" rel="nofollow">Get Started</a> : <a href="/seller/add-gig" className="open-popup-join-start">Get Started</a>}
                 </div>

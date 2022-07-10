@@ -20,15 +20,14 @@ export const AppHeader = () => {
     const { pathname } = useLocation()
     const { width } = useWindowDimensions()
     const menuRef = useRef(null)
-    const profileRef =useRef(null)
-    // const menuOutsideClick = OutsideClick(menuRef)
+    const profileRef = useRef(null)
 
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside)
+        document.addEventListener("click", handleSideClickOutside)
     }, [isSideMenu])
 
     useEffect(() => {
-        document.addEventListener("click", handleClickOutside)
+        document.addEventListener("click", handleProfileClickOutside)
     }, [showProfileMenu])
 
     useEffect(() => {
@@ -41,9 +40,12 @@ export const AppHeader = () => {
         }
     }, [pathname])
 
-    const handleClickOutside = (e) => {
+    const handleSideClickOutside = (e) => {
         if (menuRef.current && isSideMenu && !menuRef.current.contains(e.target)) onToggleSideMenu()
-        else if (profileRef.current && showProfileMenu && !profileRef.current.contains(e.target)) onToggleMenu()
+    }
+
+    const handleProfileClickOutside = (e) => {
+        if (profileRef.current && showProfileMenu && !profileRef.current.contains(e.target)) onToggleProfileMenu()
     }
 
     const handleScroll = e => {
@@ -57,18 +59,23 @@ export const AppHeader = () => {
         setShowProfileMenu(!showProfileMenu)
     }
 
+    const onCloseMenu = () => {
+        setShowProfileMenu(false)
+    }
+
     const onToggleMenu = (ev) => {
         ev.stopPropagation()
         setShowProfileMenu(!showProfileMenu)
     }
 
-    const onCloseMenu = () => {
-        setShowProfileMenu(false)
+    const onToggleProfileMenu = (ev) => {
+        // ev.stopPropagation()
+        setShowProfileMenu(!showProfileMenu)
     }
 
     const onToggleSideMenu = () => {
-        let flag = !isSideMenu
-        setSideMenu(flag)
+        // let flag = !isSideMenu
+        setSideMenu(!isSideMenu)
     }
 
     if (loggedInUser && !loggedInUser.imgUrl) {
@@ -118,16 +125,14 @@ export const AppHeader = () => {
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
-                        
-                        <div className="profile-container">
-                            {/* <button ref={menuRef}> */}
-                                {showProfileMenu && <ProfileMenu menuOpen={showProfileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onCloseMenu} onToggleMenu={onToggleMenu}/>}
-                            {/* </button> */}
+
+                        <div className="profile-container" ref={profileRef}>
+                            {showProfileMenu && <ProfileMenu menuOpen={showProfileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onCloseMenu} onToggleMenu={onToggleProfileMenu} />}
                         </div>
                     </li>
                 </ul>
             </div>
-            {pathname !== '/seller' ? (width > 700 && (scrolled || pathname !== '/' )) && <div className="bottom">
+            {pathname !== '/seller' ? (width > 700 && (scrolled || pathname !== '/')) && <div className="bottom">
                 <NavCategories />
             </div> : <span></span>}
         </header>
