@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { updateGig } from '../store/actions/gig.actions.js'
 import { gigService } from '../services/gig.service'
+import { cloudinaryService } from '../services/cloudinary.service.js'
 
 export const EditGig = (props) => {
     const { gig } = useSelector((storeState) => storeState.gigModule)
@@ -17,7 +18,6 @@ export const EditGig = (props) => {
         const fetchGig = async () => {
             let gig = await gigService.getById(params.gigId)
             setCurrGig(gig)
-            console.log('gig', gig)
 
         }
         if (params.gigId) {
@@ -36,8 +36,35 @@ export const EditGig = (props) => {
         } else {
             setCurrGig({ ...currGig, [name]: value })
         }
+      
     }
-
+    
+    const imageUpload = (ev) => {
+        
+        const file = ev.target.files[0]
+        uploadImg(ev)     
+        
+    }
+    
+    const uploadImg = (ev) => {
+        const file = ev.target.files[0]
+        const CLOUD_NAME = cloudinaryService.getCloudName()
+        const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
+        const formData = new FormData()
+        formData.append('file', ev.target.files[0])
+        formData.append('upload_preset', cloudinaryService.getPreset())
+        
+        return fetch(UPLOAD_URL, {
+            method: 'POST',
+            body: formData
+        }).then(res => res.json()).then(res => {
+            console.log('res.url', res.url)
+            console.log('before',currGig.imgUrl[0] )
+            const currImgUrl = currGig.imgUrl
+            currImgUrl[0] = res.url          
+            setCurrGig({ ...currGig, imgUrl: currImgUrl })           
+        }).catch(err => console.error(err))
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -64,10 +91,12 @@ export const EditGig = (props) => {
                     <input className="edit-gig-input" name="title" type="search" value={currGig.title} onChange={handleChange} />
                 </div>
 
-                <div className="edit-gig-img-container">
-                    <label className="edit-gig-label">Gig Image</label>
-                    <img className="edit-gig-img" src={currGig.imgUrl[0]} alt="Gig img"></img>
-                </div>
+               
+                <label htmlFor="imageFile" className="label-for-img tooltip" >
+                    <span className="tooltiptext">Load image</span>
+                    <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile"></img>
+                    <input className="img-input" hidden={true} type="file" accept="image/*" id="imageFile" name="imageFile"  onChange={imageUpload} />
+                </label>
                 {/* <EditGigInput inputRef="aboutThisGig" label="About This Gig" name="aboutThisGig" description={currGig.description.aboutThisGig} handleChange={handleChange} />
                 <EditGigInput inputRef="whyUs" label="Why Us" name="whyUs" description={currGig.description.whyUs} handleChange={handleChange} />
                 <EditGigInput inputRef="whatYouGet" label="What Do You Get" name="whatYouGet" description={whatYouGet} handleChange={handleChange} />  */}
