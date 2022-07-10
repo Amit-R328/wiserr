@@ -2,8 +2,10 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../store/actions/user.actions.js'
+import { ArrowDownCollapsible, LogoFullFooter } from '../services/svg.service.js'
 
 export const SideMenu = ({ menuOpen, user, closeMenu }) => {
+    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
     let { filterBy } = useSelector((storeState) => storeState.gigModule)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -39,30 +41,44 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     return (
         <div className={`background-backdrop overlay ${menuOpen ? 'visible' : ''}`}>
             <section className={`side-bar flex flex-column ${className}`} >
-                <div className="side-bar-content">
-                    <div className="menu-header">
-                        {!user && <button className="btn" onClick={() => { openJoin() }}>Join Wiserr</button>}
-                    </div>
-                    <nav className='menu-nav'>
-                        <ul className='clean-list'>
-                            <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
-                            <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
-                            <ul className="categories-side-bar">
-                                {categories.map((category, index) => <li key={index}>
-                                    <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
-                                </li>)}
-                            </ul>
-                        </ul>
-                        {user && <ul>
-                            <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
-                            <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
-                            {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
-                            {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
-                            <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
-                            <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
-                        </ul>}
-                    </nav>
+                <div className="menu-header">
+                    {!user && <button className="btn open-popup-join-side-menu" onClick={() => { openJoin() }}>Join Wiserr</button>}
+                    {user && loggedInUser && <div><LogoFullFooter/><br></br><h3>Hello, {loggedInUser.userName}</h3></div>}
                 </div>
+                <nav className='menu-nav'>
+                    {!loggedInUser && <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a>}
+                    <div className="sidebar-categories">
+                        <article className="sidebar-collapsible">
+                            <div className="sidebar-collapsible-title-wrapper flex">
+                                <div className="sidebar-collapsible-title">
+                                    Browse Categories
+                                    <div className="arrow-down">
+                                        <span><ArrowDownCollapsible /></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="sidebar-collapsible-content">
+                                <ul className="categories-side-bar clean-list">Browse Categories
+                                    {categories.map((category, index) => <li key={index}>
+                                        <button className="menu-btn" onClick={() => onChangeCategory(category.parameter)}>{category.name}</button>
+                                    </li>)}
+                                </ul>
+                            </div>
+                        </article>
+                    </div>
+                    <ul className='clean-list'>
+                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
+                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
+                    </ul>
+                    {user && <ul>
+                        <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
+                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
+                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
+                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
+                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
+                        <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
+                    </ul>}
+                </nav>
             </section>
         </div>
     )
