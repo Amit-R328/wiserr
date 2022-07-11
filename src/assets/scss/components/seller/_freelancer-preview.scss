@@ -34,6 +34,7 @@
                 cursor: pointer;
                 display: flex;
                 flex-direction: column;
+                justify-content: flex-end;
 
                 .freelancer-legends {
                     font-size: rem(20px);
@@ -46,7 +47,6 @@
                     z-index: 55;
                     color: $white;
                     padding: rem(16px);
-                    padding-top: rem(238px);
                     cursor: pointer;
                 }
             }
