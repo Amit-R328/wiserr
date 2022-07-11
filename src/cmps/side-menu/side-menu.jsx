@@ -2,7 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../../store/actions/user.actions.js'
-import { LogoFullFooter } from '../../services/svg.service.js'
+import { LogoFull } from '../../services/svg.service.js'
 import { CollapsibleSideItem } from './collapsible-side-item.jsx'
 
 export const SideMenu = ({ menuOpen, user, closeMenu }) => {
@@ -34,29 +34,26 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
         <div className={`background-backdrop overlay ${menuOpen ? 'visible' : ''}`}>
             <section className={`side-bar flex flex-column ${className}`} >
                 <div className="menu-header">
+                    <h2>X</h2>
                     {!user && <button className="open-popup-join-side-menu" onClick={() => { openJoin() }}>Join Wiserr</button>}
-                    {user && loggedInUser && <div><LogoFullFooter /><br></br><h3>Hello, {loggedInUser.userName}</h3></div>}
+                    {user && loggedInUser && <div><LogoFull /><br></br><h3>Hello, {loggedInUser.userName}</h3></div>}
                 </div>
                 <nav className='menu-nav'>
-                    {!loggedInUser ? <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a> : <a className="sidebar-link" href="/" onClick={() => onLogout()}>Sign Out</a>}
-
-
                     <div className="sidebar-collapsible-content">
                         <CollapsibleSideItem onChangeCategory={onChangeCategory} />
                     </div>
-                    <ul className='clean-list'>
-                        <li className="link-group-title">My Profile</li>
-                        <li className='sidebar-link-general'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
-                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
-                    </ul>
+                    {user && <ul className='side-menu-profile clean-list'>
+                        <li className="sidebar-collapsible-content-title">My Profile</li>
 
-                    {user && <ul>
-                        <li><img className="avatar-img menu" src={`${user.imgUrl}`} alt="user img small" /></li>
-                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
-                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
-                        {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
-                        <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
+                        <li className="sidebar-collapsible-item"><NavLink to={`/seller`}>Wiserr Business</NavLink></li>
+                        <li className="sidebar-collapsible-item"><NavLink to={`/seller/dashboard`}>Dashboard</NavLink></li>
+                        {user && <li className="sidebar-collapsible-item"><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
+                        {user && <li className="sidebar-collapsible-item"><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
+                        <li className="sidebar-collapsible-item"><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
                     </ul>}
+                    <li className="sidebar-collapsible-content-title">General</li>
+                    <li className='sidebar-collapsible-item-general'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
+                    {!loggedInUser ? <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a> : <a className="sidebar-link" href="/" onClick={() => onLogout()}>LogOut</a>}
                 </nav>
             </section>
         </div>

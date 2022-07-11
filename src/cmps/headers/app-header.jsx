@@ -122,7 +122,7 @@ export const AppHeader = () => {
                         {pathname !== '/seller' ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <span></span>}
                     </li>
                     <li>
-                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Login/Join</NavLink>}
+                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login nav-link">Sign in / Join</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
                         </div>
