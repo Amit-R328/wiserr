@@ -21,8 +21,10 @@
         padding: 0;
         padding-right: 150px;
         margin: 0;
-        overflow-wrap: break-word;
+        // overflow-wrap: break-word;
+        word-break: break-word;
         line-height: 120%;
+
 
         .ul-selling-points {
             display: flex;
@@ -52,18 +54,19 @@
                 padding: 0;
                 margin: 0;
                 line-height: 24px;
-                
+
                 .check-icon {
                     margin-bottom: rem(10px);
                     margin-right: rem(10px);
                 }
             }
+
             & p {
                 font-size: rem(18px);
                 color: $grey_1100;
                 line-height: 24px;
             }
-            
+
         }
     }
 }
@@ -73,24 +76,143 @@
         position: relative;
         // left: 12%;
     }
+
     .selling-proposition-wrapper .selling-proposition {
         display: flex;
         flex-direction: column;
     }
-    .selling-proposition-wrapper .selling-text{
+
+    .selling-proposition-wrapper .selling-text {
         position: relative;
         left: 4%;
         padding-right: 50px;
-        overflow-wrap:normal;
+        overflow-wrap: normal;
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            line-height: rem(28px);
+            font-size: rem(24px);
+        }
     }
 }
-@media (max-width: 744px) {
-    .selling-proposition-wrapper .selling-text {
-        overflow-wrap: unset;
-        padding-right: 0px;
-    }
+
+@media (min-width: 426px) and (max-width: 744px) {
     .selling-proposition-wrapper .selling-proposition {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "selling-text";
+        vertical-align: middle;
+        align-items: center;
+    }
+
+    .selling-proposition-wrapper .selling-text {
+        padding-right: 0;
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            line-height: rem(48px);
+        }
+
+        li {
+            word-break: normal;
+
+            h6 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1.125rem;
+                color: #404145;
+                padding: 0;
+                margin: 0;
+                line-height: rem(28px);
+                margin-right: rem(20px);
+                margin-left: rem(20px);
+            }
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .selling-img {
+        min-height: rem(300px);
+        margin: rem(20px) 0;
+        margin-right: rem(20px);
+        margin-left: rem(20px);
     }
 }
+
+@media (min-width: 745px) and (max-width: 1024px) {
+    .selling-proposition-wrapper .selling-proposition {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: "selling-text";
+        vertical-align: middle;
+        align-items: center;
+    }
+
+    .optional-img {
+        background: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858355/selling-proposition-still-1400-x1_vtle7v.webp);
+        // max-width: rem(850px);
+        min-height: rem(300px);
+        margin: rem(20px) 0;
+    }
+
+    .selling-proposition-wrapper .selling-text {
+        padding-right: 0;
+
+        h2 {
+            text-align: center;
+            margin: 0 auto;
+            line-height: rem(48px);
+        }
+
+        li {
+            word-break: normal;
+
+            h6 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 1.125rem;
+                color: #404145;
+                padding: 0;
+                margin: 0;
+                line-height: rem(28px);
+            }
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .selling-img {
+        display: none;
+    }
+}
+
+// @media (max-width: 744px) {
+//     .selling-proposition-wrapper .selling-text {
+//         // overflow-wrap: unset;
+//         // padding-right: 0px;
+//         margin-bottom: rem(20px);
+//     }
+
+//     li {
+//         word-break: normal;
+//     }
+
+//     .selling-proposition-wrapper .selling-proposition {
+//         display: flex;
+//         flex-direction: column;
+//         padding-right: 0;
+//     }
+
+//     .selling-img {
+
+//     }
+// }

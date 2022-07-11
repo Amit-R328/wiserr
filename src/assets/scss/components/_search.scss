@@ -58,7 +58,6 @@ form.search-bar {
     }
 
     input {
-      flex-basis: 1;
       padding: 8px 34px;
 
       .search-input {
@@ -80,6 +79,21 @@ form.search-bar {
       align-self: center;
       font-size: 12px;
       font-style: bold;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  form {
+    &.search-bar {
+      .search-container {
+        input {
+          max-width: 62%;
+        }
+      }
+      .search-header {
+        min-width: unset;
+      }
     }
   }
 }

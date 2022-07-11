@@ -11,7 +11,7 @@ export const FreelancersPreview = (props) => {
             text: `${props.freelancer.buyers + ' |        ' + props.freelancer.location + ' | ' + props.freelancer.gigNumber}`,
             imageUrl: `${props.freelancer.img}`,
             imageWidth: 400,
-            imageAlt: `'slide ' + ${props.freelancer.profession}`,
+            imageAlt: `slide ${props.freelancer.profession}`,
             footer: '<a href="/join">Not a Wiserr Seller? Join Now</a>',
             showCloseButton: true,
             focusConfirm: false,
@@ -24,7 +24,7 @@ export const FreelancersPreview = (props) => {
 
     return (
         <>
-            <li className={`'slide ' + ${props.freelancer.profession}`}
+            <li className={`slide ${props.freelancer.profession}`}
                 onClick={() => openFreelancerDetails()}>
                 <p className="freelancer-legends">I am<br></br>
                     {props.freelancer.legends}</p>
