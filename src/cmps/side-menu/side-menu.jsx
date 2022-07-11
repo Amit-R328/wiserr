@@ -1,9 +1,9 @@
 import { NavLink, useNavigate } from 'react-router-dom'
-import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
+import { loadGigs, setFilter } from '../../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../store/actions/user.actions.js'
-import { LogoFullFooter } from '../services/svg.service.js'
-import { CollapsibleSideItem } from '../cmps/side-menu/collapsible-side-item.jsx'
+import { logout } from '../../store/actions/user.actions.js'
+import { LogoFullFooter } from '../../services/svg.service.js'
+import { CollapsibleSideItem } from './collapsible-side-item.jsx'
 
 export const SideMenu = ({ menuOpen, user, closeMenu }) => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
@@ -34,23 +34,11 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
         <div className={`background-backdrop overlay ${menuOpen ? 'visible' : ''}`}>
             <section className={`side-bar flex flex-column ${className}`} >
                 <div className="menu-header">
-                    {!user && <button className="btn open-popup-join-side-menu" onClick={() => { openJoin() }}>Join Wiserr</button>}
+                    {!user && <button className="open-popup-join-side-menu" onClick={() => { openJoin() }}>Join Wiserr</button>}
                     {user && loggedInUser && <div><LogoFullFooter /><br></br><h3>Hello, {loggedInUser.userName}</h3></div>}
                 </div>
                 <nav className='menu-nav'>
                     {!loggedInUser && <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a>}
-                    {/* <div className="sidebar-categories">
-                        <article className="sidebar-collapsible">
-                            <div className="sidebar-collapsible-title-wrapper flex">
-                                <div className="sidebar-collapsible-title">
-                                    Browse Categories
-                                    <div className="arrow-down">
-                                        <span><ArrowDownCollapsible /></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div> */}
                     <div className="sidebar-collapsible-content">
                         <CollapsibleSideItem onChangeCategory={onChangeCategory} />
                     </div>

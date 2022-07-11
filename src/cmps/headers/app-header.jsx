@@ -6,7 +6,7 @@ import { LogoFull } from '../../services/svg.service.js'
 import { logout } from '../../store/actions/user.actions.js'
 import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
-import { SideMenu } from '../side-menu.jsx'
+import { SideMenu } from '../side-menu/side-menu.jsx'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
 
 export const AppHeader = () => {
