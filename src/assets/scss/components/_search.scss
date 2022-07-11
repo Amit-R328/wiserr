@@ -1,5 +1,6 @@
 form.search-bar {
   display: flex;
+  flex: 1;
 
 
   & .search-header {
@@ -66,6 +67,7 @@ form.search-bar {
         border-radius: 3px 0 0 3px;
         border-right: 0;
         display: relative;
+        flex: 1;
       }
     }
 
@@ -89,6 +91,36 @@ form.search-bar {
       .search-container {
         input {
           max-width: 62%;
+        }
+      }
+      .search-header {
+        min-width: unset;
+      }
+    }
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  form {
+    &.search-bar {
+      .search-container {
+        input {
+          max-width: 62%;
+        }
+      }
+      .search-header {
+        min-width: unset;
+      }
+    }
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  form {
+    &.search-bar {
+      .search-container {
+        input {
+          min-width: 70%;
         }
       }
       .search-header {
