@@ -88,7 +88,7 @@ export const AppHeader = () => {
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
                 <div className="logo-search-container">
-                    {(pathname === `/categories` || pathname === `/seller/dashboard` || pathname === '/') &&
+                    {(pathname === `/categories` || pathname === `/seller/dashboard` || pathname === '/' || pathname === '/seller/gig' || pathname === '/join' || pathname === '/signup' || pathname === '/login') &&
                     <div className="side-menu">
                         <button ref={menuRef} onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
                             {isSideMenu && <SideMenu menuOpen={isSideMenu} closeMenu={onToggleSideMenu} user={loggedInUser} />}

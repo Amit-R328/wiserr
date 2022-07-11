@@ -243,6 +243,14 @@
   }
 }
 
+@media (max-width: 700px) {
+  .top {
+    &.container {
+      padding-inline-start: unset;
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .nav-list {
     display: none;
@@ -253,6 +261,7 @@
     }
   }
 }
+
 
 @-webkit-keyframes fade-in {
   0% {
