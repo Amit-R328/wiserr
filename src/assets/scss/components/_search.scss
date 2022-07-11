@@ -85,7 +85,22 @@ form.search-bar {
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 350px) and (max-width: 519px) {
+  form {
+    &.search-bar {
+      .search-container {
+        input {
+          max-width: 42%;
+        }
+      }
+      .search-header {
+        min-width: unset;
+      }
+    }
+  }
+}
+
+@media (min-width: 520px) and (max-width: 600px) {
   form {
     &.search-bar {
       .search-container {
