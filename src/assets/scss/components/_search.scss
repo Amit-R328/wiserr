@@ -132,10 +132,10 @@ form.search-bar {
 
 @media (min-width: 901px) and (max-width: 1024px) {
   form {
-    &.search-bar {
+    &.search-bar {  
       .search-container {
         input {
-          min-width: 70%;
+          max-width: 65%;
         }
       }
       .search-header {
