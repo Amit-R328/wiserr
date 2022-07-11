@@ -108,3 +108,15 @@
     color: rgba(0, 0, 0, 0);
     visibility: hidden;
 }
+
+.edit-gig-btn {
+    border: 1px solid #DADBDD;
+    background-color: #1DBF73;
+    color: white;
+    width: 9.375rem;
+    margin-top: 0.9375rem;
+    padding: 0.625rem 1.25rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}

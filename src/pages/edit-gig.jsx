@@ -39,12 +39,12 @@ export const EditGig = (props) => {
       
     }
     
-    const imageUpload = (ev) => {
+    // const imageUpload = (ev) => {
         
-        const file = ev.target.files[0]
-        uploadImg(ev)     
+    //     const file = ev.target.files[0]
+    //     uploadImg(ev)     
         
-    }
+    // }
     
     const uploadImg = (ev) => {
         const file = ev.target.files[0]
@@ -57,9 +57,7 @@ export const EditGig = (props) => {
         return fetch(UPLOAD_URL, {
             method: 'POST',
             body: formData
-        }).then(res => res.json()).then(res => {
-            console.log('res.url', res.url)
-            console.log('before',currGig.imgUrl[0] )
+        }).then(res => res.json()).then(res => {       
             const currImgUrl = currGig.imgUrl
             currImgUrl[0] = res.url          
             setCurrGig({ ...currGig, imgUrl: currImgUrl })           
@@ -94,8 +92,8 @@ export const EditGig = (props) => {
                
                 <label htmlFor="imageFile" className="label-for-img tooltip" >
                     <span className="tooltiptext">Load image</span>
-                    <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile" alt=""></img>
-                    <input className="img-input" hidden={true} type="file" accept="image/*" id="imageFile" name="imageFile"  onChange={imageUpload} />
+                    <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile"></img>
+                    <input className="img-input" hidden={true} type="file" accept="image/*" id="imageFile" name="imageFile"  onChange={uploadImg} />
                 </label>
                 {/* <EditGigInput inputRef="aboutThisGig" label="About This Gig" name="aboutThisGig" description={currGig.description.aboutThisGig} handleChange={handleChange} />
                 <EditGigInput inputRef="whyUs" label="Why Us" name="whyUs" description={currGig.description.whyUs} handleChange={handleChange} />
