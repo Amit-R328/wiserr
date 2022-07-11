@@ -32,15 +32,22 @@
       padding: 0 20px 40px 20px;
       min-height: rem(42px);
       max-width: rem(178px);
-      margin-bottom: rem(30px);
+      margin-bottom: rem(5px);
       margin-top: rem(20px);
       border-bottom: 1px solid $grey_400;
 
+      & svg {
+        margin-left: rem(-55px);
+      }
+      
       & h3 {
         color: $grey_900;
         margin: rem(10px) 0;
+        margin-bottom: rem(5px);
+        text-align: left;
+        
       }
-
+      
       .open-popup-join-side-menu {
         max-height: 42px;
         background-color: $wiserr_green;
@@ -56,7 +63,7 @@
         text-decoration: none;
         transition: 70ms cubic-bezier(.75, 0, .25, 1);
       }
-
+      
       .user-content {
         align-items: center;
         gap: 20px;
@@ -64,11 +71,11 @@
         font-weight: 700;
         font-size: 1.3rem;
         font-family: sans-serif;
-
+        
         .user-img {
           width: 60px;
           height: 60px;
-
+          
           &:hover {
             background-color: darken($wiserr_green, 1.2);
           }
@@ -76,32 +83,32 @@
       }
     }
   }
-
+  
   .menu-nav {
     height: 100%;
     overflow: auto;
     // padding-bottom: 50px;
     text-align: left;
-
+    
     .sidebar-link {
-      padding-bottom: 8px;
-      padding-top: 8px;
+      // padding-bottom: 8px;
+      // padding-top: 8px;
       // color: #95979d;
       padding-left: 20px;
-      padding-right: 20px;
+      // padding-right: 20px;
       font-size: rem(16px);
       color: $wiserr_green  !important;
       font-weight: 600;
       line-height: rem(45px);
       cursor: pointer;
-
+      
       &:hover {
         // color: $wiserr_green;
         color: $grey_1100  !important;
         font-weight: 600;
       }
     }
-
+    
     .sidebar-collapsible-content {
       color: #95979d;
       padding-left: 20px;
@@ -111,8 +118,11 @@
       flex-grow: 1;
       line-height: rem(24px);
       text-align: left;
-      padding-bottom: 20px;
+      padding-bottom: 10px;
       overflow: hidden;
+      padding-top: rem(10px);
+      border-top: 1px solid $grey_400;
+      border-bottom: 1px solid $grey_400;
 
       .categories-side-bar {
         padding: 8px 0;
@@ -121,13 +131,7 @@
 
         &:hover {
           color: $wiserr_green;
-          // color: $grey_1100;
         }
-
-        // & .visible {
-        //   overflow: unset;
-        //   color: $wiserr_green;
-        // }
 
         .menu-category-link {
           color: #95979d;
