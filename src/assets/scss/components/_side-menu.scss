@@ -88,13 +88,59 @@
       cursor: pointer;
     }
 
-    .categories-side-bar {
+    .sidebar-collapsible-content {
       color: #95979d;
       padding-left: 20px;
       padding-right: 20px;
-      .menu-btn {
-        &.hidden {
-          display: none;
+      font-size: rem(16px);
+      cursor: pointer;
+      flex-grow: 1;
+      line-height: rem(24px);
+      text-align: left;
+      padding-bottom: 20px;
+      overflow: hidden;
+      
+      .categories-side-bar {
+        padding: 8px 0;
+        font-weight: 400;
+        flex-grow: 1;
+        
+        &::before {
+          content: '\f105';
+          font-family: awesome;
+          font-size: rem(20px);
+          margin-right: rem(20px);
+          padding: 0;
+          cursor: pointer;
+        }
+        
+        &.visible {
+          overflow: unset;
+        }
+        
+        .menu-category-link {
+          color: #95979d;
+          font-size: rem(16px);
+          cursor: pointer;
+          line-height: rem(24px);
+          text-align: left;
+          padding: 8px 0;
+          padding-bottom: 10px;
+          padding-left: rem(28px);
+          font-weight: 400;
+          flex-grow: 1;
+          
+          &:first-child{
+            padding-top: rem(10px);
+          }
+
+          &:hover {
+            cursor: pointer;
+            color: $wiserr_green;
+          }
+          &.hidden {
+            display: none;
+          }
         }
       }
 
@@ -114,10 +160,6 @@
           color: $grey_1000;
         }
       }
-    }
-
-    .sidebar-collapsible-content {
-      color: black;
     }
 
     .overlay {
@@ -140,8 +182,8 @@
 }
 
 @media (min-width: 1201px) {
-  .hamburger-icon
-  .side-bar,
+
+  .hamburger-icon .side-bar,
   .side-bar.open,
   .menu-header,
   .open-popup-join-side-menu,

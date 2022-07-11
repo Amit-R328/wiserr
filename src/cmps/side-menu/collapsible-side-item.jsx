@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import useCollapse from 'react-collapsed';
+import useCollapse from 'react-collapsed'
 
 export const CollapsibleSideItem = ({ onChangeCategory }) => {
-    let [isExpanded, setIsExpanded] = useState(false);
-    const { getCollapseProps, getToggleProps } = useCollapse();
+    let [isExpanded, setIsExpanded] = useState(false)
+    const { getCollapseProps, getToggleProps } = useCollapse()
     let [categories, setCategories] = useState([{}])
     
     const getContent = () => {
@@ -20,6 +20,7 @@ export const CollapsibleSideItem = ({ onChangeCategory }) => {
     
     const handleOnClick = (ev) => {
         ev.preventDefault()
+        ev.stopPropagation()
         setIsExpanded(!isExpanded)
         if(isExpanded) getContent()
     }
@@ -29,8 +30,8 @@ export const CollapsibleSideItem = ({ onChangeCategory }) => {
 
     return (
         <>
-            <ul className={isExpanded ? `categories-side-bar clean-list Collapse ${className}` : `categories-side-bar clean-list Expand ${className}`} onClick={(ev) => handleOnClick(ev)}>Browse Categories
-                {categories.map((category, index) => <li key={index}  className={`menu-btn ${hiddenMenu}`} onClick={() => onChangeCategory(category.parameter)}>{category.name}
+            <ul className={isExpanded ? `categories-side-bar clean-list collapse ${className}` : `categories-side-bar clean-list expand ${className}`} onClick={(ev) => handleOnClick(ev)}>Browse Categories
+                {categories.map((category, index) => <li key={index}  className={`menu-category-link ${hiddenMenu}`} onClick={() => onChangeCategory(category.parameter)}>{category.name}
                 </li>)}
             </ul>
         </>
