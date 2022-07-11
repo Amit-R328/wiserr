@@ -56,7 +56,7 @@ If you have any feedback, please reach out to us at sharonbellotech@gmail.com
 We learned how to implement advanced features such as sockets, working with MongoDB, Heroku, complicated headers, hero and image carousels. We also used different libraries for different features and had to combine all of them in a seamless flow. We learned to work collaboratively in the GitHub environment and how to combine different code approaches to create one unified project.
 
 Our schedule was very tight as we had about ten days to complete this monumental task. In particular, the main image carousel on the homepage presented a challenge. After trying a number of libraries, we developed our own solution.
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+
 
 
 ## Optimizations
@@ -66,7 +66,7 @@ What optimizations did you make in your code? E.g. refactors, performance improv
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://res.cloudinary.com/dcbbqlssh/image/upload/v1657565609/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2022-07-11_215033_kyho8n.png)
 
 
 ## Run Locally
