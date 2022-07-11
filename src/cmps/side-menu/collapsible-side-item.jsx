@@ -31,8 +31,8 @@ export const CollapsibleSideItem = ({ onChangeCategory }) => {
     return (
         <>
             <ul className={isExpanded ? `categories-side-bar clean-list expand ${className}` : `categories-side-bar clean-list collapse ${className}`} onClick={(ev) => handleOnClick(ev)}>Browse Categories
-                {categories.map((category, index) => <li key={index}  className={`menu-category-link ${hiddenMenu}`} onClick={() => onChangeCategory(category.parameter)}>{category.name}
-                </li>)}<span className='gentle-line-menu'></span>
+                {categories.map((category, index) => <li key={index} className={`menu-category-link ${hiddenMenu}`} onClick={() => onChangeCategory(category.parameter)}>{category.name}
+                </li>)}
             </ul>
         </>
     )

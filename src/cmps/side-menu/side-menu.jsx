@@ -38,12 +38,15 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
                     {user && loggedInUser && <div><LogoFullFooter /><br></br><h3>Hello, {loggedInUser.userName}</h3></div>}
                 </div>
                 <nav className='menu-nav'>
-                    {!loggedInUser && <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a>}
+                    {!loggedInUser ? <a className="sidebar-link" href="/login" rel="nofollow">Sign in</a> : <a className="sidebar-link" href="/" onClick={() => onLogout()}>Sign Out</a>}
+
+
                     <div className="sidebar-collapsible-content">
                         <CollapsibleSideItem onChangeCategory={onChangeCategory} />
                     </div>
                     <ul className='clean-list'>
-                        <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
+                        <li className="link-group-title">My Profile</li>
+                        <li className='sidebar-link-general'><NavLink onClick={() => closeMenu()} to="/">Home</NavLink></li>
                         <li className='menu-item'><NavLink onClick={() => closeMenu()} to="/seller">Wiserr Seller</NavLink></li>
                     </ul>
 
@@ -53,7 +56,6 @@ export const SideMenu = ({ menuOpen, user, closeMenu }) => {
                         {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/order/${user._id}`}>My Orders</NavLink></li>}
                         {user && <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/gig`}>My Gigs</NavLink></li>}
                         <li className="menu-item" onClick={() => closeMenu()}><NavLink to={`/seller/add-gig`}>New Gig</NavLink></li>
-                        <li className="menu-item logout" onClick={() => onLogout()}><NavLink to={`/`}>Logout</NavLink></li>
                     </ul>}
                 </nav>
             </section>
