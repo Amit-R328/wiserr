@@ -6,8 +6,10 @@
 
         .gig-list {
             color: $grey_1000;
-            grid-template-columns: repeat(4, 1fr);
-            grid-gap: 32px;
+            // grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+
+            grid-gap: 12px;
             // min-height: 370px;
             margin-top: rem(16px);
             display: grid;
