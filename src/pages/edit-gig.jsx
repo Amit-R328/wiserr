@@ -39,12 +39,6 @@ export const EditGig = (props) => {
       
     }
     
-    // const imageUpload = (ev) => {
-        
-    //     const file = ev.target.files[0]
-    //     uploadImg(ev)     
-        
-    // }
     
     const uploadImg = (ev) => {
         const file = ev.target.files[0]
@@ -95,9 +89,6 @@ export const EditGig = (props) => {
                     <img className="edit-gig-img" src={currGig.imgUrl[0]} name="imageFile"></img>
                     <input className="img-input" hidden={true} type="file" accept="image/*" id="imageFile" name="imageFile"  onChange={uploadImg} />
                 </label>
-                {/* <EditGigInput inputRef="aboutThisGig" label="About This Gig" name="aboutThisGig" description={currGig.description.aboutThisGig} handleChange={handleChange} />
-                <EditGigInput inputRef="whyUs" label="Why Us" name="whyUs" description={currGig.description.whyUs} handleChange={handleChange} />
-                <EditGigInput inputRef="whatYouGet" label="What Do You Get" name="whatYouGet" description={whatYouGet} handleChange={handleChange} />  */}
                 <div className="edit-gig-input-container">
                     <label className="edit-gig-label">About This Gig</label>
                     <input className="edit-gig-input" name="aboutThisGig" type="search" value={currGig.description.aboutThisGig} onChange={handleChange} />
@@ -111,13 +102,6 @@ export const EditGig = (props) => {
                     <label className="edit-gig-label">What Do You Get</label>
                     <input className="edit-gig-input" name="whatDoYouGet" type="search" value={whatYouGet} onChange={handleChange} />
                 </div>
-
-                {/* {/* {currGig.description.littleDetails && <div className="edit-gig-littleDetails">
-                        <label className="edit-gig-label">Little Details</label>  
-                        <textarea className="edit-gig-textarea" rows={5} value={currGig.description.littleDetails.map((detail) => detail)}>
-                            {<dl className="edit-gig-littleDetails"> {gig.description.littleDetails.map((detail, idx) => <dd className='littleDetails' key={idx}>{detail}</dd>)}</dl>}
-                        </textarea>
-                    </div>} */}
                 <button className="edit-gig-btn">Edit</button>
             </form>
         </section >

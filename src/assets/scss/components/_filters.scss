@@ -39,6 +39,7 @@
 
                 &.open {
                     margin-right: 50%;
+                    width: 140px;
                 }
 
                 &.budget {
@@ -143,6 +144,14 @@
             background-color: transparent;
             font-size: rem(18px);
             color: $grey_800;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .filter-topbar {
+        .filter-shadow-effect {
+            flex-direction: column-reverse;
+            align-items: flex-start;
         }
     }
 }

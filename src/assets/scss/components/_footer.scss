@@ -42,19 +42,26 @@
         }
     }
 
-    @media (max-width: 425px) {
-        .footer-bottom {
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-    }
-
+    
     @media (max-width: 744px) {
         .footer-bottom {
             flex-direction: column;
             flex-wrap: nowrap;
             gap: 15px;
         }
+    }
+}
+@media (max-width: 600px) {
+    .footer-container {
+        .footer-bottom {
+            max-width: rem(500px);
+        }
+    }
+}
+@media (max-width: 425px) {
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        position: relative;
     }
 }

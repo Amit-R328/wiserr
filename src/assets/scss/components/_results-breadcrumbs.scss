@@ -135,4 +135,11 @@
         flex-direction: column;
         gap: 20px;
     }
+    .filter-gigs-container {
+        .results-category-header {
+            p {
+                max-width: 23ch;
+            }
+        }
+    }
 }
