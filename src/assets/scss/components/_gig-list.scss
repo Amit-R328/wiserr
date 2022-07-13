@@ -22,9 +22,12 @@
 @media (max-width:600px) {
     .gigs-preview-main-wrapper {
         margin: 0 20px 0 10px;
+        &.container {
+            padding-inline-start: unset;
+        }
         .list-of-gigs-container {
             .gig-list {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
             }
         }
     }
