@@ -86,6 +86,13 @@
               fill: $grey_1100;
             }
           }
+          &.gray {
+            svg {
+              path:nth-child(1) {
+                fill: $grey_1100;
+              }
+            }
+          }
         }
       }
     }
@@ -223,10 +230,12 @@
   }
 
   .top {
-    .logo {
-      svg {
-        path:nth-child(1) {
-          fill: $grey_1000;
+    .logo-search-container {
+      .logo {
+        svg {
+          path:nth-child(1) {
+            fill: $grey_1000;
+          }
         }
       }
     }

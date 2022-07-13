@@ -8,13 +8,21 @@
         grid-area: 1/1/2/2;
 
         .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             position: absolute;
             top: 24%;
             color: white;
             font-size: rem(40px);
             line-height: rem(55px);
             letter-spacing: rem(2.8px);
-
+            .search-hero-homepage {
+                .search-container {
+                    display: flex;
+                    align-items: baseline;
+                }
+            }
             .hero-popular-category {
                 // align-items: center;
 
@@ -90,6 +98,7 @@
         margin-top: 10px;
         padding: 15.1px 24px;
         right: 8%;
+        height: 3rem;
         // top: 2%;
         /* bottom: 231%; */
     }
@@ -173,8 +182,11 @@
         display: none;
     }
 
-    .search-hero {
-        width: 495px;
+    .hero-container {
+        .search-hero {
+            width: 495px;
+            border-radius: 4px;
+        }
     }
 }
 
@@ -217,6 +229,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                font-size:rem(30px);
             }
         }
     }
@@ -226,6 +239,9 @@
     .hero-container {
         .search-hero {
             max-width: 300px;
+        }
+        .search-hero-btn {
+            right: 8%;
         }
     }
 
@@ -287,3 +303,12 @@
         }
     }
 }
+
+@media (min-width: 1200px) {
+    .hero-container {
+        .search-hero-btn {
+            padding: 14px 24px;
+        }
+    }
+}
+

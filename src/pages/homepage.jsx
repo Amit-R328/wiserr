@@ -13,6 +13,7 @@ export const HomePage = () => {
     const { width } = useWindowDimensions()
     return (
         <section>
+            <section className="middle-section">
             <div className="hero">
                 <HeroCarousel />
             </div>
@@ -21,7 +22,6 @@ export const HomePage = () => {
                 <TrustedBy />
             </div>
             }
-            <section className="middle-section">
                 <div className="gig-slider-container container">
                     <h2 className="professional-services">Popular professional services</h2>
                     {(width <= 650) ? <CategoriesSliderMobile /> : <CategoriesCarousel />}

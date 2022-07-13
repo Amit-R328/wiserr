@@ -15,10 +15,7 @@
     .slider-container {
         .slider-categories-list {
             display: grid;
-            grid-template-columns: repeat(5 1fr);
-            grid-template-rows: 1fr;
-            grid-template-areas:
-                "slide1 slide2 slide3 slide4 slide5";
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             padding: 0;
             gap: 10px;
             cursor: pointer;
@@ -47,7 +44,7 @@
         }
     }
 
-    @media screen and (min-width: 1400px) {
+    @media (min-width: 1400px) {
         .slide:not(:first-of-type) {
             width: 100%;
             aspect-ratio: 1 / 0.79;
@@ -60,6 +57,10 @@
                 aspect-ratio: 1 / 0.79;
 
             }
+        }
+        &.container {
+            padding-inline-start: calc((132px+1.5625vw)/2);
+            padding-inline-end: calc((132px+1.5625vw)/2);
         }
     }
 
@@ -117,7 +118,6 @@
 
 @media (max-width:1024px) {
     .gig-slider-container .slider-container {
-        display: flex;
         gap: 15px;
     }
 
