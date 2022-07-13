@@ -9,7 +9,8 @@
     .image-gallery {
       img {
         aspect-ratio: 1 / 0.59;
-        max-height: rem(194px);
+        // max-height: rem(194px);
+        min-height: rem(200px);
         object-fit: cover;
       }
 
