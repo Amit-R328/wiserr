@@ -21,10 +21,10 @@
 
 @media (max-width:600px) {
     .gigs-preview-main-wrapper {
-        margin: 0 20px 0 10px;
         &.container {
-            padding-inline-start: unset;
+            padding-inline-start: calc((119px + 1.5625vw) / 2);
         }
+        margin: 0 20px 0 10px;
         .list-of-gigs-container {
             .gig-list {
                 grid-template-columns: 1fr;
