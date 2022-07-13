@@ -35,7 +35,7 @@ export const CategoriesCarousel = () => {
         },
         {
             elementName: 'Digital Marketing',
-            legends: 'Reach more customers',
+            legends: 'Reach customers',
             title: 'Social Media',
             img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1656862621/social-2x_crn0um.webp'
         }
@@ -54,7 +54,7 @@ export const CategoriesCarousel = () => {
                 {slideCategories.map(category =>
                     <li key={category.img}>
                         <div className="slide" onClick={() => onChangeCategory(`${category.elementName}`)}>
-                            <h4 className="category-legends"><small>{category.legends}</small><br></br><span>{category.title}</span></h4>
+                            <h4 className="category-legends"><small>{category.legends}</small><div>{category.title}</div></h4>
                             <img alt={category.title} src={category.img} />
                         </div>
                     </li>)}

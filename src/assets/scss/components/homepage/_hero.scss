@@ -10,19 +10,21 @@
         .hero-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
             position: absolute;
             top: 24%;
             color: white;
             font-size: rem(40px);
             line-height: rem(55px);
             letter-spacing: rem(2.8px);
+
             .search-hero-homepage {
                 .search-container {
                     display: flex;
                     align-items: baseline;
+                    transform: translateX(5%);
                 }
             }
+
             .hero-popular-category {
                 // align-items: center;
 
@@ -229,7 +231,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                font-size:rem(30px);
+                font-size: rem(30px);
             }
         }
     }
@@ -240,8 +242,12 @@
         .search-hero {
             max-width: 300px;
         }
+
         .search-hero-btn {
-            right: 8%;
+            align-self: center;
+            padding: 15.1px 126px;
+            border-radius: 4px;
+            right: unset;
         }
     }
 
@@ -304,11 +310,25 @@
     }
 }
 
+@media (min-width: 900px){
+    .hero-container {
+        .hero-content-container {
+            .hero-content {
+                .search-hero-homepage {
+                    .search-container {
+                        transform: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media (min-width: 1200px) {
     .hero-container {
         .search-hero-btn {
             padding: 15px 24px 14px;
         }
+        
     }
 }
-

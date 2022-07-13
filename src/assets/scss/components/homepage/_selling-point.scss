@@ -3,7 +3,7 @@
     background-color: #f1fdf7;
     padding-top: rem(96px);
     padding-bottom: rem(96px);
-
+    grid-column: 1/-1;
     .selling-proposition {
         display: grid;
         grid-template-columns: 50% 50%;

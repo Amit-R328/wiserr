@@ -17,12 +17,16 @@ export const SellerSectionHomepage = () => {
                         <span><span>A Business Solution designed for<span><i> sellers</i></span>
                         </span></span>
                     </h2>
-                    <div className="optional-img-seller-section"></div>
+                    <div className="optional-img-seller-section">
+                    <img src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858784/business-desktop-870-x1_cvrzpi.webp" loading="lazy" alt="Wiserr Business freelancers" />
+                    </div>
                     <p>Upgrade to a curated experience packed with tools and benefits, dedicated to sellers</p>
                     <ul>
-                        <li><h6><VCircle /><p>Connect to consumers and experience our support</p></h6></li>
-                        <li><h6><VCircle /><p>See order analysis to help manage your business and revenues</p></h6></li>
-                        <li><h6><VCircle /><p>Manage gigs and boost productivity with one powerful workspace</p></h6></li>
+                        <li><h6><VCircle />Connect to consumers and experience our support</h6></li>
+                        <li className="vertical-line"></li>
+                        <li><h6><VCircle />See order analysis to help manage your business and revenues</h6></li>
+                        <li className="vertical-line"></li>
+                        <li><h6><VCircle />Manage gigs and boost productivity with one powerful workspace</h6></li>
                     </ul>
                     <div className="explore-seller-container">
                         {loggedInUser ? <NavLink to="/seller/dashboard" className="explore-seller">Explore Wiserr Seller</NavLink> : <NavLink to="/login" className="explore-seller">Explore Wiserr Seller</NavLink>}

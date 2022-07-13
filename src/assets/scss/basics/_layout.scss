@@ -56,7 +56,7 @@
 
     .middle-section {
         display: grid;
-        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1400px) minmax(1rem, 1fr);
+        grid-template-columns: minmax(1rem, 1fr) minmax(auto, 1400px) minmax(3rem, 1fr);
         > *{
             grid-column: 2;
         }
