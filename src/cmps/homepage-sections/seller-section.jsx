@@ -14,9 +14,10 @@ export const SellerSectionHomepage = () => {
                         <span className="text-upper">New</span>
                     </div>
                     <h2 className="font-domaine">
-                        <span><span>A Business Solution<br></br>designed for<span><i>sellers</i></span>
+                        <span><span>A Business Solution designed for<span><i> sellers</i></span>
                         </span></span>
                     </h2>
+                    <div className="optional-img-seller-section"></div>
                     <p>Upgrade to a curated experience packed with tools and benefits, dedicated to sellers</p>
                     <ul>
                         <li><h6><VCircle /><p>Connect to consumers and experience our support</p></h6></li>
