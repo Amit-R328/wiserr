@@ -48,10 +48,33 @@
 
         .seller-text {
             color: $white;
-            overflow-wrap: break-word;
+            // overflow-wrap: break-word;
+
+            .font-domaine {
+                line-height: rem(24px);
+                margin-block-start: 0.83em;
+                margin-block-end: 0.83em;
+                font-size: rem(32px);
+                letter-spacing: rem(2px);
+                padding-right: rem(160px);
+    
+                & span {
+                    font-weight: bold;
+                    font-weight: 700;
+                    line-height: 140%;
+                    
+                    & i {
+                        font-family: DomaineDisplay;
+                        font-size: 32px;
+                        font-style: italic;
+                        line-height: rem(24px);
+                        font-weight: 500;
+                    }
+                }
+            }
 
             & p {
-                padding-right: em(200px);
+                padding-right: rem(40px);
                 font-size: rem(18px);
                 line-height: rem(26px);
                 color: $white;
@@ -120,26 +143,7 @@
             }
         }
 
-        .font-domaine {
-            line-height: rem(24px);
-            margin-block-start: 0.83em;
-            margin-block-end: 0.83em;
-            font-size: rem(32px);
-
-            & span {
-                font-weight: bold;
-                font-weight: 700;
-                line-height: 120%;
-
-                & .seller-text {
-                    font-family: DomaineDisplay;
-                    font-size: 32px;
-                    font-style: italic;
-                    line-height: rem(24px);
-                    font-weight: 500;
-                }
-            }
-        }
+        
     }
 }
 
@@ -202,5 +206,14 @@
             vertical-align: middle;
             align-items: center;
         }
+    }
+    .optional-img-seller-section{
+        background: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1656858784/business-desktop-870-x1_cvrzpi.webp);
+        // max-width: rem(850px);
+        min-height: rem(300px);
+        margin: rem(20px) 0;
+    }
+    .seller-image {
+        display: none;
     }
 }
