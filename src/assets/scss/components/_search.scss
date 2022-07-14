@@ -10,9 +10,8 @@ form.search-bar {
     padding: 6px 6px 6px 24px;
     margin-left: 24px;
     min-width: 311px;
-
-   
   }
+
     & .search-input {
       border-radius: 3px 0 0 3px;
       border-right: 0;
@@ -37,7 +36,6 @@ form.search-bar {
     position: relative;
 
     & label {
-
       &:before {
         content: "\f3ee";
         color: $grey_1100;
@@ -55,7 +53,6 @@ form.search-bar {
       svg {
         display: none;
       }
-      
     }
 
     input {
@@ -100,7 +97,7 @@ form.search-bar {
   }
 }
 
-@media (min-width: 350px) and (max-width: 519px) {
+@media (min-width: 351px) and (max-width: 519px) {
   form {
     &.search-bar {
       .search-container {
@@ -130,6 +127,20 @@ form.search-bar {
   }
 }
 
+@media (max-width: 600px) {
+  .hero-container {
+    .hero-content-container {
+      .hero-content {
+        .search-hero-homepage {
+          .search-container {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 601px) and (max-width: 900px) {
   form {
     &.search-bar {
@@ -140,20 +151,6 @@ form.search-bar {
       }
       .search-header {
         min-width: unset;
-      }
-    }
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-container {
-    .hero-content-container {
-      .hero-content {
-        .search-hero-homepage {
-          .search-container {
-            flex-direction: column;
-          }
-        }
       }
     }
   }

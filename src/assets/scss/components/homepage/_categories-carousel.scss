@@ -10,7 +10,6 @@
         line-height: 120%;
         font-weight: 700;
         letter-spacing: rem(1.3px);
-
     }
 
     .slider-container {
@@ -18,7 +17,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             padding: 0;
-            gap: 10px;
+            gap: 15px;
             cursor: pointer;
         }
     }
@@ -59,6 +58,7 @@
 
             }
         }
+
         // &.container {
         //     padding-inline-start: calc((132px+1.5625vw)/2);
         //     padding-inline-end: calc((132px+1.5625vw)/2);
@@ -94,7 +94,7 @@
     }
 
     .professional-services {
-        margin-left: 12%;
+        // margin-left: 12%;
     }
 }
 
