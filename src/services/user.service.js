@@ -18,13 +18,27 @@ export const userService = {
     remove,
     update,
     changeScore,
-    onUserUpdate
+    onUserUpdate,
+    getGoogleUser,
+    signUpGoogle,
 }
 
 window.userService = userService
 function getUsers() {
     return storageService.query('user')
     // return httpService.get(`user`)
+}
+
+async function getGoogleUser(googleId) {
+    try {
+        const user = await httpService.get(`user/google/${googleId}`);
+        if (user) {
+            sessionStorage.setItem(STORAGE_KEY_LOGGEDIN, JSON.stringify(user));
+        }
+        return user;
+    } catch (err) {
+        return false;
+    }
 }
 
 function onUserUpdate(user) {
@@ -52,7 +66,7 @@ async function update(user) {
 }
 
 async function login(userCred) {
-    try{
+    try {
 
         let user = await httpService.post('auth/login', userCred)
         if (user) {
@@ -62,6 +76,19 @@ async function login(userCred) {
     } catch (err) {
         throw err
     }
+}
+
+async function signUpGoogle(user) {
+    const userToAdd = {
+        fullName: user.name,
+        imgUrl: user.picture,
+        userName: user.name,
+        password: user.email
+    }
+    let userAdded = await httpService.post('auth/google', userToAdd)
+    _handleLogin(userAdded)
+    console.log('userAdded', userAdded)
+    return userAdded
 }
 
 async function signup(userCred) {

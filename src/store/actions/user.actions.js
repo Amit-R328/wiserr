@@ -16,6 +16,19 @@ export function loadUsers() {
     }
 }
 
+export function googleLogin(googleUser) {
+    return async (dispatch) => {
+        try {
+            var loggedGoogleUser = await userService.getGoogleUser(googleUser);
+            const action = { type: "SET_USER", user: loggedGoogleUser };
+            dispatch(action);
+            return loggedGoogleUser;
+        } catch (err) {
+            return false;
+        }
+    };
+}
+
 export function removeUser(userId) {
     return async dispatch => {
         try {
@@ -36,13 +49,27 @@ export function login(credentials) {
                 type: 'SET_USER',
                 user
             })
-        } catch (err) {            
+        } catch (err) {
             console.error('Error - cannot login:', err)
             showErrorMsg('Username or password invalid')
             setTimeout(() => {
                 console.log('user error msg')
-            },3000)
+            }, 3000)
             throw err
+        }
+    }
+}
+
+export function signUpGoogle(user) {
+    return async (dispatch) => {
+        try {
+            const userToAdd = await userService.signUpGoogle(user)
+            dispatch({
+                type: 'SET_USER',
+                userToAdd
+            })
+        } catch (err) {
+            console.log('Cannot signup', err)
         }
     }
 }
@@ -90,7 +117,7 @@ export async function loadUser(userId) {
 export function getLoggedinUser() {
     return async (dispatch) => {
         try {
-            const user = await userService.getLoggedinUser()
+            let user = await userService.getLoggedinUser()
             dispatch({ type: 'SET_LOGGED_USER', user })
         } catch (err) {
             console.log('Cannot load user', err)
