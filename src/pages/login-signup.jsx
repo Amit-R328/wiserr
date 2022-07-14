@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -12,9 +12,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useNavigate, NavLink } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { cloudinaryService } from '../services/cloudinary.service.js'
-import { login, signup, getLoggedinUser } from '../store/actions/user.actions.js'
+import { login, signup, getLoggedinUser, signUpGoogle } from '../store/actions/user.actions.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
 import { UserMsg } from '../cmps/user-msg.jsx'
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
+import jwt_decode from 'jwt-decode'
 
 export const LoginSignup = () => {
     const [isImg, setIsImg] = useState(false)
@@ -23,6 +25,21 @@ export const LoginSignup = () => {
     const theme = createTheme()
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+
+    const handleGoogleSignUp = async (response) => {
+        console.log(response.credential)
+        let userObject = jwt_decode(response.credential)
+        console.log('userObject', userObject)
+        dispatch(signUpGoogle(userObject))
+        
+        dispatch(getLoggedinUser())
+        navigate('/')
+    }
+
+    const handleError = (err) => {
+        console.log(err);
+    }
 
     const uploadImg = (ev) => {
         const CLOUD_NAME = cloudinaryService.getCloudName()
@@ -50,9 +67,9 @@ export const LoginSignup = () => {
             }
             if (isLogin) {
                 dispatch(login(loginInfo))
-                console.log('1' )
+                console.log('1')
                 dispatch(getLoggedinUser())
-                console.log('2' )
+                console.log('2')
                 navigate('/')
             } else {
                 loginInfo.fullname = data.get('fullname')
@@ -75,6 +92,20 @@ export const LoginSignup = () => {
 
     return (
         <main className="login-sign-up-container container">
+            <div className="signInDiv">
+                <GoogleOAuthProvider clientId="1014583727450-rbjogeikugg0srpmbmbgkfe4j7d6f5jl.apps.googleusercontent.com">
+                    <div className="App">
+                        <GoogleLogin
+                            onSuccess={(credentialResponse) => {
+                                handleGoogleSignUp(credentialResponse);
+                            }}
+                            onError={() => {
+                                console.log("Login Failed");
+                            }}
+                        />
+                    </div>
+                </GoogleOAuthProvider>
+            </div>
             <ThemeProvider theme={theme} >
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />

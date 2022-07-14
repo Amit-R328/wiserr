@@ -12,7 +12,7 @@ import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
 export const AppHeader = () => {
     const params = useParams()
     const dispatch = useDispatch()
-    const { loggedInUser } = useSelector((storeState) => storeState.userModule)
+    let { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
     const [showProfileMenu, setShowProfileMenu] = useState(false)
     const [isSideMenu, setSideMenu] = useState(false)
@@ -78,6 +78,7 @@ export const AppHeader = () => {
         let flag = !isSideMenu
         setSideMenu(flag)
     }
+    
 
     if (loggedInUser && !loggedInUser.imgUrl) {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
