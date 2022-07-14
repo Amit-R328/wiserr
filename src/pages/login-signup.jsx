@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -26,19 +26,11 @@ export const LoginSignup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-
     const handleGoogleSignUp = async (response) => {
-        console.log(response.credential)
         let userObject = jwt_decode(response.credential)
-        console.log('userObject', userObject)
         dispatch(signUpGoogle(userObject))
-        
         dispatch(getLoggedinUser())
         navigate('/')
-    }
-
-    const handleError = (err) => {
-        console.log(err);
     }
 
     const uploadImg = (ev) => {
@@ -58,7 +50,6 @@ export const LoginSignup = () => {
 
     const handleSubmit = (ev) => {
         try {
-
             ev.preventDefault()
             const data = new FormData(ev.currentTarget)
             const loginInfo = {
@@ -84,28 +75,13 @@ export const LoginSignup = () => {
         }
     }
 
-
-
     const onChangePage = () => {
         setIsLogin(!isLogin)
     }
 
     return (
-        <main className="login-sign-up-container container">
-            <div className="signInDiv">
-                <GoogleOAuthProvider clientId="1014583727450-rbjogeikugg0srpmbmbgkfe4j7d6f5jl.apps.googleusercontent.com">
-                    <div className="App">
-                        <GoogleLogin
-                            onSuccess={(credentialResponse) => {
-                                handleGoogleSignUp(credentialResponse);
-                            }}
-                            onError={() => {
-                                console.log("Login Failed");
-                            }}
-                        />
-                    </div>
-                </GoogleOAuthProvider>
-            </div>
+        <main className="login-sign-up-container container flex flex-column">
+
             <ThemeProvider theme={theme} >
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
@@ -166,6 +142,20 @@ export const LoginSignup = () => {
                             >
                                 {isLogin ? 'Login' : 'Sign in'}
                             </Button>
+                            <div className="signInDiv flex flex-column">
+                                <GoogleOAuthProvider clientId="1014583727450-rbjogeikugg0srpmbmbgkfe4j7d6f5jl.apps.googleusercontent.com">
+                                    <div className="App">
+                                        <GoogleLogin
+                                            onSuccess={(credentialResponse) => {
+                                                handleGoogleSignUp(credentialResponse)
+                                            }}
+                                            onError={() => {
+                                                console.log("Login Failed")
+                                            }}
+                                        />
+                                    </div>
+                                </GoogleOAuthProvider>
+                            </div>
                             <Grid container>
                                 <Grid item>
                                     <NavLink to="/signup" variant="body2" onClick={onChangePage}>

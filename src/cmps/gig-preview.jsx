@@ -29,7 +29,6 @@ export const GigPreview = ({ gig }) => {
     }
 
     const ToggleHeart = (ev, likedBy) => {
-
         ev.stopPropagation()
         if (!loggedInUser) {
             console.log('Need go login')
@@ -79,7 +78,7 @@ export const GigPreview = ({ gig }) => {
                 </div>
 
                 <div className="gig-title">
-                    <p >{gig.title.substr(0, 70)}...</p>
+                    <p>{gig.title.substr(0, 70)}...</p>
                 </div>
                 <div className="gig-rate">
                     {gig.reviews.length ? <div className="avg-rate">{((gig.reviews.reduce((acc, review) => acc + (review.stars), 0)) / gig.reviews.length).toFixed(1)}<p className="rate-reviews-qty">({gig.reviewsQty})</p></div> :
