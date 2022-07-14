@@ -2,7 +2,7 @@
     color: $grey_1000;
     margin-top: 3em;
     max-width: 100%;
-
+    grid-column: 1/-1;
     .testimonial-modal {
         display: flow-root;
 

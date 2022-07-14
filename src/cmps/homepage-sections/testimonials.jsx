@@ -1,6 +1,4 @@
 import React from "react"
-import CustomCursor from 'custom-cursor-react';
-import 'custom-cursor-react/dist/index.css';
 
 export const Testimonials = () => {
 
