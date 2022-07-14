@@ -4,7 +4,7 @@
         color: $grey_1000;
         padding-bottom: rem(96px);
         padding-top: rem(96px);
-
+        grid-column: 1/-1;
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;
@@ -173,7 +173,7 @@
         color: $grey_1000;
         padding-bottom: rem(96px);
         padding-top: rem(96px);
-
+        grid-column: 1/-1;
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;
@@ -347,7 +347,7 @@
         color: $grey_1000;
         padding-bottom: rem(96px);
         padding-top: rem(96px);
-
+        grid-column: 1/-1;
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;

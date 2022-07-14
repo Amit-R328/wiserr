@@ -145,6 +145,20 @@ form.search-bar {
   }
 }
 
+@media (max-width: 600px) {
+  .hero-container {
+    .hero-content-container {
+      .hero-content {
+        .search-hero-homepage {
+          .search-container {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 901px) and (max-width: 1024px) {
   form {
     &.search-bar {  
