@@ -105,7 +105,7 @@ export const AppHeader = () => {
                     </form>
                 </div>
                 <ul className="nav-list clean-list" >
-                    <li>{(pathname === '/seller' || pathname === '/seller/gig' || pathname === 'order/:userId') && loggedInUser ?
+                    <li>{((pathname === '/seller' && loggedInUser) || (pathname === '/seller/gig' && loggedInUser) || (pathname === 'order/:userId' && loggedInUser)) ?
                         <NavLink to="/seller/dashboard" className="seller-nav-link nav-link">Dashboard</NavLink>
                         : <span></span>}</li>
                         <li>{(pathname === '/seller' || pathname === '/seller/gig' || pathname === 'order/:userId') && loggedInUser ?

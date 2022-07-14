@@ -1,98 +1,56 @@
 .testimonials {
     color: $grey_1000;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    gap: 3em;
     margin-top: 3em;
+    max-width: 100%;
 
     .testimonial-modal {
-        color: $grey_1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
+        display: flow-root;
 
-        .testimonial {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            @media only screen and (min-width:900px) {
-                .testimonial {
-                    flex-direction: row;
-                }
-            }
-        }
-    }
-
-    .testimonial-modal {
-        width: 100%;
-
-        @media only screen and (min-width:900px) {
-            .testimonial-modal {
-                width: 50%
-            }
+        .testimonial-img {
+            height: rem(350px);
+            width: rem(250px);
+            background-image: url(https://res.cloudinary.com/dcbbqlssh/image/upload/v1657747182/Elements/good-faces-GlxYra17Ghk-unsplash_ltgle1.jpg);
+            background-size: cover;
+            clip-path: circle(50% at 25% 50%);
+            shape-outside: circle(50% at 25% 50%) border-box;
+            // clip-path: circle(70% at 0% 50%);
+            // shape-outside: circle(70% at 0% 50%) border-box;
+            // margin-top: 50%;
+            shape-margin: 0.8rem;
+            float: left;
         }
 
-        @media only screen and (min-width:1160px) {
-            .testimonial-modal {
-                width: 40%;
-            }
+        h4 {
+            // margin: rem(5px) 0;
+            line-height: rem(20px);
+            // letter-spacing: 0.3px;
+            // word-spacing: 1.5px;
 
-            & img {
-                border-radius: rem(4px);
+            &::first-letter {
+                color: $wiserr_green;
+                font-weight: 700;
+                font-size: rem(24px);
             }
         }
 
-        .text-content {
-            padding: rem(24px) rem(24px) 0;
-            width: 100%;
-
-            @media only screen and (min-width:900px) {
-                .text-content {
-                    padding: 0 rem(36px) 0 rem(16px);
-                    width: 50%;
-                }
-            }
-
-            @media only screen and (min-width:1160px) {
-                .text-content {
-                    padding: 0 em(48px) 0 em(64px);
-                    max-width: em(707px);
-                    width: 60%;
-                }
-            }
+        p {
+            line-height: rem(24px);
+            margin-bottom: rem(10px);
+        }
     }
 }
 
-blockquote {
-    font-size: rem(22px);
-    line-height: rem(36px);
-    color: #003912;
+@media (min-width: 1024px) {
+    .testimonials .testimonial-modal h4 {
+        line-height: rem(28px);
+        // margin-bottom: rem(10px);
+        // margin-top: rem(20px);
 
-    &i {
-        color: #003912;
-        font-family: DomaineDisplay;
-        font-size: rem(30px);
-        font-style: italic;
-        font-weight: 500;
     }
-}
 
-.testimonial-name {
-    color: $grey_900;
-    padding-bottom: rem(16px);
-    font-size: rem(18px);
-    line-height: 140%;
-}
-
-@media (max-width: 425px) {
-    .testimonials {
-        position: relative;
-        // left: 11%;
-        display: flex;
-        flex-direction: column;
+    & p {
+        line-height: rem(28px);
+        margin-bottom: rem(50px);
+        font-size: rem(22px);
     }
 }
