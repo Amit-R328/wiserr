@@ -127,7 +127,7 @@
       }
 
       &.gray {
-        color: black;
+        color: $white;
       }
 
       @include from-normal-layout {
@@ -263,7 +263,6 @@
     }
   }
 }
-
 
 @-webkit-keyframes fade-in {
   0% {
