@@ -58,7 +58,7 @@
 
       }
 
-      &:hover {
+      & :hover {
         color: $wiserr_green;
       }
     }
@@ -98,7 +98,6 @@
     }
   }
 }
-
 
 .top {
   display: flex;
@@ -242,15 +241,6 @@
   }
 }
 
-@media (max-width: 700px) {
-  .top {
-    &.container {
-      // padding-inline-start: unset;
-      // padding-inline-start: rem(10px);
-    }
-  }
-}
-
 @media (max-width: 600px) {
   .nav-list {
     display: none;
@@ -263,6 +253,15 @@
     }
   }
 }
+
+// @media (max-width: 700px) {
+//   .top {
+//     &.container {
+//       // padding-inline-start: unset;
+//       // padding-inline-start: rem(10px);
+//     }
+//   }
+// }
 
 @-webkit-keyframes fade-in {
   0% {

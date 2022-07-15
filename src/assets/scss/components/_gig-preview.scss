@@ -1,5 +1,6 @@
 .gig-preview {
-  max-width: 245px;
+  // max-width: 245px;
+  min-width: 245px;
   aspect-ratio: 1 / 0.6 !important;
   border: 1px solid $grey_500;
 
@@ -19,11 +20,11 @@
           &:first-of-type {
             left: -30px;
             transition: left 0.3s ease-in-out;
-            filter: drop-shadow(0 0 0 $white !important);
+            filter: drop-shadow(0 0 0 $white  !important);
           }
 
           &:nth-of-type(2) {
-          filter: drop-shadow(0 0 0 $white !important);
+            filter: drop-shadow(0 0 0 $white  !important);
             right: -30px;
             transition: right 0.3s ease-in-out;
           }
@@ -42,7 +43,6 @@
         }
 
         &:focus {
-          // a11y support
           outline: none;
         }
       }
@@ -62,7 +62,7 @@
             border-bottom-right-radius: 70px;
             padding: 5px;
             padding-left: 15px;
-            filter: drop-shadow(0 0 0 $white !important);
+            filter: drop-shadow(0 0 0 $white  !important);
           }
         }
 
@@ -78,7 +78,7 @@
             border-bottom-left-radius: 50px;
             padding: 5px;
             padding-right: 15px;
-            filter: drop-shadow(0 0 0 $white !important);
+            filter: drop-shadow(0 0 0 $white  !important);
           }
         }
       }
@@ -93,6 +93,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 10px;
+
     .seller-info {
       display: flex;
       align-items: center;
@@ -101,7 +103,6 @@
       font-weight: 600;
       line-height: rem(18px);
       height: rem(54px);
-      
 
       >img {
         height: 24px;
@@ -121,18 +122,19 @@
       line-height: 20px;
       padding: rem(0px) rem(16px);
       height: rem(54px);
-      
+
       &:hover {
         color: #1dbf73;
       }
     }
-    
+
     .gig-rate {
       border-bottom: 1px solid $grey_400;
       display: flex;
       align-items: center;
       padding: rem(10px) rem(16px);
       margin-top: 10px;
+
       &::before {
         content: "\f005";
         font-size: rem(16px);
@@ -140,13 +142,13 @@
         color: #ffbe5b;
         letter-spacing: rem(5px);
       }
-      
+
       .avg-rate {
         color: #ffbe5b;
         font-weight: 700;
         font-size: rem(16px);
       }
-      
+
       .rate-reviews-qty {
         color: #b5b6ba;
         display: inline-block;
@@ -154,7 +156,7 @@
         letter-spacing: rem(1px);
         font-size: rem(14px);
         font-weight: 400;
-        
+
       }
     }
   }
@@ -178,14 +180,10 @@
       }
 
       &.like {
-
         &::after {
           color: #f74040;
-
         }
-
       }
-
     }
 
     .gig-price {

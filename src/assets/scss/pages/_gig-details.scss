@@ -8,6 +8,7 @@
     top: 27%;
     left: 85%;
 }
+
 .gig-details-container {
     width: 100%;
 
@@ -214,13 +215,13 @@
         .owner-details {
             display: flex;
             align-items: center;
-            font-size: 10px;
-            margin-bottom: 10px;
+            font-size: rem(10px);
+            margin-bottom: rem(10px);
 
             .owner-name {
                 color: $grey_1100;
                 font-weight: 700;
-                font-size: 14px;
+                font-size: rem(14px);
             }
 
             .owner-level {
@@ -764,6 +765,7 @@
         .gig-details {
             flex-direction: column;
         }
+
         .left-container {
             width: unset;
             .breadcrumbs-container {
@@ -773,6 +775,7 @@
                 gap: 11px;
             }
         }
+
         .nav-details-container {
             .details-menu-scroll {
                 .nav-details-sections {

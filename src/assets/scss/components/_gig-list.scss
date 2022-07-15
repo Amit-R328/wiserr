@@ -6,11 +6,8 @@
 
         .gig-list {
             color: $grey_1000;
-            // grid-template-columns: repeat(4, 1fr);
             grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
-
             grid-gap: 12px;
-            // min-height: 370px;
             margin-top: rem(16px);
             display: grid;
             list-style: none;
@@ -18,13 +15,11 @@
     }
 }
 
-
 @media (max-width:600px) {
     .gigs-preview-main-wrapper {
         &.container {
             padding-inline-start: calc((119px + 1.5625vw) / 2);
         }
-        margin: 0 20px 0 10px;
         .list-of-gigs-container {
             .gig-list {
                 grid-template-columns: 1fr;
@@ -32,6 +27,7 @@
         }
     }
 }
+
 @media (max-width: 425px) {
     .gigs-preview-main-wrapper {
         margin: 0 20px 0 10px;
@@ -42,3 +38,4 @@
         }
     }
 }
+

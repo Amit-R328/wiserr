@@ -46,11 +46,11 @@
         // margin-bottom: rem(10px);
         // margin-top: rem(20px);
 
+        & p {
+            line-height: rem(28px);
+            margin-bottom: rem(50px);
+            font-size: rem(22px);
+        }
     }
 
-    & p {
-        line-height: rem(28px);
-        margin-bottom: rem(50px);
-        font-size: rem(22px);
-    }
 }
