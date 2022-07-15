@@ -35,6 +35,7 @@ export const LoginSignup = () => {
         
         dispatch(getLoggedinUser())
         navigate('/')
+        window.location.reload()
     }
 
     const handleError = (err) => {
