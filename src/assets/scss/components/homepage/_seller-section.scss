@@ -528,3 +528,17 @@
         }
     }
 }
+
+@media (max-width: 400px) {
+    .seller-info-container {
+        .seller-container-grid {
+            .seller-text {
+                .explore-seller-container {
+                    a {
+                        font-size: unset;
+                    }
+                }
+            }
+        }
+    }
+}

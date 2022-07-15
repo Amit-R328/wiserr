@@ -82,7 +82,7 @@ form.search-bar {
   }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 380px) {
   form {
     &.search-bar {
       .search-container {
@@ -97,7 +97,7 @@ form.search-bar {
   }
 }
 
-@media (min-width: 351px) and (max-width: 519px) {
+@media (min-width: 381px) and (max-width: 519px) {
   form {
     &.search-bar {
       .search-container {
