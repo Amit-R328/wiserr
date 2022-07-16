@@ -8,6 +8,7 @@ import { ProfileMenu } from './profile-menu.jsx'
 import { NavCategories } from './nav-categories.jsx'
 import { SideMenu } from '../side-menu/side-menu.jsx'
 import { useWindowDimensions } from '../../hooks/useWindowDimensions.jsx'
+import { getLoggedinUser } from '../../store/actions/user.actions.js'
 
 export const AppHeader = () => {
     const params = useParams()
@@ -21,6 +22,12 @@ export const AppHeader = () => {
     const { width } = useWindowDimensions()
     const menuRef = useRef(null)
     const profileRef = useRef(null)
+
+    useEffect(() => {
+        dispatch(getLoggedinUser)
+        console.log('loggedInUser', loggedInUser)
+        
+    },[loggedInUser])
 
     useEffect(() => {
         document.addEventListener("click", handleSideClickOutside)

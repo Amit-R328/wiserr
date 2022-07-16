@@ -26,12 +26,12 @@ export const LoginSignup = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const handleGoogleSignUp = async (response) => {
+    const handleGoogleSignUp = (response) => {
         let userObject = jwt_decode(response.credential)
         dispatch(signUpGoogle(userObject))
         dispatch(getLoggedinUser())
         navigate('/')
-        window.location.reload()
+        window.location.reload(true)
     }
 
     const uploadImg = (ev) => {
@@ -59,9 +59,7 @@ export const LoginSignup = () => {
             }
             if (isLogin) {
                 dispatch(login(loginInfo))
-                console.log('1')
                 dispatch(getLoggedinUser())
-                console.log('2')
                 navigate('/')
             } else {
                 loginInfo.fullname = data.get('fullname')
