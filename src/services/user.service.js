@@ -87,7 +87,6 @@ async function signUpGoogle(user) {
     }
     let userAdded = await httpService.post('auth/google', userToAdd)
     _handleLogin(userAdded)
-    console.log('userAdded', userAdded)
     return userAdded
 }
 

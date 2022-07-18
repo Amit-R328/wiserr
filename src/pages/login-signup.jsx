@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { useNavigate, NavLink } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { cloudinaryService } from '../services/cloudinary.service.js'
 import { login, signup, getLoggedinUser, signUpGoogle } from '../store/actions/user.actions.js'
 import { showErrorMsg } from '../services/event-bus.service.js'
@@ -19,6 +19,7 @@ import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
 import jwt_decode from 'jwt-decode'
 
 export const LoginSignup = () => {
+    let { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [isImg, setIsImg] = useState(false)
     const [imgUrl, setImgUrl] = useState('')
     const [isLogin, setIsLogin] = useState(true)
@@ -30,8 +31,9 @@ export const LoginSignup = () => {
         let userObject = jwt_decode(response.credential)
         dispatch(signUpGoogle(userObject))
         dispatch(getLoggedinUser())
+        console.log(loggedInUser)
         navigate('/')
-        window.location.reload(true)
+        // window.location.reload(true)
     }
 
     const uploadImg = (ev) => {
