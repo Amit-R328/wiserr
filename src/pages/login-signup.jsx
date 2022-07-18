@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import CssBaseline from '@mui/material/CssBaseline'
@@ -26,6 +26,10 @@ export const LoginSignup = () => {
     const theme = createTheme()
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(getLoggedinUser)
+    })
 
     const handleGoogleSignUp = (response) => {
         let userObject = jwt_decode(response.credential)
