@@ -30,10 +30,10 @@ export const LoginSignup = () => {
     const handleGoogleSignUp = (response) => {
         let userObject = jwt_decode(response.credential)
         dispatch(signUpGoogle(userObject))
-        dispatch(getLoggedinUser())
         console.log(loggedInUser)
         navigate('/')
-        // window.location.reload(true)
+        window.location.reload(true)
+        dispatch(getLoggedinUser())
     }
 
     const uploadImg = (ev) => {
