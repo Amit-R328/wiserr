@@ -23,6 +23,10 @@ export const AppHeader = () => {
     const menuRef = useRef(null)
     const profileRef = useRef(null)
 
+    useEffect(() => {
+        dispatch(getLoggedinUser)
+        
+    },[loggedInUser])
 
     useEffect(() => {
         document.addEventListener("click", handleSideClickOutside)

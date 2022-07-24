@@ -16,28 +16,33 @@ import { login, signup, getLoggedinUser, signUpGoogle } from '../store/actions/u
 import { showErrorMsg } from '../services/event-bus.service.js'
 import { UserMsg } from '../cmps/user-msg.jsx'
 import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
+import { Loader } from '../cmps/loader.jsx'
 import jwt_decode from 'jwt-decode'
+
 
 export const LoginSignup = () => {
     let { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [isImg, setIsImg] = useState(false)
     const [imgUrl, setImgUrl] = useState('')
     const [isLogin, setIsLogin] = useState(true)
+    const [loader, setLoader] = useState(false)
     const theme = createTheme()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
     useEffect(()=>{
-        dispatch(getLoggedinUser)
-    })
+        dispatch(getLoggedinUser())
+    },[loggedInUser])
 
     const handleGoogleSignUp = (response) => {
         let userObject = jwt_decode(response.credential)
         dispatch(signUpGoogle(userObject))
-        console.log(loggedInUser)
-        navigate('/')
-        window.location.reload(true)
-        dispatch(getLoggedinUser())
+        setTimeout(() => {
+            setLoader(true)
+        }, 3000)
+        setTimeout(() => {
+            navigate('/')
+        },4000)
     }
 
     const uploadImg = (ev) => {
@@ -86,7 +91,7 @@ export const LoginSignup = () => {
 
     return (
         <main className="login-sign-up-container container flex flex-column">
-
+            {loader && <Loader />}
             <ThemeProvider theme={theme} >
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
