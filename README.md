@@ -68,7 +68,8 @@ A number of components of the code have been refactored. Utilizing map methods t
 
 ## Screenshots
 
-![App Screenshot](https://res.cloudinary.com/dcbbqlssh/image/upload/v1657565609/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2022-07-11_215033_kyho8n.png)
+![App Screenshot](https://res.cloudinary.com/dcbbqlssh/image/upload/v1658752267/readme/smartmockups_l60q8e4v_ugect0.png)
+![App Screenshot](https://res.cloudinary.com/dcbbqlssh/image/upload/v1658743740/readme/smartmockups_l60l1rxi_w0ulci.png)
 
 
 ## Run Locally
