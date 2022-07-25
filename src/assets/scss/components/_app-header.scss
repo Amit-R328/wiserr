@@ -224,7 +224,8 @@
   background-color: rgb(227, 114, 114);
 }
 
-@media (max-width:425px) {
+@media (min-width: 300px) and (max-width: 425px) {
+  
   .header {
     background-color: #fff;
   }
