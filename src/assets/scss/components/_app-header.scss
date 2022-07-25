@@ -86,6 +86,7 @@
               fill: $grey_1100;
             }
           }
+
           &.gray {
             svg {
               path:nth-child(1) {
@@ -237,24 +238,42 @@
           }
         }
       }
+
+      .side-menu {
+        .hamburger-icon {
+          &.gray {
+            color: $grey_1000;
+          }
+        }
+      }
     }
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
   .nav-list {
     display: none;
   }
 
   .top {
-    &.container {
-      // padding-inline-start: unset;
-      padding-inline-start: rem(10px);
+    .logo-search-container {
+      .hamburger-icon {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: $white;
+        cursor: pointer;
+
+        &.gray {
+          color: $white;
+        }
+
+      }
     }
   }
 }
 
-// @media (max-width: 700px) {
+// @media (max-width: 750px) {
 //   .top {
 //     &.container {
 //       // padding-inline-start: unset;
