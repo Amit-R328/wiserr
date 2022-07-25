@@ -74,14 +74,18 @@ A number of components of the code have been refactored. Utilizing map methods t
 
 ## Run Locally
 
-Clone the project
+Clone the project - Frontend
 
 ```bash
-  //Frontend
   git clone https://github.com/Amit-R328/wiserr.git
-  //Backend
+```
+
+Clone the project - Backend
+
+```bash
   git clone https://github.com/SharonBello/Wiserr-Backend.git
 ```
+
 
 Go to the project directory
 
