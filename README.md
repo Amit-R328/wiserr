@@ -1,5 +1,5 @@
 
-# Wiserr
+# Wiserr-Frontend
 
 Mock Fiverr web app built with REST API MERN that is used as an e-commerce platform for freelancers and companies to sell their services through gigs. You can list your offer or apply for small one-off jobs, or gigs, online. The app contains a diverse range of jobs, ranging from graphic design services to business solutions. 
 Link to backend repo: https://github.com/SharonBello/Wiserr-Backend
