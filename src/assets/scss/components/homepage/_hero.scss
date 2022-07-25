@@ -75,8 +75,6 @@
         margin-top: rem(30px);
         margin-bottom: rem(13px);
         position: relative;
-
-
     }
 
     svg {
@@ -88,13 +86,11 @@
         color: gray;
     }
 
-
-
     .search-hero-btn {
         border: none;
         background-color: $wiserr_green;
         color: white;
-        border-radius: 6px 4px 4px 6px;
+        border-radius: 0 4px 4px 0;
         font-size: rem(16px);
         position: relative;
         margin-top: 10px;
@@ -164,7 +160,6 @@
     }
 }
 
-
 @media (max-width: 900px) {
     .hero-pic {
         display: none;
@@ -223,16 +218,40 @@
     }
 }
 
-@media (max-width:700px) {
+@media (min-width: 601px) and (max-width:700px) {
     .hero-container {
+        height: rem(400px);
         .hero-content-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
             .hero-content {
                 position: relative;
                 display: flex;
                 flex-direction: column;
-                align-items: center;
-                font-size: rem(30px);
+                // align-items: stretch;
+                // align-items: center;
+                margin-top: rem(20px);
+                max-width: rem(650px);
+                
+                & h1 {
+                    font-size: rem(30px);
+                    margin-block-start: unset;
+                    margin-block-end: unset;
+                }
+
+                .search-hero-homepage {
+                    letter-spacing: unset;
+                    .search-container {
+                        transform: unset;
+                        .search-input {
+                            max-width: rem(400px);
+                        }
+                    }
+                }
             }
+
         }
     }
 }
@@ -284,33 +303,29 @@
     }
 }
 
-// @media (max-width: 450px) {
-//     .hero {
-//         // width: 151%;
-//     }
-// }
-
 @media (max-width: 400px) {
     .hero-container {
         .search-hero {
             max-width: 300px;
         }
     }
+    
 
     .hero-content {
         &.container {
-            padding-inline-start: unset;
-            padding-inline-end: unset;
+            padding-inline-start: rem(10px);
+            padding-inline-end: rem(10px);
         }
 
         h1 {
-            font-size: rem(16px);
-            width: 300px
+            word-break: break-word;
+            font-size: rem(18px);
+            // max-width: 300px;
         }
     }
 }
 
-@media (min-width: 900px){
+@media (min-width: 900px) {
     .hero-container {
         .hero-content-container {
             .hero-content {
@@ -329,6 +344,6 @@
         .search-hero-btn {
             padding: 15px 24px 14px;
         }
-        
+
     }
 }

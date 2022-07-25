@@ -228,6 +228,11 @@
   
   .header {
     background-color: #fff;
+
+    & .container {
+      padding-inline-start: rem(10px);
+      padding-inline-end: unset;
+    }
   }
 
   .top {
