@@ -77,7 +77,10 @@ A number of components of the code have been refactored. Utilizing map methods t
 Clone the project
 
 ```bash
+  //Frontend
   git clone https://github.com/Amit-R328/wiserr.git
+  //Backend
+  git clone https://github.com/SharonBello/Wiserr-Backend.git
 ```
 
 Go to the project directory
