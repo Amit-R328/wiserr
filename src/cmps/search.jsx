@@ -26,14 +26,12 @@ export const Search = ({ loc }) => {
 
     return (
         <div className="search-container">
-            <label>
                 {/* <AiOutlineSearch className="search-icon" /> */}
                 <input type="search"
                     className={`search-input ${(loc === 'heroCarousel') ? 'search-hero' : 'search-header'}`}
                     ref={inputRef}
                     onChange={handleChange}
                     placeholder={`${(loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'}`} />
-            </label>
             <button className={`${(loc === 'heroCarousel') ? 'search-hero-btn' : 'search-header-btn'}`} onClick={onSearch}>Search</button>
         </div>
     )

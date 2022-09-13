@@ -1,9 +1,11 @@
-.icon-categories {
+.icon-categories-container {
+    width: 100%;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    align-items: center;
+    justify-content: center;
+    line-height: calc(1.1em + 0.5vw);
     color: $grey_1000;
-    line-height: rem(24px);
-    margin-top: rem(96px);
-    margin-bottom: rem(96px);
-    // padding: 0;
 
     h2 {
         color: $grey_1100;
@@ -13,43 +15,38 @@
         // margin: 0 0 rem(40px);
         padding-bottom: rem(24px);
         outline: 0;
+        text-align: center;
     }
 
     ul.icon-categories-list {
         display: flex;
         flex-wrap: wrap;
-        line-height: rem(34px);
+        line-height: calc(1.1em + 1vw);
         list-style: none;
-        font-size: rem(16px);
+        font-size: calc(16px + 1vw);
         margin-top: rem(24px);
-
-        // display: grid;
-        // grid-template-columns: repeat(3, auto-fit, minmax(50px, 100px));
-        grid-template-columns: repeat(7, 180px);
-        // grid-template-rows: 100px 100px;
-        grid-column-gap: 20px;
-        // grid-row-gap: 20px;
+        max-width: 100%;
+        gap: 10px;
         justify-content: center;
-        align-items: center;
-        grid-template-areas:
-            "icon-all graphic-icon marketing-icon writing-icon video-icon business-icon lifestyle";
+        align-items: baseline;
 
+        @media (min-width: 1200px) {
+            flex-wrap: unset;
+            gap: unset;
+        }
 
-        li {
+        & li {
             list-style: none;
             margin: 0;
             outline: 0;
-            // padding: 0 10px 55px;
-            text-align: center;
-
-            // a {
-            //     list-style: none;
-            //     position: relative;
-            //     text-align: center;
-            //     text-decoration: none;
+            max-width: 180px;
 
             button {
                 display: inline-block;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
                 transition: color .2s;
                 position: relative;
                 text-align: center;
@@ -61,7 +58,6 @@
                 background-color: $white;
                 outline: none;
                 border: none;
-
 
 
                 &:after {
@@ -89,82 +85,12 @@
                     margin: 0 em(36px) rem(15px);
                     width: rem(60px);
                 }
+
+                & p {
+                    font-size: calc(14px + 0.5vw);
+                }
             }
         }
     }
-}
 
-@media only screen and (min-width:600px) {
-    .categories-list li {
-        padding-bottom: em(55px);
-        width: 33.33%
-    }
-
-    &:nth-child(n+7) {
-        padding-bottom: 0
-    }
-
-    h2 {
-        text-align: center;
-    }
-}
-
-@media only screen and (min-width:900px) {
-    .categories-list li {
-        width: 19.3%;
-    }
-
-    .categories-list li:nth-child(n+5) {
-        padding-bottom: 0
-    }
-}
-
-@media (max-width:425px) {
-    .icon-categories ul.icon-categories-list {
-        max-width: 410px;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    h2 {
-        text-align: center;
-    }
-
-    .marketplace-title {
-        position: relative;
-        // left: 11%;
-    }
-}
-
-@media (max-width:744px) {
-    .icon-categories ul.icon-categories-list {
-        display: flex;
-        flex-direction: row;
-        max-width: 735px;
-        flex-wrap: wrap;
-    }
-
-    h2 {
-        text-align: center;
-    }
-}
-
-@media (max-width:1024px) {
-    .icon-categories ul.icon-categories-list {
-        display: flex;
-        max-width: 1000px;
-        flex-wrap: wrap;
-    }
-
-}
-
-@media (min-width:1025px) {
-    .icon-categories ul.icon-categories-list {
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    h2 {
-        text-align: left;
-    }
 }

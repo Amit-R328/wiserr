@@ -25,7 +25,6 @@ export const GigDetailsHeader = ({gig}) => {
         }
     ]
 
-
     const onScroll = (el) => {
         const section = document.querySelector(el)
         section.scrollIntoView({ behavior: 'smooth', block: 'start' })

@@ -62,17 +62,19 @@ export const IconCategories = () => {
     }
 
     return (
-        <div className="icon-categories">
+        <>
+        {/* <div className="icon-categories flex flex-column"> */}
             <h2 className="marketplace-title">Explore the marketplace</h2>
             <ul className="icon-categories-list">
                 {iconDetails.map(category =>
                     <li key={category.elementName}>
                         <button onClick={() => onChangeCategory(`${category.elementName}`)} className={category.className}>
-                            {category.icon} {category.caption}
+                            {category.icon} <p>{category.caption}</p>
                         </button>
                     </li>
                 )}
             </ul>
-        </div>
+        {/* </div> */}
+                </>
     )
 }

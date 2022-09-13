@@ -23,7 +23,7 @@ export function HeroCarousel(props) {
   }, [])
 
   return (
-    <div className="hero-container">
+    <div className="hero-container container">
       <div className="background-images">
         <div className={`background ${backClass1}`}>
           <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/RitikaN_ykznwx.jpg" alt="Ritika" />
@@ -42,9 +42,9 @@ export function HeroCarousel(props) {
         </div>
       </div>
       <div className="hero-content-container">
-        <div className="hero-content container">
-          <h1>Find the perfect <i>freelance</i>
-            <br />services for your business</h1>
+        {/* <div className="hero-content"> */}
+          <h1><span>Find the perfect <i>freelance </i>
+           services for your business</span></h1>
           <div className="search-hero-homepage">
             <Search loc={'heroCarousel'} />
             <div className="hero-popular-category flex clean list">
@@ -54,7 +54,7 @@ export function HeroCarousel(props) {
           </div>
         </div>
       </div>
-    </div >
+    // </div >
   )
 }
 

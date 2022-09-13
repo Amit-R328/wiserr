@@ -51,7 +51,6 @@ export const GigDetails = () => {
         calcMemberSince()
     }
 
-
     const onConfirmOrder = async (ev, gigId) => {
         if (!loggedInUser) {
             navigate('/login')
@@ -72,8 +71,6 @@ export const GigDetails = () => {
         await dispatch(updateGig(gig))
     }
     
-
-
     const calcMemberSince = () => {
         if (orders.length) {
             let orderCreatedDate = orders[orders.length - 1].createdAt

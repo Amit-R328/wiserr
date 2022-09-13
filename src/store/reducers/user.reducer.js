@@ -1,6 +1,5 @@
 import { userService } from '../../services/user.service.js'
 
-
 const initialState = {
     count: 10,
     loggedInUser: userService.getLoggedinUser() || null,
@@ -33,5 +32,4 @@ export function userReducer(state = initialState, action) {
     // window.userState = newState
     // console.log('State:', newState)
     return newState
-
 }

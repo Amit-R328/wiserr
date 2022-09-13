@@ -89,7 +89,6 @@ export const AppHeader = () => {
     if (loggedInUser && !loggedInUser.imgUrl) {
         loggedInUser.imgUrl = "https://monstar-lab.com/global/wp-content/uploads/sites/11/2019/04/male-placeholder-image.jpeg"
     }
-
     
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
