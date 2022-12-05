@@ -46,7 +46,6 @@
     }
   }
 
-
   &.scrolled {
     background-color: $white;
 
@@ -55,7 +54,6 @@
 
       &.seller-nav-link {
         color: $wiserr_business;
-
       }
 
       & :hover {
@@ -65,6 +63,12 @@
 
     .top {
       margin: 0;
+      justify-content: unset;
+      flex: 1;
+
+      & .nav-list {
+        margin-left: auto;
+      }
 
       & a {
         color: $grey_900;
@@ -80,6 +84,9 @@
 
 
       .logo-search-container {
+        width: 100%;
+        flex: 1;
+
         .logo {
           svg {
             path:nth-child(1) {
@@ -95,6 +102,23 @@
             }
           }
         }
+
+        .search-bar {
+          min-width: 100%;
+
+
+          .search-container {
+            max-width: 80%;
+            display: flex;
+            flex: 1;
+
+            .search-input {
+              margin-inline: 24px 0
+            }
+          }
+        }
+
+
       }
     }
   }
@@ -160,14 +184,6 @@
   color: $grey_900;
 }
 
-@include from-mobile-layout {
-  ul {
-    &.nav-list {
-      display: none;
-    }
-  }
-}
-
 @include from-tablet-layout {
   ul {
     &.nav-list {
@@ -224,20 +240,45 @@
   background-color: rgb(227, 114, 114);
 }
 
-@media (min-width: 300px) and (max-width: 425px) {
-  
+@media (min-width: 300px) and (max-width: 600px) {
   .header {
     background-color: #fff;
 
-    & .container {
-      padding-inline-start: rem(10px);
-      padding-inline-end: unset;
+    // & .container {
+    //   padding-inline: rem(10px);
+    // }
+  }
+
+  .nav-list {
+    margin-left: auto;
+
+    li {
+      &:not(:nth-of-type(6)) {
+        display: none;
+      }
+
+      & a {
+        color: $grey_900;
+        font-size: calc(1rem + 0.8vw);
+
+        &:hover {
+          color: $wiserr_green;
+        }
+      }
     }
   }
 
   .top {
+    flex: 1;
+    width: 100%;
+
     .logo-search-container {
+      flex: 1;
+      justify-content: center;
+
       .logo {
+        margin: 0 auto;
+
         svg {
           path:nth-child(1) {
             fill: $grey_1000;
@@ -245,7 +286,13 @@
         }
       }
 
+      .search-bar {
+        display: none;
+      }
+
       .side-menu {
+        margin-right: auto;
+
         .hamburger-icon {
           &.gray {
             color: $grey_1000;
@@ -256,13 +303,28 @@
   }
 }
 
-@media (max-width: 750px) {
+@media (min-width: 601px) and (max-width: 910px) {
   .nav-list {
-    display: none;
+    li {
+      &:not(:nth-of-type(6)) {
+        display: none;
+      }
+
+      & a {
+        color: white;
+        font-size: calc(1rem + 0.8vw);
+
+        &:hover {
+          color: $wiserr_green;
+        }
+      }
+    }
   }
 
   .top {
     .logo-search-container {
+      flex: 1;
+
       .hamburger-icon {
         background-color: transparent;
         outline: none;
@@ -271,22 +333,13 @@
         cursor: pointer;
 
         &.gray {
-          color: $white;
+          color: $grey_900;
         }
 
       }
     }
   }
 }
-
-// @media (max-width: 750px) {
-//   .top {
-//     &.container {
-//       // padding-inline-start: unset;
-//       // padding-inline-start: rem(10px);
-//     }
-//   }
-// }
 
 @-webkit-keyframes fade-in {
   0% {

@@ -1,18 +1,7 @@
-import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { getActionRemoveGig, getActionAddGig } from '../store/actions/gig.actions.js'
 import { utilService } from './util.service.js'
 
-const BASE_URL =
-    process.env.NODE_ENV === 'production'
-        ? '/api/gig/'
-        : 'http://localhost:3030/api/gig/'
-
-let axios = Axios.create({
-    withCredentials: true,
-})
-
-const STORAGE_KEY = 'gig'
 const PAGE_SIZE = 32
 const gigChannel = new BroadcastChannel('gigChannel')
 
@@ -39,7 +28,6 @@ function getPopularCategories() {
 }
 
 function getById(gigId) {
-    // return storageService.get(STORAGE_KEY, gigId)
     let gig = httpService.get(`gig/${gigId}`)
     return gig
 }
@@ -48,8 +36,6 @@ async function query(filterBy = {}) {
     const { txt = '', priceMin = 0, priceMax = Infinity, deliveryDate = 0, category = '', sortBy = 'title', userId = '' } = filterBy
     const url = `?txt=${txt}&priceMin=${priceMin}&priceMax=${priceMax}&deliveryDate=${deliveryDate}&category=${category}&userId=${userId}&sortBy=${sortBy}`
     const urlToRequest = 'gig' + url
-    // console.log('urlToRequest', urlToRequest)
-    // let gigs = await storageService.query(STORAGE_KEY)
     let gigs = httpService.get(urlToRequest)
     return gigs
 }
@@ -99,7 +85,6 @@ async function getNumOfPages() {
     const gigs = await query()
     const gigsQty = gigs.data.length / PAGE_SIZE
     return gigsQty
-    // return JSON.parse(localStorage.getItem(STORAGE_KEY)).length / PAGE_SIZE
 }
 
 function subscribe(listener) {

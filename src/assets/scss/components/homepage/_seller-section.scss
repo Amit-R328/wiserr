@@ -1,10 +1,11 @@
-@media (max-width: 649px) {
+@media (min-width: 320px) and (max-width: 649px) {
     .seller-info-container {
         background-color: #0d084d;
         color: $grey_1000;
         padding-bottom: rem(96px);
         padding-top: rem(96px);
         grid-column: 1/-1;
+
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;
@@ -89,25 +90,28 @@
                     margin-bottom: rem(80px);
                     display: flex;
                     flex-direction: column;
+                    // align-items: center;
                     justify-content: space-evenly;
                     gap: rem(20px);
+                    padding-inline: 2rem;
 
                     li {
                         position: relative;
 
                         h6 {
                             display: flex;
+                            flex-direction: column;
                             align-items: center;
-                            font-size: rem(14px);
+                            gap: rem(10px);
+                            font-size: calc(1rem + 0.8vw);
                             font-weight: 300;
-                            text-align: left;
+                            text-align: center;
                             line-height: rem(24px);
-
 
                             .check-icon {
                                 margin: 0;
                                 padding: 0;
-                                margin-right: rem(20px);
+                                // margin-right: rem(20px);
 
                                 & svg {
                                     fill: $white;
@@ -174,6 +178,7 @@
         padding-bottom: rem(96px);
         padding-top: rem(96px);
         grid-column: 1/-1;
+
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;
@@ -348,6 +353,7 @@
         padding-bottom: rem(96px);
         padding-top: rem(96px);
         grid-column: 1/-1;
+
         .wiserr-seller-logo {
             display: flex;
             flex-direction: row;

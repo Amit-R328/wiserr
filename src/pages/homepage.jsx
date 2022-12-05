@@ -24,8 +24,7 @@ export const HomePage = () => {
             }
                 <div className="gig-slider-container container">
                     <h2 className="professional-services">Popular professional services</h2>
-                    {/* {(width <= 650) ? <CategoriesSliderMobile /> : <CategoriesCarousel />} */}
-                    <CategoriesSliderMobile /> 
+                    {(width <= 600) ? <CategoriesSliderMobile /> : <CategoriesCarousel />}
                 </div>
                 <SellingPoint />
                 <div className="icon-categories-container container flex flex-column">

@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react"
 import { setFilter, loadGigs } from '../store/actions/gig.actions.js'
 import { useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { AiOutlineSearch } from 'react-icons/ai'
 
 export const Search = ({ loc }) => {
     const [searchTerm, setSearchTerm] = useState('')
@@ -26,13 +25,12 @@ export const Search = ({ loc }) => {
 
     return (
         <div className="search-container">
-                {/* <AiOutlineSearch className="search-icon" /> */}
                 <input type="search"
                     className={`search-input ${(loc === 'heroCarousel') ? 'search-hero' : 'search-header'}`}
                     ref={inputRef}
                     onChange={handleChange}
                     placeholder={`${(loc === 'heroCarousel') ? 'Try "animated whiteboard"' : 'Find services'}`} />
-            <button className={`${(loc === 'heroCarousel') ? 'search-hero-btn' : 'search-header-btn'}`} onClick={onSearch}>Search</button>
+                <button className={`${(loc === 'heroCarousel') ? 'search-hero-btn' : 'search-header-btn'}`} onClick={onSearch}>Search</button>
         </div>
     )
 }

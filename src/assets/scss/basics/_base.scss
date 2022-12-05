@@ -3,7 +3,7 @@
 }
 
 html {
-    // scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,7 +12,11 @@ body {
     margin: 0;
     text-rendering: optimizeSpeed;
     font-family: roboto;
-    // overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: calc(15px + 0.398625vw);
+
 }
 
 img {

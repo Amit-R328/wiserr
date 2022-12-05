@@ -1,6 +1,5 @@
 .gig-slider-container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-block: 3rem;
     cursor: default;
     min-width: 100%;
 
@@ -12,6 +11,10 @@
         line-height: calc(2rem + 1.2vh);
         font-weight: 700;
         letter-spacing: rem(1.3px);
+
+        @media (max-width: 650px) {
+            text-align: center;
+        }
     }
 
     .slider-container {
@@ -73,7 +76,7 @@
         color: $white;
         padding: rem(16px);
         cursor: pointer;
-        
+
         & span {
             line-height: rem(32px);
             font-size: calc(14px + 0.8vh);
@@ -81,7 +84,7 @@
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
         }
-        
+
         & small {
             line-height: rem(20px);
             font-size: calc(14px + 0.4vh);

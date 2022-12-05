@@ -1,11 +1,6 @@
 import { storageService } from './async-storage.service'
-import { userService } from './user.service'
-import { socketService, SOCKET_EVENT_REVIEW_ADDED, SOCKET_EVENT_REVIEW_ABOUT_YOU } from './socket.service'
-import { getActionRemoveReview, getActionAddReview } from '../store/actions/review.actions.js'
-import { store } from '../store/root.reducer.js'
-import { showSuccessMsg } from '../services/event-bus.service'
+import { getActionRemoveReview } from '../store/actions/review.actions.js'
 import { utilService } from './util.service.js'
-import { Content } from 'antd/lib/layout/layout'
 import { httpService } from './http.service.js'
 
 const reviewChannel = new BroadcastChannel('reviewChannel')
@@ -31,7 +26,7 @@ export const reviewService = {
 }
 
 function query(filterBy) {
-  let queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+  // let queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
   // return httpService.get(`review${queryStr}`)
   let gigs = storageService.query(STORAGE_KEY)
   gigs = gigs.filter(gig => gig._id === filterBy)

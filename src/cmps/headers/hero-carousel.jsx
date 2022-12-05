@@ -21,27 +21,28 @@ export function HeroCarousel(props) {
       clearInterval(intervalId)
     }
   }, [])
+  
 
   return (
-    <div className="hero-container container">
+    <div className="hero-container">
       <div className="background-images">
         <div className={`background ${backClass1}`}>
-          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/RitikaN_ykznwx.jpg" alt="Ritika" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654585579/Ritika_zdosbl.jpg" alt="Ritika"/>
         </div>
         <div className={`background ${backClass2}`}>
-          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/AndreaZ_jatehm.jpg" alt="Andrea" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654585522/Andrea_szdqep.jpg" alt="Andrea" />
         </div>
         <div className={`background ${backClass3}`}>
-          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/GabrielleN_svkqno.jpg" alt="Gabrielle" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654585599/Gabrielle_pethai.jpg" alt="Gabrielle" />
         </div>
         <div className={`background ${backClass4}`}>
-          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/moonZ_qqzcge.jpg" alt="moon" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654585578/moon_vhu1wb.jpg" alt="moon" />
         </div>
         <div className={`background ${backClass5}`}>
-          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654545573/hero/ZachN_m3pq3u.jpg" alt="Zach" />
+          <img className='hero-pic' src="https://res.cloudinary.com/dcbbqlssh/image/upload/v1654585590/Zach_jxghyr.jpg" alt="Zach" />
         </div>
       </div>
-      <div className="hero-content-container">
+      <div className="hero-content-container container">
         {/* <div className="hero-content"> */}
           <h1><span>Find the perfect <i>freelance </i>
            services for your business</span></h1>

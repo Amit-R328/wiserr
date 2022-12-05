@@ -160,10 +160,10 @@ class _AddGigDetails extends React.Component {
                                     currentStep={currentStep}
                                     handleChange={this.handleChange}
                                 />
-                                <div className="buttons-container flex">
-                                    <button className="add-gig-btn">{this.previousButton()}</button>
-                                    <button className="add-gig-btn">{this.nextButton()}</button>
-                                </div>
+                                <ul className="buttons-container flex clean-list">
+                                    <li className="add-gig-btn">{this.previousButton()}</li>
+                                    <li className="add-gig-btn">{this.nextButton()}</li>
+                                </ul>
                             </form>
                         </section>
                     </div>

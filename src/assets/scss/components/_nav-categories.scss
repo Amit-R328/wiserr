@@ -7,26 +7,8 @@
 //     background-color: $white;
 //     z-index: 50;
 // }
-@media (max-width: 1023px) {
-    .categories-menu-scroll {
-        display: none;
 
-        ul {
-            display: none;
-
-            & li {
-                display: none;
-            }
-
-            & button {
-                display: none;
-            }
-        }
-    }
-}
-
-
-@media (min-width: 1024px) {
+@media (min-width: 911px) {
     .categories-menu-scroll {
         visibility: visible;
         width: 100%;

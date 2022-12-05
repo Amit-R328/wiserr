@@ -176,13 +176,13 @@
                 .buttons-container {
                     justify-content: flex-end;
 
-                    & button.add-gig-btn {
+                    & .add-gig-btn {
                         outline: none;
                         border: none;
                         background-color: transparent;
                         position: relative;
                         margin-right: 0;
-                        float: right;
+                        // float: right;
                         padding: 0;
                         margin-left: rem(20px);
                     }

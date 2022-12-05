@@ -1,10 +1,7 @@
-import { userService } from '../../services/user.service.js'
-
 const initialState = {
-    count: 10,
-    loggedInUser: userService.getLoggedinUser() || null,
+    // loggedInUser: userService.getLoggedinUser() || null,
+    loggedInUser: null,
     users: [],
-    watchedUser: null,
 }
 
 export function userReducer(state = initialState, action) {

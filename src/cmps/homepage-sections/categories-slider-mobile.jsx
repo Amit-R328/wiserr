@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export const CategoriesSliderMobile = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0)
     let slides = [
         {
             elementName: 'Graphics & Design',
@@ -37,65 +37,66 @@ export const CategoriesSliderMobile = () => {
 
     const slideStyles = {
         width: "100%",
-        height: "345px",
-        aspectRatio: "1 / 0.72",
+        minHeight: "355px",
+        aspectRatio: "1 / 1.3",
         borderRadius: "4px",
         backgroundSize: "cover",
-        backgroundPosition: "75% 50%",
-        color: "white",
-    };
+        backgroundPosition: "50% 50%",
+        color: "white"
+    }
 
     const rightArrowStyles = {
         position: "absolute",
-        top: "45%",
-        transform: "translate(0, -50%)",
+        top: "40%",
+        transform: "translate(0, -40%)",
         right: "30px",
         fontSize: "40px",
         color: "#fff",
         zIndex: 1,
         cursor: "pointer",
-    };
+    }
 
     const leftArrowStyles = {
         position: "absolute",
-        top: "45%",
-        transform: "translate(0, -50%)",
+        top: "40%",
+        transform: "translate(0, -40%)",
         left: "30px",
         fontSize: "40px",
         color: "#fff",
         zIndex: 1,
         cursor: "pointer",
-    };
+    }
 
     const sliderStyles = {
         position: "relative",
         height: "100%",
-    };
+    }
 
-    // const dotsContainerStyles = {
-    //     display: "flex",
-    //     justifyContent: "center",
-    // };
+    const dotsContainerStyles = {
+        display: "flex",
+        justifyContent: "center",
+    }
 
-    // const dotStyle = {
-    //     margin: "0 3px",
-    //     cursor: "pointer",
-    //     fontSize: "20px",
-    // };
+    const dotStyle = {
+        margin: "0 3px",
+        cursor: "pointer",
+        fontSize: "20px",
+    }
 
     const goToPrevious = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-        setCurrentIndex(newIndex);
-    };
+        const isFirstSlide = currentIndex === 0
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1
+        setCurrentIndex(newIndex)
+    }
     const goToNext = () => {
-        const isLastSlide = currentIndex === slides.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    };
-    // const goToSlide = (slideIndex) => {
-    //     setCurrentIndex(slideIndex);
-    // };
+        const isLastSlide = currentIndex === slides.length - 1
+        const newIndex = isLastSlide ? 0 : currentIndex + 1
+        setCurrentIndex(newIndex)
+    }
+
+    const goToSlide = (slideIndex) => {
+        setCurrentIndex(slideIndex)
+    }
 
     const slideWithBackgroundImg = {
         ...slideStyles,
@@ -103,23 +104,21 @@ export const CategoriesSliderMobile = () => {
     }
 
     return (
-        <div style={sliderStyles}>
-            <div>
-                <div onClick={goToPrevious} style={leftArrowStyles}>
-                    ❰
-                </div>
-                <div onClick={goToNext} style={rightArrowStyles}>
-                    ❱
-                </div>
+        <div style={sliderStyles} className="container">
+            <div onClick={goToPrevious} style={leftArrowStyles}>
+                ❰
+            </div>
+            <div onClick={goToNext} style={rightArrowStyles}>
+                ❱
             </div>
             <div style={slideWithBackgroundImg}>
                 <h4 className="category-legends">
                     <small>{slides[currentIndex].legends}</small>
-                    <br/>
+                    <br />
                     <span>{slides[currentIndex].title}</span>
                 </h4>
             </div>
-            {/* <div style={dotsContainerStyles}>
+            <div style={dotsContainerStyles}>
                 {slides.map((slide, slideIndex) => (
                     <div
                         style={dotStyle}
@@ -129,7 +128,7 @@ export const CategoriesSliderMobile = () => {
                         ●
                     </div>
                 ))}
-            </div> */}
+            </div>
         </div>
-    );
+    )
 }

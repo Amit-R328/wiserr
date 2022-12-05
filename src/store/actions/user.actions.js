@@ -19,8 +19,8 @@ export function loadUsers() {
 export function googleLogin(googleUser) {
     return async (dispatch) => {
         try {
-            var loggedGoogleUser = await userService.getGoogleUser(googleUser);
-            const action = { type: "SET_USER", user: loggedGoogleUser };
+            var loggedGoogleUser = await userService.getGoogleUser(googleUser)
+            const action = { type: "SET_USER", user: loggedGoogleUser }
             dispatch(action);
             return loggedGoogleUser;
         } catch (err) {

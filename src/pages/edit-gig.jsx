@@ -41,7 +41,7 @@ export const EditGig = (props) => {
     
     
     const uploadImg = (ev) => {
-        const file = ev.target.files[0]
+        // const file = ev.target.files[0]
         const CLOUD_NAME = cloudinaryService.getCloudName()
         const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`
         const formData = new FormData()

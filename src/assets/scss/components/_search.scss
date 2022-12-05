@@ -2,171 +2,64 @@ form.search-bar {
   display: flex;
   flex: 1;
 
-
   & .search-header {
-    border-radius: 3px;
+    border-radius: 4px;
     border: 1px solid $grey_500;
     box-shadow: none;
     padding: 6px 6px 6px 24px;
-    margin-left: 24px;
-    min-width: 311px;
+    margin-inline: 24px;
+    flex: 1;
+
+
+    @media (min-width: 601px) and (max-width: 910px) {
+      // min-width: rem(215px);
+      max-width: 80%;
+      flex: 1;
+    }
   }
 
-    & .search-input {
-      border-radius: 3px 0 0 3px;
-      border-right: 0;
-      padding-top: 8px;
+  & .search-input {
+    border-radius: 3px 0 0 3px;
+    padding-top: 8px;
+    border-color: $grey_500;
+    color: $grey_1100;
+    padding: 7px 7px 7px 28px;
+    font-size: rem(15px);
+
+    @media (min-width: 601px) and (max-width: 910px) {
+      border-radius: 4px;
       border-color: $grey_500;
-      color: $grey_1100;
-      padding: 7px 7px 7px 28px;
-      font-size: rem(15px);
+      padding: 10px 2px 10px 16px;
+      font-size: 16px;
+      color: #62646a;
     }
-    
-      & .search-header-btn {
-        font-size: 15px;
-        padding: 8px 16px;
-        background-color: $wiserr_green;
-        border: 1px solid transparent;
-        color: $white;
-        border-radius: 0 3px 3px 0;
-        font-weight: 700;
+  }
+
+  & .search-header-btn {
+    font-size: 15px;
+    padding: 8px 16px;
+    background-color: $wiserr_green;
+    border: 1px solid transparent;
+    color: $white;
+    border-radius: 0 3px 3px 0;
+    font-weight: 700;
+
+    @media (min-width: 601px) and (max-width: 910px) {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-container {
+    .hero-content-container {
+      .hero-content {
+        .search-hero-homepage {
+          .search-container {
+            flex-direction: column;
+          }
+        }
       }
-
-//   .search-container {
-//     position: relative;
-
-//     & label {
-//       &:before {
-//         content: "\f3ee";
-//         color: $grey_1100;
-//         padding-top: rem(5px);
-//         padding-left: rem(5px);
-//         margin-left: rem(24px);
-//         font-family: awesome brands;
-//         position: absolute;
-//         display: inline-block;
-//         z-index: 10;
-//         left: 5px;
-//         top: 4px;
-//       }
-      
-//       svg {
-//         display: none;
-//       }
-//     }
-
-//     input {
-//       padding: 8px 34px;
-
-//       .search-input {
-//         border: 1px solid $grey_600;
-//         color: $grey_1100;
-//         border-radius: 3px 0 0 3px;
-//         border-right: 0;
-//         display: relative;
-//         flex: 1;
-//       }
-//     }
-
-//     .search-btn {
-//       border: none;
-//       margin-left: -53px;
-//       background-color: $wiserr_green;
-//       color: $white;
-//       padding: 9px 8px;
-//       border-radius: 3px 0 0 3px;
-//       align-self: center;
-//       font-size: 12px;
-//       font-style: bold;
-//     }
-//   }
-// }
-
-// @media (max-width: 380px) {
-//   form {
-//     &.search-bar {
-//       .search-container {
-//         input {
-//           max-width: 41%;
-//         }
-//       }
-//       .search-header {
-//         min-width: unset;
-//       }
-//     }
-//   }
-// }
-
-// @media (min-width: 381px) and (max-width: 519px) {
-//   form {
-//     &.search-bar {
-//       .search-container {
-//         input {
-//           max-width: 61%;
-//         }
-//       }
-//       .search-header {
-//         min-width: unset;
-//       }
-//     }
-//   }
-// }
-
-// @media (min-width: 520px) and (max-width: 600px) {
-//   form {
-//     &.search-bar {
-//       .search-container {
-//         input {
-//           max-width: 62%;
-//         }
-//       }
-//       .search-header {
-//         min-width: unset;
-//       }
-//     }
-//   }
-// }
-
-// @media (max-width: 600px) {
-//   .hero-container {
-//     .hero-content-container {
-//       .hero-content {
-//         .search-hero-homepage {
-//           .search-container {
-//             flex-direction: column;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media (min-width: 601px) and (max-width: 900px) {
-//   form {
-//     &.search-bar {
-//       .search-container {
-//         input {
-//           max-width: 62%;
-//         }
-//       }
-//       .search-header {
-//         min-width: unset;
-//       }
-//     }
-//   }
-// }
-
-// @media (min-width: 901px) and (max-width: 1024px) {
-//   form {
-//     &.search-bar {  
-//       .search-container {
-//         input {
-//           max-width: 65%;
-//         }
-//       }
-//       .search-header {
-//         min-width: unset;
-//       }
-//     }
-//   }
+    }
+  }
 }

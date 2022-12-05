@@ -15,7 +15,7 @@ export const NavCategories = () => {
         dispatch(loadGigs())
     }
     
-    const categories = [{ name: 'All Categories', parameter: '' },
+    const categories = [{ name: 'All', parameter: '' },
     { name: 'Graphics & Design', parameter: 'Graphics & Design' },
     { name: 'Digital Marketing', parameter: 'Digital Marketing' },
     { name: 'Writing & Translation', parameter: 'Writing & Translation' },

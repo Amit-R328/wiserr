@@ -25,7 +25,6 @@ export const AppHeader = () => {
 
     useEffect(() => {
         dispatch(getLoggedinUser)
-        
     },[loggedInUser])
 
     useEffect(() => {
@@ -37,7 +36,6 @@ export const AppHeader = () => {
     }, [showProfileMenu])
 
     useEffect(() => {
-
         if (pathname === '/' || pathname === '/seller') {
             window.addEventListener("scroll", handleScroll)
         }
@@ -93,7 +91,7 @@ export const AppHeader = () => {
     return (
         <header className={`header ${scrolled ? 'scrolled' : ''} ${(pathname !== '/' && pathname !== '/seller') ? 'categories-header' : ''} ${pathname.includes('categories/') ? 'nav-details' : ''}`} >
             <div className="top container">
-                <div className="logo-search-container">
+                <div className="logo-search-container flex align-center">
                     {(!gig || pathname !== `/categories/${gig._id}`) &&
                     <div className="side-menu">
                         <button ref={menuRef} onClick={onToggleSideMenu} className={`hamburger-icon ${classHamburgerMenu}`}>
@@ -106,7 +104,7 @@ export const AppHeader = () => {
                             <LogoFull />
                         </NavLink>
                     </div>
-                    <form className="search-bar">
+                    <form className="search-bar flex align-center">
                         {scrolled && <Search handleScroll={handleScroll} loc={'appHeader'} />}
                     </form>
                 </div>
@@ -120,7 +118,6 @@ export const AppHeader = () => {
                         <li>{(pathname === '/seller' || pathname === '/seller/gig' || pathname === 'order/:userId') && loggedInUser ?
                         <li><NavLink to="/order/:userId" className="seller-nav-link nav-link">My Orders</NavLink></li>
                         : <span></span>}</li>
-
                     <li>
                         <NavLink to="/categories" className="seller-nav-link explore-nav-link nav-link">Explore</NavLink>
                     </li>
@@ -128,10 +125,11 @@ export const AppHeader = () => {
                         {pathname !== '/seller' ? <NavLink to="/seller" className="seller-nav-link nav-link">Wiserr Seller</NavLink> : <span></span>}
                     </li>
                     <li>
-                        {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login seller-nav-link nav-link">Sign in / Join</NavLink>}
+                        {loggedInUser ? <div className="avatar-container"><img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img></div> : <NavLink to="/login" rel="nofollow" className="open-popup-login seller-nav-link nav-link">Sign in / Join</NavLink>}
+                        {/* {!loggedInUser && <NavLink to="/login" rel="nofollow" className="open-popup-login seller-nav-link nav-link">Sign in / Join</NavLink>}
                         <div className="avatar-container">
                             {loggedInUser && <img className="avatar-img" src={`${loggedInUser.imgUrl}`} onClick={onToggleMenu} alt="Avatar"></img>}
-                        </div>
+                        </div> */}
 
                         <div className="profile-container" ref={profileRef}>
                             {showProfileMenu && <ProfileMenu menuOpen={showProfileMenu} onLogout={onLogout} user={loggedInUser} closeMenu={onCloseMenu} onToggleMenu={onToggleProfileMenu} />}
@@ -139,7 +137,7 @@ export const AppHeader = () => {
                     </li>
                 </ul>
             </div>
-            {pathname !== '/seller' ? (width > 700 && (scrolled || pathname !== '/')) && <div className="bottom">
+            {pathname !== '/seller' ? (width > 911 && (scrolled || pathname !== '/')) && <div className="bottom">
                 <NavCategories />
             </div> : <span></span>}
         </header>

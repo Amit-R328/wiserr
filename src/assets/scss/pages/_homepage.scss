@@ -1,11 +1,16 @@
 .trusted-by-brands {
-  margin-top: rem(678px);
+  // margin-top: rem(678px);
   background-color: $grey_300;
   height: rem(95px);
   color: $grey_800;
   z-index: -5;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+
+  @media (max-width:600px) {
+    display: none;
+  }
 
   .brands-container {
     align-items: center;
@@ -32,16 +37,14 @@
   }
 }
 
-// @media (max-width:600px) {
-//   .trusted-by-brands {
-//     width: 643px;
-//   }
-// }
-
 @media (max-width:900px) {
   .trusted-by-brands {
     margin-top: unset;
     // justify-content: unset;
+    
+    & P {
+      display: none;
+    }
   }
 }
 
@@ -50,35 +53,3 @@
     margin-top: unset;
   }
 }
-
-
-// @media (max-width:425px) {
-//   .search-input.search-hero{
-//     position: relative;
-//     left: 6%;
-//   }
-//   .hero-container .search-hero-btn{
-//     border-radius: 4px 4px 4px 4px;
-//     width: 474px;
-//     position: relative;
-//     left: 6%;
-//   }
-
-//   .btn-popular-category {
-//     display: none;
-//   }
-//   .trusted-by-brands {
-//     display: none;  
-//   }
-// }
-// @media (max-width:744px) {
-//   .trusted-by-brands {
-//     margin-top: 0.5rem;
-//   }
-// }
-// @media (max-width: 1024px) {
-//   .trusted-by-brands .brands-container{
-//     max-width: 1000px;
-//     justify-content: right;
-//   }
-// }

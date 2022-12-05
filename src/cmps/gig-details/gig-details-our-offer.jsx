@@ -29,6 +29,7 @@ export const GigDetailsOurOffer = ({gig, onConfirmOrder}) => {
             </aside>
             <div className="contact-seller flex">
                 <a className='gig-details-contact-seller' href="mailto:wiserrseller@mailgo.com">Contact Seller</a>
+                
             </div>
         </div>
     </div>

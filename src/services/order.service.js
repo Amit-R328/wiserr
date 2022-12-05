@@ -1,17 +1,7 @@
-import Axios from 'axios'
 import { httpService } from './http.service.js'
 import { gigService } from './gig.service.js'
 // import { socketService } from './socket.service.js'
 // const orderChannel = new BroadcastChannel('orderChannel')
-
-const BASE_URL =
-    process.env.NODE_ENV === 'production'
-        ? '/api/gig/'
-        : 'http://localhost:3030/api/gig/'
-
-let axios = Axios.create({
-    withCredentials: true,
-})
 
 export const orderService = {
     query,
@@ -28,14 +18,12 @@ async function query(loggedInUser, typeOf) {
             return order.buyer.fullName === loggedInUser.userName
         })
     } else {
-        
         if (loggedInUser.isSeller) {
         
             orders = orders.filter(order => {
                 return order.seller.fullName === loggedInUser.userName
             })            
         } else {
-        
             orders = []
         }
     }

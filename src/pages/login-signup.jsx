@@ -19,12 +19,11 @@ import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google"
 import { Loader } from '../cmps/loader.jsx'
 import jwt_decode from 'jwt-decode'
 
-
 export const LoginSignup = () => {
     let { loggedInUser } = useSelector((storeState) => storeState.userModule)
     const [isImg, setIsImg] = useState(false)
     const [imgUrl, setImgUrl] = useState('')
-    const [isLogin, setIsLogin] = useState(true)
+    const [isLogin, setIsLogin] = useState(false)
     const [loader, setLoader] = useState(false)
     const theme = createTheme()
     const navigate = useNavigate()
@@ -32,11 +31,12 @@ export const LoginSignup = () => {
 
     useEffect(()=>{
         dispatch(getLoggedinUser())
-    },[loggedInUser])
+    },[])
 
     const handleGoogleSignUp = (response) => {
         let userObject = jwt_decode(response.credential)
         dispatch(signUpGoogle(userObject))
+        setIsLogin(true)
         setTimeout(() => {
             setLoader(true)
         }, 3000)
@@ -71,12 +71,14 @@ export const LoginSignup = () => {
             if (isLogin) {
                 dispatch(login(loginInfo))
                 dispatch(getLoggedinUser())
+                setIsLogin(true)
                 navigate('/')
             } else {
                 loginInfo.fullname = data.get('fullname')
                 loginInfo.imgUrl = imgUrl
                 dispatch(signup(loginInfo))
                 dispatch(getLoggedinUser())
+                setIsLogin(true)
                 navigate('/')
             }
         } catch (err) {

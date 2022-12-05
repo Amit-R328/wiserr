@@ -10,15 +10,14 @@ export const HeroPopularCategories = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    useEffect(async () => {
-        let res = await getCategories()
-        setPopularCategories(res)
-        return () => {
-        }
+    useEffect(() => {
+        getCategories()
     }, [])
 
     const getCategories = async () => {
-        return await gigService.getPopularCategories()
+        let res = await gigService.getPopularCategories()
+        setPopularCategories(res)
+        return res
     }
 
     const onChangeCategory = (category) => {

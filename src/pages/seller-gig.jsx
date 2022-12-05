@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { loadGigs, setFilter } from '../store/actions/gig.actions.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from "react-router-dom"
-import { userService } from '../services/user.service.js'
 import { Loader } from '../cmps/loader.jsx'
 import { PlusCircle, Edit, Delete, ShowDetails } from '../services/svg.service.js'
 import { removeGig } from '../store/actions/gig.actions.js'
@@ -10,7 +9,6 @@ import Swal from 'sweetalert2'
 
 export const SellerGig = () => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
-    // const [loggedInUser, setLoggedInUser] = useState(userService.getLoggedinUser())
     let { gigs } = useSelector((storeState) => storeState.gigModule)
     const { gig } = useSelector((storeState) => storeState.gigModule)
     let { orders } = useSelector((storeState) => storeState.orderModule)

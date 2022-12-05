@@ -9,6 +9,7 @@ export const SellerHomepage = () => {
     const { loggedInUser } = useSelector((storeState) => storeState.userModule)
 
     let freelancers = [{
+        id: '100',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657381804/seller-hero/designer_u5vxlt.webp',
         profession: 'designer',
         legends: 'a Designer',
@@ -20,6 +21,7 @@ export const SellerHomepage = () => {
         buyers: '11,913 Buyers in 136 Countries'
     },
     {
+        id: '101',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383038/seller-hero/developer_soz2xy.webp',
         profession: 'developer',
         legends: 'a Developer',
@@ -31,6 +33,7 @@ export const SellerHomepage = () => {
         buyers: '22,305 Buyers in 156 Countries'
     },
     {
+        id: '102',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383038/seller-hero/writer_vqov3u.webp',
         profession: 'writer',
         legends: 'a Writer',
@@ -42,6 +45,7 @@ export const SellerHomepage = () => {
         buyers: '46 Buyers in 13 Countries'
     },
     {
+        id: '103',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383037/seller-hero/video_tdbl9r.webp',
         profession: 'video-editor',
         legends: 'a Video Editor',
@@ -53,6 +57,7 @@ export const SellerHomepage = () => {
         buyers: '6,917 Buyers in 101 Countries'
     },
     {
+        id: '104',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383037/seller-hero/musician_vqqoog.webp',
         profession: 'musician',
         legends: 'a Musician',
@@ -64,6 +69,7 @@ export const SellerHomepage = () => {
         buyers: '978 Buyers in 66 Countries'
     },
     {
+        id: '105',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383037/seller-hero/voiceover_c2zirh.webp',
         profession: 'voice',
         legends: 'a Voice Over Artist',
@@ -75,6 +81,7 @@ export const SellerHomepage = () => {
         buyers: '5,845 Buyers in 119 Countries'
     },
     {
+        id: '106',
         img: 'https://res.cloudinary.com/dcbbqlssh/image/upload/v1657383038/seller-hero/analyst_q4tdju.webp',
         profession: 'social',
         legends: 'a Social Media Marketer',
@@ -98,6 +105,7 @@ export const SellerHomepage = () => {
                 <ul className="freelance-community-list clean-list">
                     {freelancers.map(freelancer =>
                         <FreelancersPreview
+                            key={freelancer.id}
                             freelancers={freelancers}
                             freelancer={freelancer}
                         />
@@ -120,7 +128,7 @@ export const SellerHomepage = () => {
                     <p>Sign up and create your first Gig today</p><br></br>
                     {!loggedInUser ? <a className="open-popup-join-start" href="/join" rel="nofollow">Get Started</a> : <a href="/seller/add-gig" className="open-popup-join-start">Get Started</a>}
                 </div>
-        </aside>
+            </aside>
         </section >
     )
 }

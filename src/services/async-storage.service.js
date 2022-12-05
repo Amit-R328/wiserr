@@ -16,8 +16,8 @@ function query(entityType, delay = 600) {
             // reject('OOOOPs')
             resolve(entities)
         }, delay)
+        return Promise.resolve(entities)
     })
-    return Promise.resolve(entities)
 }
 
 function get(entityType, entityId) {
