@@ -27,49 +27,6 @@
         }
     }
 
-    // .slide {
-    //     aspect-ratio: 1 / 0.8;
-    // }
-
-    // @media screen and (min-width: 600px) {
-    //     .slide {
-    //         aspect-ratio: 1 / 0.8;
-    //     }
-    // }
-
-    // @media screen and (min-width: 900px) {
-    //     .slide {
-    //         aspect-ratio: 1 / 0.84;
-    //     }
-    // }
-
-    // @media screen and (min-width: 1180px) {
-    //     .slide {
-    //         aspect-ratio: 1 / 0.83;
-    //     }
-    // }
-
-    // @media (min-width: 1400px) {
-    //     .slide:not(:first-of-type) {
-    //         width: 100%;
-    //         aspect-ratio: 1 / 0.79;
-    //         padding-left: rem(32px);
-
-    //         &:first-of-type {
-    //             width: 100%;
-    //             padding: 0;
-    //             padding-right: rem(16px);
-    //             aspect-ratio: 1 / 0.79;
-
-    //         }
-    //     }
-
-    //     // &.container {
-    //     //     padding-inline-start: calc((132px+1.5625vw)/2);
-    //     //     padding-inline-end: calc((132px+1.5625vw)/2);
-    //     // }
-    // }
-
     h4 {
         position: absolute;
         z-index: 55;
@@ -92,55 +49,3 @@
         }
     }
 }
-
-// @media (max-width: 425px) {
-//     .gig-slider-container .slider-container {
-//         display: flex;
-//         flex-direction: column;
-//         position: relative;
-//     }
-
-//     .professional-services {
-//         // margin-left: 12%;
-//     }
-// }
-
-// @media (max-width:744px) {
-//     .gig-slider-container .slider-container {
-//         display: flex;
-//         flex-direction: column;
-//     }
-// }
-
-// @media (max-width: 900px) {
-//     .gig-slider-container {
-//         h4 {
-//             display: flex;
-//             flex-direction: column;
-
-//             // padding: unset;
-//             small {
-//                 width: 10ch;
-//             }
-//         }
-//     }
-// }
-
-// @media (min-width: 901px) and (max-width: 1024px) {
-//     .gig-slider-container .slider-container {
-//         gap: 15px;
-//     }
-
-//     h2 {
-//         text-align: center;
-//     }
-
-//     .gig-slider-container {
-//         & h4 {
-//             div {
-//                 font-size: 1rem;
-//                 // max-width: 10ch;
-//             }
-//         }
-//     }
-// }

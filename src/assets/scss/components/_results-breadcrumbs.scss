@@ -4,8 +4,6 @@
 
     .layout-row {
         color: $grey_1000;
-        // flex-wrap: wrap;
-        // flex: 1 1 0;
         padding-top: 30px;
         padding-bottom: 15px;
 
@@ -41,12 +39,11 @@
                             font-size: rem(14px);
                         }
                     }
-                    
+
                     & a {
                         text-decoration: none;
                         font-size: rem(14px);
                         color: $grey_1000;
-
 
                         &:hover {
                             text-decoration-line: underline;
@@ -135,6 +132,7 @@
         flex-direction: column;
         gap: 20px;
     }
+
     .filter-gigs-container {
         .results-category-header {
             p {

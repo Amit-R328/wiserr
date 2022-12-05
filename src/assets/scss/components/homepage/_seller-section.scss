@@ -90,7 +90,6 @@
                     margin-bottom: rem(80px);
                     display: flex;
                     flex-direction: column;
-                    // align-items: center;
                     justify-content: space-evenly;
                     gap: rem(20px);
                     padding-inline: 2rem;
@@ -111,11 +110,9 @@
                             .check-icon {
                                 margin: 0;
                                 padding: 0;
-                                // margin-right: rem(20px);
 
                                 & svg {
                                     fill: $white;
-
                                 }
                             }
                         }
@@ -285,8 +282,6 @@
                                 margin: 0;
                                 padding: 0;
                                 margin-bottom: rem(20px);
-                                // margin-right: rem(10px);
-                                // margin-bottom: rem(8px);
 
                                 & svg {
                                     fill: $white;
@@ -471,31 +466,6 @@
                         }
                     }
                 }
-
-                //     li {
-                //         color: $white;
-                //         list-style: none;
-                //         list-style-image: none;
-                //         margin: 0;
-                //         padding: 0;
-
-                //         h6 {
-                //             display: flex;
-                //             align-items: center;
-                //             font-size: rem(16px);
-                //             font-weight: 300;
-                //             margin: 0;
-                //             padding: 0;
-
-                //             .check-icon {
-                //                 margin: 0;
-                //                 padding: 0;
-                //                 margin-right: rem(10px);
-                //                 padding-top: rem(8px);
-                //             }
-                //         }
-                //     }
-                // }
 
                 .explore-seller-container {
                     margin-top: em(48px);

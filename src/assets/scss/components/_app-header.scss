@@ -8,8 +8,6 @@
 
   &.nav-details {
     position: static;
-    // border-bottom: 1px solid #dadbdd;
-    // border-top: 1px solid #dadbdd;
   }
 
   &.categories-header {
@@ -27,7 +25,6 @@
 
       &.seller-nav-link {
         color: $wiserr_business;
-
       }
 
       &:hover {
@@ -117,8 +114,6 @@
             }
           }
         }
-
-
       }
     }
   }
@@ -160,8 +155,6 @@
     }
 
     .logo {
-      // display: none;
-
       svg {
         path:first-child {
           fill: $white;
@@ -229,7 +222,6 @@
   border: 0;
   border-radius: 50%;
   margin: 5px;
-
 }
 
 .success {
@@ -243,10 +235,6 @@
 @media (min-width: 300px) and (max-width: 600px) {
   .header {
     background-color: #fff;
-
-    // & .container {
-    //   padding-inline: rem(10px);
-    // }
   }
 
   .nav-list {
@@ -335,7 +323,6 @@
         &.gray {
           color: $grey_900;
         }
-
       }
     }
   }

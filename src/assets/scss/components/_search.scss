@@ -10,9 +10,7 @@ form.search-bar {
     margin-inline: 24px;
     flex: 1;
 
-
     @media (min-width: 601px) and (max-width: 910px) {
-      // min-width: rem(215px);
       max-width: 80%;
       flex: 1;
     }

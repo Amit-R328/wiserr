@@ -20,6 +20,7 @@
         &.container {
             padding-inline-start: calc((119px + 1.5625vw) / 2);
         }
+
         .list-of-gigs-container {
             .gig-list {
                 grid-template-columns: 1fr;
@@ -31,6 +32,7 @@
 @media (max-width: 425px) {
     .gigs-preview-main-wrapper {
         margin: 0 20px 0 10px;
+
         .list-of-gigs-container {
             .gig-list {
                 grid-template-columns: 200px;
@@ -38,4 +40,3 @@
         }
     }
 }
-

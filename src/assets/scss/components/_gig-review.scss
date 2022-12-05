@@ -1,24 +1,22 @@
 .reviews {
-
-    
     .review-card {
         padding: 16px 0 0 0;
         position: relative;
         margin-top: 10px;
         border-top: 1px solid $grey_500;
-        // &:not(:first-of-type){
-        // }
     }
 
     .flex {
         align-items: center;
     }
+
     .gig-reviews-title {
-        font-size: 22px;        
+        font-size: 22px;
         line-height: 42px;
         color: $grey_1100;
         margin-top: rem(30px);
     }
+
     .sml-review-img {
         margin-right: 1rem;
         width: 32px;
@@ -35,7 +33,6 @@
     }
 
     .reviewer-name {
-        // font-size: 1.5rem;
         margin-right: 0.6rem;
         font-weight: bold;
         color: $grey_1100;
@@ -53,7 +50,6 @@
         margin-block-end: 0px;
     }
 
-
     .name-and-stars {
         display: flex;
 
@@ -64,65 +60,60 @@
             font-size: 14px;
         }
     }
+
     .user-country {
-
-        p {
-            margin: unset;
-        }
-
-        // margin-left: 3rem;
         padding: 0 0 10px 0;
         color: #62646A;
         font-size: 14px;
         display: flex;
         align-items: center;
-        margin-bottom: 0.5rem
+
+        margin-bottom: 0.5rem p {
+            margin: unset;
+        }
     }
+
     .country-flag {
         width: 6%;
-        // width: rem(20px);
-        // height: rem(20px);
         border-radius: 1px !important;
-        padding-right: rem(5px) ;
+        padding-right: rem(5px);
     }
 }
 
-.fa, .fas {
+.fa,
+.fas {
     margin-left: 0.2rem;
     color: #ffbe5b;
-    
+
 }
 
-.comment-form{
-    display: flex ;
+.comment-form {
+    display: flex;
     flex-direction: column;
     margin-top: 20px;
+
     .rating-review {
-        
+
         font-size: 20px;
         line-height: 28px;
-        // padding-bottom: rem(30px);
         margin-top: 20px;
         font-family: Helvetica, Arial, sans-serif;
         font-weight: 700;
         color: $grey_1100;
     }
-    
+
     .title {
         font-size: 16px;
         line-height: 28px;
-        // padding-bottom: rem(30px);
         margin-top: 20px;
         font-family: Helvetica, Arial, sans-serif;
         font-weight: 600;
         color: $grey_1100;
     }
-    
+
     .rating-review-txt {
-        // color: $grey_500;
         border: 1px solid $grey_500;
     }
-
 }
 
 .add-review-btn {
@@ -133,7 +124,6 @@
     padding: 10px;
     width: 100px;
     margin-top: 10px;
-
 }
 
 .comment-post-btn {

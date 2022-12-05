@@ -1,12 +1,9 @@
 .header-container {
-    // width: 100%;
     align-items: center;
     color: $grey_700;
     border-bottom: none;
     overflow: hidden;
     padding: 32px 32px 64px;
-    // height: 80px;
-    // padding-top: rem(135px);
 
     .header-row {
         display: flex;
@@ -16,12 +13,9 @@
         padding-bottom: 0;
         position: relative;
         margin: 0;
-        // margin-right: 13.5%;
-        // margin-left: 13.5%;
 
         .clean-logo-container {
             width: 20px;
-            // height: 24px;
             position: flex-start;
         }
     }
@@ -34,26 +28,18 @@
     border-bottom: none;
     overflow: hidden;
     border-bottom: 1px solid $grey_500;
-    // padding: 0 30px;
     border-top: 1px solid $grey_500;
     position: fixed;
     z-index: 9999;
     background-color: $white;
-    // margin-bottom: rem(30px);
-
 
     .inner-progress-wrapper {
         display: flex;
         justify-content: space-between;
         box-sizing: border-box;
         align-items: center;
-        // max-width: 1400px;
-        // padding: 0 30px;
         font-size: 15px;
-        // line-height: 100%;
         height: 48px;
-        // margin-right: 13.5%;
-        // margin-left: 13.5%;
 
         & button {
             background: transparent;
@@ -152,11 +138,7 @@
 
 .add-gig-container {
     margin: 0 auto;
-    // margin-right: 13.5%;
-    // margin-left: 13.5%;
     padding-bottom: 100px;
-    // background-color: pink;
-    // padding-top: rem(50px);
     padding-top: rem(92px);
 
     .gig-details {
@@ -167,8 +149,6 @@
         .add-gig {
             display: flex;
             flex-direction: column;
-            // gap: 35px;
-            // width: 100%;
 
             .gig-form {
                 margin-top: rem(80px);
@@ -182,12 +162,12 @@
                         background-color: transparent;
                         position: relative;
                         margin-right: 0;
-                        // float: right;
                         padding: 0;
                         margin-left: rem(20px);
                     }
 
-                    .btn-primary, .btn-secondary {
+                    .btn-primary,
+                    .btn-secondary {
                         border: 1px solid $grey_500;
                         background-color: $wiserr_green;
                         color: white;
@@ -222,7 +202,6 @@
                     line-height: 23px;
                     padding: 5px 20px 0 0;
                     display: block;
-                    // width: 475px;
                 }
             }
         }
@@ -231,7 +210,6 @@
             padding: 35px 0 96px;
             display: flex;
             flex-direction: row;
-            // width: 100%;
             align-items: flex-start;
             min-height: 60px;
 
@@ -244,7 +222,6 @@
                     font-weight: 500;
                     font-size: 18px;
                     display: inline-block;
-                    // margin-bottom: 5px;
                     cursor: default;
 
                     .popup-text {
@@ -267,7 +244,6 @@
             }
 
             .img-content {
-                // width: 70%;
                 position: relative;
                 cursor: pointer;
 
@@ -280,7 +256,6 @@
                     border-radius: 50%;
                     border: 1px solid #e5e5e5;
                     overflow: hidden;
-                    // display: flex;
                     z-index: 1;
                     cursor: pointer;
 
@@ -291,7 +266,6 @@
                     .file-img {
                         cursor: pointer;
                         display: block;
-                        // height: 100%;
                         width: 100%;
                         position: relative;
                         font-size: 1em;
@@ -307,7 +281,6 @@
                             position: absolute;
                             left: 0;
                             top: 75px;
-                            // z-index: 999;
                             opacity: 1;
                             width: 100%;
                             height: 100%;
@@ -330,13 +303,10 @@
                         margin: 0;
                         padding: 0;
                         position: relative;
-                        // width: 800px;
                         width: 100%;
                         height: 150px;
                         z-index: 50;
                         cursor: pointer;
-                        // display: none !important;
-                        // visibility: hidden !important;
                         opacity: 0;
                     }
                 }
@@ -376,12 +346,10 @@
 
         }
     }
-
 }
 
 .add-gig-titles {
     display: flex;
-    // gap: 80px;
     justify-content: space-between;
     font-size: 14px;
     font-style: unset;
@@ -393,13 +361,11 @@
     .add-gig-input {
         width: rem(388px);
         height: rem(30px);
-
     }
 
     @media screen and (max-width: 1024x) {
         .add-gig-titles {
             font-size: 12px;
-            // gap: 80px;
         }
 
         .add-gig-labels {
@@ -410,23 +376,26 @@
             width: rem(288px);
         }
     }
-
 }
 
 @media (max-width: 600px) {
     .progress-bar-container {
         position: unset;
+
         &.container {
             padding-inline-start: unset;
             padding-inline-end: unset;
         }
+
         .inner-progress-wrapper {
             flex-direction: column;
             height: unset;
+
             nav {
                 display: flex;
                 gap: 1px;
             }
+
             button {
                 &:not(:last-of-type) {
                     padding-right: unset;
@@ -434,33 +403,34 @@
             }
         }
     }
+
     .add-gig-container {
         .gig-details {
             .gig-details-header {
                 border-bottom: unset;
                 margin-bottom: 20px;
             }
+
             .gig-image-upload {
                 flex-direction: column;
             }
         }
     }
+
     .add-gig-titles {
         flex-direction: column;
+
         .add-gig-labels {
             width: unset;
         }
     }
 }
 
-
 .add-gig-btn {
     border: 1px solid $grey_500;
     background-color: $wiserr_green;
     color: white;
-    // width: rem(150px);
     margin-top: rem(15px);
-    // padding: rem(10px) rem(20px);
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
@@ -470,7 +440,6 @@
     border: 1px solid $grey_500;
     background-color: $wiserr_green;
     color: white;
-    // width: rem(150px);
     margin-top: rem(15px);
     padding: rem(10px) rem(20px);
     border: 1px solid transparent;

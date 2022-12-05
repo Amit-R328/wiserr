@@ -43,7 +43,6 @@
     .gig-table {
         background: unset;
         border: 1px solid $grey_500;
-        // margin: 1em 0;
         width: 100%;
         color: $grey_1000;
         font-family: 'Roboto', sans-serif;
@@ -64,9 +63,7 @@
             font-weight: 300;
             font-size: rem(14px);
             border: 1px solid $grey_500;
-
         }
-        
     }
     
     .gig-actions {
@@ -90,10 +87,8 @@
     }
 
     tbody {
-        // height: em(300px);
         overflow-x: auto;
         margin-top: 0px;
-        // border: 1 solid rgba(255, 255, 255, 0.3);
         border: 1px solid $grey_500;
     }
 }

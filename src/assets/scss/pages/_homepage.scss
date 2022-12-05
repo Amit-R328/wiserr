@@ -1,5 +1,4 @@
 .trusted-by-brands {
-  // margin-top: rem(678px);
   background-color: $grey_300;
   height: rem(95px);
   color: $grey_800;
@@ -40,8 +39,7 @@
 @media (max-width:900px) {
   .trusted-by-brands {
     margin-top: unset;
-    // justify-content: unset;
-    
+
     & P {
       display: none;
     }

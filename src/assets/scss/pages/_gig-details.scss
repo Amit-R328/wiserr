@@ -87,12 +87,11 @@
         }
 
         .details-menu-share {
-            // min-width: rem(150px);
             background-color: transparent;
             outline: 1px solid $grey_400;
             border: none;
             cursor: pointer;
-            
+
             &:after {
                 content: "\f1e1";
                 font-family: awesome;
@@ -104,11 +103,9 @@
 
     .gig-details {
         padding: 32px 32px 0 32px;
-        // max-width: 1304px;
         margin: 0 auto;
         position: relative;
         box-sizing: border-box;
-        // margin: 0 76px 0 76px;
         flex-direction: row;
         align-items: flex-start;
         display: flex;
@@ -124,11 +121,8 @@
     }
 
     .left-container {
-        // width: 711px;
-        // margin-right: 113px;
         margin-right: 9.15%;
         width: 57.42%;
-        // margin-top: rem(140px);
 
         .breadcrumbs-container {
             height: 40px;
@@ -335,8 +329,6 @@
                 line-height: 130%;
                 gap: rem(6px);
 
-                // margin-left: 15px;
-                // font-weight: bold;
                 .gig-details-owner-name {
                     font-size: 16px;
                     line-height: 20px;
@@ -357,8 +349,6 @@
             .md-round-img {
                 border-radius: 50%;
                 width: 80px;
-                // height: 80px;
-                // margin-bottom: 51px;
             }
 
             .owner-info {
@@ -396,7 +386,6 @@
                     margin: 0;
 
                     .owner-summary {
-                        // max-height: none;
                         white-space: pre-line;
                         color: $grey_1000;
                         padding-top: rem(15px);
@@ -412,12 +401,9 @@
         color: $grey_1100;
         padding-top: rem(10px);
 
-        // font-weight: 700;
         .gig-rate {
-            // border-bottom: 1px solid $grey_400;
             display: flex;
             align-items: center;
-            // padding: 10px 12px;
 
             &::before {
                 content: "\f005";
@@ -483,13 +469,11 @@
             cursor: pointer;
 
             &:hover {
-                // transform: scale(105%);
                 -webkit-animation: kenburns-top 2s ease-in-out both;
                 animation: kenburns-top 2s ease-in-out both;
             }
         }
 
-        // SVG ICON STYLES
         .image-gallery-icon {
             background-color: $white;
             border: none;
@@ -521,7 +505,6 @@
             }
 
             &:focus {
-                // a11y support
                 outline: none;
             }
         }
@@ -563,10 +546,9 @@
     width: 33.6%;
     align-self: stretch;
     margin-top: 20px;
-    
+
 
     .sticky-inner-wrapper-gig-buy {
-        // margin-top: rem(100px);
         position: sticky;
         z-index: 5;
         width: 420px;
@@ -576,7 +558,6 @@
             flex-direction: column;
             gap: 10px;
             border: 1px solid $grey_500;
-            // margin: 33px 0 0 0;
             width: 402px;
             z-index: 5;
 
@@ -589,7 +570,7 @@
                 font-weight: 700;
                 margin-bottom: rem(15px);
             }
-            
+
             .order-title-wrapper {
                 gap: 24px;
                 padding-left: 24px;
@@ -669,7 +650,6 @@
 
                 & span {
                     position: relative;
-
                 }
             }
         }
@@ -686,7 +666,6 @@
     justify-content: center;
 
     .gig-details-contact-seller {
-        // background-color: $white;
         border: 1px solid $grey_1100;
         border-radius: 4px;
         color: $grey_1100;
@@ -768,9 +747,11 @@
 
         .left-container {
             width: unset;
+
             .breadcrumbs-container {
                 margin-top: 2.25rem;
             }
+
             .owner-details {
                 gap: 11px;
             }
@@ -783,7 +764,5 @@
                 }
             }
         }
-
     }
 }
-

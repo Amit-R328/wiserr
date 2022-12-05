@@ -1,5 +1,4 @@
 .gig-preview {
-  // max-width: 245px;
   min-width: 245px;
   aspect-ratio: 1 / 0.6 !important;
   border: 1px solid $grey_500;
@@ -10,7 +9,6 @@
     .image-gallery {
       img {
         aspect-ratio: 1 / 0.59;
-        // max-height: rem(194px);
         min-height: rem(200px);
         object-fit: cover;
       }
@@ -20,11 +18,11 @@
           &:first-of-type {
             left: -30px;
             transition: left 0.3s ease-in-out;
-            filter: drop-shadow(0 0 0 $white  !important);
+            filter: drop-shadow(0 0 0 $white !important);
           }
 
           &:nth-of-type(2) {
-            filter: drop-shadow(0 0 0 $white  !important);
+            filter: drop-shadow(0 0 0 $white !important);
             right: -30px;
             transition: right 0.3s ease-in-out;
           }
@@ -48,7 +46,7 @@
       }
 
       button {
-        box-shadow: 0 0 0 $white  !important;
+        box-shadow: 0 0 0 $white !important;
 
         &:first-of-type {
           left: -52px;
@@ -62,7 +60,7 @@
             border-bottom-right-radius: 70px;
             padding: 5px;
             padding-left: 15px;
-            filter: drop-shadow(0 0 0 $white  !important);
+            filter: drop-shadow(0 0 0 $white !important);
           }
         }
 
@@ -78,7 +76,7 @@
             border-bottom-left-radius: 50px;
             padding: 5px;
             padding-right: 15px;
-            filter: drop-shadow(0 0 0 $white  !important);
+            filter: drop-shadow(0 0 0 $white !important);
           }
         }
       }
@@ -156,7 +154,6 @@
         letter-spacing: rem(1px);
         font-size: rem(14px);
         font-weight: 400;
-
       }
     }
   }
@@ -212,7 +209,6 @@
         font-weight: 700;
       }
     }
-
   }
 }
 

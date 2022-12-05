@@ -2,17 +2,14 @@
     padding-top: 200px;
     padding-left: 13.25%;
     padding-right: 13.25%;
-    // background-color: $grey_400;
     color: $grey_1000;
-    min-height: calc(100vh - 135px); 
+    min-height: calc(100vh - 135px);
     width: 100%;
 }
 
 .user-profile {
-    // max-width: 1400;
     margin: auto;
     align-items: flex-start;
-    // gap: 100px;
 
     .profile-left-container {
         max-width: 200px;
@@ -33,23 +30,23 @@
         width: 60px;
         border-radius: 50%;
     }
-    .your-orders-container{
+
+    .your-orders-container {
         margin-bottom: 25px;
         font-size: 16px;
         width: fit-content;
         position: relative;
         top: 5%;
         font-weight: 400;
-        
+
         & span {
             font-size: 20px;
             color: $wiserr_green;
             font-weight: 700;
             padding: rem(10px);
-
         }
-    
     }
+
     .order-card {
         display: grid;
         margin-bottom: 20px;
@@ -63,22 +60,23 @@
         border-radius: 5px;
         grid-row-gap: 10px;
         grid-column-gap: 20px;
+
         .gig-img-profile {
-            // border-radius: 50%;
             border-radius: 3px;
             width: 280px;
-            // height: 200px;
             order: -1;
             margin-right: 10px;
             grid-row: 1 / span 2;
             align-self: center;
-            object-fit:contain;
+            object-fit: contain;
             background-image: cover;
+
             img {
                 width: 100%;
                 height: 100%;
             }
         }
+
         .order-desc-profile {
             width: 45ch;
             align-self: center;
@@ -90,15 +88,16 @@
             font-size: 15px;
             margin-top: rem(20px);
         }
+
         .card-profile-info {
             grid-column: 2;
             display: flex;
             flex-direction: column;
             gap: 10px;
-            
         }
     }
-    .total-price-container{
+
+    .total-price-container {
         border: 1px solid $grey_500;
         padding: 10px;
     }
@@ -116,10 +115,12 @@
             display: flex;
             flex-direction: column;
             height: auto;
+
             .order-desc-profile {
                 width: 20ch;
                 align-self: unset;
             }
+
             .gig-img-profile {
                 width: rem(100px);
                 align-self: unset;
